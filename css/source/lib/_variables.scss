@@ -1,0 +1,33 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+$baseDir: "../"; // Base directory path
+
+@import 'variables/_colors.scss';
+@import 'variables/_typography.scss';
+@import 'variables/_tables.scss';
+@import 'variables/_layout.scss';
+@import 'variables/_responsive.scss';
+@import 'variables/_navigation.scss';
+@import 'variables/_sections.scss';
+@import 'variables/_buttons.scss';
+@import 'variables/_icons.scss';
+@import 'variables/_messages.scss';
+@import 'variables/_tooltips.scss';
+@import 'variables/_loaders.scss';
+@import 'variables/_forms.scss';
+@import 'variables/_pages.scss';
+@import 'variables/_rating.scss';
+@import 'variables/_dropdowns.scss';
+@import 'variables/_actions-toolbar.scss';
+@import 'variables/_breadcrumbs.scss';
+@import 'variables/_popups.scss';
+@import 'variables/_structure.scss';
+@import 'variables/_components.scss';
+

@@ -1,0 +1,477 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Typography
+//  _____________________________________________
+
+.lib-font-face(
+    @family-name,
+    @font-path,
+    @font-weight: normal,
+    @font-style: normal
+) {
+    @font-face {
+        font-family: @family-name;
+        src: url('@{font-path}.eot');
+        src: url('@{font-path}.eot?#iefix') format('embedded-opentype'),
+        url('@{font-path}.woff2') format('woff2'),
+        url('@{font-path}.woff') format('woff'),
+        url('@{font-path}.ttf') format('truetype'),
+        url('@{font-path}.svg#@{family-name}') format('svg');
+        font-weight: @font-weight;
+        font-style: @font-style;
+    }
+}
+
+//  Rem font size
+.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and (isunit(@sizeValue, @font-size-unit)) {
+    .lib-css(font-size, @sizeValue);
+}
+
+.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and (isunit(@sizeValue, em)) {
+    .lib-css(font-size, @sizeValue);
+}
+
+.lib-font-size(@sizeValue) when not (ispercentage(@sizeValue)) and not (@sizeValue = false) and not (isunit(@sizeValue, em)) and not (isunit(@sizeValue, @font-size-unit)) {
+    .lib-font-size-value(@sizeValue);
+    .lib-css(font-size, @fontValue);
+}
+
+//  Rem line height
+.lib-line-height(@heightValue) when not (@heightValue = false) and not (ispercentage(@heightValue)) {
+    .lib-font-size-value(@heightValue);
+    .lib-css(line-height, @fontValue);
+}
+
+.lib-line-height(@heightValue) when (ispercentage(@heightValue)) and not (@heightValue = false) {
+    .lib-css(line-height, @heightValue);
+}
+
+.lib-wrap-words() {
+    .lib-hyphens();
+    word-wrap: break-word;
+}
+
+.lib-text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.lib-text-hide() {
+    background-color: transparent;
+    border: 0;
+    color: transparent;
+    font: ~'0/0' a;
+    text-shadow: none;
+}
+
+//  Optional hyphenation
+.lib-hyphens(@mode: auto) {
+    word-wrap: break-word;
+    -webkit-hyphens: @mode;
+       -moz-hyphens: @mode;
+        -ms-hyphens: @mode; // IE10+
+            hyphens: @mode;
+}
+
+.lib-typography(
+    @_font-size: @font-size__base,
+    @_color: @text__color,
+    @_font-family: @font-family__base,
+    @_font-weight: @font-weight__regular,
+    @_line-height: @line-height__base,
+    @_font-style: @font-style__base
+) {
+    .lib-css(color, @_color);
+    .lib-css(font-family, @_font-family);
+    .lib-css(font-style, @_font-style);
+    .lib-css(font-weight, @_font-weight);
+    .lib-css(line-height, @_line-height);
+    .lib-font-size(@_font-size);
+}
+
+.lib-list-reset-styles(@_margin: 0, @_padding: 0) {
+    .lib-css(margin, @_margin);
+    .lib-css(padding, @_padding);
+    list-style: none none;
+}
+
+.lib-list-inline() {
+    .lib-list-reset-styles();
+
+    > li {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+.lib-link(
+    @_link-color: @link__color,
+    @_link-text-decoration: @link__text-decoration,
+    @_link-color-visited: @link__visited__color,
+    @_link-text-decoration-visited: @link__visited__text-decoration,
+    @_link-color-hover: @link__hover__color,
+    @_link-text-decoration-hover: @link__hover__text-decoration,
+    @_link-color-active: @link__active__color,
+    @_link-text-decoration-active: @link__active__text-decoration
+) {
+    .lib-css(color, @_link-color);
+    .lib-css(text-decoration, @_link-text-decoration);
+
+    &:visited {
+        .lib-css(color, @_link-color-visited);
+        .lib-css(text-decoration, @_link-text-decoration-visited);
+    }
+
+    &:hover {
+        .lib-css(color, @_link-color-hover);
+        .lib-css(text-decoration, @_link-text-decoration-hover);
+    }
+
+    &:active {
+        .lib-css(color,@_link-color-active);
+        .lib-css(text-decoration, @_link-text-decoration-active);
+    }
+}
+
+.lib-heading(@_heading_level: h1) {
+    @_font-color: "@{_heading_level}__font-color";
+    @_font-size: "@{_heading_level}__font-size";
+    @_font-family: "@{_heading_level}__font-family";
+    @_font-weight: "@{_heading_level}__font-weight";
+    @_line-height: "@{_heading_level}__line-height";
+    @_font-style: "@{_heading_level}__font-style";
+    @_margin-top: "@{_heading_level}__margin-top";
+    @_margin-bottom: "@{_heading_level}__margin-bottom";
+    .lib-typography(
+        @@_font-size,
+        @@_font-color,
+        @@_font-family,
+        @@_font-weight,
+        @@_line-height,
+        @@_font-style
+    );
+
+    & {
+        .lib-font-size-value(@@_margin-top);
+        .lib-css(margin-top, @fontValue);
+    }
+
+    & {
+        .lib-font-size-value(@@_margin-bottom);
+        .lib-css(margin-bottom, @fontValue);
+    }
+}
+
+//
+//  Base typography
+//  ---------------------------------------------
+
+.lib-typography__base() {
+    html {
+        .lib-css(font-size, @root__font-size);
+        -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+                font-size-adjust: 100%;
+    }
+
+    body {
+        .lib-typography();
+    }
+
+    p {
+        & {
+            .lib-font-size-value(@p__margin-top);
+            .lib-css(margin-top, @fontValue);
+        }
+
+        & {
+            .lib-font-size-value(@p__margin-bottom);
+            .lib-css(margin-bottom, @fontValue);
+        }
+    }
+
+    //  Abbreviations and acronyms
+    abbr[title] {
+        cursor: help;
+        .lib-css(border-bottom, 1px dotted @abbr__border-color);
+    }
+
+    b,
+    strong {
+        .lib-css(font-weight, @font-weight__bold);
+    }
+
+    em,
+    i {
+        .lib-css(font-style, @font-style__emphasis);
+    }
+
+    mark {
+        .lib-css(background, @mark__background-color);
+        .lib-css(color, @mark__color);
+    }
+
+    small,
+    .small {
+        .lib-css(font-size, @font-size__s);
+    }
+
+    hr {
+        border: 0;
+        .lib-css(border-top, @hr__border-width @hr__border-style @hr__border-color);
+        .lib-css(margin-bottom, @line-height__computed);
+        .lib-css(margin-top, @line-height__computed);
+    }
+
+    sub,
+    sup {
+        .lib-css(font-size, (@font-size__xs/@font-size__base)*100%);
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -.5em;
+    }
+
+    sub {
+        bottom: -.25em;
+    }
+
+    dfn {
+        .lib-css(font-style, @font-style__emphasis);
+    }
+}
+
+//
+//  Headings
+//  ---------------------------------------------
+
+.lib-typography-headings() {
+    h1 {
+        .lib-heading(h1);
+    }
+
+    h2 {
+        .lib-heading(h2);
+    }
+
+    h3 {
+        .lib-heading(h3);
+    }
+
+    h4 {
+        .lib-heading(h4);
+    }
+
+    h5 {
+        .lib-heading(h5);
+    }
+
+    h6 {
+        .lib-heading(h6);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        small,
+        .small {
+            .lib-typography(
+                @heading__small-size,
+                @heading__small-color,
+                @_line-height: @heading__small-line-height
+            );
+        }
+    }
+}
+
+//
+//  Links
+//  ---------------------------------------------
+
+.lib-typography-links() {
+    a,
+    .alink {
+        .lib-link();
+    }
+}
+
+//
+//  Unordered and Ordered lists
+//  ---------------------------------------------
+
+.lib-typography-lists() {
+    ul,
+    ol {
+        & {
+            .lib-font-size-value(@list__margin-top);
+            .lib-css(margin-top, @fontValue);
+        }
+
+        & {
+            .lib-font-size-value(@list__margin-bottom);
+            .lib-css(margin-bottom, @fontValue);
+        }
+
+        //.lib-typography(@list__font-size__base, @list__color__base);
+        > li {
+            & {
+                .lib-font-size-value(@list-item__margin-top);
+                .lib-css(margin-top, @fontValue);
+            }
+
+            & {
+                .lib-font-size-value(@list-item__margin-bottom);
+                .lib-css(margin-bottom, @fontValue);
+            }
+        }
+
+        ul,
+        ol {
+            margin-bottom: 0;
+        }
+    }
+
+    dl {
+        .lib-css(margin-bottom, @dl__margin-bottom);
+        .lib-css(margin-top, @dl__margin-top);
+    }
+
+    dt {
+        .lib-css(font-weight, @dt__font-weight);
+        .lib-css(margin-bottom, @dt__margin-bottom);
+        .lib-css(margin-top, @dt__margin-top);
+    }
+
+    dd {
+        .lib-css(margin-bottom, @dd__margin-bottom);
+        .lib-css(margin-top, @dd__margin-top);
+        margin-left: 0;
+    }
+}
+
+//
+//  Code (inline and block)
+//  ---------------------------------------------
+
+.lib-typography-code() {
+    code,
+    kbd,
+    pre,
+    samp {
+        .lib-css(font-family, @font-family__monospace);
+    }
+
+    //  Inline code
+    code {
+        .lib-css(background, @code__background-color);
+        .lib-css(color, @code__color);
+        .lib-css(padding, @code__padding);
+        .lib-font-size(@code__font-size);
+        white-space: nowrap;
+    }
+
+    //  User input typically entered via keyboard
+    kbd {
+        .lib-css(background, @kbd__background-color);
+        .lib-css(color, @kbd__color);
+        .lib-css(padding, @code__padding);
+        .lib-font-size(@code__font-size);
+    }
+
+    //  Blocks of code
+    pre {
+        .lib-css(background, @pre__background-color);
+        .lib-css(border, @pre__border-width solid @pre__border-color);
+        .lib-css(color, @pre__color);
+        .lib-css(line-height, @line-height__base);
+        .lib-css(margin, 0 0 @indent__s);
+        .lib-css(padding, @indent__s);
+        .lib-font-size (@code__font-size);
+        display: block;
+        word-wrap: break-word;
+
+        code {
+            background-color: transparent;
+            border-radius: 0;
+            color: inherit;
+            font-size: inherit;
+            padding: 0;
+            white-space: pre-wrap;
+        }
+    }
+}
+
+//
+//  Blockquotes
+//  ---------------------------------------------
+
+.lib-typography-blockquote() {
+    blockquote {
+        .lib-css(border-left, @blockquote__border-width solid @blockquote__border-color);
+        .lib-css(margin, @blockquote__margin);
+        .lib-css(padding, @blockquote__padding);
+        .lib-typography(
+            @_font-size: @blockquote__font-size,
+            @_font-style: @blockquote__font-style
+        );
+
+        p,
+        ul,
+        ol {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        footer,
+        small,
+        .small {
+            .lib-css(color, @blockquote-small__color);
+            .lib-css(line-height, @line-height__base);
+            .lib-font-size(@blockquote-small__font-size);
+            display: block;
+            &:before {
+                .lib-css(content, @blockquote__content-before);
+            }
+        }
+
+        cite {
+            .lib-css(font-style, @cite__font-style);
+        }
+    }
+
+    //  Quotes
+    blockquote:before,
+    blockquote:after {
+        content: '';
+    }
+
+    q {
+        quotes: none;
+    }
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+
+    //  Undo browser default styling
+    cite {
+        .lib-css(font-style, @cite__font-style);
+    }
+}
+
+.lib-typography-all() {
+    .lib-typography__base();
+    .lib-typography-headings();
+    .lib-typography-links();
+    .lib-typography-lists();
+    .lib-typography-code();
+    .lib-typography-blockquote();
+}
