@@ -13,7 +13,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
 & when ($media-common = true) {
 
 .columns {
-    #lib-layout-columns();
+    @include lib-layout-columns();
 
     .column.main {
         &:extend(.abs-add-box-sizing all);
@@ -106,13 +106,13 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .column.main {
-        #lib-layout-columns > .main();
+        @include lib-layout-columns__main();
         &:extend(.abs-add-box-sizing-desktop all);
         min-height: 300px;
     }
 
     .sidebar-main {
-        #lib-layout-columns > .left();
+        @include lib-layout-columns__left();
         padding-right: $layout-column-main__sidebar-offset;
         &:extend(.abs-add-box-sizing-desktop all);
     }
@@ -123,7 +123,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .sidebar-additional {
-        #lib-layout-columns > .right();
+        @include lib-layout-columns__right();
         padding-left: $layout-column__additional-sidebar-offset;
         clear: right;
         &:extend(.abs-add-box-sizing-desktop all);
