@@ -8,27 +8,27 @@
 //  _____________________________________________
 
 @mixin lib-tooltip(
-    $_tooltip-position: top,
-    $_tooltip-selector-toggle: ".tooltip-toggle",
+    $_tooltip-position        : top,
+    $_tooltip-selector-toggle : ".tooltip-toggle",
     $_tooltip-selector-content: ".tooltip-content",
-    $_tooltip-background: $tooltip__background,
-    $_tooltip-border-color: $tooltip__border-color,
-    $_tooltip-border-width: $tooltip__border-width,
-    $_tooltip-border-radius: $tooltip__border-radius,
-    $_tooltip-color: $tooltip__color,
-    $_tooltip-cursor: $tooltip__cursor,
-    $_tooltip-font-size: $tooltip__font-size,
-    $_tooltip-font-family: $tooltip__font-family,
-    $_tooltip-font-weight: $tooltip__font-weight,
-    $_tooltip-line-height: $tooltip__line-height,
-    $_tooltip-font-style: $tooltip__font-style,
-    $_tooltip-margin: $tooltip__margin,
-    $_tooltip-padding: $tooltip__padding,
-    $_tooltip-min-width: $tooltip__min-width,
-    $_tooltip-max-width: $tooltip__max-width,
-    $_tooltip-arrow-size: $tooltip-arrow__size,
-    $_tooltip-arrow-offset: $tooltip-arrow__offset,
-    $_tooltip-z-index: $tooltip__z-index
+    $_tooltip-background      : $tooltip__background,
+    $_tooltip-border-color    : $tooltip__border-color,
+    $_tooltip-border-width    : $tooltip__border-width,
+    $_tooltip-border-radius   : $tooltip__border-radius,
+    $_tooltip-color           : $tooltip__color,
+    $_tooltip-cursor          : $tooltip__cursor,
+    $_tooltip-font-size       : $tooltip__font-size,
+    $_tooltip-font-family     : $tooltip__font-family,
+    $_tooltip-font-weight     : $tooltip__font-weight,
+    $_tooltip-line-height     : $tooltip__line-height,
+    $_tooltip-font-style      : $tooltip__font-style,
+    $_tooltip-margin          : $tooltip__margin,
+    $_tooltip-padding         : $tooltip__padding,
+    $_tooltip-min-width       : $tooltip__min-width,
+    $_tooltip-max-width       : $tooltip__max-width,
+    $_tooltip-arrow-size      : $tooltip-arrow__size,
+    $_tooltip-arrow-offset    : $tooltip-arrow__offset,
+    $_tooltip-z-index         : $tooltip__z-index
 ) {
     position: relative;
 
@@ -45,15 +45,15 @@
         text-align: left;
 
         @include lib-typography(
-            $_color: $_tooltip-color,
-            $_font-size: $_tooltip-font-size,
+            $_color      : $_tooltip-color,
+            $_font-size  : $_tooltip-font-size,
             $_font-family: $_tooltip-font-family,
             $_font-weight: $_tooltip-font-weight,
             $_line-height: $_tooltip-line-height,
-            $_font-style: $_tooltip-font-style
+            $_font-style : $_tooltip-font-style
         );
 
-        ._lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
+        @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
 
         $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1px;
         $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1px;
@@ -77,7 +77,7 @@
             border-color: transparent;
         }
 
-        ._lib-tooltip-arrow-position(
+        @include _lib-tooltip-arrow-position(
             $_tooltip-position,
             $_tooltip-arrow-size,
             $_tooltip-background,
@@ -99,14 +99,16 @@
     }
 }
 
-._lib-tooltip-border(
+@mixin _lib-tooltip-border(
     $_tooltip-border-width,
     $_tooltip-border-color
-) when not ($_tooltip-border-width = 0) and not ($_tooltip-border-width = false) and not ($_tooltip-border-color = false) {
-    @include lib-css(border, $_tooltip-border-width solid $_tooltip-border-color);
+) {
+    @if $_tooltip-border-width != 0 &&  $_tooltip-border-width != false && $_tooltip-border-color != false {
+        @include lib-css(border, $_tooltip-border-width solid $_tooltip-border-color);
+    }
 }
 
-._lib-tooltip-arrow-position(
+@mixin _lib-tooltip-arrow-position(
     $_tooltip-position,
     $_tooltip-arrow-size,
     $_tooltip-background,
@@ -114,117 +116,92 @@
     $_tooltip-arrow-before-margin,
     $_tooltip-arrow-offset,
     $_tooltip-border-color
-) when ($_tooltip-position = top) {
-    @include lib-css(margin-bottom, $_tooltip-arrow-size);
-    bottom: 100%;
-    left: 0;
-
-    &:after,
-    &:before {
-        top: 100%;
-    }
-    &:after {
-        @include lib-css(border-top-color, $_tooltip-background);
-        @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-        @include lib-css(margin-left, $_tooltip-arrow-after-margin);
-    }
-
-    &:before {
-        @include lib-css(border-top-color, $_tooltip-border-color);
-        @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-        @include lib-css(margin-left, $_tooltip-arrow-before-margin);
-    }
-}
-
-._lib-tooltip-arrow-position(
-    $_tooltip-position,
-    $_tooltip-arrow-size,
-    $_tooltip-background,
-    $_tooltip-arrow-after-margin,
-    $_tooltip-arrow-before-margin,
-    $_tooltip-arrow-offset,
-    $_tooltip-border-color
-) when ($_tooltip-position = left) {
-    @include lib-css(margin-right, $_tooltip-arrow-size);
-    right: 100%;
-    top: 0;
-
-    &:after,
-    &:before {
-        left: 100%;
-    }
-
-    &:after {
-        @include lib-css(border-left-color, $_tooltip-background);
-        @include lib-css(margin-top, $_tooltip-arrow-after-margin);
-        .lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size)
-    }
-
-    &:before {
-        @include lib-css(border-left-color, $_tooltip-border-color);
-        @include lib-css(margin-top, $_tooltip-arrow-before-margin);
-        @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-    }
-}
-
-._lib-tooltip-arrow-position(
-    $_tooltip-position,
-    $_tooltip-arrow-size,
-    $_tooltip-background,
-    $_tooltip-arrow-after-margin,
-    $_tooltip-arrow-before-margin,
-    $_tooltip-arrow-offset,
-    $_tooltip-border-color
-) when ($_tooltip-position = right) {
-    @include lib-css(margin-left, $_tooltip-arrow-size);
-    left: 100%;
-    top: 0;
-
-    &:after,
-    &:before {
-        right: 100%;
-    }
-
-    &:after {
-        @include lib-css(border-right-color, $_tooltip-background);
-        @include lib-css(margin-top, $_tooltip-arrow-after-margin);
-        @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-    }
-
-    &:before {
-        @include lib-css(border-right-color, $_tooltip-border-color);
-        @include lib-css(margin-top, $_tooltip-arrow-before-margin);
-        @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-    }
-}
-
-._lib-tooltip-arrow-position(
-    $_tooltip-position,
-    $_tooltip-arrow-size,
-    $_tooltip-background,
-    $_tooltip-arrow-after-margin,
-    $_tooltip-arrow-before-margin,
-    $_tooltip-arrow-offset,
-    $_tooltip-border-color
-) when ($_tooltip-position = bottom) {
-    @include lib-css(margin-top, $_tooltip-arrow-size);
-    left: 0;
-    top: 100%;
-
-    &:after,
-    &:before {
+) {
+    @if $_tooltip-position == top {
+        @include lib-css(margin-bottom, $_tooltip-arrow-size);
         bottom: 100%;
-    }
+        left: 0;
 
-    &:after {
-        @include lib-css(border-bottom-color, $_tooltip-background);
-        @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-        @include lib-css(margin-left, $_tooltip-arrow-after-margin);
-    }
+        &:after,
+        &:before {
+            top: 100%;
+        }
+        &:after {
+            @include lib-css(border-top-color, $_tooltip-background);
+            @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+            @include lib-css(margin-left, $_tooltip-arrow-after-margin);
+        }
 
-    &:before {
-        @include lib-css(border-bottom-color, $_tooltip-border-color);
-        @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
-        @include lib-css(margin-left, $_tooltip-arrow-before-margin);
+        &:before {
+            @include lib-css(border-top-color, $_tooltip-border-color);
+            @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+            @include lib-css(margin-left, $_tooltip-arrow-before-margin);
+        }
+    }
+    @else if $_tooltip-position == left {
+        @include lib-css(margin-right, $_tooltip-arrow-size);
+        right: 100%;
+        top: 0;
+
+        &:after,
+        &:before {
+            left: 100%;
+        }
+
+        &:after {
+            @include lib-css(border-left-color, $_tooltip-background);
+            @include lib-css(margin-top, $_tooltip-arrow-after-margin);
+            @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size)
+        }
+
+        &:before {
+            @include lib-css(border-left-color, $_tooltip-border-color);
+            @include lib-css(margin-top, $_tooltip-arrow-before-margin);
+            @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+        }
+    }
+    @else if $_tooltip-position == right {
+        @include lib-css(margin-left, $_tooltip-arrow-size);
+        left: 100%;
+        top: 0;
+
+        &:after,
+        &:before {
+            right: 100%;
+        }
+
+        &:after {
+            @include lib-css(border-right-color, $_tooltip-background);
+            @include lib-css(margin-top, $_tooltip-arrow-after-margin);
+            @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+        }
+
+        &:before {
+            @include lib-css(border-right-color, $_tooltip-border-color);
+            @include lib-css(margin-top, $_tooltip-arrow-before-margin);
+            @include lib-css(top, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+        }
+    }
+    @else if $_tooltip-position == bottom {
+        @include lib-css(margin-top, $_tooltip-arrow-size);
+        left: 0;
+        top: 100%;
+
+        &:after,
+        &:before {
+            bottom: 100%;
+        }
+
+        &:after {
+            @include lib-css(border-bottom-color, $_tooltip-background);
+            @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+            @include lib-css(margin-left, $_tooltip-arrow-after-margin);
+        }
+
+        &:before {
+            @include lib-css(border-bottom-color, $_tooltip-border-color);
+            @include lib-css(left, $_tooltip-arrow-offset + $_tooltip-arrow-size);
+            @include lib-css(margin-left, $_tooltip-arrow-before-margin);
+        }
     }
 }
