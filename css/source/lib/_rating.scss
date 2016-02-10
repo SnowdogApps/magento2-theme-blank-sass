@@ -9,18 +9,18 @@
 
 //  Rating-vote mixin
 @mixin lib-rating-vote(
-    $_icon-count: $rating-icon__count,
-    $_icon-content: $rating-icon__content,
-    $_icon-font: $rating-icon__font,
-    $_icon-font-size: $rating-icon__font-size,
+    $_icon-count         : $rating-icon__count,
+    $_icon-content       : $rating-icon__content,
+    $_icon-font          : $rating-icon__font,
+    $_icon-font-size     : $rating-icon__font-size,
     $_icon-letter-spacing: $rating-icon__letter-spacing,
-    $_icon-color: $rating-icon__color,
-    $_icon-color-active: $rating-icon__active__color
+    $_icon-color         : $rating-icon__color,
+    $_icon-color-active  : $rating-icon__active__color
 ) {
     overflow: hidden;
 
     &:before {
-        ._lib-rating-icon-defalt(
+        @include _lib-rating-icon-defalt(
             $_icon-font,
             $_icon-font-size,
             $_icon-letter-spacing,
@@ -58,7 +58,7 @@
         }
 
         &:before {
-            ._lib-rating-icon-defalt(
+            @include _lib-rating-icon-defalt(
                 $_icon-font,
                 $_icon-font-size,
                 $_icon-letter-spacing,
@@ -80,7 +80,7 @@
         }
     }
 
-    ._lib-rating-iteration(
+    @include _lib-rating-iteration(
         $_icon-content,
         $_icon-count
     );
@@ -88,18 +88,18 @@
 
 //  Rating-summary mixin
 @mixin lib-rating-summary(
-    $_icon-count: $rating-icon__count,
-    $_icon-content: $rating-icon__content,
-    $_icon-font: $rating-icon__font,
-    $_icon-font-size: $rating-icon__font-size,
+    $_icon-count         : $rating-icon__count,
+    $_icon-content       : $rating-icon__content,
+    $_icon-font          : $rating-icon__font,
+    $_icon-font-size     : $rating-icon__font-size,
     $_icon-letter-spacing: $rating-icon__letter-spacing,
-    $_icon-color: $rating-icon__color,
-    $_icon-color-active: $rating-icon__active__color,
-    $_label-hide: $rating-label__hide
+    $_icon-color         : $rating-icon__color,
+    $_icon-color-active  : $rating-icon__active__color,
+    $_label-hide         : $rating-label__hide
 ) {
     overflow: hidden;
     white-space: nowrap;
-    ._lib-rating-label-hide($_label-hide);
+    @include _lib-rating-label-hide($_label-hide);
 
     .rating-result {
         @include lib-css(width, ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1)));
@@ -113,7 +113,7 @@
             top: 0;
             width: 100%;
             z-index: 1;
-            ._lib-rating-summary-icon-default(
+            @include _lib-rating-summary-icon-default(
                 $_icon-font,
                 $_icon-font-size,
                 $_icon-letter-spacing,
@@ -130,7 +130,7 @@
             &:before {
                 position: relative;
                 z-index: 2;
-                ._lib-rating-summary-icon-default(
+                @include _lib-rating-summary-icon-default(
                     $_icon-font,
                     $_icon-font-size,
                     $_icon-letter-spacing,
@@ -141,41 +141,37 @@
             }
 
             span {
-                @mixin lib-visually-hidden();
+                @include lib-visually-hidden();
             }
         }
     }
 }
 
-.lib-rating-summary-label-hide() {
+@mixin lib-rating-summary-label-hide() {
     .label {
         @include lib-visually-hidden();
     }
 }
 
 //  Internal use mixins
-._lib-rating-label-hide($_label-hide) when ($_label-hide = true) {
-    @mixin lib-rating-summary-label-hide();
+@mixin _lib-rating-label-hide($_label-hide) {
+    @if $_label-hide == true {
+        @include lib-rating-summary-label-hide();
+    }
 }
 
-._lib-rating-iteration(
+@mixin _lib-rating-iteration(
     $_icon-content,
     $_icon-count
 ) {
-    .loopingClass ($_index) when ($_index > 0) {
+    @for $_index from $_icon-count to 1 {
         .rating-#{$_index} {
             z-index: $_icon-count - ($_index - 2);
-
             &:before {
                @include lib-rating-icons-content($_index, $_icon-content);
             }
         }
-        //  Next iteration
-        @include loopingClass($_index - 1);
     }
-
-    .loopingClass (0) {}
-    @include loopingClass ($_icon-count);
 }
 
 @mixin _lib-rating-icon-defalt(
@@ -219,10 +215,12 @@
     speak: none;
 }
 
-.lib-rating-icons-content(
-    $_icon-count: $rating-icon__count,
+@mixin lib-rating-icons-content(
+    $_icon-count  : $rating-icon__count,
     $_icon-content: $rating-icon__content
-) when ($_icon-count > 0) {
-    @include lib-rating-icons-content(($_icon-count - 1),$_icon-content);
-    content+_: $_icon-content;
+) {
+    @if $_icon-count > 0 {
+        @include lib-rating-icons-content(($_icon-count - 1), $_icon-content);
+        content: $_icon-content;
+    }
 }
