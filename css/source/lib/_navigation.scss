@@ -8,50 +8,50 @@
 //  _____________________________________________
 
 @mixin lib-main-navigation(
-    $_nav__indent-side: 15px,
-    $_nav-background-color: $navigation__background,
-    $_nav-border: $navigation__border,
-    $_nav-level0-font-size: $navigation-level0-item__font-size,
-    $_nav-level0-font-weight: $navigation-level0-item__font-weight,
-    $_nav-level0-item-line-height: $navigation-level0-item__line-height,
-    $_nav-level0-item-margin: $navigation-level0-item__margin,
-    $_nav-level0-item-padding: $navigation-level0-item__padding,
-    $_nav-level0-text-transform: $navigation-level0-item__text-transform,
+    $_nav__indent-side                       : 15px,
+    $_nav-background-color                   : $navigation__background,
+    $_nav-border                             : $navigation__border,
+    $_nav-level0-font-size                   : $navigation-level0-item__font-size,
+    $_nav-level0-font-weight                 : $navigation-level0-item__font-weight,
+    $_nav-level0-item-line-height            : $navigation-level0-item__line-height,
+    $_nav-level0-item-margin                 : $navigation-level0-item__margin,
+    $_nav-level0-item-padding                : $navigation-level0-item__padding,
+    $_nav-level0-text-transform              : $navigation-level0-item__text-transform,
 
-    $_nav-level0-item-background-color: $navigation-level0-item__background,
-    $_nav-level0-item-border: $navigation-level0-item__border,
-    $_nav-level0-item-color: $navigation-level0-item__color,
-    $_nav-level0-item-text-decoration: $navigation-level0-item__text-decoration,
+    $_nav-level0-item-background-color       : $navigation-level0-item__background,
+    $_nav-level0-item-border                 : $navigation-level0-item__border,
+    $_nav-level0-item-color                  : $navigation-level0-item__color,
+    $_nav-level0-item-text-decoration        : $navigation-level0-item__text-decoration,
 
     $_nav-level0-item-background-color-active: $navigation-level0-item__active__background,
-    $_nav-level0-item__active__border-color: $navigation-level0-item__active__border-color,
-    $_nav-level0-item__active__border-style: $navigation-level0-item__active__border-style,
-    $_nav-level0-item__active__border-width: $navigation-level0-item__active__border-width,
-    $_nav-level0-item-color-active: $navigation-level0-item__active__color,
-    $_nav-level0-item-text-decoration-active: $navigation-level0-item__active__text-decoration,
+    $_nav-level0-item__active__border-color  : $navigation-level0-item__active__border-color,
+    $_nav-level0-item__active__border-style  : $navigation-level0-item__active__border-style,
+    $_nav-level0-item__active__border-width  : $navigation-level0-item__active__border-width,
+    $_nav-level0-item-color-active           : $navigation-level0-item__active__color,
+    $_nav-level0-item-text-decoration-active : $navigation-level0-item__active__text-decoration,
 
-    $_submenu-background-color: $submenu__background,
-    $_submenu-border: $submenu__border,
-    $_submenu-font-size: $submenu__font-size,
-    $_submenu-font-weight: $submenu__font-weight,
-    $_submenu-line-height: $submenu-item__line-height,
-    $_submenu-item__padding-top: $submenu__padding-top,
-    $_submenu-item__padding-right: $submenu__padding-right,
-    $_submenu-item__padding-bottom: $submenu__padding-bottom,
-    $_submenu-item__padding-left: $submenu__padding-left,
+    $_submenu-background-color               : $submenu__background,
+    $_submenu-border                         : $submenu__border,
+    $_submenu-font-size                      : $submenu__font-size,
+    $_submenu-font-weight                    : $submenu__font-weight,
+    $_submenu-line-height                    : $submenu-item__line-height,
+    $_submenu-item__padding-top              : $submenu__padding-top,
+    $_submenu-item__padding-right            : $submenu__padding-right,
+    $_submenu-item__padding-bottom           : $submenu__padding-bottom,
+    $_submenu-item__padding-left             : $submenu__padding-left,
 
-    $_submenu-item-background-color: $submenu-item__background,
-    $_submenu-item-border: $submenu-item__border,
-    $_submenu-item-color: $submenu-item__color,
-    $_submenu-item-text-decoration: $submenu-item__text-decoration,
+    $_submenu-item-background-color          : $submenu-item__background,
+    $_submenu-item-border                    : $submenu-item__border,
+    $_submenu-item-color                     : $submenu-item__color,
+    $_submenu-item-text-decoration           : $submenu-item__text-decoration,
 
-    $_submenu-item-background-color-active: $submenu-item__active__background,
-    $_submenu-item__active__border: $submenu-item__active__border,
-    $_submenu-item__active__border-color: $submenu-item__active__border-color,
-    $_submenu-item__active__border-style: $submenu-item__active__border-style,
-    $_submenu-item__active__border-width: $submenu-item__active__border-width,
-    $_submenu-item-color-active: $submenu-item__active__color,
-    $_submenu-item-text-decoration-active: $submenu-item__active__text-decoration
+    $_submenu-item-background-color-active   : $submenu-item__active__background,
+    $_submenu-item__active__border           : $submenu-item__active__border,
+    $_submenu-item__active__border-color     : $submenu-item__active__border-color,
+    $_submenu-item__active__border-style     : $submenu-item__active__border-style,
+    $_submenu-item__active__border-width     : $submenu-item__active__border-width,
+    $_submenu-item-color-active              : $submenu-item__active__color,
+    $_submenu-item-text-decoration-active    : $submenu-item__active__text-decoration
 ) {
     .navigation {
         @include lib-css(background, $_nav-background-color);
@@ -85,7 +85,7 @@
             @include lib-css(border-top, $_nav-level0-item-border);
             @include lib-font-size($_nav-level0-font-size);
 
-            > .level-top {
+            & > .level-top {
                 @include lib-css(background, $_nav-level0-item-background-color);
                 @include lib-css(font-weight, $_nav-level0-font-weight);
                 @include lib-css(line-height, $_nav-level0-item-line-height);
@@ -109,13 +109,13 @@
                 }
             }
 
-            > .level1 {
+            & > .level1 {
                 @include lib-css(font-weight, $font-weight__semibold);
             }
 
             &.active,
             &.has-active { // ToDo UI: remove "has_active" here, when mobile navigation default open state is implemented
-                > a:not(.ui-state-active) {
+                & > a:not(.ui-state-active) {
                     @include lib-css(background, $_nav-level0-item-background-color-active);
                     @include lib-css(border-color, $_nav-level0-item__active__border-color);
                     @include lib-css(border-style, $_nav-level0-item__active__border-style);
@@ -137,7 +137,7 @@
         }
 
         .submenu {
-            > li {
+            & > li {
                 word-wrap: break-word;
             }
 
@@ -154,8 +154,8 @@
                 top: auto !important;
                 transition: left .3s ease-out;
 
-                > li {
-                    > a {
+                & > li {
+                    & > a {
                         @include lib-css(padding-left, $_nav__indent-side);
                     }
 
@@ -168,7 +168,7 @@
                     display: block;
                     @include lib-css(padding-left, $_submenu-item__padding-left);
 
-                    > li {
+                    & > li {
                         margin: 0;
 
                         a {
@@ -189,7 +189,7 @@
                 }
 
                 .active {
-                    > a {
+                    & > a {
                         @include lib-css(background, $_submenu-item-background-color-active);
                         @include lib-css(border-color, $_submenu-item__active__border-color);
                         @include lib-css(border-style, $_submenu-item__active__border-style);
@@ -202,7 +202,7 @@
 
                 .level1 {
                     &.active {
-                        > a {
+                        & > a {
                             @include lib-css(padding-left, $_nav__indent-side - $_submenu-item__active__border);
                         }
                     }
@@ -217,63 +217,63 @@
 //  _____________________________________________
 
 @mixin lib-main-navigation-desktop(
-    $_nav-background-color: $navigation-desktop__background,
-    $_nav-border: $navigation-desktop__border,
-    $_nav-font-size: $navigation-desktop__font-size,
-    $_nav-font-weight: $navigation-desktop__font-weight,
+    $_nav-background-color                   : $navigation-desktop__background,
+    $_nav-border                             : $navigation-desktop__border,
+    $_nav-font-size                          : $navigation-desktop__font-size,
+    $_nav-font-weight                        : $navigation-desktop__font-weight,
 
-    $_nav-level0-item-line-height: $navigation-desktop-level0-item__line-height,
-    $_nav-level0-item-margin: $navigation-desktop-level0-item__margin,
-    $_nav-level0-item-padding: $navigation-desktop-level0-item__padding,
+    $_nav-level0-item-line-height            : $navigation-desktop-level0-item__line-height,
+    $_nav-level0-item-margin                 : $navigation-desktop-level0-item__margin,
+    $_nav-level0-item-padding                : $navigation-desktop-level0-item__padding,
 
-    $_nav-level0-item-background-color: $navigation-desktop-level0-item__background,
-    $_nav-level0-item-border: $navigation-desktop-level0-item__border,
-    $_nav-level0-item-color: $navigation-desktop-level0-item__color,
-    $_nav-level0-item-text-decoration: $navigation-desktop-level0-item__text-decoration,
+    $_nav-level0-item-background-color       : $navigation-desktop-level0-item__background,
+    $_nav-level0-item-border                 : $navigation-desktop-level0-item__border,
+    $_nav-level0-item-color                  : $navigation-desktop-level0-item__color,
+    $_nav-level0-item-text-decoration        : $navigation-desktop-level0-item__text-decoration,
 
-    $_nav-level0-item-background-color-hover: $navigation-desktop-level0-item__hover__background,
-    $_nav-level0-item-border-hover: $navigation-desktop-level0-item__hover__border,
-    $_nav-level0-item-color-hover: $navigation-desktop-level0-item__hover__color,
-    $_nav-level0-item-text-decoration-hover: $navigation-desktop-level0-item__hover__text-decoration,
+    $_nav-level0-item-background-color-hover : $navigation-desktop-level0-item__hover__background,
+    $_nav-level0-item-border-hover           : $navigation-desktop-level0-item__hover__border,
+    $_nav-level0-item-color-hover            : $navigation-desktop-level0-item__hover__color,
+    $_nav-level0-item-text-decoration-hover  : $navigation-desktop-level0-item__hover__text-decoration,
 
     $_nav-level0-item-background-color-active: $navigation-desktop-level0-item__active__background,
-    $_nav-level0-item__active__border-color: $navigation-desktop-level0-item__active__border-color,
-    $_nav-level0-item__active__border-style: $navigation-desktop-level0-item__active__border-style,
-    $_nav-level0-item__active__border-width: $navigation-desktop-level0-item__active__border-width,
-    $_nav-level0-item-color-active: $navigation-desktop-level0-item__active__color,
-    $_nav-level0-item-text-decoration-active: $navigation-desktop-level0-item__active__text-decoration,
+    $_nav-level0-item__active__border-color  : $navigation-desktop-level0-item__active__border-color,
+    $_nav-level0-item__active__border-style  : $navigation-desktop-level0-item__active__border-style,
+    $_nav-level0-item__active__border-width  : $navigation-desktop-level0-item__active__border-width,
+    $_nav-level0-item-color-active           : $navigation-desktop-level0-item__active__color,
+    $_nav-level0-item-text-decoration-active : $navigation-desktop-level0-item__active__text-decoration,
 
-    $_submenu-background-color: $submenu-desktop__background,
-    $_submenu-border-width: $submenu-desktop__border-width,
-    $_submenu-border-style: $submenu-desktop__border-style,
-    $_submenu-border-color: $submenu-desktop__border-color,
-    $_submenu-box-shadow: $submenu-desktop__box-shadow,
-    $_submenu-font-size: $submenu-desktop__font-size,
-    $_submenu-font-weight: $submenu-desktop__font-weight,
-    $_submenu-min-width: $submenu-desktop__min-width,
-    $_submenu-padding: $submenu-desktop__padding,
+    $_submenu-background-color               : $submenu-desktop__background,
+    $_submenu-border-width                   : $submenu-desktop__border-width,
+    $_submenu-border-style                   : $submenu-desktop__border-style,
+    $_submenu-border-color                   : $submenu-desktop__border-color,
+    $_submenu-box-shadow                     : $submenu-desktop__box-shadow,
+    $_submenu-font-size                      : $submenu-desktop__font-size,
+    $_submenu-font-weight                    : $submenu-desktop__font-weight,
+    $_submenu-min-width                      : $submenu-desktop__min-width,
+    $_submenu-padding                        : $submenu-desktop__padding,
 
-    $_submenu-arrow: $submenu-desktop-arrow,
-    $_submenu-arrow-size: $submenu-desktop-arrow__size,
-    $_submenu-arrow-left: $submenu-desktop-arrow__left,
+    $_submenu-arrow                          : $submenu-desktop-arrow,
+    $_submenu-arrow-size                     : $submenu-desktop-arrow__size,
+    $_submenu-arrow-left                     : $submenu-desktop-arrow__left,
 
-    $_submenu-item-padding: $submenu-desktop-item__padding,
-    $_submenu-item-background-color: $submenu-desktop-item__background,
-    $_submenu-item-border: $submenu-desktop-item__border,
-    $_submenu-item-color: $submenu-desktop-item__color,
-    $_submenu-item-text-decoration: $submenu-desktop-item__text-decoration,
+    $_submenu-item-padding                   : $submenu-desktop-item__padding,
+    $_submenu-item-background-color          : $submenu-desktop-item__background,
+    $_submenu-item-border                    : $submenu-desktop-item__border,
+    $_submenu-item-color                     : $submenu-desktop-item__color,
+    $_submenu-item-text-decoration           : $submenu-desktop-item__text-decoration,
 
-    $_submenu-item__hover__background-color: $submenu-desktop-item__hover__background,
-    $_submenu-item-border-hover: $submenu-desktop-item__hover__border,
-    $_submenu-item-color-hover: $submenu-desktop-item__hover__color,
-    $_submenu-item-text-decoration-hover: $submenu-desktop-item__hover__text-decoration,
+    $_submenu-item__hover__background-color  : $submenu-desktop-item__hover__background,
+    $_submenu-item-border-hover              : $submenu-desktop-item__hover__border,
+    $_submenu-item-color-hover               : $submenu-desktop-item__hover__color,
+    $_submenu-item-text-decoration-hover     : $submenu-desktop-item__hover__text-decoration,
 
-    $_submenu-item-background-color-active: $submenu-desktop-item__active__background,
-    $_submenu-item__active__border-color: $submenu-desktop-item__active__border-color,
-    $_submenu-item__active__border-style: $submenu-desktop-item__active__border-style,
-    $_submenu-item__active__border-width: $submenu-desktop-item__active__border-width,
-    $_submenu-item-color-active: $submenu-desktop-item__active__color,
-    $_submenu-item-text-decoration-active: $submenu-desktop-item__active__text-decoration
+    $_submenu-item-background-color-active   : $submenu-desktop-item__active__background,
+    $_submenu-item__active__border-color     : $submenu-desktop-item__active__border-color,
+    $_submenu-item__active__border-style     : $submenu-desktop-item__active__border-style,
+    $_submenu-item__active__border-width     : $submenu-desktop-item__active__border-width,
+    $_submenu-item-color-active              : $submenu-desktop-item__active__color,
+    $_submenu-item-text-decoration-active    : $submenu-desktop-item__active__text-decoration
 ) {
 
     .navigation {
@@ -315,7 +315,7 @@
                 padding-right: 0;
             }
 
-            > .level-top {
+            & > .level-top {
                 @include lib-css(background, $_nav-level0-item-background-color);
                 @include lib-css(border, $_nav-level0-item-border);
                 @include lib-css(color, $_nav-level0-item-color);
@@ -335,7 +335,7 @@
 
             &.active,
             &.has-active {
-                > .level-top {
+                & > .level-top {
                     @include lib-css(background, $_nav-level0-item-background-color-active);
                     @include lib-css(border-color, $_nav-level0-item__active__border-color);
                     @include lib-css(border-style, $_nav-level0-item__active__border-style);
@@ -365,12 +365,12 @@
                 position: absolute;
                 z-index: 1;
 
-                ._lib-submenu-arrow(
+                @include _lib-submenu-arrow(
                     $_submenu-arrow,
-                    $_bg: $_submenu-background-color,
+                    $_bg    : $_submenu-background-color,
                     $_border: $_submenu-border-color,
-                    $_size: $_submenu-arrow-size,
-                    $_left: $_submenu-arrow-left
+                    $_size  : $_submenu-arrow-size,
+                    $_left  : $_submenu-arrow-left
                 );
 
                 a {
@@ -443,81 +443,83 @@
 }
 
 //  Submenu arrow
-._lib-submenu-arrow(
+@mixin _lib-submenu-arrow(
     $_submenu-arrow,
     $_bg,
     $_border,
     $_size,
     $_left
-) when ($_submenu-arrow = true) {
-    & when (iscolor($_bg)) and (iscolor($_border)) {
-        $_outer-size: $_size + 1;
-        $_outer-left: $_left - 1;
-        @include lib-css(margin-top, $_outer-size);
-
-        > ul {
+) {
+    @if $_submenu-arrow == true {
+        @if iscolor($_bg) && iscolor($_border) {
+            $_outer-size: $_size + 1;
+            $_outer-left: $_left - 1;
             @include lib-css(margin-top, $_outer-size);
 
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                overflow: hidden;
-                position: absolute;
-            }
+            > ul {
+                @include lib-css(margin-top, $_outer-size);
 
-            &:before {
-                @include lib-css(color, $_bg);
-                @include lib-css(left, $_left);
-                @include lib-css(top, -$_size*2);
-                @include lib-arrow(up, $_size, $_bg);
-                z-index: 4;
-            }
+                &:before,
+                &:after {
+                    content: '';
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                }
 
-            &:after {
-                @include lib-arrow(up, $_outer-size, $_border);
-                @include lib-css(color, $_border);
-                @include lib-css(left, $_outer-left);
-                @include lib-css(top, -$_outer-size*2);
-                z-index: 3;
-            }
-        }
-    }
-    & when (iscolor($_bg)) and not (iscolor($_border)) {
-        @include lib-css(margin-top, -$_size);
+                &:before {
+                    @include lib-css(color, $_bg);
+                    @include lib-css(left, $_left);
+                    @include lib-css(top, -$_size*2);
+                    @include lib-arrow(up, $_size, $_bg);
+                    z-index: 4;
+                }
 
-        > ul {
-            @include lib-css(margin-top, $_size);
-
-            &:before {
-                @include lib-arrow(up, $_size, $_bg);
-                @include lib-css(color, $_bg);
-                @include lib-css(left, $_left);
-                @include lib-css(top, -$_size*2);
-                content: '';
-                display: block;
-                overflow: hidden;
-                position: absolute;
-                z-index: 4;
+                &:after {
+                    @include lib-arrow(up, $_outer-size, $_border);
+                    @include lib-css(color, $_border);
+                    @include lib-css(left, $_outer-left);
+                    @include lib-css(top, -$_outer-size*2);
+                    z-index: 3;
+                }
             }
         }
-    }
-    & when (iscolor($_border)) and not (iscolor($_bg)) {
-        @include lib-css(margin-top, -$_size);
+        @else if iscolor($_bg) && iscolor($_border) {
+            @include lib-css(margin-top, -$_size);
 
-        > ul {
-            @include lib-css(margin-top, $_size);
+            > ul {
+                @include lib-css(margin-top, $_size);
 
-            &:before {
-                @include lib-arrow(up, $_size, $_border);
-                @include lib-css(color, $_border);
-                @include lib-css(left, $_left);
-                @include lib-css(top, -$_size*2);
-                content: '';
-                display: block;
-                overflow: hidden;
-                position: absolute;
-                z-index: 4;
+                &:before {
+                    @include lib-arrow(up, $_size, $_bg);
+                    @include lib-css(color, $_bg);
+                    @include lib-css(left, $_left);
+                    @include lib-css(top, -$_size*2);
+                    content: '';
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 4;
+                }
+            }
+        }
+        @else if iscolor($_border) && iscolor($_bg) {
+            @include lib-css(margin-top, -$_size);
+
+            > ul {
+                @include lib-css(margin-top, $_size);
+
+                &:before {
+                    @include lib-arrow(up, $_size, $_border);
+                    @include lib-css(color, $_border);
+                    @include lib-css(left, $_left);
+                    @include lib-css(top, -$_size*2);
+                    content: '';
+                    display: block;
+                    overflow: hidden;
+                    position: absolute;
+                    z-index: 4;
+                }
             }
         }
     }
