@@ -253,12 +253,12 @@
 
     & > *:first-child:before {
         @include _lib-icon-font(
-            $_icon-font-content: $_message-icon,
-            $_icon-font: $icon-font,
-            $_icon-font-size: $message-icon__font-size,
-            $_icon-font-line-height: $message-icon__font-line-height,
-            $_icon-font-color: $_message-icon-color,
-            $_icon-font-margin: -$message-icon__font-size/2 0 0,
+            $_icon-font-content       : $_message-icon,
+            $_icon-font               : $icon-font,
+            $_icon-font-size          : $message-icon__font-size,
+            $_icon-font-line-height   : $message-icon__font-line-height,
+            $_icon-font-color         : $_message-icon-color,
+            $_icon-font-margin        : -$message-icon__font-size/2 0 0,
             $_icon-font-vertical-align: $icon-font__vertical-align
         );
         @include lib-css(bottom, $_message-icon-bottom);
