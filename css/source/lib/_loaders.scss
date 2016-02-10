@@ -32,9 +32,8 @@
     position: fixed;
     right: 0;
     top: 0;
-
     &:before {
-        ._lib-loader-text($_loader-text);
+        @include _lib-loader-text($_loader-text);
         @include lib-css(background, $_loader-icon-background-color $_loader-icon-background-image no-repeat $_loader-icon-background-position);
         @include lib-css(border-radius, $_loader-icon-border-radius);
         @include lib-css(height, $_loader-icon-height);
@@ -51,21 +50,20 @@
     }
 }
 
-._lib-loader-text(
-    $_loader-text
-) when ($_loader-text = true) {
-    @include lib-css(padding, $_loader-text-padding);
-    content: attr(data-text);
-    text-align: center;
-    vertical-align: baseline;
-
-    @include lib-typography(
-        $_color: $_loader-text-color,
-        $_font-size: $_loader-text-font-size,
-        $_font-family: $_loader-text-font-family,
-        $_font-weight: $_loader-text-font-weight,
-        $_font-style: $_loader-text-font-style
-    );
+@mixin _lib-loader-text($_loader-text) {
+    @if $_loader-text == true {
+        @include lib-css(padding, $_loader-text-padding);
+        content: attr(data-text);
+        text-align: center;
+        vertical-align: baseline;
+        @include lib-typography(
+            $_color: $_loader-text-color,
+            $_font-size: $_loader-text-font-size,
+            $_font-family: $_loader-text-font-family,
+            $_font-weight: $_loader-text-font-weight,
+            $_font-style: $_loader-text-font-style
+        );
+    }
 }
 
 @mixin lib-loading(
@@ -73,7 +71,6 @@
     $_loading-background-image: $loading__background-image
 ) {
     position: relative;
-
     &:before {
         @include lib-css(background, $_loading-background-color $_loading-background-image no-repeat 50% 50%);
         bottom: 0;
@@ -85,7 +82,7 @@
     }
 }
 
-.lib-loading-mask() {
+@mixin lib-loading-mask() {
     bottom: 0;
     left: 0;
     margin: auto;
