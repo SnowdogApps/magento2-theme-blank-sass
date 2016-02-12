@@ -73,129 +73,80 @@
 //  Gradient
 //  ---------------------------------------------
 
-#lib-gradient {
-    //  Horizontal gradient, from left to right
-    //  Creates two color stops, start and end, by specifying a color and position for each color stop.
-    //  Color stops are not available in IE9 and below.
-    //  Filters are enabled
-    .horizontal(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when not ($disable-filters) and ($_background-color-position = true) {
-        background-color: $_end-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
+@mixin lib-gradient__horizontal(
+    $_start-color,
+    $_end-color,
+    $_start-percent            : 0%,
+    $_end-percent              : 100%,
+    $_background-color-position: true
+) {
+    @if $disable-filters == true {
+        @if $_background-color-position == true {
+            background-color: $_end-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        }
+        @else if $_background-color-position == false {
+            background-color: $_start-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        }
     }
-
-    .horizontal(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when not ($disable-filters) and ($_background-color-position = false) {
-        background-color: $_start-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
+    @else if $disable-filters == false {
+        @if $_background-color-position == true {
+            background-color: $_end-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
+        }
+        @else if $_background-color-position == false {
+            background-color: $_start-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
+        }
     }
-
-    //  Horizontal gradient, from left to right
-    //  Creates two color stops, start and end, by specifying a color and position for each color stop.
-    //  Color stops are not available in IE9 and below.
-    //  Filters are disabled
-    .horizontal(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when ($disable-filters) and ($_background-color-position = true) {
-        background-color: $_end-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+}
+@mixin lib-gradient__vertical(
+    $_start-color,
+    $_end-color,
+    $_start-percent            : 0%,
+    $_end-percent              : 100%,
+    $_background-color-position: true
+) {
+    @if $disable-filters == true {
+        @if $_background-color-position == true {
+            background-color: $_end-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        }
+        @else if $_background-color-position == false {
+            background-color: $_start-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        }
     }
-
-    .horizontal(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when ($disable-filters) and ($_background-color-position = false) {
-        background-color: $_start-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-    }
-
-    //  Vertical gradient, from top to bottom
-    //  Creates two color stops, start and end, by specifying a color and position for each color stop.
-    //  Color stops are not available in IE9 and below.
-    //  Filters are enabled
-    .vertical(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when not ($disable-filters) and ($_background-color-position = true) {
-        background-color: $_end-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
-    }
-
-    .vertical(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when not ($disable-filters) and ($_background-color-position = false) {
-        background-color: $_start-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
-    }
-
-    //  Vertical gradient, from top to bottom
-    //  Creates two color stops, start and end, by specifying a color and position for each color stop.
-    //  Color stops are not available in IE9 and below.
-    //  Filters are disabled
-    .vertical(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when ($disable-filters) and ($_background-color-position = true) {
-        background-color: $_end-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-    }
-
-    .vertical(
-        $_start-color,
-        $_end-color,
-        $_start-percent: 0%,
-        $_end-percent: 100%,
-        $_background-color-position: true
-    ) when ($disable-filters) and ($_background-color-position = false) {
-        background-color: $_start-color;
-        background-repeat: repeat-x;
-        background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    @else if $disable-filters == false {
+        @if $_background-color-position == true {
+            background-color: $_end-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
+        }
+        @else if $_background-color-position == false {
+            background-color: $_start-color;
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
+            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
+        }
     }
 }
 
@@ -203,34 +154,27 @@
 //  Custom background gradient
 //  ---------------------------------------------
 
-//  Pager gradient - horizontal
-.lib-background-gradient(
+@mixin lib-background-gradient(
     $_background-gradient-color-start,
     $_background-gradient-color-end,
     $_background-gradient-direction,
     $_background-gradient,
     $_background-gradient-color-position: true
-) when ($_background-gradient-direction = horizontal) and ($_background-gradient = true) {
-    #lib-gradient > .horizontal(
-    $_start-color: $_background-gradient-color-start,
-    $_end-color: $_background-gradient-color-end,
-    $_background-color-position: $_background-gradient-color-position
-    );
-}
-
-//  Pager gradient - vertical
-.lib-background-gradient(
-    $_background-gradient-color-start,
-    $_background-gradient-color-end,
-    $_background-gradient-direction,
-    $_background-gradient,
-    $_background-gradient-color-position: true
-) when ($_background-gradient-direction = vertical) and ($_background-gradient = true) {
-    #lib-gradient > .vertical(
-    $_start-color: $_background-gradient-color-start,
-    $_end-color: $_background-gradient-color-end,
-    $_background-color-position: $_background-gradient-color-position
-    );
+) {
+    @if $_background-gradient-direction == horizontal && $_background-gradient == true {
+        @include lib-gradient__horizontal(
+            $_start-color              : $_background-gradient-color-start,
+            $_end-color                : $_background-gradient-color-end,
+            $_background-color-position: $_background-gradient-color-position
+        );
+    }
+    @if $_background-gradient-direction == vertical && $_background-gradient == true {
+        @include lib-gradient__vertical(
+            $_start-color              : $_background-gradient-color-start,
+            $_end-color                : $_background-gradient-color-end,
+            $_background-color-position: $_background-gradient-color-position
+        );
+    }
 }
 
 //
@@ -253,8 +197,8 @@
     line-height: 0;
 }
 
-.lib-inline-block-space-item(
-    $_font-size: $font-size__base,
+@mixin lib-inline-block-space-item(
+    $_font-size  : $font-size__base,
     $_line-height: normal
 ) {
     @include lib-font-size($_font-size);
@@ -267,35 +211,28 @@
 //  Add any css property
 //  ---------------------------------------------
 
-.lib-css(
+@mixin lib-css(
     $_property,
     $_value,
     $_prefix: 0
-) when ($_prefix = 1)
-  and not ($_value = '')
-  and not ($_value = false)
-  and not (extract($_value, 1) = false)
-  and not (extract($_value, 2) = false)
-  and not (extract($_value, 3) = false)
-  and not (extract($_value, 4) = false)
-  and not (extract($_value, 5) = false) {
-  -webkit-#{$_property}: $_value;
-       -moz-#{$_property}: $_value;
-        -ms-#{$_property}: $_value;
-}
-
-.lib-css(
-    $_property,
-    $_value,
-    $_prefix: 0
-) when not ($_value = '')
-  and not ($_value = false)
-  and not (extract($_value, 1) = false)
-  and not (extract($_value, 2) = false)
-  and not (extract($_value, 3) = false)
-  and not (extract($_value, 4) = false)
-  and not (extract($_value, 5) = false) {
-    #{$_property}: $_value;
+) {
+    @if $_value != ''
+        && $_value != false
+        && extract($_value, 1) != false
+        && extract($_value, 2) != false
+        && extract($_value, 3) != false
+        && extract($_value, 4) != false
+        && extract($_value, 5) != false
+    {
+        @if $_prefix == 1 {
+            -webkit-#{$_property}: $_value;
+               -moz-#{$_property}: $_value;
+                -ms-#{$_property}: $_value;
+        }
+        @else {
+            #{$_property}: $_value;
+        }
+    }
 }
 
 //
@@ -318,18 +255,15 @@ $urls-resolved: false;
     $url: "#{$baseDir}#{$_path}";
 }
 
-.lib-url(
-    $_path,
-    $_module
-) when not ($_module = false) and not ($_module = '') and ($urls-resolved = false) {
-    $url: "#{$_module}::#{$_path}";
-}
-
-.lib-url(
-    $_path,
-    $_module
-) when not ($_module = false) and not ($_module = '') and ($urls-resolved = true) {
-    $url: "#{$baseDir}#{$_module}/#{$_path}";
+@mixin lib-url($_path, $_module) {
+    @if $_module != false && $_module != '' {
+        @if $urls-resolved == true {
+            $url: "#{$baseDir}#{$_module}/#{$_path}";
+        }
+        @else if $urls-resolved == false {
+            $url: "#{$_module}::#{$_path}";
+        }
+    }
 }
 
 //
@@ -338,53 +272,35 @@ $urls-resolved: false;
 
 @mixin lib-url-check($_path) {
     $lib-url-check-output: $_path;
-}
-
-.lib-url-check($_path) when not ($_path = false) {
-    $lib-url-check-output: url($_path);
+    @if $_path != false {
+        $lib-url-check-output: url($_path);
+    }
 }
 
 //
 //  Arrow
 //  ---------------------------------------------
 
-@mixin lib-arrow(
-    $_position,
-    $_size,
-    $_color
-) {
+@mixin lib-arrow($_position, $_size, $_color) {
     border: $_size solid transparent;
     height: 0;
     width: 0;
-    ._lib-abbor_el($_position, $_color);
+    @include _lib-abbor_el($_position, $_color);
 }
 
-._lib-abbor_el(
-    $_position,
-    $_color
-) when ($_position = left) {
-    @include lib-css(border-right-color, $_color);
-}
-
-._lib-abbor_el(
-    $_position,
-    $_color
-) when ($_position = right) {
-    @include lib-css(border-left-color, $_color);
-}
-
-._lib-abbor_el(
-    $_position,
-    $_color
-) when ($_position = up) {
-    @include lib-css(border-bottom-color, $_color);
-}
-
-._lib-abbor_el(
-    $_position,
-    $_color
-) when ($_position = down) {
-    @include lib-css(border-top-color, $_color);
+@mixin _lib-abbor_el($_position, $_color) {
+    @if $_position == left {
+        @include lib-css(border-right-color, $_color);
+    }
+    @if $_position == right {
+        @include lib-css(border-left-color, $_color);
+    }
+    @if $_position == up {
+        @include lib-css(border-bottom-color, $_color);
+    }
+    @if $_position == down {
+        @include lib-css(border-top-color, $_color);
+    }
 }
 
 //
@@ -481,14 +397,14 @@ $urls-resolved: false;
 //  ---------------------------------------------
 
 @mixin lib-pointer(
-    $_size: 6px,
-    $_background-color: $color-white,
-    $_border-color: $color-gray-light3,
-    $_position__vertical: top,
-    $_position__horizontal: left,
-    $_position__vertical__value: -12px,
+    $_size                       : 6px,
+    $_background-color           : $color-white,
+    $_border-color               : $color-gray-light3,
+    $_position__vertical         : top,
+    $_position__horizontal       : left,
+    $_position__vertical__value  : -12px,
     $_position__horizontal__value: $indent__s,
-    $_z-index: 99
+    $_z-index                    : 99
 ) {
     &:before,
     &:after {
