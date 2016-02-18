@@ -191,7 +191,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .review {
         &-form {
             max-width: 500px;
@@ -294,7 +294,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .product-reviews-summary {
         margin-bottom: $indent__s + $indent__xs;
         .products.wrapper.list & {
@@ -362,7 +362,7 @@
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .account {
         .table-reviews {
             .col.actions {
@@ -375,7 +375,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .block-reviews-dashboard {
         .product-name {
             &:extend(.abs-account-block-font-size all);
@@ -450,7 +450,7 @@
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .customer-review {
         .product-name {
             @include lib-css(margin-bottom, $indent__xs);
@@ -468,7 +468,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .customer-review {
         .product-details {
             &:extend(.abs-margin-for-blocks-and-widgets-desktop all);

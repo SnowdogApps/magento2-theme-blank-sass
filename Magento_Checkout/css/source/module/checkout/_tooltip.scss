@@ -128,7 +128,7 @@ $checkout-tooltip-content-mobile__top: 30px + $checkout-tooltip-icon-arrow__font
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__xs) {
+@include max-screen($screen__xs) {
     .modal-popup {
         .field-tooltip {
             .field-tooltip-content {
@@ -138,7 +138,7 @@ $checkout-tooltip-content-mobile__top: 30px + $checkout-tooltip-icon-arrow__font
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $checkout-tooltip-breakpoint__screen-m) {
+@include max-screen($checkout-tooltip-breakpoint__screen-m) {
     .field-tooltip {
         .field-tooltip-content {
             &:extend(.abs-checkout-tooltip-content-position-top-mobile all);

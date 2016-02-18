@@ -389,13 +389,13 @@ $minicart-qty__height: 24px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__xs) {
+@include max-screen($screen__xs) {
     .minicart-wrapper .block-minicart {
         width: 290px;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .minicart-wrapper {
         margin-top: $indent__s;
     }
@@ -405,7 +405,7 @@ $minicart-qty__height: 24px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .minicart-wrapper {
         margin-left: 13px;
 

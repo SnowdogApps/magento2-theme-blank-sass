@@ -34,7 +34,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     h1 {
         @include lib-css(font-size, $h1__font-size-desktop);
         @include lib-css(margin-bottom, $h1__margin-bottom__desktop);

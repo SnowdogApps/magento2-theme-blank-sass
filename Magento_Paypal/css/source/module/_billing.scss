@@ -21,7 +21,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .account {
         .table-billing-agreements,
         .table-billing-agreements-related {

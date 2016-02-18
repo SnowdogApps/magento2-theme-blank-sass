@@ -27,7 +27,7 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .storecredit {
         .block {
             &:extend(.abs-blocks-2columns all);
@@ -52,7 +52,7 @@
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .table-wrapper.balance-history {
         &:extend(.abs-account-table-margin-mobile all);
         &:extend(.abs-no-border-top all);

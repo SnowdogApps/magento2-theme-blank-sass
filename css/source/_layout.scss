@@ -43,7 +43,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .navigation,
     .breadcrumbs,
     .page-header .header.panel,
@@ -70,7 +70,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .navigation,
     .breadcrumbs,
     .page-header .header.panel,

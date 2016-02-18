@@ -182,7 +182,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .gift-wrapping {
         @include lib-css(border-bottom, $gift-wrapping__border-width solid $gift-wrapping__border-color);
         margin-bottom: $indent__base;
@@ -221,7 +221,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .data.table {
         .gift-wrapping {
             .nested,
@@ -236,7 +236,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .gift-wrapping {
         box-sizing: border-box;
         float: left;

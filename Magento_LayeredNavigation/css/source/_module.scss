@@ -199,7 +199,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     body {
         &.filter-active {
             .page-wrapper {
@@ -377,7 +377,7 @@
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
 
     .filter {
         &.block {

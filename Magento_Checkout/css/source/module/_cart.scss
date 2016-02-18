@@ -374,7 +374,7 @@ $cart-item-cell-padding-top: 20px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .cart {
         .table.items {
             .col.item,
@@ -398,7 +398,7 @@ $cart-item-cell-padding-top: 20px;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     //  Cart container
     .cart-container {
         .form-cart {
@@ -499,7 +499,7 @@ $cart-item-cell-padding-top: 20px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .checkout-cart-index {
         .page-main {
             padding-left: $layout__width-xs-indent;

@@ -192,7 +192,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .account {
         .table-giftregistry {
             .col.actions {
@@ -242,7 +242,7 @@
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     //  Shopping cart link
     .cart.table-wrapper {
         .action-giftregistry {
@@ -263,7 +263,7 @@
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .form-giftregistry-share,
     .form-giftregistry-edit {
         &:extend(.abs-add-fields-desktop all);

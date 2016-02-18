@@ -230,7 +230,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .gift-message {
         .actions-toolbar {
             .action-update {
@@ -310,7 +310,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .gift-message {
         .field {
             &:extend(.abs-clearfix all);

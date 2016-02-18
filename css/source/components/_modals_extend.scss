@@ -117,7 +117,7 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .custom-slide {
         @include lib-modal();
         @include lib-modal-slide();
@@ -148,7 +148,7 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $modal-popup-breakpoint-screen__m) {
+@include max-screen($modal-popup-breakpoint-screen__m) {
     .modal-popup {
         &.modal-slide {
             .modal-inner-wrap[class] {
@@ -179,7 +179,7 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $modal-popup-breakpoint-screen__m) {
+@include min-screen($modal-popup-breakpoint-screen__m) {
     .modal-popup {
         &.modal-slide {
             .modal-footer {

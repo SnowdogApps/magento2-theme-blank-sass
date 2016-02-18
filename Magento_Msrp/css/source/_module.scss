@@ -102,7 +102,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .map-popup {
         max-width: 100%; 
     }

@@ -320,7 +320,7 @@ $filter-quantity: $color-gray52;
 //  Navigation
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .customer-name,
     .customer-welcome + .authorization-link {
         display: none;
@@ -379,7 +379,7 @@ $filter-quantity: $color-gray52;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .logo {
         margin-bottom: 13px;
         margin-top: 4px;
@@ -414,7 +414,7 @@ $filter-quantity: $color-gray52;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     html,
     body {
         height: 100%; //  Stretch screen area for sticky footer

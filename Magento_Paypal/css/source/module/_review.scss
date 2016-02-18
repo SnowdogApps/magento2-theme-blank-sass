@@ -91,7 +91,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .table-paypal-review-items {
         .col {
             &.subtotal {
@@ -109,7 +109,7 @@
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .paypal-review {
         .paypal-review-title {
             border-bottom: $border-width__base solid $border-color__base;

@@ -76,7 +76,7 @@
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .table.grouped {
         > thead {
             > tr {
@@ -116,7 +116,7 @@
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .table-wrapper.grouped {
         @include lib-css(margin-left, -$layout__width-xs-indent);
         @include lib-css(margin-right, -$layout__width-xs-indent);

@@ -79,7 +79,7 @@ $popup-marker__size: 7px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .popup-content {
         .fieldset {
             .actions-toolbar {
@@ -102,7 +102,7 @@ $popup-marker__size: 7px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .ui-dialog {
         &.popup {
             width: 420px;

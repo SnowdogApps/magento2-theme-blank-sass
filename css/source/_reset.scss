@@ -3,4 +3,4 @@
 //  * See COPYING.txt for license details.
 //  */
 
-.lib-magento-reset(); // Reset default styles with magento-reset
+@include lib-magento-reset(); // Reset default styles with magento-reset

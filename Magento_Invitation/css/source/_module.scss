@@ -46,7 +46,7 @@
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .form-add-invitations {
         .action {
             &.remove {
@@ -64,13 +64,13 @@
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .form-add-invitations {
         &:extend(.abs-add-fields-desktop all);
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .table-invitations {
         .col {
             width: 50%;

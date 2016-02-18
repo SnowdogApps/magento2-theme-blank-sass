@@ -235,7 +235,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .products-list .product {
         &-item {
             table-layout: fixed;
@@ -248,7 +248,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .product-item-info {
         .products-grid & {
             &:hover,
@@ -367,7 +367,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .page-products {
         .products-grid {
             .product-item {
@@ -393,7 +393,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__l) {
+@include min-screen($screen__l) {
 
     .products-grid {
         .product-item {

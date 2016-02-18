@@ -53,7 +53,7 @@ $checkout-progress-bar-item-element-outer-radius__width: 6px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
 
     .opc-progress-bar {
         @include lib-css(margin, 0 0 $checkout-progress-bar__margin);

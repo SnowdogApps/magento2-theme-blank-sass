@@ -199,7 +199,7 @@ $autocomplete-item-amount__color: $color-gray60;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .block-search {
         margin-top: $indent__s;
     }
@@ -209,7 +209,7 @@ $autocomplete-item-amount__color: $color-gray60;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .block-search {
         float: right;
         padding-left: 15px;

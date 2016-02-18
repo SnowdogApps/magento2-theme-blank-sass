@@ -234,7 +234,7 @@ $account-table-action-delete: $color-red12;
 //  Desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .login-container {
         &:extend(.abs-add-clearfix-desktop all);
 
@@ -381,7 +381,7 @@ $account-table-action-delete: $color-red12;
 //  Mobile $screen__s
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .account {
         .column.main,
         .sidebar-additional {
@@ -398,7 +398,7 @@ $account-table-action-delete: $color-red12;
 //  Mobile $screen__m
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .login-container {
         .fieldset {
             &:after {

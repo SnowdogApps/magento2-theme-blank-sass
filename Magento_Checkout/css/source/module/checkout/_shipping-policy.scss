@@ -51,7 +51,7 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .shipping-policy-block {
         &.field-tooltip {
             margin-bottom: $indent__base;

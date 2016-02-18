@@ -56,7 +56,7 @@
 //    Mobile
 //--------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .block.widget .products-grid .product-item,
     .page-layout-1column .block.widget .products-grid .product-item,
     .page-layout-3columns .block.widget .products-grid .product-item { width: 100%/3 }
@@ -66,13 +66,13 @@
 //    Desktop
 //--------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .block.widget .products-grid .product-item{ width: 100%/3 }
     .page-layout-1column .block.widget .products-grid .product-item { width: 100%/4 }
     .page-layout-3columns .block.widget .products-grid .product-item { width: 100%/2 }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__l) {
+@include min-screen($screen__l) {
     .block.widget .products-grid .product-item { width: 100%/5 }
     .page-layout-1column .block.widget .products-grid .product-item {
         width: 100%/6;
@@ -100,7 +100,7 @@
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .sidebar .block.widget .pager {
         .item:not(.pages-item-next):not(.pages-item-previous) {
             &:extend(.abs-no-display-desktop all);

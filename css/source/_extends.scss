@@ -28,7 +28,8 @@
 //  ---------------------------------------------
 
 .abs-revert-to-action-secondary {
-    &:extend(.abs-revert-secondary-color all);
+    // NO FUCKING IDEA HOW THIS SHIT WORKS - TO DO
+    // &:extend(.abs-revert-secondary-color all);
     @include lib-css(border-radius, $button__border-radius);
 
     &:not(:focus) {
@@ -95,7 +96,7 @@
 //  Product options list
 //  ---------------------------------------------
 
-$abs-product-options-list: {
+%abs-product-options-list {
     dt {
         float: left;
         clear: left;
@@ -114,16 +115,18 @@ $abs-product-options-list: {
 };
 
 .abs-product-options-list {
-    $abs-product-options-list();
+    @extend %abs-product-options-list;
 }
 
 //
 //  Desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
-    .abs-product-options-list-desktop {
-        $abs-product-options-list();
+@mixin media-width($extremum, $break) {
+    @if $extremum == 'min' && $break == $screen__m {
+        .abs-product-options-list-desktop {
+            @extend %abs-product-options-list;
+        }
     }
 }
 
@@ -135,7 +138,7 @@ $abs-product-options-list: {
     @include lib-button-responsive();
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-button-desktop {
         width: auto;
     }
@@ -162,13 +165,13 @@ $abs-blocks-2columns: {
     }
 };
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-blocks-2columns {
         $abs-blocks-2columns();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-blocks-2columns-s {
         $abs-blocks-2columns();
     }
@@ -252,7 +255,7 @@ $abs-blocks-2columns: {
     margin-bottom: $indent__xl;
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-margin-for-blocks-and-widgets-desktop {
         margin-bottom: $indent__xl + $indent__s;
     }
@@ -315,13 +318,13 @@ $abs-reset-left-margin: {
     $abs-reset-left-margin();
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-reset-left-margin-desktop {
         $abs-reset-left-margin();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-reset-left-margin-desktop-s {
         $abs-reset-left-margin();
     }
@@ -344,7 +347,7 @@ $abs-reset-left-margin: {
 //  Action with icon remove with text for desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-action-remove-desktop {
         margin-left: 90%;
     }
@@ -405,7 +408,7 @@ $abs-reset-left-margin: {
 //  Add Recipient for desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-add-fields-desktop {
         .fieldset {
             .field {
@@ -429,7 +432,7 @@ $abs-reset-left-margin: {
 //  Margin for forms
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-margin-for-forms-desktop {
         @include lib-css(margin-left, $form-field-type-label-inline__width);
     }
@@ -459,25 +462,25 @@ $abs-visually-hidden: {
     $abs-visually-hidden();
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-visually-hidden-mobile {
         $abs-visually-hidden();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .abs-visually-hidden-mobile-m {
         $abs-visually-hidden();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-visually-hidden-desktop-s {
         $abs-visually-hidden();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-visually-hidden-desktop {
         $abs-visually-hidden();
     }
@@ -503,25 +506,25 @@ $abs-add-clearfix: {
     $abs-add-clearfix();
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-add-clearfix-desktop {
         $abs-add-clearfix();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-add-clearfix-desktop-s {
         $abs-add-clearfix();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-add-clearfix-mobile {
         $abs-add-clearfix();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .abs-add-clearfix-mobile-m {
         $abs-add-clearfix();
     }
@@ -539,19 +542,19 @@ $abs-add-box-sizing: {
     $abs-add-box-sizing();
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-add-box-sizing-desktop {
         $abs-add-box-sizing();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-add-box-sizing-desktop-s {
         $abs-add-box-sizing();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-add-box-sizing-desktop-m {
         $abs-add-box-sizing();
     }
@@ -561,7 +564,7 @@ $abs-add-box-sizing: {
 //  Revert field type
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-revert-field-type-desktop {
         .fieldset {
             > .field,
@@ -628,13 +631,13 @@ $abs-form-field-column-2: {
     }
 };
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-form-field-column-2 {
         $abs-form-field-column-2();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-form-field-column-2-s {
         $abs-form-field-column-2();
     }
@@ -648,13 +651,13 @@ $abs-form-field-revert-column-1: {
     @include lib-form-field-column-number($_column-number: 1);
 };
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-form-field-revert-column-1 {
         $abs-form-field-revert-column-1();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-form-field-revert-column-1-s {
         $abs-form-field-revert-column-1();
     }
@@ -674,7 +677,7 @@ $abs-form-field-revert-column-1: {
 //  Checkout order review
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-checkout-order-review {
         tbody > tr {
             &:extend(.abs-add-clearfix-mobile all);
@@ -758,7 +761,7 @@ $abs-form-field-revert-column-1: {
 //  General pages forms
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-forms-general-desktop {
         max-width: 500px;
 
@@ -776,7 +779,7 @@ $abs-form-field-revert-column-1: {
 //  Revert side paddings
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-revert-side-paddings {
         padding-left: 0;
         padding-right: 0;
@@ -814,7 +817,7 @@ $abs-toggling-title: {
     );
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .abs-toggling-title-mobile {
         $abs-toggling-title();
         @include lib-css(border-bottom, $border-width__base solid $border-color__base);
@@ -898,7 +901,7 @@ $abs-toggling-title: {
 //  Mobile checkout order product name
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-product-items-summary {
         tbody {
             .col {
@@ -961,7 +964,7 @@ $abs-toggling-title: {
 //  Account pages: block font size
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-account-block-font-size {
         @include lib-font-size(16);
     }
@@ -979,12 +982,12 @@ $abs-toggling-title: {
 //  Account pages: margin for table
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-account-table-margin-mobile {
         @include lib-css(margin-top, -$indent__base);
     }
 }
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-account-table-margin-desktop {
         @include lib-css(margin-top, -$indent__m);
     }
@@ -994,7 +997,7 @@ $abs-toggling-title: {
 //  Account pages: table col actions
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-col-no-prefix {
         &:before {
             @include lib-visually-hidden();
@@ -1030,13 +1033,13 @@ $abs-action-print: {
     }
 };
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-action-print {
         $abs-action-print();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__s) {
+@include min-screen($screen__s) {
     .abs-action-print-s {
         $abs-action-print();
     }
@@ -1216,7 +1219,7 @@ $abs-action-print: {
     );
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .abs-icon-add-mobile {
         @include lib-icon-font(
             $_icon-font-content: $icon-expand,
@@ -1261,13 +1264,13 @@ $abs-no-display: {
     $abs-no-display();
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-no-display-s {
         $abs-no-display();
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-no-display-desktop {
         $abs-no-display();
     }
@@ -1287,7 +1290,7 @@ $abs-no-display: {
     vertical-align: top;
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-status-desktop {
         margin-top: 6px;
         padding: $indent__xs $indent__s;
@@ -1317,7 +1320,7 @@ $abs-no-display: {
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-title-orders-mobile {
         .page-main {
             .page-title-wrapper {
@@ -1334,7 +1337,7 @@ $abs-no-display: {
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-title-orders-desktop {
         .page-main {
             .page-title-wrapper {
@@ -1360,7 +1363,7 @@ $abs-no-display: {
     );
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-table-striped-mobile {
         > tbody > tr > td:last-child {
             border: 0;
@@ -1372,7 +1375,7 @@ $abs-no-display: {
 //  Table bordered desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-table-bordered-desktop {
         @include lib-table-bordered(
             $_table_type: light,
@@ -1385,7 +1388,7 @@ $abs-no-display: {
 //  Pager toolbar for non-catalog pages desktop
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-pager-toolbar {
         position: relative;
 
@@ -1446,7 +1449,7 @@ $abs-no-display: {
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-shopping-cart-items-desktop {
         @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
         &:extend(.abs-add-box-sizing-desktop all);
@@ -1459,7 +1462,7 @@ $abs-no-display: {
 //  Remove top border
 //  ---------------------------------------------
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-no-border-top {
         border-top: 0;
     }
@@ -1468,7 +1471,7 @@ $abs-no-display: {
 //
 //  Remove bottom border
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-no-border-bottom {
         border-bottom: 0;
     }
@@ -1548,7 +1551,7 @@ $abs-checkout-tooltip-content-position-top: {
     $abs-checkout-tooltip-content-position-top();
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = ($screen__m + 1)) {
+@include max-screen($screen__m + 1) {
     .abs-checkout-tooltip-content-position-top-mobile {
         $abs-checkout-tooltip-content-position-top();
     }
@@ -1687,7 +1690,7 @@ $abs-checkout-tooltip-content-position-top: {
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .abs-sidebar-totals-mobile {
         th {
             &:extend(.abs-col-no-prefix all);
@@ -1767,7 +1770,7 @@ $abs-checkout-tooltip-content-position-top: {
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .abs-discount-block-desktop {
         .block {
             &:extend(.abs-blocks-2columns all);

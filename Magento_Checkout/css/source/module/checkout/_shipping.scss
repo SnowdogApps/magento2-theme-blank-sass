@@ -213,7 +213,7 @@ $checkout-shipping-method__padding: $indent__base;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .opc-wrapper {
         .form-login,
         .form-shipping-address,
@@ -282,7 +282,7 @@ $checkout-shipping-method__padding: $indent__base;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .checkout-shipping-method {
         .actions-toolbar {
             > .primary {
@@ -312,7 +312,7 @@ $checkout-shipping-method__padding: $indent__base;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__l) {
+@include min-screen($screen__l) {
     .opc-wrapper {
         .shipping-address-item {
             @include lib-css(width, $checkout-shipping-item__width);

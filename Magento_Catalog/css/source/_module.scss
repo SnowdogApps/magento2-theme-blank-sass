@@ -552,7 +552,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //
 //    Mobile $screen__m
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .catalog-product-view {
         .column.main {
             @include lib-vendor-prefix-display(flex);
@@ -568,7 +568,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //
 //    Mobile $screen__s
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .product-social-links {
         .action.tocompare {
             display: none;
@@ -598,7 +598,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .product-info-main {
         .page-title-wrapper {
             h1 {
@@ -714,7 +714,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //
 //    Desktop large
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__xl) {
+@include min-screen($screen__xl) {
     .sidebar {
         .product-items {
             .product-item {
@@ -904,7 +904,7 @@ body.catalog-product-compare-index {
 //
 //    Mobile
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__s) {
+@include max-screen($screen__s) {
     .table-wrapper.comparison {
         .table-comparison > tbody > tr{
             > th,
@@ -915,7 +915,7 @@ body.catalog-product-compare-index {
         }
     }
 }
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .compare.wrapper,
     [class*="block-compare"] {
         display: none;
@@ -925,7 +925,7 @@ body.catalog-product-compare-index {
 //
 //    Desktop
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .compare.wrapper {
         float: right;
         @include lib-list-reset-styles();
@@ -995,7 +995,7 @@ body.catalog-product-compare-index {
 //
 //    Desktop large
 //--------------------------------------
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__l) {
+@include min-screen($screen__l) {
     .box-tocart {
         .paypal:first-of-type {
             margin-top: 13px;

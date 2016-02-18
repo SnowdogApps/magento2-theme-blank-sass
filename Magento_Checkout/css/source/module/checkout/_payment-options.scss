@@ -181,7 +181,7 @@ $checkout-payment-option-content__padding__xl: $checkout-payment-method-content_
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .checkout-payment-method {
         .payment-option {
             @include lib-css(margin, 0 -($checkout-payment-option-title-mobile__padding));
@@ -201,7 +201,7 @@ $checkout-payment-option-content__padding__xl: $checkout-payment-method-content_
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .checkout-payment-method {
         .payment-option-title {
             @include lib-css(padding-left, $checkout-payment-option-content__padding__xl);

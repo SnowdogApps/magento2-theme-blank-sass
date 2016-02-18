@@ -44,7 +44,7 @@ $checkout-modal-popup__width: 800px;
 //  Mobile
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'max') and ($break = $screen__m) {
+@include max-screen($screen__m) {
     .checkout-index-index {
         .modal-popup {
             .modal-footer {
@@ -64,7 +64,7 @@ $checkout-modal-popup__width: 800px;
 //  Desktop
 //  _____________________________________________
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__m) {
+@include min-screen($screen__m) {
     .checkout-index-index {
         .modal-popup {
             .form-shipping-address {
@@ -81,7 +81,7 @@ $checkout-modal-popup__width: 800px;
     }
 }
 
-.media-width($extremum, $break) when ($extremum = 'min') and ($break = $screen__l) {
+@include min-screen($screen__l) {
     .checkout-index-index {
         .modal-popup {
             .modal-inner-wrap {
