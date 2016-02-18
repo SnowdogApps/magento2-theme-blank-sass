@@ -4,14 +4,9 @@
 //  */
 
 //
-//    Common
-//--------------------------------------
-
-& when ($media-common = true) {
-
-//
 //    Using buttons mixins
 //--------------------------------------
+
 button,
 a.action.primary {
     @include lib-css(border-radius, $button__border-radius);
@@ -43,6 +38,4 @@ a.action.primary {
 
 .action.primary {
     @include lib-button-primary();
-}
-
 }

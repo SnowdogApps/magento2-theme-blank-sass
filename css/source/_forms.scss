@@ -11,8 +11,6 @@ $form-calendar-icon__color: $primary__color;
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
-
 .fieldset {
     @include lib-form-fieldset();
     &:last-child {
@@ -83,7 +81,7 @@ fieldset.field {
     }
 }
 
-.select-styling() {
+@mixin select-styling() {
     @include lib-css(appearance, none, 1);
     appearance: none;
     border: 1px solid $border-color__base;
@@ -173,8 +171,6 @@ select:focus ~ .tooltip .tooltip-content {
             }
         }
     }
-}
-
 }
 
 //

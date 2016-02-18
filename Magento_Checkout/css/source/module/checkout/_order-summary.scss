@@ -20,151 +20,153 @@ $checkout-summary-items__padding: 15px;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
 
-    //
-    //  Order Summary
-    //  ---------------------------------------------
+//
+//  Order Summary
+//  ---------------------------------------------
 
-    .opc-block-summary {
-        @include lib-css(background, $checkout-summary__background-color);
-        @include lib-css(margin, 0 0 $checkout-sidebar__margin);
-        @include lib-css(padding, $checkout-summary__padding);
-        &:extend(.abs-add-box-sizing all);
+.opc-block-summary {
+    @include lib-css(background, $checkout-summary__background-color);
+    @include lib-css(margin, 0 0 $checkout-sidebar__margin);
+    @include lib-css(padding, $checkout-summary__padding);
+    // &:extend(.abs-add-box-sizing all);
+    @warn 'TO DO - Fix extend all';
 
-        > .title {
-            &:extend(.abs-checkout-title all);
+    > .title {
+        // &:extend(.abs-checkout-title all);
+        @warn 'TO DO - Fix extend all';
+        display: block;
+    }
+
+    //  Totals table
+    .table-totals {
+        // &:extend(.abs-sidebar-totals all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .mark {
+        .value {
+            @include lib-css(color, $checkout-summary-mark-value__color);
             display: block;
         }
+    }
 
-        //  Totals table
-        .table-totals {
-            &:extend(.abs-sidebar-totals all);
-        }
-
-        .mark {
-            .value {
-                @include lib-css(color, $checkout-summary-mark-value__color);
-                display: block;
-            }
-        }
-
-        .grand.incl {
-            & + .grand.excl {
-                .mark,
-                .amount {
-                    border-top: 0;
-                    @include lib-font-size(14);
-                    padding-top: 0;
-
-                    strong {
-                        font-weight: $font-weight__regular;
-                    }
-                }
-            }
-        }
-
-        .not-calculated {
-            font-style: italic;
-        }
-
-        //
-        //  Items list
-        //  ---------------------------------------------
-
-        //  Block title
-        .items-in-cart {
-            > .title {
-                border-bottom: $border-width__base solid $border-color__base;
-                @include lib-css(padding, $indent__s $indent__xl $indent__s 0);
-                cursor: pointer;
-                @include lib-icon-font(
-                $icon-down,
-                $_icon-font-size: 12px,
-                $_icon-font-line-height: 12px,
-                $_icon-font-text-hide: true,
-                $_icon-font-margin: 3px 0 0,
-                $_icon-font-position: after,
-                $_icon-font-display: block
-                );
-                margin-bottom: 0;
-                position: relative;
-
-                &:after {
-                    position: absolute;
-                    right: 0;
-                    top: $indent__s;
-                }
+    .grand.incl {
+        & + .grand.excl {
+            .mark,
+            .amount {
+                border-top: 0;
+                @include lib-font-size(14);
+                padding-top: 0;
 
                 strong {
-                    @include lib-font-size(18);
-                    font-weight: $font-weight__light;
-                    margin: 0;
+                    font-weight: $font-weight__regular;
                 }
             }
+        }
+    }
 
-            &.active {
-                > .title {
-                    @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
-                    $_icon-font-position: after
-                    );
-                }
+    .not-calculated {
+        font-style: italic;
+    }
+
+    //
+    //  Items list
+    //  ---------------------------------------------
+
+    //  Block title
+    .items-in-cart {
+        > .title {
+            border-bottom: $border-width__base solid $border-color__base;
+            @include lib-css(padding, $indent__s $indent__xl $indent__s 0);
+            cursor: pointer;
+            @include lib-icon-font(
+            $icon-down,
+            $_icon-font-size: 12px,
+            $_icon-font-line-height: 12px,
+            $_icon-font-text-hide: true,
+            $_icon-font-margin: 3px 0 0,
+            $_icon-font-position: after,
+            $_icon-font-display: block
+            );
+            margin-bottom: 0;
+            position: relative;
+
+            &:after {
+                position: absolute;
+                right: 0;
+                top: $indent__s;
             }
 
-            .product {
-                position: relative;
-            }
-        }
-
-        //  Cart items
-        .minicart-items-wrapper {
-            @include lib-css(margin, 0 -($checkout-summary-items__padding) 0 0);
-            @include lib-css(max-height, $checkout-summary-items__max-height);
-            @include lib-css(padding, $checkout-summary-items__padding $checkout-summary-items__padding 0 0);
-            border: 0;
-        }
-
-        .column.main & {
-            .product-item {
+            strong {
+                @include lib-font-size(18);
+                font-weight: $font-weight__light;
                 margin: 0;
-                padding-left: 0;
             }
         }
 
+        &.active {
+            > .title {
+                @include lib-icon-font-symbol(
+                $_icon-font-content: $icon-up,
+                $_icon-font-position: after
+                );
+            }
+        }
+
+        .product {
+            position: relative;
+        }
+    }
+
+    //  Cart items
+    .minicart-items-wrapper {
+        @include lib-css(margin, 0 -($checkout-summary-items__padding) 0 0);
+        @include lib-css(max-height, $checkout-summary-items__max-height);
+        @include lib-css(padding, $checkout-summary-items__padding $checkout-summary-items__padding 0 0);
+        border: 0;
+    }
+
+    .column.main & {
         .product-item {
-            .product-item-inner {
-                display: table;
-                margin: 0 0 $indent__s;
-                width: 100%;
-            }
+            margin: 0;
+            padding-left: 0;
+        }
+    }
 
-            .product-item-name-block {
-                display: table-cell;
-                padding-right: $indent__xs;
-                text-align: left;
-            }
+    .product-item {
+        .product-item-inner {
+            display: table;
+            margin: 0 0 $indent__s;
+            width: 100%;
+        }
 
-            .subtotal {
-                display: table-cell;
-                text-align: right;
-            }
+        .product-item-name-block {
+            display: table-cell;
+            padding-right: $indent__xs;
+            text-align: left;
+        }
 
-            .price {
-                @include lib-font-size(16);
-                font-weight: $font-weight__regular;
-            }
+        .subtotal {
+            display: table-cell;
+            text-align: right;
+        }
 
-            .price-including-tax {
-                & + .price-excluding-tax {
-                    .price {
-                        @include lib-font-size(10);
-                    }
+        .price {
+            @include lib-font-size(16);
+            font-weight: $font-weight__regular;
+        }
+
+        .price-including-tax {
+            & + .price-excluding-tax {
+                .price {
+                    @include lib-font-size(10);
                 }
             }
         }
     }
 }
+
 
 //
 //  Mobile
@@ -180,7 +182,8 @@ $checkout-summary-items__padding: 15px;
         }
 
         .totals {
-            &:extend(.abs-sidebar-totals-mobile all);
+            // &:extend(.abs-sidebar-totals-mobile all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }

@@ -14,121 +14,120 @@ $pager__font-weight: $font-weight__bold;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .page-products {
-        .columns {
-            padding-top: 60px;
-            position: relative;
-            z-index: 1;
-        }
+.page-products {
+    .columns {
+        padding-top: 60px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.toolbar {
+    // &:extend(.abs-add-clearfix all);
+    @warn 'TO DO - Fix extend all';
+    margin-bottom: $indent__l;
+    text-align: center;
+
+    select {
+        @include lib-css(background-color, $toolbar-element-background);
+        @include lib-css(box-shadow, $button__shadow);
+        border-radius: 3px;
     }
 
-    .toolbar {
-        &:extend(.abs-add-clearfix all);
-        margin-bottom: $indent__l;
-        text-align: center;
-
-        select {
-            @include lib-css(background-color, $toolbar-element-background);
-            @include lib-css(box-shadow, $button__shadow);
-            border-radius: 3px;
-        }
-
-        &-amount {
-            left: 0;
-            line-height: $toolbar-mode-icon-font-size+2;
-            margin: 0;
-            padding: 7px 0;
-            position: absolute;
-            text-align: left;
-            top: 0;
-            vertical-align: middle;
-
-            .products.wrapper ~ .toolbar & {
-                display: none;
-            }
-        }
-
-        .page-with-filter & {
-            &-amount {
-                position: static;
-            }
-        }
-
-        &-products {
-            @include lib-css(background-color, $toolbar-background);
-
-            .pages {
-                display: none;
-
-                .products.wrapper ~ & {
-                    display: block;
-                }
-            }
-        }
-
-        .pages {
-            margin-bottom: $indent__m;
-        }
-    }
-
-    .sorter {
-        float: right;
-
-        .page-products & {
-            position: absolute;
-            right: $indent__s;
-            top: 0;
-            z-index: 1;
-        }
+    &-amount {
+        left: 0;
+        line-height: $toolbar-mode-icon-font-size+2;
+        margin: 0;
+        padding: 7px 0;
+        position: absolute;
+        text-align: left;
+        top: 0;
+        vertical-align: middle;
 
         .products.wrapper ~ .toolbar & {
             display: none;
         }
+    }
 
-        &-options {
-            margin: 0 $indent__xs 0 7px;
-            width: auto;
+    .page-with-filter & {
+        &-amount {
+            position: static;
         }
+    }
 
-        &-action {
-            @include lib-icon-font(
-            $icon-arrow-up,
-            $_icon-font-size: 16px,
-            $_icon-font-color: $header-icons-color,
-            $_icon-font-color-hover: $header-icons-color-hover
-            );
-            @include lib-icon-text-hide();
+    &-products {
+        @include lib-css(background-color, $toolbar-background);
 
-            &.sort-desc:before {
-                content: $icon-arrow-down;
+        .pages {
+            display: none;
+
+            .products.wrapper ~ & {
+                display: block;
             }
         }
     }
 
-    .modes {
+    .pages {
+        margin-bottom: $indent__m;
+    }
+}
+
+.sorter {
+    float: right;
+
+    .page-products & {
+        position: absolute;
+        right: $indent__s;
+        top: 0;
+        z-index: 1;
+    }
+
+    .products.wrapper ~ .toolbar & {
         display: none;
     }
 
-    .limiter {
+    &-options {
+        margin: 0 $indent__xs 0 7px;
+        width: auto;
+    }
+
+    &-action {
+        @include lib-icon-font(
+        $icon-arrow-up,
+        $_icon-font-size: 16px,
+        $_icon-font-color: $header-icons-color,
+        $_icon-font-color-hover: $header-icons-color-hover
+        );
+        @include lib-icon-text-hide();
+
+        &.sort-desc:before {
+            content: $icon-arrow-down;
+        }
+    }
+}
+
+.modes {
+    display: none;
+}
+
+.limiter {
+    display: none;
+
+    &-options {
+        margin: 0 5px 0 7px;
+        width: auto;
+    }
+
+    &-label {
+        font-weight: 400;
+    }
+
+    .page-products .toolbar & {
         display: none;
+    }
 
-        &-options {
-            margin: 0 5px 0 7px;
-            width: auto;
-        }
-
-        &-label {
-            font-weight: 400;
-        }
-
-        .page-products .toolbar & {
-            display: none;
-        }
-
-        .control {
-            display: inline-block;
-        }
+    .control {
+        display: inline-block;
     }
 }
 
@@ -174,7 +173,8 @@ $pager__font-weight: $font-weight__bold;
         }
 
         &-label {
-            &:extend(.abs-visually-hidden-desktop-s all);
+            // &:extend(.abs-visually-hidden-desktop-s all);
+            @warn 'TO DO - Fix extend all';
         }
 
         &-mode {

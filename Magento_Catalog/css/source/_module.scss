@@ -13,8 +13,6 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
-
 //
 //    Category view
 //--------------------------------------
@@ -48,12 +46,14 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 }
 
 .product.name a {
-    &:extend(.abs-product-link all);
+    // &:extend(.abs-product-link all);
+    @warn 'TO DO - Fix extend all';
 }
 
 .special-price {
     .price-label {
-        &:extend(.abs-visually-hidden all);
+        // &:extend(.abs-visually-hidden all);
+        @warn 'TO DO - Fix extend all';
     }
 }
 
@@ -108,7 +108,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //--------------------------------------
 .product.media {
     .product.photo .photo.image {
-        &:extend(.abs-adaptive-images-centered);
+        @extend .abs-adaptive-images-centered;
     }
 
     .placeholder .photo.container {
@@ -367,20 +367,24 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 }
 
 .box-tocart {
-    &:extend(.abs-box-tocart all);
+    // &:extend(.abs-box-tocart all);
+    @warn 'TO DO - Fix extend all';
     .field.qty {
     }
 
     .input-text.qty {
-        &:extend(.abs-input-qty all);
+        // &:extend(.abs-input-qty all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .actions {
     }
 
     .action.tocart {
-        &:extend(.abs-button-l all);
-        &:extend(.abs-button-responsive all);
+        // &:extend(.abs-button-l all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-button-responsive all);
+        @warn 'TO DO - Fix extend all';
 
         &:not(:last-child) {
             margin-bottom: 15px;
@@ -403,7 +407,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     text-align: center;
 
     .action.tocompare {
-        &:extend(.abs-actions-addto all);
+        // &:extend(.abs-actions-addto all);
+        @warn 'TO DO - Fix extend all';
         @include lib-icon-font-symbol(
             $_icon-font-content: $icon-compare-full,
             $_icon-font-position: before
@@ -412,7 +417,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 }
 
 .prices-tier {
-    &:extend(.abs-reset-list all);
+    // &:extend(.abs-reset-list all);
+    @warn 'TO DO - Fix extend all';
     margin-bottom: $indent__s + $indent__xs;
 
     .item {
@@ -503,7 +509,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 
         .action {
             &.delete {
-                &:extend(.abs-remove-button-for-blocks all);
+                // &:extend(.abs-remove-button-for-blocks all);
+                @warn 'TO DO - Fix extend all';
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -516,18 +523,21 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     }
 
     .subtitle {
-        &:extend(.abs-no-display all);
+        // &:extend(.abs-no-display all);
+        @warn 'TO DO - Fix extend all';
     }
 
     //
     //    Product images only
     //--------------------------------------
     .product-items-images {
-        &:extend(.abs-add-clearfix all);
+        // &:extend(.abs-add-clearfix all);
+        @warn 'TO DO - Fix extend all';
         margin-left: -$indent__xs;
 
         .product-item {
-            &:extend(.abs-add-box-sizing all);
+            // &:extend(.abs-add-box-sizing all);
+            @warn 'TO DO - Fix extend all';
             float: left;
             padding-left: $indent__xs;
         }
@@ -545,8 +555,6 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
             margin: 0;
         }
     }
-}
-
 }
 
 //
@@ -590,7 +598,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 
     .product.info.detailed {
         .additional-attributes-wrapper {
-            &:extend(.abs-no-border-top all);
+            // &:extend(.abs-no-border-top all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }
@@ -741,8 +750,6 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
-
 //
 //    Compare Products Page
 //--------------------------------------
@@ -772,7 +779,8 @@ body.catalog-product-compare-index {
     .cell.label.remove,
     .cell.label.product {
         span {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
@@ -818,7 +826,8 @@ body.catalog-product-compare-index {
             text-align: right;
 
             .action.delete {
-                &:extend(.abs-remove-button-for-blocks all);
+                // &:extend(.abs-remove-button-for-blocks all);
+                @warn 'TO DO - Fix extend all';
                 margin-right: .6rem;
             }
         }
@@ -872,7 +881,8 @@ body.catalog-product-compare-index {
 
 .block-compare {
     .block-title {
-        &:extend(.abs-block-widget-title all);
+        // &:extend(.abs-block-widget-title all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .product-item .product-item-name {
@@ -880,14 +890,16 @@ body.catalog-product-compare-index {
     }
 
     .action.delete {
-        &:extend(.abs-remove-button-for-blocks all);
+        // &:extend(.abs-remove-button-for-blocks all);
+        @warn 'TO DO - Fix extend all';
         position: absolute;
         left: 0;
         top: 0;
     }
 
     .counter {
-        &:extend(.abs-block-items-counter all);
+        // &:extend(.abs-block-items-counter all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .actions-toolbar {
@@ -895,10 +907,9 @@ body.catalog-product-compare-index {
     }
 
     .action.primary {
-        &:extend(.abs-revert-to-action-secondary all);
+        // &:extend(.abs-revert-to-action-secondary all);
+        @warn 'TO DO - Fix extend all';
     }
-}
-
 }
 
 //
@@ -910,7 +921,8 @@ body.catalog-product-compare-index {
             > th,
             > td {
                 display: table-cell;
-                &:extend(.abs-col-no-prefix all);
+                // &:extend(.abs-col-no-prefix all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -962,11 +974,10 @@ body.catalog-product-compare-index {
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
-
 .block.related {
     .action.select {
-        &:extend(.abs-action-button-as-link all);
+        // &:extend(.abs-action-button-as-link all);
+        @warn 'TO DO - Fix extend all';
         vertical-align: top;
     }
 
@@ -985,11 +996,10 @@ body.catalog-product-compare-index {
         left: 0;
 
         .label {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
     }
-}
-
 }
 
 //

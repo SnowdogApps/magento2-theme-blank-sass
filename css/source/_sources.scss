@@ -3,23 +3,21 @@
  * See COPYING.txt for license details.
  */
 
-@import '_variables.scss';
-@import '_extends.scss';
-@import '_typography.scss';
-@import '_layout.scss';
-@import '_tables.scss';
-@import '_messages.scss';
-@import '_navigation.scss';
-@import '_tooltips.scss';
-@import '_loaders.scss';
-@import '_forms.scss';
-@import '_icons.scss';
-@import '_buttons.scss';
-@import '_sections.scss';
-@import '_dropdowns.scss';
-@import '_pages.scss'; // Theme pager
-@import '_rating.scss';
-@import '_actions-toolbar.scss';
-@import '_breadcrumbs.scss';
-@import '_popups.scss';
-@import '_price.scss';
+@import '_variables';
+@import '_extends';
+@import '_typography';
+@import '_layout';
+@import '_tables';
+@import '_messages';
+@import '_navigation';
+@import '_tooltips';
+@import '_loaders';
+@import '_forms';
+@import '_icons';
+@import '_buttons';
+@import '_sections';
+@import '_pages'; // Theme pager
+@import '_actions-toolbar';
+@import '_breadcrumbs';
+@import '_popups';
+@import '_price';

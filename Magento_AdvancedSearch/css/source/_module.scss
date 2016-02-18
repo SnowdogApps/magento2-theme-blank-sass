@@ -16,12 +16,10 @@
 // Common
 // _____________________________________________
 
-& when ($media-common = true) {
-    .catalogsearch-advanced-result {
-        .message {
-            &.error {
-                margin-top: -60px;
-            }
+.catalogsearch-advanced-result {
+    .message {
+        &.error {
+            margin-top: -60px;
         }
     }
 }

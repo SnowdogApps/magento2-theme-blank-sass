@@ -71,7 +71,7 @@ $filter-quantity: $color-gray52;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+
     body {
         @include lib-css(background-color, $page__background-color);
     }
@@ -390,7 +390,7 @@ $filter-quantity: $color-gray52;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+
 
     //
     //  Widgets
@@ -655,7 +655,7 @@ $filter-quantity: $color-gray52;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+
     .no-display:extend(.abs-no-display all) {
     }
 

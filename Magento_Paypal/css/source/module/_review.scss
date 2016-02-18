@@ -7,85 +7,89 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-
-    //  PayPal Review Order page
-    .paypal-review {
-        .block {
-            &:extend(.abs-account-blocks all);
-            .actions-toolbar {
-                .action {
-                    &.primary {
-                        &:extend(.abs-revert-secondary-color all);
-                    }
-                }
-            }
-        }
-
+//  PayPal Review Order page
+.paypal-review {
+    .block {
+        // &:extend(.abs-account-blocks all);
+        @warn 'TO DO - Fix extend all';
         .actions-toolbar {
-            margin-top: $indent__s;
-        }
-
-        .paypal-review-title {
-            padding: 0 0 $indent__s;
-
-            > strong {
-                @include lib-font-size(24);
-                font-weight: $font-weight__light;
-            }
-
             .action {
-                display: inline-block;
-                margin: 12px 0 0 $indent__l;
-            }
-        }
-
-        .table-paypal-review-items {
-            .col {
-                &.price,
-                &.subtotal {
-                    &:extend(.abs-incl-excl-tax all);
+                &.primary {
+                    // &:extend(.abs-revert-secondary-color all);
+                    @warn 'TO DO - Fix extend all';
                 }
-
-                &.name {
-                    padding-top: 16px;
-                }
-
-                &.qty {
-                    text-align: center;
-                }
-            }
-
-            .cart-tax-total {
-                &:extend(.abs-tax-total all);
-                &-expanded {
-                    &:extend(.abs-tax-total-expanded all);
-                }
-            }
-        }
-
-        .item-options {
-            dt {
-                display: inline-block;
-                &:after {
-                    content: ': ';
-                }
-            }
-
-            dd {
-                margin: 0;
             }
         }
     }
 
-    //  Discounts
-    .paypal-review-discount {
-        &:extend(.abs-discount-block all);
-        border-bottom: $border-width__base solid $border-color__base;
-        margin: 0 0 $indent__xl;
-        padding: $indent__s 0 0;
+    .actions-toolbar {
+        margin-top: $indent__s;
+    }
+
+    .paypal-review-title {
+        padding: 0 0 $indent__s;
+
+        > strong {
+            @include lib-font-size(24);
+            font-weight: $font-weight__light;
+        }
+
+        .action {
+            display: inline-block;
+            margin: 12px 0 0 $indent__l;
+        }
+    }
+
+    .table-paypal-review-items {
+        .col {
+            &.price,
+            &.subtotal {
+                // &:extend(.abs-incl-excl-tax all);
+                @warn 'TO DO - Fix extend all';
+            }
+
+            &.name {
+                padding-top: 16px;
+            }
+
+            &.qty {
+                text-align: center;
+            }
+        }
+
+        .cart-tax-total {
+            // &:extend(.abs-tax-total all);
+            @warn 'TO DO - Fix extend all';
+            &-expanded {
+                // &:extend(.abs-tax-total-expanded all);
+                @warn 'TO DO - Fix extend all';
+            }
+        }
+    }
+
+    .item-options {
+        dt {
+            display: inline-block;
+            &:after {
+                content: ': ';
+            }
+        }
+
+        dd {
+            margin: 0;
+        }
     }
 }
+
+//  Discounts
+.paypal-review-discount {
+    // &:extend(.abs-discount-block all);
+    @warn 'TO DO - Fix extend all';
+    border-bottom: $border-width__base solid $border-color__base;
+    margin: 0 0 $indent__xl;
+    padding: $indent__s 0 0;
+}
+
 
 //
 //  Mobile
@@ -116,7 +120,8 @@
         }
 
         .block-content {
-            &:extend(.abs-add-clearfix-desktop all);
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
 
             .box-order-shipping-address,
             .box-order-shipping-method,
@@ -134,7 +139,8 @@
 
         .column.main & {
             .actions-toolbar {
-                &:extend(.abs-reset-left-margin-desktop all);
+                // &:extend(.abs-reset-left-margin-desktop all);
+                @warn 'TO DO - Fix extend all';
             }
         }
 
@@ -160,8 +166,10 @@
 
     //  Discounts
     .paypal-review-discount {
-        &:extend(.abs-add-clearfix-desktop all);
-        &:extend(.abs-discount-block-desktop all);
+        // &:extend(.abs-add-clearfix-desktop all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-discount-block-desktop all);
+        @warn 'TO DO - Fix extend all';
         border-top: $border-width__base solid $border-color__base;
     }
 }

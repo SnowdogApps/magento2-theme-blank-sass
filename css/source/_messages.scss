@@ -7,25 +7,22 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+.message.info {
+    @include lib-message-icon-inner(info);
+}
 
-    .message.info {
-        @include lib-message-icon-inner(info);
-    }
+.message.error {
+    @include lib-message-icon-inner(error);
+}
 
-    .message.error {
-        @include lib-message-icon-inner(error);
-    }
+.message.warning {
+    @include lib-message-icon-inner(warning);
+}
 
-    .message.warning {
-        @include lib-message-icon-inner(warning);
-    }
+.message.notice {
+    @include lib-message-icon-inner(notice);
+}
 
-    .message.notice {
-        @include lib-message-icon-inner(notice);
-    }
-
-    .message.success {
-        @include lib-message-icon-inner(success);
-    }
+.message.success {
+    @include lib-message-icon-inner(success);
 }

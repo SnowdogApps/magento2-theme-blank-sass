@@ -7,7 +7,6 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
 
 // Prices
 @mixin price-style-1() {
@@ -19,7 +18,7 @@
     }
 }
 
-.price-style-2() {
+@mixin price-style-2() {
     .price {
         &-including-tax,
         &-excluding-tax {
@@ -36,7 +35,7 @@
     }
 }
 
-.price-style-3() {
+@mixin price-style-3() {
     .price-including-tax,
     .price-excluding-tax {
         display: block;
@@ -48,9 +47,11 @@
         }
 
         .cart-tax-total {
-            &:extend(.abs-tax-total all);
+            // &:extend(.abs-tax-total all);
+            @warn 'TO DO - Fix extend all';
             &-expanded {
-                &:extend(.abs-tax-total-expanded all);
+                // &:extend(.abs-tax-total-expanded all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -74,4 +75,4 @@
 @include price-style-1();
 @include price-style-3();
 
-}
+@warn 'TO DO - No idea what the hell happened here - looks like piece of shit'

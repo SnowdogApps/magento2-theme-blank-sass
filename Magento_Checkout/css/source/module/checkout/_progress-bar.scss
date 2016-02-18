@@ -37,16 +37,14 @@ $checkout-progress-bar-item-element-outer-radius__width: 6px;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+//
+//  Checkout Progress Bar
+//  ---------------------------------------------
 
-    //
-    //  Checkout Progress Bar
-    //  ---------------------------------------------
-
-    .opc-progress-bar {
-        &:extend(.abs-reset-list all);
-        display: none;
-    }
+.opc-progress-bar {
+    // &:extend(.abs-reset-list all);
+    @warn 'TO DO - Fix extend all';
+    display: none;
 }
 
 //
@@ -100,12 +98,12 @@ $checkout-progress-bar-item-element-outer-radius__width: 6px;
             word-wrap: break-word;
 
             @include lib-typography(
-            $_color: $checkout-progress-bar-item__background-color,
-            $_font-family: false,
-            $_font-size: $checkout-progress-bar__font-size,
-            $_font-style: false,
-            $_font-weight: $checkout-progress-bar__font-weight,
-            $_line-height: false
+                $_color: $checkout-progress-bar-item__background-color,
+                $_font-family: false,
+                $_font-size: $checkout-progress-bar__font-size,
+                $_font-style: false,
+                $_font-weight: $checkout-progress-bar__font-weight,
+                $_line-height: false
             );
 
             &:before, // Item element
@@ -131,12 +129,12 @@ $checkout-progress-bar-item-element-outer-radius__width: 6px;
                 content: counter(i);
                 counter-increment: i;
                 @include lib-typography(
-                $_color: $checkout-progress-bar-item-element-inner__color,
-                $_font-family: false,
-                $_font-size: $checkout-progress-bar__font-size,
-                $_font-style: false,
-                $_font-weight: $font-weight__semibold,
-                $_line-height: false
+                    $_color: $checkout-progress-bar-item-element-inner__color,
+                    $_font-family: false,
+                    $_font-size: $checkout-progress-bar__font-size,
+                    $_font-style: false,
+                    $_font-weight: $font-weight__semibold,
+                    $_line-height: false
                 );
             }
         }

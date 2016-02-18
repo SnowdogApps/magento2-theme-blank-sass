@@ -7,8 +7,6 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
-
 .tooltip.wrapper {
     @include lib-tooltip(
         $_tooltip-position: bottom,
@@ -48,6 +46,4 @@
 .ui-tooltip {
   position: absolute;
   z-index: 9999;
-}
-
 }

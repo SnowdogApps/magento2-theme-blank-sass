@@ -10,7 +10,6 @@ $catalog-event-color: $primary__color;
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
 
 //
 //     Catalog Events
@@ -86,8 +85,6 @@ $catalog-event-color: $primary__color;
             }
         }
     }
-}
-
 }
 
 //

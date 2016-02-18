@@ -7,7 +7,7 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
+
 
 .data.switch .counter {
     @include lib-css(color, $text__color__muted);
@@ -240,7 +240,7 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
+
 
 .data.table.reviews {
     .rating-summary {
@@ -313,7 +313,7 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
+
 
 //
 //    Account
@@ -387,7 +387,7 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
+
 
 .customer-review {
     .product-details {

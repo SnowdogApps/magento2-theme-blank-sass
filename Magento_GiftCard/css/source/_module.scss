@@ -7,93 +7,93 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
+.page-product-giftcard {
+    .giftcard-amount {
+        text-align: left;
+        margin-bottom: 0;
+        clear: both;
+        border-top: 1px $color-gray-light5 solid;
+        padding-top: 15px;
 
-    .page-product-giftcard {
-        .giftcard-amount {
-            text-align: left;
-            margin-bottom: 0;
-            clear: both;
-            border-top: 1px $color-gray-light5 solid;
-            padding-top: 15px;
-
-            .field:last-child {
-                padding-bottom: $form-field__vertical-indent !important;
-            }
+        .field:last-child {
+            padding-bottom: $form-field__vertical-indent !important;
         }
+    }
 
-        .product-info-main {
-            .price-box {
-                .old-price {
-                    font-size: 20px;
-                }
-
-                .price-container.price-final_price {
-                    > span {
-                        display: block;
-                        margin-bottom: $indent__xs;
-
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-
-                    .price {
-                        font-size: 22px;
-                        line-height: 22px;
-                        font-weight: $font-weight__semibold;
-                    }
-                }
-
-                & + .giftcard.form {
-                    border-top: 1px $color-gray-light5 solid;
-                    padding-top: 15px;
-                }
-            }
-        }
-
-        .product-info-stock-sku {
-            display: block;
-        }
-
-        .product-add-form {
-            clear: none;
-            border: 0;
-            padding-top: 0;
-
-            .product-options-wrapper .field:not(.text) {
-                margin-top: $form-field__vertical-indent;
-                margin-bottom: $form-field__vertical-indent;
-            }
-        }
-
-        .giftcard.form {
-            clear: both;
-        }
-
+    .product-info-main {
         .price-box {
-            margin-bottom: 10px;
-        }
-
-        .product-info-price {
-            float: right;
-            width: auto;
-            display: block;
-            white-space: nowrap;
-            border: 0;
-        }
-
-        .fieldset.giftcard {
-            >.legend {
-                &:extend(.abs-visually-hidden all);
+            .old-price {
+                font-size: 20px;
             }
 
-            >.legend + br {
-                &:extend(.abs-no-display all);
+            .price-container.price-final_price {
+                > span {
+                    display: block;
+                    margin-bottom: $indent__xs;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .price {
+                    font-size: 22px;
+                    line-height: 22px;
+                    font-weight: $font-weight__semibold;
+                }
+            }
+
+            & + .giftcard.form {
+                border-top: 1px $color-gray-light5 solid;
+                padding-top: 15px;
             }
         }
     }
+
+    .product-info-stock-sku {
+        display: block;
+    }
+
+    .product-add-form {
+        clear: none;
+        border: 0;
+        padding-top: 0;
+
+        .product-options-wrapper .field:not(.text) {
+            margin-top: $form-field__vertical-indent;
+            margin-bottom: $form-field__vertical-indent;
+        }
+    }
+
+    .giftcard.form {
+        clear: both;
+    }
+
+    .price-box {
+        margin-bottom: 10px;
+    }
+
+    .product-info-price {
+        float: right;
+        width: auto;
+        display: block;
+        white-space: nowrap;
+        border: 0;
+    }
+
+    .fieldset.giftcard {
+        >.legend {
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
+        }
+
+        >.legend + br {
+            // &:extend(.abs-no-display all);
+            @warn 'TO DO - Fix extend all';
+        }
+    }
 }
+
 
 //
 //  Mobile

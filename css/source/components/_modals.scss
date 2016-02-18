@@ -11,7 +11,7 @@
 //  Variables
 //  ---------------------------------------------
 
-@import '../../source/_variables.scss';
+@import '../../source/_variables';
 
 $modal__background-color: $color-white;
 $modal__box-shadow: 0 0 12px 2px rgba(0, 0, 0, .35);
@@ -40,7 +40,7 @@ $modal-popup-image-box-preview-image__max-height: 54rem;
 //  Utilities
 //  ---------------------------------------------
 
-.lib-modal() {
+@mixin lib-modal() {
     bottom: 0;
     left: 0;
     min-width: 0;
@@ -66,7 +66,7 @@ $modal-popup-image-box-preview-image__max-height: 54rem;
     }
 }
 
-.lib-modal-slide() {
+@mixin lib-modal-slide() {
     @include lib-css(left, $modal-slide__first__indent-left);
     @include lib-css(z-index, $modal-slide__z-index);
 
@@ -91,7 +91,7 @@ $modal-popup-image-box-preview-image__max-height: 54rem;
     }
 }
 
-.lib-modal-popup() {
+@mixin lib-modal-popup() {
     @include lib-css(z-index, $modal-popup__z-index);
     left: 0;
     overflow-y: auto;
@@ -134,7 +134,8 @@ body {
 
 //  Modals overlay
 .modals-overlay {
-    &:extend(.abs-modal-overlay all);
+    // &:extend(.abs-modal-overlay all);
+    @warn 'TO DO - Fix extend all';
     @include lib-css(z-index, $overlay__z-index);
 }
 

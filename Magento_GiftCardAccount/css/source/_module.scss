@@ -7,45 +7,47 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .giftcard-account {
-        .please-wait {
-            display: none;
-        }
 
-        .form-giftcard-redeem {
-            .giftcard.info {
-                margin-bottom: $indent__l;
-            }
-
-            .fieldset {
-                &:extend(.abs-forms-margin-small all);
-            }
-        }
+.giftcard-account {
+    .please-wait {
+        display: none;
     }
 
-    .opc-wrapper {
-        .form-giftcard-account {
-            max-width: 500px;
-
-            .field {
-                margin: 0 0 $indent__base;
-
-                .label {
-                    &:extend(.abs-visually-hidden all);
-                }
-            }
+    .form-giftcard-redeem {
+        .giftcard.info {
+            margin-bottom: $indent__l;
         }
 
-        .giftcard-account-info {
-            margin: 0 0 $indent__base;
-
-            .giftcard-account-number {
-                margin: 0 0 $indent__s;
-            }
+        .fieldset {
+            // &:extend(.abs-forms-margin-small all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }
+
+.opc-wrapper {
+    .form-giftcard-account {
+        max-width: 500px;
+
+        .field {
+            margin: 0 0 $indent__base;
+
+            .label {
+                // &:extend(.abs-visually-hidden all);
+                @warn 'TO DO - Fix extend all';
+            }
+        }
+    }
+
+    .giftcard-account-info {
+        margin: 0 0 $indent__base;
+
+        .giftcard-account-number {
+            margin: 0 0 $indent__s;
+        }
+    }
+}
+
 
 //
 //  Desktop
@@ -53,12 +55,14 @@
 
 @include min-screen($screen__m) {
     .form-giftcard-redeem {
-        &:extend(.abs-forms-general-desktop all);
+        // &:extend(.abs-forms-general-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .block-balance-giftcard {
         .block-content {
-            &:extend(.abs-account-block-font-size all);
+            // &:extend(.abs-account-block-font-size all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }

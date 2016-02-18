@@ -7,10 +7,8 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .breadcrumbs {
-        @include lib-breadcrumbs();
-    }
+.breadcrumbs {
+    @include lib-breadcrumbs();
 }
 
 //

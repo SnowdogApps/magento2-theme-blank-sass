@@ -13,28 +13,29 @@ $checkout-modal-popup__width: 800px;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .checkout-index-index {
-        .modal-popup {
-            .field-tooltip {
-                .field-tooltip-content {
-                    &:extend(.abs-checkout-tooltip-content-position-top all);
+
+.checkout-index-index {
+    .modal-popup {
+        .field-tooltip {
+            .field-tooltip-content {
+                // &:extend(.abs-checkout-tooltip-content-position-top all);
+                @warn 'TO DO - Fix extend all';
+            }
+        }
+
+        .fieldset {
+            .field {
+                .label {
+                    font-weight: $font-weight__regular;
                 }
             }
+        }
 
-            .fieldset {
-                .field {
-                    .label {
-                        font-weight: $font-weight__regular;
-                    }
-                }
-            }
-
-            .modal-footer {
-                .action-hide-popup {
-                    &:extend(.abs-action-button-as-link all);
-                    margin-top: 8px;
-                }
+        .modal-footer {
+            .action-hide-popup {
+                // &:extend(.abs-action-button-as-link all);
+                @warn 'TO DO - Fix extend all';
+                margin-top: 8px;
             }
         }
     }

@@ -32,83 +32,81 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .modal-custom,
-    .modal-popup,
-    .modal-slide {
-        .action-close {
-            @include lib-button-reset();
-            @include lib-button-icon(
-                $icon-remove,
-                $_icon-font-color: $minicart-icons-color,
-                $_icon-font-size: $modal-action-close__font-size,
-                $_icon-font-line-height: $modal-action-close__font-size,
-                $_icon-font-text-hide: true
-            );
-            position: absolute;
-            right: 0;
-            top: 0;
-
-            &:hover {
-                &:before {
-                    color: $modal-action-close__hover__color;
-                }
-            }
-        }
-    }
-
-    .modal-custom {
-        .action-close {
-            @include lib-css(margin, $indent__m);
-        }
-    }
-
-    .modal-popup {
-        .modal-title {
-            @include lib-css(border-bottom, $modal-title__border);
-            @include lib-css(font-weight, $font-weight__light);
-            @include lib-css(padding-bottom, $indent__s);
-            font-size: $modal-popup-title__font-size;
-            margin-bottom: 0;
-            min-height: 1em;
-            word-wrap: break-word;
-        }
-
-        .action-close {
-            padding: $indent__base;
-        }
-    }
-
-    .modal-slide {
-        .action-close {
-            padding: $modal-slide-action-close__padding;
-        }
-
-        .page-main-actions {
-            margin-top: $modal-slide-header__padding-vertical;
-            margin-bottom: $modal-slide-header__padding-vertical - ($indent__l/2);
-        }
-    }
-
-    .modals-overlay {
-        @include lib-css(background-color, $modal-overlay__background-color);
-        bottom: 0;
-        left: 0;
-        position: fixed;
+.modal-custom,
+.modal-popup,
+.modal-slide {
+    .action-close {
+        @include lib-button-reset();
+        @include lib-button-icon(
+            $icon-remove,
+            $_icon-font-color: $minicart-icons-color,
+            $_icon-font-size: $modal-action-close__font-size,
+            $_icon-font-line-height: $modal-action-close__font-size,
+            $_icon-font-text-hide: true
+        );
+        position: absolute;
         right: 0;
         top: 0;
+
+        &:hover {
+            &:before {
+                color: $modal-action-close__hover__color;
+            }
+        }
+    }
+}
+
+.modal-custom {
+    .action-close {
+        @include lib-css(margin, $indent__m);
+    }
+}
+
+.modal-popup {
+    .modal-title {
+        @include lib-css(border-bottom, $modal-title__border);
+        @include lib-css(font-weight, $font-weight__light);
+        @include lib-css(padding-bottom, $indent__s);
+        font-size: $modal-popup-title__font-size;
+        margin-bottom: 0;
+        min-height: 1em;
+        word-wrap: break-word;
     }
 
-    body {
-        &._has-modal-custom {
-            .modal-custom-overlay {
-                height: 100vh;
-                left: 0;
-                position: fixed;
-                top: 0;
-                width: 100vw;
-                z-index: $overlay__z-index;
-            }
+    .action-close {
+        padding: $indent__base;
+    }
+}
+
+.modal-slide {
+    .action-close {
+        padding: $modal-slide-action-close__padding;
+    }
+
+    .page-main-actions {
+        margin-top: $modal-slide-header__padding-vertical;
+        margin-bottom: $modal-slide-header__padding-vertical - ($indent__l/2);
+    }
+}
+
+.modals-overlay {
+    @include lib-css(background-color, $modal-overlay__background-color);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+body {
+    &._has-modal-custom {
+        .modal-custom-overlay {
+            height: 100vh;
+            left: 0;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: $overlay__z-index;
         }
     }
 }

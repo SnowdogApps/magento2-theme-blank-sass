@@ -21,49 +21,50 @@ $checkout-sidebar-shipping-information-edit-icon__hover__color: $primary__color;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
 
-    //
-    //  Shipping Information
-    //  ---------------------------------------------
 
-    .opc-block-shipping-information {
-        @include lib-css(padding, 0 $checkout-sidebar-shipping-information__padding);
+//
+//  Shipping Information
+//  ---------------------------------------------
 
-        .shipping-information-title {
-            &:extend(.abs-checkout-title all);
-            @include lib-css(border-bottom, $checkout-step-title__border);
-            margin: 0 0 $indent__base;
-            position: relative;
+.opc-block-shipping-information {
+    @include lib-css(padding, 0 $checkout-sidebar-shipping-information__padding);
 
-            .action-edit {
-                &:extend(.abs-action-button-as-link all);
-                @include lib-css(top, $checkout-sidebar-shipping-information-edit-icon__top);
-                @include lib-icon-font(
-                    $checkout-sidebar-shipping-information-edit-icon__content,
-                    $_icon-font-size: $checkout-sidebar-shipping-information-edit-icon__font-size,
-                    $_icon-font-line-height: $checkout-sidebar-shipping-information-edit-icon__line-height,
-                    $_icon-font-text-hide: true,
-                    $_icon-font-color: $checkout-sidebar-shipping-information-edit-icon__color,
-                    $_icon-font-color-hover: $checkout-sidebar-shipping-information-edit-icon__hover__color,
-                    $_icon-font-color-active: $checkout-sidebar-shipping-information-edit-icon__color
-                );
-                margin: 0;
-                position: absolute;
-                right: 0;
-            }
+    .shipping-information-title {
+        // &:extend(.abs-checkout-title all);
+        @warn 'TO DO - Fix extend all';
+        @include lib-css(border-bottom, $checkout-step-title__border);
+        margin: 0 0 $indent__base;
+        position: relative;
+
+        .action-edit {
+            // &:extend(.abs-action-button-as-link all);
+            @warn 'TO DO - Fix extend all';
+            @include lib-css(top, $checkout-sidebar-shipping-information-edit-icon__top);
+            @include lib-icon-font(
+                $checkout-sidebar-shipping-information-edit-icon__content,
+                $_icon-font-size: $checkout-sidebar-shipping-information-edit-icon__font-size,
+                $_icon-font-line-height: $checkout-sidebar-shipping-information-edit-icon__line-height,
+                $_icon-font-text-hide: true,
+                $_icon-font-color: $checkout-sidebar-shipping-information-edit-icon__color,
+                $_icon-font-color-hover: $checkout-sidebar-shipping-information-edit-icon__hover__color,
+                $_icon-font-color-active: $checkout-sidebar-shipping-information-edit-icon__color
+            );
+            margin: 0;
+            position: absolute;
+            right: 0;
         }
+    }
 
-        .shipping-information-content {
-            @include lib-css(line-height, $checkout-sidebar-shipping-information__line-height);
-            .actions-toolbar {
-                margin-left: 0;
-            }
+    .shipping-information-content {
+        @include lib-css(line-height, $checkout-sidebar-shipping-information__line-height);
+        .actions-toolbar {
+            margin-left: 0;
         }
+    }
 
-        .ship-to,
-        .ship-via {
-            margin: 0 0 $indent__base;
-        }
+    .ship-to,
+    .ship-via {
+        margin: 0 0 $indent__base;
     }
 }

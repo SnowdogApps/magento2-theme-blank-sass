@@ -7,37 +7,35 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .table-wrapper {
-        margin-bottom: $indent__base;
-    }
+.table-wrapper {
+    margin-bottom: $indent__base;
+}
 
-    table {
-        @include lib-table-caption();
-    }
+table {
+    @include lib-table-caption();
+}
 
-    .table {
-        tfoot {
-            @include lib-css(background, $sidebar__background-color);
-            > tr {
-                &:first-child {
-                    th,
-                    td {
-                        border-top: $table__border-width $table__border-style $table__border-color;
-                        padding-top: $indent__base;
-                    }
+.table {
+    tfoot {
+        @include lib-css(background, $sidebar__background-color);
+        > tr {
+            &:first-child {
+                th,
+                td {
+                    border-top: $table__border-width $table__border-style $table__border-color;
+                    padding-top: $indent__base;
                 }
             }
+        }
 
-            th,
-            td {
-                border: 0;
-            }
+        th,
+        td {
+            border: 0;
+        }
 
-            .mark {
-                font-weight: $font-weight__regular;
-                text-align: right;
-            }
+        .mark {
+            font-weight: $font-weight__regular;
+            text-align: right;
         }
     }
 }
@@ -75,7 +73,8 @@
             &.additional-attributes {
                 tbody {
                     th {
-                        &:extend(.abs-no-display-s all);
+                        // &:extend(.abs-no-display-s all);
+                        @warn 'TO DO - Fix extend all';
                     }
 
                     td {
@@ -95,7 +94,8 @@
                 tr {
                     display: block;
 
-                    &:extend(.abs-add-clearfix-mobile all);
+                    // &:extend(.abs-add-clearfix-mobile all);
+                    @warn 'TO DO - Fix extend all';
                     &:first-child {
                         th,
                         td {

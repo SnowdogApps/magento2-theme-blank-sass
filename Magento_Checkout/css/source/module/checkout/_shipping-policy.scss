@@ -15,34 +15,36 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .checkout-shipping-method {
-        position: relative;
-    }
 
-    .shipping-policy-block {
-        &.field-tooltip {
-            top: 12px;
+.checkout-shipping-method {
+    position: relative;
+}
 
-            .field-tooltip-action {
-                @include lib-css(color, $checkout-shipping-policy-action__color);
-                cursor: pointer;
+.shipping-policy-block {
+    &.field-tooltip {
+        top: 12px;
 
-                &:before {
-                   display: none;
-                }
+        .field-tooltip-action {
+            @include lib-css(color, $checkout-shipping-policy-action__color);
+            cursor: pointer;
 
-                span {
-                    &:extend(.abs-visually-hidden-reset all);
-                }
+            &:before {
+               display: none;
             }
 
-            .field-tooltip-content {
-                &:extend(.abs-add-box-sizing all);
-                &:extend(.abs-checkout-tooltip-content-position-top all);
-                @include lib-css(width, $checkout-shipping-policy-tooltip__width);
-                top: $indent__l;
+            span {
+                // &:extend(.abs-visually-hidden-reset all);
+                @warn 'TO DO - Fix extend all';
             }
+        }
+
+        .field-tooltip-content {
+            // &:extend(.abs-add-box-sizing all);
+            @warn 'TO DO - Fix extend all';
+            // &:extend(.abs-checkout-tooltip-content-position-top all);
+            @warn 'TO DO - Fix extend all';
+            @include lib-css(width, $checkout-shipping-policy-tooltip__width);
+            top: $indent__l;
         }
     }
 }

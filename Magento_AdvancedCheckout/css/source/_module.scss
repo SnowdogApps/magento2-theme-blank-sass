@@ -7,111 +7,114 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .column {
-        .block-addbysku {
-            .fieldset {
-                margin: 0;
+.column {
+    .block-addbysku {
+        .fieldset {
+            margin: 0;
 
-                .fields {
-                    position: relative;
+            .fields {
+                position: relative;
 
-                    .field {
-                        display: inline-block;
-                        margin-bottom: $indent__s;
-                        vertical-align: top;
-                    }
-
-                    .actions-toolbar {
-                        position: absolute;
-                        right: 0;
-                        top: 7px;
-                    }
-                }
-            }
-
-            .sku {
-                &:extend(.abs-add-box-sizing all);
-                margin-right: -155px;
-                padding-right: 160px;
-                width: 100%;
-            }
-
-            .qty {
-                .qty {
-                    &:extend(.abs-input-qty all);
-
-                    + .mage-error {
-                        width: 80px;
-                    }
-                }
-            }
-
-            .block-content {
-                &:extend(.abs-add-clearfix-desktop all);
-
-                .box {
-                    &:extend(.abs-blocks-2columns all);
+                .field {
+                    display: inline-block;
+                    margin-bottom: $indent__s;
+                    vertical-align: top;
                 }
 
                 .actions-toolbar {
-                    clear: both;
-                    @include lib-actions-toolbar(
-                    $_actions-toolbar-actions-position: left,
-                    $_actions-toolbar-margin: 0 0 $indent__base
-                    );
-                    @include lib-actions-toolbar-clear-floats();
-
-                    > .secondary {
-                        text-align: left;
-                    }
+                    position: absolute;
+                    right: 0;
+                    top: 7px;
                 }
             }
+        }
 
-            .action {
-                &.add {
-                    @include lib-button-icon(
-                    $_icon-font-content: $icon-expand,
-                    $_icon-font-text-hide: true,
-                    $_icon-font-size: 20px
-                    );
-                    line-height: normal;
-                    padding: 4px;
-                    width: auto;
+        .sku {
+            // &:extend(.abs-add-box-sizing all);
+            @warn 'TO DO - Fix extend all';
+            margin-right: -155px;
+            padding-right: 160px;
+            width: 100%;
+        }
+
+        .qty {
+            .qty {
+                // &:extend(.abs-input-qty all);
+                @warn 'TO DO - Fix extend all';
+
+                + .mage-error {
+                    width: 80px;
                 }
             }
+        }
 
-            .reset {
-                margin: 7px 0;
+        .block-content {
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
+
+            .box {
+                // &:extend(.abs-blocks-2columns all);
+                @warn 'TO DO - Fix extend all';
             }
 
-            .note {
-                display: block;
-                margin: 0 0 $indent__base;
-                padding-top: $indent__s;
+            .actions-toolbar {
+                clear: both;
+                @include lib-actions-toolbar(
+                $_actions-toolbar-actions-position: left,
+                $_actions-toolbar-margin: 0 0 $indent__base
+                );
+                @include lib-actions-toolbar-clear-floats();
+
+                > .secondary {
+                    text-align: left;
+                }
             }
+        }
+
+        .action {
+            &.add {
+                @include lib-button-icon(
+                $_icon-font-content: $icon-expand,
+                $_icon-font-text-hide: true,
+                $_icon-font-size: 20px
+                );
+                line-height: normal;
+                padding: 4px;
+                width: auto;
+            }
+        }
+
+        .reset {
+            margin: 7px 0;
+        }
+
+        .note {
+            display: block;
+            margin: 0 0 $indent__base;
+            padding-top: $indent__s;
+        }
+    }
+}
+
+.block-cart-failed {
+    margin: $indent__xl 0;
+    // &:extend(.abs-shopping-cart-items all);
+    @warn 'TO DO - Fix extend all';
+
+    .block-title {
+        @include lib-font-size($h2__font-size);
+
+        strong {
+            font-weight: $h2__font-weight;
         }
     }
 
-    .block-cart-failed {
-        margin: $indent__xl 0;
-        &:extend(.abs-shopping-cart-items all);
+    .actions {
+        text-align: center;
 
-        .block-title {
-            @include lib-font-size($h2__font-size);
-
-            strong {
-                font-weight: $h2__font-weight;
-            }
-        }
-
-        .actions {
-            text-align: center;
-
-            .action {
-                display: block;
-                margin: 0 auto $indent__s;
-            }
+        .action {
+            display: block;
+            margin: 0 auto $indent__s;
         }
     }
 }
@@ -172,7 +175,8 @@
 
 @include min-screen($screen__m) {
     .block-cart-failed {
-        &:extend(.abs-shopping-cart-items-desktop all);
+        // &:extend(.abs-shopping-cart-items-desktop all);
+        @warn 'TO DO - Fix extend all';
 
         .secondary {
             .action {
@@ -185,7 +189,8 @@
         }
 
         .block-content {
-            &:extend(.abs-add-clearfix-desktop all);
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }

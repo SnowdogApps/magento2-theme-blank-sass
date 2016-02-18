@@ -7,22 +7,20 @@
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .pages {
-        @include lib-pager();
-        .action {
-            $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade($border-color__base, 30);
-            @include lib-css(box-shadow, $_shadow);
-            border-radius: 3px;
-            padding: 0 8px;
+.pages {
+    @include lib-pager();
+    .action {
+        $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade($border-color__base, 30);
+        @include lib-css(box-shadow, $_shadow);
+        border-radius: 3px;
+        padding: 0 8px;
 
-            &.previous {
-                margin-right: 8px;
-            }
+        &.previous {
+            margin-right: 8px;
+        }
 
-            &.next {
-                margin-left: 8px;
-            }
+        &.next {
+            margin-left: 8px;
         }
     }
 }

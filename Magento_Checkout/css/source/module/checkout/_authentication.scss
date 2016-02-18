@@ -17,103 +17,104 @@ $block-auth__border: 1px solid $color-gray-light3;
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .authentication-dropdown {
-        box-sizing: border-box;
 
-        .modal-inner-wrap {
-            padding: $block-auth__dropdown__padding;
+.authentication-dropdown {
+    box-sizing: border-box;
+
+    .modal-inner-wrap {
+        padding: $block-auth__dropdown__padding;
+    }
+}
+.authentication-wrapper {
+    float: right;
+    margin-top: -1.5*$indent__xl;
+    max-width: 50%;
+    position: relative;
+    z-index: 1;
+
+    ._has-auth-shown & {
+        z-index: $modal__z-index;
+    }
+}
+
+.action-auth-toggle {
+    // &:extend(.abs-action-button-as-link all);
+    @warn 'TO DO - Fix extend all';
+}
+
+.block-authentication {
+    .block-title {
+        @include lib-font-size($h3__font-size);
+        border-bottom: 0;
+        margin-bottom: $indent__m;
+
+        strong {
+            font-weight: $font-weight__light;
         }
     }
-    .authentication-wrapper {
-        float: right;
-        margin-top: -1.5*$indent__xl;
-        max-width: 50%;
-        position: relative;
-        z-index: 1;
 
-        ._has-auth-shown & {
-            z-index: $modal__z-index;
+    .field {
+        .label {
+            font-weight: $font-weight__regular;
         }
     }
 
-    .action-auth-toggle {
-        &:extend(.abs-action-button-as-link all);
+    .actions-toolbar {
+        margin-bottom: $indent__xs;
+
+        > .secondary {
+            padding-top: $indent__m;
+            text-align: left;
+        }
     }
 
-    .block-authentication {
-        .block-title {
-            @include lib-font-size($h3__font-size);
-            border-bottom: 0;
-            margin-bottom: $indent__m;
+    .action.action-register,
+    .action.action-login {
+        // &:extend(.abs-button-l all);
+        @warn 'TO DO - Fix extend all';
+    }
 
-            strong {
-                font-weight: $font-weight__light;
-            }
+    .block[class] {
+        margin: 0;
+
+        ul {
+            list-style: none;
+            padding-left: $indent__s;
         }
 
         .field {
+            .control,
             .label {
-                font-weight: $font-weight__regular;
+                float: none;
+                width: auto;
             }
         }
 
-        .actions-toolbar {
-            margin-bottom: $indent__xs;
+        & + .block {
+            border-top: 1px solid $color-gray-light5;
+            margin-top: $indent__xl;
+            padding-top: $indent__xl;
+            position: relative;
 
-            > .secondary {
-                padding-top: $indent__m;
-                text-align: left;
-            }
-        }
-
-        .action.action-register,
-        .action.action-login {
-            &:extend(.abs-button-l all);
-        }
-
-        .block[class] {
-            margin: 0;
-
-            ul {
-                list-style: none;
-                padding-left: $indent__s;
-            }
-
-            .field {
-                .control,
-                .label {
-                    float: none;
-                    width: auto;
-                }
-            }
-
-            & + .block {
-                border-top: 1px solid $color-gray-light5;
-                margin-top: $indent__xl;
-                padding-top: $indent__xl;
-                position: relative;
-
-                &::before {
-                    @include lib-css(height, $block-auth__or-label__size);
-                    @include lib-css(line-height, $block-auth__or-label__size - 2px);
-                    @include lib-css(margin, -($block-auth__or-label__size/2 + 1px) 0 0 -($block-auth__or-label__size / 2));
-                    @include lib-css(min-width, $block-auth__or-label__size);
-                    background: $color-white;
-                    border-radius: 50%;
-                    border: 1px solid $color-gray-light5;
-                    box-sizing: border-box;
-                    color: $color-gray-light5;
-                    content: attr(data-label);
-                    display: inline-block;
-                    left: 50%;
-                    letter-spacing: normal;
-                    padding: 0 .2rem;
-                    position: absolute;
-                    text-align: center;
-                    text-transform: uppercase;
-                    top: 0;
-                }
+            &::before {
+                @include lib-css(height, $block-auth__or-label__size);
+                @include lib-css(line-height, $block-auth__or-label__size - 2px);
+                @include lib-css(margin, -($block-auth__or-label__size/2 + 1px) 0 0 -($block-auth__or-label__size / 2));
+                @include lib-css(min-width, $block-auth__or-label__size);
+                background: $color-white;
+                border-radius: 50%;
+                border: 1px solid $color-gray-light5;
+                box-sizing: border-box;
+                color: $color-gray-light5;
+                content: attr(data-label);
+                display: inline-block;
+                left: 50%;
+                letter-spacing: normal;
+                padding: 0 .2rem;
+                position: absolute;
+                text-align: center;
+                text-transform: uppercase;
+                top: 0;
             }
         }
     }

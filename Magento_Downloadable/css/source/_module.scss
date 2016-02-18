@@ -7,7 +7,7 @@
 //    Common
 //--------------------------------------
 
-& when ($media-common = true) {
+
 
 .table-downloadable-products {
     .product-name {
@@ -27,7 +27,8 @@
     .product-add-form {
         clear: both;
         margin-bottom: $indent__m;
-        &:extend(.abs-add-clearfix all);
+        // &:extend(.abs-add-clearfix all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .product-options-bottom {
@@ -39,7 +40,8 @@
     .product-options-wrapper {
         .fieldset {
             .legend.links-title {
-                &:extend(.abs-visually-hidden all);
+                // &:extend(.abs-visually-hidden all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -97,7 +99,8 @@
         border-bottom: 1px solid $color-gray92;
         padding-bottom: $indent__s;
         margin-bottom: $indent__s;
-        &:extend(.clearer all);
+        // &:extend(.clearer all);
+        @warn 'TO DO - Fix extend all';
         width: 100%;
         position: relative;
         z-index: 1;
@@ -140,7 +143,7 @@
     }
 }
 
-}
+
 
 //
 //    Mobile
@@ -158,7 +161,8 @@
 
         .col.title {
             &:before {
-                &:extend(.abs-visually-hidden-mobile all);
+                // &:extend(.abs-visually-hidden-mobile all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -180,7 +184,8 @@
 @include min-screen($screen__m) {
 .page-product-downloadable {
         .product-add-form {
-            &:extend(.clearer all);
+            // &:extend(.clearer all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .product-options-wrapper {

@@ -25,46 +25,48 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
 
-    .checkout-index-index,
-    .checkout-onepage-success {
-        .page-title-wrapper {
-            &:extend(.abs-visually-hidden all);
-        }
+.checkout-index-index,
+.checkout-onepage-success {
+    .page-title-wrapper {
+        // &:extend(.abs-visually-hidden all);
+        @warn 'TO DO - Fix extend all';
+    }
+}
+
+.checkout-container {
+    // &:extend(.abs-add-clearfix all);
+    @warn 'TO DO - Fix extend all';
+    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+}
+
+.opc-wrapper {
+    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+
+    .opc {
+        // &:extend(.abs-reset-list all);
+        @warn 'TO DO - Fix extend all';
     }
 
-    .checkout-container {
-        &:extend(.abs-add-clearfix all);
-        @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    .step-title {
+        // &:extend(.abs-checkout-title all);
+        @warn 'TO DO - Fix extend all';
+        @include lib-css(border-bottom, $checkout-step-title__border);
     }
 
-    .opc-wrapper {
-        @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    .step-content {
+        margin: 0 0 $indent__xl;
+    }
+}
 
-        .opc {
-            &:extend(.abs-reset-list all);
-        }
-
-        .step-title {
-            &:extend(.abs-checkout-title all);
-            @include lib-css(border-bottom, $checkout-step-title__border);
-        }
-
-        .step-content {
-            margin: 0 0 $indent__xl;
-        }
+.checkout-index-index {
+    .nav-sections,
+    .nav-toggle {
+        display: none;
     }
 
-    .checkout-index-index {
-        .nav-sections,
-        .nav-toggle {
-            display: none;
-        }
-
-        .logo {
-            margin-left: 0;
-        }
+    .logo {
+        margin-left: 0;
     }
 }
 
@@ -92,7 +94,8 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 
 @include min-screen($screen__m) {
     .opc-wrapper {
-       &:extend(.abs-add-box-sizing-desktop-m all);
+        // &:extend(.abs-add-box-sizing-desktop-m all);
+        @warn 'TO DO - Fix extend all';
         @include lib-layout-column(2, 1, $checkout-wrapper__columns);
         padding-right: $indent__l;
     }

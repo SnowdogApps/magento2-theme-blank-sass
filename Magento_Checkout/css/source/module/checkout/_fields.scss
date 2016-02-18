@@ -13,21 +13,21 @@ $checkout-field-validation__border-color: $form-element-validation__border-error
 //  Common
 //  _____________________________________________
 
-& when ($media-common = true) {
-    .field {
-        .control {
-            &._with-tooltip {
-                &:extend(.abs-field-tooltip all);
-            }
-        }
 
-        &._error {
-            .control {
-                input,
-                select,
-                textarea {
-                    @include lib-css(border-color, $checkout-field-validation__border-color);
-                }
+.field {
+    .control {
+        &._with-tooltip {
+            // &:extend(.abs-field-tooltip all);
+            @warn 'TO DO - Fix extend all';
+        }
+    }
+
+    &._error {
+        .control {
+            input,
+            select,
+            textarea {
+                @include lib-css(border-color, $checkout-field-validation__border-color);
             }
         }
     }
