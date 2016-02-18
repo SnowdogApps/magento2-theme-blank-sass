@@ -2,5 +2,8 @@
   "dependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.1"
+  },
+  "devDependencies": {
+    "gulp-plumber": "^1.1.0"
   }
 }

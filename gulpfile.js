@@ -1,8 +1,14 @@
-var gulp = require('gulp'),
-    sass = require('gulp-sass');
+var gulp    = require('gulp'),
+    sass    = require('gulp-sass'),
+    plumber = require('gulp-plumber');
 
 gulp.task('default', () => {
-  return gulp.src('./**/*.scss')
+  gulp.watch('**/*.scss', ['sass']);
+});
+
+gulp.task('sass', () => {
+  return gulp.src('css/*.scss')
+    .pipe(plumber())
     .pipe(sass())
     .pipe(gulp.dest('compiled'));
 });
