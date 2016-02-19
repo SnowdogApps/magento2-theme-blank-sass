@@ -13,317 +13,329 @@ $desktop-popup-position-top: 20%;
 //  _____________________________________________
 
 
-    .wishlist {
-        //  Wish list split button
-        &.split.button {
-            @include lib-dropdown-split(
-            $_options-selector: ".items",
-            $_dropdown-split-button-border-radius-fix: false,
-            $_dropdown-split-list-item-padding: 5px 5px 5px 23px,
-            $_dropdown-split-toggle-icon-content: $icon-down,
-            $_dropdown-split-toggle-active-icon-content: $icon-up,
-            $_icon-font-size: 12px,
-            $_icon-font-color: $addto-color,
-            $_icon-font-color-hover: $addto-hover-color,
-            $_icon-font-vertical-align: middle,
-            $_dropdown-split-list-pointer-position: left,
-            $_dropdown-split-list-min-width: 200px
-            );
-            margin-right: 5%;
-            vertical-align: middle;
-            &:extend(.abs-dropdown-items-new all);
+.wishlist {
+    //  Wish list split button
+    &.split.button {
+        @include lib-dropdown-split(
+        $_options-selector: ".items",
+        $_dropdown-split-button-border-radius-fix: false,
+        $_dropdown-split-list-item-padding: 5px 5px 5px 23px,
+        $_dropdown-split-toggle-icon-content: $icon-down,
+        $_dropdown-split-toggle-active-icon-content: $icon-up,
+        $_icon-font-size: 12px,
+        $_icon-font-color: $addto-color,
+        $_icon-font-color-hover: $addto-hover-color,
+        $_icon-font-vertical-align: middle,
+        $_dropdown-split-list-pointer-position: left,
+        $_dropdown-split-list-min-width: 200px
+        );
+        margin-right: 5%;
+        vertical-align: middle;
+        // &:extend(.abs-dropdown-items-new all);
+        @warn 'TO DO - Fix extend all';
 
-            .items {
-                padding: 6px 0;
-                text-align: left;
+        .items {
+            padding: 6px 0;
+            text-align: left;
+        }
+
+        > .action {
+            // &:extend(.abs-action-button-as-link all);
+            @warn 'TO DO - Fix extend all';
+
+            &.split {
+                @include lib-icon-font-symbol(
+                $_icon-font-content: $icon-wishlist-full
+                );
+                // &:extend(.abs-actions-addto all);
+                @warn 'TO DO - Fix extend all';
+                margin-right: 5px;
+
+                &:before {
+                    margin: 0;
+                    width: 18px;
+                }
             }
+
+            &:active,
+            &:focus,
+            &:hover {
+                @include lib-css(color, $addto-hover-color);
+            }
+        }
+
+        > .action.toggle {
+            &:before {
+                border-left: 1px solid $addto-color;
+                content: '';
+                float: left;
+                height: 15px;
+                margin: 3px 4px 0 0;
+            }
+        }
+
+        .table-comparison &,
+        .product-items & {
+            > .action {
+                &.split {
+                    span {
+                        // &:extend(.abs-visually-hidden all);
+                        @warn 'TO DO - Fix extend all';
+                    }
+                }
+            }
+        }
+
+        .cart.table-wrapper & {
+            vertical-align: baseline;
 
             > .action {
-                &:extend(.abs-action-button-as-link all);
-
                 &.split {
-                    @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-wishlist-full
-                    );
-                    &:extend(.abs-actions-addto all);
-                    margin-right: 5px;
-
-                    &:before {
-                        margin: 0;
-                        width: 18px;
-                    }
+                    font-weight: normal;
+                    letter-spacing: normal;
+                    text-transform: none;
                 }
 
-                &:active,
-                &:focus,
-                &:hover {
-                    @include lib-css(color, $addto-hover-color);
-                }
-            }
-
-            > .action.toggle {
-                &:before {
-                    border-left: 1px solid $addto-color;
-                    content: '';
-                    float: left;
-                    height: 15px;
-                    margin: 3px 4px 0 0;
-                }
-            }
-
-            .table-comparison &,
-            .product-items & {
-                > .action {
-                    &.split {
-                        span {
-                            &:extend(.abs-visually-hidden all);
-                        }
-                    }
-                }
-            }
-
-            .cart.table-wrapper & {
-                vertical-align: baseline;
-
-                > .action {
-                    &.split {
-                        font-weight: normal;
-                        letter-spacing: normal;
-                        text-transform: none;
-                    }
-
-                    &.toggle {
-                        &:after {
-                            @include lib-css(color, $link__color);
-                        }
-                    }
-
-                    &.split,
-                    &.toggle {
+                &.toggle {
+                    &:after {
                         @include lib-css(color, $link__color);
-                        &:before {
-                            display: none;
-                        }
+                    }
+                }
+
+                &.split,
+                &.toggle {
+                    @include lib-css(color, $link__color);
+                    &:before {
+                        display: none;
                     }
                 }
             }
         }
-
-        //  Wish list popup
-        &.window.popup {
-            @include lib-popup();
-            box-sizing: border-box;
-
-            &.active {
-                display: block;
-            }
-        }
-
-        &.overlay {
-            @include lib-window-overlay();
-            &.active {
-                display: block;
-            }
-        }
-
-        //  Wish list dropdown
-        &-dropdown {
-            &:extend(.abs-dropdown-simple all);
-            &:extend(.abs-dropdown-items-new all);
-        }
-
-        &-dropdown.move,
-        &-dropdown.copy {
-            .action.toggle {
-                @include lib-css(color, $link__color);
-            }
-        }
     }
 
-    .page-multiple-wishlist {
-        .page-title-wrapper {
-            .page-title {
-                &:extend(.abs-visually-hidden all);
-            }
-        }
+    //  Wish list popup
+    &.window.popup {
+        @include lib-popup();
+        box-sizing: border-box;
 
-        .actions-toolbar {
-            > .primary {
-                display: block;
-                float: none;
-                text-align: left;
-
-                .action.remove {
-                    float: right;
-                }
-            }
-        }
-    }
-
-    .block-wishlist-management {
-        position: relative;
-
-        .wishlist {
-            //  Select wish list
-            &-select {
-                .wishlist-name {
-                    &-label {
-                        font-weight: $font-weight__semibold;
-                        &:extend(.abs-colon all);
-                    }
-                }
-            }
-
-            //  Wish list name
-            &-title {
-                margin-bottom: $indent__s;
-
-                strong {
-                    font-weight: $font-weight__light;
-                    margin-right: $indent__s;
-                }
-            }
-
-            &-notice {
-                @include lib-css(color, $text__color__muted);
-                display: inline-block;
-                margin-right: $indent__base;
-
-                &.private {
-                    @include lib-icon-font(
-                    $_icon-font-content: $icon-private,
-                    $_icon-font-color: lighten($text__color__muted, 15%),
-                    $_icon-font-vertical-align: text-bottom,
-                    $_icon-font-margin: 0 $indent__xs 0 0
-                    );
-                }
-            }
-
-            //  Wish list toolbar
-            &-toolbar {
-                &-select,
-                &-actions {
-                    display: inline-block;
-                }
-
-                &-select {
-                    margin-right: $indent__base;
-                }
-                
-                .copy {
-                    .dropdown {
-                        right: 0;
-
-                        &:before {
-                            left: auto;
-                            right: 11px;
-                        }
-
-                        &:after {
-                            left: auto;
-                            right: 10px;
-                        }
-                    }
-                }
-            }
-
-            //  Wish list toolbar actions
-            &-dropdown.move {
-                margin-right: $indent__base;
-            }
-        }
-    }
-
-    .block-wishlist-search-form {
-        .block-title {
-            &:extend(.abs-account-title all);
-        }
-
-        .form-wishlist-search {
-            @include lib-css(margin-bottom, $indent__l*2);
-            max-width: 500px;
-
-            .fieldset {
-                > .legend {
-                    &:extend(.abs-visually-hidden);
-                }
-            }
-        }
-    }
-
-    .block-wishlist-search-results {
-        .block-title {
-            &:extend(.abs-account-title all);
-        }
-
-        .data.table {
-            &:extend(.abs-table-striped all);
-        }
-
-        .table-wrapper {
-            border-top: none;
-        }
-    }
-
-    .block-wishlist-info-items {
-        .block-title {
-            @include lib-css(margin-bottom, $indent__base);
-            @include lib-font-size(22px);
-
-            > strong {
-                font-weight: $font-weight__light ;
-            }
-        }
-
-        .product-item {
-            width: 100%;
-        }
-
-        .product-item-photo {
-            margin-left: $indent__base;
-        }
-
-        .product-item-info {
-            width: auto;
-
-            &:hover {
-                .split {
-                    visibility: visible;
-                }
-            }
-        }
-
-        .price-wrapper {
+        &.active {
             display: block;
-            margin: 0 0 $indent__s;
         }
+    }
 
-        .split {
-            clear: both;
-            padding: $indent__s 0;
-            visibility: hidden;
+    &.overlay {
+        @include lib-window-overlay();
+        &.active {
+            display: block;
         }
+    }
 
-        .wishlist-dropdown {
-            .change {
-                @include lib-css(color, $link__color);
-            }
+    //  Wish list dropdown
+    &-dropdown {
+        // &:extend(.abs-dropdown-simple all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-dropdown-items-new all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    &-dropdown.move,
+    &-dropdown.copy {
+        .action.toggle {
+            @include lib-css(color, $link__color);
         }
+    }
+}
 
-        .action {
-            &.towishlist {
-                padding: $indent__s 0;
-            }
+.page-multiple-wishlist {
+    .page-title-wrapper {
+        .page-title {
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
+    }
 
-        .input-text {
-            &.qty {
-                &:extend(.abs-input-qty all);
-                margin-right: 10px;
+    .actions-toolbar {
+        > .primary {
+            display: block;
+            float: none;
+            text-align: left;
+
+            .action.remove {
+                float: right;
             }
         }
     }
 }
+
+.block-wishlist-management {
+    position: relative;
+
+    .wishlist {
+        //  Select wish list
+        &-select {
+            .wishlist-name {
+                &-label {
+                    font-weight: $font-weight__semibold;
+                    // &:extend(.abs-colon all);
+                    @warn 'TO DO - Fix extend all';
+                }
+            }
+        }
+
+        //  Wish list name
+        &-title {
+            margin-bottom: $indent__s;
+
+            strong {
+                font-weight: $font-weight__light;
+                margin-right: $indent__s;
+            }
+        }
+
+        &-notice {
+            @include lib-css(color, $text__color__muted);
+            display: inline-block;
+            margin-right: $indent__base;
+
+            &.private {
+                @include lib-icon-font(
+                $_icon-font-content: $icon-private,
+                $_icon-font-color: lighten($text__color__muted, 15%),
+                $_icon-font-vertical-align: text-bottom,
+                $_icon-font-margin: 0 $indent__xs 0 0
+                );
+            }
+        }
+
+        //  Wish list toolbar
+        &-toolbar {
+            &-select,
+            &-actions {
+                display: inline-block;
+            }
+
+            &-select {
+                margin-right: $indent__base;
+            }
+
+            .copy {
+                .dropdown {
+                    right: 0;
+
+                    &:before {
+                        left: auto;
+                        right: 11px;
+                    }
+
+                    &:after {
+                        left: auto;
+                        right: 10px;
+                    }
+                }
+            }
+        }
+
+        //  Wish list toolbar actions
+        &-dropdown.move {
+            margin-right: $indent__base;
+        }
+    }
+}
+
+.block-wishlist-search-form {
+    .block-title {
+        // &:extend(.abs-account-title all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .form-wishlist-search {
+        @include lib-css(margin-bottom, $indent__l*2);
+        max-width: 500px;
+
+        .fieldset {
+            > .legend {
+                @extend .abs-visually-hidden;
+            }
+        }
+    }
+}
+
+.block-wishlist-search-results {
+    .block-title {
+        // &:extend(.abs-account-title all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .data.table {
+        // &:extend(.abs-table-striped all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .table-wrapper {
+        border-top: none;
+    }
+}
+
+.block-wishlist-info-items {
+    .block-title {
+        @include lib-css(margin-bottom, $indent__base);
+        @include lib-font-size(22px);
+
+        > strong {
+            font-weight: $font-weight__light ;
+        }
+    }
+
+    .product-item {
+        width: 100%;
+    }
+
+    .product-item-photo {
+        margin-left: $indent__base;
+    }
+
+    .product-item-info {
+        width: auto;
+
+        &:hover {
+            .split {
+                visibility: visible;
+            }
+        }
+    }
+
+    .price-wrapper {
+        display: block;
+        margin: 0 0 $indent__s;
+    }
+
+    .split {
+        clear: both;
+        padding: $indent__s 0;
+        visibility: hidden;
+    }
+
+    .wishlist-dropdown {
+        .change {
+            @include lib-css(color, $link__color);
+        }
+    }
+
+    .action {
+        &.towishlist {
+            padding: $indent__s 0;
+        }
+    }
+
+    .input-text {
+        &.qty {
+            // &:extend(.abs-input-qty all);
+            @warn 'TO DO - Fix extend all';
+            margin-right: 10px;
+        }
+    }
+}
+
 
 //
 //  Mobile
@@ -340,7 +352,8 @@ $desktop-popup-position-top: 20%;
                 margin: 0 -$layout__width-xs-indent 20px;
                 .wishlist-name {
                     @include lib-font-size(16);
-                    &:extend(.abs-toggling-title-mobile all);
+                    // &:extend(.abs-toggling-title-mobile all);
+                    @warn 'TO DO - Fix extend all';
                 }
 
                 &-items {
@@ -380,7 +393,8 @@ $desktop-popup-position-top: 20%;
 
             &-add.item {
                 .add {
-                    &:extend(.abs-icon-add-mobile all);
+                    // &:extend(.abs-icon-add-mobile all);
+                    @warn 'TO DO - Fix extend all';
                 }
             }
 
@@ -455,7 +469,8 @@ $desktop-popup-position-top: 20%;
     }
 
     .block-wishlist-management {
-        &:extend(.abs-add-clearfix-desktop all);
+        // &:extend(.abs-add-clearfix-desktop all);
+        @warn 'TO DO - Fix extend all';
         margin-bottom: $indent__base;
 
         .wishlist {
@@ -547,6 +562,7 @@ $desktop-popup-position-top: 20%;
     }
 
     .toolbar-wishlist-results {
-        &:extend(.abs-pager-toolbar all);
+        // &:extend(.abs-pager-toolbar all);
+        @warn 'TO DO - Fix extend all';
     }
 }

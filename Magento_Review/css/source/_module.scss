@@ -150,7 +150,8 @@
         display: table;
         max-width: 100%;
         margin-bottom: $indent__s;
-        &:extend(.abs-rating-summary all);
+        // &:extend(.abs-rating-summary all);
+        @warn 'TO DO - Fix extend all';
     }
 
     &-author {
@@ -165,7 +166,8 @@
         display: inline;
 
         .review-details-label {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
@@ -184,8 +186,6 @@
             margin-bottom: 0;
         }
     }
-}
-
 }
 
 //
@@ -289,7 +289,6 @@
     }
 }
 
-}
 
 //
 //    Desktop
@@ -357,8 +356,6 @@
     }
 }
 
-}
-
 //
 //    Mobile
 //--------------------------------------
@@ -366,7 +363,8 @@
     .account {
         .table-reviews {
             .col.actions {
-                &:extend(.abs-col-no-prefix all);
+                // &:extend(.abs-col-no-prefix all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -378,7 +376,8 @@
 @include min-screen($screen__m) {
     .block-reviews-dashboard {
         .product-name {
-            &:extend(.abs-account-block-font-size all);
+            // &:extend(.abs-account-block-font-size all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }
@@ -391,10 +390,13 @@
 
 .customer-review {
     .product-details {
-        &:extend(.abs-add-clearfix all);
-        &:extend(.abs-margin-for-blocks-and-widgets all);
+        // &:extend(.abs-add-clearfix all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-margin-for-blocks-and-widgets all);
+        @warn 'TO DO - Fix extend all';
         .rating-average-label {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
@@ -412,7 +414,8 @@
         margin: 0;
 
         .title {
-            &:extend(.abs-account-title all);
+            // &:extend(.abs-account-title all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .customer-review-rating {
@@ -425,7 +428,8 @@
                 }
             }
 
-            &:extend(.abs-rating-summary all);
+            // &:extend(.abs-rating-summary all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .review-title {
@@ -443,8 +447,6 @@
             @include lib-css(color, $primary__color__light);
         }
     }
-}
-
 }
 
 //
@@ -471,7 +473,8 @@
 @include min-screen($screen__m) {
     .customer-review {
         .product-details {
-            &:extend(.abs-margin-for-blocks-and-widgets-desktop all);
+            // &:extend(.abs-margin-for-blocks-and-widgets-desktop all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }

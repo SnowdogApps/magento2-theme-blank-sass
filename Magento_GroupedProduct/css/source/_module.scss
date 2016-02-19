@@ -9,67 +9,67 @@
 
 
 
-    .table-wrapper.grouped {
-        width: auto;
+.table-wrapper.grouped {
+    width: auto;
+}
+
+.table.grouped {
+    .row-tier-price {
+        > td {
+            border-top: 0;
+        }
     }
 
-    .table.grouped {
-        .row-tier-price {
-            > td {
-                border-top: 0;
+    .col.item {
+        width: 90%;
+    }
+
+    .col.qty {
+        width: 10%;
+
+        .control.qty {
+            .qty {
+                // &:extend(.abs-input-qty all);
+                @warn 'TO DO - Fix extend all';
             }
         }
+    }
 
-        .col.item {
-            width: 90%;
-        }
+    .product-item-name {
+        font-weight: $font-weight__regular;
+        margin-bottom: $indent__s;
+        display: inline-block;
+    }
 
-        .col.qty {
-            width: 10%;
-
-            .control.qty {
-                .qty {
-                    &:extend(.abs-input-qty all);
-                }
-            }
-        }
-
-        .product-item-name {
-            font-weight: $font-weight__regular;
-            margin-bottom: $indent__s;
-            display: inline-block;
-        }
-
-        .price-box {
-            p {
-                margin: 0;
-            }
-
-            .price {
-                font-weight: $font-weight__bold;
-            }
-
-            .old-price {
-                .price {
-                    font-weight: normal;
-                }
-            }
-        }
-
-        .stock.unavailable {
+    .price-box {
+        p {
             margin: 0;
-            white-space: nowrap;
-            text-transform: none;
-            font-weight: normal;
+        }
+
+        .price {
+            font-weight: $font-weight__bold;
+        }
+
+        .old-price {
+            .price {
+                font-weight: normal;
+            }
         }
     }
 
-    .page-product-grouped .product-info-price {
-        float: right;
-        display: block;
-        width: auto;
-        border: 0;
+    .stock.unavailable {
+        margin: 0;
+        white-space: nowrap;
+        text-transform: none;
+        font-weight: normal;
     }
+}
+
+.page-product-grouped .product-info-price {
+    float: right;
+    display: block;
+    width: auto;
+    border: 0;
 }
 
 //
@@ -92,7 +92,8 @@
 
             > tr {
                 > td {
-                    &:extend(.abs-col-no-prefix all);
+                    // &:extend(.abs-col-no-prefix all);
+                    @warn 'TO DO - Fix extend all';
                     @include lib-css(padding, $table-cell__padding-vertical $table-cell__padding-horizontal);
                     border: 0;
                     display: table-cell;

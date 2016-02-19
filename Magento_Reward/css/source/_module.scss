@@ -7,8 +7,6 @@
 //    Common
 //--------------------------------------
 
-
-
 .block-reward-info {
     .reward-balance {
         @include lib-font-size(18);
@@ -29,14 +27,13 @@
     }
 }
 
-}
-
 //
 //    Mobile
 //--------------------------------------
 @include max-screen($screen__s) {
     .table-wrapper.reward-history {
-        &:extend(.abs-account-table-margin-mobile all);
+        // &:extend(.abs-account-table-margin-mobile all);
+        @warn 'TO DO - Fix extend all';
     }
 }
 
@@ -45,6 +42,7 @@
 //--------------------------------------
 @include min-screen($screen__m) {
     .table-wrapper.reward-history {
-        &:extend(.abs-account-table-margin-desktop all);
+        // &:extend(.abs-account-table-margin-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 }

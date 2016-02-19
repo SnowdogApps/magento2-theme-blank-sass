@@ -169,7 +169,7 @@
     }
 }
 
-@include lib-icon-image-position(
+@mixin lib-icon-image-position(
     $_icon-image-position-x: $icon-image__position-x,
     $_icon-image-position-y: $icon-image__position-y,
     $_icon-image-position  : $icon__position

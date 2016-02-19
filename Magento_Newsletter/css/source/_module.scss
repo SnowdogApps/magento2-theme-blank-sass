@@ -57,7 +57,8 @@
     }
 
     .label {
-        &:extend(.abs-visually-hidden all);
+        // &:extend(.abs-visually-hidden all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .actions {
@@ -73,7 +74,6 @@
     }
 }
 
-}
 
 //
 //    Desktop

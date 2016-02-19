@@ -170,7 +170,7 @@
 
 @mixin lib-typography__base() {
     html {
-        @include lib-css(font-size, $root__font-size);
+        @include lib-css(font-size, ($root__font-size * 100 * 100%));
         -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
                 font-size-adjust: 100%;
@@ -250,7 +250,7 @@
 //  Headings
 //  ---------------------------------------------
 
-@include lib-typography-headings() {
+@mixin lib-typography-headings() {
     h1 {
         @include lib-heading(h1);
     }

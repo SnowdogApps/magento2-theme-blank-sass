@@ -9,25 +9,25 @@
 
 
 
-    .block-banners,
-    .block-banners-inline {
-        &:extend(.abs-margin-for-blocks-and-widgets);
+.block-banners,
+.block-banners-inline {
+    @extend .abs-margin-for-blocks-and-widgets;
 
-        .banner-items {
-           &:extend(.abs-reset-list all);
-        }
+    .banner-items {
+        // &:extend(.abs-reset-list all);
+        @warn 'TO DO - Fix extend all';
+    }
 
-        .banner-item {
+    .banner-item {
+        display: block;
+    }
+
+    .banner-item-content {
+        @include lib-css(margin-bottom, $indent__base);
+
+        img {
             display: block;
-        }
-
-        .banner-item-content {
-            @include lib-css(margin-bottom, $indent__base);
-
-            img {
-                display: block;
-                margin: 0 auto;
-            }
+            margin: 0 auto;
         }
     }
 }

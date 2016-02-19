@@ -3,11 +3,10 @@
 //  * See COPYING.txt for license details.
 //  */
 
+
 //
 //  Variables
 //  _____________________________________________
-
-$baseDir: "../"; // Base directory path
 
 @import 'variables/_colors';
 @import 'variables/_typography';
@@ -31,3 +30,27 @@ $baseDir: "../"; // Base directory path
 @import 'variables/_structure';
 @import 'variables/_components';
 
+//
+//  Global lib
+//  _____________________________________________
+
+@import '_actions-toolbar';
+@import '_breadcrumbs';
+@import '_buttons';
+@import '_dropdowns';
+@import '_forms';
+@import '_grids';
+@import '_icons';
+@import '_layout';
+@import '_loaders';
+@import '_messages';
+@import '_navigation';
+@import '_pages';
+@import '_popups';
+@import '_rating';
+@import '_resets';
+@import '_sections';
+@import '_tables';
+@import '_tooltips';
+@import '_typography';
+@import '_utilities';

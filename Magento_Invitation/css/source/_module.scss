@@ -10,11 +10,13 @@
 
 
 .form-add-invitations {
-    &:extend(.abs-add-fields all);
+    // &:extend(.abs-add-fields all);
+    @warn 'TO DO - Fix extend all';
 
     .fields {
         .label {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
@@ -41,8 +43,6 @@
     }
 }
 
-}
-
 //
 //    Mobile
 //--------------------------------------
@@ -66,7 +66,8 @@
 //--------------------------------------
 @include min-screen($screen__s) {
     .form-add-invitations {
-        &:extend(.abs-add-fields-desktop all);
+        // &:extend(.abs-add-fields-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 }
 

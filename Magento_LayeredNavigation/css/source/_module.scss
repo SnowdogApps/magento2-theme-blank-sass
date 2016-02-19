@@ -8,192 +8,194 @@
 //  _____________________________________________
 
 
-    .filter {
-        &.block {
-            margin-bottom: 0;
+.filter {
+    &.block {
+        margin-bottom: 0;
+    }
+
+    &-title {
+        strong {
+            $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade($border-color__base, 30);
+
+            @include lib-css(background-color, $toolbar-element-background);
+            @include lib-css(box-shadow, $_shadow);
+            border-radius: 3px;
+            border: 1px solid $border-color__base;
+            font-weight: 400;
+            left: 0;
+            line-height: 16px;
+            padding: 7px $indent__s;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            z-index: 2;
+
+            &[data-count]:after {
+                @include lib-css(color, $color-white);
+                background: $color-orange-red4;
+                border-radius: 2px;
+                content: attr(data-count);
+                display: inline-block;
+                font-size: .8em;
+                line-height: 1;
+                margin: 0 $indent__xs;
+                min-width: 1em;
+                padding: 2px;
+            }
+
+            &.disabled {
+                opacity: .5;
+            }
+        }
+    }
+
+    .block-subtitle {
+        border-bottom: $border-width__base solid $border-color__base;
+        font-size: $font-size__base;
+        font-weight: $font-weight__semibold;
+        line-height: 1em;
+        padding: $indent__s $indent__s $indent__base;
+    }
+
+    &-subtitle {
+        display: none;
+    }
+
+    &-current {
+        margin: 0;
+
+        .items {
+            padding: $indent__xs $indent__s;
+        }
+
+        .item {
+            padding-left: 17px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .filter &-subtitle {
+            border: none;
+            display: block;
+            padding-bottom: $indent__s;
+        }
+
+        .action.remove {
+            // &:extend(.abs-remove-button-for-blocks all);
+            @warn 'TO DO - Fix extend all';
+            left: -2px;
+            position: absolute;
+            top: -1px;
+        }
+    }
+
+    &-actions {
+        margin-bottom: $indent__m;
+        padding: 0 $indent__s;
+    }
+
+    &-label {
+        font-weight: $font-weight__bold;
+        &:after {
+            content: ': ';
+        }
+    }
+
+    &-value {
+        @include lib-css(color, $filter-quantity);
+    }
+
+    &-options {
+        display: none;
+        margin: 0;
+
+        &-item {
+            border-bottom: $border-width__base solid $border-color__base;
+            padding-bottom: $indent__s;
         }
 
         &-title {
-            strong {
-                $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade($border-color__base, 30);
-
-                @include lib-css(background-color, $toolbar-element-background);
-                @include lib-css(box-shadow, $_shadow);
-                border-radius: 3px;
-                border: 1px solid $border-color__base;
-                font-weight: 400;
-                left: 0;
-                line-height: 16px;
-                padding: 7px $indent__s;
-                position: absolute;
-                text-align: center;
-                top: 0;
-                z-index: 2;
-
-                &[data-count]:after {
-                    @include lib-css(color, $color-white);
-                    background: $color-orange-red4;
-                    border-radius: 2px;
-                    content: attr(data-count);
-                    display: inline-block;
-                    font-size: .8em;
-                    line-height: 1;
-                    margin: 0 $indent__xs;
-                    min-width: 1em;
-                    padding: 2px;
-                }
-
-                &.disabled {
-                    opacity: .5;
-                }
-            }
-        }
-
-        .block-subtitle {
-            border-bottom: $border-width__base solid $border-color__base;
-            font-size: $font-size__base;
+            cursor: pointer;
             font-weight: $font-weight__semibold;
-            line-height: 1em;
-            padding: $indent__s $indent__s $indent__base;
-        }
-
-        &-subtitle {
-            display: none;
-        }
-
-        &-current {
             margin: 0;
+            overflow: hidden;
+            padding: $indent__s 30px+$indent__s 0 $indent__s;
+            position: relative;
+            text-transform: uppercase;
+            word-break: break-all;
+            z-index: 1;
+            @include lib-icon-font(
+            $_icon-font-content: $icon-down,
+            $_icon-font-size: 13px,
+            $_icon-font-position: after,
+            $_icon-font-display: block
+            );
 
-            .items {
-                padding: $indent__xs $indent__s;
+            &:after {
+                position: absolute;
+                right: 13px;
+                top: 9px;
             }
+
+            &:hover {
+                @include lib-css(color, $filter-link-hover);
+            }
+
+            .active > & {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content: $icon-up,
+                    $_icon-font-position: after
+                );
+            }
+        }
+
+        &-content {
+            margin: 0;
+            padding: $indent__s;
 
             .item {
-                padding-left: 17px;
-                position: relative;
-                z-index: 1;
+                margin: $indent__s 0;
+                line-height: 1.5em;
             }
 
-            .filter &-subtitle {
-                border: none;
-                display: block;
-                padding-bottom: $indent__s;
-            }
-
-            .action.remove {
-                &:extend(.abs-remove-button-for-blocks all);
-                left: -2px;
-                position: absolute;
-                top: -1px;
-            }
-        }
-
-        &-actions {
-            margin-bottom: $indent__m;
-            padding: 0 $indent__s;
-        }
-
-        &-label {
-            font-weight: $font-weight__bold;
-            &:after {
-                content: ': ';
-            }
-        }
-
-        &-value {
-            @include lib-css(color, $filter-quantity);
-        }
-
-        &-options {
-            display: none;
-            margin: 0;
-
-            &-item {
-                border-bottom: $border-width__base solid $border-color__base;
-                padding-bottom: $indent__s;
-            }
-
-            &-title {
-                cursor: pointer;
-                font-weight: $font-weight__semibold;
-                margin: 0;
-                overflow: hidden;
-                padding: $indent__s 30px+$indent__s 0 $indent__s;
-                position: relative;
-                text-transform: uppercase;
-                word-break: break-all;
-                z-index: 1;
-                @include lib-icon-font(
-                $_icon-font-content: $icon-down,
-                $_icon-font-size: 13px,
-                $_icon-font-position: after,
-                $_icon-font-display: block
-                );
-
-                &:after {
-                    position: absolute;
-                    right: 13px;
-                    top: 9px;
-                }
+            a {
+                @include lib-css(color, $filter-link);
+                margin-left: -5px;
+                margin-right: -5px;
+                padding-left: 5px;
+                padding-right: 7px;
 
                 &:hover {
-                    @include lib-css(color, $filter-link-hover);
-                }
+                    background-color: $color-gray91;
+                    text-decoration: none;
 
-                .active > & {
-                    @include lib-icon-font-symbol(
-                        $_icon-font-content: $icon-up,
-                        $_icon-font-position: after
-                    );
+                    & + .count {
+                        background-color: $color-gray91;
+                    }
                 }
             }
 
-            &-content {
-                margin: 0;
-                padding: $indent__s;
+            .count {
+                @include lib-css(color, $filter-quantity);
+                padding-right: 5px;
 
-                .item {
-                    margin: $indent__s 0;
-                    line-height: 1.5em;
+                &:before {
+                    content: '(';
                 }
 
-                a {
-                    @include lib-css(color, $filter-link);
-                    margin-left: -5px;
-                    margin-right: -5px;
-                    padding-left: 5px;
-                    padding-right: 7px;
-
-                    &:hover {
-                        background-color: $color-gray91;
-                        text-decoration: none;
-
-                        & + .count {
-                            background-color: $color-gray91;
-                        }
-                    }
+                &:after {
+                    content: ')';
                 }
+            }
 
-                .count {
-                    @include lib-css(color, $filter-quantity);
-                    padding-right: 5px;
-
-                    &:before {
-                        content: '(';
-                    }
-
-                    &:after {
-                        content: ')';
-                    }
-                }
-
-                .filter-count-label {
-                    &:extend(.abs-visually-hidden all);
-                }
+            .filter-count-label {
+                // &:extend(.abs-visually-hidden all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
 }
+
 
 //
 //  Mobile

@@ -160,7 +160,8 @@
     .col {
         &.price,
         &.subtotal {
-            &:extend(.abs-incl-excl-tax all);
+            // &:extend(.abs-incl-excl-tax all);
+            @warn 'TO DO - Fix extend all';
         }
 
         &.name {
@@ -169,14 +170,17 @@
     }
 
     .cart-tax-total {
-        &:extend(.abs-tax-total all);
+        // &:extend(.abs-tax-total all);
+        @warn 'TO DO - Fix extend all';
         &-expanded {
-            &:extend(.abs-tax-total-expanded all);
+            // &:extend(.abs-tax-total-expanded all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
     tfoot {
-        &:extend(.abs-account-summary all);
+        // &:extend(.abs-account-summary all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .action {
@@ -205,7 +209,8 @@
     }
 
     .items-qty {
-        &:extend(.abs-reset-list all);
+        // &:extend(.abs-reset-list all);
+        @warn 'TO DO - Fix extend all';
         .item {
             white-space: nowrap;
         }
@@ -302,7 +307,8 @@
         margin-right: 30px;
 
         &.print {
-            &:extend(.abs-action-print all);
+            // &:extend(.abs-action-print all);
+            @warn 'TO DO - Fix extend all';
             display: none;
             margin: 0;
         }
@@ -310,18 +316,21 @@
 }
 
 .order-status {
-    &:extend(.abs-status all);
+    // &:extend(.abs-status all);
+    @warn 'TO DO - Fix extend all';
 }
 
 .account,
 [class^="sales-guest-"],
 .sales-guest-view,
 .magento-rma-guest-returns {
-    &:extend(.abs-title-orders all);
+    // &:extend(.abs-title-orders all);
+    @warn 'TO DO - Fix extend all';
 }
 
 .form-orders-search {
-    &:extend(.abs-forms-general-desktop all);
+    // &:extend(.abs-forms-general-desktop all);
+    @warn 'TO DO - Fix extend all';
     .field {
         &.email,
         &.zip {
@@ -332,7 +341,8 @@
 
 .block-reorder {
     .block-title {
-        &:extend(.abs-block-widget-title all);
+        // &:extend(.abs-block-widget-title all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .actions-toolbar {
@@ -345,7 +355,8 @@
 
     .product-item {
         .label {
-            &:extend(.abs-visually-hidden all);
+            // &:extend(.abs-visually-hidden all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .field.item {
@@ -362,7 +373,8 @@
 .sales-guest-view {
     .column.main {
         .block:not(.widget) {
-            &:extend(.abs-account-blocks all);
+            // &:extend(.abs-account-blocks all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 }
@@ -372,14 +384,14 @@
         .order-details-items {
             .table-wrapper {
                 .data.table {
-                    &:extend(.abs-table-striped all);
+                    // &:extend(.abs-table-striped all);
+                    @warn 'TO DO - Fix extend all';
                 }
             }
         }
     }
 }
 
-}
 
 //
 //  Mobile
@@ -388,13 +400,15 @@
 @include max-screen($screen__s) {
     .table-wrapper {
         &.orders-recent {
-            &:extend(.abs-account-table-margin-mobile all);
+            // &:extend(.abs-account-table-margin-mobile all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
     .table-wrapper {
         &.orders-recent {
-            &:extend(.abs-no-border-top all);
+            // &:extend(.abs-no-border-top all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
@@ -416,7 +430,8 @@
             .col {
                 &.actions,
                 &.options {
-                    &:extend(.abs-col-no-prefix all);
+                    // &:extend(.abs-col-no-prefix all);
+                    @warn 'TO DO - Fix extend all';
                 }
             }
         }
@@ -425,12 +440,14 @@
     .account,
     [class^="sales-guest-"],
     .sales-guest-view {
-        &:extend(.abs-title-orders-mobile all);
+        // &:extend(.abs-title-orders-mobile all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .order-details-items {
         .table-wrapper {
-            &:extend(.abs-no-border-top all);
+            // &:extend(.abs-no-border-top all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .order-title {
@@ -466,7 +483,8 @@
         }
 
         .table-order-items .options-label {
-            &:extend(.abs-no-display-s all);
+            // &:extend(.abs-no-display-s all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .options-label + .item-options-container,
@@ -514,11 +532,13 @@
 
 @include min-screen($screen__m) {
     .table-wrapper.orders-recent {
-        &:extend(.abs-account-table-margin-desktop all);
+        // &:extend(.abs-account-table-margin-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .order-links {
-        &:extend(.abs-add-clearfix-desktop all);
+        // &:extend(.abs-add-clearfix-desktop all);
+        @warn 'TO DO - Fix extend all';
         .item {
             float: left;
             margin: 0 $tab-control__margin-right 0 0;
@@ -545,11 +565,14 @@
     .account,
     [class^="sales-guest-"],
     .sales-guest-view {
-        &:extend(.abs-title-orders-desktop all);
+        // &:extend(.abs-title-orders-desktop all);
+        @warn 'TO DO - Fix extend all';
         .column.main .block.block-order-details-view {
-            &:extend(.abs-add-clearfix-desktop all);
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
             .block-content:not(.widget) .box {
-                &:extend(.abs-add-box-sizing-desktop all);
+                // &:extend(.abs-add-box-sizing-desktop all);
+                @warn 'TO DO - Fix extend all';
                 clear: none;
                 float: left;
                 width: 100%/4;
@@ -558,7 +581,8 @@
     }
 
     .order-status {
-        &:extend(.abs-status-desktop all);
+        // &:extend(.abs-status-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .block-order-details-comments {

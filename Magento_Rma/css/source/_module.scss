@@ -20,7 +20,8 @@
 }
 
 .form-create-return {
-    &:extend(.abs-add-fields all);
+    // &:extend(.abs-add-fields all);
+    @warn 'TO DO - Fix extend all';
 
     .additional {
         &:first-child {
@@ -33,12 +34,14 @@
     }
 
     .actions-toolbar {
-        &:extend(.abs-add-clearfix all);
+        // &:extend(.abs-add-clearfix all);
+        @warn 'TO DO - Fix extend all';
     }
 }
 
 .return-status {
-    &:extend(.abs-status all);
+    // &:extend(.abs-status all);
+    @warn 'TO DO - Fix extend all';
 }
 
 .block-returns-comments {
@@ -68,7 +71,8 @@
 
 .magento-rma-returns-returns,
 .magento-rma-returns-view {
-    &:extend(.abs-title-orders all);
+    // &:extend(.abs-title-orders all);
+    @warn 'TO DO - Fix extend all';
 }
 
 //
@@ -77,13 +81,13 @@
 .magento-rma-guest-returns {
     .column.main {
         .block:not(.widget) {
-            &:extend(.abs-account-blocks all);
+            // &:extend(.abs-account-blocks all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
-    &:extend(.abs-title-orders all);
-}
-
+    // &:extend(.abs-title-orders all);
+    @warn 'TO DO - Fix extend all';
 }
 
 //
@@ -104,7 +108,8 @@
 
     .magento-rma-returns-returns,
     .magento-rma-returns-view {
-        &:extend(.abs-title-orders-mobile all);
+        // &:extend(.abs-title-orders-mobile all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .account {
@@ -124,7 +129,8 @@
     }
 
     .table-wrapper.table-returns {
-        &:extend(.abs-no-border-top all);
+        // &:extend(.abs-no-border-top all);
+        @warn 'TO DO - Fix extend all';
     }
 }
 
@@ -133,28 +139,34 @@
 //--------------------------------------
 @include min-screen($screen__m) {
     .form-create-return {
-        &:extend(.abs-add-fields-desktop all);
-        &:extend(.abs-form-field-column-2 all);
+        // &:extend(.abs-add-fields-desktop all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-form-field-column-2 all);
+        @warn 'TO DO - Fix extend all';
         .fieldset .field {
            width: 45%;
         }
     }
 
     .return-status {
-        &:extend(.abs-status-desktop all);
+        // &:extend(.abs-status-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .magento-rma-returns-returns,
     .magento-rma-returns-view {
-        &:extend(.abs-title-orders-desktop all);
+        // &:extend(.abs-title-orders-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .magento-rma-guest-returns {
         .column.main .block.block-order-details-view {
-            &:extend(.abs-add-clearfix-desktop all);
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
 
             .block-content:not(.widget) .box {
-                &:extend(.abs-add-box-sizing-desktop all);
+                // &:extend(.abs-add-box-sizing-desktop all);
+                @warn 'TO DO - Fix extend all';
                 clear: none;
                 float: left;
                 width: 100%/4;

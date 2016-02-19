@@ -9,94 +9,95 @@
 
 
 
-    .map-popup-wrapper {
-        &.popup {
-            .action {
-                &.close {
-                    @include lib-css(top, $popup-button-close__position-top);
-                }
+.map-popup-wrapper {
+    &.popup {
+        .action {
+            &.close {
+                @include lib-css(top, $popup-button-close__position-top);
             }
         }
     }
+}
 
-    .map-popup {
-        @include lib-popup(
-            $_popup-margin-top: $indent__s,
-            $_popup-margin-left: false,
-            $_popup-content-margin: false,
-            $_popup-position-bottom: false,
-            $_popup-position-right: false,
-            $_popup-position: absolute
-        );
-        .map-info-price {
-            &:extend(.abs-add-clearfix all);
+.map-popup {
+    @include lib-popup(
+        $_popup-margin-top: $indent__s,
+        $_popup-margin-left: false,
+        $_popup-content-margin: false,
+        $_popup-position-bottom: false,
+        $_popup-position-right: false,
+        $_popup-position: absolute
+    );
+    .map-info-price {
+        // &:extend(.abs-add-clearfix all);
+        @warn 'TO DO - Fix extend all';
+        margin: 0 0 $indent__base;
+
+        .price-box {
             margin: 0 0 $indent__base;
 
-            .price-box {
-                margin: 0 0 $indent__base;
-
-                .label {
-                    &:after {
-                        content: ": ";
-                    }
+            .label {
+                &:after {
+                    content: ": ";
                 }
             }
         }
-
-        .action {
-            &.primary {
-                margin-right: $indent__s;
-            }
-        }
-
-        .map-msrp {
-            margin-bottom: $indent__s;
-        }
-
-        .actual-price {
-            margin: 3px 0 15px;
-        }
-
-        .popup-header {
-            display: none;
-        }
     }
 
-    .map-old-price {
-        text-decoration: none;
-
-        .price-wrapper {
-            text-decoration: line-through;
-        }
-    }
-
-    .map-old-price,
-    .product-item .map-old-price,
-    .product-info-price .map-show-info {
-        &:not(:last-child) {
+    .action {
+        &.primary {
             margin-right: $indent__s;
         }
     }
 
-    .product-options-bottom .price-box,
-    .product-info-price .price-box {
-        .old-price {
-            .price-container > span {
-                display: inline;
-            }
-        }
+    .map-msrp {
+        margin-bottom: $indent__s;
     }
 
-    .map-form-addtocart {
-        display: inline-block;
-        text-align: center;
+    .actual-price {
+        margin: 3px 0 15px;
+    }
 
-        img {
-            display: block;
-            margin: 0 auto;
+    .popup-header {
+        display: none;
+    }
+}
+
+.map-old-price {
+    text-decoration: none;
+
+    .price-wrapper {
+        text-decoration: line-through;
+    }
+}
+
+.map-old-price,
+.product-item .map-old-price,
+.product-info-price .map-show-info {
+    &:not(:last-child) {
+        margin-right: $indent__s;
+    }
+}
+
+.product-options-bottom .price-box,
+.product-info-price .price-box {
+    .old-price {
+        .price-container > span {
+            display: inline;
         }
     }
 }
+
+.map-form-addtocart {
+    display: inline-block;
+    text-align: center;
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 
 //
 //  Mobile
@@ -104,7 +105,7 @@
 
 @include max-screen($screen__m) {
     .map-popup {
-        max-width: 100%; 
+        max-width: 100%;
     }
 
     .map-old-price,

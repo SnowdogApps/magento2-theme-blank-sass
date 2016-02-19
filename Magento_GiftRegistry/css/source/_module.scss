@@ -8,182 +8,197 @@
 //  _____________________________________________
 
 
-    .form-giftregistry-share,
-    .form-giftregistry-edit {
-        &:extend(.abs-add-fields all);
-        .actions-toolbar:not(:last-child) {
-            margin-bottom: $indent__xl;
-        }
-
-        .fieldset {
-            .nested {
-                .field:not(.choice) {
-                    .control {
-                        width: 100%;
-                    }
-                }
-            }
-        }
+.form-giftregistry-share,
+.form-giftregistry-edit {
+    // &:extend(.abs-add-fields all);
+    @warn 'TO DO - Fix extend all';
+    .actions-toolbar:not(:last-child) {
+        margin-bottom: $indent__xl;
     }
 
-    .form.giftregistry.items {
-        .actions-toolbar {
-            &:extend(.abs-reset-left-margin all);
-        }
-    }
-
-    .giftregisty-dropdown {
-        &:extend(.abs-dropdown-simple all);
-        .action.toggle {
-            @include lib-css(color, $link__color);
-        }
-    }
-
-    .table-giftregistry-items {
-        .field.qty .qty {
-            &:extend(.abs-input-qty all);
-        }
-
-        .product-image {
-            @include lib-css(margin-right, $indent__s);
-            float: left;
-        }
-    }
-
-    .form.giftregistry .fieldset {
-        .cart-summary & {
-            margin: 15px 0 $indent__xs;
-            text-align: left;
-
-            .field {
-                margin: 0 0 $indent__s;
-                
+    .fieldset {
+        .nested {
+            .field:not(.choice) {
                 .control {
-                    float: none;
-                    width: auto;
+                    width: 100%;
                 }
             }
-
-            .action.primary {
-                &:extend(.abs-revert-to-action-secondary all);
-            }
         }
     }
+}
 
-    .form-giftregistry-create {
-        .fieldset {
-            &:extend(.abs-forms-margin-small all);
-        }
+.form.giftregistry.items {
+    .actions-toolbar {
+        // &:extend(.abs-reset-left-margin all);
+        @warn 'TO DO - Fix extend all';
+    }
+}
+
+.giftregisty-dropdown {
+    // &:extend(.abs-dropdown-simple all);
+    @warn 'TO DO - Fix extend all';
+    .action.toggle {
+        @include lib-css(color, $link__color);
+    }
+}
+
+.table-giftregistry-items {
+    .field.qty .qty {
+        // &:extend(.abs-input-qty all);
+        @warn 'TO DO - Fix extend all';
     }
 
-    .form-giftregistry-edit {
-        .field.date {
-            &:extend(.abs-field-date all);
-        }
+    .product-image {
+        @include lib-css(margin-right, $indent__s);
+        float: left;
     }
+}
 
-    .form-giftregistry-search {
-        margin-bottom: $indent__l*2;
+.form.giftregistry .fieldset {
+    .cart-summary & {
+        margin: 15px 0 $indent__xs;
+        text-align: left;
 
-        .legend {
-            &:extend(.abs-account-title all);
-        }
+        .field {
+            margin: 0 0 $indent__s;
 
-        .fields-specific-options {
-            .field {
-                &:nth-last-of-type(1) {
-                    margin-bottom: 0;
-                }
-            }
-
-            .datetime-picker {
-                &:extend(.abs-field-date-input all);
-            }
-        }
-    }
-
-    .block-giftregistry-results {
-        .block-title {
-            &:extend(.abs-account-title all);
-        }
-
-        .data.table {
-            &:extend(.abs-table-striped all);
-        }
-    }
-
-    .block-giftregistry {
-        .actions-toolbar {
-            margin: 17px 0 0;
-        }
-    }
-
-    .block-giftregistry-shared {
-        .item-options {
-            .item-value {
-                margin: 0 0 $indent__m;
-            }
-        }
-    }
-
-    .block-giftregistry-shared-items {
-        .block-title {
-            &:extend(.abs-account-title all);
-        }
-
-        .product-image-wrapper {
-            &:extend(.abs-reset-image-wrapper all);
-        }
-
-        .item {
-            .col {
-                border: 0;
+            .control {
+                float: none;
+                width: auto;
             }
         }
 
-        th {
-            border-bottom: $border-width__base solid $border-color__base;
+        .action.primary {
+            // &:extend(.abs-revert-to-action-secondary all);
+            @warn 'TO DO - Fix extend all';
+        }
+    }
+}
+
+.form-giftregistry-create {
+    .fieldset {
+        // &:extend(.abs-forms-margin-small all);
+        @warn 'TO DO - Fix extend all';
+    }
+}
+
+.form-giftregistry-edit {
+    .field.date {
+        // &:extend(.abs-field-date all);
+        @warn 'TO DO - Fix extend all';
+    }
+}
+
+.form-giftregistry-search {
+    margin-bottom: $indent__l*2;
+
+    .legend {
+        // &:extend(.abs-account-title all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .fields-specific-options {
+        .field {
+            &:nth-last-of-type(1) {
+                margin-bottom: 0;
+            }
         }
 
+        .datetime-picker {
+            // &:extend(.abs-field-date-input all);
+            @warn 'TO DO - Fix extend all';
+        }
+    }
+}
+
+.block-giftregistry-results {
+    .block-title {
+        // &:extend(.abs-account-title all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .data.table {
+        // &:extend(.abs-table-striped all);
+        @warn 'TO DO - Fix extend all';
+    }
+}
+
+.block-giftregistry {
+    .actions-toolbar {
+        margin: 17px 0 0;
+    }
+}
+
+.block-giftregistry-shared {
+    .item-options {
+        .item-value {
+            margin: 0 0 $indent__m;
+        }
+    }
+}
+
+.block-giftregistry-shared-items {
+    .block-title {
+        // &:extend(.abs-account-title all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .product-image-wrapper {
+        // &:extend(.abs-reset-image-wrapper all);
+        @warn 'TO DO - Fix extend all';
+    }
+
+    .item {
         .col {
-            padding: $cart-item-cell-padding-top 11px 10px;
+            border: 0;
+        }
+    }
 
-            .price-box {
-                display: inline-block;
-            }
+    th {
+        border-bottom: $border-width__base solid $border-color__base;
+    }
 
-            .price-wrapper {
-                @include lib-font-size(18);
-                display: block;
-                font-weight: $font-weight__bold;
-                white-space: nowrap;
-            }
+    .col {
+        padding: $cart-item-cell-padding-top 11px 10px;
+
+        .price-box {
+            display: inline-block;
         }
 
+        .price-wrapper {
+            @include lib-font-size(18);
+            display: block;
+            font-weight: $font-weight__bold;
+            white-space: nowrap;
+        }
+    }
+
+    .qty {
         .qty {
-            .qty {
-                &:extend(.abs-input-qty all);
-            }
+            // &:extend(.abs-input-qty all);
+            @warn 'TO DO - Fix extend all';
+        }
+    }
+
+    .product {
+        .item-options {
+            // &:extend(.abs-product-options-list all);
+            @warn 'TO DO - Fix extend all';
+            // &:extend(.abs-add-clearfix all);
+            @warn 'TO DO - Fix extend all';
+            margin: 0;
         }
 
-        .product {
-            .item-options {
-                &:extend(.abs-product-options-list all);
-                &:extend(.abs-add-clearfix all);
-                margin: 0;
-            }
+        &-item-photo {
+            display: block;
+            max-width: 65px;
+            padding: $indent__s 0;
+        }
 
-            &-item-photo {
-                display: block;
-                max-width: 65px;
-                padding: $indent__s 0;
-            }
-
-            &-item-name {
-                @include lib-font-size(18);
-                display: block;
-                margin: 0 0 $indent__xs;
-            }
+        &-item-name {
+            @include lib-font-size(18);
+            display: block;
+            margin: 0 0 $indent__xs;
         }
     }
 }
@@ -196,7 +211,8 @@
     .account {
         .table-giftregistry {
             .col.actions {
-                &:extend(.abs-col-no-prefix all);
+                // &:extend(.abs-col-no-prefix all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }
@@ -204,9 +220,11 @@
     .table-giftregistry-items {
         .col.product {
             &:before {
-                &:extend(.abs-visually-hidden-mobile all);
+                // &:extend(.abs-visually-hidden-mobile all);
+                @warn 'TO DO - Fix extend all';
             }
-            &:extend(.abs-add-clearfix-mobile all);
+            // &:extend(.abs-add-clearfix-mobile all);
+            @warn 'TO DO - Fix extend all';
         }
 
         .field.choice,
@@ -266,8 +284,10 @@
 @include min-screen($screen__m) {
     .form-giftregistry-share,
     .form-giftregistry-edit {
-        &:extend(.abs-add-fields-desktop all);
-        &:extend(.abs-form-field-column-2 all);
+        // &:extend(.abs-add-fields-desktop all);
+        @warn 'TO DO - Fix extend all';
+        // &:extend(.abs-form-field-column-2 all);
+        @warn 'TO DO - Fix extend all';
         .fieldset .field {
             width: 45%;
         }
@@ -282,7 +302,8 @@
     }
 
     .form-giftregistry-create {
-        &:extend(.abs-forms-general-desktop all);
+        // &:extend(.abs-forms-general-desktop all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .table-giftregistry {
@@ -341,20 +362,24 @@
     }
 
     .toolbar-giftregistry-results {
-        &:extend(.abs-pager-toolbar all);
+        // &:extend(.abs-pager-toolbar all);
+        @warn 'TO DO - Fix extend all';
     }
 
     .block-giftregistry-shared {
         .item-options {
-            &:extend(.abs-product-options-list-desktop all);
-            &:extend(.abs-add-clearfix-desktop all);
+            // &:extend(.abs-product-options-list-desktop all);
+            @warn 'TO DO - Fix extend all';
+            // &:extend(.abs-add-clearfix-desktop all);
+            @warn 'TO DO - Fix extend all';
         }
     }
 
     .block-giftregistry-shared-items {
         .column.main & {
             .actions-toolbar {
-                &:extend(.abs-reset-left-margin-desktop all);
+                // &:extend(.abs-reset-left-margin-desktop all);
+                @warn 'TO DO - Fix extend all';
             }
         }
 

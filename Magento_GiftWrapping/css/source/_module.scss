@@ -25,158 +25,162 @@ $gift-wrapping-no-image-icon__font-size: 22px;
 //  _____________________________________________
 
 
-    .gift-wrapping-info {
-        @include lib-css(font-weight, $font-weight__light);
-        font-size: $font-size__l;
-        margin: $indent__base 0;
-    }
+.gift-wrapping-info {
+    @include lib-css(font-weight, $font-weight__light);
+    font-size: $font-size__l;
+    margin: $indent__base 0;
+}
 
-    .gift-wrapping-list {
-        &:extend(.abs-add-clearfix all);
-        list-style: none;
-        margin: $indent__base 0 $indent__s;
-        padding: 0;
+.gift-wrapping-list {
+    // &:extend(.abs-add-clearfix all);
+    @warn 'TO DO - Fix extend all';
+    list-style: none;
+    margin: $indent__base 0 $indent__s;
+    padding: 0;
 
-        .no-image {
-            @include lib-css(background, $gift-wrapping-no-image__background);
-            @include lib-icon-font(
-            $icon-present,
-            $_icon-font-size: $gift-wrapping-no-image-icon__font-size,
-            $_icon-font-line-height: $gift-wrapping-thumbnail__height,
-            $_icon-font-color: $gift-wrapping-no-image-icon__color,
-            $_icon-font-position: after,
-            $_icon-font-text-hide: true,
-            $_icon-font-vertical-align: middle
-            );
+    .no-image {
+        @include lib-css(background, $gift-wrapping-no-image__background);
+        @include lib-icon-font(
+        $icon-present,
+        $_icon-font-size: $gift-wrapping-no-image-icon__font-size,
+        $_icon-font-line-height: $gift-wrapping-thumbnail__height,
+        $_icon-font-color: $gift-wrapping-no-image-icon__color,
+        $_icon-font-position: after,
+        $_icon-font-text-hide: true,
+        $_icon-font-vertical-align: middle
+        );
 
-            &:after {
-                display: block;
-            }
+        &:after {
+            display: block;
         }
-    }
-
-    .gift-wrapping-preview,
-    .gift-wrapping-item > span {
-        cursor: pointer;
-        display: block;
-        overflow: hidden;
-        position: relative;
-        z-index: 1;
-    }
-
-    .gift-wrapping-item {
-        float: left;
-        margin: 0 $indent__s $indent__s 0;
-
-        &:last-child {
-            margin-right: 0;
-        }
-
-        &._active {
-            span {
-                &:before {
-                    @include lib-css(border, $gift-wrapping-preview__active__border-width solid $gift-wrapping-preview__active__border-color);
-                    box-sizing: border-box;
-                    content: '';
-                    display: block;
-                    height: 100%;
-                    position: absolute;
-                    width: 100%;
-                    z-index: 2;
-                }
-            }
-        }
-
-        > span {
-            height: $gift-wrapping-thumbnail__height;
-            width: $gift-wrapping-thumbnail__width;
-        }
-    }
-
-    .gift-wrapping-title {
-        margin: $indent__s 0;
-
-        .action-remove {
-            &:extend(.abs-action-button-as-link all);
-            margin: -$indent__xs 0 0 $indent__xs;
-            @include lib-icon-font(
-            $icon-trash,
-            $_icon-font-size: 18px,
-            $_icon-font-line-height: 20px,
-            $_icon-font-text-hide: true,
-            $_icon-font-color: $minicart-icons-color,
-            $_icon-font-color-hover: $primary__color,
-            $_icon-font-color-active: $minicart-icons-color
-            );
-        }
-    }
-
-    .gift-options-content {
-        .fieldset {
-            .field {
-                margin: $indent__s 0;
-            }
-        }
-    }
-
-    .gift-wrapping-summary {
-        padding-right: 7rem;
-
-        .gift-wrapping-title {
-            border: 0;
-            display: inline-block;
-            padding: 0;
-        }
-    }
-
-    .opc-wrapper {
-        .fieldset.gift-message .field.gift-wrapping {
-            padding: 0;
-            width: 100%;
-        }
-    }
-
-    .opc-wrapper .data.table,
-    .table-order-items {
-        .gift-wrapping {
-            margin: $indent__base 0 0;
-            .title {
-                float: none;
-            }
-
-            .content {
-                &:extend(.abs-add-clearfix all);
-                margin: 0;
-
-                > img {
-                    float: left;
-                    margin: 0 $indent__s 0 0;
-                    max-height: 50px;
-                    max-width: 50px;
-                }
-            }
-        }
-    }
-
-    .gift-summary,
-    .gift-options {
-        .price-box {
-            margin-left: 22px;
-        }
-
-        .regular-price {
-            &:before {
-                content: attr(data-label)": ";
-            }
-
-            .price {
-                font-weight: $font-weight__bold;
-            }
-        }
-
-        &:extend(.abs-adjustment-incl-excl-tax all);
     }
 }
+
+.gift-wrapping-preview,
+.gift-wrapping-item > span {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.gift-wrapping-item {
+    float: left;
+    margin: 0 $indent__s $indent__s 0;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &._active {
+        span {
+            &:before {
+                @include lib-css(border, $gift-wrapping-preview__active__border-width solid $gift-wrapping-preview__active__border-color);
+                box-sizing: border-box;
+                content: '';
+                display: block;
+                height: 100%;
+                position: absolute;
+                width: 100%;
+                z-index: 2;
+            }
+        }
+    }
+
+    > span {
+        height: $gift-wrapping-thumbnail__height;
+        width: $gift-wrapping-thumbnail__width;
+    }
+}
+
+.gift-wrapping-title {
+    margin: $indent__s 0;
+
+    .action-remove {
+        // &:extend(.abs-action-button-as-link all);
+        @warn 'TO DO - Fix extend all';
+        margin: -$indent__xs 0 0 $indent__xs;
+        @include lib-icon-font(
+        $icon-trash,
+        $_icon-font-size: 18px,
+        $_icon-font-line-height: 20px,
+        $_icon-font-text-hide: true,
+        $_icon-font-color: $minicart-icons-color,
+        $_icon-font-color-hover: $primary__color,
+        $_icon-font-color-active: $minicart-icons-color
+        );
+    }
+}
+
+.gift-options-content {
+    .fieldset {
+        .field {
+            margin: $indent__s 0;
+        }
+    }
+}
+
+.gift-wrapping-summary {
+    padding-right: 7rem;
+
+    .gift-wrapping-title {
+        border: 0;
+        display: inline-block;
+        padding: 0;
+    }
+}
+
+.opc-wrapper {
+    .fieldset.gift-message .field.gift-wrapping {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+.opc-wrapper .data.table,
+.table-order-items {
+    .gift-wrapping {
+        margin: $indent__base 0 0;
+        .title {
+            float: none;
+        }
+
+        .content {
+            // &:extend(.abs-add-clearfix all);
+            @warn 'TO DO - Fix extend all';
+            margin: 0;
+
+            > img {
+                float: left;
+                margin: 0 $indent__s 0 0;
+                max-height: 50px;
+                max-width: 50px;
+            }
+        }
+    }
+}
+
+.gift-summary,
+.gift-options {
+    .price-box {
+        margin-left: 22px;
+    }
+
+    .regular-price {
+        &:before {
+            content: attr(data-label)": ";
+        }
+
+        .price {
+            font-weight: $font-weight__bold;
+        }
+    }
+
+    // &:extend(.abs-adjustment-incl-excl-tax all);
+    @warn 'TO DO - Fix extend all';
+}
+
 
 //
 //  Mobile
@@ -226,7 +230,8 @@ $gift-wrapping-no-image-icon__font-size: 22px;
         .gift-wrapping {
             .nested,
             .content {
-                &:extend(.abs-add-clearfix-desktop all);
+                // &:extend(.abs-add-clearfix-desktop all);
+                @warn 'TO DO - Fix extend all';
             }
         }
     }

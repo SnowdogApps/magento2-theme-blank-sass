@@ -13,7 +13,9 @@
 
 //  Path
 $font-path: "../../fonts/";
-$icons__font-path: "#{$baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons";
+// $icons__font-path: "#{$baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons";
+@warn "TO DO - Dependency hell! No idea why this is harcoded and use baseDir variable...";
+$icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 
 //  Names
 $icons__font-name: 'icons-blank-theme'; // ToDo UI: we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
@@ -26,14 +28,14 @@ $font-family__monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
 $font-family__base: $font-family__sans-serif;
 
 //  Sizes
-$root__font-size: 62.5%; // Defines ratio between root font size and base font size, 1rem = 10px
+$root__font-size: 0.625; // Defines ratio between root font size and base font size, 1rem = 10px
 $font-size-ratio__base: 1.4; // Defines ratio of the root font-size to the base font-size
 
 $font-size-unit: rem; // The unit to which most typography values will be converted by default
-$font-size-unit-ratio: unit($root__font-size * 16/100); // Ratio of the root font-size to the font-size unit
+$font-size-unit-ratio: $root__font-size * 16/100; // Ratio of the root font-size to the font-size unit
 $font-size-unit-convert: true; // Controls whether font-size values are converted to the specified font-size unit
 
-$font-size__base: unit($font-size-unit-ratio * $font-size-ratio__base, px); // Base font size value in <b>px</b>
+$font-size__base: $font-size-unit-ratio * $font-size-ratio__base * 1px; // Base font size value in <b>px</b>
 $font-size__xl: ceil(1.5 * $font-size__base); // 21px
 $font-size__l: ceil(1.25 * $font-size__base); // 18px
 $font-size__s: ceil(.85 * $font-size__base); // 12px
