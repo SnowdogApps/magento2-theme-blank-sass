@@ -26,30 +26,13 @@
     }
 }
 
-//  Rem font size
-@mixin lib-font-size($sizeValue) {
-    @if ispercentage($sizeValue) == false &&  $sizeValue != false {
-        @if isunit($sizeValue, $font-size-unit) {
-            @include lib-css(font-size, $sizeValue);
-        }
-        @else if isunit($sizeValue, em) {
-            @include lib-css(font-size, $sizeValue);
-        }
-        @else if isunit($sizeValue, em) == false && isunit($sizeValue, $font-size-unit) == false {
-            @include lib-font-size-value($sizeValue);
-            @include lib-css(font-size, $fontValue);
-        }
-    }
-}
-
 //  Rem line height
 @mixin lib-line-height($heightValue) {
     @if $heightValue != false && ispercentage($heightValue) == false {
-        @include lib-font-size-value($heightValue);
-        @include lib-css(line-height, $fontValue);
+        line-height: $fontValue;
     }
     @else if ispercentage($heightValue) && $heightValue != false {
-        @include lib-css(line-height, $heightValue);
+        line-height: $heightValue;
     }
 }
 
@@ -89,17 +72,17 @@
     $_line-height: $line-height__base,
     $_font-style : $font-style__base
 ) {
-    @include lib-css(color, $_color);
-    @include lib-css(font-family, $_font-family);
-    @include lib-css(font-style, $_font-style);
-    @include lib-css(font-weight, $_font-weight);
-    @include lib-css(line-height, $_line-height);
+    color: $_color;
+    font-family: $_font-family;
+    font-style: $_font-style;
+    font-weight: $_font-weight;
+    line-height: $_line-height;
     @include lib-font-size($_font-size);
 }
 
-@mixin lib-list-reset-styles($_margin: 0, $_padding: 0) {
-    @include lib-css(margin, $_margin);
-    @include lib-css(padding, $_padding);
+@mixin lib-list-reset-styles($_margin: 0: $_padding: 0) {
+    margin: $_margin;
+    padding: $_padding;
     list-style: none none;
 }
 
@@ -121,22 +104,22 @@
     $_link-color-active           : $link__active__color,
     $_link-text-decoration-active : $link__active__text-decoration
 ) {
-    @include lib-css(color, $_link-color);
-    @include lib-css(text-decoration, $_link-text-decoration);
+    color: $_link-color;
+    text-decoration: $_link-text-decoration;
 
     &:visited {
-        @include lib-css(color, $_link-color-visited);
-        @include lib-css(text-decoration, $_link-text-decoration-visited);
+        color: $_link-color-visited;
+        text-decoration: $_link-text-decoration-visited;
     }
 
     &:hover {
-        @include lib-css(color, $_link-color-hover);
-        @include lib-css(text-decoration, $_link-text-decoration-hover);
+        color: $_link-color-hover;
+        text-decoration: $_link-text-decoration-hover;
     }
 
     &:active {
-        @include lib-css(color,$_link-color-active);
-        @include lib-css(text-decoration, $_link-text-decoration-active);
+        color,$_link-color-active;
+        text-decoration: $_link-text-decoration-active;
     }
 }
 
@@ -158,10 +141,8 @@
         $_font-style
     );
 
-    @include lib-font-size-value($_margin-top);
-    @include lib-font-size-value($_margin-bottom);
-    @include lib-css(margin-top, $fontValue);
-    @include lib-css(margin-bottom, $fontValue);
+    margin-top: $fontValue;
+    margin-bottom: $fontValue;
 }
 
 //
@@ -170,7 +151,7 @@
 
 @mixin lib-typography__base() {
     html {
-        @include lib-css(font-size, ($root__font-size * 100 * 100%));
+        font-size: $font-size__base;
         -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
                 font-size-adjust: 100%;
@@ -182,52 +163,50 @@
 
     p {
         & {
-            @include lib-font-size-value($p__margin-top);
-            @include lib-css(margin-top, $fontValue);
+            margin-top: $fontValue;
         }
 
         & {
-            @include lib-font-size-value($p__margin-bottom);
-            @include lib-css(margin-bottom, $fontValue);
+            margin-bottom: $fontValue;
         }
     }
 
     //  Abbreviations and acronyms
     abbr[title] {
         cursor: help;
-        @include lib-css(border-bottom, 1px dotted $abbr__border-color);
+        border-bottom: 1px dotted $abbr__border-color;
     }
 
     b,
     strong {
-        @include lib-css(font-weight, $font-weight__bold);
+        font-weight: $font-weight__bold;
     }
 
     em,
     i {
-        @include lib-css(font-style, $font-style__emphasis);
+        font-style: $font-style__emphasis;
     }
 
     mark {
-        @include lib-css(background, $mark__background-color);
-        @include lib-css(color, $mark__color);
+        background: $mark__background-color;
+        color: $mark__color;
     }
 
     small,
     .small {
-        @include lib-css(font-size, $font-size__s);
+        font-size: $font-size__s;
     }
 
     hr {
         border: 0;
-        @include lib-css(border-top, $hr__border-width $hr__border-style $hr__border-color);
-        @include lib-css(margin-bottom, $line-height__computed);
-        @include lib-css(margin-top, $line-height__computed);
+        border-top: $hr__border-width $hr__border-style $hr__border-color;
+        margin-bottom: $line-height__computed;
+        margin-top: $line-height__computed;
     }
 
     sub,
     sup {
-        @include lib-css(font-size, ($font-size__xs/$font-size__base)*100%);
+        font-size: ($font-size__xs/$font-size__base)*100%;
         line-height: 0;
         position: relative;
         vertical-align: baseline;
@@ -242,7 +221,7 @@
     }
 
     dfn {
-        @include lib-css(font-style, $font-style__emphasis);
+        font-style: $font-style__emphasis;
     }
 }
 
@@ -275,7 +254,7 @@
         @include lib-heading(h6);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1: h2: h3: h4: h5: h6 {
         small,
         .small {
             @include lib-typography(
@@ -306,25 +285,21 @@
     ul,
     ol {
         & {
-            @include lib-font-size-value($list__margin-top);
-            @include lib-css(margin-top, $fontValue);
+            margin-top: $fontValue;
         }
 
         & {
-            @include lib-font-size-value($list__margin-bottom);
-            @include lib-css(margin-bottom, $fontValue);
+            margin-bottom: $fontValue;
         }
 
-        //.lib-typography($list__font-size__base, $list__color__base);
+        //.lib-typography($list__font-size__base: $list__color__base);
         & > li {
             & {
-                @include lib-font-size-value($list-item__margin-top);
-                @include lib-css(margin-top, $fontValue);
+                margin-top: $fontValue;
             }
 
             & {
-                @include lib-font-size-value($list-item__margin-bottom);
-                @include lib-css(margin-bottom, $fontValue);
+                margin-bottom: $fontValue;
             }
         }
 
@@ -335,19 +310,19 @@
     }
 
     dl {
-        @include lib-css(margin-bottom, $dl__margin-bottom);
-        @include lib-css(margin-top, $dl__margin-top);
+        margin-bottom: $dl__margin-bottom;
+        margin-top: $dl__margin-top;
     }
 
     dt {
-        @include lib-css(font-weight, $dt__font-weight);
-        @include lib-css(margin-bottom, $dt__margin-bottom);
-        @include lib-css(margin-top, $dt__margin-top);
+        font-weight: $dt__font-weight;
+        margin-bottom: $dt__margin-bottom;
+        margin-top: $dt__margin-top;
     }
 
     dd {
-        @include lib-css(margin-bottom, $dd__margin-bottom);
-        @include lib-css(margin-top, $dd__margin-top);
+        margin-bottom: $dd__margin-bottom;
+        margin-top: $dd__margin-top;
         margin-left: 0;
     }
 }
@@ -361,34 +336,34 @@
     kbd,
     pre,
     samp {
-        @include lib-css(font-family, $font-family__monospace);
+        font-family: $font-family__monospace;
     }
 
     //  Inline code
     code {
-        @include lib-css(background, $code__background-color);
-        @include lib-css(color, $code__color);
-        @include lib-css(padding, $code__padding);
+        background: $code__background-color;
+        color: $code__color;
+        padding: $code__padding;
         @include lib-font-size($code__font-size);
         white-space: nowrap;
     }
 
     //  User input typically entered via keyboard
     kbd {
-        @include lib-css(background, $kbd__background-color);
-        @include lib-css(color, $kbd__color);
-        @include lib-css(padding, $code__padding);
+        background: $kbd__background-color;
+        color: $kbd__color;
+        padding: $code__padding;
         @include lib-font-size($code__font-size);
     }
 
     //  Blocks of code
     pre {
-        @include lib-css(background, $pre__background-color);
-        @include lib-css(border, $pre__border-width solid $pre__border-color);
-        @include lib-css(color, $pre__color);
-        @include lib-css(line-height, $line-height__base);
-        @include lib-css(margin, 0 0 $indent__s);
-        @include lib-css(padding, $indent__s);
+        background: $pre__background-color;
+        border: $pre__border-width solid $pre__border-color;
+        color: $pre__color;
+        line-height: $line-height__base;
+        margin: 0 0 $indent__s;
+        padding: $indent__s;
         @include lib-font-size ($code__font-size);
         display: block;
         word-wrap: break-word;
@@ -410,9 +385,9 @@
 
 @mixin lib-typography-blockquote() {
     blockquote {
-        @include lib-css(border-left, $blockquote__border-width solid $blockquote__border-color);
-        @include lib-css(margin, $blockquote__margin);
-        @include lib-css(padding, $blockquote__padding);
+        border-left: $blockquote__border-width solid $blockquote__border-color;
+        margin: $blockquote__margin;
+        padding: $blockquote__padding;
         @include lib-typography(
             $_font-size : $blockquote__font-size,
             $_font-style: $blockquote__font-style
@@ -429,17 +404,17 @@
         footer,
         small,
         .small {
-            @include lib-css(color, $blockquote-small__color);
-            @include lib-css(line-height, $line-height__base);
+            color: $blockquote-small__color;
+            line-height: $line-height__base;
             @include lib-font-size($blockquote-small__font-size);
             display: block;
             &:before {
-                @include lib-css(content, $blockquote__content-before);
+                content: $blockquote__content-before;
             }
         }
 
         cite {
-            @include lib-css(font-style, $cite__font-style);
+            font-style: $cite__font-style;
         }
     }
 
@@ -460,7 +435,7 @@
 
     //  Undo browser default styling
     cite {
-        @include lib-css(font-style, $cite__font-style);
+        font-style: $cite__font-style;
     }
 }
 

@@ -17,36 +17,25 @@ $font-path: "../../fonts/";
 @warn "TO DO - Dependency hell! No idea why this is harcoded and use baseDir variable...";
 $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 
-//  Names
-$icons__font-name: 'icons-blank-theme'; // ToDo UI: we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
-
 //  Font families
 $font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family__serif: Georgia, 'Times New Roman', Times, serif;
-$font-family__monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
-
-$font-family__base: $font-family__sans-serif;
+$font-family__serif     : Georgia, 'Times New Roman', Times, serif;
+$font-family__monospace : Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family__base      : $font-family__sans-serif;
 
 //  Sizes
-$root__font-size: 0.625; // Defines ratio between root font size and base font size, 1rem = 10px
-$font-size-ratio__base: 1.4; // Defines ratio of the root font-size to the base font-size
-
-$font-size-unit: rem; // The unit to which most typography values will be converted by default
-$font-size-unit-ratio: $root__font-size * 16/100; // Ratio of the root font-size to the font-size unit
-$font-size-unit-convert: true; // Controls whether font-size values are converted to the specified font-size unit
-
-$font-size__base: $font-size-unit-ratio * $font-size-ratio__base * 1px; // Base font size value in <b>px</b>
-$font-size__xl: ceil(1.5 * $font-size__base); // 21px
-$font-size__l: ceil(1.25 * $font-size__base); // 18px
-$font-size__s: ceil(.85 * $font-size__base); // 12px
-$font-size__xs: floor(.75 * $font-size__base); // 11px
+$font-size__base: 16px;
+$font-size__xl  : 21px;
+$font-size__l   : 18px;
+$font-size__s   : 12px;
+$font-size__xs  : 11px;
 
 //  Weights
-$font-weight__light: 300;
-$font-weight__regular: 400;
-$font-weight__heavier: 500;
+$font-weight__light   : 300;
+$font-weight__regular : 400;
+$font-weight__heavier : 500;
 $font-weight__semibold: 600;
-$font-weight__bold: 700;
+$font-weight__bold    : 700;
 
 //  Styles
 $font-style__base: normal;
@@ -63,17 +52,6 @@ $line-height__s: 1.33;
 $text__color: $primary__color;
 $text__color__intense: $primary__color__darker;
 $text__color__muted: $primary__color__lighter;
-
-//
-//  Indents
-//  ---------------------------------------------
-
-$indent__base: $line-height__computed; // 20px
-$indent__xl: $indent__base * 2; // 40px
-$indent__l: $indent__base * 1.5; // 30px
-$indent__m: $indent__base * 1.25; // 25px
-$indent__s: $indent__base / 2; // 10px
-$indent__xs: $indent__base / 4; // 5px
 
 //
 //  Borders

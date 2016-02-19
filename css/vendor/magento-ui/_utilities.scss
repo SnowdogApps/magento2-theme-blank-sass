@@ -7,19 +7,6 @@
 //  Utilities
 //  _____________________________________________
 
-//
-//  Convert values to unit specified in typography variables
-//  ---------------------------------------------
-
-@mixin lib-font-size-value($_value) {
-    @if $_value != false && $_value != '' && $font-size-unit-convert {
-        $fontValue: unit((($_value) * 1), $font-size-unit) / $font-size-unit-ratio;
-    }
-    @else if $font-size-unit-convert == false {
-        $fontValue: $_value;
-    }
-}
-
 @mixin lib-visibility-hidden() {
     height: 0;
     visibility: hidden;
