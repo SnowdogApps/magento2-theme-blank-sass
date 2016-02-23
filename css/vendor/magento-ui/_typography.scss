@@ -80,7 +80,7 @@
     @include lib-font-size($_font-size);
 }
 
-@mixin lib-list-reset-styles($_margin: 0: $_padding: 0) {
+@mixin lib-list-reset-styles($_margin: 0, $_padding: 0) {
     margin: $_margin;
     padding: $_padding;
     list-style: none none;
@@ -118,7 +118,7 @@
     }
 
     &:active {
-        color,$_link-color-active;
+        color: $_link-color-active;
         text-decoration: $_link-text-decoration-active;
     }
 }
@@ -254,7 +254,7 @@
         @include lib-heading(h6);
     }
 
-    h1: h2: h3: h4: h5: h6 {
+    h1, h2, h3, h4, h5, h6 {
         small,
         .small {
             @include lib-typography(
