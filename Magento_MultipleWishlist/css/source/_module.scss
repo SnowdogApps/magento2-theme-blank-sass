@@ -279,7 +279,7 @@ $desktop-popup-position-top: 20%;
 .block-wishlist-info-items {
     .block-title {
         @include lib-css(margin-bottom, $indent__base);
-        @include lib-font-size(22px);
+        font-size: 22pxpx;
 
         > strong {
             font-weight: $font-weight__light ;
@@ -351,7 +351,7 @@ $desktop-popup-position-top: 20%;
             &-select {
                 margin: 0 -$layout__width-xs-indent 20px;
                 .wishlist-name {
-                    @include lib-font-size(16);
+                    font-size: 16px;
                     // &:extend(.abs-toggling-title-mobile all);
                     @warn 'TO DO - Fix extend all';
                 }
@@ -401,7 +401,7 @@ $desktop-popup-position-top: 20%;
             //  Wish list name
             &-title {
                 strong {
-                    @include lib-font-size(26);
+                    font-size: 26px;
                 }
             }
 
@@ -525,7 +525,7 @@ $desktop-popup-position-top: 20%;
             //  Wish list name
             &-title {
                 strong {
-                    @include lib-font-size(40);
+                    font-size: 40px;
                 }
             }
 

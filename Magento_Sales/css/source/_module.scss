@@ -48,7 +48,7 @@
         padding: 0 0 $indent__s;
 
         > strong {
-            @include lib-font-size(24);
+            font-size: 24px;
             font-weight: $font-weight__light;
         }
 
@@ -205,7 +205,7 @@
     }
 
     .product-item-name {
-        @include lib-font-size(18);
+        font-size: 18px;
     }
 
     .items-qty {
@@ -497,7 +497,7 @@
             }
 
             .col {
-                @include lib-font-size(12);
+                font-size: 12px;
                 padding: 0 10px;
 
                 &:first-child {

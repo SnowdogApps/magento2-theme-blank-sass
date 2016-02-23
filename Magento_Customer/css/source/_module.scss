@@ -22,7 +22,7 @@ $account-table-action-delete: $color-red12;
         .block-title {
             // &:extend(.abs-login-block-title all);
             @warn 'TO DO - Fix extend all';
-            @include lib-font-size(18);
+            font-size: 18px;
         }
     }
 

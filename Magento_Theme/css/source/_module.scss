@@ -235,7 +235,7 @@ body {
         .links {
             > li {
                 @include lib-css(background, $footer__background-color);
-                @include lib-font-size(16);
+                font-size: 16px;
                 border-top: 1px solid $footer-links-separator-border-color;
                 margin: 0 -$layout__width-xs-indent;
                 padding: 0 $layout__width-xs-indent;
@@ -331,13 +331,13 @@ body {
     }
 
     .nav-sections .switcher-trigger strong:after {
-        @include lib-font-size(16);
+        font-size: 16px;
         right: -25px;
         top: 2px;
     }
 
     .navigation .parent .level-top:after {
-        @include lib-font-size(16);
+        font-size: 16px;
         right: 10px;
         top: 7px;
     }
@@ -345,7 +345,7 @@ body {
     .page-footer .footer.content {
         .switcher-store {
             @include lib-css(background, $footer__background-color);
-            @include lib-font-size(16);
+            font-size: 16px;
             margin: 0 -$layout__width-xs-indent;
 
             .switcher-options {

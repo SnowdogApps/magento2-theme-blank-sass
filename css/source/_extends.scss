@@ -20,7 +20,7 @@
 
 .action-primary {
     @include lib-button-primary();
-    @include lib-css(border-radius, $button__border-radius);
+    @include lib-css(border-radius, 3px);
 }
 
 //
@@ -31,7 +31,7 @@
     // &:extend(.abs-revert-secondary-color all);
     @warn 'TO DO - Fix extend all';
 
-    @include lib-css(border-radius, $button__border-radius);
+    @include lib-css(border-radius, 3px);
 
     &:not(:focus) {
         @include lib-css(box-shadow, $button__shadow);
@@ -49,7 +49,7 @@
 .abs-action-link-button {
     @include lib-button();
     @include lib-link-as-button();
-    @include lib-css(border-radius, $button__border-radius);
+    @include lib-css(border-radius, 3px);
 }
 
 //
@@ -219,7 +219,7 @@
     padding-bottom: 12px;
     margin-bottom: 15px;
     @include lib-css(border-bottom, 1px solid $secondary__color);
-    @include lib-font-size(18);
+    font-size: 18px;
 }
 
 //
@@ -654,7 +654,7 @@
 //  ---------------------------------------------
 
 .abs-methods-shipping-title {
-    @include lib-font-size(16);
+    font-size: 16px;
     margin-bottom: 15px;
     @include lib-css(font-weight, $font-weight__semibold);
 }
@@ -876,7 +876,7 @@
 
 .abs-checkout-cart-price {
     @include lib-css(color, $primary__color__lighter);
-    @include lib-font-size(16);
+    font-size: 16px;
     font-weight: $font-weight__bold;
 }
 
@@ -885,7 +885,7 @@
 //  ---------------------------------------------
 
 .abs-checkout-product-name {
-    @include lib-font-size(18);
+    font-size: 18px;
     font-weight: $font-weight__light;
     margin: 0;
 }
@@ -918,7 +918,7 @@
             }
 
             .grand.totals {
-                @include lib-font-size(16);
+                font-size: 16px;
                 .mark {
                     padding-top: $indent__xs;
                     padding-bottom: 0;
@@ -944,7 +944,7 @@
 .abs-account-title {
     > strong,
     > span {
-        @include lib-font-size(22);
+        font-size: 22px;
         @include lib-css(font-weight, $font-weight__light);
     }
 
@@ -959,7 +959,7 @@
 
 @include min-screen($screen__m) {
     .abs-account-block-font-size {
-        @include lib-font-size(16);
+        font-size: 16px;
     }
 }
 
@@ -1047,7 +1047,7 @@
     .price-excluding-tax {
         @include lib-css(color, $cart-price-color);
         display: block;
-        @include lib-font-size(18);
+        font-size: 18px;
         line-height: 1;
         white-space: nowrap;
 
@@ -1061,12 +1061,12 @@
     .price-including-tax,
     .price-excluding-tax {
         display: inline-block;
-        @include lib-font-size(14);
+        font-size: 14px;
     }
 
     .price-including-tax + .price-excluding-tax {
         display: inline-block;
-        @include lib-font-size(11);
+        font-size: 11px;
 
         &:before {
             content: "("attr(data-label)": ";
@@ -1178,7 +1178,7 @@
 
     .box-title {
         > span {
-            @include lib-font-size(16);
+            font-size: 16px;
         }
 
         display: inline-block;
@@ -1410,7 +1410,7 @@
 
 .abs-block-items-counter {
     @include lib-css(color, $primary__color__lighter);
-    @include lib-font-size(12px);
+    font-size: 12pxpx;
     white-space: nowrap;
 }
 
@@ -1615,13 +1615,13 @@
 
         .mark {
             border-top: 1px solid $border-color__base;
-            @include lib-font-size(18);
+            font-size: 18px;
             padding-right: $indent__s;
         }
 
         .amount {
             border-top: 1px solid $border-color__base;
-            @include lib-font-size(18);
+            font-size: 18px;
         }
     }
 
@@ -1792,7 +1792,7 @@
                 padding: 0 0 $indent__s;
 
                 strong {
-                    @include lib-font-size(16);
+                    font-size: 16px;
                 }
 
                 &:after {

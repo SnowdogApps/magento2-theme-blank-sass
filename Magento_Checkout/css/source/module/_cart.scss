@@ -44,7 +44,7 @@ $cart-item-cell-padding-top: 20px;
     padding: 1px 0 $indent__m;
 
     > .title {
-        @include lib-font-size(24);
+        font-size: 24px;
         display: none;
         font-weight: $font-weight__light;
         margin: 12px 0;
@@ -93,7 +93,7 @@ $cart-item-cell-padding-top: 20px;
         @warn 'TO DO - Fix extend all';
         .title {
             strong {
-                @include lib-font-size(14);
+                font-size: 14px;
                 font-weight: $font-weight__semibold;
             }
         }
@@ -224,7 +224,7 @@ $cart-item-cell-padding-top: 20px;
 
             > .price {
                 @include lib-css(color, $primary__color__lighter);
-                @include lib-font-size(18);
+                font-size: 18px;
                 font-weight: $font-weight__bold;
             }
         }
@@ -306,7 +306,7 @@ $cart-item-cell-padding-top: 20px;
             }
 
             &-item-name {
-                @include lib-font-size(18);
+                font-size: 18px;
                 display: block;
                 margin: -3px 0 $indent__xs;
             }

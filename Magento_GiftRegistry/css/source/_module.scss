@@ -166,7 +166,7 @@
         }
 
         .price-wrapper {
-            @include lib-font-size(18);
+            font-size: 18px;
             display: block;
             font-weight: $font-weight__bold;
             white-space: nowrap;
@@ -196,7 +196,7 @@
         }
 
         &-item-name {
-            @include lib-font-size(18);
+            font-size: 18px;
             display: block;
             margin: 0 0 $indent__xs;
         }

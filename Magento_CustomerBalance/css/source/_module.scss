@@ -16,7 +16,7 @@
     }
 
     .price {
-        @include lib-font-size(32);
+        font-size: 32px;
         line-height: 32px;
         display: inline-block;
         @include lib-css(margin-top, -$indent__s);

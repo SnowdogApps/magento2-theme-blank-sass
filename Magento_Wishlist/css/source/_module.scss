@@ -23,8 +23,8 @@
         // &:extend(.abs-actions-addto all);
         @warn 'TO DO - Fix extend all';
         @include lib-icon-font-symbol(
-        $_icon-font-content: $icon-wishlist-full,
-        $_icon-font-position: before
+            $_icon-font-content: $icon-wishlist-full,
+            $_icon-font-position: before
         );
     }
 }
@@ -206,7 +206,7 @@
                 }
 
                 &-name {
-                    @include lib-font-size(16);
+                    font-size: 16px;
                 }
 
                 &-actions {

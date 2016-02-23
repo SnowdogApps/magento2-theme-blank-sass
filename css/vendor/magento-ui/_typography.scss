@@ -77,7 +77,7 @@
     font-style: $_font-style;
     font-weight: $_font-weight;
     line-height: $_line-height;
-    @include lib-font-size($_font-size);
+    font-size: $_font-size;
 }
 
 @mixin lib-list-reset-styles($_margin: 0, $_padding: 0) {
@@ -344,7 +344,7 @@
         background: $code__background-color;
         color: $code__color;
         padding: $code__padding;
-        @include lib-font-size($code__font-size);
+        font-size: $code__font-size;
         white-space: nowrap;
     }
 
@@ -353,7 +353,7 @@
         background: $kbd__background-color;
         color: $kbd__color;
         padding: $code__padding;
-        @include lib-font-size($code__font-size);
+        font-size: $code__font-size;
     }
 
     //  Blocks of code
@@ -364,7 +364,7 @@
         line-height: $line-height__base;
         margin: 0 0 $indent__s;
         padding: $indent__s;
-        @include lib-font-size ($code__font-size);
+        font-size: $code__font-size;
         display: block;
         word-wrap: break-word;
 
@@ -406,7 +406,7 @@
         .small {
             color: $blockquote-small__color;
             line-height: $line-height__base;
-            @include lib-font-size($blockquote-small__font-size);
+            font-size: $blockquote-small__font-size;
             display: block;
             &:before {
                 content: $blockquote__content-before;
