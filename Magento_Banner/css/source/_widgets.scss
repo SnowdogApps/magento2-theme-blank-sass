@@ -11,6 +11,8 @@
 
 .block-banners,
 .block-banners-inline {
+    // should extend only the class below like less extend('.className')
+    // not others selectors like "div.className" etc.
     @extend .abs-margin-for-blocks-and-widgets;
 
     .banner-items {

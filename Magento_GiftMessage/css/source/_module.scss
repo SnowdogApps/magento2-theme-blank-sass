@@ -206,6 +206,8 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
     .order-items {
         .order-gift-message {
             &:not(.expanded-content) {
+                // should extend only the class below like less extend('.className')
+                // not others selectors like "div.className" etc.
                 @extend .abs-hidden;
             }
 
