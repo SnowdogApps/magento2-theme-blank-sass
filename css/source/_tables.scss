@@ -117,7 +117,7 @@ table {
                 }
 
                 .grand.totals {
-                    @include lib-font-size(16);
+                    font-size: 16px;
                     .amount {
                         padding-bottom: $indent__s;
                     }

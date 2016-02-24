@@ -142,7 +142,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         }
 
         .tocart {
-            @include lib-font-size(13px);
+            font-size: 13pxpx;
             border-radius: 0;
             line-height: 1;
             padding-bottom: $indent__s;
@@ -166,7 +166,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
 .price-container {
     .price {
-        @include lib-font-size(14);
+        font-size: 14px;
     }
 
     .price-including-tax + .price-excluding-tax,
@@ -180,7 +180,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .weee .price,
     .weee + .price-excluding-tax:before,
     .weee + .price-excluding-tax .price {
-        @include lib-font-size(11);
+        font-size: 11px;
     }
 
     .weee {

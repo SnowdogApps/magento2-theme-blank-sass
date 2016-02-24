@@ -268,7 +268,7 @@ $desktop-popup-position-top: 20%;
 .block-wishlist-info-items {
     .block-title {
         @include lib-css(margin-bottom, $indent__base);
-        @include lib-font-size(22px);
+        font-size: 22pxpx;
 
         > strong {
             font-weight: $font-weight__light;
@@ -387,7 +387,7 @@ $desktop-popup-position-top: 20%;
             //  Wish list name
             &-title {
                 strong {
-                    @include lib-font-size(26);
+                    font-size: 26px;
                 }
             }
 
@@ -510,7 +510,7 @@ $desktop-popup-position-top: 20%;
             //  Wish list name
             &-title {
                 strong {
-                    @include lib-font-size(40);
+                    font-size: 40px;
                 }
             }
 

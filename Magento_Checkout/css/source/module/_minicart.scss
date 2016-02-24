@@ -280,7 +280,7 @@ $minicart-qty__height: 24px;
         }
 
         .weee[data-label] {
-            @include lib-font-size(11);
+            font-size: 11px;
             .label {
                 @extend .abs-no-display;
             }
@@ -353,7 +353,7 @@ $minicart-qty__height: 24px;
     }
 
     .update-cart-item {
-        @include lib-font-size(11);
+        font-size: 11px;
         vertical-align: top;
     }
 

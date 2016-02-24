@@ -116,7 +116,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     .notice {
         margin: $indent__s 0;
         @include lib-css(color, $text__color__muted);
-        @include lib-font-size($font-size__s);
+        font-size: $font-size__s;
     }
 
     .product.thumbs {
@@ -184,23 +184,23 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
         .price-including-tax + .price-excluding-tax,
         .weee + .price-excluding-tax,
         .weee {
-            @include lib-font-size(14);
+            font-size: 14px;
             .price {
-                @include lib-font-size(14);
+                font-size: 14px;
                 font-weight: $font-weight__semibold;
                 line-height: 16px;
             }
         }
 
         .price-wrapper .price {
-            @include lib-font-size(22);
+            font-size: 22px;
             font-weight: $font-weight__semibold;
             line-height: 22px;
         }
 
         .old-price {
             .price-wrapper .price {
-                @include lib-font-size(20);
+                font-size: 20px;
                 font-weight: $font-weight__light;
             }
         }
@@ -286,7 +286,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
             border: none;
             @include lib-css(font-weight, $font-weight__semibold);
             display: inline-block;
-            @include lib-font-size(14px);
+            font-size: 14pxpx;
             float: none;
             padding: 0;
             margin: 0 0 8px;
@@ -353,11 +353,11 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
         .price-including-tax + .price-excluding-tax,
         .weee + .price-excluding-tax,
         .weee {
-            @include lib-font-size(12);
+            font-size: 12px;
             line-height: 14px;
 
             .price {
-                @include lib-font-size(12);
+                font-size: 12px;
                 font-weight: $font-weight__bold;
             }
         }
@@ -633,7 +633,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 
             .price-including-tax + .price-excluding-tax {
                 .price {
-                    @include lib-font-size(14);
+                    font-size: 14px;
                     line-height: 16px;
                 }
             }
@@ -798,7 +798,7 @@ body.catalog-product-compare-index {
         }
 
         &.attribute {
-            @include lib-font-size(13);
+            font-size: 13px;
 
             img {
                 max-width: 100%;

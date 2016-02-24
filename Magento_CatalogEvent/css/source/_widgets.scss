@@ -91,7 +91,7 @@
 
                 .category-name {
                     display: inline-block;
-                    @include lib-font-size(18);
+                    font-size: 18px;
                     padding: 15px 5px 0;
                     word-break: break-all;
                 }
@@ -105,13 +105,13 @@
                     }
 
                     .value {
-                        @include lib-font-size(26);
+                        font-size: 26px;
                         font-weight: $font-weight__light;
                     }
 
                     .label {
                         display: block;
-                        @include lib-font-size(13);
+                        font-size: 13px;
                     }
                 }
 
@@ -127,18 +127,18 @@
                     .start {
                         &:after {
                             content: "\2013";
-                            @include lib-font-size(18);
+                            font-size: 18px;
                             display: block;
                         }
                     }
 
                     .date {
-                        @include lib-font-size(18);
+                        font-size: 18px;
                         font-weight: $font-weight__light;
                     }
 
                     .time {
-                        @include lib-font-size(13);
+                        font-size: 13px;
                     }
                 }
 

@@ -9,7 +9,7 @@
 
 .block-reward-info {
     .reward-balance {
-        @include lib-font-size(18);
+        font-size: 18px;
         margin-bottom: $indent__m;
     }
 

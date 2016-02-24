@@ -83,7 +83,7 @@
 
         .level0 {
             @include lib-css(border-top, $_nav-level0-item-border);
-            @include lib-font-size($_nav-level0-font-size);
+            font-size: $_nav-level0-font-size;
 
             & > .level-top {
                 @include lib-css(background, $_nav-level0-item-background-color);

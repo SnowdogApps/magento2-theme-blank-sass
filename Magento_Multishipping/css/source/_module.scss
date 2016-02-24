@@ -151,7 +151,7 @@
 
     &.order-review {
         .block-title > strong {
-            @include lib-font-size(24);
+            font-size: 24px;
         }
 
         .block-shipping {
@@ -192,7 +192,7 @@
     }
 
     .checkout-review .grand.totals {
-        @include lib-font-size($font-size__xl);
+        font-size: $font-size__xl;
         margin-bottom: $indent__xl;
 
         .mark {

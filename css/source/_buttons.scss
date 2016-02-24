@@ -9,15 +9,15 @@
 
 button,
 a.action.primary {
-    @include lib-css(border-radius, $button__border-radius);
+    border-radius: 3px;
 }
 
 button {
     &:not(.primary) {
-        @include lib-css(box-shadow, $button__shadow);
+        box-shadow: $button__shadow;
 
         &:active {
-            @include lib-css(box-shadow, $button__shadow-active);
+            box-shadow: $button__shadow-active;
         }
     }
 }

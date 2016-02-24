@@ -28,7 +28,7 @@ $catalog-event-color: $primary__color;
         margin: 0 0 $indent__s;
 
         strong {
-            @include lib-font-size(15);
+            font-size: 15px;
             font-weight: $font-weight__light;
         }
     }
@@ -42,12 +42,12 @@ $catalog-event-color: $primary__color;
         }
 
         .value {
-            @include lib-font-size(18);
+            font-size: 18px;
             font-weight: $font-weight__light;
         }
 
         .label {
-            @include lib-font-size(10);
+            font-size: 10px;
             display: block;
             text-transform: lowercase;
         }
@@ -64,7 +64,7 @@ $catalog-event-color: $primary__color;
         }
 
         .date {
-            @include lib-font-size(18);
+            font-size: 18px;
         }
 
         .time {
@@ -76,7 +76,7 @@ $catalog-event-color: $primary__color;
             position: relative;
 
             &:after {
-                @include lib-font-size(18);
+                font-size: 18px;
                 content: "\2013";
                 display: block;
                 position: absolute;
@@ -101,7 +101,7 @@ $catalog-event-color: $primary__color;
             margin: 0;
 
             strong {
-                @include lib-font-size(24);
+                font-size: 24px;
             }
         }
 
@@ -112,25 +112,25 @@ $catalog-event-color: $primary__color;
             }
 
             .value {
-                @include lib-font-size(60);
+                font-size: 60px;
             }
 
             .label {
-                @include lib-font-size(14);
+                font-size: 14px;
                 text-transform: none;
             }
         }
 
         .dates {
             .date {
-                @include lib-font-size(50);
+                font-size: 50px;
             }
 
             .start {
                 padding-right: 50px;
 
                 &:after {
-                    @include lib-font-size(50);
+                    font-size: 50px;
                     right: 10px;
                 }
             }

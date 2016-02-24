@@ -97,7 +97,7 @@
     @extend .abs-shopping-cart-items;
 
     .block-title {
-        @include lib-font-size($h2__font-size);
+        font-size: $h2__font-size;
 
         strong {
             font-weight: $h2__font-weight;

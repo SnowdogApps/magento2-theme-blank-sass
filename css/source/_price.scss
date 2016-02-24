@@ -39,7 +39,7 @@
     .price-including-tax,
     .price-excluding-tax {
         display: block;
-        @include lib-font-size(18);
+        font-size: 18px;
         line-height: 1;
 
         .price {
@@ -57,15 +57,15 @@
     .price-including-tax + .price-excluding-tax,
     .weee[data-label] {
         display: block;
-        @include lib-font-size(18);
+        font-size: 18px;
 
         &:before {
             content: attr(data-label) ": ";
-            @include lib-font-size(11);
+            font-size: 11px;
         }
 
         .price {
-            @include lib-font-size(11);
+            font-size: 11px;
         }
     }
 }

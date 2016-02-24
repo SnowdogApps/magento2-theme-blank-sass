@@ -33,7 +33,7 @@
 
         .toolbar-amount {
             float: none;
-            @include lib-font-size(12);
+            font-size: 12px;
         }
 
         .pages-item-previous {

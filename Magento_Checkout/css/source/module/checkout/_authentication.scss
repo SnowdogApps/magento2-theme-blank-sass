@@ -43,7 +43,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
 .block-authentication {
     .block-title {
-        @include lib-font-size($h3__font-size);
+        font-size: $h3__font-size;
         border-bottom: 0;
         margin-bottom: $indent__m;
 
@@ -150,7 +150,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
     .block-authentication {
         .block-title {
-            @include lib-font-size($h2__font-size);
+            font-size: $h2__font-size;
             border-bottom: 0;
             margin-bottom: $indent__m;
         }

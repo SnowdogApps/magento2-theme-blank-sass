@@ -188,7 +188,7 @@
     $_font-size  : $font-size__base,
     $_line-height: normal
 ) {
-    @include lib-font-size($_font-size);
+    font-size: $_font-size;
     font-size: $_font-size;
     letter-spacing: normal;
     line-height: $_line-height;

@@ -235,7 +235,7 @@
                     @include lib-css(color, $price-color);
 
                     .price {
-                        @include lib-font-size(12);
+                        font-size: 12px;
                         font-weight: $font-weight__bold;
                     }
                 }
@@ -243,7 +243,7 @@
 
             .price-including-tax + .price-excluding-tax {
                 .price {
-                    @include lib-font-size(14);
+                    font-size: 14px;
                     line-height: 16px;
                 }
             }
