@@ -29,8 +29,7 @@
         $_popup-position: absolute
     );
     .map-info-price {
-        // &:extend(.abs-add-clearfix all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix;
         margin: 0 0 $indent__base;
 
         .price-box {

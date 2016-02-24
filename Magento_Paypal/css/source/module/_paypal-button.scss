@@ -44,7 +44,6 @@
 
 .paypal-button-widget {
     .paypal-button {
-        // &:extend(.abs-action-button-as-link all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-action-button-as-link;
     }
 }

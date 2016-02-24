@@ -10,13 +10,11 @@
 //  PayPal Review Order page
 .paypal-review {
     .block {
-        // &:extend(.abs-account-blocks all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-blocks;
         .actions-toolbar {
             .action {
                 &.primary {
-                    // &:extend(.abs-revert-secondary-color all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-revert-secondary-color;
                 }
             }
         }
@@ -44,8 +42,7 @@
         .col {
             &.price,
             &.subtotal {
-                // &:extend(.abs-incl-excl-tax all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-incl-excl-tax;
             }
 
             &.name {
@@ -58,11 +55,9 @@
         }
 
         .cart-tax-total {
-            // &:extend(.abs-tax-total all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-tax-total;
             &-expanded {
-                // &:extend(.abs-tax-total-expanded all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-tax-total-expanded;
             }
         }
     }
@@ -83,8 +78,7 @@
 
 //  Discounts
 .paypal-review-discount {
-    // &:extend(.abs-discount-block all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-discount-block;
     border-bottom: $border-width__base solid $border-color__base;
     margin: 0 0 $indent__xl;
     padding: $indent__s 0 0;
@@ -120,8 +114,7 @@
         }
 
         .block-content {
-            // &:extend(.abs-add-clearfix-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix-desktop;
 
             .box-order-shipping-address,
             .box-order-shipping-method,
@@ -139,8 +132,7 @@
 
         .column.main & {
             .actions-toolbar {
-                // &:extend(.abs-reset-left-margin-desktop all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-reset-left-margin-desktop;
             }
         }
 
@@ -166,10 +158,8 @@
 
     //  Discounts
     .paypal-review-discount {
-        // &:extend(.abs-add-clearfix-desktop all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-discount-block-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix-desktop;
+        @extend .abs-discount-block-desktop;
         border-top: $border-width__base solid $border-color__base;
     }
 }

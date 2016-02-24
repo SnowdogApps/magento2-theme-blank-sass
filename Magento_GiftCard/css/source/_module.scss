@@ -83,13 +83,11 @@
 
     .fieldset.giftcard {
         >.legend {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
 
         >.legend + br {
-            // &:extend(.abs-no-display all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-no-display;
         }
     }
 }

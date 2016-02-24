@@ -29,14 +29,12 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 .checkout-index-index,
 .checkout-onepage-success {
     .page-title-wrapper {
-        // &:extend(.abs-visually-hidden all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-visually-hidden;
     }
 }
 
 .checkout-container {
-    // &:extend(.abs-add-clearfix all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-clearfix;
     @include lib-css(margin, 0 0 $checkout-wrapper__margin);
 }
 
@@ -44,13 +42,11 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
     @include lib-css(margin, 0 0 $checkout-wrapper__margin);
 
     .opc {
-        // &:extend(.abs-reset-list all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-list;
     }
 
     .step-title {
-        // &:extend(.abs-checkout-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-checkout-title;
         @include lib-css(border-bottom, $checkout-step-title__border);
     }
 
@@ -94,8 +90,7 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 
 @include min-screen($screen__m) {
     .opc-wrapper {
-        // &:extend(.abs-add-box-sizing-desktop-m all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing-desktop-m;
         @include lib-layout-column(2, 1, $checkout-wrapper__columns);
         padding-right: $indent__l;
     }

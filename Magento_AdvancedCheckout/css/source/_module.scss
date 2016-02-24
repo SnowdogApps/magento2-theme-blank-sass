@@ -30,8 +30,7 @@
         }
 
         .sku {
-            // &:extend(.abs-add-box-sizing all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-box-sizing;
             margin-right: -155px;
             padding-right: 160px;
             width: 100%;
@@ -39,8 +38,7 @@
 
         .qty {
             .qty {
-                // &:extend(.abs-input-qty all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-input-qty;
 
                 + .mage-error {
                     width: 80px;
@@ -49,12 +47,10 @@
         }
 
         .block-content {
-            // &:extend(.abs-add-clearfix-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix-desktop;
 
             .box {
-                // &:extend(.abs-blocks-2columns all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-blocks-2columns;
             }
 
             .actions-toolbar {
@@ -98,8 +94,7 @@
 
 .block-cart-failed {
     margin: $indent__xl 0;
-    // &:extend(.abs-shopping-cart-items all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-shopping-cart-items;
 
     .block-title {
         @include lib-font-size($h2__font-size);
@@ -175,8 +170,7 @@
 
 @include min-screen($screen__m) {
     .block-cart-failed {
-        // &:extend(.abs-shopping-cart-items-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-shopping-cart-items-desktop;
 
         .secondary {
             .action {
@@ -189,8 +183,7 @@
         }
 
         .block-content {
-            // &:extend(.abs-add-clearfix-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix-desktop;
         }
     }
 }

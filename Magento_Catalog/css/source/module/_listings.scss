@@ -33,8 +33,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
 .product {
     &-items {
-        // &:extend(.abs-reset-list all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-list;
     }
 
     &-item {
@@ -45,12 +44,10 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             width: 100%/2;
         }
 
-        // &:extend(.abs-add-box-sizing all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing;
 
         &-name {
-            // &:extend(.abs-product-link all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-product-link;
             display: block;
             margin: $indent__xs 0;
             word-wrap: break-word;
@@ -74,15 +71,13 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
             .actions-secondary {
                 > .action {
-                    // &:extend(.abs-actions-addto all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-actions-addto;
                     &:before {
                         margin: 0;
                     }
 
                     span {
-                        // &:extend(.abs-visually-hidden all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-visually-hidden;
                     }
                 }
             }
@@ -230,8 +225,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     }
 
     .product-image-wrapper {
-        // &:extend(.abs-reset-image-wrapper all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-image-wrapper;
     }
 }
 
@@ -340,8 +334,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             &:not(:hover) {
                 &:not(.active) {
                     .product-item-inner {
-                        // &:extend(.abs-visually-hidden-desktop-s all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-visually-hidden-desktop-s;
                     }
                 }
             }

@@ -42,8 +42,7 @@ $checkout-progress-bar-item-element-outer-radius__width: 6px;
 //  ---------------------------------------------
 
 .opc-progress-bar {
-    // &:extend(.abs-reset-list all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-reset-list;
     display: none;
 }
 

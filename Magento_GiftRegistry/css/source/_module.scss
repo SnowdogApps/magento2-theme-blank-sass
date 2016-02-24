@@ -10,8 +10,7 @@
 
 .form-giftregistry-share,
 .form-giftregistry-edit {
-    // &:extend(.abs-add-fields all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-fields;
     .actions-toolbar:not(:last-child) {
         margin-bottom: $indent__xl;
     }
@@ -29,14 +28,12 @@
 
 .form.giftregistry.items {
     .actions-toolbar {
-        // &:extend(.abs-reset-left-margin all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-left-margin;
     }
 }
 
 .giftregisty-dropdown {
-    // &:extend(.abs-dropdown-simple all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-dropdown-simple;
     .action.toggle {
         @include lib-css(color, $link__color);
     }
@@ -44,8 +41,7 @@
 
 .table-giftregistry-items {
     .field.qty .qty {
-        // &:extend(.abs-input-qty all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-input-qty;
     }
 
     .product-image {
@@ -69,23 +65,20 @@
         }
 
         .action.primary {
-            // &:extend(.abs-revert-to-action-secondary all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-revert-to-action-secondary;
         }
     }
 }
 
 .form-giftregistry-create {
     .fieldset {
-        // &:extend(.abs-forms-margin-small all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-forms-margin-small;
     }
 }
 
 .form-giftregistry-edit {
     .field.date {
-        // &:extend(.abs-field-date all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-field-date;
     }
 }
 
@@ -93,8 +86,7 @@
     margin-bottom: $indent__l*2;
 
     .legend {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
     }
 
     .fields-specific-options {
@@ -105,21 +97,18 @@
         }
 
         .datetime-picker {
-            // &:extend(.abs-field-date-input all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-field-date-input;
         }
     }
 }
 
 .block-giftregistry-results {
     .block-title {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
     }
 
     .data.table {
-        // &:extend(.abs-table-striped all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-table-striped;
     }
 }
 
@@ -139,13 +128,11 @@
 
 .block-giftregistry-shared-items {
     .block-title {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
     }
 
     .product-image-wrapper {
-        // &:extend(.abs-reset-image-wrapper all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-image-wrapper;
     }
 
     .item {
@@ -175,17 +162,14 @@
 
     .qty {
         .qty {
-            // &:extend(.abs-input-qty all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-input-qty;
         }
     }
 
     .product {
         .item-options {
-            // &:extend(.abs-product-options-list all);
-            @warn 'TO DO - Fix extend all';
-            // &:extend(.abs-add-clearfix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-product-options-list;
+            @extend .abs-add-clearfix;
             margin: 0;
         }
 
@@ -211,8 +195,7 @@
     .account {
         .table-giftregistry {
             .col.actions {
-                // &:extend(.abs-col-no-prefix all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-col-no-prefix;
             }
         }
     }
@@ -220,11 +203,9 @@
     .table-giftregistry-items {
         .col.product {
             &:before {
-                // &:extend(.abs-visually-hidden-mobile all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden-mobile;
             }
-            // &:extend(.abs-add-clearfix-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix-mobile;
         }
 
         .field.choice,
@@ -284,10 +265,8 @@
 @include min-screen($screen__m) {
     .form-giftregistry-share,
     .form-giftregistry-edit {
-        // &:extend(.abs-add-fields-desktop all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-form-field-column-2 all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-fields-desktop;
+        @extend .abs-form-field-column-2;
         .fieldset .field {
             width: 45%;
         }
@@ -302,8 +281,7 @@
     }
 
     .form-giftregistry-create {
-        // &:extend(.abs-forms-general-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-forms-general-desktop;
     }
 
     .table-giftregistry {
@@ -362,24 +340,20 @@
     }
 
     .toolbar-giftregistry-results {
-        // &:extend(.abs-pager-toolbar all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-pager-toolbar;
     }
 
     .block-giftregistry-shared {
         .item-options {
-            // &:extend(.abs-product-options-list-desktop all);
-            @warn 'TO DO - Fix extend all';
-            // &:extend(.abs-add-clearfix-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-product-options-list-desktop;
+            @extend .abs-add-clearfix-desktop;
         }
     }
 
     .block-giftregistry-shared-items {
         .column.main & {
             .actions-toolbar {
-                // &:extend(.abs-reset-left-margin-desktop all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-reset-left-margin-desktop;
             }
         }
 

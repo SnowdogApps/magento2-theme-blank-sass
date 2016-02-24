@@ -14,10 +14,8 @@
 //  ---------------------------------------------
 
 .opc-estimated-wrapper {
-    // &:extend(.abs-no-display-desktop all);
-    @warn 'TO DO - Fix extend all';
-    // &:extend(.abs-add-clearfix all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-no-display-desktop;
+    @extend .abs-add-clearfix;
     @include lib-css(background, $checkout-step-content-mobile__background);
     @include lib-css(border-bottom, $checkout-step-title__border);
     @include lib-css(border-top, $checkout-step-title__border);

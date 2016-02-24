@@ -53,8 +53,7 @@ $popup-marker__size: 7px;
     .actions-toolbar {
         .action {
             &.cancel {
-                // &:extend(.abs-action-button-as-link all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-action-button-as-link;
                 font-weight: $font-weight__regular;
             }
         }

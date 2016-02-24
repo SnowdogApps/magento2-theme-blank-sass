@@ -76,8 +76,7 @@ $collapsible-nav-item-hover: $color-gray91;
 @include min-screen($screen__m) {
     .block-collapsible-nav {
         .title {
-            // &:extend(.abs-visually-hidden-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden-desktop;
         }
     }
 }
@@ -95,8 +94,7 @@ $collapsible-nav-item-hover: $color-gray91;
         z-index: 5;
 
         .title {
-            // &:extend(.abs-toggling-title-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-toggling-title-mobile;
         }
 
         .content {

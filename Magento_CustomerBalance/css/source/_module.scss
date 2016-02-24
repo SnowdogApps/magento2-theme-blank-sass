@@ -11,8 +11,7 @@
 
 .block-balance {
     .balance-price-label {
-        // &:extend(.abs-visually-hidden all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-visually-hidden;
     }
 
     .price {
@@ -30,8 +29,7 @@
 @include min-screen($screen__m) {
     .storecredit {
         .block {
-            // &:extend(.abs-blocks-2columns all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-blocks-2columns;
         }
 
         .block-balance-history {
@@ -46,8 +44,7 @@
     }
 
     .table-wrapper.balance-history {
-        // &:extend(.abs-account-table-margin-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-table-margin-desktop;
     }
 }
 
@@ -56,9 +53,7 @@
 //--------------------------------------
 @include max-screen($screen__s) {
     .table-wrapper.balance-history {
-        // &:extend(.abs-account-table-margin-mobile all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-no-border-top all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-table-margin-mobile;
+        @extend .abs-no-border-top;
     }
 }

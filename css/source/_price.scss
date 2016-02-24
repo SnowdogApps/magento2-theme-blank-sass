@@ -47,11 +47,9 @@
         }
 
         .cart-tax-total {
-            // &:extend(.abs-tax-total all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-tax-total;
             &-expanded {
-                // &:extend(.abs-tax-total-expanded all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-tax-total-expanded;
             }
         }
     }

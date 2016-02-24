@@ -10,8 +10,7 @@
 
 .form.wishlist.items {
     .actions-toolbar {
-        // &:extend(.abs-reset-left-margin all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-left-margin;
     }
 }
 
@@ -20,8 +19,7 @@
 .product-item,
 .table-comparison {
     .action.towishlist {
-        // &:extend(.abs-actions-addto all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-actions-addto;
         @include lib-icon-font-symbol(
         $_icon-font-content: $icon-wishlist-full,
         $_icon-font-position: before
@@ -52,8 +50,7 @@
 
         .qty {
             vertical-align: middle;
-            // &:extend(.abs-input-qty all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-input-qty;
         }
     }
 
@@ -105,13 +102,11 @@
 
 .block-wishlist {
     .block-title {
-        // &:extend(.abs-block-widget-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-block-widget-title;
     }
 
     .counter {
-        // &:extend(.abs-block-items-counter all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-block-items-counter;
     }
 
     .product-item-name {
@@ -137,8 +132,7 @@
 
             .comment-box {
                 .label {
-                    // &:extend(.abs-visually-hidden all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-visually-hidden;
                 }
             }
 
@@ -160,13 +154,11 @@
 
             .box-tocart {
                 input.qty {
-                    // &:extend(.abs-input-qty all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-input-qty;
                 }
 
                 .tocart {
-                    // &:extend(.abs-revert-secondary-size all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-revert-secondary-size;
                 }
             }
         }

@@ -28,8 +28,7 @@
 //  ---------------------------------------------
 
 .abs-revert-to-action-secondary {
-    // &:extend(.abs-revert-secondary-color all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-revert-secondary-color;
 
     @include lib-css(border-radius, $button__border-radius);
 
@@ -336,8 +335,7 @@
 //  ---------------------------------------------
 
 .abs-action-remove {
-    // &:extend(.abs-action-button-as-link all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-action-button-as-link;
 
     width: auto;
     line-height: normal;
@@ -369,8 +367,7 @@
         }
 
         .actions-toolbar {
-            // &:extend(.abs-add-clearfix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix;
 
             > .secondary {
                 .action {
@@ -397,8 +394,7 @@
 
     .action {
         &.remove {
-            // &:extend(.abs-action-remove all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-action-remove;
         }
     }
 
@@ -425,8 +421,7 @@
             .additional {
                 .action {
                     &.remove {
-                        // &:extend(.abs-action-remove-desktop all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-action-remove-desktop;
                     }
                 }
             }
@@ -666,8 +661,7 @@
 @include max-screen($screen__s) {
     .abs-checkout-order-review {
         tbody > tr {
-            // &:extend(.abs-add-clearfix-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix-mobile;
 
             &:not(:last-child) {
                 @include lib-css(border-bottom, $border-width__base solid $border-color__base);
@@ -838,8 +832,7 @@
 .abs-cart-block {
     margin: 0;
     > .title {
-        // &:extend(.abs-toggling-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-toggling-title;
 
         &:after {
             color: $color-gray52;
@@ -1168,8 +1161,7 @@
 
 .abs-account-blocks {
     .block-title {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
 
         > .action {
             margin-left: 15px;
@@ -1239,8 +1231,7 @@
     }
 
     .action.new {
-        // &:extend(.abs-icon-add all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-icon-add;
 
         &:before {
             margin-left: -17px;
@@ -1445,8 +1436,7 @@
 @include min-screen($screen__m) {
     .abs-shopping-cart-items-desktop {
         @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
-        // &:extend(.abs-add-box-sizing-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing-desktop;
 
         padding-right: 4%;
         position: relative;
@@ -1479,8 +1469,7 @@
 .abs-field-date {
     .control {
         position: relative;
-        // &:extend(.abs-add-box-sizing all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing;
     }
 
     input {
@@ -1502,8 +1491,7 @@
 //  ---------------------------------------------
 
 .abs-field-tooltip {
-    // &:extend(.abs-add-box-sizing all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-box-sizing;
 
     position: relative;
 
@@ -1596,8 +1584,7 @@
     }
 
     .table-caption {
-        // &:extend(.abs-no-display all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-no-display;
 
     }
 
@@ -1693,18 +1680,15 @@
 @include max-screen($screen__s) {
     .abs-sidebar-totals-mobile {
         th {
-            // &:extend(.abs-col-no-prefix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-col-no-prefix;
         }
 
         td {
-            // &:extend(.abs-col-no-prefix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-col-no-prefix;
         }
 
         tbody tr:not(:last-child) td {
-            // &:extend(.abs-no-border-bottom-top all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-no-border-bottom-top;
         }
 
         .amount {
@@ -1719,8 +1703,7 @@
 
 .abs-discount-block {
     .block {
-        // &:extend(.abs-cart-block all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-cart-block;
 
         > .title {
             strong {
@@ -1738,8 +1721,7 @@
         .action {
             &.primary,
             &.cancel {
-                // &:extend(.abs-revert-to-action-secondary all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-revert-to-action-secondary;
 
                 border-bottom-left-radius: 0;
                 border-top-left-radius: 0;
@@ -1757,8 +1739,7 @@
     }
 
     .action.check {
-        // &:extend(.abs-action-button-as-link all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-action-button-as-link;
 
         font-weight: $font-weight__regular;
     }
@@ -1781,8 +1762,7 @@
 @include min-screen($screen__m) {
     .abs-discount-block-desktop {
         .block {
-            // &:extend(.abs-blocks-2columns all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-blocks-2columns;
 
             width: 48%;
 

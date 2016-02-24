@@ -22,8 +22,7 @@
                     vertical-align: top;
 
                     &.sku {
-                        // &:extend(.abs-add-box-sizing all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-add-box-sizing;
                         margin-right: -85px;
                         padding-right: 90px;
                         width: 100%;
@@ -31,8 +30,7 @@
 
                     &.qty {
                         .qty {
-                            // &:extend(.abs-input-qty all);
-                            @warn 'TO DO - Fix extend all';
+                            @extend .abs-input-qty;
                             + .mage-error {
                                 width: 80px;
                             }

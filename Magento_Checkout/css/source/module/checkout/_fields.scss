@@ -17,8 +17,7 @@ $checkout-field-validation__border-color: $form-element-validation__border-error
 .field {
     .control {
         &._with-tooltip {
-            // &:extend(.abs-field-tooltip all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-field-tooltip;
         }
     }
 

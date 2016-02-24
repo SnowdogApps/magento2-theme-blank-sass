@@ -10,13 +10,11 @@
 
 
 .form.send.friend {
-   // &:extend(.abs-add-fields all);
-   @warn 'TO DO - Fix extend all';
+   @extend .abs-add-fields;
 }
 
 .product-social-links .action.mailto.friend {
-    // &:extend(.abs-actions-addto all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-actions-addto;
     @include lib-icon-font-symbol(
         $_icon-font-content: $icon-envelope,
         $_icon-font-position: before
@@ -29,18 +27,17 @@
 @include min-screen($screen__m) {
     .form.send.friend {
         width: 60%;
-        // &:extend(.abs-add-fields-desktop all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-form-field-column-2 all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-fields-desktop;
+        @extend .abs-form-field-column-2;
         .fieldset {
             .field {
                 width: 45%;
             }
 
             .field.text {
-                //&:extend(.abs-form-field-revert-column-1 all);
-                @warn 'TO DO - Commented out by default - junk?';
+                //@extend .abs-form-field-revert-column-1;
+                //sass extend added however above line was
+                //commented out by default - junk?;
                 width: 90%;
             }
         }

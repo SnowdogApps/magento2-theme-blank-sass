@@ -33,16 +33,13 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px;
             }
 
             span {
-                // &:extend(.abs-visually-hidden-reset all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden-reset;
             }
         }
 
         .field-tooltip-content {
-            // &:extend(.abs-add-box-sizing all);
-            @warn 'TO DO - Fix extend all';
-            // &:extend(.abs-checkout-tooltip-content-position-top all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-box-sizing;
+            @extend .abs-checkout-tooltip-content-position-top;
             @include lib-css(width, $checkout-shipping-policy-tooltip__width);
             top: $indent__l;
         }

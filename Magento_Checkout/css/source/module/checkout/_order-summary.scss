@@ -29,19 +29,16 @@ $checkout-summary-items__padding: 15px;
     @include lib-css(background, $checkout-summary__background-color);
     @include lib-css(margin, 0 0 $checkout-sidebar__margin);
     @include lib-css(padding, $checkout-summary__padding);
-    // &:extend(.abs-add-box-sizing all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-box-sizing;
 
     > .title {
-        // &:extend(.abs-checkout-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-checkout-title;
         display: block;
     }
 
     //  Totals table
     .table-totals {
-        // &:extend(.abs-sidebar-totals all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-sidebar-totals;
     }
 
     .mark {
@@ -182,8 +179,7 @@ $checkout-summary-items__padding: 15px;
         }
 
         .totals {
-            // &:extend(.abs-sidebar-totals-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-sidebar-totals-mobile;
         }
     }
 }

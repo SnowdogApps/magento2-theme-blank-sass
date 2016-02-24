@@ -73,9 +73,8 @@ table {
             &.additional-attributes {
                 tbody {
                     th {
-                        // &:extend(.abs-no-display-s all);
-                        @warn 'TO DO - Fix extend all';
-                    }
+                        @extend .abs-no-display-s;
+                      }
 
                     td {
                         &:last-child {
@@ -94,8 +93,7 @@ table {
                 tr {
                     display: block;
 
-                    // &:extend(.abs-add-clearfix-mobile all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-add-clearfix-mobile;
                     &:first-child {
                         th,
                         td {

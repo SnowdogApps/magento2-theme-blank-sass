@@ -32,8 +32,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
 }
 
 .gift-wrapping-list {
-    // &:extend(.abs-add-clearfix all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-clearfix;
     list-style: none;
     margin: $indent__base 0 $indent__s;
     padding: 0;
@@ -98,8 +97,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
     margin: $indent__s 0;
 
     .action-remove {
-        // &:extend(.abs-action-button-as-link all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-action-button-as-link;
         margin: -$indent__xs 0 0 $indent__xs;
         @include lib-icon-font(
         $icon-trash,
@@ -147,8 +145,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
         }
 
         .content {
-            // &:extend(.abs-add-clearfix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix;
             margin: 0;
 
             > img {
@@ -177,8 +174,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
         }
     }
 
-    // &:extend(.abs-adjustment-incl-excl-tax all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-adjustment-incl-excl-tax;
 }
 
 
@@ -230,8 +226,7 @@ $gift-wrapping-no-image-icon__font-size: 22px;
         .gift-wrapping {
             .nested,
             .content {
-                // &:extend(.abs-add-clearfix-desktop all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-add-clearfix-desktop;
             }
         }
     }

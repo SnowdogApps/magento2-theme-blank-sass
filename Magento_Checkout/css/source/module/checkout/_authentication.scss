@@ -38,8 +38,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 }
 
 .action-auth-toggle {
-    // &:extend(.abs-action-button-as-link all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-action-button-as-link;
 }
 
 .block-authentication {
@@ -70,8 +69,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
     .action.action-register,
     .action.action-login {
-        // &:extend(.abs-button-l all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-button-l;
     }
 
     .block[class] {

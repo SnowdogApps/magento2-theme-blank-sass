@@ -81,8 +81,7 @@
         }
 
         .action.remove {
-            // &:extend(.abs-remove-button-for-blocks all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-remove-button-for-blocks;
             left: -2px;
             position: absolute;
             top: -1px;
@@ -189,8 +188,7 @@
             }
 
             .filter-count-label {
-                // &:extend(.abs-visually-hidden all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden;
             }
         }
     }

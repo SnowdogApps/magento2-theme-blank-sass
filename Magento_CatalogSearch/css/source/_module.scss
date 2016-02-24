@@ -81,8 +81,7 @@ $autocomplete-item-amount__color: $color-gray60;
     overflow: hidden;
     position: absolute;
     z-index: 3;
-    // &:extend(.abs-add-box-sizing all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-box-sizing;
 
     ul {
         @include lib-list-reset-styles();
@@ -122,8 +121,7 @@ $autocomplete-item-amount__color: $color-gray60;
 }
 
 .form.search.advanced {
-    // &:extend(.abs-forms-general-desktop all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-forms-general-desktop;
 
     .fields.range {
         .field {
@@ -162,8 +160,7 @@ $autocomplete-item-amount__color: $color-gray60;
             }
 
             &.date {
-                // &:extend(.abs-field-date all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-field-date;
             }
         }
     }
@@ -183,8 +180,7 @@ $autocomplete-item-amount__color: $color-gray60;
 }
 
 .search-terms {
-    // &:extend(.abs-reset-list all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-reset-list;
     line-height: 2em;
 
     > li {
@@ -220,8 +216,7 @@ $autocomplete-item-amount__color: $color-gray60;
         z-index: 4;
 
         .label {
-            // &:extend(.abs-visually-hidden-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden-desktop;
         }
 
         .control {

@@ -69,8 +69,7 @@
         z-index: 2;
 
         .slider {
-            // &:extend(.abs-reset-list all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-reset-list;
             white-space: nowrap;
 
             .item {
@@ -157,8 +156,7 @@
 
                 .action {
                     &.show {
-                        // &:extend(.abs-add-box-sizing all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-add-box-sizing;
                         display: block;
                         padding: 0;
 
@@ -174,8 +172,7 @@
 
                     &.event {
                         @include lib-button-primary();
-                        // &:extend(.abs-action-link-button all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-action-link-button;
                         margin-top: 15px;
 
                         &:hover {

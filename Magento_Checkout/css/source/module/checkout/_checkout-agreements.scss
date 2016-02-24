@@ -12,16 +12,14 @@
     margin-bottom: $indent__base;
 
     .action-show {
-        // &:extend(.abs-action-button-as-link all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-action-button-as-link;
         vertical-align: baseline;
     }
 }
 
 //  Checkout Agreements in popup
 .checkout-agreements-items {
-    // &:extend(.abs-reset-list all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-reset-list;
     padding-bottom: $indent__l;
 
     .checkout-agreements-item {
@@ -29,8 +27,7 @@
     }
 
     .checkout-agreements-item-title {
-        // &:extend(.abs-checkout-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-checkout-title;
         border-bottom: 0;
     }
 }

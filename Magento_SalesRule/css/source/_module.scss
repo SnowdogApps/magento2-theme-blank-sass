@@ -13,8 +13,7 @@
         max-width: 500px;
         .field {
             .label {
-                // &:extend(.abs-visually-hidden all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden;
             }
         }
     }

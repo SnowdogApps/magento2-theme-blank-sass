@@ -115,8 +115,7 @@ $checkout-payment-option-content__padding__xl: $checkout-payment-method-content_
 
     .ccard {
         .legend {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
 
         .fields {

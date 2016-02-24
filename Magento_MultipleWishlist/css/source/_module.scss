@@ -31,8 +31,7 @@ $desktop-popup-position-top: 20%;
         );
         margin-right: 5%;
         vertical-align: middle;
-        // &:extend(.abs-dropdown-items-new all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-dropdown-items-new;
 
         .items {
             padding: 6px 0;
@@ -40,15 +39,13 @@ $desktop-popup-position-top: 20%;
         }
 
         > .action {
-            // &:extend(.abs-action-button-as-link all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-action-button-as-link;
 
             &.split {
                 @include lib-icon-font-symbol(
                 $_icon-font-content: $icon-wishlist-full
                 );
-                // &:extend(.abs-actions-addto all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-actions-addto;
                 margin-right: 5px;
 
                 &:before {
@@ -79,8 +76,7 @@ $desktop-popup-position-top: 20%;
             > .action {
                 &.split {
                     span {
-                        // &:extend(.abs-visually-hidden all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-visually-hidden;
                     }
                 }
             }
@@ -132,10 +128,8 @@ $desktop-popup-position-top: 20%;
 
     //  Wish list dropdown
     &-dropdown {
-        // &:extend(.abs-dropdown-simple all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-dropdown-items-new all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-dropdown-simple;
+        @extend .abs-dropdown-items-new;
     }
 
     &-dropdown.move,
@@ -149,8 +143,7 @@ $desktop-popup-position-top: 20%;
 .page-multiple-wishlist {
     .page-title-wrapper {
         .page-title {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
     }
 
@@ -176,8 +169,7 @@ $desktop-popup-position-top: 20%;
             .wishlist-name {
                 &-label {
                     font-weight: $font-weight__semibold;
-                    // &:extend(.abs-colon all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-colon;
                 }
             }
         }
@@ -244,8 +236,7 @@ $desktop-popup-position-top: 20%;
 
 .block-wishlist-search-form {
     .block-title {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
     }
 
     .form-wishlist-search {
@@ -262,13 +253,11 @@ $desktop-popup-position-top: 20%;
 
 .block-wishlist-search-results {
     .block-title {
-        // &:extend(.abs-account-title all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-title;
     }
 
     .data.table {
-        // &:extend(.abs-table-striped all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-table-striped;
     }
 
     .table-wrapper {
@@ -282,7 +271,7 @@ $desktop-popup-position-top: 20%;
         @include lib-font-size(22px);
 
         > strong {
-            font-weight: $font-weight__light ;
+            font-weight: $font-weight__light;
         }
     }
 
@@ -329,8 +318,7 @@ $desktop-popup-position-top: 20%;
 
     .input-text {
         &.qty {
-            // &:extend(.abs-input-qty all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-input-qty;
             margin-right: 10px;
         }
     }
@@ -352,8 +340,7 @@ $desktop-popup-position-top: 20%;
                 margin: 0 -$layout__width-xs-indent 20px;
                 .wishlist-name {
                     @include lib-font-size(16);
-                    // &:extend(.abs-toggling-title-mobile all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-toggling-title-mobile;
                 }
 
                 &-items {
@@ -393,8 +380,7 @@ $desktop-popup-position-top: 20%;
 
             &-add.item {
                 .add {
-                    // &:extend(.abs-icon-add-mobile all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-icon-add-mobile;
                 }
             }
 
@@ -469,8 +455,7 @@ $desktop-popup-position-top: 20%;
     }
 
     .block-wishlist-management {
-        // &:extend(.abs-add-clearfix-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix-desktop;
         margin-bottom: $indent__base;
 
         .wishlist {
@@ -562,7 +547,6 @@ $desktop-popup-position-top: 20%;
     }
 
     .toolbar-wishlist-results {
-        // &:extend(.abs-pager-toolbar all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-pager-toolbar;
     }
 }

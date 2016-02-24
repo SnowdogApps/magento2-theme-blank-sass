@@ -46,8 +46,7 @@ $checkout-billing-address-form__max-width: $checkout-shipping-address__max-width
             > .primary {
                 .action {
                     &.primary {
-                        // &:extend(.abs-button-l all);
-                        @warn 'TO DO - Fix extend all';
+                        @extend .abs-button-l;
                     }
                 }
             }
@@ -100,8 +99,7 @@ $checkout-billing-address-form__max-width: $checkout-shipping-address__max-width
         }
 
         .action-cancel {
-            // &:extend(.abs-action-button-as-link all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-action-button-as-link;
         }
 
         .billing-address-details {
@@ -109,8 +107,7 @@ $checkout-billing-address-form__max-width: $checkout-shipping-address__max-width
             @include lib-css(padding, $checkout-billing-address-details__padding);
 
             .action-edit-address {
-                // &:extend(.abs-action-button-as-link all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-action-button-as-link;
             }
         }
     }
@@ -123,8 +120,7 @@ $checkout-billing-address-form__max-width: $checkout-shipping-address__max-width
 
     .field-select-billing {
         > .label {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
     }
 
@@ -140,8 +136,7 @@ $checkout-billing-address-form__max-width: $checkout-shipping-address__max-width
 
     .payments {
         .legend {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
     }
 }

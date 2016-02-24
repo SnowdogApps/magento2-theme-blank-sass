@@ -23,8 +23,7 @@ $pager__font-weight: $font-weight__bold;
 }
 
 .toolbar {
-    // &:extend(.abs-add-clearfix all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-clearfix;
     margin-bottom: $indent__l;
     text-align: center;
 
@@ -173,8 +172,7 @@ $pager__font-weight: $font-weight__bold;
         }
 
         &-label {
-            // &:extend(.abs-visually-hidden-desktop-s all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden-desktop-s;
         }
 
         &-mode {

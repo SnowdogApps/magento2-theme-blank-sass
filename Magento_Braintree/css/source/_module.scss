@@ -21,8 +21,7 @@ $braintree-success__color: $color-dark-green1;
 .payment-method-braintree {
 
     .hosted-date-wrap {
-        // &:extend(.abs-add-clearfix all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix;
     }
 
     .hosted-control {

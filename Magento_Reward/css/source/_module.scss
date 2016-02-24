@@ -32,8 +32,7 @@
 //--------------------------------------
 @include max-screen($screen__s) {
     .table-wrapper.reward-history {
-        // &:extend(.abs-account-table-margin-mobile all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-table-margin-mobile;
     }
 }
 
@@ -42,7 +41,6 @@
 //--------------------------------------
 @include min-screen($screen__m) {
     .table-wrapper.reward-history {
-        // &:extend(.abs-account-table-margin-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-account-table-margin-desktop;
     }
 }

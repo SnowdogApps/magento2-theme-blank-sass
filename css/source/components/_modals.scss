@@ -132,8 +132,7 @@ body {
 
 //  Modals overlay
 .modals-overlay {
-    // &:extend(.abs-modal-overlay all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-modal-overlay;
     @include lib-css(z-index, $overlay__z-index);
 }
 

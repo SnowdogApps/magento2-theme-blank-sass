@@ -30,15 +30,13 @@ $cart-item-cell-padding-top: 20px;
 //  Cart container
 .cart-container {
     .form-cart {
-        // &:extend(.abs-shopping-cart-items all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-shopping-cart-items;
     }
 }
 
 //  Summary block
 .cart-summary {
-    // &:extend(.abs-add-box-sizing all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-add-box-sizing;
     @include lib-css(background, $sidebar__background-color);
     margin-bottom: $indent__m;
     padding: 1px 0 $indent__m;
@@ -74,8 +72,7 @@ $cart-item-cell-padding-top: 20px;
                 text-align: left;
 
                 .action.primary {
-                    // &:extend(.abs-revert-to-action-secondary all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-revert-to-action-secondary;
                     width: auto;
                 }
             }
@@ -84,13 +81,11 @@ $cart-item-cell-padding-top: 20px;
         .fieldset.estimate {
             > .legend,
             > .legend + br {
-                // &:extend(.abs-no-display all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-no-display;
             }
         }
 
-        // &:extend(.abs-cart-block all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-cart-block;
         .title {
             strong {
                 @include lib-font-size(14);
@@ -124,15 +119,13 @@ $cart-item-cell-padding-top: 20px;
     }
 
     .checkout-methods-items {
-        // &:extend(.abs-reset-list all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-reset-list;
         margin: $indent__base 0 0;
         padding: 0 $mobile-cart-padding;
         text-align: center;
 
         .action.primary.checkout {
-            // &:extend(.abs-button-l all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-button-l;
             width: 100%;
         }
 
@@ -153,14 +146,12 @@ $cart-item-cell-padding-top: 20px;
         }
     }
 
-    // &:extend(.abs-adjustment-incl-excl-tax all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-adjustment-incl-excl-tax;
 }
 
 //  Totals block
 .cart-totals {
-    // &:extend(.abs-sidebar-totals all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-sidebar-totals;
     tbody,
     tfoot {
         .mark {
@@ -201,8 +192,7 @@ $cart-item-cell-padding-top: 20px;
             &.msrp {
                 padding: $cart-item-cell-padding-top 11px $indent__s;
                 text-align: center;
-                // &:extend(.abs-incl-excl-tax all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-incl-excl-tax;
             }
 
             &.qty {
@@ -210,8 +200,7 @@ $cart-item-cell-padding-top: 20px;
                 text-align: center;
 
                 .label {
-                    // &:extend(.abs-visually-hidden all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-visually-hidden;
                 }
 
                 .input-text {
@@ -248,8 +237,7 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .actions-toolbar {
-            // &:extend(.abs-add-clearfix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-clearfix;
             min-height: 20px;
             padding-bottom: 15px;
             position: relative;
@@ -271,8 +259,7 @@ $cart-item-cell-padding-top: 20px;
             }
 
             > .action-delete {
-                // &:extend(.abs-action-button-as-link all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-action-button-as-link;
                 right: 0;
                 @include lib-icon-font-symbol(
                 $_icon-font-content: $icon-trash
@@ -288,8 +275,7 @@ $cart-item-cell-padding-top: 20px;
             }
 
             &.help.map {
-                // &:extend(.abs-action-button-as-link all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-action-button-as-link;
                 font-weight: $font-weight__regular;
             }
         }
@@ -321,10 +307,8 @@ $cart-item-cell-padding-top: 20px;
         //  Product options
         .item-options {
             margin-bottom: 0;
-            // &:extend(.abs-product-options-list all);
-            @warn 'TO DO - Fix extend all';
-            // &:extend(.abs-add-clearfix all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-product-options-list;
+            @extend .abs-add-clearfix;
         }
 
         .product-item-name + .item-options {
@@ -332,17 +316,14 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .cart-tax-total {
-            // &:extend(.abs-tax-total all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-tax-total;
             &-expanded {
-                // &:extend(.abs-tax-total-expanded all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-tax-total-expanded;
             }
         }
 
         .product-image-wrapper {
-            // &:extend(.abs-reset-image-wrapper all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-reset-image-wrapper;
         }
 
         .action.configure {
@@ -360,8 +341,7 @@ $cart-item-cell-padding-top: 20px;
 .cart-discount {
     border-bottom: $border-width__base solid $border-color__base;
     clear: left;
-    // &:extend(.abs-discount-block all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-discount-block;
 }
 
 //  Empty cart
@@ -396,8 +376,7 @@ $cart-item-cell-padding-top: 20px;
         .table.items {
             .col.item,
             .item-actions td {
-                // &:extend(.abs-col-no-prefix all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-col-no-prefix;
             }
 
             .col.qty {
@@ -405,15 +384,13 @@ $cart-item-cell-padding-top: 20px;
             }
 
             tbody > tr > td:last-child {
-                // &:extend(.abs-no-border-bottom-top all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-no-border-bottom-top;
             }
         }
     }
     .cart-totals {
         .totals {
-            // &:extend(.abs-sidebar-totals-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-sidebar-totals-mobile;
         }
     }
 }
@@ -526,18 +503,15 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .page-title-wrapper {
-            // &:extend(.abs-revert-side-paddings all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-revert-side-paddings;
         }
     }
 
     //  Cart container
     .cart-container {
-        // &:extend(.abs-add-clearfix-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix-desktop;
         .form-cart {
-            // &:extend(.abs-shopping-cart-items-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-shopping-cart-items-desktop;
             .actions.main {
                 text-align: right;
             }
@@ -578,8 +552,7 @@ $cart-item-cell-padding-top: 20px;
             }
 
             .content {
-                // &:extend(.abs-revert-side-paddings all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-revert-side-paddings;
             }
 
             .fieldset {
@@ -643,8 +616,7 @@ $cart-item-cell-padding-top: 20px;
 
     //  Discount
     .cart-discount {
-        // &:extend(.abs-discount-block-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-discount-block-desktop;
         @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
         border: 0;
         box-sizing: border-box;
@@ -653,16 +625,14 @@ $cart-item-cell-padding-top: 20px;
 
     //  Empty cart
     .cart-empty {
-        // &:extend(.abs-revert-side-paddings all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-revert-side-paddings;
     }
 
     //  Cross sell
     .block {
         &.crosssell {
             @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
-            // &:extend(.abs-add-box-sizing-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-add-box-sizing-desktop;
             padding: 0 4% 0 0;
 
             .products-grid .product-item {

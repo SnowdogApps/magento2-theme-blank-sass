@@ -102,8 +102,7 @@
 @include min-screen($screen__m) {
     .sidebar .block.widget .pager {
         .item:not(.pages-item-next):not(.pages-item-previous) {
-            // &:extend(.abs-no-display-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-no-display-desktop;
         }
 
         .pages-item-next {

@@ -150,8 +150,7 @@
         display: table;
         max-width: 100%;
         margin-bottom: $indent__s;
-        // &:extend(.abs-rating-summary all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-rating-summary;
     }
 
     &-author {
@@ -166,8 +165,7 @@
         display: inline;
 
         .review-details-label {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
     }
 
@@ -363,8 +361,7 @@
     .account {
         .table-reviews {
             .col.actions {
-                // &:extend(.abs-col-no-prefix all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-col-no-prefix;
             }
         }
     }
@@ -376,8 +373,7 @@
 @include min-screen($screen__m) {
     .block-reviews-dashboard {
         .product-name {
-            // &:extend(.abs-account-block-font-size all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-account-block-font-size;
         }
     }
 }
@@ -390,13 +386,10 @@
 
 .customer-review {
     .product-details {
-        // &:extend(.abs-add-clearfix all);
-        @warn 'TO DO - Fix extend all';
-        // &:extend(.abs-margin-for-blocks-and-widgets all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix;
+        @extend .abs-margin-for-blocks-and-widgets;
         .rating-average-label {
-            // &:extend(.abs-visually-hidden all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-visually-hidden;
         }
     }
 
@@ -414,8 +407,7 @@
         margin: 0;
 
         .title {
-            // &:extend(.abs-account-title all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-account-title;
         }
 
         .customer-review-rating {
@@ -428,8 +420,7 @@
                 }
             }
 
-            // &:extend(.abs-rating-summary all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-rating-summary;
         }
 
         .review-title {
@@ -473,8 +464,7 @@
 @include min-screen($screen__m) {
     .customer-review {
         .product-details {
-            // &:extend(.abs-margin-for-blocks-and-widgets-desktop all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-margin-for-blocks-and-widgets-desktop;
         }
     }
 }

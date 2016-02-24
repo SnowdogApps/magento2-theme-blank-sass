@@ -14,8 +14,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     @include lib-layout-columns();
 
     .column.main {
-        // &:extend(.abs-add-box-sizing all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-css(padding-bottom, $indent__xl);
@@ -23,16 +22,14 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .sidebar-main {
-        // &:extend(.abs-add-box-sizing all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-order(1);
     }
 
     .sidebar-additional {
-        // &:extend(.abs-add-box-sizing all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-order(2);
@@ -106,16 +103,14 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
 
     .column.main {
         @include lib-layout-columns__main();
-        // &:extend(.abs-add-box-sizing-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing-desktop;
         min-height: 300px;
     }
 
     .sidebar-main {
         @include lib-layout-columns__left();
         padding-right: $layout-column-main__sidebar-offset;
-        // &:extend(.abs-add-box-sizing-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing-desktop;
     }
 
     .page-layout-2columns-right .sidebar-main {
@@ -127,8 +122,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
         @include lib-layout-columns__right();
         padding-left: $layout-column__additional-sidebar-offset;
         clear: right;
-        // &:extend(.abs-add-box-sizing-desktop all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-box-sizing-desktop;
     }
 
     .page-layout-2columns-left {

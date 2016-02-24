@@ -128,11 +128,11 @@ body {
 }
 
 .header {
-    // &.content:extend(.abs-add-clearfix all) {
-    //     padding-top: $indent__s;
-    //     position: relative;
-    // }
-    @warn 'TO DO - Fix extend all';
+    &.content {
+        @extend .abs-add-clearfix;
+        padding-top: $indent__s;
+        position: relative;
+    }
 }
 
 .logo {
@@ -164,8 +164,7 @@ body {
 
 .action.skip {
     &:not(:focus) {
-        // &:extend(.abs-visually-hidden all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-visually-hidden;
     }
 
     &:focus {
@@ -228,9 +227,9 @@ body {
         border-top: 1px solid $footer-links-separator-border-color;
         padding-top: $indent__base;
 
-        // ul:extend(.abs-reset-list all) {
-        // }
-        @warn 'TO DO - Fix extend all';
+        ul {
+            @extend .abs-reset-list;
+        }
 
         .links {
             > li {
@@ -313,9 +312,9 @@ body {
             font-weight: $font-weight__regular;
         }
 
-        // .label:extend(.abs-visually-hidden all) {
-        // }
-        @warn 'TO DO - Fix extend all';
+        .label {
+            @extend .abs-visually-hidden;
+        }
     }
 }
 
@@ -407,9 +406,10 @@ body {
 
 .widget {
     clear: both;
-    // .block-title:extend(.abs-block-widget-title all) {
+    // .block-title {
+    //     @extend .abs-block-widget-title;
     // }
-    @warn 'TO DO - Fix extend all';
+
 }
 
 
@@ -442,11 +442,12 @@ body {
             @include lib-css(background-color, $header-panel__background-color);
         }
 
-        // .header.panel:extend(.abs-add-clearfix-desktop all) {
-        //     padding-bottom: $indent__s;
-        //     padding-top: $indent__s;
-        // }
-        @warn 'TO DO - Fix extend all';
+        .header.panel {
+            @extend .abs-add-clearfix-desktop;
+            padding-bottom: $indent__s;
+            padding-top: $indent__s;
+        }
+
 
         .switcher {
             float: right;
@@ -485,24 +486,27 @@ body {
         $_dropdown-list-z-index: $customer-welcome__z-index
         );
 
-        // li:extend(.switcher li all) {
-        //     a {
-        //         @include lib-link(
-        //         $_link-color: $color-gray20,
-        //         $_link-text-decoration: none,
-        //         $_link-color-visited: $color-gray20,
-        //         $_link-text-decoration-visited: none,
-        //         $_link-color-hover: $color-gray20,
-        //         $_link-text-decoration-hover: none,
-        //         $_link-color-active: $color-gray20,
-        //         $_link-text-decoration-active: none
-        //         );
-        //         display: block;
-        //         line-height: 1.4;
-        //         padding: 8px;
-        //     }
-        // }
-        @warn 'TO DO - Fix extend all';
+        li {
+            @extend .switcher li;
+            a {
+                @include lib-link(
+                $_link-color: $color-gray20,
+                $_link-text-decoration: none,
+                $_link-color-visited: $color-gray20,
+                $_link-text-decoration-visited: none,
+                $_link-color-hover: $color-gray20,
+                $_link-text-decoration-hover: none,
+                $_link-color-active: $color-gray20,
+                $_link-text-decoration-active: none
+                );
+                display: block;
+                line-height: 1.4;
+                padding: 8px;
+            }
+        }
+        @warn 'TO DO: test it';
+
+
 
         .customer-name {
             cursor: pointer;
@@ -577,10 +581,11 @@ body {
             }
         }
 
-        // &.content:extend(.abs-add-clearfix-desktop all) {
-        //     padding: $indent__l $indent__base 0;
-        // }
-        @warn 'TO DO - Fix extend all';
+        &.content {
+            @extend .abs-add-clearfix-desktop;
+            padding: $indent__l $indent__base 0;
+        }
+
     }
 
     .logo {
@@ -663,8 +668,7 @@ body {
 
 
 .no-display{
-    // &:extend(.abs-no-display all);
-    @warn 'TO DO - Fix extend all';
+    @extend .abs-no-display;
 }
 
 //

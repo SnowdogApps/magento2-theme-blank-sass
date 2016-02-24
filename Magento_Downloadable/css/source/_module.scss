@@ -27,8 +27,7 @@
     .product-add-form {
         clear: both;
         margin-bottom: $indent__m;
-        // &:extend(.abs-add-clearfix all);
-        @warn 'TO DO - Fix extend all';
+        @extend .abs-add-clearfix;
     }
 
     .product-options-bottom {
@@ -40,8 +39,7 @@
     .product-options-wrapper {
         .fieldset {
             .legend.links-title {
-                // &:extend(.abs-visually-hidden all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden;
             }
         }
     }
@@ -99,8 +97,7 @@
         border-bottom: 1px solid $color-gray92;
         padding-bottom: $indent__s;
         margin-bottom: $indent__s;
-        // &:extend(.clearer all);
-        @warn 'TO DO - Fix extend all';
+        @extend .clearer;
         width: 100%;
         position: relative;
         z-index: 1;
@@ -161,8 +158,7 @@
 
         .col.title {
             &:before {
-                // &:extend(.abs-visually-hidden-mobile all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-visually-hidden-mobile;
             }
         }
     }
@@ -184,8 +180,7 @@
 @include min-screen($screen__m) {
 .page-product-downloadable {
         .product-add-form {
-            // &:extend(.clearer all);
-            @warn 'TO DO - Fix extend all';
+            @extend .clearer;
         }
 
         .product-options-wrapper {

@@ -29,8 +29,7 @@
 
         .control.qty {
             .qty {
-                // &:extend(.abs-input-qty all);
-                @warn 'TO DO - Fix extend all';
+                @extend .abs-input-qty;
             }
         }
     }
@@ -92,8 +91,7 @@
 
             > tr {
                 > td {
-                    // &:extend(.abs-col-no-prefix all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-col-no-prefix;
                     @include lib-css(padding, $table-cell__padding-vertical $table-cell__padding-horizontal);
                     border: 0;
                     display: table-cell;

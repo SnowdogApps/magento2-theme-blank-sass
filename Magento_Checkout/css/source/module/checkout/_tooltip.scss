@@ -140,8 +140,7 @@ $checkout-tooltip-content-mobile__top: 30px + $checkout-tooltip-icon-arrow__font
 @include max-screen($checkout-tooltip-breakpoint__screen-m) {
     .field-tooltip {
         .field-tooltip-content {
-            // &:extend(.abs-checkout-tooltip-content-position-top-mobile all);
-            @warn 'TO DO - Fix extend all';
+            @extend .abs-checkout-tooltip-content-position-top-mobile;
         }
     }
 }

@@ -25,8 +25,7 @@
         .table-billing-agreements-related {
             .col {
                 &.actions {
-                    // &:extend(.abs-col-no-prefix all);
-                    @warn 'TO DO - Fix extend all';
+                    @extend .abs-col-no-prefix;
                 }
             }
         }
