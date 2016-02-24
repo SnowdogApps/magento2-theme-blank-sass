@@ -41,16 +41,16 @@
     $_dropdown-toggle-icon-content             : $dropdown-toggle-icon__content,
     $_dropdown-toggle-active-icon-content      : $dropdown-toggle-icon__active__content,
 
-    $_icon-font                                : $dropdown-toggle-icon__font,
-    $_icon-font-size                           : $dropdown-toggle-icon__font-size,
-    $_icon-font-line-height                    : $dropdown-toggle-icon__font-line-height,
-    $_icon-font-color                          : $dropdown-toggle-icon__font-color,
-    $_icon-font-color-hover                    : $dropdown-toggle-icon__font-color-hover,
-    $_icon-font-color-active                   : $dropdown-toggle-icon__font-color-active,
-    $_icon-font-margin                         : $dropdown-toggle-icon__font-margin,
-    $_icon-font-position                       : $dropdown-toggle-icon__position,
-    $_icon-font-vertical-align                 : $dropdown-toggle-icon__font-vertical-align,
-    $_icon-font-text-hide                      : $dropdown-toggle-icon__text-hide
+    $_icon-font                                : $icon-font,
+    $_icon-font-size                           : 22px,
+    $_icon-font-line-height                    : $_icon-font-size,
+    $_icon-font-color                          : inherit,
+    $_icon-font-color-hover                    : inherit,
+    $_icon-font-color-active                   : inherit,
+    $_icon-font-margin                         : 0,
+    $_icon-font-position                       : $icon__position,
+    $_icon-font-vertical-align                 : top,
+    $_icon-font-text-hide                      : false
 ) {
     @include lib-clearfix();
     display: inline-block;
