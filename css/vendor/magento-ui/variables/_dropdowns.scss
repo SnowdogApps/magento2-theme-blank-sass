@@ -38,18 +38,9 @@ $dropdown-list-item__margin                      : 0;
 $dropdown-list-item__hover                       : $color-gray91;
 
 $dropdown-toggle-icon__content                   : '\e607';
-$dropdown-toggle-icon__font                      : $button-icon__font;
-$dropdown-toggle-icon__font-size                 : $button-icon__font-size;
-$dropdown-toggle-icon__font-line-height          : $button-icon__line-height;
-$dropdown-toggle-icon__font-color                : $button-icon__color;
-$dropdown-toggle-icon__font-color-hover          : $button-icon__hover__font-color;
-$dropdown-toggle-icon__font-color-active         : $button-icon__active__font-color;
-$dropdown-toggle-icon__font-margin               : $button-icon__margin;
 $dropdown-toggle-icon__position                  : after;
 $dropdown-toggle-icon__font-vertical-align       : $button-icon__vertical-align;
 $dropdown-toggle-icon__text-hide                 : $button-icon__text-hide;
-
-$dropdown-toggle-icon__active__content           : $icon-pointer-up;
 
 //
 // Variables split dropdown

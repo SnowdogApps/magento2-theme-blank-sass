@@ -268,7 +268,7 @@ $desktop-popup-position-top: 20%;
 .block-wishlist-info-items {
     .block-title {
         @include lib-css(margin-bottom, $indent__base);
-        font-size: 22pxpx;
+        font-size: 22px;
 
         > strong {
             font-weight: $font-weight__light;
