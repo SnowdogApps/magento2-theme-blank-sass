@@ -60,15 +60,15 @@ $popup-actions-toolbar-actions-links-primary__margin-top: $actions-toolbar-actio
 $popup-actions-toolbar-actions-links-secondary__margin-top: $actions-toolbar-actions-links-secondary__margin-top;
 
 //  Popup Icons variables
-$popup-icon-font: $button-icon__font;
+$popup-icon-font: $icon-font;
 $popup-icon-font__content: $icon-remove;
-$popup-icon-font__size: $button-icon__font-size;
-$popup-icon-font__line-height: $button-icon__line-height;
-$popup-icon-font__color: $button-icon__color;
-$popup-icon-font__color-hover: $button-icon__hover__font-color;
-$popup-icon-font__color-active: $button-icon__active__font-color;
-$popup-icon-font__margin: $button-icon__margin;
-$popup-icon-font__vertical-align: $button-icon__vertical-align;
+$popup-icon-font__size: 22px;
+$popup-icon-font__line-height: 22px;
+$popup-icon-font__color: inherit;
+$popup-icon-font__color-hover: inherit;
+$popup-icon-font__color-active: inherit;
+$popup-icon-font__margin: inherit;
+$popup-icon-font__vertical-align: top;
 $popup-icon-font__position: $button-icon__position;
 $popup-icon-font__text-hide: true;
 

@@ -427,9 +427,9 @@
     $_icon-font-color-hover   : $button-icon__hover__font-color,
     $_icon-font-color-active  : $button-icon__active__font-color,
     $_icon-font-margin        : $button-icon__margin,
-    $_icon-font-vertical-align: $button-icon__vertical-align,
+    $_icon-font-vertical-align: top,
     $_icon-font-position      : $button-icon__position,
-    $_icon-font-text-hide     : $button-icon__text-hide
+    $_icon-font-text-hide     : false
 ) {
     @include lib-icon-font(
         $_icon-font-content       : $_icon-font-content,
