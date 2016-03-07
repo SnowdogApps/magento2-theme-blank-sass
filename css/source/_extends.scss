@@ -20,7 +20,7 @@
 
 .action-primary {
     @include lib-button-primary();
-    @include lib-css(border-radius, 3px);
+    border-radius: 3px;
 }
 
 //
@@ -30,14 +30,14 @@
 .abs-revert-to-action-secondary {
     @extend .abs-revert-secondary-color;
 
-    @include lib-css(border-radius, 3px);
+    border-radius: 3px;
 
     &:not(:focus) {
-        @include lib-css(box-shadow, $button__shadow);
+        box-shadow: $button__shadow;
     }
 
     &:active {
-        @include lib-css(box-shadow, $button__shadow-active);
+        box-shadow: $button__shadow-active;
     }
 }
 
@@ -48,7 +48,7 @@
 .abs-action-link-button {
     @include lib-button();
     @include lib-link-as-button();
-    @include lib-css(border-radius, 3px);
+    border-radius: 3px;
 }
 
 //
@@ -60,7 +60,7 @@
         $_margin: false
     );
     border-radius: 0;
-    @include lib-css(font-weight, $font-weight__regular);
+    font-weight: $font-weight__regular;
 
     &:active,
     &:not(:focus) {
@@ -122,7 +122,7 @@
 //  Desktop
 //  ---------------------------------------------
 
-@mixin media-width($extremum, $break) {
+@mixin media-width($extremum: $break) {
     @if $extremum == 'min' && $break == $screen__m {
         .abs-product-options-list-desktop {
             @include abs-product-options-list();
@@ -131,7 +131,7 @@
 }
 
 //
-//  Button reset width, floats, margins
+//  Button reset width: floats: margins
 //  ---------------------------------------------
 
 .abs-button-responsive {
@@ -217,7 +217,7 @@
     }
     padding-bottom: 12px;
     margin-bottom: 15px;
-    @include lib-css(border-bottom, 1px solid $secondary__color);
+    border-bottom: 1px solid $secondary__color;
     font-size: 18px;
 }
 
@@ -435,7 +435,7 @@
 
 @include min-screen($screen__m) {
     .abs-margin-for-forms-desktop {
-        @include lib-css(margin-left, $form-field-type-label-inline__width);
+        margin-left: $form-field-type-label-inline__width;
     }
 }
 
@@ -651,7 +651,7 @@
 .abs-methods-shipping-title {
     font-size: 16px;
     margin-bottom: 15px;
-    @include lib-css(font-weight, $font-weight__semibold);
+    font-weight: $font-weight__semibold;
 }
 
 //
@@ -664,7 +664,7 @@
             @extend .abs-add-clearfix-mobile;
 
             &:not(:last-child) {
-                @include lib-css(border-bottom, $border-width__base solid $border-color__base);
+                border-bottom: $border-width__base solid $border-color__base;
             }
 
             > td.col {
@@ -708,7 +708,7 @@
 //  ---------------------------------------------
 
 .abs-actions-addto {
-    @include lib-css(color, $addto-color);
+    color: $addto-color;
     display: inline-block;
     text-transform: uppercase;
     font-weight: $font-weight__semibold;
@@ -722,7 +722,7 @@
     );
 
     &:hover {
-        @include lib-css(color, $addto-hover-color);
+        color: $addto-hover-color;
         text-decoration: none;
     }
 
@@ -773,7 +773,7 @@
 //  ---------------------------------------------
 
 @mixin abs-toggling-title() {
-    @include lib-css(border-top, $border-width__base solid $border-color__base);
+    border-top: $border-width__base solid $border-color__base;
     cursor: pointer;
     margin-bottom: 0;
     position: relative;
@@ -787,10 +787,8 @@
 
 .abs-toggling-title {
     @include abs-toggling-title();
-    @include lib-css(
-        padding,
-        $indent__s $indent__xl $indent__s $mobile-cart-padding
-    );
+    padding: $indent__s $indent__xl $indent__s $mobile-cart-padding;
+
     @include lib-icon-font(
         $icon-down,
         $_icon-font-size       : 12px,
@@ -805,8 +803,8 @@
 @include max-screen($screen__m) {
     .abs-toggling-title-mobile {
         @include abs-toggling-title();
-        @include lib-css(border-bottom, $border-width__base solid $border-color__base);
-        @include lib-css(padding, $indent__s $indent__xl $indent__s $layout__width-xs-indent);
+        border-bottom: $border-width__base solid $border-color__base;
+        padding: $indent__s $indent__xl $indent__s $layout__width-xs-indent;
         @include lib-icon-font(
             $icon-down,
             $_icon-font-size: 12px,
@@ -841,7 +839,7 @@
 
     .content {
         display: none;
-        @include lib-css(padding, 5px $mobile-cart-padding 23px);
+        padding: 5px $mobile-cart-padding 23px;
         position: relative;
     }
 
@@ -868,7 +866,7 @@
 //  ---------------------------------------------
 
 .abs-checkout-cart-price {
-    @include lib-css(color, $primary__color__lighter);
+    color: $primary__color__lighter;
     font-size: 16px;
     font-weight: $font-weight__bold;
 }
@@ -938,12 +936,12 @@
     > strong,
     > span {
         font-size: 22px;
-        @include lib-css(font-weight, $font-weight__light);
+        font-weight: $font-weight__light;
     }
 
-    @include lib-css(margin-bottom, $indent__m);
-    @include lib-css(padding-bottom, $indent__s);
-    @include lib-css(border-bottom, 1px solid $account-title-border-color);
+    margin-bottom: $indent__m;
+    padding-bottom: $indent__s;
+    border-bottom: 1px solid $account-title-border-color;
 }
 
 //
@@ -970,12 +968,12 @@
 
 @include max-screen($screen__s) {
     .abs-account-table-margin-mobile {
-        @include lib-css(margin-top, -$indent__base);
+        margin-top: -$indent__base;
     }
 }
 @include min-screen($screen__m) {
     .abs-account-table-margin-desktop {
-        @include lib-css(margin-top, -$indent__m);
+        margin-top: -$indent__m;
     }
 }
 
@@ -997,7 +995,7 @@
 
 .abs-account-summary {
     td {
-        @include lib-css(background, $sidebar__background-color);
+        background: $sidebar__background-color;
     }
 }
 
@@ -1038,7 +1036,7 @@
 .abs-incl-excl-tax {
     .price-including-tax,
     .price-excluding-tax {
-        @include lib-css(color, $cart-price-color);
+        color: $cart-price-color;
         display: block;
         font-size: 18px;
         line-height: 1;
@@ -1106,7 +1104,7 @@
 //  ---------------------------------------------
 
 .abs-forms-margin-small {
-    @include lib-css(margin-bottom, $indent__base);
+    margin-bottom: $indent__base;
 }
 
 //
@@ -1144,7 +1142,7 @@
         display: inline-block;
         height: 12px;
         margin: 0 $indent__s;
-        @include lib-css(border-left, 1px solid $primary__color__light);
+        border-left: 1px solid $primary__color__light;
         vertical-align: -1px;
     }
 
@@ -1226,7 +1224,7 @@
 .abs-dropdown-items-new {
     .items .item:last-child {
         &:hover {
-            @include lib-css(background, $dropdown-list-item__hover);
+            background: $dropdown-list-item__hover;
         }
     }
 
@@ -1265,7 +1263,7 @@
 //  ---------------------------------------------
 
 .abs-status {
-    @include lib-css(border, 2px solid $border-color__base);
+    border: 2px solid $border-color__base;
     border-radius: 3px;
     display: inline-block;
     margin: 3px 0 0;
@@ -1383,7 +1381,7 @@
         }
 
         .toolbar-amount {
-            @include lib-css(line-height, $pager__line-height);
+            line-height: $pager__line-height;
             padding: 0;
         }
 
@@ -1400,7 +1398,7 @@
 //  ---------------------------------------------
 
 .abs-block-items-counter {
-    @include lib-css(color, $primary__color__lighter);
+    color: $primary__color__lighter;
     font-size: 12px;
     white-space: nowrap;
 }
@@ -1482,7 +1480,7 @@
 //  ---------------------------------------------
 
 .abs-field-date-input {
-    @include lib-css(margin-right, $indent__s);
+    margin-right: $indent__s;
     width: calc("100% - (#{$icon-calendar__font-size} + #{$indent__s})");
 }
 
@@ -1496,7 +1494,7 @@
     position: relative;
 
     input {
-        @include lib-css(margin-right, $indent__s);
+        margin-right: $indent__s;
         width: calc("100% - (#{$checkout-tooltip-icon__font-size} + #{$indent__s} + #{$indent__xs})");
     }
 }
@@ -1506,8 +1504,8 @@
 //  ---------------------------------------------
 
 @mixin abs-checkout-tooltip-content-position-top() {
-    @include lib-css(right, $checkout-tooltip-content-mobile__right);
-    @include lib-css(top, $checkout-tooltip-content-mobile__top);
+    right: $checkout-tooltip-content-mobile__right;
+    top: $checkout-tooltip-content-mobile__top;
     left: auto;
 
     &:before,
@@ -1517,18 +1515,18 @@
             $_size: $checkout-tooltip-icon-arrow__font-size,
             $_color: $checkout-tooltip-content__background-color
         );
-        @include lib-css(margin-top, $checkout-tooltip-icon-arrow__left);
-        @include lib-css(right, $indent__s);
+        margin-top: $checkout-tooltip-icon-arrow__left;
+        right: $indent__s;
         left: auto;
         top: 0;
     }
 
     &:before {
-        @include lib-css(border-bottom-color, $checkout-tooltip-content__active__border-color);
+        border-bottom-color: $checkout-tooltip-content__active__border-color;
     }
 
     &:after {
-        @include lib-css(border-bottom-color, $checkout-tooltip-content__background-color);
+        border-bottom-color: $checkout-tooltip-content__background-color;
         top: 1px;
     }
 }
@@ -1548,7 +1546,7 @@
 //  ---------------------------------------------
 
 .abs-checkout-title {
-    @include lib-css(padding-bottom, $checkout-step-title__padding);
+    padding-bottom: $checkout-step-title__padding;
     @include lib-typography(
     $_font-size: $checkout-step-title__font-size,
     $_font-weight: $checkout-step-title__font-weight,

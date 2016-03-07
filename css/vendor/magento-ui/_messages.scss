@@ -52,9 +52,9 @@
 @mixin _lib-message-style(
     $_message-background       : $message-info__background,
     $_message-color            : $message-info__color,
-    $_message-link-color       : $message-info-link__color,
-    $_message-link-color-hover : $message-info-link__color-hover,
-    $_message-link-color-active: $message-info-link__color-active,
+    $_message-link-color       : $link__color,
+    $_message-link-color-hover : $link__hover__color,
+    $_message-link-color-active: $link__hover__color,
     $_message-border-color     : $message-info__border-color
 ) {
     @include lib-css(background, $_message-background);
