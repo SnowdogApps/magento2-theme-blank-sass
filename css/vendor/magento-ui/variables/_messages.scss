@@ -51,10 +51,6 @@ $message-warning__color: $message-info__color;
 $message-warning__background: $message-info__background;
 $message-warning__border-color: $message-info__border-color;
 
-// $message-warning-link__color: $message-info-link__color;
-// $message-warning-link__color-hover: $message-info-link__color-hover;
-// $message-warning-link__color-active: $message-info-link__color-active;
-
 $message-warning-icon: $message-info-icon;
 $message-warning-icon__color-inner: $message-info-icon__color-inner;
 $message-warning-icon__color-lateral: $message-info-icon__color-lateral;
@@ -68,10 +64,6 @@ $message-warning-icon__left: $message-icon__left;
 $message-error__color: $error__color;
 $message-error__background: $color-pink1;
 $message-error__border-color: $message__border-color;
-
-// $message-error-link__color: $link__color;
-// $message-error-link__color-hover: $link__hover__color;
-// $message-error-link__color-active: $link__hover__color;
 
 $message-error-icon: $icon-warning;
 $message-error-icon__color-inner: $color-red11;
@@ -87,10 +79,6 @@ $message-success__color: $color-dark-green1;
 $message-success__background: $color-gray-light1;
 $message-success__border-color: $message__border-color;
 
-// $message-success-link__color: $link__color;
-// $message-success-link__color-hover: $link__hover__color;
-// $message-success-link__color-active: $link__hover__color;
-
 $message-success-icon: $icon-checkmark;
 $message-success-icon__color-inner: $color-dark-green1;
 $message-success-icon__color-lateral: $color-white;
@@ -105,9 +93,6 @@ $message-notice__color: $message-info__color;
 $message-notice__background: $message-info__background;
 $message-notice__border-color: $message-info__border-color;
 
-// $message-notice-link__color: $message-info-link__color;
-// $message-notice-link__color-hover: $message-info-link__color-hover;
-// $message-notice-link__color-active: $message-info-link__color-active;
 
 $message-notice-icon: $message-info-icon;
 $message-notice-icon__color-inner: $message-info-icon__color-inner;

@@ -11,7 +11,7 @@
 $column-width: 1;
 $total-columns: 1;
 $gutter-width: 1;
-$grid-width: ($column-width*$total-columns) + ($gutter-width*($total-columns - 1));
+$grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1));
 
 @mixin lib-column-wrapper() {
     width: 100%;
