@@ -8,10 +8,10 @@
 //  _____________________________________________
 
 //  You shouldn't need to touch this! Internal use only.
-$column-width: 1;
+$column-width : 1;
 $total-columns: 1;
-$gutter-width: 1;
-$grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1));
+$gutter-width : 1;
+$grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1));
 
 @mixin lib-column-wrapper() {
     width: 100%;
@@ -19,16 +19,16 @@ $grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns
 
 @mixin lib-inline-column-wrapper() {
     @if $using-ieclasses != true {
-        letter-spacing: -.31em;
+        letter-spacing: -0.31em;
         letter-spacing: normal;
-        word-spacing: -.43em;
+        word-spacing: -0.43em;
     }
 }
 
 @mixin lib-inline-column-wrapper() {
     @if $using-ieclasses {
-        letter-spacing: -.31em;
-        word-spacing: -.43em;
+        letter-spacing: -0.31em;
+        word-spacing: -0.43em;
     }
 }
 
@@ -46,7 +46,7 @@ $grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns
 @mixin lib-column(
     $span,
     $total-columns: $total-columns,
-    $end-column: false
+    $end-column   : false
 ) {
     @if isnumber($span) {
         @if isnumber($total-columns) {
@@ -137,32 +137,32 @@ $grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns
 
 @mixin lib-pre-pad($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
-    @include lib-css(padding-left, $calc-column-width);
+    padding-left: $calc-column-width;
 }
 
 @mixin lib-post-pad($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
-    @include lib-css(padding-right, $calc-column-width);
+    padding-right: $calc-column-width;
 }
 
 @mixin lib-pre-push($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
-    @include lib-css(margin-left, $calc-column-width);
+    margin-left: $calc-column-width;
 }
 
 @mixin lib-post-push($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span) + $gutter-width) / $grid-width);
-    @include lib-css(margin-right, $calc-column-width);
+    margin-right: $calc-column-width;
 }
 
 @mixin lib-post-push-end($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
-    @include lib-css(margin-right, $calc-column-width);
+    margin-right: $calc-column-width;
 }
 
 @mixin lib-column-width($span, $total-columns: $total-columns) {
     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span) - $gutter-width) / $grid-width);
-    @include lib-css(width, $calc-column-width);
+    width: $calc-column-width;
 }
 
 @mixin lib-column-gutter(
@@ -180,6 +180,6 @@ $grid-width: ($column-width * $total-columns) + ($gutter-width * ($total-columns
 ) {
     @if $end-column != true {
         $calc-gutter-width: 100% * ($gutter-width / $grid-width);
-        @include lib-css(margin-right, $calc-gutter-width);
+        margin-right: $calc-gutter-width;
     }
 }
