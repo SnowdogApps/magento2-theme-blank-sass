@@ -195,34 +195,6 @@
 }
 
 //
-//  Add any css property
-//  ---------------------------------------------
-
-@mixin lib-css(
-    $_property,
-    $_value,
-    $_prefix: 0
-) {
-    @if $_value != ''
-        && $_value != false
-        && extract($_value, 1) != false
-        && extract($_value, 2) != false
-        && extract($_value, 3) != false
-        && extract($_value, 4) != false
-        && extract($_value, 5) != false
-    {
-        @if $_prefix == 1 {
-            -webkit-#{$_property}: $_value;
-               -moz-#{$_property}: $_value;
-                -ms-#{$_property}: $_value;
-        }
-        @else {
-            #{$_property}: $_value;
-        }
-    }
-}
-
-//
 //  Add url to property
 //  ---------------------------------------------
 

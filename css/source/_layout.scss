@@ -17,7 +17,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
         @extend .abs-add-box-sizing;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
-        @include lib-css(padding-bottom, $indent__xl);
+        padding-bottom: $indent__xl;
         @include lib-vendor-prefix-order(1);
     }
 
