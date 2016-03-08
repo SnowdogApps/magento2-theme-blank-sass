@@ -7,44 +7,64 @@
 //  Messages
 //  _____________________________________________
 
+@function messages($type, $key) {
+    $map-type: $messages-#{type};
+    @debug "map-type" + $map-type;
+    @if map-has-key($map-type, $key) {
+        @debug "has key";
+        @return map-get($map-type, $key);
+
+    } @else {
+        @debug "no key";
+        @return map-get($messages-default, $key);
+    }
+};
+
+
+
 @mixin lib-message($_message-type: info) {
-    $_message-background       : "message-#{$_message-type}__background";
-    $_message-border-color     : "message-#{$_message-type}__border-color";
-    $_message-color            : "message-#{$_message-type}__color";
-    $_message-link-color       : "message-#{$_message-type}-link__color";
-    $_message-link-color-hover : "message-#{$_message-type}-link__color-hover";
-    $_message-link-color-active: "message-#{$_message-type}-link__color-active";
-    $_message-icon-top         : "message-#{$_message-type}-icon__top";
-    $_message-icon-right       : "message-#{$_message-type}-icon__right";
-    $_message-icon-bottom      : "message-#{$_message-type}-icon__bottom";
-    $_message-icon-left        : "message-#{$_message-type}-icon__left";
-    @include _lib-message();
-    @include _lib-message-style(
-        $_message-color            : $_message-color,
-        $_message-background       : $_message-background,
-        $_message-link-color       : $_message-link-color,
-        $_message-link-color-hover : $_message-link-color-hover,
-        $_message-link-color-active: $_message-link-color-active,
-        $_message-border-color     : $_message-border-color
-    );
+    @if $_message-type == info {
+        @include _lib-message();
+        @include _lib-message-style(
+            $_message-color            : map-get($messages-default, color),
+            $_message-background       : map-get($messages-default, background),
+            $_message-link-color       : map-get($messages-default, link-color),
+            $_message-link-color-hover : map-get($messages-default, link-color-hover),
+            $_message-link-color-active: map-get($messages-default, link-color-active),
+            $_message-border-color     : $message__border-color
+        );
+    } @else {
+        $type: $_message-type;
+
+        @include _lib-message();
+        @include _lib-message-style(
+        $_message-color            : messages($type, color),
+        $_message-background       : messages($type, background),
+        $_message-link-color       : messages($type, link-color),
+        $_message-link-color-hover : messages($type, link-color-hover),
+        $_message-link-color-active: messages($type, link-color-active),
+        $_message-border-color     : $message__border-color
+        );
+    }
 }
 
+
 @mixin _lib-message(
-    $_message-padding      : $message__padding,
-    $_message-margin       : $message__margin,
+    $_message-padding      : $indent__s $indent__base,
+    $_message-margin       : 0 0 $indent__s,
     $_message-border-radius: $message__border-radius
 ) {
-    @include lib-css(border-radius, $_message-border-radius);
-    @include lib-css(margin, $_message-margin);
-    @include lib-css(padding, $_message-padding);
+    border-radius: $_message-border-radius;
+    margin: $_message-margin;
+    padding: $_message-padding;
     display: block;
     @include lib-typography(
-        $_color      : $message__color,
-        $_font-size  : $message__font-size,
-        $_font-family: $message__font-family,
+        $_color      : false,
+        $_font-size  : 13px,
+        $_font-family: false,
         $_font-weight: $message__font-weight,
-        $_font-style : $message__font-style,
-        $_line-height: $message__line-height
+        $_font-style : false,
+        $_line-height: 1.2
     );
     @include _lib-message-border($message__border-width, $message__border-style);
 }
@@ -52,23 +72,23 @@
 @mixin _lib-message-style(
     $_message-background       : $message-info__background,
     $_message-color            : $message-info__color,
-    $_message-link-color       : $link__color,
-    $_message-link-color-hover : $link__hover__color,
-    $_message-link-color-active: $link__hover__color,
-    $_message-border-color     : $message-info__border-color
+    $_message-link-color       : $message-link__color,
+    $_message-link-color-hover : $message-link__color-hover,
+    $_message-link-color-active: $message-link__color-active,
+    $_message-border-color     : $message__border-color
 ) {
-    @include lib-css(background, $_message-background);
-    @include lib-css(border-color, $_message-border-color);
-    @include lib-css(color, $_message-color);
+    background: $_message-background;
+    border-color: $_message-border-color;
+    color: $_message-color;
     a {
-        @include lib-css(color, $_message-link-color);
+        color: $_message-link-color;
 
         &:hover {
-            @include lib-css(color, $_message-link-color-hover);
+            color: $_message-link-color-hover;
         }
 
         &:active {
-            @include lib-css(color, $_message-link-color-active);
+            color: $_message-link-color-active;
         }
     }
 }
@@ -78,7 +98,7 @@
     $_message-border-style: $message__border-style
 ) {
     @if $_message-border-width != 0 && $_message-border-width != false && $_message-border-style != false{
-        @include lib-css(border, $_message-border-width $_message-border-style);
+        border: $_message-border-width $_message-border-style;
     }
 }
 
@@ -140,8 +160,8 @@
     position: relative;
 
     &:before {
-        @include lib-css(background, $_message-icon-background);
-        @include lib-css(width, $message-icon__lateral-width);
+        background: $_message-icon-background;
+        width: $message-icon__lateral-width;
         content: '';
         display: block;
         height: 100%;
@@ -153,7 +173,7 @@
 
     & > *:first-child {
         &:before {
-            @include lib-css(margin-top, -$message-icon__lateral-arrow-size);
+            margin-top: -$message-icon__lateral-arrow-size;
             content: '';
             overflow: hidden;
             position: absolute;
@@ -167,16 +187,16 @@
                 $_icon-font-content       : $_message-icon,
                 $_icon-font               : $icon-font,
                 $_icon-font-size          : $message-icon__font-size,
-                $_icon-font-line-height   : $message-icon__font-line-height,
+                $_icon-font-line-height   : $message-icon__font-size,
                 $_icon-font-color         : $_message-icon-color,
                 $_icon-font-margin        : -$message-icon__font-size/2 0 0,
                 $_icon-font-vertical-align: $icon-font__vertical-align
             );
-            @include lib-css(bottom, $_message-icon-bottom);
-            @include lib-css(left, $_message-icon-left);
-            @include lib-css(right, $_message-icon-right);
-            @include lib-css(top, $_message-icon-top);
-            @include lib-css(width, $message-icon__lateral-width);
+            bottom: $_message-icon-bottom;
+            left: $_message-icon-left;
+            right: $_message-icon-right;
+            top: $_message-icon-top;
+            width: $message-icon__lateral-width;
             position: absolute;
             text-align: center;
         }
@@ -193,7 +213,7 @@
     $_message-icon-background
 ) {
     @if $_message-icon-position == right {
-        @include lib-css(padding-right, $message-icon__lateral-width + $indent__s);
+        padding-right: $message-icon__lateral-width + $indent__s;
         &:before {
             right: 0;
             @include _lib-message-icon-lateral-border-radius($_message-icon-position);
@@ -201,7 +221,7 @@
         & > *:first-child {
             &:before {
                 @include lib-arrow(left, $message-icon__lateral-arrow-size, $_message-icon-background);
-                @include lib-css(right, $message-icon__lateral-width);
+                right: $message-icon__lateral-width;
             }
             &:after {
                 right: 0;
@@ -209,7 +229,7 @@
         }
     }
     @else if $_message-icon-position == left {
-        @include lib-css(padding-left, $message-icon__lateral-width + $indent__s);
+        padding-left: $message-icon__lateral-width + $indent__s;
 
         &:before {
             left: 0;
@@ -219,7 +239,7 @@
         & > *:first-child {
             &:before{
                 @include lib-arrow(right, $message-icon__lateral-arrow-size, $_message-icon-background);
-                @include lib-css(left, $message-icon__lateral-width);
+                left: $message-icon__lateral-width;
             }
             &:after{
                 left: 0;
@@ -231,10 +251,10 @@
 @mixin _lib-message-icon-lateral-border-radius($_message-icon-position) {
     @if $message__border-radius != false && $message__border-width != false {
         @if $_message-icon-position == left {
-            @include lib-css(border-radius, ($message__border-radius - $message__border-width) 0 0 ($message__border-radius - $message__border-width));
+            border-radius: ($message__border-radius - $message__border-width) 0 0 ($message__border-radius - $message__border-width);
         }
         @if $_message-icon-position == right {
-            @include lib-css(border-radius, 0 ($message__border-radius - $message__border-width) ($message__border-radius - $message__border-width) 0);
+            border-radius: 0 ($message__border-radius - $message__border-width) ($message__border-radius - $message__border-width) 0;
         }
     }
 }
@@ -246,9 +266,10 @@
     $_message-icon-top,
     $_message-icon-left,
     $_message-icon-bottom,
-    $_message-icon-right
+    $_message-icon-right,
+    $_message-icon-padding-left: 40px
 ) {
-    @include lib-css(padding-left, $message-icon__inner-padding-left);
+    padding-left: $_message-icon-padding-left;
     position: relative;
 
     & > *:first-child:before {
@@ -256,17 +277,21 @@
             $_icon-font-content       : $_message-icon,
             $_icon-font               : $icon-font,
             $_icon-font-size          : $message-icon__font-size,
-            $_icon-font-line-height   : $message-icon__font-line-height,
+            $_icon-font-line-height   : $message-icon__font-size,
             $_icon-font-color         : $_message-icon-color,
             $_icon-font-margin        : -$message-icon__font-size/2 0 0,
             $_icon-font-vertical-align: $icon-font__vertical-align
         );
-        @include lib-css(bottom, $_message-icon-bottom);
-        @include lib-css(left, $_message-icon-left);
-        @include lib-css(right, $_message-icon-right);
-        @include lib-css(top, $_message-icon-top);
-        @include lib-css(width, $message-icon__inner-padding-left);
+        bottom: $_message-icon-bottom;
+        left: $_message-icon-left;
+        right: $_message-icon-right;
+        top: $_message-icon-top;
+        width: $_message-icon-padding-left;
         position: absolute;
         text-align: center;
     }
+}
+
+.cos {
+    @include lib-message();
 }
