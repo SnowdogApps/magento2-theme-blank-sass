@@ -1,8 +1,10 @@
 @import '../vendor/magento-ui/variables/_colors';
 @import '../vendor/magento-ui/variables/_global';
 @import '../vendor/magento-ui/variables/_icons';
-@import '../vendor/magento-ui/variables/_messages';
+@import '../vendor/magento-ui/variables/_typography';
 @import '../vendor/magento-ui/_typography';
+@import '../vendor/magento-ui/variables/_messages';
+
 
 @function messages($type, $key) {
 

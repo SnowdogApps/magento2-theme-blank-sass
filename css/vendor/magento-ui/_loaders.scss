@@ -50,6 +50,7 @@
     }
 }
 
+
 @mixin _lib-loader-text($_loader-text) {
     @if $_loader-text == true {
         padding: $_loader-text-padding;
@@ -67,8 +68,8 @@
 }
 
 @mixin lib-loading(
-    $_loading-background-color: $loader-overlay__background-color,
-    $_loading-background-image: $loader-icon__background-image
+    $_loading-background-color: rgba(255, 255, 255, 0.7),
+    $_loading-background-image: false
 ) {
     position: relative;
     &:before {

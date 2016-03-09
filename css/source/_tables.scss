@@ -17,8 +17,8 @@ table {
 
 .table {
     tfoot {
-        @include lib-css(background, $sidebar__background-color);
-        > tr {
+        background: $sidebar__background-color;
+        & > tr {
             &:first-child {
                 th,
                 td {

@@ -14,15 +14,15 @@
 }
 
 .nav-sections {
-    @include lib-css(background, $navigation__background);
+    background: $navigation__background;
 }
 
 .nav-toggle {
     @include lib-icon-font(
-    $icon-menu,
-    $_icon-font-size: 28px,
-    $_icon-font-color: $header-icons-color,
-    $_icon-font-color-hover: $header-icons-color-hover
+        $icon-menu,
+        $_icon-font-size       : 28px,
+        $_icon-font-color      : $header-icons-color,
+        $_icon-font-color-hover: $header-icons-color-hover
     );
     @include lib-icon-text-hide();
     cursor: pointer;
@@ -47,10 +47,10 @@ $active-nav-indent: 54px;
             .level-top {
                 position: relative;
                 @include lib-icon-font(
-                $_icon-font-content: $icon-down,
-                $_icon-font-size: 42px,
-                $_icon-font-position: after,
-                $_icon-font-display: block
+                    $_icon-font-content : $icon-down,
+                    $_icon-font-size    : 42px,
+                    $_icon-font-position: after,
+                    $_icon-font-display : block
                 );
 
                 &:after {
@@ -61,8 +61,8 @@ $active-nav-indent: 54px;
 
                 &.ui-state-active {
                     @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
-                    $_icon-font-position: after
+                        $_icon-font-content : $icon-up,
+                        $_icon-font-position: after
                     );
                 }
             }
@@ -70,7 +70,7 @@ $active-nav-indent: 54px;
     }
 
     .nav-sections {
-        @include lib-css(transition, left .3s, 1);
+        transition: left 0.3s;
         height: 100%;
         left: -80%;
         left: calc("-1 * (100% - #{$active-nav-indent})");
@@ -85,7 +85,7 @@ $active-nav-indent: 54px;
             font-size: 1.6rem;
             font-weight: 700;
             margin: 0;
-            padding: .8rem 3.5rem .8rem 2rem;
+            padding: 0.8rem 3.5rem 0.8rem 2rem;
 
             .label {
                 display: block;
@@ -101,10 +101,10 @@ $active-nav-indent: 54px;
                     display: inline-block !important;
                     position: relative;
                     @include lib-icon-font(
-                    $_icon-font-content: $icon-down,
-                    $_icon-font-size: 42px,
-                    $_icon-font-position: after,
-                    $_icon-font-display: block
+                        $_icon-font-content : $icon-down,
+                        $_icon-font-size    : 42px,
+                        $_icon-font-position: after,
+                        $_icon-font-display : block
                     );
 
                     &:after {
@@ -149,11 +149,11 @@ $active-nav-indent: 54px;
 
             a,
             a:hover {
-                @include lib-css(color, $navigation-level0-item__color);
-                @include lib-css(text-decoration, $navigation-level0-item__text-decoration);
+                color: $navigation-level0-item__color;
+                text-decoration: $navigation-level0-item__text-decoration;
                 display: block;
                 font-weight: 700;
-                padding: .8rem $indent__base;
+                padding: 0.8rem $indent__base;
             }
 
             .header.links {
@@ -168,7 +168,7 @@ $active-nav-indent: 54px;
         width: 100%;
 
         .page-wrapper {
-            @include lib-css(transition, left .3s, 1);
+            transition: left 0.3s;
             height: 100%;
             left: 0;
             overflow: hidden;
@@ -192,7 +192,7 @@ $active-nav-indent: 54px;
         .nav-sections {
             $_shadow: 0 0 5px 0 rgba(50, 50, 50, .75);
 
-            @include lib-css(box-shadow, $_shadow, 1);
+            box-shadow: $_shadow;
             left: 0;
             z-index: 99;
         }

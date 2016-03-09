@@ -9,17 +9,17 @@
 //  _____________________________________________
 
 // Global variables
-@import 'variables/colors';
 @import 'variables/global';
+@import 'variables/colors';
+@import 'variables/typography';
 
 @import 'variables/actions-toolbar';
 
 @import 'variables/components';
-// @import 'variables/forms';
+@import 'variables/forms';
 @import 'variables/icons';
 @import 'variables/layout';
 @import 'variables/messages';
-@import 'variables/navigation';
 @import 'variables/pages';
 @import 'variables/popups';
 @import 'variables/rating';
@@ -28,7 +28,6 @@
 @import 'variables/structure';
 @import 'variables/tables';
 @import 'variables/tooltips';
-@import 'variables/typography';
 
 //
 //  Global lib
@@ -38,7 +37,7 @@
 @import 'breadcrumbs';
 @import 'buttons';
 @import 'dropdowns';
-// @import 'forms';
+@import 'forms';
 @import 'grids';
 @import 'icons';
 @import 'layout';

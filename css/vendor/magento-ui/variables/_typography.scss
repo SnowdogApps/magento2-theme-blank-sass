@@ -68,6 +68,21 @@ $focus__color: $color-sky-blue1;
 $focus__box-shadow: 0 0 3px 1px $focus__color;
 
 //
+//  Links
+//  ---------------------------------------------
+
+$link__color: $color-blue1;
+$link__text-decoration: none;
+
+$link__visited__color: $link__color;
+$link__visited__text-decoration: none;
+
+$link__hover__color: $color-blue2;
+$link__hover__text-decoration: underline;
+
+$link__active__color: $active__color;
+$link__active__text-decoration: underline;
+//
 //  Lists
 //  ---------------------------------------------
 

@@ -13,8 +13,8 @@
     $_cell-padding-horizontal: $table-cell__padding-horizontal,
     $_table-margin-bottom    : $table__margin-bottom
 ) {
-    @include lib-css(margin-bottom, $_table-margin-bottom);
-    @include lib-css(width, $_table-width);
+    margin-bottom: $_table-margin-bottom;
+    width: $_table-width;
     border-collapse: collapse;
     border-spacing: 0;
     max-width: 100%;
@@ -46,7 +46,7 @@
         & > tr {
             & > th,
             & > td {
-                @include lib-css(padding, $_cell-padding-vertical $_cell-padding-horizontal);
+                padding: $_cell-padding-vertical $_cell-padding-horizontal;
             }
         }
     }
@@ -102,22 +102,22 @@
     $_table-td-background-color     : $table-td__background-color,
     $_table-body-th-background-color: $table-body-th__background-color
 ) {
-    @include lib-css(background, $_table-background-color);
+    background: $_table-background-color;
 
     & > thead {
-        @include lib-css(background, $_table-head-background-color);
+        background: $_table-head-background-color;
     }
 
     & > tfoot {
-        @include lib-css(background, $_table-foot-background-color);
+        background: $_table-foot-background-color;
     }
 
     & > tbody > tr > td {
-        @include lib-css(background, $_table-td-background-color);
+        background: $_table-td-background-color;
     }
 
     & > tbody > tr >th {
-        @include lib-css(background, $_table-body-th-background-color);
+        background: $_table-body-th-background-color;
     }
 }
 
@@ -136,10 +136,10 @@
     & > tfoot {
         & > tr {
             & > td {
-                @include lib-css(padding, $_td-padding-top $_td-padding-right $_td-padding-bottom $_td-padding-left);
+                padding: $_td-padding-top $_td-padding-right $_td-padding-bottom $_td-padding-left;
             }
             & > th {
-                @include lib-css(padding, $_th-padding-top $_th-padding-right $_th-padding-bottom $_th-padding-left);
+                padding: $_th-padding-top $_th-padding-right $_th-padding-bottom $_th-padding-left;
             }
         }
     }
@@ -152,14 +152,14 @@
     $_table_border-color: $table__border-color
 ) {
     @if $_table_type == normal {
-        @include lib-css(border, $_table_border-width $_table_border-style $_table_border-color);
+        border: $_table_border-width $_table_border-style $_table_border-color;
         & > thead,
         & > tbody,
         & > tfoot {
             & > tr {
                 & > th,
                 & > td {
-                    @include lib-css(border, $_table_border-width $_table_border-style $_table_border-color);
+                    border: $_table_border-width $_table_border-style $_table_border-color;
                 }
             }
         }
@@ -171,7 +171,7 @@
             & > tr {
                 & > th,
                 & > td {
-                    @include lib-css(border-top, $_table_border-width $_table_border-style $_table_border-color);
+                    border-top: $_table_border-width $_table_border-style $_table_border-color;
                 }
             }
         }
@@ -188,7 +188,7 @@
         }
 
         & > tbody + tbody {
-            @include lib-css(border-top, $_table_border-width $_table_border-style $_table_border-color);
+            border-top: $_table_border-width $_table_border-style $_table_border-color;
         }
     }
     @else if $_table_type == horizontal_body {
@@ -196,13 +196,13 @@
             & > tr {
                 & > th,
                 & > td {
-                    @include lib-css(border-top, $_table_border-width $_table_border-style $_table_border-color);
+                    border-top: $_table_border-width $_table_border-style $_table_border-color;
                 }
             }
         }
 
         & > tbody + tbody {
-            @include lib-css(border-top, $_table_border-width $_table_border-style $_table_border-color);
+            border-top: $_table_border-width $_table_border-style $_table_border-color;
         }
     }
     @else if $_table_type == vertical {
@@ -212,7 +212,7 @@
             & > tr {
                 & > th,
                 & > td {
-                    @include lib-css(border-left, $_table_border-width $_table_border-style $_table_border-color);
+                    border-left: $_table_border-width $_table_border-style $_table_border-color;
                     &:first-child {
                         border-left: none;
                     }
@@ -238,7 +238,7 @@
             & > tr {
                 & > th,
                 & > td {
-                    @include lib-css(border-bottom, $_table_border-width $_table_border-style $_table_border-color);
+                    border-bottom: $_table_border-width $_table_border-style $_table_border-color;
                 }
             }
         }
@@ -270,8 +270,8 @@
             & > tbody > tr:nth-child(odd) {
                 & > td,
                 & > th {
-                    @include lib-css(background, $_stripped-background-color);
-                    @include lib-css(color, $_stripped-color);
+                    background: $_stripped-background-color;
+                    color: $_stripped-color;
                 }
             }
         }
@@ -282,8 +282,8 @@
                 & > tr {
                     & > th:nth-child(odd),
                     & > td:nth-child(odd) {
-                        @include lib-css(background, $_stripped-background-color);
-                        @include lib-css(color, $_stripped-color);
+                        background: $_stripped-background-color;
+                        color: $_stripped-color;
                     }
                 }
             }
@@ -294,8 +294,8 @@
             & > tbody > tr:nth-child(even) {
                 & > td,
                 & > th {
-                    @include lib-css(background, $_stripped-background-color);
-                    @include lib-css(color, $_stripped-color);
+                    background: $_stripped-background-color;
+                    color: $_stripped-color;
                 }
             }
         }
@@ -306,8 +306,8 @@
                 & > tr {
                     & > th:nth-child(even),
                     & > td:nth-child(even) {
-                        @include lib-css(background, $_stripped-background-color);
-                        @include lib-css(color, $_stripped-color);
+                        background: $_stripped-background-color;
+                        color: $_stripped-color;
                     }
                 }
             }
@@ -322,20 +322,20 @@
     & > tbody > tr:nth-child(even):hover {
         & > td,
         & > th {
-            @include lib-css(background, $_table_cell-background-color-hover);
+            background: $_table_cell-background-color-hover;
         }
     }
 
     & > tbody > tr:nth-child(odd):hover {
         & > td,
         & > th {
-            @include lib-css(background, $_table_cell-odd-background-color-hover);
+            background: $_table_cell-odd-background-color-hover;
         }
     }
 }
 
 @mixin lib-table-overflow() {
-    @include lib-css(margin-bottom, $table__margin-bottom);
+    margin-bottom: $table__margin-bottom;
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
@@ -354,17 +354,17 @@
         @if $_reset-table-hover == true {
             @include lib-table-striped($_stripped-background-color: $_table-background-color-responsive);
             @include lib-table-hover(
-                $_table_cell-background-color-hover: $_table-background-color-responsive,
+                $_table_cell-background-color-hover    : $_table-background-color-responsive,
                 $_table_cell-odd-background-color-hover: $_table-background-color-responsive
             );
 
             @include _lib-responsive-table(
                 $_table-background-color-responsive: $_table-background-color-responsive,
-                $_table-responsive-cell-padding: $_table-responsive-cell-padding
+                $_table-responsive-cell-padding    : $_table-responsive-cell-padding
             );
 
             & > tbody > tr > th {
-                @include lib-css(background-color, $_table-th-background-color-responsive '!important');
+                background-color: $_table-th-background-color-responsive '!important';
             }
         }
         @else if $_reset-table-hover == false {
@@ -372,10 +372,10 @@
 
             @include _lib-responsive-table(
                 $_table-background-color-responsive: $_table-background-color-responsive,
-                $_table-responsive-cell-padding: $_table-responsive-cell-padding
+                $_table-responsive-cell-padding    : $_table-responsive-cell-padding
             );
 
-            @include lib-css(background-color, $_table-th-background-color-responsive);
+            background-color: $_table-th-background-color-responsive;
         }
     }
     @else if $_reset-table-striped == false {
@@ -391,7 +391,7 @@
             );
 
             & > tbody > tr > th {
-                @include lib-css(background-color, $_table-th-background-color-responsive '!important');
+                background-color: $_table-th-background-color-responsive '!important';
             }
         }
         @else if $_reset-table-hover == false {
@@ -401,7 +401,7 @@
             );
 
             & > tbody > tr > th {
-                @include lib-css(background-color, $_table-th-background-color-responsive);
+                background-color: $_table-th-background-color-responsive;
             }
         }
     }
@@ -434,9 +434,9 @@
                 $_table-caption-line-height,
                 $_table-caption-font-style
             );
-            @include lib-css(margin-bottom, $_table-caption-margin-bottom);
-            @include lib-css(margin-top, $_table-caption-margin-top);
-            @include lib-css(text-align, $_table-caption-alignment);
+            margin-bottom: $_table-caption-margin-bottom;
+            margin-top: $_table-caption-margin-top;
+            text-align: $_table-caption-alignment;
         }
     }
 }
@@ -445,7 +445,7 @@
     $_table-background-color-responsive: $_table-background-color-responsive,
     $_table-responsive-cell-padding    : $_table-responsive-cell-padding
 ) {
-    @include lib-css(background, $_table-background-color-responsive);
+    background: $_table-background-color-responsive;
     border: none;
     display: block;
 
@@ -463,10 +463,10 @@
             th {
                 border-bottom: none;
                 display: block;
-                @include lib-css(padding, $_table-responsive-cell-padding);
+                padding: $_table-responsive-cell-padding;
 
                 &:before {
-                    @include lib-css(padding-right, $table-cell__padding-horizontal);
+                    padding-right: $table-cell__padding-horizontal;
                     content: attr(data-th)': ';
                     display: inline-block;
 
@@ -482,7 +482,7 @@
             }
 
             td {
-                @include lib-css(background, $_table-background-color-responsive);
+                background: $_table-background-color-responsive;
             }
         }
     }

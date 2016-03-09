@@ -11,22 +11,22 @@
 //  Variables
 //  ---------------------------------------------
 
-$modal-title__color: $text__color;
-$modal-title__border: 1px solid $color-gray-light5;
+$modal-title__color                  : $text__color;
+$modal-title__border                 : 1px solid $color-gray-light5;
 
-$modal-popup-title__font-size: 26px;
-$modal-popup-title-mobile__font-size: $font-size__base;
-$modal-popup-breakpoint-screen__m: $screen__m + 1;
+$modal-popup-title__font-size        : 26px;
+$modal-popup-title-mobile__font-size : $font-size__base;
+$modal-popup-breakpoint-screen__m    : $screen__m + 1;
 
-$modal-slide__first__indent-left: 44px;
+$modal-slide__first__indent-left     : 44px;
 $modal-slide-mobile__background-color: $color-gray-light01;
-$modal-overlay__background-color: fade($color-gray20, 55%);
+$modal-overlay__background-color     : fade($color-gray20, 55%);
 
-$modal-action-close__color: $primary__color;
-$modal-action-close__font-size: $font-size__base;
-$modal-action-close__hover__color: darken($primary__color, 10%);
+$modal-action-close__color           : $primary__color;
+$modal-action-close__font-size       : $font-size__base;
+$modal-action-close__hover__color    : darken($primary__color, 10%);
 
-$modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal-popup__padding;
+$modal-slide-action-close__padding   : $modal-slide-header__padding-vertical $modal-popup__padding;
 
 //
 //  Common
@@ -58,15 +58,15 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
 
 .modal-custom {
     .action-close {
-        @include lib-css(margin, $indent__m);
+        margin: $indent__m;
     }
 }
 
 .modal-popup {
     .modal-title {
-        @include lib-css(border-bottom, $modal-title__border);
-        @include lib-css(font-weight, $font-weight__light);
-        @include lib-css(padding-bottom, $indent__s);
+        border-bottom: $modal-title__border;
+        font-weight: $font-weight__light;
+        padding-bottom: $indent__s;
         font-size: $modal-popup-title__font-size;
         margin-bottom: 0;
         min-height: 1em;
@@ -85,12 +85,12 @@ $modal-slide-action-close__padding: $modal-slide-header__padding-vertical $modal
 
     .page-main-actions {
         margin-top: $modal-slide-header__padding-vertical;
-        margin-bottom: $modal-slide-header__padding-vertical - ($indent__l/2);
+        margin-bottom: $modal-slide-header__padding-vertical - ($indent__l / 2);
     }
 }
 
 .modals-overlay {
-    @include lib-css(background-color, $modal-overlay__background-color);
+    background-color: $modal-overlay__background-color;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -126,7 +126,7 @@ body {
         }
 
         .modal-inner-wrap {
-            @include lib-css(background-color, $modal-slide-mobile__background-color);
+            background-color: $modal-slide-mobile__background-color;
             box-sizing: border-box;
             height: auto;
             min-height: 100%;
@@ -140,7 +140,7 @@ body {
             width: 100vw;
 
             .modal-custom-overlay {
-                @include lib-css(background-color, $modal-overlay__background-color);
+                background-color: $modal-overlay__background-color;
             }
         }
     }
@@ -150,7 +150,7 @@ body {
     .modal-popup {
         &.modal-slide {
             .modal-inner-wrap[class] {
-                @include lib-css(background-color, $modal-slide-mobile__background-color);
+                background-color: $modal-slide-mobile__background-color;
             }
 
             &._inner-scroll {
@@ -167,8 +167,8 @@ body {
         }
 
         .modal-title {
-            @include lib-css(font-size, $modal-popup-title-mobile__font-size);
-            @include lib-css(font-weight, $font-weight__bold);
+            font-size: $modal-popup-title-mobile__font-size;
+            font-weight: $font-weight__bold;
         }
     }
 }
@@ -181,7 +181,7 @@ body {
     .modal-popup {
         &.modal-slide {
             .modal-footer {
-                @include lib-css(border-top, $modal-title__border);
+                border-top: $modal-title__border;
                 text-align: right;
             }
         }
