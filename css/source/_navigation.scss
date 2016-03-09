@@ -271,8 +271,8 @@ $active-nav-indent: 54px;
     }
 
     .nav-sections {
-        @include lib-vendor-prefix-flex-shrink(0);
-        @include lib-vendor-prefix-flex-basis(auto);
+        flex-grow: 0;
+        flex-basis: auto;
         margin-bottom: $indent__m;
 
         &-item-title {

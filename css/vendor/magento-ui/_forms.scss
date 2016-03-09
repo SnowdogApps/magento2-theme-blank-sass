@@ -186,15 +186,7 @@
         );
     }
 
-    &::-moz-placeholder {
-        color: $_placeholder-color;
-    }
-
-    &::-webkit-input-placeholder {
-        color: $_placeholder-color;
-    }
-
-    &:-ms-input-placeholder {
+    @include lib-input-placeholder() {
         color: $_placeholder-color;
     }
 }
@@ -721,16 +713,16 @@
     }
 
     .addon {
-        @include lib-vendor-prefix-display(inline-flex);
-        @include lib-vendor-prefix-flex-wrap(nowrap);
+        display: inline-flex;
+        flex-wrap: nowrap;
         padding: 0;
         width: 100%;
 
         textarea,
         select,
         input {
-            @include lib-vendor-prefix-order(2);
-            @include lib-vendor-prefix-flex-basis(100%);
+            order: 2;
+            flex-basis: 100%;
             display: inline-block;
             margin: 0;
             width: auto;
@@ -739,7 +731,7 @@
         .addbefore,
         .addafter {
             @include lib-form-element-input($_type: input-text);
-            @include lib-vendor-prefix-order(3);
+            order: 3;
             display: inline-block;
             vertical-align: middle;
             white-space: nowrap;
@@ -748,7 +740,7 @@
 
         .addbefore {
             float: left;
-            @include lib-vendor-prefix-order(1);
+            order: 1;
         }
     }
 

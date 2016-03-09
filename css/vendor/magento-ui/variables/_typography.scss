@@ -13,7 +13,7 @@
 
 //  Path
 $font-path: "../../fonts/";
-// $icons__font-path: "#{$baseDir}fonts/Blank-Theme-Icons/Blank-Theme-Icons";
+// $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 @warn "TO DO - Dependency hell! No idea why this is harcoded and use baseDir variable...";
 $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 
@@ -220,6 +220,3 @@ $mark__color: $primary__color__dark;
 $mark__background-color: $panel__background-color;
 
 $abbr__border-color: $border-color__base;
-
-//  Disable filters output in css
-$disable-filters: false;

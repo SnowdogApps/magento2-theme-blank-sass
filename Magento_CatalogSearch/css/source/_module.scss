@@ -226,7 +226,9 @@ $autocomplete-item-amount__color: $color-gray60;
         }
 
         input {
-            @include lib-input-placeholder($form-element-input-placeholder__color);
+            @include lib-input-placeholder() {
+                color: $form-element-input-placeholder__color;    
+            };
             margin: 0;
             padding-right: 35px;
             position: static;
@@ -235,12 +237,12 @@ $autocomplete-item-amount__color: $color-gray60;
         .action.search {
             display: inline-block;
             @include lib-button-icon(
-            $_icon-font-content: $icon-search,
-            $_icon-font-size: 16px,
-            $_icon-font-text-hide: true,
-            $_icon-font-color: $header-icons-color,
-            $_icon-font-color-hover: $header-icons-color-hover,
-            $_icon-font-line-height: 32px
+                $_icon-font-content    : $icon-search,
+                $_icon-font-size       : 16px,
+                $_icon-font-text-hide  : true,
+                $_icon-font-color      : $header-icons-color,
+                $_icon-font-color-hover: $header-icons-color-hover,
+                $_icon-font-line-height: 32px
             );
             @include lib-button-reset();
             position: absolute;
