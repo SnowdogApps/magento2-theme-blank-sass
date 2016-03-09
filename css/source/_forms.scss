@@ -82,7 +82,6 @@ fieldset.field {
 }
 
 @mixin select-styling() {
-    @include lib-css(appearance, none, 1);
     appearance: none;
     border: 1px solid $border-color__base;
     height: 32px;
@@ -129,12 +128,12 @@ select:focus ~ .tooltip .tooltip-content {
     + .ui-datepicker-trigger {
         @include lib-button-reset();
         @include lib-icon-font(
-        $_icon-font-content: $icon-calendar,
-        $_icon-font-color: $primary__color__lighter,
-        $_icon-font-size: $icon-calendar__font-size,
-        $_icon-font-line-height: $icon-calendar__font-size,
-        $_icon-font-display: block,
-        $_icon-font-text-hide: true
+            $_icon-font-content    : $icon-calendar,
+            $_icon-font-color      : $primary__color__lighter,
+            $_icon-font-size       : $icon-calendar__font-size,
+            $_icon-font-line-height: $icon-calendar__font-size,
+            $_icon-font-display    : block,
+            $_icon-font-text-hide  : true
         );
         display: inline-block;
         vertical-align: middle;
@@ -178,6 +177,6 @@ select:focus ~ .tooltip .tooltip-content {
 //--------------------------------------
 @include min-screen($screen__m) {
     .legend {
-        @include lib-css(border-bottom, $legend-border-bottom);
+        border-bottom: $legend-border-bottom;
     }
 }
