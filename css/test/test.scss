@@ -9,11 +9,9 @@
     // @debug "map-type" + $_map-type;
 
     @if map-has-key($type, $key) {
-        @debug "has key";
         @return map-get($type, $key);
 
     } @else {
-        @debug "no key";
         @return map-get($messages-default, $key);
     }
 };

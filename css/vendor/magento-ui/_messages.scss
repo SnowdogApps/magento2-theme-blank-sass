@@ -8,8 +8,7 @@
 //  _____________________________________________
 
 @function messages($type, $key) {
-    $map-type: $messages-#{type};
-    @debug "map-type" + $map-type;
+    $map-type = $type;
     @if map-has-key($map-type, $key) {
         @debug "has key";
         @return map-get($map-type, $key);
@@ -34,15 +33,16 @@
             $_message-border-color     : $message__border-color
         );
     } @else {
-        $type: $_message-type;
+        $map-type: "messages-#{$_message-type}";
+        $map-type: $map-type;
 
         @include _lib-message();
         @include _lib-message-style(
-        $_message-color            : messages($type, color),
-        $_message-background       : messages($type, background),
-        $_message-link-color       : messages($type, link-color),
-        $_message-link-color-hover : messages($type, link-color-hover),
-        $_message-link-color-active: messages($type, link-color-active),
+        $_message-color            : messages($map-type, color),
+        $_message-background       : messages($map-type, background),
+        $_message-link-color       : messages($map-type, link-color),
+        $_message-link-color-hover : messages($map-type, link-color-hover),
+        $_message-link-color-active: messages($map-type, link-color-active),
         $_message-border-color     : $message__border-color
         );
     }
