@@ -152,7 +152,7 @@
                 padding: 0;
                 position: relative;
                 top: auto !important;
-                transition: left .3s ease-out;
+                transition: left 0.3s ease-out;
 
                 & > li {
                     & > a {
@@ -470,7 +470,7 @@
                 &:before {
                     color: $_bg;
                     left: $_left;
-                    top: -$_size*2;
+                    top: -$_size * 2;
                     @include lib-arrow(up, $_size, $_bg);
                     z-index: 4;
                 }
@@ -479,7 +479,7 @@
                     @include lib-arrow(up, $_outer-size, $_border);
                     color: $_border;
                     left: $_outer-left;
-                    top: -$_outer-size*2;
+                    top: -$_outer-size * 2;
                     z-index: 3;
                 }
             }
@@ -494,7 +494,7 @@
                     @include lib-arrow(up, $_size, $_bg);
                     color: $_bg;
                     left: $_left;
-                    top: -$_size*2;
+                    top: -$_size * 2;
                     content: '';
                     display: block;
                     overflow: hidden;
@@ -513,7 +513,7 @@
                     @include lib-arrow(up, $_size, $_border);
                     color: $_border;
                     left: $_left;
-                    top: -$_size*2;
+                    top: -$_size * 2;
                     content: '';
                     display: block;
                     overflow: hidden;
