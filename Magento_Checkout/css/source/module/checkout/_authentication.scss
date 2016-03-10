@@ -180,8 +180,8 @@ $block-auth__border: 1px solid $color-gray-light3;
         }
 
         .block-authentication {
-            @include lib-vendor-prefix-display(flex);
-            @include lib-vendor-prefix-flex-direction(row);
+            display: flex;
+            flex-direction: row;
             border-top: 1px solid $color-gray-light5;
         }
 
@@ -189,9 +189,9 @@ $block-auth__border: 1px solid $color-gray-light3;
         .form-login,
         .fieldset,
         .block-content {
-            @include lib-vendor-prefix-display(flex);
-            @include lib-vendor-prefix-flex-direction(column);
-            @include lib-vendor-prefix-flex-grow(1);
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .block[class] {

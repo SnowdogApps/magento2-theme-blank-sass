@@ -67,35 +67,15 @@
     $_end-percent              : 100%,
     $_background-color-position: true
 ) {
-    @if $disable-filters == true {
-        @if $_background-color-position == true {
-            background-color: $_end-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        }
-        @else if $_background-color-position == false {
-            background-color: $_start-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        }
+    @if $_background-color-position == true {
+        background-color: $_end-color;
+        background-repeat: repeat-x;
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
     }
-    @else if $disable-filters == false {
-        @if $_background-color-position == true {
-            background-color: $_end-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
-        }
-        @else if $_background-color-position == false {
-            background-color: $_start-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(left, color-stop($_start-color $_start-percent), color-stop($_end-color $_end-percent)); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", $_start-color, $_end-color)); // IE9 and down
-        }
+    @else if $_background-color-position == false {
+        background-color: $_start-color;
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-repeat: repeat-x;
     }
 }
 @mixin lib-gradient__vertical(
@@ -105,35 +85,15 @@
     $_end-percent              : 100%,
     $_background-color-position: true
 ) {
-    @if $disable-filters == true {
-        @if $_background-color-position == true {
-            background-color: $_end-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        }
-        @else if $_background-color-position == false {
-            background-color: $_start-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-        }
+    @if $_background-color-position == true {
+        background-color: $_end-color;
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-repeat: repeat-x;
     }
-    @else if $disable-filters == false {
-        @if $_background-color-position == true {
-            background-color: $_end-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
-        }
-        @else if $_background-color-position == false {
-            background-color: $_start-color;
-            background-repeat: repeat-x;
-            background-image: -webkit-linear-gradient(top, $_start-color $_start-percent, $_end-color $_end-percent); // Safari 5.1-6, Chrome 10+
-            background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
-            filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", $_start-color, $_end-color)); // IE9 and down
-        }
+    @else if $_background-color-position == false {
+        background-color: $_start-color;
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-repeat: repeat-x;
     }
 }
 
@@ -169,9 +129,7 @@
 //  ---------------------------------------------
 
 @mixin lib-rotate($_rotation) {
-    -webkit-transform: rotate($_rotation); //  Use in 8 Safari
-        -ms-transform: rotate($_rotation); //  Use in 9 IE
-            transform: rotate($_rotation);
+    transform: rotate($_rotation);
 }
 
 //
@@ -211,13 +169,13 @@
 $urls-resolved: false;
 
 @mixin lib-url($_path) {
-    $url: "#{$baseDir}#{$_path}";
+    $url: "../#{$_path}";
 }
 
 @mixin lib-url($_path, $_module) {
     @if $_module != false && $_module != '' {
         @if $urls-resolved == true {
-            $url: "#{$baseDir}#{$_module}/#{$_path}";
+            $url: "../#{$_module}/#{$_path}";
         }
         @else if $urls-resolved == false {
             $url: "#{$_module}::#{$_path}";
@@ -266,89 +224,11 @@ $urls-resolved: false;
 //  Input placeholder
 //  ---------------------------------------------
 
-@mixin lib-input-placeholder(
-    $_input-placeholder-color      : $form-element-input-placeholder__color,
-    $_input-placeholder-font-weight: $form-element-input__font-weight
-) {
-    &::-webkit-input-placeholder {
-        color: $_input-placeholder-color;
-        font-weight: $_input-placeholder-font-weight;
-    }
-
-    &:-moz-placeholder {
-        color: $_input-placeholder-color;
-        font-weight: $_input-placeholder-font-weight;
-    }
-
-    &::-moz-placeholder {
-        color: $_input-placeholder-color;
-        font-weight: $_input-placeholder-font-weight;
-    }
-
-    &:-ms-input-placeholder {
-        color: $_input-placeholder-color;
-        font-weight: $_input-placeholder-font-weight;
-    }
-}
-
-//
-//  Flex layout
-//  ---------------------------------------------
-
-@mixin lib-vendor-prefix-display($_value: flex) {
-    display: "-webkit-#{$_value}";
-    display: "-ms-#{$_value}box";
-    display: $_value;
-}
-
-@mixin lib-vendor-prefix-flex-grow($_value: 0) {
-    -webkit-flex-grow: $_value;
-            flex-grow: $_value;
-}
-
-@mixin lib-vendor-prefix-flex-shrink($_value: 1) {
-    -webkit-flex-shrink: $_value;
-            flex-shrink: $_value;
-}
-
-@mixin lib-vendor-prefix-flex-basis($_value: auto) {
-    -webkit-flex-basis: $_value;
-            flex-basis: $_value;
-}
-
-@mixin lib-vendor-prefix-flex-wrap($_value: wrap) {
-    -webkit-flex-wrap: $_value;
-            flex-wrap: $_value;
-}
-
-@mixin lib-vendor-prefix-flex-direction($_value: column) {
-    -webkit-flex-direction: $_value;
-        -ms-flex-direction: $_value;
-            flex-direction: $_value;
-}
-
-@mixin lib-vendor-prefix-order($_value: 0) {
-    -ms-flex-order: $_value;
-     -webkit-order: $_value;
-             order: $_value;
-}
-
-@mixin lib-vendor-box-align($_value: stretch) {
-    -webkit-align-items: $_value;
-        -ms-align-items: $_value;
-            align-items: $_value;
-}
-
-@mixin lib-vendor-prefix-appearance($value: none) {
-    -webkit-appearance: $value;
-    -moz-appearance: $value;
-    appearance: $value;
-}
-
-@mixin lib-vendor-prefix-column-count($_value) {
-    -webkit-column-count: $_value;
-       -moz-column-count: $_value;
-            column-count: $_value;
+@mixin lib-input-placeholder() {
+    &::-webkit-input-placeholder { @content }
+    &:-moz-placeholder           { @content }
+    &::-moz-placeholder          { @content }
+    &:-ms-input-placeholder      { @content }
 }
 
 //
