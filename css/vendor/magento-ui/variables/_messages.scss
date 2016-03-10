@@ -39,40 +39,31 @@ $messages-default: (
     background: $message__background,
     link-color: $message-link__color,
     link-color-hover: $message-link__color-hover,
-    link-color-active: $message-link__color-active
+    link-color-active: $message-link__color-active,
+    icon: $message-icon,
+    icon-color-lateral: $message-icon__color-lateral,
+    icon-color-inner: $message-icon__color-inner,
+    icon-background: $message-icon__background,
+    icon-top: $message-icon__top,
+    icon-right: $message-icon__right,
+    icon-bottom: $message-icon__bottom,
+    icon-left: $message-icon__left
 );
 
 $messages-error: (
     color: $error__color,
-    background: $color-pink1
+    background: $color-pink1,
+    icon: $icon-warning,
+    icon-color-lateral: $color-white,
+    icon-color-inner: $color-red11,
+    icon-background: $color-red11
 );
 
 $messages-success: (
     color: $color-dark-green1,
-    background: $color-gray-light1
+    background: $color-gray-light1,
+    icon: $icon-checkmark,
+    icon-color-lateral: $color-white,
+    icon-color-inner: $color-dark-green1,
+    icon-background: $color-dark-green1
 );
-
-$message-info-icon: $icon-warning;
-$message-info-icon__color-inner: $color-brownie-light1;
-$message-info-icon__color-lateral: $color-white;
-$message-info-icon__background: $color-brownie1;
-
-$message-error-icon: $icon-warning;
-$message-error-icon__color-inner: $color-red11;
-$message-error-icon__color-lateral: $color-white;
-$message-error-icon__background: $color-red11;
-
-$message-warning-icon: $message-info-icon;
-$message-warning-icon__color-inner: $message-info-icon__color-inner;
-$message-warning-icon__color-lateral: $message-info-icon__color-lateral;
-$message-warning-icon__background: $message-info-icon__background;
-
-$message-success-icon: $icon-checkmark;
-$message-success-icon__color-inner: $color-dark-green1;
-$message-success-icon__color-lateral: $color-white;
-$message-success-icon__background: $color-dark-green1;
-
-$message-notice-icon: $message-info-icon;
-$message-notice-icon__color-inner: $message-info-icon__color-inner;
-$message-notice-icon__color-lateral: $message-info-icon__color-lateral;
-$message-notice-icon__background: $message-info-icon__background;

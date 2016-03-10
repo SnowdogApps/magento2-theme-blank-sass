@@ -3,10 +3,10 @@ var gulp    = require('gulp'),
     plumber = require('gulp-plumber');
 
 gulp.task('default', () => {
-  gulp.watch('css/test/*.scss', () => {
-    gulp.src('css/test/*.scss')
-      .pipe(plumber())
-      .pipe(sass())
-      .pipe(gulp.dest('css/test/'));
+  gulp.watch('**/*.scss', () => {
+    gulp.src('css/*.scss')
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(gulp.dest('compiled'));
   });
 });
