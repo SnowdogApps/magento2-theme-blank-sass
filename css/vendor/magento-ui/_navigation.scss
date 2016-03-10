@@ -152,7 +152,7 @@
                 padding: 0;
                 position: relative;
                 top: auto !important;
-                transition: left .3s ease-out;
+                transition: left 0.3s ease-out;
 
                 & > li {
                     & > a {
@@ -365,7 +365,7 @@
                 position: absolute;
                 z-index: 1;
 
-                @include _lib-submenu-arrow(
+                @include _lib-submenu-arrow (
                     $_submenu-arrow,
                     $_bg    : $_submenu-background-color,
                     $_border: $_submenu-border-color,
@@ -470,16 +470,16 @@
                 &:before {
                     color: $_bg;
                     left: $_left;
-                    top: -$_size*2;
-                    @include lib-arrow(up, $_size: $_bg);
+                    top: -$_size * 2;
+                    @include lib-arrow(up, $_size, $_bg);
                     z-index: 4;
                 }
 
                 &:after {
-                    @include lib-arrow(up, $_outer-size: $_border);
+                    @include lib-arrow(up, $_outer-size, $_border);
                     color: $_border;
                     left: $_outer-left;
-                    top: -$_outer-size*2;
+                    top: -$_outer-size * 2;
                     z-index: 3;
                 }
             }
@@ -491,10 +491,10 @@
                 margin-top: $_size;
 
                 &:before {
-                    @include lib-arrow(up, $_size: $_bg);
+                    @include lib-arrow(up, $_size, $_bg);
                     color: $_bg;
                     left: $_left;
-                    top: -$_size*2;
+                    top: -$_size * 2;
                     content: '';
                     display: block;
                     overflow: hidden;
@@ -510,10 +510,10 @@
                 margin-top: $_size;
 
                 &:before {
-                    @include lib-arrow(up, $_size: $_border);
+                    @include lib-arrow(up, $_size, $_border);
                     color: $_border;
                     left: $_left;
-                    top: -$_size*2;
+                    top: -$_size * 2;
                     content: '';
                     display: block;
                     overflow: hidden;
