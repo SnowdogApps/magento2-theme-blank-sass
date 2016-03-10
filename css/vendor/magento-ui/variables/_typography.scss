@@ -61,6 +61,13 @@ $border-color__base: darken($page__background-color, 18%);
 $border-width__base: 1px;
 
 //
+//  Focus
+//  ---------------------------------------------
+
+$focus__color: $color-sky-blue1;
+$focus__box-shadow: 0 0 3px 1px $focus__color;
+
+//
 //  Links
 //  ---------------------------------------------
 
@@ -75,14 +82,6 @@ $link__hover__text-decoration: underline;
 
 $link__active__color: $active__color;
 $link__active__text-decoration: underline;
-
-//
-//  Focus
-//  ---------------------------------------------
-
-$focus__color: $color-sky-blue1;
-$focus__box-shadow: 0 0 3px 1px $focus__color;
-
 //
 //  Lists
 //  ---------------------------------------------

@@ -5,8 +5,8 @@ var gulp    = require('gulp'),
 gulp.task('default', () => {
   gulp.watch('**/*.scss', () => {
     gulp.src('css/*.scss')
-      .pipe(plumber())
-      .pipe(sass())
-      .pipe(gulp.dest('compiled'));
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(gulp.dest('compiled'));
   });
 });
