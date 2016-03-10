@@ -66,22 +66,6 @@
     }
 }
 
-@mixin _lib-loader-text($_loader-text) {
-    @if $_loader-text == true {
-        padding: $_loader-text-padding;
-        content: attr(data-text);
-        text-align: center;
-        vertical-align: baseline;
-        @include lib-typography(
-            $_color      : $_loader-text-color,
-            $_font-size  : $_loader-text-font-size,
-            $_font-family: $_loader-text-font-family,
-            $_font-weight: $_loader-text-font-weight,
-            $_font-style : $_loader-text-font-style
-        );
-    }
-}
-
 @mixin lib-loading(
     $_loading-background-color: rgba(255, 255, 255, 0.7),
     $_loading-background-image: false

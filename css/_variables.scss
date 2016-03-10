@@ -98,7 +98,7 @@ $button__font-weight: $font-weight__semibold;
 //  Default = secondary button
 $button__background: $color-gray-darken0;
 $button__border: 1px solid $border-color__base;
-$button__hover__color: $button__color;
+//$button__hover__color: $button__color;
 $button__hover__background: darken($button__background, 5%);
 $button__active__background: $color-gray-darken1;
 
@@ -114,7 +114,19 @@ $button-icon__line-height: $icon-font__line-height;
 //
 //  Icons
 //  ---------------------------------------------
+//
 
+$icon-success: '\e60e';
+$icon-error: '\e61f';
+$icon-edit: '\e601';
+$icon-print: '\e624';
+$icon-star-empty: '\e625';
+$icon-download: '\e626';
+$icon-private: '\e629';
+$icon-present: '\e62a';
+$icon-gift-registry: '\e62b';
+
+$icon-calendar__font-size: 23px;
 $icon-wishlist-empty: false;
 $icon-comment-reflected: false;
 $icon-compare-empty: false;
@@ -261,22 +273,6 @@ $font-family__base: $font-family-name__base, $font-family__sans-serif;
 //  Colors nesting
 $page__background-color: $color-white;
 $copyright__background-color: $color-gray56;
-
-//
-//  Icons
-//  ---------------------------------------------
-
-$icon-success: '\e60e';
-$icon-error: '\e61f';
-$icon-edit: '\e601';
-$icon-print: '\e624';
-$icon-star-empty: '\e625';
-$icon-download: '\e626';
-$icon-private: '\e629';
-$icon-present: '\e62a';
-$icon-gift-registry: '\e62b';
-
-$icon-calendar__font-size: 23px;
 
 //
 //  Sidebar
