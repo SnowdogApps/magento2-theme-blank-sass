@@ -28,8 +28,8 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 .gift-message {
     .field {
         .label {
-            @include lib-css(color, $gift-message-field-label__color);
-            @include lib-css(font-weight, $font-weight__regular);
+            color: $gift-message-field-label__color;
+            font-weight: $font-weight__regular;
         }
     }
 }
@@ -37,7 +37,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 .cart.table-wrapper {
     .item-gift {
         &._active {
-            @include lib-css(border-top, $gift-item-block__border-width solid $gift-item-block__border-color);
+            border-top: $gift-item-block__border-width solid $gift-item-block__border-color;
         }
 
         .action {
@@ -58,7 +58,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 }
 
 .gift-options-title {
-    @include lib-css(font-weight, $font-weight__semibold);
+    font-weight: $font-weight__semibold;
     margin: 0 0 $indent__base;
 }
 
@@ -134,19 +134,19 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 //  ---------------------------------------------
 
 .gift-item-block {
-    @include lib-css(border-bottom, $gift-item-block__border-width solid $gift-item-block__border-color);
+    border-bottom: $gift-item-block__border-width solid $gift-item-block__border-color;
     margin: 0;
 
     &._active {
         .title {
             &:after {
-                @include lib-css(content, $gift-item-block-title-icon__active__content);
+                content: $gift-item-block-title-icon__active__content;
             }
         }
     }
 
     .title {
-        @include lib-css(color, $gift-item-block-title__color);
+        color: $gift-item-block-title__color;
         cursor: pointer;
         @include lib-icon-font(
         $gift-item-block-title-icon__content,
@@ -195,7 +195,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 
         .item-options {
             dt {
-                @include lib-css(font-weight, $font-weight__regular);
+                font-weight: $font-weight__regular;
                 margin: $indent__s 0;
             }
         }
@@ -245,7 +245,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 
     .gift-item-block {
         border-bottom: 0;
-        @include lib-css(border-top, $gift-item-block__border-width solid $gift-item-block__border-color);
+        border-top: $gift-item-block__border-width solid $gift-item-block__border-color;
 
         .title {
             &:after {
@@ -269,14 +269,14 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
     .cart.table-wrapper {
         .action-gift {
             @include lib-icon-font(
-            $icon-present,
-            $_icon-font-size: 18px,
-            $_icon-font-line-height: 20px,
-            $_icon-font-text-hide: true,
-            $_icon-font-color: $minicart-icons-color,
-            $_icon-font-color-hover: $primary__color,
-            $_icon-font-color-active: $minicart-icons-color,
-            $_icon-font-position: after
+                $icon-present,
+                $_icon-font-size        : 18px,
+                $_icon-font-line-height : 20px,
+                $_icon-font-text-hide   : true,
+                $_icon-font-color       : $minicart-icons-color,
+                $_icon-font-color-hover : $primary__color,
+                $_icon-font-color-active: $minicart-icons-color,
+                $_icon-font-position    : after
             );
 
             &._active {
@@ -350,7 +350,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
 
             &:nth-child(3) {
                 &:before {
-                    @include lib-css(border-left, 1px solid $gift-item-block__border-color);
+                    border-left, 1px solid $gift-item-block__border-color;
                     bottom: 5rem;
                     content: "";
                     display: block;
@@ -365,7 +365,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
     }
 
     .gift-options-title {
-        @include lib-css(font-weight, $font-weight__light);
+        font-weight: $font-weight__light;
         font-size: 18px;
     }
 
