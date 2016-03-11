@@ -116,9 +116,7 @@
     /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
     html {
         font-family: sans-serif;
-        -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-                font-size-adjust: 100%;
+        font-size-adjust: 100%;
     }
     body {
         margin: 0;
@@ -179,8 +177,8 @@
     }
 
     h1 {
-        font-size: 2em;
-        margin: .67em 0;
+        font-size: 150%;
+        margin: 10px 0;
     }
 
     mark {
@@ -201,11 +199,11 @@
     }
 
     sup {
-        top: -.5em;
+        top: -8px;
     }
 
     sub {
-        bottom: -.25em;
+        bottom: -4px;
     }
 
     img {
@@ -217,7 +215,7 @@
     }
 
     figure {
-        margin: 1em 40px;
+        margin: 15px 40px;
     }
 
     hr {
@@ -234,7 +232,7 @@
     pre,
     samp {
         font-family: monospace, monospace;
-        font-size: 1em;
+        font-size: 100%;
     }
 
     button,
@@ -302,7 +300,7 @@
     fieldset {
         border: 1px solid #c0c0c0;
         margin: 0 2px;
-        padding: .35em .625em .75em;
+        padding: 5px 10px 12px;
     }
 
     legend {
@@ -495,7 +493,7 @@
         border-top: 1px solid #ccc;
         display: block;
         height: 1px;
-        margin: 1em 0;
+        margin: 15px 0;
         padding: 0;
     }
 

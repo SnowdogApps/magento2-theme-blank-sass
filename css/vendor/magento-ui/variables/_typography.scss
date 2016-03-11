@@ -14,7 +14,7 @@
 //  Path
 $font-path: "../../fonts/";
 // $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
-@warn "TO DO - Dependency hell! No idea why this is harcoded and use baseDir variable...";
+
 $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 
 //  Font families
@@ -122,61 +122,52 @@ $heading__color__base: false;
 $heading__font-style__base: false;
 $heading__margin-top__base: $indent__base;
 $heading__margin-bottom__base: $indent__base;
-
-$h1__font-size: ceil(($font-size__base * 1.85)); // 26px
-$h1__font-color: $heading__color__base;
-$h1__font-family: $heading__font-family__base;
-$h1__font-weight: $heading__font-weight__base;
-$h1__font-style: $heading__font-style__base;
-$h1__line-height: $heading__line-height__base;
-$h1__margin-top: 0;
-$h1__margin-bottom: $heading__margin-bottom__base;
 $h1__font-size-desktop: ceil(($font-size__base * 2.85)); // 40px
 
-$h2__font-size: ceil(($font-size__base * 1.85)); // 26px
-$h2__font-color: $heading__color__base;
-$h2__font-family: $heading__font-family__base;
-$h2__font-weight: $heading__font-weight__base;
-$h2__font-style: $heading__font-style__base;
-$h2__line-height: $heading__line-height__base;
-$h2__margin-top: $indent__m;
-$h2__margin-bottom: $heading__margin-bottom__base;
+$heading-default: (
+    font-size        : font-size__base,
+    font-family      : $heading__font-family__base,
+    font-weight      : $heading__font-weight__base,
+    line-height      : heading__line-height__base,
+    color            : $heading__color__base,
+    font-style       : $heading__font-style__base,
+    margin-top       : $heading__margin-top__base,
+    margin-bottom    : $heading__margin-bottom__base,
+    font-size-desktop: $h1__font-size-desktop
+);
 
-$h3__font-size: ceil(($font-size__base * 1.28)); // 18px
-$h3__font-color: $heading__color__base;
-$h3__font-family: $heading__font-family__base;
-$h3__font-weight: $heading__font-weight__base;
-$h3__font-style: $heading__font-style__base;
-$h3__line-height: $heading__line-height__base;
-$h3__margin-top: $indent__base * .75;
-$h3__margin-bottom: $indent__s;
+$heading-h1: (
+    font-size: ceil(($font-size__base * 1.85)),
+    margin-top: 0
+);
 
-$h4__font-size: $font-size__base; // 14px
-$h4__font-color: $heading__color__base;
-$h4__font-family: $heading__font-family__base;
-$h4__font-weight: $font-weight__bold;
-$h4__font-style: $heading__font-style__base;
-$h4__line-height: $heading__line-height__base;
-$h4__margin-top: $heading__margin-top__base;
-$h4__margin-bottom: $heading__margin-bottom__base;
+$heading-h2: (
+    font-size: ceil(($font-size__base * 1.85)),
+    margin-top: $indent__m
+);
 
-$h5__font-size: ceil(($font-size__base * .85)); // 12px
-$h5__font-color: $heading__color__base;
-$h5__font-family: $heading__font-family__base;
-$h5__font-weight: $font-weight__bold;
-$h5__font-style: $heading__font-style__base;
-$h5__line-height: $heading__line-height__base;
-$h5__margin-top: $heading__margin-top__base;
-$h5__margin-bottom: $heading__margin-bottom__base;
+$heading-h3: (
+    font-size: ceil(($font-size__base * 1.28)),
+    margin-top: $indent__base * 0.75,
+    margin-bottom: $indent__s
+);
 
-$h6__font-size: ceil(($font-size__base * .7)); // 10px
-$h6__font-color: $heading__color__base;
-$h6__font-family: $heading__font-family__base;
-$h6__font-weight: $font-weight__bold;
-$h6__font-style: $heading__font-style__base;
-$h6__line-height: $heading__line-height__base;
-$h6__margin-top: $heading__margin-top__base;
-$h6__margin-bottom: $heading__margin-bottom__base;
+$heading-h4: (
+    font-size: $font-size__base,
+    font-weight: $font-weight__bold
+);
+
+$heading-h5: (
+    font-size: ceil(($font-size__base * 0.85)),
+    font-weight: $font-weight__bold
+);
+
+$heading-h6: (
+    font-size: ceil(($font-size__base * 0.7)),
+    font-weight: $font-weight__bold
+);
+
+
 
 $heading__small-color: $primary__color;
 $heading__small-line-height: 1;
