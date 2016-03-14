@@ -26,7 +26,6 @@
     }
 }
 
-//  Rem line height
 @mixin lib-line-height($heightValue) {
     @if $heightValue != false && ispercentage($heightValue) == false {
         line-height: $font-size__base;
@@ -120,8 +119,7 @@
     }
 }
 
-// not working!!!!
-
+// check if specific heading map has adequant key, if not - use default
 @function headings($map-type, $key) {
     @if map-has-key($map-type, $key) {
         @return map-get($map-type, $key);
@@ -130,6 +128,8 @@
         @return map-get($heading-default, $key);
     }
 };
+
+// set adequant heading map
 
 @mixin lib-heading($_heading_level: h1) {
 
@@ -222,13 +222,8 @@
     }
 
     p {
-        & {
-            margin-top: $font-size__base / 2;
-        }
-
-        & {
-            margin-bottom: $font-size__base / 2;
-        }
+        margin-top: $font-size__base / 2;
+        margin-bottom: $font-size__base / 2;
     }
 
     //  Abbreviations and acronyms
@@ -352,7 +347,7 @@
             margin-bottom: $font-size__base / 2;
         }
 
-        @include lib-typography($list__font-size__base: $list__color__base);
+        @include lib-typography($list__font-size__base, $list__color__base);
         & > li {
             & {
                 margin-top: $font-size__base / 2;
