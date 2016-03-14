@@ -28,8 +28,8 @@ $pager__font-weight: $font-weight__bold;
     text-align: center;
 
     select {
-        @include lib-css(background-color, $toolbar-element-background);
-        @include lib-css(box-shadow, $button__shadow);
+        background-color: $toolbar-element-background;
+        box-shadow: $button__shadow;
         border-radius: 3px;
     }
 
@@ -55,7 +55,7 @@ $pager__font-weight: $font-weight__bold;
     }
 
     &-products {
-        @include lib-css(background-color, $toolbar-background);
+        background-color: $toolbar-background;
 
         .pages {
             display: none;
@@ -176,9 +176,9 @@ $pager__font-weight: $font-weight__bold;
         }
 
         &-mode {
-            @include lib-css(background-color, $toolbar-element-background);
-            @include lib-css(box-shadow, $button__shadow);
-            @include lib-css(color, $text__color__muted);
+            background-color: $toolbar-element-background;
+            box-shadow: $button__shadow;
+            color: $text__color__muted;
             border: 1px solid $border-color__base;
             border-right: 0;
             float: left;
@@ -192,7 +192,7 @@ $pager__font-weight: $font-weight__bold;
             }
 
             &:hover {
-                @include lib-css(color, $text__color__muted);
+                color: $text__color__muted;
                 background: darken($toolbar-element-background, 2%);
             }
 
@@ -202,7 +202,7 @@ $pager__font-weight: $font-weight__bold;
             }
 
             &.active {
-                @include lib-css(box-shadow, $button__shadow-active);
+                box-shadow: $button__shadow-active;
                 background: darken($toolbar-element-background, 7%);
                 color: $color-gray62;
             }

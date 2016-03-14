@@ -122,13 +122,14 @@
 //  Desktop
 //  ---------------------------------------------
 
-@mixin media-width($extremum: $break) {
+@include media-width($extremum, $break) {
     @if $extremum == 'min' && $break == $screen__m {
         .abs-product-options-list-desktop {
             @include abs-product-options-list();
         }
     }
-}
+};
+
 
 //
 //  Button reset width: floats: margins

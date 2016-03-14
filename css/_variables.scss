@@ -5,6 +5,15 @@
 $baseDir: "../"; // Base directory path
 
 //
+// Media query
+// ---------------------------------------------
+// two variable used inside magento 2 to set media query 2 features:
+// 1 - "common" options, different in emails and style_l
+// 2 - "target" all, desktop or mobile devices
+$media-common: true; // Sets whether to output common styles (true|false)
+$media-target: 'all'; // Sets target device for styles output (all|desktop|mobile)
+
+//
 //  Typography
 //  ---------------------------------------------
 
