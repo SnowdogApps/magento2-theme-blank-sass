@@ -54,7 +54,7 @@
 
 @mixin lib-table-typography(
      $_table-td-font-size  : false,
-     $_table-td-color      : false,
+     $_table-td-color      : $table-td__color,
      $_table-td-font-family: false,
      $_table-td-font-weight: false,
      $_table-td-line-height: false,

@@ -53,7 +53,7 @@
             $_font-style : $_tooltip-font-style
         );
 
-        @include _lib-tooltip-border($_tooltip-border-width: $_tooltip-border-color);
+        @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
 
         $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1px;
         $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1px;

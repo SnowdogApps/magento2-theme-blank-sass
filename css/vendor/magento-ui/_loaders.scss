@@ -9,7 +9,7 @@
 
 @mixin lib-loader(
     $_loader-overlay-background-color: rgba(255, 255, 255, 0.5),
-    $_loader-overlay-z-index         : 9999,
+    $_loader-overlay-z-index         : $loader-overlay__z-index,
     $_loader-icon-width              : 160px,
     $_loader-icon-height             : 160px,
     $_loader-icon-background-color   : transparent,

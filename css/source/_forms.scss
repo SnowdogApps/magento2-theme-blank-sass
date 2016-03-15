@@ -152,7 +152,7 @@ select:focus ~ .tooltip .tooltip-content {
     .fieldset {
         margin: 0;
 
-        > .field:not(.choice) >,
+        > .field:not(.choice),
         .fields > .field {
             &:not(:last-child) {
                 margin: 0 0 $form-field__vertical-indent;

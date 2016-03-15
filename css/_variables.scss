@@ -34,6 +34,7 @@ $h3__margin-top: $indent__base;
 //  ---------------------------------------------
 
 $table-cell__padding-vertical: 11px;
+$table-cell__hover__background-color: $panel__background-color;
 $table-cell-stripped__background-color: $table-cell__hover__background-color;
 $table-responsive-th__background-color: $table-cell-stripped__background-color;
 $table-responsive-cell__padding: $indent__xs $indent__s;
@@ -50,6 +51,13 @@ $layout-column__sidebar-width: 5;
 //  Checkout columns width
 $layout-column-checkout__width-left: 6;
 
+
+//
+// header
+//
+$header-icons-color: $color-gray56;
+$header-icons-color-hover: $color-gray20;
+
 //
 //  Navigation
 //  ---------------------------------------------
@@ -57,6 +65,11 @@ $layout-column-checkout__width-left: 6;
 $navigation__background: $color-gray94;
 $navigation-level0-item__active__color: $primary__color;
 $submenu-item__active__color: $navigation-level0-item__active__color;
+$navigation-level0-item__color: $color-gray34;
+$navigation-level0-item__text-decoration: none;
+$navigation-desktop-level0-item__text-decoration: none;
+$navigation-desktop-level0-item__color: $primary__color;
+$navigation-desktop-level0-item__hover__color: $primary__color;
 
 //  Desktop navigation
 $navigation-desktop-level0-item__line-height: 47px;
@@ -97,28 +110,6 @@ $accordion-control__padding-left: $indent__s;
 $accordion-content__border: false;
 $accordion-content__margin: 0;
 $accordion-content__padding: $indent__s $indent__s $indent__l;
-
-//
-//  Buttons
-//  ---------------------------------------------
-
-$button__font-weight: $font-weight__semibold;
-
-//  Default = secondary button
-$button__background: $color-gray-darken0;
-$button__border: 1px solid $border-color__base;
-//$button__hover__color: $button__color;
-$button__hover__background: darken($button__background, 5%);
-$button__active__background: $color-gray-darken1;
-
-//  Primary button
-$button-primary__hover__color: $color-white;
-$button-primary__active__background: $link__hover__color;
-$button-primary__active__border: 1px solid $link__hover__color;
-$button-primary__active__color: $color-white;
-
-//  Button with icon
-$button-icon__line-height: $icon-font__line-height;
 
 //
 //  Icons
@@ -162,6 +153,7 @@ $message-success-icon: $icon-success;
 //  ---------------------------------------------
 
 $loader-overlay__background-color: rgba(255, 255, 255, .7);
+$loader-overlay__z-index: 9999;
 
 //
 //  Forms
@@ -181,9 +173,14 @@ $form-field__additional-vertical-indent: $indent__s;
 //  Form field label
 $form-field-label__font-weight: $font-weight__semibold;
 $form-field-type-label-block__margin: 0 0 8px;
+$form-field-type-label-inline__width: 25.8%;
 
 //  Form field note icon
 $form-field-note-icon-font__content: false;
+$form-field-note__color: false;
+
+$select__background: $color-white;
+$form-field--vertical-indent: $indent__base;
 
 //
 //  Pager
@@ -221,6 +218,7 @@ $rating-icon__active__color: $active__color;
 //  Split dropdown
 $dropdown-split-actions__padding: 0 $indent__xs;
 $dropdown-split-toggle__actions__padding: false;
+$dropdown-list-item__hover: $color-gray91;
 
 //  Actions-toolbar
 $actions-toolbar-actions__position: left;
@@ -241,12 +239,7 @@ $breadcrumbs-icon__font-margin: 0 $indent__s;
 $popup__border: 1px solid $color-gray68;
 $popup-title-headings__level: h2;
 
-//  Popup icons
-$popup-icon-font__size: 16px;
-$popup-icon-font__line-height: 16px;
-$popup-icon-font__color: $color-gray55;
-$popup-icon-font__color-hover: darken($popup-icon-font__color, 10%);
-$popup-icon-font__color-active: $popup-icon-font__color-hover;
+
 
 //  Window overlay
 $overlay__background: $color-gray55;
@@ -255,8 +248,22 @@ $overlay__opacity-old: 70;
 
 $gallery-thumb-border-color-active: $active__color;
 
-//  Checkout tooltip icon
+//  Checkout tooltip
+$checkout-tooltip-icon-arrow__font-size: 10px;
 $checkout-tooltip-icon__font-size: 21px;
+
+$checkout-tooltip-content-mobile__right: -($indent__s);
+$checkout-tooltip-content-mobile__top: 30px + $checkout-tooltip-icon-arrow__font-size;
+$checkout-tooltip-content__background-color: $color-gray-light01;
+$checkout-tooltip-content__padding: 12px;
+$checkout-tooltip-content__border-width: 1px;
+
+$checkout-tooltip-content__border-color: $color-gray60;
+$checkout-tooltip-content__font-size: $font-size__base;
+$checkout-tooltip-content__width: 270px;
+$checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%);
+$checkout-tooltip-icon-arrow__left: -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width);
+
 
 // Checkout Payment Option icon
 $checkout-payment-option-title-icon__font-size: 14px;
@@ -270,6 +277,9 @@ $checkout-sidebar-shipping-information-edit-icon__line-height: 20px;
 $checkout-sidebar-shipping-information-edit-icon__top: $indent__s;
 
 // Checkout
+$checkout-step-title__padding: $indent__s;
+$checkout-step-title__font-size: 26px;
+$checkout-step-title__font-weight: $font-weight__light;
 $checkout-sidebar__columns: 8;
 
 //  Typography
@@ -289,3 +299,21 @@ $copyright__background-color: $color-gray56;
 
 $sidebar__background-color: $color-white-smoke;
 // Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background
+
+
+// variables missing in extend.scss
+// addto color
+$addto-color: $primary__color;
+$addto-hover-color: $link__hover__color;
+
+// mobile cart padding
+$mobile-cart-padding: 15px;
+
+// account title border
+$account-title-border-color: $border-color__base;
+
+// price color
+$cart-price-color: $primary__color;
+$price-color: $color-gray34;
+$price-size: 22px;
+$price-size-desktop: 36px;

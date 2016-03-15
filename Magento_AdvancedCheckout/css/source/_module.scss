@@ -97,10 +97,11 @@
     @extend .abs-shopping-cart-items;
 
     .block-title {
-        font-size: $h2__font-size;
+        // font-size: $h2__font-size;
+        font-size: headings($heading-h2, font-size);
 
         strong {
-            font-weight: $h2__font-weight;
+            font-weight: headings($heading-h2, font-weight);
         }
     }
 

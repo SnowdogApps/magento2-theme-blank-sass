@@ -217,7 +217,7 @@
         );
     }
     @else {
-        $mgs-type: $_message-type;
+        $msg-type: $_message-type;
 
         @if $msg-type == error {
             @if variable-exists(messages-error) {

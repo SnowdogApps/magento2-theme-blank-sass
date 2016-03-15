@@ -93,9 +93,3 @@
 }
 
 // --- target devices ----------------------------------------------------------
-// add bizarre function media-width
-// used very often, set elements style depends on media-query
-
-@mixin media-width($extremum, $break) {
-    @content;
-}

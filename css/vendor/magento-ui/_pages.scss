@@ -13,7 +13,7 @@
 
 @mixin lib-pager(
     $_pager-label-display                      : none,
-    $_pager-item-display                       : inline-block,
+    $_pager-item-display                       : $pager-item__display,
     $_pager-reset-spaces                       : true,
     $_pager-font-size                          : $font-size__s,
     $_pager-font-weight                        : $font-weight__bold,
@@ -60,7 +60,7 @@
     $_pager-gradient-color-start               : false,
     $_pager-gradient-color-end                 : false,
     $_pager-gradient-color-start-visited       : false,
-    $_pager-gradient-color-end-visited         : $pager__visited__gradient-color-end,
+    $_pager-gradient-color-end-visited         : false,
     $_pager-gradient-color-start-hover         : false,
     $_pager-gradient-color-end-hover           : false,
     $_pager-gradient-color-start-active        : false,
@@ -83,7 +83,7 @@
     $_pager-action-border-visited              : false,
     $_pager-action-background-visited          : false,
     $_pager-action-gradient-color-start-visited: false,
-    $_pager-action-gradient-color-end-visited  : $pager__visited__gradient-color-end,
+    $_pager-action-gradient-color-end-visited  : false,
 
     // Page action item (previous-next) - hover
     $_pager-action-color-hover                 : $pager-action__color,
@@ -119,6 +119,7 @@
     @include _lib-pager-label-display(  // To hide or to display label
         $_pager-label-display: $_pager-label-display,
         $_pager-font-size: $_pager-font-size,
+        $_pager-font-weight  : $_pager-font-weight,
         $_pager-line-height: $_pager-line-height
     );
 
@@ -272,6 +273,7 @@
                 $_icon-font-size          : $_pager-icon-font-size,
                 $_icon-font-line-height   : $_pager-icon-font-line-height,
                 $_icon-font-color         : $_pager-action-color,
+                $_icon-font-color-visited : $_pager-action-color-visited,
                 $_icon-font-color-hover   : $_pager-action-color-hover,
                 $_icon-font-color-active  : $_pager-action-color-active,
                 $_icon-font-margin        : $_pager-icon-font-margin,
@@ -290,6 +292,7 @@
                 $_icon-font-line-height   : $_pager-icon-font-line-height,
                 $_icon-font-color         : $_pager-action-color,
                 $_icon-font-color-hover   : $_pager-action-color-hover,
+                $_icon-font-color-visited : $_pager-action-color-visited,
                 $_icon-font-color-active  : $_pager-action-color-active,
                 $_icon-font-margin        : $_pager-icon-font-margin,
                 $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
@@ -302,7 +305,7 @@
 
 //  Delete spaces between elements when pager items have display: inline-block
 @mixin _lib-pager-inline-block-spaces-container() {
-    @if $_pager-reset-spaces == true && $_pager-item-display == inline-block {
+    @if $_pager-reset-spaces == true && $pager-item__display == inline-block {
         @include lib-inline-block-space-container();
         white-space: nowrap;
     }
@@ -312,7 +315,7 @@
     $_pager-font-size  : $_pager-font-size,
     $_pager-line-height: $_pager-line-height
 ) {
-    @if $_pager-reset-spaces == true && $_pager-item-display == inline-block {
+    @if $_pager-reset-spaces == true && $pager-item__display == inline-block {
         @include lib-inline-block-space-item(
             $_font-size  : $_pager-font-size,
             $_line-height: $_pager-line-height
@@ -350,19 +353,6 @@
     $_pager-line-height  : $_pager-line-height
 ) {
     @if $_pager-label-display == none {
-        & > .label {
-            @include lib-visually-hidden();
-        }
-    }
-}
-
-@mixin _lib-pager-label-display(
-    $_pager-label-display: $_pager-label-display,
-    $_pager-font-size    : $_pager-font-size,
-    $_pager-font-weight  : $_pager-font-weight,
-    $_pager-line-height  : $_pager-line-height
-) {
-    @if $_pager-label-display = false {
         & > .label {
             @include lib-visually-hidden();
         }

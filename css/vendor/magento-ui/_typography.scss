@@ -183,8 +183,6 @@
         }
     }
 
-    @debug $map-type;
-
     $_font-color   : heading($map-type, color);
     $_font-size    : heading($map-type, font-size);
     $_font-family  : heading($map-type, font-family);

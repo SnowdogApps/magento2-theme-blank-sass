@@ -96,6 +96,7 @@
 }
 
 @mixin _lib-set-column-width($_index, $_width) {
+    $_units: "px","%","em","rem","pt";
     @if $_index > 0 {
         $_checkUnit: isunit($_width, extract($_units, $_index));
         @include _lib-column-width($_width, $_checkUnit, $_index);

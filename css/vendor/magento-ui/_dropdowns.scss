@@ -86,7 +86,6 @@
         $_dropdown-list-border,
         $_dropdown-list-z-index,
         $_dropdown-list-shadow,
-        $_dropdown-list-background,
         $_dropdown-list-item-padding,
         $_dropdown-list-item-margin,
         $_dropdown-list-item-border,
@@ -198,7 +197,6 @@
         $_dropdown-split-list-border,
         $_dropdown-split-list-z-index,
         $_dropdown-split-list-shadow,
-        $_dropdown-split-list-background,
         $_dropdown-split-list-item-padding,
         $_dropdown-split-list-item-margin,
         $_dropdown-split-list-item-border,
@@ -229,7 +227,6 @@
     $_dropdown-list-border,
     $_dropdown-list-z-index,
     $_dropdown-list-shadow,
-    $_dropdown-list-background,
     $_dropdown-list-item-padding,
     $_dropdown-list-item-margin,
     $_dropdown-list-item-border,
@@ -281,6 +278,7 @@
 
         @include _lib-dropdown-list-pointer(
             $_dropdown-list-background,
+            $_dropdown-list-pointer,
             $_dropdown-list-pointer-border,
             $_dropdown-list-pointer-position,
             $_dropdown-list-pointer-position-top,
@@ -476,6 +474,7 @@
 
 @mixin _lib-dropdown-list-pointer(
     $_dropdown-list-background,
+    $_dropdown-list-pointer,
     $_dropdown-list-pointer-border,
     $_dropdown-list-pointer-position,
     $_dropdown-list-pointer-position-top,

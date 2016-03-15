@@ -122,11 +122,9 @@
 //  Desktop
 //  ---------------------------------------------
 
-@include media-width($extremum, $break) {
-    @if $extremum == 'min' && $break == $screen__m {
-        .abs-product-options-list-desktop {
-            @include abs-product-options-list();
-        }
+@include min-screen($screen__m) {
+    .abs-product-options-list-desktop {
+        @include abs-product-options-list();
     }
 };
 
@@ -1312,7 +1310,7 @@
                 }
 
                 .order-status {
-                    $order-status-indent: ceil($h1__margin-bottom/2);
+                    $order-status-indent: ceil($heading__margin-bottom__base / 2);
                     margin: -$order-status-indent 0 $indent__s;
                 }
             }
@@ -1325,7 +1323,7 @@
         .page-main {
             .page-title-wrapper {
                 .order-date {
-                    $order-date-indent: ceil($h1__margin-bottom/1.5);
+                    $order-date-indent: ceil($heading__margin-bottom__base / 1.5);
                     margin: -$order-date-indent 0 18px;
                 }
             }

@@ -7,11 +7,25 @@
 //  Forms
 //  _____________________________________________
 
+//
+// variable
+
+$form-field-label-asterisk__color: $color-red10;
+$form-field-label-asterisk__font-size: $font-size__s;
+$form-field-label-asterisk__font-family: false;
+$form-field-label-asterisk__font-weight: false;
+$form-field-label-asterisk__font-style: false;
+$form-field-label-asterisk__line-height: false;
+$form-field-label-asterisk__margin: 0 0 0 $indent__xs;
+
+$form-element-input__height: 32px;
+$form-element-input__border-color: $color-gray76;
+
 @mixin lib-form-element-input($_type) {
     $_background                : $color-white;
-    $_border                    : 1px solid $color-gray76;
+    $_border                    : 1px solid $form-element-input__border-color;
     $_border-radius             : 1px;
-    $_height                    : 32px;
+    $_height                    : $form-element-input__height;
     $_width                     : 100%;
     $_margin                    : false;
     $_padding                   : 0 9px;
@@ -144,13 +158,13 @@
     $_border-color,
     $_background,
     $_color,
-    $_focus-border-color,
-    $_focus-background,
-    $_focus-color,
-    $_disabled-border-color,
-    $_disabled-background,
-    $_disabled-color,
-    $_placeholder-color
+    $_focus-border-color: '',
+    $_focus-background: '',
+    $_focus-color: '',
+    $_disabled-border-color: '',
+    $_disabled-background: '',
+    $_disabled-color: '',
+    $_placeholder-color: ''
 ) {
     background: $_background;
     border-color: $_border-color;
@@ -323,11 +337,11 @@
     }
 
     input[type="checkbox"] {
-        @include lib-form-element-choice($_type: input-checkbox);
+        @include lib-form-element-choice($_type: checkbox);
     }
 
     input[type="radio"] {
-        @include lib-form-element-choice($_type: input-radio);
+        @include lib-form-element-choice($_type: radio);
     }
 
     input,
@@ -498,7 +512,7 @@
     $_border-state,
     $_border-default
 ) {
-    @if $_border-state != $_border-defaul{
+    @if $_border-state != $_border-default{
         border: $_border-state;
     }
 }
