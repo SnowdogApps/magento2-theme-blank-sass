@@ -20,7 +20,7 @@
 
     .additional,
     .field.message {
-        @include lib-css(margin-top, $form-field__vertical-indent);
+        margin-top: $form-field__vertical-indent;
     }
 
     .action {

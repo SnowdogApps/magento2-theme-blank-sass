@@ -15,7 +15,7 @@
         margin: 0 0 -1px;
 
         strong {
-            @include lib-css(background, $tab-control__active__background-color);
+            background: $tab-control__active__background-color;
             border: $border-width__base solid $border-color__base;
             display: block;
             font-weight: $tab-control__font-weight;
@@ -23,16 +23,16 @@
         }
 
         a {
-            @include lib-css(background, $tab-control__background-color);
-            @include lib-css(color, $tab-control__color);
+            background: $tab-control__background-color;
+            color: $tab-control__color;
             border: $border-width__base solid $border-color__base;
             display: block;
             font-weight: $tab-control__font-weight;
             padding: 0 20px;
 
             &:hover {
-                @include lib-css(background, $tab-control__hover__background-color);
-                @include lib-css(text-decoration, $tab-control__hover__text-decoration);
+                background: $tab-control__hover__background-color;
+                text-decoration: $tab-control__hover__text-decoration;
             }
         }
     }
@@ -47,7 +47,7 @@
         border-bottom: $border-width__base solid $border-color__base;
         padding: 0 0 $indent__s;
 
-        > strong {
+        & > strong {
             font-size: 24px;
             font-weight: $font-weight__light;
         }
@@ -60,7 +60,7 @@
     .table-wrapper {
         margin: 0;
 
-        + .actions-toolbar {
+        & + .actions-toolbar {
             display: none;
         }
 
@@ -70,7 +70,7 @@
     }
 
     .table-order-items {
-        > thead > tr > th {
+        & > thead > tr > th {
             border-bottom: 1px solid $border-color__base;
         }
 
@@ -102,12 +102,12 @@
                 }
             }
 
-            > .item-parent {
+            & > .item-parent {
                 td {
                     padding-bottom: 5px;
                 }
 
-                + tr td {
+                & + tr td {
                     padding-top: 5px;
                 }
             }
@@ -189,7 +189,7 @@
                 $_icon-font-position: after,
                 $_icon-font-display: inline-block
             );
-            @include lib-css(color, $primary__color);
+            color: $primary__color;
 
             &.expanded {
                 @include lib-icon-font-symbol(
@@ -254,7 +254,7 @@
                 .content {
                     margin: 0;
 
-                    > strong {
+                    & > strong {
                         font-weight: $font-weight__regular;
 
                         &:after {
@@ -271,7 +271,7 @@
             margin: 40px 0 0;
         }
 
-        + .actions-toolbar {
+        & + .actions-toolbar {
             display: none;
         }
     }
@@ -439,7 +439,7 @@
         }
 
         .action {
-            @include lib-css(margin-top, $indent__s);
+            margin-top: $indent__s;
         }
 
         .items-qty {

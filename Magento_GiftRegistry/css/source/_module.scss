@@ -35,7 +35,7 @@
 .giftregisty-dropdown {
     @extend .abs-dropdown-simple;
     .action.toggle {
-        @include lib-css(color, $link__color);
+        color: $link__color;
     }
 }
 
@@ -45,7 +45,7 @@
     }
 
     .product-image {
-        @include lib-css(margin-right, $indent__s);
+        margin-right: $indent__s;
         float: left;
     }
 }
@@ -83,7 +83,7 @@
 }
 
 .form-giftregistry-search {
-    margin-bottom: $indent__l*2;
+    margin-bottom: $indent__l * 2;
 
     .legend {
         @extend .abs-account-title;
@@ -303,7 +303,7 @@
             width: 30%;
         }
 
-        .account .data.table& {
+        .account .data.table & {
             @include lib-table-bordered(
             $_table_type: horizontal
             );
@@ -312,9 +312,9 @@
                 border-bottom: 0;
             }
 
-            > tbody > tr:nth-child(even) {
-                > td,
-                > th {
+            & > tbody > tr:nth-child(even) {
+                & > td,
+                & > th {
                     background: none;
                 }
             }

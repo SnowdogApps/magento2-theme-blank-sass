@@ -20,6 +20,12 @@ $form-field-label-asterisk__margin: 0 0 0 $indent__xs;
 
 $form-element-input__height: 32px;
 $form-element-input__border-color: $color-gray76;
+$form-element-input-placeholder__color: $color-gray76;
+$form-validation-note__color-error: $error__color;
+$form-element-validation__border-error: lighten($form-validation-note__color-error, 20%);
+
+
+
 
 @mixin lib-form-element-input($_type) {
     $_background                : $color-white;

@@ -7,6 +7,13 @@
 //  Tooltips
 //  _____________________________________________
 
+// Variables
+//
+$tooltip__z-index: 100;
+$tooltip__border-width: 1px;
+$tooltip__border-color: $color-gray-light2;
+$tooltip__background: $color-white;
+
 @mixin lib-tooltip(
     $_tooltip-position        : top,
     $_tooltip-selector-toggle : ".tooltip-toggle",
@@ -55,7 +62,7 @@
 
         @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
 
-        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1px;
+        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1;
         $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1px;
 
         &:after,

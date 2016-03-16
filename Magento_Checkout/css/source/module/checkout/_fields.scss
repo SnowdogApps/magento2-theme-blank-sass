@@ -26,7 +26,7 @@ $checkout-field-validation__border-color: $form-element-validation__border-error
             input,
             select,
             textarea {
-                @include lib-css(border-color, $checkout-field-validation__border-color);
+                border-color: $checkout-field-validation__border-color;
             }
         }
     }

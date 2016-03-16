@@ -27,7 +27,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 }
 .authentication-wrapper {
     float: right;
-    margin-top: -1.5*$indent__xl;
+    margin-top: -1.5 * $indent__xl;
     max-width: 50%;
     position: relative;
     z-index: 1;
@@ -43,7 +43,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
 .block-authentication {
     .block-title {
-        font-size: $h3__font-size;
+        font-size: headings($heading-h3, font-size);
         border-bottom: 0;
         margin-bottom: $indent__m;
 
@@ -61,7 +61,7 @@ $block-auth__border: 1px solid $color-gray-light3;
     .actions-toolbar {
         margin-bottom: $indent__xs;
 
-        > .secondary {
+        & > .secondary {
             padding-top: $indent__m;
             text-align: left;
         }
@@ -94,11 +94,11 @@ $block-auth__border: 1px solid $color-gray-light3;
             padding-top: $indent__xl;
             position: relative;
 
-            &::before {
-                @include lib-css(height, $block-auth__or-label__size);
-                @include lib-css(line-height, $block-auth__or-label__size - 2px);
-                @include lib-css(margin, -($block-auth__or-label__size/2 + 1px) 0 0 -($block-auth__or-label__size / 2));
-                @include lib-css(min-width, $block-auth__or-label__size);
+            &:before {
+                height: $block-auth__or-label__size;
+                line-height: $block-auth__or-label__size - 2px;
+                margin: -($block-auth__or-label__size / 2 + 1px) 0 0 -($block-auth__or-label__size / 2);
+                min-width: $block-auth__or-label__size;
                 background: $color-white;
                 border-radius: 50%;
                 border: 1px solid $color-gray-light5;
@@ -124,21 +124,21 @@ $block-auth__border: 1px solid $color-gray-light3;
 
 @include min-screen($screen__m) {
     .authentication-dropdown {
-        @include lib-css(background-color, $block-auth__dropdown__background-color);
-        @include lib-css(border, $block-auth__border);
+        background-color: $block-auth__dropdown__background-color;
+        border: $block-auth__border;
         position: absolute;
         text-align: left;
         top: 100%;
         transform-origin: 0 0;
         transform: scale(1,0);
-        transition: transform linear .1s, visibility 0s linear .1s;
+        transition: transform linear 0.1s, visibility 0s linear 0.1s;
         visibility: hidden;
         width: 100%;
 
         &._show {
-            @include lib-css(z-index, $dropdown-list__z-index);
-            transform: scale(1,1);
-            transition: transform linear .1s, visibility 0s linear 0s;
+            z-index: $dropdown-list__z-index;
+            transform: scale(1, 1);
+            transition: transform linear 0.1s, visibility 0s linear 0s;
             visibility: visible;
         }
     }
@@ -150,13 +150,13 @@ $block-auth__border: 1px solid $color-gray-light3;
 
     .block-authentication {
         .block-title {
-            font-size: $h2__font-size;
+            font-size: headings($heading-h2, font-size);
             border-bottom: 0;
             margin-bottom: $indent__m;
         }
 
         .actions-toolbar {
-            > .primary {
+            & > .primary {
                 display: inline;
                 float: right;
                 margin-right: 0;
@@ -165,10 +165,10 @@ $block-auth__border: 1px solid $color-gray-light3;
                 }
             }
 
-            > .secondary {
+            & > .secondary {
                 float: left;
-                margin-right: 2rem;
-                padding-top: 1rem;
+                margin-right: 32px;
+                padding-top: 16px;
             }
         }
     }

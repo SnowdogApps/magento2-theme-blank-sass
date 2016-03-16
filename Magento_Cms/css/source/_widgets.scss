@@ -14,7 +14,7 @@ $widgets-indent__bottom: $indent__base;
 .block-static-block,
 .block-cms-link {
     &.widget {
-        @include lib-css(margin-bottom, $widgets-indent__bottom);
+        margin-bottom: $widgets-indent__bottom;
         .links & {
             margin-bottom: 0;
         }

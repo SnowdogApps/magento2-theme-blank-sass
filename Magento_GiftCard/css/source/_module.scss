@@ -27,7 +27,7 @@
             }
 
             .price-container.price-final_price {
-                > span {
+                & > span {
                     display: block;
                     margin-bottom: $indent__xs;
 
@@ -82,11 +82,11 @@
     }
 
     .fieldset.giftcard {
-        >.legend {
+        & > .legend {
             @extend .abs-visually-hidden;
         }
 
-        >.legend + br {
+        & > .legend + br {
             @extend .abs-no-display;
         }
     }

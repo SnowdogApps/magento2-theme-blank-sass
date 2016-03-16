@@ -13,7 +13,7 @@
     &.popup {
         .action {
             &.close {
-                @include lib-css(top, $popup-button-close__position-top);
+                top: $popup-button-close__position-top;
             }
         }
     }

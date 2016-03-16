@@ -219,6 +219,8 @@ $rating-icon__active__color: $active__color;
 $dropdown-split-actions__padding: 0 $indent__xs;
 $dropdown-split-toggle__actions__padding: false;
 $dropdown-list-item__hover: $color-gray91;
+$dropdown-list__z-index: 100;
+
 
 //  Actions-toolbar
 $actions-toolbar-actions__position: left;
@@ -263,6 +265,7 @@ $checkout-tooltip-content__font-size: $font-size__base;
 $checkout-tooltip-content__width: 270px;
 $checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%);
 $checkout-tooltip-icon-arrow__left: -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width);
+$checkout-billing-address-details__line-height: 27px;
 
 
 // Checkout Payment Option icon
@@ -281,6 +284,7 @@ $checkout-step-title__padding: $indent__s;
 $checkout-step-title__font-size: 26px;
 $checkout-step-title__font-weight: $font-weight__light;
 $checkout-sidebar__columns: 8;
+$checkout-shipping-address__max-width: 500px;
 
 //  Typography
 //  ---------------------------------------------
@@ -317,3 +321,6 @@ $cart-price-color: $primary__color;
 $price-color: $color-gray34;
 $price-size: 22px;
 $price-size-desktop: 36px;
+
+$collapsible-nav-background: $sidebar__background-color;
+$collapsible-nav-item-hover: $color-gray91;

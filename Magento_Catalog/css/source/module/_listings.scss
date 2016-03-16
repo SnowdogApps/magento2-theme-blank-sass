@@ -67,7 +67,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             display: none;
 
             .actions-secondary {
-                > .action {
+                & > .action {
                     @extend .abs-actions-addto;
                     &:before {
                         margin: 0;
@@ -133,9 +133,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         }
 
         .tocompare {
-            @include lib-icon-font-symbol(
-            $icon-compare-full
-            );
+            @include lib-icon-font-symbol($icon-compare-full);
         }
 
         .tocart {

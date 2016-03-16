@@ -32,6 +32,8 @@ $popup-button-close__position-top: $indent__s;
 $popup-button-close__position-right: $indent__s;
 $popup-button-close__position-bottom: false;
 $popup-button-close__position-left: false;
+$popup__height: auto;
+$popup__padding: 22px;
 
 //
 // Mixins
@@ -90,6 +92,7 @@ $popup-button-close__position-left: false;
     $_popup-actions-toolbar                                   : false,
     $_popup-actions-toolbar-actions-position                  : $actions-toolbar-actions__position,
     $_popup-actions-toolbar-actions-reverse                   : $actions-toolbar-actions__reverse,
+    $_popup-actions-toolbar-actions-margin                    : $actions-toolbar-actions__margin,
     $_popup-actions-toolbar-margin                            : $actions-toolbar__margin,
     $_popup-actions-toolbar-padding                           : $actions-toolbar__padding,
     $_popup-actions-toolbar-primary-actions-margin            : $actions-toolbar-actions-primary__margin,
@@ -128,7 +131,7 @@ $popup-button-close__position-left: false;
             );
         }
 
-        padding-right: $_popup-icon-font-siz;
+        padding-right: $_popup-icon-font-size;
     }
 
     .popup-content {

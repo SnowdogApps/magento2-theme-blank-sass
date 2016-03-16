@@ -258,13 +258,13 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
         }
 
         .content {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
+            padding-left: 24px;
+            padding-right: 24px;
         }
     }
 
     .gift-message-summary {
-        padding-right: 7rem;
+        padding-right: 112px;
     }
 
     .cart.table-wrapper {
@@ -352,7 +352,7 @@ $gift-item-block-title-icon__margin: 0 0 0 $indent__s;
             &:nth-child(3) {
                 &:before {
                     border-left: 1px solid $gift-item-block__border-color;
-                    bottom: 5rem;
+                    bottom: 50px;
                     content: "";
                     display: block;
                     left: 50%;

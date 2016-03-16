@@ -5,7 +5,7 @@
 
 .fotorama-video-container {
     &:after {
-        background: url(../Magento_ProductVideo/img/gallery-sprite.png) bottom right;
+        background: url('../Magento_ProductVideo/img/gallery-sprite.png') bottom right;
         bottom: 0;
         content: '';
         height: 100px;
@@ -35,7 +35,7 @@
 }
 
 .video-thumb-icon:after {
-    background: url(../Magento_ProductVideo/img/gallery-sprite.png) bottom left;
+    background: url('../Magento_ProductVideo/img/gallery-sprite.png') bottom left;
     bottom: 0;
     content: '';
     height: 40px;

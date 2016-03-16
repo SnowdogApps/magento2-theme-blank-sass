@@ -68,6 +68,22 @@
                 $map-type: $messages-default;
             }
         }
+        @else if $msg-type == global-note {
+            @if variable-exists(messages-global-note) {
+                $map-type: $messages-global-note;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == global-caution {
+            @if variable-exists(messages-global-caution) {
+                $map-type: $messages-global-caution;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
 
         @include _lib-message();
         @include _lib-message-style(

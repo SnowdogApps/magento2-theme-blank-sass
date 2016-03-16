@@ -35,11 +35,11 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 
 .checkout-container {
     @extend .abs-add-clearfix;
-    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    margin: 0 0 $checkout-wrapper__margin;
 }
 
 .opc-wrapper {
-    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    margin: 0 0 $checkout-wrapper__margin;
 
     .opc {
         @extend .abs-reset-list;
@@ -47,7 +47,7 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 
     .step-title {
         @extend .abs-checkout-title;
-        @include lib-css(border-bottom, $checkout-step-title__border);
+        border-bottom: $checkout-step-title__border;
     }
 
     .step-content {
@@ -73,13 +73,13 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 @include max-screen($screen__s) {
     .opc-wrapper {
         .step-title {
-            @include lib-css(font-size, $checkout-step-title-mobile__font-size);
+            font-size: $checkout-step-title-mobile__font-size;
             border-bottom: 0;
             padding-bottom: 0;
         }
 
         .step-content {
-            @include lib-css(margin, 0 0 $checkout-step-content-mobile__margin-s);
+            margin: 0 0 $checkout-step-content-mobile__margin-s;
         }
     }
 }
