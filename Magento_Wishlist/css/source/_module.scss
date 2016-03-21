@@ -87,7 +87,7 @@
 
 .link.wishlist {
     .counter {
-        @include lib-css(color, $text__color__muted);
+        color: $text__color__muted;
         white-space: nowrap;
 
         &:before {
@@ -143,7 +143,7 @@
             }
 
             &-actions {
-                > * {
+                & > * {
                     margin-right: 15px;
 
                     &:last-child {
@@ -364,10 +364,10 @@
         .product-item-inner {
             $_shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3);
 
-            @include lib-css(background, $color-white);
-            @include lib-css(border, $border-width__base solid $color-gray-light2);
+            background: $color-white;
+            border: $border-width__base solid $color-gray-light2;
             border-top: none;
-            @include lib-css(box-shadow, $_shadow);
+            box-shadow: $_shadow;
             display: none;
             left: 0;
             margin: 9px 0 0 -1px;

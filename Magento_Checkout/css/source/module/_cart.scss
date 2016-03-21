@@ -37,7 +37,7 @@ $cart-item-cell-padding-top: 20px;
 //  Summary block
 .cart-summary {
     @extend .abs-add-box-sizing;
-    @include lib-css(background, $sidebar__background-color);
+    background: $sidebar__background-color;
     margin-bottom: $indent__m;
     padding: 1px 0 $indent__m;
 
@@ -211,8 +211,8 @@ $cart-item-cell-padding-top: 20px;
                 }
             }
 
-            > .price {
-                @include lib-css(color, $primary__color__lighter);
+            & > .price {
+                color: $primary__color__lighter;
                 font-size: 18px;
                 font-weight: $font-weight__bold;
             }
@@ -242,8 +242,8 @@ $cart-item-cell-padding-top: 20px;
             padding-bottom: 15px;
             position: relative;
 
-            > .action-edit,
-            > .action-delete {
+            & > .action-edit,
+            & > .action-delete {
                 position: absolute;
                 right: 16px;
                 top: 0;
@@ -352,7 +352,7 @@ $cart-item-cell-padding-top: 20px;
 
 .cart-tax-info,
 .cart .cart-tax-info {
-    + .cart-tax-total {
+    & + .cart-tax-total {
         display: block;
     }
 }
@@ -482,7 +482,7 @@ $cart-item-cell-padding-top: 20px;
 //  Cross sell
 .block {
     &.crosssell {
-        @include lib-css(padding, 0 $mobile-cart-padding);
+        padding: 0 $mobile-cart-padding;
         margin-top: 70px;
 
         .product-item-info {

@@ -58,7 +58,9 @@
 @include min-screen($screen__s) {
     .block.widget .products-grid .product-item,
     .page-layout-1column .block.widget .products-grid .product-item,
-    .page-layout-3columns .block.widget .products-grid .product-item { width: 100%/3 }
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100%/3
+    }
 }
 
 //
@@ -66,15 +68,23 @@
 //--------------------------------------
 
 @include min-screen($screen__m) {
-    .block.widget .products-grid .product-item{ width: 100%/3 }
-    .page-layout-1column .block.widget .products-grid .product-item { width: 100%/4 }
-    .page-layout-3columns .block.widget .products-grid .product-item { width: 100%/2 }
+    .block.widget .products-grid .product-item {
+        width: 100% / 3;
+    }
+    .page-layout-1column .block.widget .products-grid .product-item {
+        width: 100% / 4;
+    }
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100% / 2;
+    }
 }
 
 @include min-screen($screen__l) {
-    .block.widget .products-grid .product-item { width: 100%/5 }
+    .block.widget .products-grid .product-item {
+        width: 100% / 5;
+    }
     .page-layout-1column .block.widget .products-grid .product-item {
-        width: 100%/6;
+        width: 100% / 6;
         margin-left: calc("(100% - 5 * (100%/6)) / 4");
 
         &:nth-child(4n+1) {
@@ -86,8 +96,12 @@
         }
     }
 
-    .page-layout-3columns .block.widget .products-grid .product-item { width: 100%/4 }
-    .block.widget .products-grid .product-items { margin: 0; }
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 100%/4;
+    }
+    .block.widget .products-grid .product-items {
+        margin: 0;
+    }
     .block.widget .products-grid .product-item {
         width: 24.439%;
         margin-left: calc("(100% - 4 * 24.439%) / 3");

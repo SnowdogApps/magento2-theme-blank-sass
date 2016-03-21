@@ -51,10 +51,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             display: block;
             margin: $indent__xs 0;
             word-wrap: break-word;
-            -webkit-hyphens: auto;
-               -moz-hyphens: auto;
-                -ms-hyphens: auto;
-                    hyphens: auto;
+            hyphens: auto;
         }
 
         &-info {
@@ -70,7 +67,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             display: none;
 
             .actions-secondary {
-                > .action {
+                & > .action {
                     @extend .abs-actions-addto;
                     &:before {
                         margin: 0;
@@ -107,7 +104,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             }
 
             .price-label {
-                @include lib-css(color, $text__color__muted);
+                color: $text__color__muted;
                 font-size: $font-size__s;
             }
         }
@@ -136,9 +133,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         }
 
         .tocompare {
-            @include lib-icon-font-symbol(
-            $icon-compare-full
-            );
+            @include lib-icon-font-symbol($icon-compare-full);
         }
 
         .tocart {
@@ -251,8 +246,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         .products-grid & {
             &:hover,
             &.active {
-                @include lib-css(background, $product-item__hover__background-color);
-                @include lib-css(box-shadow, $product-item__hover__box-shadow);
+                background: $product-item__hover__background-color;
+                box-shadow: $product-item__hover__box-shadow;
                 border: 1px solid $color-gray-light2;
                 margin: -10px;
                 padding: 9px;
@@ -268,8 +263,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
     .product-item-inner {
         .products-grid & {
-            @include lib-css(background, $product-item__hover__background-color);
-            @include lib-css(box-shadow, $product-item__hover__box-shadow);
+            background: $product-item__hover__background-color;
+            box-shadow: $product-item__hover__box-shadow;
             border: 1px solid $color-gray-light2;
             border-top: none;
             left: 0;
@@ -311,7 +306,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         .products-grid {
             .product-item-inner {
                 &:before {
-                    @include lib-css(background, $product-item__hover__background-color);
+                    background: $product-item__hover__background-color;
                     content: '';
                     height: 3px;
                     left: 0;

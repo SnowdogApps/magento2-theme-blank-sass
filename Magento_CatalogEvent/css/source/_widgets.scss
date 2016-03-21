@@ -18,7 +18,7 @@
     .block-content {
         position: relative;
 
-        >  .action {
+        & >  .action {
             cursor: pointer;
             margin-top: -6px;
             position: absolute;
@@ -73,7 +73,7 @@
             white-space: nowrap;
 
             .item {
-                @include lib-css(background, $catalog-event-background-color);
+                background: $catalog-event-background-color;
                 display: inline-block;
                 text-align: center;
                 white-space: normal;

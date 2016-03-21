@@ -53,18 +53,18 @@
 }
 
 @mixin lib-table-typography(
-     $_table-td-font-size  : $table-td__font-size,
+     $_table-td-font-size  : false,
      $_table-td-color      : $table-td__color,
-     $_table-td-font-family: $table-td__font-family,
-     $_table-td-font-weight: $table-td__font-weight,
-     $_table-td-line-height: $table-td__line-height,
-     $_table-td-font-style : $table-td__font-style,
-     $_table-th-font-size  : $table-th__font-size,
-     $_table-th-color      : $table-th__color,
-     $_table-th-font-family: $table-th__font-family,
-     $_table-th-font-weight: $table-th__font-weight,
-     $_table-th-line-height: $table-th__line-height,
-     $_table-th-font-style : $table-th__font-style
+     $_table-td-font-family: false,
+     $_table-td-font-weight: false,
+     $_table-td-line-height: false,
+     $_table-td-font-style : false,
+     $_table-th-font-size  : false,
+     $_table-th-color      : $text__color__intense,
+     $_table-th-font-family: false,
+     $_table-th-font-weight: $font-weight__bold,
+     $_table-th-line-height: false,
+     $_table-th-font-style : false
 ) {
     & > thead,
     & > tbody,
@@ -97,10 +97,10 @@
 
 @mixin lib-table-background-color(
     $_table-background-color        : $table__background-color,
-    $_table-head-background-color   : $table-head__background-color,
-    $_table-foot-background-color   : $table-foot__background-color,
-    $_table-td-background-color     : $table-td__background-color,
-    $_table-body-th-background-color: $table-body-th__background-color
+    $_table-head-background-color   : $table__background-color,
+    $_table-foot-background-color   : $table__background-color,
+    $_table-td-background-color     : $table__background-color,
+    $_table-body-th-background-color: $table__background-color
 ) {
     background: $_table-background-color;
 
@@ -260,8 +260,8 @@
 }
 
 @mixin lib-table-striped(
-    $_stripped-background-color: $table-cell-stripped__background-color,
-    $_stripped-color           : $table-cell-stripped__color,
+    $_stripped-background-color: lighten($table-cell__hover__background-color, 15%),
+    $_stripped-color           : $table-td__color,
     $_stripped-direction       : horizontal,
     $_stripped-highlight       : odd
 ) {
@@ -316,7 +316,7 @@
 }
 
 @mixin lib-table-hover(
-    $_table_cell-background-color-hover    : $table-cell__hover__background-color,
+    $_table_cell-background-color-hover    : $panel__background-color,
     $_table_cell-odd-background-color-hover: $_table_cell-background-color-hover
 ) {
     & > tbody > tr:nth-child(even):hover {
@@ -339,16 +339,14 @@
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
 }
 
 @mixin lib-table-responsive(
-    $_table-background-color-responsive   : $table-responsive__background-color,
-    $_table-th-background-color-responsive: $table-responsive-th__background-color,
+    $_table-background-color-responsive   : $table__background-color,
+    $_table-th-background-color-responsive: false,
     $_reset-table-striped                 : false,
     $_reset-table-hover                   : false,
-    $_table-responsive-cell-padding       : $table-responsive-cell__padding
+    $_table-responsive-cell-padding       : $indent__xs 0
 ) {
     @if $_reset-table-striped == true {
         @if $_reset-table-hover == true {
@@ -408,16 +406,16 @@
 }
 
 @mixin lib-table-caption(
-    $_table-caption-hide         : $table-caption__hide,
-    $_table-caption-font-size    : $table-caption__font-size,
-    $_table-caption-color        : $table-caption__color,
-    $_table-caption-font-family  : $table-caption__font-family,
-    $_table-caption-font-weight  : $table-caption__font-weight,
-    $_table-caption-font-style   : $table-caption__font-style,
-    $_table-caption-line-height  : $table-caption__line-height,
-    $_table-caption-alignment    : $table-caption__alignment,
-    $_table-caption-margin-top   : $table-caption__margin-top,
-    $_table-caption-margin-bottom: $table-caption__margin-bottom
+    $_table-caption-hide         : true,
+    $_table-caption-font-size    : false,
+    $_table-caption-color        : false,
+    $_table-caption-font-family  : false,
+    $_table-caption-font-weight  : false,
+    $_table-caption-font-style   : false,
+    $_table-caption-line-height  : false,
+    $_table-caption-alignment    : false,
+    $_table-caption-margin-top   : false,
+    $_table-caption-margin-bottom: false
 ) {
     @if $_table-caption-hide == true {
         & > caption {
@@ -471,12 +469,12 @@
                     display: inline-block;
 
                     @include lib-typography(
-                        $_font-size  : $table-th__font-size,
-                        $_color      : $table-th__color,
-                        $_font-family: $table-th__font-family,
-                        $_font-weight: $table-th__font-weight,
-                        $_line-height: $table-th__line-height,
-                        $_font-style : $table-th__font-style
+                        $_font-size  : false,
+                        $_color      : $text__color__intense,
+                        $_font-family: false,
+                        $_font-weight: $font-weight__bold,
+                        $_line-height: false,
+                        $_font-style : false
                     );
                 }
             }

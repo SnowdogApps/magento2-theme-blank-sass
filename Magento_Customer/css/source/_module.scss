@@ -21,7 +21,7 @@ $account-table-action-delete: $color-red12;
 
         .block-title {
             @extend .abs-login-block-title;
-            @include lib-font-size(18);
+            font-size: 18px;
         }
     }
 
@@ -36,7 +36,7 @@ $account-table-action-delete: $color-red12;
 
 .block-addresses-list {
     .items.addresses {
-        > .item {
+        & > .item {
             margin-bottom: $indent__base;
 
             &:last-child {
@@ -122,7 +122,7 @@ $account-table-action-delete: $color-red12;
     }
 
     .table-wrapper {
-        @include lib-css(margin-bottom, $indent__base);
+        margin-bottom: $indent__base;
         border-bottom: 1px solid $account-table-border-bottom-color;
 
         &:last-child {
@@ -153,7 +153,7 @@ $account-table-action-delete: $color-red12;
             .action {
                 @extend .abs-account-actions;
                 &.delete {
-                    @include lib-css(color, $account-table-action-delete);
+                    color: $account-table-action-delete;
                 }
             }
         }
@@ -207,7 +207,7 @@ $account-table-action-delete: $color-red12;
 }
 
 .control.captcha-image {
-    @include lib-css(margin-top, $indent__s);
+    margin-top: $indent__s;
     .captcha-img {
         vertical-align: middle;
     }
@@ -240,12 +240,12 @@ $account-table-action-delete: $color-red12;
             @extend .abs-blocks-2columns;
             &.login {
                 .actions-toolbar {
-                    > .primary {
+                    & > .primary {
                         margin-bottom: 0;
                         margin-right: $indent__l;
                     }
 
-                    > .secondary {
+                    & > .secondary {
                         float: left;
                     }
                 }
@@ -253,8 +253,8 @@ $account-table-action-delete: $color-red12;
         }
 
         .fieldset {
-            > .field {
-                > .control {
+            & > .field {
+                & > .control {
                     width: 55%;
                 }
             }
@@ -333,7 +333,7 @@ $account-table-action-delete: $color-red12;
         .items.addresses {
             @extend .abs-add-clearfix-desktop;
 
-            > .item {
+            & > .item {
                 @extend .abs-blocks-2columns;
                 margin-bottom: $indent__base;
 
@@ -415,15 +415,15 @@ $account-table-action-delete: $color-red12;
                 .block-title {
                     @extend .abs-add-clearfix-mobile-m;
 
-                    > .action {
+                    & > .action {
                         float: right;
-                        @include lib-css(margin-top, $indent__xs);
+                        margin-top: $indent__xs;
                     }
                 }
 
                 .block-content {
                     .box {
-                        @include lib-css(margin-bottom, $indent__base);
+                        margin-bottom: $indent__base;
                         &:last-child {
                             margin-bottom: 0;
                         }
@@ -436,7 +436,7 @@ $account-table-action-delete: $color-red12;
     .control.captcha-image {
         .captcha-img {
             display: block;
-            @include lib-css(margin-bottom, $indent__s);
+            margin-bottom: $indent__s;
         }
     }
 

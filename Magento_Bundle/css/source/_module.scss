@@ -36,7 +36,7 @@
     .product-options-wrapper {
         margin-bottom: $indent__l;
         .fieldset > .field {
-            border-top: 1px $color-gray-middle1 solid;
+            border-top: 1px solid $color-gray-middle1;
             padding-top: $form-field__vertical-indent;
 
             &:first-of-type {
@@ -80,17 +80,17 @@
     }
 
     .block-bundle-summary {
-        > .title {
+        & > .title {
             margin-bottom: 15px;
 
-            > strong {
+            & > strong {
                 @include lib-heading(h2);
             }
         }
 
-        > .title,
+        & > .title,
         .bundle-summary .subtitle {
-            border-bottom: 1px $color-gray-middle1 solid;
+            border-bottom: 1px solid $color-gray-middle1;
             margin-bottom: $indent__m;
             padding-bottom: 16px;
         }
@@ -111,7 +111,7 @@
                 display: none;
             }
 
-            > .subtitle {
+            & > .subtitle {
                 @include lib-heading(h2);
                 display: block;
             }
@@ -120,7 +120,7 @@
         .bundle.items {
             @extend .abs-reset-list;
 
-            > li {
+            & > li {
                 margin-bottom: $indent__base;
             }
         }
@@ -137,7 +137,7 @@
         .product-addto-links {
             text-align: center;
 
-            > .action {
+            & > .action {
                 @extend .abs-actions-addto;
                 margin-right: 5%;
 
@@ -158,7 +158,7 @@
     }
 
     p.required {
-        @include lib-css(color, $form-field-label-asterisk__color);
+        color: $form-field-label-asterisk__color;
     }
 
     .nested {
@@ -223,7 +223,7 @@
             .price-box {
                 .price-wrapper,
                 .price-wrapper > .price {
-                    @include lib-css(color, $price-color);
+                    color: $price-color;
                     font-size: $price-size-desktop;
                     font-weight: $font-weight__semibold;
                     line-height: $price-size-desktop;
@@ -232,7 +232,7 @@
 
             .price-container {
                 .weee {
-                    @include lib-css(color, $price-color);
+                    color: $price-color;
 
                     .price {
                         font-size: 12px;

@@ -26,10 +26,9 @@
     }
 }
 
-//  Rem line height
 @mixin lib-line-height($heightValue) {
     @if $heightValue != false && ispercentage($heightValue) == false {
-        line-height: $fontValue;
+        line-height: $font-size__base;
     }
     @else if ispercentage($heightValue) && $heightValue != false {
         line-height: $heightValue;
@@ -51,17 +50,14 @@
     background-color: transparent;
     border: 0;
     color: transparent;
-    font: '0/0' a;
+    font: '0px/0' a;
     text-shadow: none;
 }
 
 //  Optional hyphenation
 @mixin lib-hyphens($mode: auto) {
     word-wrap: break-word;
-    -webkit-hyphens: $mode;
-       -moz-hyphens: $mode;
-        -ms-hyphens: $mode; // IE10+
-            hyphens: $mode;
+    hyphens: $mode;
 }
 
 @mixin lib-typography(
@@ -123,15 +119,79 @@
     }
 }
 
+// check if specific heading map has adequant key, if not - use default
+@function headings($map-type, $key) {
+    @if map-has-key($map-type, $key) {
+        @return map-get($map-type, $key);
+    }
+    @else {
+        @return map-get($heading-default, $key);
+    }
+};
+
+// set adequant heading map
+
 @mixin lib-heading($_heading_level: h1) {
-    $_font-color: "#{$_heading_level}__font-color";
-    $_font-size: "#{$_heading_level}__font-size";
-    $_font-family: "#{$_heading_level}__font-family";
-    $_font-weight: "#{$_heading_level}__font-weight";
-    $_line-height: "#{$_heading_level}__line-height";
-    $_font-style: "#{$_heading_level}__font-style";
-    $_margin-top: "#{$_heading_level}__margin-top";
-    $_margin-bottom: "#{$_heading_level}__margin-bottom";
+
+    @if $_heading_level == h1 {
+        $map-type: $heading-h1;
+    }
+    @else {
+        $h-type: $_heading_level;
+
+        // find maps adequate to heading level
+        @if $h-type == h2 {
+            @if variable-exists(heading-h2) {
+                $map-type: $heading-h2;
+            }
+            @else {
+                $map-type: $heading-default;
+            }
+        }
+        @else if $h-type == h3 {
+            @if variable-exists(heading-h3) {
+                $map-type: $heading-h3;
+            }
+            @else {
+                $map-type: $heading-default;
+            }
+        }
+        @else if $h-type == h4 {
+            @if variable-exists(heading-h4) {
+                $map-type: $heading-h4;
+            }
+            @else {
+                $map-type: $heading-default;
+            }
+        }
+        @else if $h-type == h5 {
+            @if variable-exists(heading-h5) {
+                $map-type: $heading-h5;
+            }
+            @else {
+                $map-type: $heading-default;
+            }
+        }
+
+        @else if $h-type == h6 {
+            @if variable-exists(heading-h6) {
+                $map-type: $heading-h6;
+            }
+            @else {
+                $map-type: $heading-default;
+            }
+        }
+    }
+
+    $_font-color   : heading($map-type, color);
+    $_font-size    : heading($map-type, font-size);
+    $_font-family  : heading($map-type, font-family);
+    $_font-weight  : heading($map-type, font-weight);
+    $_line-height  : heading($map-type, line-height);
+    $_font-style   : heading($map-type, font-style);
+    $_margin-top   : heading($map-type, margin-top);
+    $_margin-bottom: heading($map-type, margin-bottom);
+
     @include lib-typography(
         $_font-size,
         $_font-color,
@@ -141,8 +201,8 @@
         $_font-style
     );
 
-    margin-top: $fontValue;
-    margin-bottom: $fontValue;
+    margin-top: $font-size__base / 2;
+    margin-bottom: $font-size__base / 2;
 }
 
 //
@@ -152,9 +212,7 @@
 @mixin lib-typography__base() {
     html {
         font-size: $font-size__base;
-        -webkit-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
-                font-size-adjust: 100%;
+        font-size-adjust: 100%;
     }
 
     body {
@@ -162,13 +220,8 @@
     }
 
     p {
-        & {
-            margin-top: $fontValue;
-        }
-
-        & {
-            margin-bottom: $fontValue;
-        }
+        margin-top: $font-size__base / 2;
+        margin-bottom: $font-size__base / 2;
     }
 
     //  Abbreviations and acronyms
@@ -213,11 +266,11 @@
     }
 
     sup {
-        top: -.5em;
+        top: -10px;
     }
 
     sub {
-        bottom: -.25em;
+        bottom: -5px;
     }
 
     dfn {
@@ -285,21 +338,21 @@
     ul,
     ol {
         & {
-            margin-top: $fontValue;
+            margin-top: $font-size__base / 2;
         }
 
         & {
-            margin-bottom: $fontValue;
+            margin-bottom: $font-size__base / 2;
         }
 
-        //.lib-typography($list__font-size__base: $list__color__base);
+        @include lib-typography($list__font-size__base, $list__color__base);
         & > li {
             & {
-                margin-top: $fontValue;
+                margin-top: $font-size__base / 2;
             }
 
             & {
-                margin-bottom: $fontValue;
+                margin-bottom: $font-size__base / 2;
             }
         }
 

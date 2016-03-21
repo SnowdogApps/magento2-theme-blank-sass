@@ -6,6 +6,7 @@
 $legend-border-bottom: 1px solid $color-gray-light6;
 $form-field__vertical-indent__desktop: 29px;
 $form-calendar-icon__color: $primary__color;
+$form-field__vertical-indent: $indent__base;
 
 //
 //    Common
@@ -152,7 +153,7 @@ select:focus ~ .tooltip .tooltip-content {
     .fieldset {
         margin: 0;
 
-        > .field:not(.choice) >,
+        > .field:not(.choice),
         .fields > .field {
             &:not(:last-child) {
                 margin: 0 0 $form-field__vertical-indent;

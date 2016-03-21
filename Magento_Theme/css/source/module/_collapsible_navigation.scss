@@ -7,13 +7,12 @@
 //  Variables
 //  ---------------------------------------------
 
-$collapsible-nav-background: $sidebar__background-color;
+
 $collapsible-nav-color: $color-gray34;
 $collapsible-nav-current-border: 3px solid transparent;
 $collapsible-nav-current-border-color: $color-orange-red1;
 $collapsible-nav-current-color: $color-black;
 $collapsible-nav-current-font-weight: $font-weight__semibold;
-$collapsible-nav-item-hover: $color-gray91;
 
 //
 
@@ -21,15 +20,13 @@ $collapsible-nav-item-hover: $color-gray91;
 //  Common
 //  ---------------------------------------------
 
-
-
 //
 //  Collapsible navigation
 //  ---------------------------------------------
 
 .block-collapsible-nav {
     .content {
-        @include lib-css(background, $collapsible-nav-background);
+        background: $collapsible-nav-background;
         padding: 15px 0;
     }
     .item {
@@ -39,9 +36,9 @@ $collapsible-nav-item-hover: $color-gray91;
         }
 
         a,
-        > strong {
+        & > strong {
             border-left: 3px solid transparent;
-            @include lib-css(color, $collapsible-nav-color);
+            color: $collapsible-nav-color;
             display: block;
             padding: 5px 18px 5px 15px;
         }
@@ -50,20 +47,20 @@ $collapsible-nav-item-hover: $color-gray91;
             text-decoration: none;
 
             &:hover {
-                @include lib-css(background, $collapsible-nav-item-hover);
+                background: $collapsible-nav-item-hover;
             }
         }
 
         &.current {
             a,
-            > strong {
-                @include lib-css(border-color, $collapsible-nav-current-border-color);
-                @include lib-css(color, $collapsible-nav-current-color);
-                @include lib-css(font-weight, $collapsible-nav-current-font-weight);
+            & > strong {
+                border-color: $collapsible-nav-current-border-color;
+                color: $collapsible-nav-current-color;
+                font-weight: $collapsible-nav-current-font-weight;
             }
 
             a {
-                @include lib-css(border-color, $collapsible-nav-current-border-color);
+                border-color: $collapsible-nav-current-border-color;
             }
         }
     }

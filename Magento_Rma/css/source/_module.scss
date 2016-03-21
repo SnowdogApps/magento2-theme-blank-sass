@@ -13,7 +13,7 @@
     .order-title {
         display: none;
 
-        + .toolbar {
+        & + .toolbar {
             display: none;
         }
     }
@@ -155,7 +155,7 @@
                 @extend .abs-add-box-sizing-desktop;
                 clear: none;
                 float: left;
-                width: 100%/4;
+                width: 100% / 4;
             }
         }
     }

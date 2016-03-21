@@ -15,7 +15,7 @@
 
 .table.grouped {
     .row-tier-price {
-        > td {
+        & > td {
             border-top: 0;
         }
     }
@@ -77,22 +77,22 @@
 
 @include max-screen($screen__s) {
     .table.grouped {
-        > thead {
-            > tr {
-                > th {
-                    @include lib-css(border-bottom, $table__border-width $table__border-style $table__border-color);
+        & > thead {
+            & > tr {
+                & > th {
+                    border-bottom: $table__border-width $table__border-style $table__border-color;
                     display: table-cell;
                 }
             }
         }
 
-        > tbody {
-            @include lib-css(border-bottom, $table__border-width $table__border-style $table__border-color);
+        & > tbody {
+            border-bottom: $table__border-width $table__border-style $table__border-color;
 
-            > tr {
-                > td {
+            & > tr {
+                & > td {
                     @extend .abs-col-no-prefix;
-                    @include lib-css(padding, $table-cell__padding-vertical $table-cell__padding-horizontal);
+                    padding: $table-cell__padding-vertical $table-cell__padding-horizontal;
                     border: 0;
                     display: table-cell;
                 }
@@ -101,9 +101,9 @@
 
         .table-wrapper & {
             &:not(.totals):not(.cart):not(.table-comparison) {
-                > tbody {
-                    > tr {
-                        > td {
+                & > tbody {
+                    & > tr {
+                        & > td {
                             &:last-child {
                                 border-bottom: 0;
                             }
@@ -117,7 +117,7 @@
 
 @include max-screen($screen__m) {
     .table-wrapper.grouped {
-        @include lib-css(margin-left, -$layout__width-xs-indent);
-        @include lib-css(margin-right, -$layout__width-xs-indent);
+        margin-left: -$layout__width-xs-indent;
+        margin-right: -$layout__width-xs-indent;
     }
 }

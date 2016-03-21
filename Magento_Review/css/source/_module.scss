@@ -10,14 +10,14 @@
 
 
 .data.switch .counter {
-    @include lib-css(color, $text__color__muted);
+    color: $text__color__muted;
 
     &:before {
-        content:"(";
+        content: "(";
     }
 
     &:after {
-        content:")";
+        content: ")";
     }
 }
 
@@ -269,7 +269,7 @@
     .reviews-actions {
         display:inline-block;
         vertical-align: middle;
-        font-size: floor(.8 * $font-size__base);
+        font-size: floor(0.8 * $font-size__base);
 
         a:not(:last-child) {
             margin-right: 30px;
@@ -305,12 +305,9 @@
     }
 }
 
-
 //
 //    Common
 //--------------------------------------
-
-
 
 //
 //    Account
@@ -318,7 +315,7 @@
 .block-reviews-dashboard {
     .items {
         .item {
-            @include lib-css(margin-bottom, $indent__base);
+            margin-bottom: $indent__base;
             &:last-child {
                 margin-bottom: 0;
             }
@@ -328,14 +325,14 @@
     .product-name {
         display: inline-block;
         &:not(:last-child) {
-            @include lib-css(margin-bottom, $indent__xs);
+            margin-bottom: $indent__xs;
         }
     }
 
     .rating-summary {
         .label {
-            @include lib-css(font-weight, $font-weight__semibold);
-            @include lib-css(margin-right, $indent__s);
+            font-weight: $font-weight__semibold;
+            margin-right: $indent__s;
         }
     }
 }
@@ -343,7 +340,7 @@
 .table-reviews,
 .block-reviews-dashboard {
     .product-name {
-        @include lib-css(font-weight, $font-weight__regular);
+        font-weight: $font-weight__regular;
     }
 }
 
@@ -411,9 +408,9 @@
         }
 
         .customer-review-rating {
-            @include lib-css(margin-bottom, $indent__base);
+            margin-bottom: $indent__base;
             .item {
-                @include lib-css(margin-bottom, $indent__s);
+                margin-bottom: $indent__s;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -425,17 +422,17 @@
 
         .review-title {
             @include lib-heading(h3);
-            @include lib-css(font-weight, $font-weight__semibold);
-            @include lib-css(margin-bottom, $indent__base);
+            font-weight: $font-weight__semibold;
+            margin-bottom: $indent__base;
         }
 
         .review-content {
             margin: 0;
-            @include lib-css(margin-bottom, $indent__base);
+            margin-bottom: $indent__base;
         }
 
         .review-date {
-            @include lib-css(color, $primary__color__light);
+            color: $primary__color__light;
         }
     }
 }
@@ -446,13 +443,13 @@
 @include max-screen($screen__s) {
     .customer-review {
         .product-name {
-            @include lib-css(margin-bottom, $indent__xs);
+            margin-bottom: $indent__xs;
         }
 
         .product-reviews-summary {
             .rating-summary {
                 display: block;
-                @include lib-css(margin-bottom, $indent__xs);
+                margin-bottom: $indent__xs;
             }
         }
     }

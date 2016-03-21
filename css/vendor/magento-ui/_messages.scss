@@ -11,7 +11,8 @@
 @function messages($map-type, $key) {
     @if map-has-key($map-type, $key) {
         @return map-get($map-type, $key);
-    } @else {
+    }
+    @else {
         @return map-get($messages-default, $key);
     }
 };
@@ -30,32 +31,56 @@
             $_message-link-color-active: map-get($map-type, link-color-active),
             $_message-border-color     : $message__border-color
         );
-    } @else {
+    }
+    @else {
         $msg-type: $_message-type;
 
         // find maps adequate to message type
         @if $msg-type == error {
             @if variable-exists(messages-error) {
                 $map-type: $messages-error;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == success {
+        }
+        @else if $msg-type == success {
             @if variable-exists(messages-success) {
                 $map-type: $messages-success;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == warning {
+        }
+        @else if $msg-type == warning {
             @if variable-exists(messages-warning) {
                 $map-type: $messages-warning;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == notice {
+        }
+        @else if $msg-type == notice {
             @if variable-exists(messages-notice) {
                 $map-type: $messages-notice;
-            } @else {
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == global-note {
+            @if variable-exists(messages-global-note) {
+                $map-type: $messages-global-note;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == global-caution {
+            @if variable-exists(messages-global-caution) {
+                $map-type: $messages-global-caution;
+            }
+            @else {
                 $map-type: $messages-default;
             }
         }
@@ -140,31 +165,39 @@
             $_message-icon-bottom    : map-get($map-type, icon-bottom),
             $_message-icon-right     : map-get($map-type, icon-right)
         );
-    } @else {
+    }
+    @else {
         $mgs-type: $_message-type;
 
         @if $msg-type == error {
             @if variable-exists(messages-error) {
                 $map-type: $messages-error;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == success {
+        }
+        @else if $msg-type == success {
             @if variable-exists(messages-success) {
                 $map-type: $messages-success;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == warning {
+        }
+        @else if $msg-type == warning {
             @if variable-exists(messages-warning) {
                 $map-type: $messages-warning;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == notice {
+        }
+        @else if $msg-type == notice {
             @if variable-exists(messages-notice) {
                 $map-type: $messages-notice;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
         }
@@ -198,22 +231,27 @@
         $_message-icon-bottom    : map-get($map-type, icon-bottom),
         $_message-icon-right     : map-get($map-type, icon-right)
         );
-    } @else {
-        $mgs-type: $_message-type;
+    }
+    @else {
+        $msg-type: $_message-type;
 
         @if $msg-type == error {
             @if variable-exists(messages-error) {
                 $map-type: $messages-error;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == success {
+        }
+        @else if $msg-type == success {
             @if variable-exists(messages-success) {
                 $map-type: $messages-success;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
-        } @else if $msg-type == warning {
+        }
+        @else if $msg-type == warning {
             @if variable-exists(messages-warning) {
                 $map-type: $messages-warning;
             } @else {
@@ -222,7 +260,8 @@
         } @else if $msg-type == notice {
             @if variable-exists(messages-notice) {
                 $map-type: $messages-notice;
-            } @else {
+            }
+            @else {
                 $map-type: $messages-default;
             }
         }

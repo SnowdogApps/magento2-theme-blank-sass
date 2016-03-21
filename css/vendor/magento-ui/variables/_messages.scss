@@ -5,7 +5,7 @@
 
 //
 //  Messages variables
-// 
+//
 
 $message-icon__font-size: 28px;
 $message-icon__lateral-width: 30px;
@@ -40,6 +40,7 @@ $messages-default: (
     link-color: $message-link__color,
     link-color-hover: $message-link__color-hover,
     link-color-active: $message-link__color-active,
+    border-color: none,
     icon: $message-icon,
     icon-color-lateral: $message-icon__color-lateral,
     icon-color-inner: $message-icon__color-inner,

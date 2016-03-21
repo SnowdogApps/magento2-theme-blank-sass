@@ -14,25 +14,25 @@
 $modal__background-color                        : $color-white;
 $modal__box-shadow                              : 0 0 12px 2px rgba(0, 0, 0, 0.35);
 
-$modal-popup__indent-vertical                   : 5rem;
-$modal-popup__padding                           : 3rem;
+$modal-popup__indent-vertical                   : 80px;
+$modal-popup__padding                           : 48px;
 $modal-popup__width                             : 75%;
 $modal-popup__z-index                           : $modal__z-index;
 
-$modal-slide__first__indent-left                : 14.8rem;
-$modal-slide__indent-left                       : 4.5rem;
-$modal-slide__padding                           : 2.6rem;
+$modal-slide__first__indent-left                : 236px;
+$modal-slide__indent-left                       : 72px;
+$modal-slide__padding                           : 41px;
 $modal-slide__z-index                           : $modal__z-index;
 
-$modal-slide-header__padding-vertical           : 2.1rem;
+$modal-slide-header__padding-vertical           : 33px;
 
-$modal-popup-confirm__width                     : 50rem;
+$modal-popup-confirm__width                     : 800px;
 
 $modal-popup-image-box__border-color            : $color-gray80;
-$modal-popup-image-box__max-width               : 78rem;
-
+$modal-popup-image-box__max-width               : 1248px;
+$modal-popup-image-box-preview-image__max-height: 864px;
 $modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview-image__max-height + (2 * $indent__base);
-$modal-popup-image-box-preview-image__max-height: 54rem;
+
 
 //
 //  Utilities

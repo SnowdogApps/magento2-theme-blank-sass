@@ -13,18 +13,25 @@
 //  Messages
 //  ---------------------------------------------
 
-$message-global-note__color: $text__color;
-$message-global-note__background: $color-yellow-light2;
-$message-global-note-link__color: $link__color;
-$message-global-note-link__color-hover: $link__hover__color;
-$message-global-note-link__color-active: $link__active__color;
-$message-global-note__border-color: $color-yellow-light3;
+$messages-global-note: (
+    color: $text__color,
+    background: $color-yellow-light2,
+    link-color: $link__color,
+    link-color-hover: $link__hover__color,
+    link-color-active: $link__active__color,
+    border-color: $color-yellow-light3
+);
 
-$message-global-caution__color: $color-white;
-$message-global-caution__background: $color-red9;
-$message-global-caution-link__color: $link__color;
-$message-global-caution-link__color-hover: $link__hover__color;
-$message-global-caution-link__color-active: $link__active__color;
+$messages-global-caution: (
+    color: $color-white,
+    background: $color-red9,
+    link-color: $link__color,
+    link-color-hover: $link__hover__color,
+    link-color-active: $link__active__color,
+    border-color: none
+);
+
+$message-global-note__border-color: $color-yellow-light3;
 $message-global-caution__border-color: none;
 
 $header__background-color: false;
@@ -73,13 +80,13 @@ $filter-quantity: $color-gray52;
 
 
 body {
-    @include lib-css(background-color, $page__background-color);
+    background-color: $page__background-color;
 }
 
 //  ToDo UI: move it directly to .page-wrapper (now it doesn't appear in mediaquery cuz of size of css)
 .page-wrapper {
     .ie9 & {
-        @include lib-css(background-color, $page__background-color);
+        background-color: $page__background-color;
         min-height: 0;
     }
 }
@@ -89,29 +96,29 @@ body {
 //  ---------------------------------------------
 
 .page-header {
-    @include lib-css(background-color, $header__background-color);
+    background-color: $header__background-color;
     border-bottom: 1px solid $border-color__base;
     margin-bottom: $indent__base;
 
     .panel.wrapper {
-        @include lib-css(background-color, $header-panel__background-color);
-        @include lib-css(color, $header-panel__text-color);
+        background-color: $header-panel__background-color;
+        color: $header-panel__text-color;
     }
 }
 
 .header.panel {
-    > .header.links {
+    & > .header.links {
         @include lib-list-inline();
         float: right;
         font-size: 0;
         margin-left: auto;
         margin-right: $indent__base;
 
-        > li {
+        & > li {
             font-size: $font-size__base;
             margin: 0 0 0 15px;
 
-            > a {
+            & > a {
                 @include lib-link(
                 $_link-color: $header-panel__text-color,
                 $_link-text-decoration: none,
@@ -155,7 +162,7 @@ body {
 }
 
 .page-main {
-    > .page-title-wrapper {
+    & > .page-title-wrapper {
         .page-title + .action {
             margin-top: $indent__l;
         }
@@ -168,8 +175,8 @@ body {
     }
 
     &:focus {
-        @include lib-css(background, $color-gray94);
-        @include lib-css(padding, $indent__s);
+        background: $color-gray94;
+        padding: $indent__s;
         box-sizing: border-box;
         left: 0;
         position: absolute;
@@ -232,8 +239,8 @@ body {
         }
 
         .links {
-            > li {
-                @include lib-css(background, $footer__background-color);
+            & > li {
+                background: $footer__background-color;
                 font-size: 16px;
                 border-top: 1px solid $footer-links-separator-border-color;
                 margin: 0 -$layout__width-xs-indent;
@@ -247,7 +254,7 @@ body {
             }
 
             strong {
-                @include lib-css(color, $footer-links-color-current);
+                color: $footer-links-color-current;
                 font-weight: normal;
             }
 
@@ -268,8 +275,8 @@ body {
 }
 
 .copyright {
-    @include lib-css(background-color, $copyright__background-color);
-    @include lib-css(color, $color-white);
+    background-color: $copyright__background-color;
+    color: $color-white;
     display: block;
     padding: $indent__s;
     text-align: center;
@@ -343,7 +350,7 @@ body {
 
     .page-footer .footer.content {
         .switcher-store {
-            @include lib-css(background, $footer__background-color);
+            background: $footer__background-color;
             font-size: 16px;
             margin: 0 -$layout__width-xs-indent;
 
@@ -406,12 +413,13 @@ body {
 
 .widget {
     clear: both;
-    // .block-title {
-    //     @extend .abs-block-widget-title;
-    // }
+
+    //to to: check
+    .block-title {
+        @extend .abs-block-widget-title;
+    }
 
 }
-
 
 //
 //  Desktop
@@ -425,7 +433,7 @@ body {
 
     body {
         .ie9 & {
-            @include lib-css(background-color, $copyright__background-color);
+            background-color: $copyright__background-color;
         }
     }
 
@@ -439,7 +447,7 @@ body {
 
         .panel.wrapper {
             border-bottom: 1px solid $secondary__color;
-            @include lib-css(background-color, $header-panel__background-color);
+            background:color, $header-panel__background-color;
         }
 
         .header.panel {
@@ -458,7 +466,7 @@ body {
     }
 
     .page-main {
-        > .page-title-wrapper {
+        & > .page-title-wrapper {
             .page-title {
                 display: inline-block;
             }
@@ -487,7 +495,10 @@ body {
         );
 
         li {
-            @extend .switcher li;
+            // to do: check - sass err:
+            // can't extend nested selectors
+            // commented for now
+            // @extend .switcher li;
             a {
                 @include lib-link(
                 $_link-color: $color-gray20,
@@ -506,8 +517,6 @@ body {
         }
         @warn 'TO DO: test it';
 
-
-
         .customer-name {
             cursor: pointer;
         }
@@ -518,7 +527,7 @@ body {
 
         .action.switch {
             @include lib-button-reset();
-            @include lib-css(color, $color-white);
+            color: $color-white;
         }
 
         .header.links {
@@ -545,29 +554,29 @@ body {
 
     .header {
         &.panel {
-            > .header.links {
+            & > .header.links {
                 @include lib-list-inline();
                 float: right;
                 margin-left: auto;
 
-                > li {
+                & > li {
                     margin: 0 0 0 15px;
 
                     &.welcome,
-                    > a {
+                    & > a {
                         display: inline-block;
                         line-height: 1.4;
                     }
 
                     &.welcome {
                         a {
-                            @include lib-css(color, $color-white);
-                            @include lib-css(padding-left, $indent__xs);
+                            color: $color-white;
+                            padding-left: $indent__xs;
                         }
                     }
                 }
 
-                > .authorization-link {
+                & > .authorization-link {
                     &:after {
                         content: attr(data-label);
                         display: inline-block;
@@ -575,7 +584,7 @@ body {
                     }
                 }
 
-                > .customer-welcome + .authorization-link {
+                & > .customer-welcome + .authorization-link {
                     display: none;
                 }
             }
@@ -602,11 +611,11 @@ body {
         margin: 0;
         min-height: 100%; // Stretch content area for sticky footer
         position: relative;
-        transition: margin .3s ease-out 0s;
+        transition: margin 0.3s ease-out 0s;
 
-        > .breadcrumbs,
-        > .top-container,
-        > .widget {
+        & > .breadcrumbs,
+        & > .top-container,
+        & > .widget {
             box-sizing: border-box;
             width: 100%;
         }
@@ -618,7 +627,7 @@ body {
     }
 
     .page-footer {
-        @include lib-css(background, $footer__background-color);
+        background: $footer__background-color;
         margin-top: auto;
         padding-bottom: $indent__m;
     }
@@ -681,6 +690,6 @@ body {
 
 .ui-tooltip {
     border: $tooltip__border-width solid $tooltip__border-color;
-    @include lib-css(background, $tooltip__background);
+    background: $tooltip__background;
     padding: 10px;
 }

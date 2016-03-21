@@ -1,4 +1,4 @@
-// /**
+    // /**
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
@@ -7,28 +7,35 @@
 //  Tooltips
 //  _____________________________________________
 
+// Variables
+//
+$tooltip__z-index: 100;
+$tooltip__border-width: 1px;
+$tooltip__border-color: $color-gray-light2;
+$tooltip__background: $color-white;
+
 @mixin lib-tooltip(
     $_tooltip-position        : top,
     $_tooltip-selector-toggle : ".tooltip-toggle",
     $_tooltip-selector-content: ".tooltip-content",
-    $_tooltip-background      : $tooltip__background,
-    $_tooltip-border-color    : $tooltip__border-color,
-    $_tooltip-border-width    : $tooltip__border-width,
-    $_tooltip-border-radius   : $tooltip__border-radius,
-    $_tooltip-color           : $tooltip__color,
-    $_tooltip-cursor          : $tooltip__cursor,
-    $_tooltip-font-size       : $tooltip__font-size,
-    $_tooltip-font-family     : $tooltip__font-family,
-    $_tooltip-font-weight     : $tooltip__font-weight,
-    $_tooltip-line-height     : $tooltip__line-height,
-    $_tooltip-font-style      : $tooltip__font-style,
-    $_tooltip-margin          : $tooltip__margin,
-    $_tooltip-padding         : $tooltip__padding,
-    $_tooltip-min-width       : $tooltip__min-width,
-    $_tooltip-max-width       : $tooltip__max-width,
-    $_tooltip-arrow-size      : $tooltip-arrow__size,
-    $_tooltip-arrow-offset    : $tooltip-arrow__offset,
-    $_tooltip-z-index         : $tooltip__z-index
+    $_tooltip-background      : $color-white,
+    $_tooltip-border-color    : $color-gray-light2,
+    $_tooltip-border-width    : 1px,
+    $_tooltip-border-radius   : false,
+    $_tooltip-color           : $primary__color,
+    $_tooltip-cursor          : help,
+    $_tooltip-font-size       : false,
+    $_tooltip-font-family     : false,
+    $_tooltip-font-weight     : false,
+    $_tooltip-line-height     : 1.4,
+    $_tooltip-font-style      : false,
+    $_tooltip-margin          : false,
+    $_tooltip-padding         : 12px 16px,
+    $_tooltip-min-width       : 210px,
+    $_tooltip-max-width       : 360px,
+    $_tooltip-arrow-size      : 5px,
+    $_tooltip-arrow-offset    : 10px,
+    $_tooltip-z-index         : 100
 ) {
     position: relative;
 
@@ -53,9 +60,9 @@
             $_font-style : $_tooltip-font-style
         );
 
-        @include _lib-tooltip-border($_tooltip-border-width: $_tooltip-border-color);
+        @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
 
-        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1px;
+        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1;
         $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1px;
 
         &:after,
