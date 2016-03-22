@@ -104,62 +104,62 @@ dfn {
   font-style: italic; }
 
 h1 {
-  color: heading((font-size: 30px, margin-top: 0), color);
-  font-family: heading((font-size: 30px, margin-top: 0), font-family);
-  font-style: heading((font-size: 30px, margin-top: 0), font-style);
-  font-weight: heading((font-size: 30px, margin-top: 0), font-weight);
-  line-height: heading((font-size: 30px, margin-top: 0), line-height);
-  font-size: heading((font-size: 30px, margin-top: 0), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 300;
+  line-height: heading__line-height__base;
+  font-size: 30px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
 h2 {
-  color: heading((font-size: 30px, margin-top: 25px), color);
-  font-family: heading((font-size: 30px, margin-top: 25px), font-family);
-  font-style: heading((font-size: 30px, margin-top: 25px), font-style);
-  font-weight: heading((font-size: 30px, margin-top: 25px), font-weight);
-  line-height: heading((font-size: 30px, margin-top: 25px), line-height);
-  font-size: heading((font-size: 30px, margin-top: 25px), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 300;
+  line-height: heading__line-height__base;
+  font-size: 30px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
 h3 {
-  color: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), color);
-  font-family: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-family);
-  font-style: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-style);
-  font-weight: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-weight);
-  line-height: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), line-height);
-  font-size: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 300;
+  line-height: heading__line-height__base;
+  font-size: 21px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
 h4 {
-  color: heading((font-size: 16px, font-weight: 700), color);
-  font-family: heading((font-size: 16px, font-weight: 700), font-family);
-  font-style: heading((font-size: 16px, font-weight: 700), font-style);
-  font-weight: heading((font-size: 16px, font-weight: 700), font-weight);
-  line-height: heading((font-size: 16px, font-weight: 700), line-height);
-  font-size: heading((font-size: 16px, font-weight: 700), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 700;
+  line-height: heading__line-height__base;
+  font-size: 16px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
 h5 {
-  color: heading((font-size: 14px, font-weight: 700), color);
-  font-family: heading((font-size: 14px, font-weight: 700), font-family);
-  font-style: heading((font-size: 14px, font-weight: 700), font-style);
-  font-weight: heading((font-size: 14px, font-weight: 700), font-weight);
-  line-height: heading((font-size: 14px, font-weight: 700), line-height);
-  font-size: heading((font-size: 14px, font-weight: 700), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 700;
+  line-height: heading__line-height__base;
+  font-size: 14px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
 h6 {
-  color: heading((font-size: 12px, font-weight: 700), color);
-  font-family: heading((font-size: 12px, font-weight: 700), font-family);
-  font-style: heading((font-size: 12px, font-weight: 700), font-style);
-  font-weight: heading((font-size: 12px, font-weight: 700), font-weight);
-  line-height: heading((font-size: 12px, font-weight: 700), line-height);
-  font-size: heading((font-size: 12px, font-weight: 700), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 700;
+  line-height: heading__line-height__base;
+  font-size: 12px;
   margin-top: 8px;
   margin-bottom: 8px; }
 
@@ -7388,12 +7388,12 @@ body._has-modal-custom .modal-custom-overlay {
   clear: both;
   margin-bottom: 40px; }
   .bundle-options-container .legend.title {
-    color: heading((font-size: 30px, margin-top: 0), color);
-    font-family: heading((font-size: 30px, margin-top: 0), font-family);
-    font-style: heading((font-size: 30px, margin-top: 0), font-style);
-    font-weight: heading((font-size: 30px, margin-top: 0), font-weight);
-    line-height: heading((font-size: 30px, margin-top: 0), line-height);
-    font-size: heading((font-size: 30px, margin-top: 0), font-size);
+    color: false;
+    font-family: false;
+    font-style: false;
+    font-weight: 300;
+    line-height: heading__line-height__base;
+    font-size: 30px;
     margin-top: 8px;
     margin-bottom: 8px;
     border: 0;
@@ -7420,12 +7420,12 @@ body._has-modal-custom .modal-custom-overlay {
   .bundle-options-container .block-bundle-summary > .title {
     margin-bottom: 15px; }
     .bundle-options-container .block-bundle-summary > .title > strong {
-      color: heading((font-size: 30px, margin-top: 25px), color);
-      font-family: heading((font-size: 30px, margin-top: 25px), font-family);
-      font-style: heading((font-size: 30px, margin-top: 25px), font-style);
-      font-weight: heading((font-size: 30px, margin-top: 25px), font-weight);
-      line-height: heading((font-size: 30px, margin-top: 25px), line-height);
-      font-size: heading((font-size: 30px, margin-top: 25px), font-size);
+      color: false;
+      font-family: false;
+      font-style: false;
+      font-weight: 300;
+      line-height: heading__line-height__base;
+      font-size: 30px;
       margin-top: 8px;
       margin-bottom: 8px; }
   .bundle-options-container .block-bundle-summary > .title,
@@ -7443,12 +7443,12 @@ body._has-modal-custom .modal-custom-overlay {
     .bundle-options-container .block-bundle-summary .bundle-summary.empty {
       display: none; }
     .bundle-options-container .block-bundle-summary .bundle-summary > .subtitle {
-      color: heading((font-size: 30px, margin-top: 25px), color);
-      font-family: heading((font-size: 30px, margin-top: 25px), font-family);
-      font-style: heading((font-size: 30px, margin-top: 25px), font-style);
-      font-weight: heading((font-size: 30px, margin-top: 25px), font-weight);
-      line-height: heading((font-size: 30px, margin-top: 25px), line-height);
-      font-size: heading((font-size: 30px, margin-top: 25px), font-size);
+      color: false;
+      font-family: false;
+      font-style: false;
+      font-weight: 300;
+      line-height: heading__line-height__base;
+      font-size: 30px;
       margin-top: 8px;
       margin-bottom: 8px;
       display: block; }
@@ -10465,12 +10465,12 @@ body.catalog-product-compare-index .action.print {
 .block .title {
   margin-bottom: 10px; }
   .block .title strong {
-    color: heading((font-size: 16px, font-weight: 700), color);
-    font-family: heading((font-size: 16px, font-weight: 700), font-family);
-    font-style: heading((font-size: 16px, font-weight: 700), font-style);
-    font-weight: heading((font-size: 16px, font-weight: 700), font-weight);
-    line-height: heading((font-size: 16px, font-weight: 700), line-height);
-    font-size: heading((font-size: 16px, font-weight: 700), font-size);
+    color: false;
+    font-family: false;
+    font-style: false;
+    font-weight: 700;
+    line-height: heading__line-height__base;
+    font-size: 16px;
     margin-top: 8px;
     margin-bottom: 8px; }
 
@@ -12105,12 +12105,12 @@ body.catalog-product-compare-index .action.print {
     margin: 0 0 25px;
     padding-right: 22px; }
     .map-popup .popup-header .title {
-      color: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), color);
-      font-family: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-family);
-      font-style: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-style);
-      font-weight: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-weight);
-      line-height: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), line-height);
-      font-size: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-size);
+      color: false;
+      font-family: false;
+      font-style: false;
+      font-weight: 300;
+      line-height: heading__line-height__base;
+      font-size: 21px;
       margin-top: 8px;
       margin-bottom: 8px; }
   .map-popup .popup-content {
@@ -12404,12 +12404,12 @@ body.catalog-product-compare-index .action.print {
     margin: 0 0 25px;
     padding-right: 22px; }
     .wishlist.window.popup .popup-header .title {
-      color: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), color);
-      font-family: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-family);
-      font-style: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-style);
-      font-weight: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-weight);
-      line-height: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), line-height);
-      font-size: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-size);
+      color: false;
+      font-family: false;
+      font-style: false;
+      font-weight: 300;
+      line-height: heading__line-height__base;
+      font-size: 21px;
       margin-top: 8px;
       margin-bottom: 8px; }
   .wishlist.window.popup .popup-content {
@@ -12993,12 +12993,12 @@ body.catalog-product-compare-index .action.print {
 .review-list {
   margin-bottom: 30px; }
   .review-list .block-title strong {
-    color: heading((font-size: 30px, margin-top: 25px), color);
-    font-family: heading((font-size: 30px, margin-top: 25px), font-family);
-    font-style: heading((font-size: 30px, margin-top: 25px), font-style);
-    font-weight: heading((font-size: 30px, margin-top: 25px), font-weight);
-    line-height: heading((font-size: 30px, margin-top: 25px), line-height);
-    font-size: heading((font-size: 30px, margin-top: 25px), font-size);
+    color: false;
+    font-family: false;
+    font-style: false;
+    font-weight: 300;
+    line-height: heading__line-height__base;
+    font-size: 30px;
     margin-top: 8px;
     margin-bottom: 8px; }
 
@@ -13027,12 +13027,12 @@ body.catalog-product-compare-index .action.print {
   display: inline; }
 
 .review-title {
-  color: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), color);
-  font-family: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-family);
-  font-style: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-style);
-  font-weight: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-weight);
-  line-height: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), line-height);
-  font-size: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-size);
+  color: false;
+  font-family: false;
+  font-style: false;
+  font-weight: 300;
+  line-height: heading__line-height__base;
+  font-size: 21px;
   margin-top: 8px;
   margin-bottom: 8px;
   margin: 0 0 20px; }
@@ -13136,12 +13136,12 @@ body.catalog-product-compare-index .action.print {
       .customer-review .review-details .customer-review-rating .item:last-child {
         margin-bottom: 0; }
   .customer-review .review-details .review-title {
-    color: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), color);
-    font-family: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-family);
-    font-style: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-style);
-    font-weight: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-weight);
-    line-height: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), line-height);
-    font-size: heading((font-size: 21px, margin-top: 15px, margin-bottom: 10px), font-size);
+    color: false;
+    font-family: false;
+    font-style: false;
+    font-weight: 300;
+    line-height: heading__line-height__base;
+    font-size: 21px;
     margin-top: 8px;
     margin-bottom: 8px;
     font-weight: 600;

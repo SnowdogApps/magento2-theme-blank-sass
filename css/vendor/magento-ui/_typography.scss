@@ -183,14 +183,14 @@
         }
     }
 
-    $_font-color   : heading($map-type, color);
-    $_font-size    : heading($map-type, font-size);
-    $_font-family  : heading($map-type, font-family);
-    $_font-weight  : heading($map-type, font-weight);
-    $_line-height  : heading($map-type, line-height);
-    $_font-style   : heading($map-type, font-style);
-    $_margin-top   : heading($map-type, margin-top);
-    $_margin-bottom: heading($map-type, margin-bottom);
+    $_font-color   : headings($map-type, color);
+    $_font-size    : headings($map-type, font-size);
+    $_font-family  : headings($map-type, font-family);
+    $_font-weight  : headings($map-type, font-weight);
+    $_line-height  : headings($map-type, line-height);
+    $_font-style   : headings($map-type, font-style);
+    $_margin-top   : headings($map-type, margin-top);
+    $_margin-bottom: headings($map-type, margin-bottom);
 
     @include lib-typography(
         $_font-size,
