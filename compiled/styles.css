@@ -341,12 +341,6 @@ table {
 button {
   background-image: none;
   background: #f2f2f2;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #cdcdcd;
   color: #333;
   cursor: pointer;
@@ -362,22 +356,10 @@ button {
   vertical-align: middle; }
   button:focus, button:active {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #333; }
   button:hover {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #555; }
   button.disabled, button[disabled],
@@ -641,12 +623,6 @@ select:not([disabled]):focus {
 .action-primary {
   background-image: none;
   background: #1979c3;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #1979c3;
   color: #fff;
   cursor: pointer;
@@ -662,22 +638,10 @@ select:not([disabled]):focus {
   border-radius: 3px; }
   .action-primary:focus, .action-primary:active {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action-primary:hover {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action-primary.disabled, .action-primary[disabled],
@@ -696,12 +660,6 @@ select:not([disabled]):focus {
 .abs-action-link-button, .block-event .slider-panel .slider .item .action.event {
   background-image: none;
   background: #f2f2f2;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #cdcdcd;
   color: #333;
   cursor: pointer;
@@ -720,22 +678,10 @@ select:not([disabled]):focus {
   border-radius: 3px; }
   .abs-action-link-button:focus, .block-event .slider-panel .slider .item .action.event:focus, .abs-action-link-button:active, .block-event .slider-panel .slider .item .action.event:active {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #333; }
   .abs-action-link-button:hover, .block-event .slider-panel .slider .item .action.event:hover {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #555; }
   .abs-action-link-button.disabled, .block-event .slider-panel .slider .item .disabled.action.event, .abs-action-link-button[disabled], .block-event .slider-panel .slider .item [disabled].action.event,
@@ -3960,12 +3906,6 @@ a.action.primary {
 .action.primary {
   background-image: none;
   background: #1979c3;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #1979c3;
   color: #fff;
   cursor: pointer;
@@ -3980,22 +3920,10 @@ a.action.primary {
   vertical-align: middle; }
   .action.primary:focus, .action.primary:active {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action.primary:hover {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action.primary.disabled, .action.primary[disabled],
@@ -4220,12 +4148,6 @@ a.action.primary {
 
 .pages a.page {
   background: false;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: false;
   color: #1979c3;
   display: inline-block;
@@ -4233,44 +4155,20 @@ a.action.primary {
   text-decoration: none; }
   .pages a.page:visited {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #1979c3; }
   .pages a.page:hover {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #006bb4;
     text-decoration: none; }
   .pages a.page:active {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #ff5501; }
 
 .pages strong.page {
   background: false;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: false;
   font-size: 12px;
   font-size: 12px;
@@ -4283,12 +4181,6 @@ a.action.primary {
 
 .pages .action {
   background: false;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #ccc;
   color: #7d7d7d;
   display: inline-block;
@@ -4296,33 +4188,15 @@ a.action.primary {
   text-decoration: none; }
   .pages .action:visited {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #7d7d7d; }
   .pages .action:hover {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #7d7d7d;
     text-decoration: none; }
   .pages .action:active {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #7d7d7d; }
   .pages .action.next {
@@ -4491,12 +4365,6 @@ a.action.primary {
     margin: 0; }
   .breadcrumbs a {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     color: #333;
     display: false;
@@ -4504,45 +4372,21 @@ a.action.primary {
     text-decoration: none; }
     .breadcrumbs a:visited {
       background: false;
-      background-color: false;
-      background-repeat: repeat-x;
-      background-image: linear-gradient(to right, false 0%, false 100%);
-      background-color: false;
-      background-image: linear-gradient(to bottom, false 0%, false 100%);
-      background-repeat: repeat-x;
       border: false;
       color: #333;
       text-decoration: none; }
     .breadcrumbs a:hover {
       background: false;
-      background-color: false;
-      background-repeat: repeat-x;
-      background-image: linear-gradient(to right, false 0%, false 100%);
-      background-color: false;
-      background-image: linear-gradient(to bottom, false 0%, false 100%);
-      background-repeat: repeat-x;
       border: false;
       color: #333;
       text-decoration: underline; }
     .breadcrumbs a:active {
       background: false;
-      background-color: false;
-      background-repeat: repeat-x;
-      background-image: linear-gradient(to right, false 0%, false 100%);
-      background-color: false;
-      background-image: linear-gradient(to bottom, false 0%, false 100%);
-      background-repeat: repeat-x;
       border: false;
       color: #333;
       text-decoration: none; }
   .breadcrumbs strong {
     background: false;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: false;
     display: false;
     font-weight: 400;
@@ -4705,12 +4549,6 @@ a.action.primary {
 .action-primary {
   background-image: none;
   background: #1979c3;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #1979c3;
   color: #fff;
   cursor: pointer;
@@ -4726,22 +4564,10 @@ a.action.primary {
   border-radius: 3px; }
   .action-primary:focus, .action-primary:active {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action-primary:hover {
     background: #006bb4;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #1979c3;
     color: #fff; }
   .action-primary.disabled, .action-primary[disabled],
@@ -4760,12 +4586,6 @@ a.action.primary {
 .abs-action-link-button, .block-event .slider-panel .slider .item .action.event {
   background-image: none;
   background: #f2f2f2;
-  background-color: false;
-  background-repeat: repeat-x;
-  background-image: linear-gradient(to right, false 0%, false 100%);
-  background-color: false;
-  background-image: linear-gradient(to bottom, false 0%, false 100%);
-  background-repeat: repeat-x;
   border: 1px solid #cdcdcd;
   color: #333;
   cursor: pointer;
@@ -4784,22 +4604,10 @@ a.action.primary {
   border-radius: 3px; }
   .abs-action-link-button:focus, .block-event .slider-panel .slider .item .action.event:focus, .abs-action-link-button:active, .block-event .slider-panel .slider .item .action.event:active {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #333; }
   .abs-action-link-button:hover, .block-event .slider-panel .slider .item .action.event:hover {
     background: #e2e2e2;
-    background-color: false;
-    background-repeat: repeat-x;
-    background-image: linear-gradient(to right, false 0%, false 100%);
-    background-color: false;
-    background-image: linear-gradient(to bottom, false 0%, false 100%);
-    background-repeat: repeat-x;
     border: 1px solid #cdcdcd;
     color: #555; }
   .abs-action-link-button.disabled, .block-event .slider-panel .slider .item .disabled.action.event, .abs-action-link-button[disabled], .block-event .slider-panel .slider .item [disabled].action.event,
@@ -14838,12 +14646,6 @@ body {
       .block-event .slider-panel .slider .item .action.event {
         background-image: none;
         background: #1979c3;
-        background-color: false;
-        background-repeat: repeat-x;
-        background-image: linear-gradient(to right, false 0%, false 100%);
-        background-color: false;
-        background-image: linear-gradient(to bottom, false 0%, false 100%);
-        background-repeat: repeat-x;
         border: 1px solid #1979c3;
         color: #fff;
         cursor: pointer;
@@ -14859,22 +14661,10 @@ body {
         margin-top: 15px; }
         .block-event .slider-panel .slider .item .action.event:focus, .block-event .slider-panel .slider .item .action.event:active {
           background: #006bb4;
-          background-color: false;
-          background-repeat: repeat-x;
-          background-image: linear-gradient(to right, false 0%, false 100%);
-          background-color: false;
-          background-image: linear-gradient(to bottom, false 0%, false 100%);
-          background-repeat: repeat-x;
           border: 1px solid #1979c3;
           color: #fff; }
         .block-event .slider-panel .slider .item .action.event:hover {
           background: #006bb4;
-          background-color: false;
-          background-repeat: repeat-x;
-          background-image: linear-gradient(to right, false 0%, false 100%);
-          background-color: false;
-          background-image: linear-gradient(to bottom, false 0%, false 100%);
-          background-repeat: repeat-x;
           border: 1px solid #1979c3;
           color: #fff; }
         .block-event .slider-panel .slider .item .action.event.disabled, .block-event .slider-panel .slider .item .action.event[disabled],

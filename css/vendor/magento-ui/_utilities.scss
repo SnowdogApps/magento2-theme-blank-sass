@@ -108,14 +108,14 @@
     $_background-gradient,
     $_background-gradient-color-position: true
 ) {
-    @if $_background-gradient-direction == horizontal && $_background-gradient == true {
+    @if $_background-gradient-direction == horizontal and $_background-gradient == true {
         @include lib-gradient__horizontal(
             $_start-color              : $_background-gradient-color-start,
             $_end-color                : $_background-gradient-color-end,
             $_background-color-position: $_background-gradient-color-position
         );
     }
-    @if $_background-gradient-direction == vertical && $_background-gradient == true {
+    @if $_background-gradient-direction == vertical and $_background-gradient == true {
         @include lib-gradient__vertical(
             $_start-color              : $_background-gradient-color-start,
             $_end-color                : $_background-gradient-color-end,
@@ -173,7 +173,7 @@ $urls-resolved: false;
 }
 
 @mixin lib-url($_path, $_module) {
-    @if $_module != false && $_module != '' {
+    @if $_module != false and $_module != '' {
         @if $urls-resolved == true {
             $url: "../#{$_module}/#{$_path}";
         }
