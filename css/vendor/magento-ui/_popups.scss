@@ -227,7 +227,7 @@ $popup__padding: 22px;
 
 //  Popup shadow
 @mixin _lib-popup-shadow($_popup-shadow) {
-    @if $_popup-shadow != '' && $_popup-shadow != none {
+    @if $_popup-shadow != '' and $_popup-shadow != none {
         box-shadow: $_popup-shadow;
     }
 }

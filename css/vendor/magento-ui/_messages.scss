@@ -144,7 +144,7 @@
     $_message-border-width: $message__border-width,
     $_message-border-style: $message__border-style
 ) {
-    @if $_message-border-width != 0 && $_message-border-width != false && $_message-border-style != false{
+    @if $_message-border-width != 0 and $_message-border-width != false and $_message-border-style != false{
         border: $_message-border-width $_message-border-style;
     }
 }
@@ -382,7 +382,7 @@
 }
 
 @mixin _lib-message-icon-lateral-border-radius($_message-icon-position) {
-    @if $message__border-radius != false && $message__border-width != false {
+    @if $message__border-radius != false and $message__border-width != false {
         @if $_message-icon-position == left {
             border-radius: ($message__border-radius - $message__border-width) 0 0 ($message__border-radius - $message__border-width);
         }

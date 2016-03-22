@@ -7,6 +7,27 @@
 //  Navigation
 //  _____________________________________________
 
+
+//
+//  Navigation
+//  ---------------------------------------------
+
+$navigation__background: $color-gray94;
+$navigation-level0-item__active__color: $primary__color;
+$submenu-item__active__color: $navigation-level0-item__active__color;
+$navigation-level0-item__color: $color-gray34;
+$navigation-level0-item__text-decoration: none;
+$navigation-desktop-level0-item__text-decoration: none;
+$navigation-desktop-level0-item__color: $primary__color;
+$navigation-desktop-level0-item__hover__color: $primary__color;
+
+//  Desktop navigation
+$navigation-desktop-level0-item__line-height: 47px;
+$submenu-desktop__font-weight: $font-weight__regular;
+$submenu-desktop-item__active__color: $navigation-level0-item__active__color;
+
+
+
 @mixin lib-main-navigation(
     $_nav__indent-side                       : 15px,
     $_nav-background-color                   : $secondary__color__light,
@@ -451,7 +472,7 @@
     $_left
 ) {
     @if $_submenu-arrow == true {
-        @if iscolor($_bg) && iscolor($_border) {
+        @if iscolor($_bg) and iscolor($_border) {
             $_outer-size: $_size + 1;
             $_outer-left: $_left - 1;
             margin-top: $_outer-size;
@@ -484,7 +505,7 @@
                 }
             }
         }
-        @else if iscolor($_bg) && iscolor($_border) {
+        @else if iscolor($_bg) and iscolor($_border) {
             margin-top: -$_size;
 
             & > ul {
@@ -503,7 +524,7 @@
                 }
             }
         }
-        @else if iscolor($_border) && iscolor($_bg) {
+        @else if iscolor($_border) and iscolor($_bg) {
             margin-top: -$_size;
 
             & > ul {

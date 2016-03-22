@@ -153,7 +153,7 @@
     }
 
     @if $_breadcrumbs-separator-symbol != ''
-        && $_breadcrumbs-separator-symbol != false {
+        and $_breadcrumbs-separator-symbol != false {
         // Insert separating symbol to "content"
         .item:not(:last-child) {
             &:after {

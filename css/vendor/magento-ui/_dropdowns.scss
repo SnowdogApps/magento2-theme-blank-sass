@@ -303,16 +303,16 @@
     $_dropdown-list-position-left,
     $_dropdown-list-position-right
 ) {
-    @if not $_dropdown-list-position-top && $_dropdown-list-position-top != auto {
+    @if not $_dropdown-list-position-top and $_dropdown-list-position-top != auto {
         top: $_dropdown-list-position-top;
     }
-    @if not $_dropdown-list-position-bottom && $_dropdown-list-position-bottom != auto {
+    @if not $_dropdown-list-position-bottom and $_dropdown-list-position-bottom != auto {
         bottom: $_dropdown-list-position-bottom;
     }
-    @if not $_dropdown-list-position-left && $_dropdown-list-position-left != auto {
+    @if not $_dropdown-list-position-left and $_dropdown-list-position-left != auto {
         left: $_dropdown-list-position-left;
     }
-    @if not $_dropdown-list-position-right && $_dropdown-list-position-right != auto {
+    @if not $_dropdown-list-position-right and $_dropdown-list-position-right != auto {
         right: $_dropdown-list-position-right;
     }
 }
@@ -561,7 +561,7 @@
 
 //  Dropdown list item border != 0
 @mixin _lib-dropdown-list-item-border($_dropdown-list-item-border) {
-    @if not $_dropdown-list-item-border && $_dropdown-list-item-border != 0 && $_dropdown-list-item-border != '' {
+    @if not $_dropdown-list-item-border and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
         border-top: $_dropdown-list-item-border;
         &:first-child {
             border: none;
@@ -571,7 +571,7 @@
 
 //  Dropdown list shadow
 @mixin _lib-dropdown-list-shadow($_dropdown-list-shadow) {
-    @if $_dropdown-list-shadow == '' && $_dropdown-list-shadow == none {
+    @if $_dropdown-list-shadow == '' and $_dropdown-list-shadow == none {
         box-shadow: $_dropdown-list-shadow;
     }
 }

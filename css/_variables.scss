@@ -43,7 +43,8 @@ $table-responsive-cell__padding: $indent__xs $indent__s;
 //  Layout grid
 //  ---------------------------------------------
 
-$total-columns: 24;
+$total-columns: 12;
+$grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1));
 
 //  Variables for layout columns
 $layout-column__sidebar-width: 5;

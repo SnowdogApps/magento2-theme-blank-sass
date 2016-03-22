@@ -68,7 +68,7 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
             @include lib-span($span);
             @include lib-end-column();
         }
-        @else if isnumber($end-column) != true {
+        @if isnumber($end-column) != true {
             $showgutter: false;
             @include lib-column($showgutter);
             @include lib-span($span);
@@ -76,17 +76,29 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
     }
 }
 
-@mixin lib-inline-column(
-    $span         : true,
-    $total-columns: false,
-    $end-column   : false
-) {
-    @if $span {
-        @include lib-column-gutter();
+@mixin lib-inline-column() {
+    @include lib-column-gutter();
+    display: inline-block;
+    letter-spacing: normal;
+    vertical-align: top;
+    word-spacing: normal;
+}
+
+@mixin lib-inline-column($span) {
+    @if $span != true {
         display: inline-block;
         letter-spacing: normal;
         vertical-align: top;
         word-spacing: normal;
+    }
+}
+
+@mixin lib-inline-column(
+    $span,
+    $total-columns: $total-columns,
+    $end-column   : false
+) {
+    @if isnumber($span) {
         @if isnumber($total-columns) == true {
             $showgutter: false;
             @include lib-inline-column($showgutter);
@@ -127,7 +139,10 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
     margin-right: 0;
 }
 
-@mixin lib-span($span, $total-columns: $total-columns) {
+@mixin lib-span(
+    $span,
+    $total-columns: $total-columns
+    ) {
     @include lib-column-width($span, $total-columns);
     @if isnumber($total-columns) {
         @include lib-column-width($span, $total-columns);
@@ -135,33 +150,33 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
     }
 }
 
-@mixin lib-pre-pad($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span)) / $grid-width));
-    padding-left: $calc-column-width;
-}
+// @mixin lib-pre-pad($span, $total-columns: $total-columns) {
+//     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
+//     padding-left: $calc-column-width;
+// }
 
-@mixin lib-post-pad($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span)) / $grid-width));
-    padding-right: $calc-column-width;
-}
+// @mixin lib-post-pad($span, $total-columns: $total-columns) {
+//     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
+//     padding-right: $calc-column-width;
+// }
+//
+// @mixin lib-pre-push($span, $total-columns: $total-columns) {
+//     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
+//     margin-left: $calc-column-width;
+// }
+//
+// @mixin lib-post-push($span, $total-columns: $total-columns) {
+//     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span) + $gutter-width) / $grid-width);
+//     margin-right: $calc-column-width;
+// }
+//
+// @mixin lib-post-push-end($span, $total-columns: $total-columns) {
+//     $calc-column-width: 100% * (((($gutter-width + $column-width) * $span)) / $grid-width);
+//     margin-right: $calc-column-width;
+// }
 
-@mixin lib-pre-push($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span)) / $grid-width));
-    margin-left: $calc-column-width;
-}
-
-@mixin lib-post-push($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span) + $gutter-width) / $grid-width));
-    margin-right: $calc-column-width;
-}
-
-@mixin lib-post-push-end($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span)) / $grid-width));
-    margin-right: $calc-column-width;
-}
-
-@mixin lib-column-width($span, $total-columns: $total-columns) {
-    $calc-column-width: calc(100% * (((($gutter-width + $column-width) * $span) - $gutter-width) / $grid-width));
+@mixin lib-column-width($span) {
+    $calc-column-width: 100% * (((($gutter-width + $column-width) * $span) - $gutter-width) / $grid-width);
     width: $calc-column-width;
 }
 
@@ -172,13 +187,7 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
     @if $end-column {
         margin-right: 0;
     }
-}
-
-@mixin lib-column-gutter(
-    $total-columns: $total-columns,
-    $end-column: false
-) {
-    @if $end-column != true {
+    @else if $end-column != false {
         $calc-gutter-width: 100% * ($gutter-width / $grid-width);
         margin-right: $calc-gutter-width;
     }

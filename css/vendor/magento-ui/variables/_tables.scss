@@ -15,5 +15,15 @@ $table__border-width: $border-width__base;
 $table__border-style: solid;
 
 $table-cell__padding-horizontal: $indent__s;
-$table-cell__padding-vertical: 8px;
+// $table-cell__padding-vertical: 8px;
 $table-td__color: false;
+
+//
+//  Tables
+//  ---------------------------------------------
+
+$table-cell__padding-vertical: 11px;
+$table-cell__hover__background-color: $panel__background-color;
+$table-cell-stripped__background-color: $table-cell__hover__background-color;
+$table-responsive-th__background-color: $table-cell-stripped__background-color;
+$table-responsive-cell__padding: $indent__xs $indent__s;

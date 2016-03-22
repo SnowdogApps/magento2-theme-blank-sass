@@ -27,10 +27,10 @@
 }
 
 @mixin lib-line-height($heightValue) {
-    @if $heightValue != false && ispercentage($heightValue) == false {
+    @if $heightValue != false and ispercentage($heightValue) == false {
         line-height: $font-size__base;
     }
-    @else if ispercentage($heightValue) && $heightValue != false {
+    @else if ispercentage($heightValue) and $heightValue != false {
         line-height: $heightValue;
     }
 }
