@@ -1,0 +1,67 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//    Common
+//--------------------------------------
+
+.actions-toolbar {
+    > .primary,
+    > .secondary {
+        text-align: center;
+        .action {
+            @extend .abs-button-responsive;
+            margin-bottom: $indent__s;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.primary {
+                //@extend .abs-button-l;
+                // replaced above commented line with sass extend
+                // it was commented by default
+            }
+        }
+
+        margin-bottom: $indent__s;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    > .secondary {
+        .action.back {
+            display: none;
+        }
+    }
+}
+
+//
+//    Desktop
+//--------------------------------------
+@include min-screen($screen__m) {
+    .actions-toolbar {
+        @include lib-actions-toolbar();
+        > .primary,
+        > .secondary {
+            margin-bottom: 0;
+
+            .action {
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    form {
+        .actions-toolbar {
+            .column:not(.sidebar-main) &,
+            .column:not(.sidebar-additional) & {
+            }
+        }
+    }
+}

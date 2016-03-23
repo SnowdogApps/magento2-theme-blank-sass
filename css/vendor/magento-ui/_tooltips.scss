@@ -1,0 +1,214 @@
+    // /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Tooltips
+//  _____________________________________________
+
+// Variables
+//
+$tooltip__z-index: 100;
+$tooltip__border-width: 1px;
+$tooltip__border-color: $color-gray-light2;
+$tooltip__background: $color-white;
+
+@mixin lib-tooltip(
+    $_tooltip-position        : top,
+    $_tooltip-selector-toggle : ".tooltip-toggle",
+    $_tooltip-selector-content: ".tooltip-content",
+    $_tooltip-background      : $color-white,
+    $_tooltip-border-color    : $color-gray-light2,
+    $_tooltip-border-width    : 1px,
+    $_tooltip-border-radius   : false,
+    $_tooltip-color           : $primary__color,
+    $_tooltip-cursor          : help,
+    $_tooltip-font-size       : false,
+    $_tooltip-font-family     : false,
+    $_tooltip-font-weight     : false,
+    $_tooltip-line-height     : 1.4,
+    $_tooltip-font-style      : false,
+    $_tooltip-margin          : false,
+    $_tooltip-padding         : 12px 16px,
+    $_tooltip-min-width       : 210px,
+    $_tooltip-max-width       : 360px,
+    $_tooltip-arrow-size      : 5px,
+    $_tooltip-arrow-offset    : 10px,
+    $_tooltip-z-index         : 100
+) {
+    position: relative;
+
+    #{$_tooltip-selector-content} {
+        background: $_tooltip-background;
+        border-radius: $_tooltip-border-radius;
+        margin: $_tooltip-margin;
+        max-width: $_tooltip-max-width;
+        min-width: $_tooltip-min-width;
+        padding: $_tooltip-padding;
+        z-index: $_tooltip-z-index;
+        display: none;
+        position: absolute;
+        text-align: left;
+
+        @include lib-typography(
+            $_color      : $_tooltip-color,
+            $_font-size  : $_tooltip-font-size,
+            $_font-family: $_tooltip-font-family,
+            $_font-weight: $_tooltip-font-weight,
+            $_line-height: $_tooltip-line-height,
+            $_font-style : $_tooltip-font-style
+        );
+
+        @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
+
+        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1;
+        $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1;
+
+        &:after,
+        &:before {
+            border: solid transparent;
+            content: '';
+            height: 0;
+            position: absolute;
+            width: 0;
+        }
+
+        &:after {
+            border-width: $_tooltip-arrow-size;
+            border-color: transparent;
+        }
+
+        &:before {
+            border-width: $_tooltip-arrow-before-margin * -1;
+            border-color: transparent;
+        }
+
+        @include _lib-tooltip-arrow-position(
+            $_tooltip-position,
+            $_tooltip-arrow-size,
+            $_tooltip-background,
+            $_tooltip-arrow-after-margin,
+            $_tooltip-arrow-before-margin,
+            $_tooltip-arrow-offset,
+            $_tooltip-border-color
+        );
+    }
+
+    & #{$_tooltip-selector-toggle} {
+        cursor: $_tooltip-cursor;
+    }
+
+    & #{$_tooltip-selector-toggle}:hover + #{$_tooltip-selector-content},
+    & #{$_tooltip-selector-toggle}:focus + #{$_tooltip-selector-content},
+    &:hover #{$_tooltip-selector-content} {
+        display: block;
+    }
+}
+
+@mixin _lib-tooltip-border(
+    $_tooltip-border-width,
+    $_tooltip-border-color
+) {
+    @if $_tooltip-border-width != 0 and $_tooltip-border-width != false and $_tooltip-border-color != false {
+        border: $_tooltip-border-width solid $_tooltip-border-color;
+    }
+}
+
+@mixin _lib-tooltip-arrow-position(
+    $_tooltip-position,
+    $_tooltip-arrow-size,
+    $_tooltip-background,
+    $_tooltip-arrow-after-margin,
+    $_tooltip-arrow-before-margin,
+    $_tooltip-arrow-offset,
+    $_tooltip-border-color
+) {
+    @if $_tooltip-position == top {
+        margin-bottom: $_tooltip-arrow-size;
+        bottom: 100%;
+        left: 0;
+
+        &:after,
+        &:before {
+            top: 100%;
+        }
+        &:after {
+            border-top-color: $_tooltip-background;
+            left: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+            margin-left: $_tooltip-arrow-after-margin;
+        }
+
+        &:before {
+            border-top-color: $_tooltip-border-color;
+            left: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+            margin-left: $_tooltip-arrow-before-margin;
+        }
+    }
+    @else if $_tooltip-position == left {
+        margin-right: $_tooltip-arrow-size;
+        right: 100%;
+        top: 0;
+
+        &:after,
+        &:before {
+            left: 100%;
+        }
+
+        &:after {
+            border-left-color: $_tooltip-background;
+            margin-top: $_tooltip-arrow-after-margin;
+            top: $_tooltip-arrow-offset + $_tooltip-arrow-siz;
+        }
+
+        &:before {
+            border-left-color: $_tooltip-border-color;
+            margin-top: $_tooltip-arrow-before-margin;
+            top: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+        }
+    }
+    @else if $_tooltip-position == right {
+        margin-left: $_tooltip-arrow-size;
+        left: 100%;
+        top: 0;
+
+        &:after,
+        &:before {
+            right: 100%;
+        }
+
+        &:after {
+            border-right-color: $_tooltip-background;
+            margin-top: $_tooltip-arrow-after-margin;
+            top: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+        }
+
+        &:before {
+            border-right-color: $_tooltip-border-color;
+            margin-top: $_tooltip-arrow-before-margin;
+            top: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+        }
+    }
+    @else if $_tooltip-position == bottom {
+        margin-top: $_tooltip-arrow-size;
+        left: 0;
+        top: 100%;
+
+        &:after,
+        &:before {
+            bottom: 100%;
+        }
+
+        &:after {
+            border-bottom-color: $_tooltip-background;
+            left: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+            margin-left: $_tooltip-arrow-after-margin;
+        }
+
+        &:before {
+            border-bottom-color: $_tooltip-border-color;
+            left: $_tooltip-arrow-offset + $_tooltip-arrow-size;
+            margin-left: $_tooltip-arrow-before-margin;
+        }
+    }
+}

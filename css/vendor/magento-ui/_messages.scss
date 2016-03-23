@@ -1,0 +1,426 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Messages
+//  _____________________________________________
+
+// checking if sass map has adequate key:value, if not
+@function messages($map-type, $key) {
+    @if map-has-key($map-type, $key) {
+        @return map-get($map-type, $key);
+    }
+    @else {
+        @return map-get($messages-default, $key);
+    }
+};
+
+@mixin lib-message($_message-type: info) {
+
+    // info messages == default messages
+    @if $_message-type == info {
+        $map-type: $messages-default;
+        @include _lib-message();
+        @include _lib-message-style(
+            $_message-color            : map-get($map-type, color),
+            $_message-background       : map-get($map-type, background),
+            $_message-link-color       : map-get($map-type, link-color),
+            $_message-link-color-hover : map-get($map-type, link-color-hover),
+            $_message-link-color-active: map-get($map-type, link-color-active),
+            $_message-border-color     : $message__border-color
+        );
+    }
+    @else {
+        $msg-type: $_message-type;
+
+        // find maps adequate to message type
+        @if $msg-type == error {
+            @if variable-exists(messages-error) {
+                $map-type: $messages-error;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == success {
+            @if variable-exists(messages-success) {
+                $map-type: $messages-success;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == warning {
+            @if variable-exists(messages-warning) {
+                $map-type: $messages-warning;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == notice {
+            @if variable-exists(messages-notice) {
+                $map-type: $messages-notice;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == global-note {
+            @if variable-exists(messages-global-note) {
+                $map-type: $messages-global-note;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == global-caution {
+            @if variable-exists(messages-global-caution) {
+                $map-type: $messages-global-caution;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+
+        @include _lib-message();
+        @include _lib-message-style(
+        $_message-color            : messages($map-type, color),
+        $_message-background       : messages($map-type, background),
+        $_message-link-color       : messages($map-type, link-color),
+        $_message-link-color-hover : messages($map-type, link-color-hover),
+        $_message-link-color-active: messages($map-type, link-color-active),
+        $_message-border-color     : $message__border-color
+        );
+    }
+}
+
+@mixin _lib-message(
+    $_message-padding      : $indent__s $indent__base,
+    $_message-margin       : 0 0 $indent__s,
+    $_message-border-radius: $message__border-radius
+) {
+    border-radius: $_message-border-radius;
+    margin: $_message-margin;
+    padding: $_message-padding;
+    display: block;
+    @include lib-typography(
+        $_color      : false,
+        $_font-size  : 13px,
+        $_font-family: false,
+        $_font-weight: false,
+        $_font-style : false,
+        $_line-height: 1.2
+    );
+    @include _lib-message-border($message__border-width, $message__border-style);
+}
+
+@mixin _lib-message-style(
+    $_message-background       : $message-info__background,
+    $_message-color            : $message-info__color,
+    $_message-link-color       : $message-link__color,
+    $_message-link-color-hover : $message-link__color-hover,
+    $_message-link-color-active: $message-link__color-active,
+    $_message-border-color     : $message__border-color
+) {
+    background: $_message-background;
+    border-color: $_message-border-color;
+    color: $_message-color;
+    a {
+        color: $_message-link-color;
+
+        &:hover {
+            color: $_message-link-color-hover;
+        }
+        &:active {
+            color: $_message-link-color-active;
+        }
+    }
+}
+
+@mixin _lib-message-border(
+    $_message-border-width: $message__border-width,
+    $_message-border-style: $message__border-style
+) {
+    @if $_message-border-width != 0 and $_message-border-width != false and $_message-border-style != false{
+        border: $_message-border-width $_message-border-style;
+    }
+}
+
+//  Messages with lateral icon
+@mixin lib-message-icon-lateral($_message-type: info, $_message-position: right) {
+
+    @if $_message-type == info {
+        $map-type: $messages-default;
+        @include lib-message($_message-type);
+        @include _lib-message-icon-lateral(
+            $_message-icon-position  : $_message-position,
+            $_message-icon           : map-get($map-type, icon),
+            $_message-icon-color     : map-get($map-type, icon-color-lateral),
+            $_message-icon-background: map-get($map-type, icon-background),
+            $_message-icon-top       : map-get($map-type, icon-top),
+            $_message-icon-left      : map-get($map-type, icon-left),
+            $_message-icon-bottom    : map-get($map-type, icon-bottom),
+            $_message-icon-right     : map-get($map-type, icon-right)
+        );
+    }
+    @else {
+        $mgs-type: $_message-type;
+
+        @if $msg-type == error {
+            @if variable-exists(messages-error) {
+                $map-type: $messages-error;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == success {
+            @if variable-exists(messages-success) {
+                $map-type: $messages-success;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == warning {
+            @if variable-exists(messages-warning) {
+                $map-type: $messages-warning;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == notice {
+            @if variable-exists(messages-notice) {
+                $map-type: $messages-notice;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+
+        @include lib-message($_message-type);
+        @include _lib-message-icon-lateral(
+            $_message-icon-position  : $_message-position,
+            $_message-icon           : messages($map-type, icon),
+            $_message-icon-color     : messages($map-type, icon-color-lateral),
+            $_message-icon-background: messages($map-type, icon-background),
+            $_message-icon-top       : messages($map-type, icon-top),
+            $_message-icon-left      : messages($map-type, icon-left),
+            $_message-icon-bottom    : messages($map-type, icon-bottom),
+            $_message-icon-right     : messages($map-type, icon-right)
+        );
+    }
+}
+
+//  Messages with inner icon
+@mixin lib-message-icon-inner($_message-type: info) {
+
+    @if $_message-type == info {
+        $map-type: $messages-default;
+        @include lib-message($_message-type);
+        @include _lib-message-icon-inner(
+        $_message-icon           : map-get($map-type, icon),
+        $_message-icon-color     : map-get($map-type, icon-color-inner),
+        $_message-icon-background: map-get($map-type, icon-background),
+        $_message-icon-top       : map-get($map-type, icon-top),
+        $_message-icon-left      : map-get($map-type, icon-left),
+        $_message-icon-bottom    : map-get($map-type, icon-bottom),
+        $_message-icon-right     : map-get($map-type, icon-right)
+        );
+    }
+    @else {
+        $msg-type: $_message-type;
+
+        @if $msg-type == error {
+            @if variable-exists(messages-error) {
+                $map-type: $messages-error;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == success {
+            @if variable-exists(messages-success) {
+                $map-type: $messages-success;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+        @else if $msg-type == warning {
+            @if variable-exists(messages-warning) {
+                $map-type: $messages-warning;
+            } @else {
+                $map-type: $messages-default;
+            }
+        } @else if $msg-type == notice {
+            @if variable-exists(messages-notice) {
+                $map-type: $messages-notice;
+            }
+            @else {
+                $map-type: $messages-default;
+            }
+        }
+
+        @include lib-message($_message-type);
+        @include _lib-message-icon-inner(
+        $_message-icon           : messages($map-type, icon),
+        $_message-icon-color     : messages($map-type, icon-color-inner),
+        $_message-icon-background: messages($map-type, icon-background),
+        $_message-icon-top       : messages($map-type, icon-top),
+        $_message-icon-left      : messages($map-type, icon-left),
+        $_message-icon-bottom    : messages($map-type, icon-bottom),
+        $_message-icon-right     : messages($map-type, icon-right)
+        );
+    }
+}
+
+//  Private mixins
+@mixin _lib-message-icon-lateral(
+    $_message-icon-position,
+    $_message-icon,
+    $_message-icon-color,
+    $_message-icon-background,
+    $_message-icon-top,
+    $_message-icon-left,
+    $_message-icon-bottom,
+    $_message-icon-right
+) {
+    position: relative;
+
+    &:before {
+        background: $_message-icon-background;
+        width: $message-icon__lateral-width;
+        content: '';
+        display: block;
+        height: 100%;
+        padding: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+    }
+
+    & > *:first-child {
+        &:before {
+            margin-top: -$message-icon__lateral-arrow-size;
+            content: '';
+            overflow: hidden;
+            position: absolute;
+            top: 50%;
+        }
+    }
+
+    > *:first-child {
+        &:after {
+            @include _lib-icon-font(
+                $_icon-font-content       : $_message-icon,
+                $_icon-font               : $icon-font,
+                $_icon-font-size          : $message-icon__font-size,
+                $_icon-font-line-height   : $message-icon__font-size,
+                $_icon-font-color         : $_message-icon-color,
+                $_icon-font-margin        : -$message-icon__font-size / 2 0 0,
+                $_icon-font-vertical-align: $icon-font__vertical-align
+            );
+            bottom: $_message-icon-bottom;
+            left: $_message-icon-left;
+            right: $_message-icon-right;
+            top: $_message-icon-top;
+            width: $message-icon__lateral-width;
+            position: absolute;
+            text-align: center;
+        }
+    }
+
+    @include _lib-message-icon-lateral-position(
+        $_message-icon-position,
+        $_message-icon-background
+    );
+}
+
+@mixin _lib-message-icon-lateral-position(
+    $_message-icon-position,
+    $_message-icon-background
+) {
+    @if $_message-icon-position == right {
+        padding-right: $message-icon__lateral-width + $indent__s;
+        &:before {
+            right: 0;
+            @include _lib-message-icon-lateral-border-radius($_message-icon-position);
+        }
+        & > *:first-child {
+            &:before {
+                @include lib-arrow(left, $message-icon__lateral-arrow-size, $_message-icon-background);
+                right: $message-icon__lateral-width;
+            }
+            &:after {
+                right: 0;
+            }
+        }
+    }
+    @else if $_message-icon-position == left {
+        padding-left: $message-icon__lateral-width + $indent__s;
+
+        &:before {
+            left: 0;
+            @include _lib-message-icon-lateral-border-radius($_message-icon-position);
+        }
+
+        & > *:first-child {
+            &:before{
+                @include lib-arrow(right, $message-icon__lateral-arrow-size, $_message-icon-background);
+                left: $message-icon__lateral-width;
+            }
+            &:after{
+                left: 0;
+            }
+        }
+    }
+}
+
+@mixin _lib-message-icon-lateral-border-radius($_message-icon-position) {
+    @if $message__border-radius != false and $message__border-width != false {
+        @if $_message-icon-position == left {
+            border-radius: ($message__border-radius - $message__border-width) 0 0 ($message__border-radius - $message__border-width);
+        }
+        @if $_message-icon-position == right {
+            border-radius: 0 ($message__border-radius - $message__border-width) ($message__border-radius - $message__border-width) 0;
+        }
+    }
+}
+
+@mixin _lib-message-icon-inner(
+    $_message-icon,
+    $_message-icon-color,
+    $_message-icon-background,
+    $_message-icon-top,
+    $_message-icon-left,
+    $_message-icon-bottom,
+    $_message-icon-right,
+    $_message-icon-padding-left: 40px
+) {
+    padding-left: $_message-icon-padding-left;
+    position: relative;
+
+    & > *:first-child:before {
+        @include _lib-icon-font(
+            $_icon-font-content       : $_message-icon,
+            $_icon-font               : $icon-font,
+            $_icon-font-size          : $message-icon__font-size,
+            $_icon-font-line-height   : $message-icon__font-size,
+            $_icon-font-color         : $_message-icon-color,
+            $_icon-font-margin        : -$message-icon__font-size / 2 0 0,
+            $_icon-font-vertical-align: $icon-font__vertical-align
+        );
+        bottom: $_message-icon-bottom;
+        left: $_message-icon-left;
+        right: $_message-icon-right;
+        top: $_message-icon-top;
+        width: $_message-icon-padding-left;
+        position: absolute;
+        text-align: center;
+    }
+}

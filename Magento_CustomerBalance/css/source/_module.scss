@@ -1,0 +1,59 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//    Common
+//--------------------------------------
+
+
+
+.block-balance {
+    .balance-price-label {
+        @extend .abs-visually-hidden;
+    }
+
+    .price {
+        font-size: 32px;
+        line-height: 32px;
+        display: inline-block;
+        margin-top: -$indent__s;
+    }
+}
+
+
+//
+//    Desktop
+//--------------------------------------
+@include min-screen($screen__m) {
+    .storecredit {
+        .block {
+            @extend .abs-blocks-2columns;
+        }
+
+        .block-balance-history {
+            width: 100%;
+        }
+    }
+
+    .table-balance-history {
+        .col {
+            width: 25%;
+        }
+    }
+
+    .table-wrapper.balance-history {
+        @extend .abs-account-table-margin-desktop;
+    }
+}
+
+//
+//    Mobile
+//--------------------------------------
+@include max-screen($screen__s) {
+    .table-wrapper.balance-history {
+        @extend .abs-account-table-margin-mobile;
+        @extend .abs-no-border-top;
+    }
+}

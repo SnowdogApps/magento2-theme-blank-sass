@@ -1,0 +1,106 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  ---------------------------------------------
+
+
+$collapsible-nav-color: $color-gray34;
+$collapsible-nav-current-border: 3px solid transparent;
+$collapsible-nav-current-border-color: $color-orange-red1;
+$collapsible-nav-current-color: $color-black;
+$collapsible-nav-current-font-weight: $font-weight__semibold;
+
+//
+
+//
+//  Common
+//  ---------------------------------------------
+
+//
+//  Collapsible navigation
+//  ---------------------------------------------
+
+.block-collapsible-nav {
+    .content {
+        background: $collapsible-nav-background;
+        padding: 15px 0;
+    }
+    .item {
+        margin: 3px 0 0;
+        &:first-child {
+            margin-top: 0;
+        }
+
+        a,
+        & > strong {
+            border-left: 3px solid transparent;
+            color: $collapsible-nav-color;
+            display: block;
+            padding: 5px 18px 5px 15px;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: $collapsible-nav-item-hover;
+            }
+        }
+
+        &.current {
+            a,
+            & > strong {
+                border-color: $collapsible-nav-current-border-color;
+                color: $collapsible-nav-current-color;
+                font-weight: $collapsible-nav-current-font-weight;
+            }
+
+            a {
+                border-color: $collapsible-nav-current-border-color;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+@include min-screen($screen__m) {
+    .block-collapsible-nav {
+        .title {
+            @extend .abs-visually-hidden-desktop;
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__m) {
+    .block-collapsible-nav {
+        left: 0;
+        position: absolute;
+        top: -21px;
+        width: 100%;
+        z-index: 5;
+
+        .title {
+            @extend .abs-toggling-title-mobile;
+        }
+
+        .content {
+            border-bottom: $border-width__base solid $border-color__base;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}

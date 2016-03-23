@@ -1,0 +1,85 @@
+// Mixins
+@import "mixins/media-queries";
+
+// Vendor libs
+@import 'vendor/magento-ui/lib'; // Magento UI
+
+// Theme variables
+@import 'variables';
+
+// Reset default styles with magento-reset
+@include lib-magento-reset();
+
+// Theme blocks
+@import 'source/extends';
+@import 'source/typography';
+@import 'source/layout';
+@import 'source/tables';
+@import 'source/messages';
+@import 'source/navigation';
+@import 'source/tooltips';
+@import 'source/loaders';
+@import 'source/forms';
+@import 'source/icons';
+@import 'source/buttons';
+@import 'source/sections';
+@import 'source/pages'; // Theme pager
+@import 'source/actions-toolbar';
+@import 'source/breadcrumbs';
+@import 'source/popups';
+@import 'source/price';
+
+// Theme extends
+@import 'source/extends';
+
+// Components styles (modal/sliding panel)
+@import 'source/components/modals'; // from lib
+@import 'source/components/modals_extend'; // local
+
+// Modules
+@import '../Magento_Braintree/css/source/_module';
+@import '../Magento_CatalogEvent/css/source/_module';
+@import '../Magento_Multishipping/css/source/_module';
+@import '../Magento_Paypal/css/source/_module';
+@import '../Magento_ProductVideo/css/source/_module';
+@import '../Magento_SalesRule/css/source/_module';
+@import '../Magento_Weee/css/source/_module';
+@import '../Magento_AdvancedCheckout/css/source/_module';
+@import '../Magento_AdvancedSearch/css/source/_module';
+@import '../Magento_Bundle/css/source/_module';
+@import '../Magento_Catalog/css/source/_module';
+@import '../Magento_CatalogSearch/css/source/_module';
+@import '../Magento_Checkout/css/source/_module';
+@import '../Magento_Customer/css/source/_module';
+@import '../Magento_CustomerBalance/css/source/_module';
+@import '../Magento_Downloadable/css/source/_module';
+@import '../Magento_GiftCard/css/source/_module';
+@import '../Magento_GiftCardAccount/css/source/_module';
+@import '../Magento_GiftMessage/css/source/_module';
+@import '../Magento_GiftRegistry/css/source/_module';
+@import '../Magento_GiftWrapping/css/source/_module';
+@import '../Magento_GroupedProduct/css/source/_module';
+@import '../Magento_Invitation/css/source/_module';
+@import '../Magento_LayeredNavigation/css/source/_module';
+@import '../Magento_Msrp/css/source/_module';
+@import '../Magento_MultipleWishlist/css/source/_module';
+@import '../Magento_Newsletter/css/source/_module';
+@import '../Magento_Review/css/source/_module';
+@import '../Magento_Reward/css/source/_module';
+@import '../Magento_Rma/css/source/_module';
+@import '../Magento_Sales/css/source/_module';
+@import '../Magento_SendFriend/css/source/_module';
+@import '../Magento_Theme/css/source/_module';
+@import '../Magento_Wishlist/css/source/_module';
+
+// Widgets
+@import '../Magento_Banner/css/source/_widgets';
+@import '../Magento_Catalog/css/source/_widgets';
+@import '../Magento_CatalogEvent/css/source/_widgets';
+@import '../Magento_Cms/css/source/_widgets';
+@import '../Magento_GiftRegistry/css/source/_widgets';
+@import '../Magento_MultipleWishlist/css/source/_widgets';
+@import '../Magento_Reports/css/source/_widgets';
+@import '../Magento_Sales/css/source/_widgets';
+@import '../Magento_VersionsCms/css/source/_widgets';
+@import '../Magento_AdvancedCheckout/css/source/_widgets';

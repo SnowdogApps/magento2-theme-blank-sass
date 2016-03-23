@@ -1,0 +1,426 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Pager
+//  _____________________________________________
+
+//
+//  When pager items have solid or don't have background
+//  ---------------------------------------------
+
+@mixin lib-pager(
+    $_pager-label-display                      : none,
+    $_pager-item-display                       : $pager-item__display,
+    $_pager-reset-spaces                       : true,
+    $_pager-font-size                          : $font-size__s,
+    $_pager-font-weight                        : $font-weight__bold,
+    $_pager-line-height                        : 32px,
+    $_pager-item-margin                        : 0 2px 0 0,
+    $_pager-item-padding                       : 0 4px,
+    $_pager-actions-padding                    : 0,
+
+    // Page current
+    $_pager-current-font-weight                : $font-weight__bold,
+    $_pager-current-color                      : $primary__color,
+    $_pager-current-background                 : false,
+    $_pager-current-border                     : false,
+    $_pager-current-gradient                   : false,
+    $_pager-current-gradient-direction         : false,
+    $_pager-current-gradient-color-start       : false,
+    $_pager-current-gradient-color-end         : false,
+
+    // Page item - text color
+    $_pager-color                              : $link__color,
+    $_pager-color-visited                      : $link__visited__color,
+    $_pager-color-hover                        : $link__hover__color,
+    $_pager-color-active                       : $link__active__color,
+
+    // Page item - background
+    $_pager-background                         : false,
+    $_pager-background-visited                 : false,
+    $_pager-background-hover                   : false,
+    $_pager-background-active                  : false,
+
+    // Page item - border
+    $_pager-border                             : false,
+    $_pager-border-visited                     : false,
+    $_pager-border-hover                       : false,
+    $_pager-border-active                      : false,
+
+    // Page item - text decoration
+    $_pager-text-decoration                    : none,
+    $_pager-text-decoration-hover              : none,
+
+    // Page item gradient
+    $_pager-gradient                           : $pager__gradient,
+    $_pager-gradient-direction                 : $pager__gradient-direction,
+    $_pager-gradient-color-start               : false,
+    $_pager-gradient-color-end                 : false,
+    $_pager-gradient-color-start-visited       : false,
+    $_pager-gradient-color-end-visited         : false,
+    $_pager-gradient-color-start-hover         : false,
+    $_pager-gradient-color-end-hover           : false,
+    $_pager-gradient-color-start-active        : false,
+    $_pager-gradient-color-end-active          : false,
+
+    // Page action item (previous-next)
+    $_pager-action-text-decoration             : $pager__text-decoration,
+    $_pager-action-text-decoration-hover       : none,
+
+    // Page action item (previous-next) - default
+    $_pager-action-color                       : $text__color__muted,
+    $_pager-action-border                      : $border-width__base solid $border-color__base,
+    $_pager-action-background                  : $pager__background,
+    $_pager-action-gradient-color-start        : false,
+    $_pager-action-gradient-color-end          : false,
+    $_pager-action-text-decoration             : $pager__text-decoration,
+
+    // Page action item (previous-next) - visited
+    $_pager-action-color-visited               : $pager-action__color,
+    $_pager-action-border-visited              : false,
+    $_pager-action-background-visited          : false,
+    $_pager-action-gradient-color-start-visited: false,
+    $_pager-action-gradient-color-end-visited  : false,
+
+    // Page action item (previous-next) - hover
+    $_pager-action-color-hover                 : $pager-action__color,
+    $_pager-action-border-hover                : false,
+    $_pager-action-background-hover            : false,
+    $_pager-action-gradient-color-start-hover  : false,
+    $_pager-action-gradient-color-end-hover    : false,
+    $_pager-action-text-decoration-hover       : $pager__text-decoration,
+
+    // Page action item (previous-next) - active
+    $_pager-action-color-active                : $pager-action__color,
+    $_pager-action-border-active               : false,
+    $_pager-action-background-active           : false,
+    $_pager-action-gradient-color-start-active : false,
+    $_pager-action-gradient-color-end-active   : false,
+
+    // Page action item (previous-next) - gradient
+    $_pager-action-gradient                    : $pager__gradient,
+    $_pager-action-gradient-direction          : $pager__gradient-direction,
+
+    // Page action icons
+    $_pager-icon-use                           : true,
+    $_pager-icon-previous-content              : $icon-prev,
+    $_pager-icon-next-content                  : $icon-next,
+    $_pager-icon-font                          : $icon-font,
+    $_pager-icon-font-size                     : 46px,
+    $_pager-icon-font-line-height              : $icon-font__line-height,
+    $_pager-icon-font-margin                   : 0 0 0 -6px,
+    $_pager-icon-font-vertical-align           : top,
+    $_pager-icon-font-position                 : before,
+    $_pager-icon-font-text-hide                : true
+) {
+    @include _lib-pager-label-display(  // To hide or to display label
+        $_pager-label-display: $_pager-label-display,
+        $_pager-font-size: $_pager-font-size,
+        $_pager-font-weight  : $_pager-font-weight,
+        $_pager-line-height: $_pager-line-height
+    );
+
+    .items {
+        @include _lib-pager-inline-block-spaces-container();
+        @include lib-list-reset-styles();
+        display: $_pager-item-display;
+        font-weight: $_pager-font-weight;
+    }
+
+    .item {
+        @include _lib-pager-inline-block-spaces-item(
+            $_pager-font-size  : $_pager-font-size,
+            $_pager-line-height: $_pager-line-height
+        );
+        margin: $_pager-item-margin;
+        display: $_pager-item-display;
+
+        .label {
+            @include lib-visually-hidden();
+        }
+    }
+
+    a.page {
+        background: $_pager-background;
+        @include lib-background-gradient(
+            $_pager-gradient-color-start,
+            $_pager-gradient-color-end,
+            $_pager-gradient-direction,
+            $_pager-gradient
+        );
+        border: $_pager-border;
+        color: $_pager-color;
+        display: $_pager-item-display;
+        padding: $_pager-item-padding;
+        text-decoration: $_pager-text-decoration;
+
+        &:visited {
+            background: $_pager-background-visited;
+            @include lib-background-gradient(
+                $_pager-gradient-color-start-visited,
+                $_pager-gradient-color-end-visited,
+                $_pager-gradient-direction,
+                $_pager-gradient
+            );
+            border: $_pager-border-visited;
+            color: $_pager-color-visited;
+        }
+
+        &:hover {
+            background: $_pager-background-hover;
+            @include lib-background-gradient(
+                $_pager-gradient-color-start-hover,
+                $_pager-gradient-color-end-hover,
+                $_pager-gradient-direction,
+                $_pager-gradient
+            );
+            border: $_pager-border-hover;
+            color: $_pager-color-hover;
+            text-decoration: $_pager-text-decoration-hover;
+        }
+
+        &:active {
+            background: $_pager-background-active;
+            @include lib-background-gradient(
+                $_pager-gradient-color-start-active,
+                $_pager-gradient-color-end-active,
+                $_pager-gradient-direction,
+                $_pager-gradient
+            );
+            border: $_pager-border-active;
+            color: $_pager-color-active;
+        }
+    }
+
+    strong.page {
+        background: $_pager-current-background;
+        @include lib-background-gradient(
+            $_pager-current-gradient-color-start,
+            $_pager-current-gradient-color-end,
+            $_pager-current-gradient-direction,
+            $_pager-current-gradient
+        );
+        border: $_pager-current-border;
+        @include _lib-pager-inline-block-spaces-item(
+            $_pager-font-size  : $_pager-font-size,
+            $_pager-line-height: $_pager-line-height
+        );
+        color: $_pager-current-color;
+        display: $_pager-item-display;
+        font-weight: $_pager-current-font-weight;
+        padding: $_pager-item-padding;
+    }
+
+    .action {
+        background: $_pager-action-background;
+        @include lib-background-gradient(
+            $_pager-action-gradient-color-start,
+            $_pager-action-gradient-color-end,
+            $_pager-gradient-direction,
+            $_pager-action-gradient
+        );
+        border: $_pager-action-border;
+        color: $_pager-action-color;
+        display: $_pager-item-display;
+        padding: $_pager-actions-padding;
+        text-decoration: $_pager-action-text-decoration;
+
+        &:visited {
+            background: $_pager-action-background-visited;
+            @include lib-background-gradient(
+                $_pager-action-gradient-color-start-visited,
+                $_pager-action-gradient-color-end-visited,
+                $_pager-action-gradient-direction,
+                $_pager-action-gradient
+            );
+            border: $_pager-action-border-visited;
+            color: $_pager-action-color-visited;
+        }
+
+        &:hover {
+            background: $_pager-action-background-hover;
+            @include lib-background-gradient(
+                $_pager-action-gradient-color-start-hover,
+                $_pager-action-gradient-color-end-hover,
+                $_pager-action-gradient-direction,
+                $_pager-action-gradient
+            );
+            border: $_pager-action-border-hover;
+            color: $_pager-action-color-hover;
+            text-decoration: $_pager-action-text-decoration-hover;
+        }
+
+        &:active {
+            background: $_pager-action-background-active;
+            @include lib-background-gradient(
+                $_pager-action-gradient-color-start-active,
+                $_pager-action-gradient-color-end-active,
+                $_pager-action-gradient-direction,
+                $_pager-action-gradient
+            );
+            border: $_pager-action-border-active;
+            color: $_pager-action-color-active;
+        }
+
+        &.next {
+            @include _lib-pager-icon (
+                $_pager-icon-use          : $_pager-icon-use,
+                $_icon-font-content       : $_pager-icon-next-content,
+                $_icon-font               : $_pager-icon-font,
+                $_icon-font-size          : $_pager-icon-font-size,
+                $_icon-font-line-height   : $_pager-icon-font-line-height,
+                $_icon-font-color         : $_pager-action-color,
+                $_icon-font-color-visited : $_pager-action-color-visited,
+                $_icon-font-color-hover   : $_pager-action-color-hover,
+                $_icon-font-color-active  : $_pager-action-color-active,
+                $_icon-font-margin        : $_pager-icon-font-margin,
+                $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
+                $_icon-font-position      : $_pager-icon-font-position,
+                $_icon-font-text-hide     : $_pager-icon-font-text-hide
+            );
+        }
+
+        &.previous {
+            @include _lib-pager-icon (
+                $_pager-icon-use          : $_pager-icon-use,
+                $_icon-font-content       : $_pager-icon-previous-content,
+                $_icon-font               : $_pager-icon-font,
+                $_icon-font-size          : $_pager-icon-font-size,
+                $_icon-font-line-height   : $_pager-icon-font-line-height,
+                $_icon-font-color         : $_pager-action-color,
+                $_icon-font-color-hover   : $_pager-action-color-hover,
+                $_icon-font-color-visited : $_pager-action-color-visited,
+                $_icon-font-color-active  : $_pager-action-color-active,
+                $_icon-font-margin        : $_pager-icon-font-margin,
+                $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
+                $_icon-font-position      : $_pager-icon-font-position,
+                $_icon-font-text-hide     : $_pager-icon-font-text-hide
+            );
+        }
+    }
+}
+
+//  Delete spaces between elements when pager items have display: inline-block
+@mixin _lib-pager-inline-block-spaces-container() {
+    @if $_pager-reset-spaces == true and $pager-item__display == inline-block {
+        @include lib-inline-block-space-container();
+        white-space: nowrap;
+    }
+}
+
+@mixin _lib-pager-inline-block-spaces-item(
+    $_pager-font-size  : $_pager-font-size,
+    $_pager-line-height: $_pager-line-height
+) {
+    @if $_pager-reset-spaces == true and $pager-item__display == inline-block {
+        @include lib-inline-block-space-item(
+            $_font-size  : $_pager-font-size,
+            $_line-height: $_pager-line-height
+        );
+    }
+}
+
+// Display or hide "page" label
+@mixin _lib-pager-label-display(
+    $_pager-label-display: $_pager-label-display,
+    $_pager-font-size    : $_pager-font-size,
+    $_pager-font-weight  : $_pager-font-weight,
+    $_pager-line-height  : $_pager-line-height
+) {
+    @if $_pager-label-display != none {
+        > .label {
+            display: $_pager-label-display;
+            font-weight: $_pager-font-weight;
+            @include lib-inline-block-space-item(
+            $_font-size: $_pager-font-size,
+            $_line-height: $_pager-line-height
+            );
+
+            &:after {
+                content: ': ';
+            }
+        }
+    }
+}
+
+@mixin _lib-pager-label-display(
+    $_pager-label-display: $_pager-label-display,
+    $_pager-font-size    : $_pager-font-size,
+    $_pager-font-weight  : $_pager-font-weight,
+    $_pager-line-height  : $_pager-line-height
+) {
+    @if $_pager-label-display == none {
+        & > .label {
+            @include lib-visually-hidden();
+        }
+    }
+}
+
+@mixin _lib-pager-icon (
+    $_pager-icon-use          : $_pager-icon-use,
+    $_icon-font-content       : '',
+    $_icon-font               : $_pager-icon-font,
+    $_icon-font-size          : $_pager-icon-font-size,
+    $_icon-font-line-height   : $_pager-icon-font-line-height,
+    $_icon-font-color         : $_pager-action-color,
+    $_icon-font-color-visited : $_pager-action-color-visited,
+    $_icon-font-color-hover   : $_pager-action-color-hover,
+    $_icon-font-color-active  : $_pager-action-color-active,
+    $_icon-font-margin        : $_pager-icon-font-margin,
+    $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
+    $_icon-font-position      : $_pager-icon-font-position,
+    $_icon-font-text-hide     : $_pager-icon-font-text-hide
+) {
+    @if $_pager-icon-use == true {
+        @if $_icon-font-position == before {
+            &:visited {
+                &:before {
+                    color: $_icon-font-color-visited;
+                }
+            }
+
+            &:active {
+                &:before {
+                    color: $_icon-font-color-active;
+                }
+            }
+            @include lib-icon-font(
+                $_icon-font-content       : $_icon-font-content,
+                $_icon-font               : $_icon-font,
+                $_icon-font-size          : $_icon-font-size,
+                $_icon-font-line-height   : $_icon-font-line-height,
+                $_icon-font-color         : $_icon-font-color,
+                $_icon-font-color-hover   : $_icon-font-color-hover,
+                $_icon-font-color-active  : $_icon-font-color-active,
+                $_icon-font-margin        : $_icon-font-margin,
+                $_icon-font-vertical-align: $_icon-font-vertical-align,
+                $_icon-font-position      : $_icon-font-position,
+                $_icon-font-text-hide     : $_icon-font-text-hide
+            );
+        }
+        @else if $_icon-font-position == after {
+            @include lib-icon-font(
+                $_icon-font-content       : $_icon-font-content,
+                $_icon-font               : $_icon-font,
+                $_icon-font-size          : $_icon-font-size,
+                $_icon-font-line-height   : $_icon-font-line-height,
+                $_icon-font-color         : $_icon-font-color,
+                $_icon-font-color-hover   : $_icon-font-color-hover,
+                $_icon-font-color-active  : $_icon-font-color-active,
+                $_icon-font-margin        : $_icon-font-margin,
+                $_icon-font-vertical-align: $_icon-font-vertical-align,
+                $_icon-font-position      : $_icon-font-position,
+                $_icon-font-text-hide     : $_icon-font-text-hide
+            );
+            &:visited:after {
+                color: $_icon-font-color-visited;
+            }
+            &:active:after {
+                color: $_icon-font-color-active;
+            }
+        }
+    }
+}

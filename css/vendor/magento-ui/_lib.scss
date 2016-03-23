@@ -1,0 +1,52 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+
+//
+//  Variables
+//  _____________________________________________
+
+// Global variables
+@import 'variables/global';
+@import 'variables/colors';
+@import 'variables/typography';
+
+@import 'variables/actions-toolbar';
+
+@import 'variables/icons';
+@import 'variables/typography';
+@import 'variables/layout';
+@import 'variables/messages';
+@import 'variables/pages';
+@import 'variables/rating';
+@import 'variables/responsive';
+@import 'variables/sections';
+@import 'variables/structure';
+@import 'variables/tables';
+
+//
+//  Global lib
+//  _____________________________________________
+
+@import 'actions-toolbar';
+@import 'breadcrumbs';
+@import 'buttons';
+@import 'dropdowns';
+@import 'forms';
+@import 'grids';
+@import 'icons';
+@import 'layout';
+@import 'loaders';
+@import 'messages';
+@import 'navigation';
+@import 'pages';
+@import 'popups';
+@import 'rating';
+@import 'resets';
+@import 'sections';
+@import 'tables';
+@import 'tooltips';
+@import 'typography';
+@import 'utilities';
