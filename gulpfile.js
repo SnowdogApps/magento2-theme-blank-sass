@@ -21,7 +21,7 @@ var cssLintSettings = {
     'ids'                        : false,
     'import'                     : false,
     'important'                  : false,
-    'known-properties'           : false,
+    'known-properties'           : true,
     'outline-none'               : false,
     'overqualified-elements'     : false,
     'qualified-headings'         : false,
@@ -52,17 +52,20 @@ function customReporter(file) {
 }
 
 gulp.task('default', () => {
-    gulp.watch('**/*.scss', () => {
-        gulp.src('css/*.scss')
-            .pipe(plumber())
-            .pipe(sass())
-            .pipe(gulp.dest('compiled'));
-    });
+    gulp.watch('**/*.scss', ['sass']);
+});
+
+gulp.task('sass', () => {
+    gulp.src('css/*.scss')
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(gulp.dest('compiled'));
 });
 
 gulp.task('lint', () => {
     gulp.src('compiled/*.css')
         .pipe(plumber())
         .pipe(csslint(cssLintSettings))
-        .pipe(csslint.reporter(customReporter));
+        .pipe(csslint.reporter(customReporter))
+        .pipe(csslint.reporter('fail'));
 });
