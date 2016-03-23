@@ -571,7 +571,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
 
     .product-info-price {
         margin: 0 -$indent__s 0;
-        width: "calc(100% + 2*#{$indent__s})"!important;
+        width: calc(100% + 2 * #{$indent__s}) !important;
 
         > *:first-child {
             padding-left: $indent__s;

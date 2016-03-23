@@ -21,7 +21,7 @@ var cssLintSettings = {
     'ids'                        : false,
     'import'                     : false,
     'important'                  : false,
-    'known-properties'           : false,
+    'known-properties'           : true,
     'outline-none'               : false,
     'overqualified-elements'     : false,
     'qualified-headings'         : false,
@@ -39,30 +39,51 @@ var cssLintSettings = {
 
 // css lint custom formater
 function customReporter(file) {
-    gutil.log(gutil.colors.cyan(file.csslint.errorCount) + ' errors in ' + gutil.colors.magenta(file.path));
+    gutil.log(
+        gutil.colors.cyan(file.csslint.errorCount) + ' errors in '
+        + gutil.colors.magenta(file.path)
+    );
 
     file.csslint.results.forEach(function(result) {
         if (result.error.type === 'warning') {
-            gutil.log( gutil.colors.yellow.bold('[Warining]') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+            gutil.log(
+                gutil.colors.yellow.bold('[Warining]')
+                + gutil.colors.green(' Line: ' + result.error.line)
+                + gutil.colors.cyan(' Column: ' + result.error.col) + ' '
+                + gutil.colors.magenta(result.error.message) + ' '
+                + gutil.colors.gray(result.error.rule.desc) + ' '
+                + gutil.colors.red('Browsers: ' + result.error.rule.browsers)
+            );
         }
         else {
-            gutil.log( gutil.colors.red.bold('[' + result.error.type + ']') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+            gutil.log(
+                gutil.colors.red.bold('[' + result.error.type + ']')
+                + gutil.colors.green(' Line: ' + result.error.line)
+                + gutil.colors.cyan(' Column: ' + result.error.col) + ' '
+                + gutil.colors.magenta(result.error.message) + ' '
+                + gutil.colors.gray(result.error.rule.desc) + ' '
+                + gutil.colors.red('Browsers: ' + result.error.rule.browsers)
+            );
         }
     });
 }
 
 gulp.task('default', () => {
-    gulp.watch('**/*.scss', () => {
-        gulp.src('css/*.scss')
-            .pipe(plumber())
-            .pipe(sass())
-            .pipe(gulp.dest('compiled'));
-    });
+    gulp.watch('**/*.scss', ['sass']);
+});
+
+gulp.task('sass', () => {
+    return gulp.src('web/css/*.scss')
+        .pipe(sass({
+            outputStyle   : 'expanded',
+            sourceComments: true
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('web/css'));
 });
 
 gulp.task('lint', () => {
-    gulp.src('compiled/*.css')
-        .pipe(plumber())
+    return gulp.src('web/css/*.css')
         .pipe(csslint(cssLintSettings))
-        .pipe(csslint.reporter(customReporter));
+        .pipe(csslint.reporter(customReporter))
+        .pipe(csslint.reporter('fail'));
 });

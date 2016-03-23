@@ -2,4 +2,6 @@ language: node_js
 node_js: stable
 before_script:
   - npm install -g gulp
-script: gulp lint
+script:
+  - gulp sass
+  - gulp lint

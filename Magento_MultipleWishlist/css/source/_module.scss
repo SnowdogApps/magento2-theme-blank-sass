@@ -18,7 +18,7 @@ $desktop-popup-position-top: 20%;
     &.split.button {
         @include lib-dropdown-split(
         $_options-selector: ".items",
-        $_dropdown-split-button-border-radius-fix: false,
+        $_dropdown-split-button-border-radius-fix: inherit,
         $_dropdown-split-list-item-padding: 5px 5px 5px 23px,
         $_dropdown-split-toggle-icon-content: $icon-down,
         $_dropdown-split-toggle-active-icon-content: $icon-up,

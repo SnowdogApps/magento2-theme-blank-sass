@@ -1,0 +1,25 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Pager variables
+//  _____________________________________________
+
+$pager-label__display: none;
+$pager-reset-spaces: true;  // Reset spaces between inline-block elements
+
+$pager-item__display: inline-block;
+$pager-item__margin: 0 2px 0 0;
+$pager-item__padding: 0 4px;
+
+$pager-actions__padding: 0;
+$pager__text-decoration: none;
+$pager__background: inherit;
+$pager-action__color: $text__color__muted;
+$pager__gradient: inherit;
+$pager__gradient-direction: inherit;
+$pager__gradient-color-start: inherit;
+$pager__gradient-color-end: inherit;
+$_pager-reset-spaces: true;

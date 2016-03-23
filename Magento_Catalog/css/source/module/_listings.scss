@@ -41,7 +41,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
         .products-grid & {
             display: inline-block;
-            width: 100%/2;
+            width: 50%;
         }
 
         @extend .abs-add-box-sizing;
@@ -339,7 +339,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .products-grid {
         .product-item {
             margin-bottom: $indent__base;
-            width: 100%/3;
+            width: 33.3333%;
         }
     }
 
@@ -350,7 +350,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .page-products.page-layout-3columns {
         .products-grid {
             .product-item {
-                width: 100%/3;
+                width: 33.3333%;
             }
         }
     }
@@ -364,7 +364,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .page-products {
         .products-grid {
             .product-item {
-                width: 100%/3;
+                width: 33.3333%;
             }
         }
     }
@@ -372,7 +372,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .page-products.page-layout-1column {
         .products-grid {
             .product-item {
-                width: 100%/4;
+                width: 25%;
             }
         }
     }
@@ -380,7 +380,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .page-products.page-layout-3columns {
         .products-grid {
             .product-item {
-                width: 100%/2;
+                width: 50%;
             }
         }
     }
@@ -390,14 +390,14 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
     .products-grid {
         .product-item {
-            width: 100%/5;
+            width: 20%;
         }
     }
 
     .page-layout-1column {
         .products-grid {
             .product-item {
-                width: 100%/6;
+                width: 16.6666%;
             }
         }
     }
@@ -405,7 +405,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
     .page-layout-3columns {
         .products-grid {
             .product-item {
-                width: 100%/4;
+                width: 25%;
             }
         }
     }
@@ -433,7 +433,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             .products-grid {
                 .product-item {
                     margin-left: 0;
-                    width: 100%/5;
+                    width: 20%;
                 }
             }
         }
