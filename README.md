@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass.svg?branch=master)](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass)
 # Magento 2 - Blank theme - SASS version
 
 ## Want to help?
