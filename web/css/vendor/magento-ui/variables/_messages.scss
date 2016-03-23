@@ -11,14 +11,14 @@ $message-icon__font-size: 28px;
 $message-icon__lateral-width: 30px;
 $message-icon__lateral-arrow-size: 5px;
 $message-icon__top: 18px;
-$message-icon__right: false;
-$message-icon__bottom: false;
+$message-icon__right: inherit;
+$message-icon__bottom: inherit;
 $message-icon__left: 0;
 
-$message__border-width: false;
-$message__border-color: false;
-$message__border-style: false;
-$message__border-radius: false;
+$message__border-width: inherit;
+$message__border-color: inherit;
+$message__border-style: inherit;
+$message__border-radius: inherit;
 
 // Default messages - info
 

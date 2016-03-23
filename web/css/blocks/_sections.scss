@@ -27,7 +27,7 @@
                 $_icon-font-margin: $icon-font__margin,
                 $_icon-font-vertical-align: $icon-font__vertical-align,
                 $_icon-font-position: after,
-                $_icon-font-display: false
+                $_icon-font-display: inherit
             );
 
             &:after {

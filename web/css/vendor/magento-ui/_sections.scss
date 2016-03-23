@@ -41,9 +41,9 @@
 }
 
 @mixin lib-data-tabs(
-    $_tab-control-font-family            : false,
+    $_tab-control-font-family            : inherit,
     $_tab-control-font-size              : $font-size__base,
-    $_tab-control-font-style             : false,
+    $_tab-control-font-style             : inherit,
     $_tab-control-font-weight            : $font-weight__semibold,
     $_tab-control-line-height            : $indent__base * 2,
 
@@ -75,7 +75,7 @@
 
     $_tab-content-background-color       : lighten($tab-control__background-color, 15%),
     $_tab-content-border                 : $tab-content__border,
-    $_tab-content-border-top-status      : false,
+    $_tab-content-border-top-status      : inherit,
     $_tab-content-margin-top             : $tab-content__margin-top,
 
     $_tab-content-padding-top            : $indent__base,

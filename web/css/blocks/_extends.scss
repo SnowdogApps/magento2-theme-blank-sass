@@ -57,7 +57,7 @@
 
 .abs-action-button-as-link {
     @include lib-button-as-link(
-        $_margin: false
+        $_margin: inherit
     );
     border-radius: 0;
     font-weight: $font-weight__regular;
@@ -807,7 +807,7 @@
         @include lib-icon-font(
             $icon-down,
             $_icon-font-size: 12px,
-            $_icon-font-text-hide: false,
+            $_icon-font-text-hide: inherit,
             $_icon-font-margin: 3px 0 0 0,
             $_icon-font-position: after,
             $_icon-font-display: block
@@ -1137,7 +1137,7 @@
 
 .abs-account-actions {
     &:after {
-        content: "";
+        content: '';
         display: inline-block;
         height: 12px;
         margin: 0 $indent__s;
@@ -1549,9 +1549,9 @@
     @include lib-typography(
     $_font-size: $checkout-step-title__font-size,
     $_font-weight: $checkout-step-title__font-weight,
-    $_font-family: false,
-    $_font-style: false,
-    $_line-height: false
+    $_font-family: inherit,
+    $_font-style: inherit,
+    $_line-height: inherit
     );
 }
 

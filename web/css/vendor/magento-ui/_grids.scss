@@ -46,30 +46,30 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
 @mixin lib-column(
     $span,
     $total-columns: $total-columns,
-    $end-column   : false
+    $end-column   : inherit
 ) {
     @if isnumber($span) {
         @if isnumber($total-columns) {
             @if isnumber($end-column) {
-                $showgutter: false;
+                $showgutter: inherit;
                 @include lib-column($showgutter);
                 @include lib-span($span, $total-columns);
                 @include lib-end-column();
             }
             @else {
-                $showgutter: false;
+                $showgutter: inherit;
                 @include lib-column($showgutter);
                 @include lib-span($span, $total-columns);
             }
         }
         @if $end-column {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-column($showgutter);
             @include lib-span($span);
             @include lib-end-column();
         }
         @if isnumber($end-column) != true {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-column($showgutter);
             @include lib-span($span);
         }
@@ -96,16 +96,16 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
 @mixin lib-inline-column(
     $span,
     $total-columns: $total-columns,
-    $end-column   : false
+    $end-column   : inherit
 ) {
     @if isnumber($span) {
         @if isnumber($total-columns) == true {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-inline-column($showgutter);
             @include lib-span($span, $total-columns);
         }
         @if $end-column == true {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-inline-column($showgutter);
             @include lib-span($span, $total-columns);
             @include lib-inline-end-column();
@@ -117,12 +117,12 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
         vertical-align: top;
         word-spacing: normal;
         @if isnumber($end-column) != true {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-inline-column($showgutter);
             @include lib-span($span);
         }
         @if $end-column == true {
-            $showgutter: false;
+            $showgutter: inherit;
             @include lib-inline-column($showgutter);
             @include lib-span($span);
             @include lib-inline-end-column();
@@ -182,7 +182,7 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
 
 @mixin lib-column-gutter(
     $total-columns: $total-columns,
-    $end-column: false
+    $end-column: inherit
 ) {
     @if $end-column {
         margin-right: 0;

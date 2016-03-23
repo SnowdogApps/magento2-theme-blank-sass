@@ -33,7 +33,7 @@
 
 // --- screen ------------------------------------------------------------------
 
-@mixin screen($min, $max, $orientation: false) {
+@mixin screen($min, $max, $orientation: inherit) {
   @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
     @content;
   }
@@ -51,7 +51,7 @@
   }
 }
 
-@mixin screen-height($min, $max, $orientation: false) {
+@mixin screen-height($min, $max, $orientation: inherit) {
   @include mq($min-height: $min, $max-height: $max, $orientation: $orientation) {
     @content;
   }

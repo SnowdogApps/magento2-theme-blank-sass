@@ -106,18 +106,18 @@ $minicart-qty__height: 24px;
 
 .minicart-wrapper {
     @include lib-dropdown(
-        $_toggle-selector: ".action.showcart",
-        $_options-selector: ".block-minicart",
-        $_dropdown-toggle-icon-content: $icon-cart,
+        $_toggle-selector                    : ".action.showcart",
+        $_options-selector                   : ".block-minicart",
+        $_dropdown-toggle-icon-content       : $icon-cart,
         $_dropdown-toggle-active-icon-content: $icon-cart,
-        $_dropdown-list-item-padding: false,
-        $_dropdown-list-item-hover: false,
-        $_icon-font-position: before,
-        $_icon-font-size: 22px,
-        $_icon-font-line-height: 28px,
-        $_icon-font-color: $minicart-icons-color,
-        $_icon-font-color-hover: $minicart-icons-color-hover,
-        $_icon-font-color-active: $minicart-icons-color
+        $_dropdown-list-item-padding         : inherit,
+        $_dropdown-list-item-hover           : inherit,
+        $_icon-font-position                 : before,
+        $_icon-font-size                     : 22px,
+        $_icon-font-line-height              : 28px,
+        $_icon-font-color                    : $minicart-icons-color,
+        $_icon-font-color-hover              : $minicart-icons-color-hover,
+        $_icon-font-color-active             : $minicart-icons-color
     );
     float: right;
 

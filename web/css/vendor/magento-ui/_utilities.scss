@@ -166,7 +166,7 @@
 //     background:url("#{$url}") repeat;
 // }
 
-$urls-resolved: false;
+$urls-resolved: inherit;
 
 @mixin lib-url($_path) {
     $url: "../#{$_path}";

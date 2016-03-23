@@ -108,7 +108,7 @@
             $_checkUnit: true;
         }
         @else {
-            $_checkUnit: false;
+            $_checkUnit: inherit;
         }
         @include _lib-column-width($_width, $_checkUnit, $_index);
         @include _lib-set-column-width($_index - 1, $_width);

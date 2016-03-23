@@ -89,8 +89,7 @@ fieldset.field {
     background: $select__background url('../images/select-bg.svg') no-repeat 100% 45%;
     background-size: 30px 60px;
     padding-right: 25px;
-    text-indent: .01em;
-    text-overflow: '';
+    text-indent: 0.01em;
 
     &::-ms-expand{
         display:none;

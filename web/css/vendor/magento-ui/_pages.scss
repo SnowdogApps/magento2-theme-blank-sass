@@ -25,12 +25,12 @@
     // Page current
     $_pager-current-font-weight                : $font-weight__bold,
     $_pager-current-color                      : $primary__color,
-    $_pager-current-background                 : false,
-    $_pager-current-border                     : false,
-    $_pager-current-gradient                   : false,
-    $_pager-current-gradient-direction         : false,
-    $_pager-current-gradient-color-start       : false,
-    $_pager-current-gradient-color-end         : false,
+    $_pager-current-background                 : inherit,
+    $_pager-current-border                     : none,
+    $_pager-current-gradient                   : inherit,
+    $_pager-current-gradient-direction         : inherit,
+    $_pager-current-gradient-color-start       : inherit,
+    $_pager-current-gradient-color-end         : inherit,
 
     // Page item - text color
     $_pager-color                              : $link__color,
@@ -39,16 +39,16 @@
     $_pager-color-active                       : $link__active__color,
 
     // Page item - background
-    $_pager-background                         : false,
-    $_pager-background-visited                 : false,
-    $_pager-background-hover                   : false,
-    $_pager-background-active                  : false,
+    $_pager-background                         : inherit,
+    $_pager-background-visited                 : inherit,
+    $_pager-background-hover                   : inherit,
+    $_pager-background-active                  : inherit,
 
     // Page item - border
-    $_pager-border                             : false,
-    $_pager-border-visited                     : false,
-    $_pager-border-hover                       : false,
-    $_pager-border-active                      : false,
+    $_pager-border                             : none,
+    $_pager-border-visited                     : none,
+    $_pager-border-hover                       : none,
+    $_pager-border-active                      : none,
 
     // Page item - text decoration
     $_pager-text-decoration                    : none,
@@ -57,14 +57,14 @@
     // Page item gradient
     $_pager-gradient                           : $pager__gradient,
     $_pager-gradient-direction                 : $pager__gradient-direction,
-    $_pager-gradient-color-start               : false,
-    $_pager-gradient-color-end                 : false,
-    $_pager-gradient-color-start-visited       : false,
-    $_pager-gradient-color-end-visited         : false,
-    $_pager-gradient-color-start-hover         : false,
-    $_pager-gradient-color-end-hover           : false,
-    $_pager-gradient-color-start-active        : false,
-    $_pager-gradient-color-end-active          : false,
+    $_pager-gradient-color-start               : inherit,
+    $_pager-gradient-color-end                 : inherit,
+    $_pager-gradient-color-start-visited       : inherit,
+    $_pager-gradient-color-end-visited         : inherit,
+    $_pager-gradient-color-start-hover         : inherit,
+    $_pager-gradient-color-end-hover           : inherit,
+    $_pager-gradient-color-start-active        : inherit,
+    $_pager-gradient-color-end-active          : inherit,
 
     // Page action item (previous-next)
     $_pager-action-text-decoration             : $pager__text-decoration,
@@ -74,31 +74,31 @@
     $_pager-action-color                       : $text__color__muted,
     $_pager-action-border                      : $border-width__base solid $border-color__base,
     $_pager-action-background                  : $pager__background,
-    $_pager-action-gradient-color-start        : false,
-    $_pager-action-gradient-color-end          : false,
+    $_pager-action-gradient-color-start        : inherit,
+    $_pager-action-gradient-color-end          : inherit,
     $_pager-action-text-decoration             : $pager__text-decoration,
 
     // Page action item (previous-next) - visited
     $_pager-action-color-visited               : $pager-action__color,
-    $_pager-action-border-visited              : false,
-    $_pager-action-background-visited          : false,
-    $_pager-action-gradient-color-start-visited: false,
-    $_pager-action-gradient-color-end-visited  : false,
+    $_pager-action-border-visited              : none,
+    $_pager-action-background-visited          : inherit,
+    $_pager-action-gradient-color-start-visited: inherit,
+    $_pager-action-gradient-color-end-visited  : inherit,
 
     // Page action item (previous-next) - hover
     $_pager-action-color-hover                 : $pager-action__color,
-    $_pager-action-border-hover                : false,
-    $_pager-action-background-hover            : false,
-    $_pager-action-gradient-color-start-hover  : false,
-    $_pager-action-gradient-color-end-hover    : false,
+    $_pager-action-border-hover                : none,
+    $_pager-action-background-hover            : inherit,
+    $_pager-action-gradient-color-start-hover  : inherit,
+    $_pager-action-gradient-color-end-hover    : inherit,
     $_pager-action-text-decoration-hover       : $pager__text-decoration,
 
     // Page action item (previous-next) - active
     $_pager-action-color-active                : $pager-action__color,
-    $_pager-action-border-active               : false,
-    $_pager-action-background-active           : false,
-    $_pager-action-gradient-color-start-active : false,
-    $_pager-action-gradient-color-end-active   : false,
+    $_pager-action-border-active               : none,
+    $_pager-action-background-active           : inherit,
+    $_pager-action-gradient-color-start-active : inherit,
+    $_pager-action-gradient-color-end-active   : inherit,
 
     // Page action item (previous-next) - gradient
     $_pager-action-gradient                    : $pager__gradient,
@@ -118,9 +118,9 @@
 ) {
     @include _lib-pager-label-display(  // To hide or to display label
         $_pager-label-display: $_pager-label-display,
-        $_pager-font-size: $_pager-font-size,
+        $_pager-font-size    : $_pager-font-size,
         $_pager-font-weight  : $_pager-font-weight,
-        $_pager-line-height: $_pager-line-height
+        $_pager-line-height  : $_pager-line-height
     );
 
     .items {

@@ -87,12 +87,12 @@
 
         @include _lib-message();
         @include _lib-message-style(
-        $_message-color            : messages($map-type, color),
-        $_message-background       : messages($map-type, background),
-        $_message-link-color       : messages($map-type, link-color),
-        $_message-link-color-hover : messages($map-type, link-color-hover),
-        $_message-link-color-active: messages($map-type, link-color-active),
-        $_message-border-color     : $message__border-color
+            $_message-color            : messages($map-type, color),
+            $_message-background       : messages($map-type, background),
+            $_message-link-color       : messages($map-type, link-color),
+            $_message-link-color-hover : messages($map-type, link-color-hover),
+            $_message-link-color-active: messages($map-type, link-color-active),
+            $_message-border-color     : $message__border-color
         );
     }
 }
@@ -107,11 +107,11 @@
     padding: $_message-padding;
     display: block;
     @include lib-typography(
-        $_color      : false,
+        $_color      : inherit,
         $_font-size  : 13px,
-        $_font-family: false,
-        $_font-weight: false,
-        $_font-style : false,
+        $_font-family: inherit,
+        $_font-weight: inherit,
+        $_font-style : inherit,
         $_line-height: 1.2
     );
     @include _lib-message-border($message__border-width, $message__border-style);
@@ -144,7 +144,7 @@
     $_message-border-width: $message__border-width,
     $_message-border-style: $message__border-style
 ) {
-    @if $_message-border-width != 0 and $_message-border-width != false and $_message-border-style != false{
+    @if $_message-border-width != 0 and $_message-border-width != inherit and $_message-border-style != inherit{
         border: $_message-border-width $_message-border-style;
     }
 }
@@ -223,13 +223,13 @@
         $map-type: $messages-default;
         @include lib-message($_message-type);
         @include _lib-message-icon-inner(
-        $_message-icon           : map-get($map-type, icon),
-        $_message-icon-color     : map-get($map-type, icon-color-inner),
-        $_message-icon-background: map-get($map-type, icon-background),
-        $_message-icon-top       : map-get($map-type, icon-top),
-        $_message-icon-left      : map-get($map-type, icon-left),
-        $_message-icon-bottom    : map-get($map-type, icon-bottom),
-        $_message-icon-right     : map-get($map-type, icon-right)
+            $_message-icon           : map-get($map-type, icon),
+            $_message-icon-color     : map-get($map-type, icon-color-inner),
+            $_message-icon-background: map-get($map-type, icon-background),
+            $_message-icon-top       : map-get($map-type, icon-top),
+            $_message-icon-left      : map-get($map-type, icon-left),
+            $_message-icon-bottom    : map-get($map-type, icon-bottom),
+            $_message-icon-right     : map-get($map-type, icon-right)
         );
     }
     @else {
@@ -268,13 +268,13 @@
 
         @include lib-message($_message-type);
         @include _lib-message-icon-inner(
-        $_message-icon           : messages($map-type, icon),
-        $_message-icon-color     : messages($map-type, icon-color-inner),
-        $_message-icon-background: messages($map-type, icon-background),
-        $_message-icon-top       : messages($map-type, icon-top),
-        $_message-icon-left      : messages($map-type, icon-left),
-        $_message-icon-bottom    : messages($map-type, icon-bottom),
-        $_message-icon-right     : messages($map-type, icon-right)
+            $_message-icon           : messages($map-type, icon),
+            $_message-icon-color     : messages($map-type, icon-color-inner),
+            $_message-icon-background: messages($map-type, icon-background),
+            $_message-icon-top       : messages($map-type, icon-top),
+            $_message-icon-left      : messages($map-type, icon-left),
+            $_message-icon-bottom    : messages($map-type, icon-bottom),
+            $_message-icon-right     : messages($map-type, icon-right)
         );
     }
 }

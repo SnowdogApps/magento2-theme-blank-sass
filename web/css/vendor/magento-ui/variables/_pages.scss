@@ -16,10 +16,10 @@ $pager-item__padding: 0 4px;
 
 $pager-actions__padding: 0;
 $pager__text-decoration: none;
-$pager__background: false;
+$pager__background: inherit;
 $pager-action__color: $text__color__muted;
-$pager__gradient: false;
-$pager__gradient-direction: false;
-$pager__gradient-color-start: false;
-$pager__gradient-color-end: false;
+$pager__gradient: inherit;
+$pager__gradient-direction: inherit;
+$pager__gradient-color-start: inherit;
+$pager__gradient-color-end: inherit;
 $_pager-reset-spaces: true;

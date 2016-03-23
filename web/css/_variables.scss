@@ -92,23 +92,23 @@ $tab-content__padding-right: $tab-control__padding-right;
 //  Accordion
 //  ---------------------------------------------
 
-$accordion-control__font-family: false;
+$accordion-control__font-family: inherit;
 $accordion-control__font-size: $font-size__base;
-$accordion-control__font-style: false;
+$accordion-control__font-style: inherit;
 $accordion-control__font-weight: $font-weight__semibold;
-$accordion-control__border-right: false;
-$accordion-control__border-bottom: false;
-$accordion-control__border-left: false;
-$accordion-control__background-color: false;
+$accordion-control__border-right: inherit;
+$accordion-control__border-bottom: inherit;
+$accordion-control__border-left: inherit;
+$accordion-control__background-color: inherit;
 $accordion-control__color: $primary__color;
-$accordion-control__hover__background-color: false;
+$accordion-control__hover__background-color: inherit;
 $accordion-control__hover__color: $accordion-control__color;
-$accordion-control__active__background-color: false;
+$accordion-control__active__background-color: inherit;
 $accordion-control__active__color: $accordion-control__color;
 $accordion-control__margin-bottom: 0;
 $accordion-control__padding-right: $indent__s;
 $accordion-control__padding-left: $indent__s;
-$accordion-content__border: false;
+$accordion-content__border: inherit;
 $accordion-content__margin: 0;
 $accordion-content__padding: $indent__s $indent__s $indent__l;
 
@@ -128,13 +128,13 @@ $icon-present: '\e62a';
 $icon-gift-registry: '\e62b';
 
 $icon-calendar__font-size: 23px;
-$icon-wishlist-empty: false;
-$icon-comment-reflected: false;
-$icon-compare-empty: false;
-$icon-arrow-up-thin: false;
-$icon-arrow-right-thin: false;
-$icon-arrow-left-thin: false;
-$icon-arrow-down-thin: false;
+$icon-wishlist-empty: inherit;
+$icon-comment-reflected: inherit;
+$icon-compare-empty: inherit;
+$icon-arrow-up-thin: inherit;
+$icon-arrow-right-thin: inherit;
+$icon-arrow-left-thin: inherit;
+$icon-arrow-down-thin: inherit;
 $icon-wishlist-empty: '\e601';
 
 //
@@ -142,7 +142,7 @@ $icon-wishlist-empty: '\e601';
 //  ---------------------------------------------
 
 $message__padding: 12px $indent__base 12px $indent__m;
-$message__line-height: false;
+$message__line-height: inherit;
 $message-icon__font-size: 24px;
 $message-icon__inner-padding-left: 45px;
 $message-icon__top: 22px;
@@ -168,7 +168,7 @@ $form-fieldset-legend__padding: 0 0 $indent__s;
 $form-fieldset-legend__width: 100%;
 
 //  Form field
-$form-field-type-revert: false;
+$form-field-type-revert: inherit;
 $form-field__additional-vertical-indent: $indent__s;
 
 //  Form field label
@@ -177,8 +177,8 @@ $form-field-type-label-block__margin: 0 0 8px;
 $form-field-type-label-inline__width: 25.8%;
 
 //  Form field note icon
-$form-field-note-icon-font__content: false;
-$form-field-note__color: false;
+$form-field-note-icon-font__content: inherit;
+$form-field-note__color: inherit;
 
 $select__background: $color-white;
 $form-field--vertical-indent: $indent__base;
@@ -218,7 +218,7 @@ $rating-icon__active__color: $active__color;
 
 //  Split dropdown
 $dropdown-split-actions__padding: 0 $indent__xs;
-$dropdown-split-toggle__actions__padding: false;
+$dropdown-split-toggle__actions__padding: inherit;
 $dropdown-list-item__hover: $color-gray91;
 $dropdown-list__z-index: 100;
 

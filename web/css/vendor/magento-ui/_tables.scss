@@ -53,18 +53,18 @@
 }
 
 @mixin lib-table-typography(
-     $_table-td-font-size  : false,
+     $_table-td-font-size  : inherit,
      $_table-td-color      : $table-td__color,
-     $_table-td-font-family: false,
-     $_table-td-font-weight: false,
-     $_table-td-line-height: false,
-     $_table-td-font-style : false,
-     $_table-th-font-size  : false,
+     $_table-td-font-family: inherit,
+     $_table-td-font-weight: inherit,
+     $_table-td-line-height: inherit,
+     $_table-td-font-style : inherit,
+     $_table-th-font-size  : inherit,
      $_table-th-color      : $text__color__intense,
-     $_table-th-font-family: false,
+     $_table-th-font-family: inherit,
      $_table-th-font-weight: $font-weight__bold,
-     $_table-th-line-height: false,
-     $_table-th-font-style : false
+     $_table-th-line-height: inherit,
+     $_table-th-font-style : inherit
 ) {
     & > thead,
     & > tbody,
@@ -343,9 +343,9 @@
 
 @mixin lib-table-responsive(
     $_table-background-color-responsive   : $table__background-color,
-    $_table-th-background-color-responsive: false,
-    $_reset-table-striped                 : false,
-    $_reset-table-hover                   : false,
+    $_table-th-background-color-responsive: inherit,
+    $_reset-table-striped                 : inherit,
+    $_reset-table-hover                   : inherit,
     $_table-responsive-cell-padding       : $indent__xs 0
 ) {
     @if $_reset-table-striped == true {
@@ -407,15 +407,15 @@
 
 @mixin lib-table-caption(
     $_table-caption-hide         : true,
-    $_table-caption-font-size    : false,
-    $_table-caption-color        : false,
-    $_table-caption-font-family  : false,
-    $_table-caption-font-weight  : false,
-    $_table-caption-font-style   : false,
-    $_table-caption-line-height  : false,
-    $_table-caption-alignment    : false,
-    $_table-caption-margin-top   : false,
-    $_table-caption-margin-bottom: false
+    $_table-caption-font-size    : inherit,
+    $_table-caption-color        : inherit,
+    $_table-caption-font-family  : inherit,
+    $_table-caption-font-weight  : inherit,
+    $_table-caption-font-style   : inherit,
+    $_table-caption-line-height  : inherit,
+    $_table-caption-alignment    : inherit,
+    $_table-caption-margin-top   : inherit,
+    $_table-caption-margin-bottom: inherit
 ) {
     @if $_table-caption-hide == true {
         & > caption {
@@ -469,12 +469,12 @@
                     display: inline-block;
 
                     @include lib-typography(
-                        $_font-size  : false,
+                        $_font-size  : inherit,
                         $_color      : $text__color__intense,
-                        $_font-family: false,
+                        $_font-family: inherit,
                         $_font-weight: $font-weight__bold,
-                        $_line-height: false,
-                        $_font-style : false
+                        $_line-height: inherit,
+                        $_font-style : inherit
                     );
                 }
             }

@@ -16,8 +16,8 @@
     $_loader-icon-background-image   : url('../images/loader-2.gif'),
     $_loader-icon-background-position: 50% 50%,
     $_loader-icon-border-radius      : 5px,
-    $_loader-icon-padding            : '',
-    $_loader-text                    : false,
+    $_loader-icon-padding            : inherit,
+    $_loader-text                    : inherit,
     $_loader-text-color              : $primary__color,
     $_loader-text-font-size          : $font-size__base,
     $_loader-text-font-family        : $font-family__base,
@@ -68,7 +68,7 @@
 
 @mixin lib-loading(
     $_loading-background-color: rgba(255, 255, 255, 0.7),
-    $_loading-background-image: false
+    $_loading-background-image: inherit
 ) {
     position: relative;
     &:before {

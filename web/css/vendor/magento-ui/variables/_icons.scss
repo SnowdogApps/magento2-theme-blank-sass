@@ -8,10 +8,10 @@
 //  _____________________________________________
 
 $icon__position: before;
-$icon__text-hide: false;
+$icon__text-hide: inherit;
 $icon__height: 26px;
 $icon__width: 26px;
-$icon__margin: '';
+$icon__margin: inherit;
 $icon__vertical-align: middle;
 
 $icon-image__position-x: 0;
@@ -28,8 +28,8 @@ $icon-font__margin: $icon__margin;
 $icon-font__size: inherit;
 $icon-font__line-height: $icon-font__size;
 $icon-font__color: inherit;
-$icon-font__color-hover: false;
-$icon-font__color-active: false;
+$icon-font__color-hover: inherit;
+$icon-font__color-active: inherit;
 $icon-font__vertical-align: $icon__vertical-align;
 $icon-font__display: inline-block;
 

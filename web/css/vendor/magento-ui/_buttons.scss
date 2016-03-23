@@ -39,8 +39,8 @@ $button-icon__line-height: $icon-font__line-height;
 $button-icon__hover__font-color: inherit;
 $button-icon__active__font-color: inherit;
 
-$button__shadow: '';
-$button__shadow-active: '';
+$button__shadow: none;
+$button__shadow-active: none;
 
 //  Large button
 $button__font-size__l: $font-size__l;
@@ -61,7 +61,7 @@ $button__padding__s: $indent__xs 8px;
     $_button-cursor                     : pointer,
     $_button-display                    : inline-block,
     $_button-disabled-opacity           : 0.5,
-    $_button-width                      : false,
+    $_button-width                      : inherit,
     $_button-margin                     : 0,
     $_button-padding                    : 7px 15px,
     $_button-color                      : $primary__color,
@@ -76,16 +76,16 @@ $button__padding__s: $indent__xs 8px;
     $_button-background-active          : $_button-background-hover,
     $_button-border-active              : $_button-border,
 
-    $_button-gradient                   : false,
-    $_button-gradient-direction         : false,
-    $_button-gradient-color-start       : false,
-    $_button-gradient-color-end         : false,
-    $_button-gradient-color-start-hover : false,
-    $_button-gradient-color-end-hover   : false,
-    $_button-gradient-color-start-active: false,
-    $_button-gradient-color-end-active  : false,
+    $_button-gradient                   : inherit,
+    $_button-gradient-direction         : inherit,
+    $_button-gradient-color-start       : inherit,
+    $_button-gradient-color-end         : inherit,
+    $_button-gradient-color-start-hover : inherit,
+    $_button-gradient-color-end-hover   : inherit,
+    $_button-gradient-color-start-active: inherit,
+    $_button-gradient-color-end-active  : inherit,
 
-    $_button-icon-use                   : false,
+    $_button-icon-use                   : inherit,
     $_button-font-content               : $icon-settings,
     $_button-icon-font                  : $button-icon__font,
     $_button-icon-font-size             : 22px,
@@ -96,7 +96,7 @@ $button__padding__s: $indent__xs 8px;
     $_button-icon-font-margin           : 0,
     $_button-icon-font-vertical-align   : top,
     $_button-icon-font-position         : $icon__position,
-    $_button-icon-font-text-hide        : false
+    $_button-icon-font-text-hide        : inherit
 ) {
     background-image: none; // Reset unusual Firefox-on-Android default style
     background: $_button-background;
@@ -320,9 +320,9 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-primary(
-    $_button-line-height                : false,
-    $_button-width                      : false,
-    $_button-margin                     : false,
+    $_button-line-height                : inherit,
+    $_button-width                      : inherit,
+    $_button-margin                     : inherit,
     $_button-padding                    : 7px 15px,
 
     $_button-color                      : $color-white,
@@ -337,16 +337,16 @@ $button__padding__s: $indent__xs 8px;
     $_button-border-active              : $_button-border,
     $_button-background-active          : $button-primary__active__background,
 
-    $_button-gradient                   : false,
-    $_button-gradient-direction         : false,
-    $_button-gradient-color-start       : false,
-    $_button-gradient-color-end         : false,
+    $_button-gradient                   : inherit,
+    $_button-gradient-direction         : inherit,
+    $_button-gradient-color-start       : inherit,
+    $_button-gradient-color-end         : inherit,
 
-    $_button-gradient-color-start-active: false,
-    $_button-gradient-color-end-active  : false,
+    $_button-gradient-color-start-active: inherit,
+    $_button-gradient-color-end-active  : inherit,
 
-    $_button-gradient-color-start-hover : false,
-    $_button-gradient-color-end-hover   : false
+    $_button-gradient-color-start-hover : inherit,
+    $_button-gradient-color-end-hover   : inherit
 ) {
     @include lib-button(
         $_button-line-height                : $_button-line-height,
@@ -429,7 +429,7 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin _lib-button-icon (
-    $_button-icon-use         : false,
+    $_button-icon-use         : inherit,
     $_icon-font-content       : $icon-settings,
     $_icon-font               : $icon-font,
     $_icon-font-size          : 22px,
@@ -440,7 +440,7 @@ $button__padding__s: $indent__xs 8px;
     $_icon-font-margin        : 0,
     $_icon-font-vertical-align: top,
     $_icon-font-position      : $icon__position,
-    $_icon-font-text-hide     : false
+    $_icon-font-text-hide     : inherit
 ) {
     @if $_button-icon-use {
         @include lib-button-icon (
@@ -470,7 +470,7 @@ $button__padding__s: $indent__xs 8px;
     $_icon-font-margin        : $button-icon__margin,
     $_icon-font-vertical-align: top,
     $_icon-font-position      : $button-icon__position,
-    $_icon-font-text-hide     : false
+    $_icon-font-text-hide     : inherit
 ) {
     @include lib-icon-font(
         $_icon-font-content       : $_icon-font-content,

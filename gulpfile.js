@@ -74,8 +74,10 @@ gulp.task('default', () => {
 
 gulp.task('sass', () => {
     return gulp.src('web/css/*.scss')
-        .pipe(plumber())
-        .pipe(sass())
+        .pipe(sass({
+            outputStyle   : 'expanded',
+            sourceComments: true
+        }).on('error', sass.logError))
         .pipe(gulp.dest('web/css'));
 });
 

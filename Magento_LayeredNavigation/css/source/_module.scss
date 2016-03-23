@@ -20,7 +20,7 @@ $filter-quantity: $color-gray52;
 
     &-title {
         strong {
-            $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade($border-color__base, 30);
+            $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade-out($border-color__base, 0.3);
 
             background-color: $toolbar-element-background;
             box-shadow: $_shadow;
@@ -408,7 +408,6 @@ $filter-quantity: $color-gray52;
             background: transparent;
             clear: both;
             display: block;
-            overflow: initial;
             position: static;
         }
 

@@ -12,10 +12,10 @@
 
 $form-field-label-asterisk__color: $color-red10;
 $form-field-label-asterisk__font-size: $font-size__s;
-$form-field-label-asterisk__font-family: false;
-$form-field-label-asterisk__font-weight: false;
-$form-field-label-asterisk__font-style: false;
-$form-field-label-asterisk__line-height: false;
+$form-field-label-asterisk__font-family: inherit;
+$form-field-label-asterisk__font-weight: inherit;
+$form-field-label-asterisk__font-style: inherit;
+$form-field-label-asterisk__line-height: inherit;
 $form-field-label-asterisk__margin: 0 0 0 $indent__xs;
 
 $form-element-input__height: 32px;
@@ -33,17 +33,17 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_border-radius             : 1px;
     $_height                    : $form-element-input__height;
     $_width                     : 100%;
-    $_margin                    : false;
+    $_margin                    : inherit;
     $_padding                   : 0 9px;
     $_vertical-align            : baseline;
     $_background-clip           : padding-box;
 
     $_font-size                 : $font-size__base;
-    $_color                     : false;
+    $_color                     : inherit;
     $_font-family               : $font-family__base;
-    $_font-weight               : false;
+    $_font-weight               : inherit;
     $_line-height               : $line-height__base;
-    $_font-style                : false;
+    $_font-style                : inherit;
 
     $_placeholder-color         : $color-gray76;
     $_placeholder-font-style    : $_font-style;
@@ -61,8 +61,8 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 
     @if $_type == "select" {
         $_padding               : $indent__s 4px;
-        $_placeholder-color     : false;
-        $_placeholder-font-style: false;
+        $_placeholder-color     : inherit;
+        $_placeholder-font-style: inherit;
     }
     @else if $_type == "textarea" {
         $_height                : auto;
@@ -71,7 +71,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     }
     @else if $_type == "input-radio" or $_type == "input-checkbox"{
         $_margin                : 2px $indent__xs 0 0;
-        $_vertical-align        : false;
+        $_vertical-align        : inherit;
     }
 
     background: $_background;
@@ -124,7 +124,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 
 @mixin lib-form-element-choice($_type) {
     @if $_type == "radio" or $_type == "checkbox" {
-        $_vertical-align  : false;
+        $_vertical-align  : auto;
         $_margin          : 2px $indent__xs 0 0;
         $_disabled-opacity: 0.5;
     }
@@ -164,13 +164,13 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_border-color,
     $_background,
     $_color,
-    $_focus-border-color: '',
-    $_focus-background: '',
-    $_focus-color: '',
-    $_disabled-border-color: '',
-    $_disabled-background: '',
-    $_disabled-color: '',
-    $_placeholder-color: ''
+    $_focus-border-color   : inherit,
+    $_focus-background     : inherit,
+    $_focus-color          : inherit,
+    $_disabled-border-color: inherit,
+    $_disabled-background  : inherit,
+    $_disabled-color       : inherit,
+    $_placeholder-color    : inherit
 ) {
     background: $_background;
     border-color: $_border-color;
@@ -212,12 +212,12 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 }
 
 @mixin lib-form-validation(
-    $_element-color-error       : false,
-    $_element-color-valid       : false,
+    $_element-color-error       : inherit,
+    $_element-color-valid       : inherit,
     $_element-border-color-error: lighten($error__color, 20%),
-    $_element-border-color-valid: false,
-    $_element-background-error  : false,
-    $_element-background-valid  : false
+    $_element-border-color-valid: inherit,
+    $_element-background-error  : inherit,
+    $_element-background-valid  : inherit
 ) {
     &.mage-error {
         @include lib-form-element-color(
@@ -239,22 +239,22 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 @mixin lib-form-validation-note(
     $_note-color                   : $error__color,
     $_note-font-size               : $font-size__s,
-    $_note-font-family             : false,
-    $_note-font-style              : false,
-    $_note-font-weight             : false,
-    $_note-line-height             : false,
+    $_note-font-family             : inherit,
+    $_note-font-style              : inherit,
+    $_note-font-weight             : inherit,
+    $_note-line-height             : inherit,
     $_note-margin                  : 3px 0 0,
-    $_note-padding                 : false,
-    $_note-icon-use                : false,
+    $_note-padding                 : inherit,
+    $_note-icon-use                : inherit,
 
     $_note-icon-font-content       : $icon-pointer-up,
     $_note-icon-font               : $icon-font,
     $_note-icon-font-size          : $font-size__s * 2,
     $_note-icon-font-line-height   : $font-size__s * 2,
     $_note-icon-font-color         : $error__color,
-    $_note-icon-font-color-hover   : false,
-    $_note-icon-font-color-active  : false,
-    $_note-icon-font-margin        : false,
+    $_note-icon-font-color-hover   : inherit,
+    $_note-icon-font-color-active  : inherit,
+    $_note-icon-font-margin        : inherit,
     $_note-icon-font-vertical-align: $icon-font__vertical-align,
     $_note-icon-font-position      : $icon-font__position,
     $_note-icon-font-text-hide     : $icon-font__text-hide
@@ -554,15 +554,15 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_border            : 0,
     $_margin            : 0 0 $indent__xl,
     $_padding           : 0,
-    $_legend-color      : false,
+    $_legend-color      : inherit,
     $_legend-font-size  : 20px,
-    $_legend-font-family: false,
-    $_legend-font-weight: false,
-    $_legend-font-style : false,
+    $_legend-font-family: inherit,
+    $_legend-font-weight: inherit,
+    $_legend-font-style : inherit,
     $_legend-line-height: 1.2,
     $_legend-margin     : 0 0 $indent__m,
     $_legend-padding    : 0,
-    $_legend-width      : false
+    $_legend-width      : inherit
 ) {
     border: $_border;
     margin: $_margin;
@@ -606,7 +606,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_type                         : block,
 
     $_type-inline-margin           : 0 0 $indent__base,
-    $_type-inline-label-margin     : false,
+    $_type-inline-label-margin     : inherit,
     $_type-inline-label-padding    : 6px 15px 0 0,
     $_type-inline-label-align      : right,
     $_type-inline-label-width      : 25.8%,
@@ -614,38 +614,38 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 
     $_type-block-margin            : 0 0 $indent__base,
     $_type-block-label-margin      : 0 0 $indent__xs,
-    $_type-block-label-padding     : false,
-    $_type-block-label-align       : false,
+    $_type-block-label-padding     : inherit,
+    $_type-block-label-align       : inherit,
 
     $_vertical-indent              : $indent__base,
     $_additional-vertical-indent   : $indent__base / 2,
 
-    $_border                       : false,
-    $_column                       : false,
+    $_border                       : none,
+    $_column                       : inherit,
     $_column-padding               : 0 12px 0 0,
     $_column-number                : 2,
 
-    $_label-color                  : false,
-    $_label-font-size              : false,
-    $_label-font-family            : false,
+    $_label-color                  : inherit,
+    $_label-font-size              : inherit,
+    $_label-font-family            : inherit,
     $_label-font-weight            : $font-weight__bold,
-    $_label-font-style             : false,
-    $_label-line-height            : false,
+    $_label-font-style             : inherit,
+    $_label-line-height            : inherit,
 
     $_label-asterisk-color         : $color-red10,
     $_label-asterisk-font-size     : $font-size__s,
-    $_label-asterisk-font-family   : false,
-    $_label-asterisk-font-weight   : false,
-    $_label-asterisk-font-style    : false,
-    $_label-asterisk-line-height   : false,
+    $_label-asterisk-font-family   : inherit,
+    $_label-asterisk-font-weight   : inherit,
+    $_label-asterisk-font-style    : inherit,
+    $_label-asterisk-line-height   : inherit,
     $_label-asterisk-margin        : 0 0 0 $indent__xs,
 
     $_note-color                   : $form-field-note__color,
     $_note-font-size               : $font-size__s,
-    $_note-font-family             : false,
-    $_note-font-weight             : false,
-    $_note-line-height             : false,
-    $_note-font-style              : false,
+    $_note-font-family             : inherit,
+    $_note-font-weight             : inherit,
+    $_note-line-height             : inherit,
+    $_note-font-style              : inherit,
     $_note-margin                  : 3px 0 0,
     $_note-padding                 : 0,
 
@@ -653,10 +653,10 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_note-icon-font-content       : $icon-pointer-up,
     $_note-icon-font-size          : $font-size__s * 2,
     $_note-icon-font-line-height   : $font-size__s,
-    $_note-icon-font-color         : false,
-    $_note-icon-font-color-hover   : false,
-    $_note-icon-font-color-active  : false,
-    $_note-icon-font-margin        : false,
+    $_note-icon-font-color         : inherit,
+    $_note-icon-font-color-hover   : inherit,
+    $_note-icon-font-color-active  : inherit,
+    $_note-icon-font-margin        : inherit,
     $_note-icon-font-vertical-align: $icon-font__vertical-align,
     $_note-icon-font-position      : $icon-font__position,
     $_note-icon-font-text-hide     : $icon-font__text-hide
@@ -807,15 +807,15 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 
     $_type-inline-margin       : 0 0 $indent__base,
     $_type-inline-label-width  : 25.8%,
-    $_type-inline-label-margin : false,
+    $_type-inline-label-margin : inherit,
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
     $_type-inline-control-width: 74.2%,
 
     $_type-block-margin        : $indent__base,
     $_type-block-label-margin  : 0 0 $indent__xs,
-    $_type-block-label-padding : false,
-    $_type-block-label-align   : false,
+    $_type-block-label-padding : inherit,
+    $_type-block-label-align   : inherit,
 
     $_vertical-indent          : $indent__base / 2
 ) {
@@ -906,10 +906,10 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 @mixin _lib-form-field-required(
     $_color      : $color-red10,
     $_font-size  : $font-size__s,
-    $_font-family: false,
-    $_font-weight: false,
-    $_font-style : false,
-    $_line-height: false,
+    $_font-family: inherit,
+    $_font-weight: inherit,
+    $_font-style : inherit,
+    $_line-height: inherit,
     $_margin     : 0 0 0 $indent__xs
 ) {
     &.required > .label {
@@ -984,15 +984,15 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 
     $_type-inline-margin       : 0 0 $indent__base,
     $_type-inline-label-width  : 25.8%,
-    $_type-inline-label-margin : false,
+    $_type-inline-label-margin : inherit,
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
     $_type-inline-control-width: 74.2%,
 
     $_type-block-margin        : $indent__base,
     $_type-block-label-margin  : 0 0 $indent__xs,
-    $_type-block-label-padding : false,
-    $_type-block-label-align   : false,
+    $_type-block-label-padding : inherit,
+    $_type-block-label-align   : inherit,
 
     $_vertical-indent          : $indent__base / 2
 ) {
@@ -1051,7 +1051,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 }
 
 @mixin lib-form-field-column(
-    $_column        : false,
+    $_column        : inherit,
     $_column-padding: 0 12px 0 0,
     $_column-number : 2
 ) {
@@ -1097,13 +1097,13 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_position   : top,
     $_color      : $color-red10,
     $_font-size  : $font-size__s,
-    $_font-family: false,
-    $_font-weight: false,
-    $_font-style : false,
-    $_line-height: false,
-    $_border     : false,
+    $_font-family: inherit,
+    $_font-weight: inherit,
+    $_font-style : inherit,
+    $_line-height: inherit,
+    $_border     : none,
     $_margin     : $indent__s 0 0,
-    $_padding    : false
+    $_padding    : inherit
 ) {
     @if $_position == "top" {
         &:before {

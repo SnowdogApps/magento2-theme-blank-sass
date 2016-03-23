@@ -13,8 +13,6 @@
 
 //  Path
 $font-path: "../../fonts/";
-// $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
-
 $icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
 
 //  Font families
@@ -99,8 +97,8 @@ $product-name-link__text-decoration__active: $link__active__text-decoration;
 //  Lists
 //  ---------------------------------------------
 
-$list__color__base: false;
-$list__font-size__base: false;
+$list__color__base: inherit;
+$list__font-size__base: inherit;
 $list__margin-top: 0;
 $list__margin-bottom: $indent__m;
 
@@ -128,21 +126,21 @@ $p__margin-bottom: $indent__s;
 //  Headings
 //  ---------------------------------------------
 
-$heading__font-family__base: false;
+$heading__font-family__base: inherit;
 $heading__font-weight__base: $font-weight__light;
 $heading__line-height__base: 1.1;
-$heading__color__base: false;
-$heading__font-style__base: false;
+$heading__color__base: inherit;
+$heading__font-style__base: inherit;
 $heading__margin-top__base: $indent__base;
 $heading__margin-bottom__base: $indent__base;
 $h1__font-size-desktop: ceil(($font-size__base * 2.85)); // 40px
 $h1__margin-bottom__desktop: $indent__xl;
 
 $heading-default: (
-    font-size        : font-size__base,
+    font-size        : $font-size__base,
     font-family      : $heading__font-family__base,
     font-weight      : $heading__font-weight__base,
-    line-height      : heading__line-height__base,
+    line-height      : $heading__line-height__base,
     color            : $heading__color__base,
     font-style       : $heading__font-style__base,
     margin-top       : $heading__margin-top__base,

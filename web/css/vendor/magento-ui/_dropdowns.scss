@@ -15,15 +15,15 @@
     $_toggle-selector                          : ".action.toggle",
     $_options-selector                         : "ul.dropdown",
 
-    $_dropdown-actions-padding                 : false,
+    $_dropdown-actions-padding                 : inherit,
     $_dropdown-list-min-width                  : 100%,
-    $_dropdown-list-width                      : false,
-    $_dropdown-list-height                     : false,
+    $_dropdown-list-width                      : inherit,
+    $_dropdown-list-height                     : inherit,
     $_dropdown-list-margin-top                 : 4px,
     $_dropdown-list-position-top               : 100%,
-    $_dropdown-list-position-bottom            : false,
-    $_dropdown-list-position-left              : false,
-    $_dropdown-list-position-right             : false,
+    $_dropdown-list-position-bottom            : inherit,
+    $_dropdown-list-position-left              : inherit,
+    $_dropdown-list-position-right             : inherit,
     $_dropdown-list-background                 : $color-white,
     $_dropdown-list-border                     : 1px solid $color-gray-light2,
 
@@ -52,7 +52,7 @@
     $_icon-font-margin                         : 0,
     $_icon-font-position                       : $icon__position,
     $_icon-font-vertical-align                 : top,
-    $_icon-font-text-hide                      : false
+    $_icon-font-text-hide                      : inherit
 ) {
     @include lib-clearfix();
     display: inline-block;
@@ -111,16 +111,16 @@
     $_options-selector                               : "ul.dropdown",
     $_button-selector                                : ".action.split",
 
-    $_dropdown-split-actions-padding                 : false,
+    $_dropdown-split-actions-padding                 : inherit,
 
     $_dropdown-split-list-min-width                  : 100%,
-    $_dropdown-split-list-width                      : false,
-    $_dropdown-split-list-height                     : false,
+    $_dropdown-split-list-width                      : inherit,
+    $_dropdown-split-list-height                     : inherit,
     $_dropdown-split-list-margin-top                 : 4px,
     $_dropdown-split-list-position-top               : 100%,
-    $_dropdown-split-list-position-bottom            : false,
-    $_dropdown-split-list-position-left              : false,
-    $_dropdown-split-list-position-right             : false,
+    $_dropdown-split-list-position-bottom            : inherit,
+    $_dropdown-split-list-position-left              : inherit,
+    $_dropdown-split-list-position-right             : inherit,
     $_dropdown-split-list-background                 : $color-white,
     $_dropdown-split-list-border                     : 1px solid $color-gray-light2,
 
@@ -137,10 +137,10 @@
     $_dropdown-split-list-shadow                     : 0 3px 3px rgba(0,0,0,0.15),
     $_dropdown-split-list-z-index                    : 100,
 
-    $_dropdown-split-button-border-radius-fix        : false,
-    $_dropdown-split-button-actions-padding          : false,
+    $_dropdown-split-button-border-radius-fix        : inherit,
+    $_dropdown-split-button-actions-padding          : inherit,
 
-    $_dropdown-split-toggle-actions-padding          : false,
+    $_dropdown-split-toggle-actions-padding          : inherit,
     $_dropdown-split-toggle-position                 : right,
     $_dropdown-split-toggle-icon-content             : '\e607',
     $_dropdown-split-toggle-active-icon-content      : '\e621',
@@ -571,7 +571,5 @@
 
 //  Dropdown list shadow
 @mixin _lib-dropdown-list-shadow($_dropdown-list-shadow) {
-    @if $_dropdown-list-shadow == '' and $_dropdown-list-shadow == none {
-        box-shadow: $_dropdown-list-shadow;
-    }
+    box-shadow: $_dropdown-list-shadow;
 }

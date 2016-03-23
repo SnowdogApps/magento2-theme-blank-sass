@@ -20,7 +20,7 @@ $modal-popup-breakpoint-screen__m    : $screen__m + 1;
 
 $modal-slide__first__indent-left     : 44px;
 $modal-slide-mobile__background-color: $color-gray-light01;
-$modal-overlay__background-color     : fade($color-gray20, 55%);
+$modal-overlay__background-color     : fade-out($color-gray20, 0.55);
 
 $modal-action-close__color           : $primary__color;
 $modal-action-close__font-size       : $font-size__base;

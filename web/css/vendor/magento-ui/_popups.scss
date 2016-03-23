@@ -30,8 +30,8 @@ $popup-button-close__reset: true; // [true|false]
 $popup-button-close__position: absolute;
 $popup-button-close__position-top: $indent__s;
 $popup-button-close__position-right: $indent__s;
-$popup-button-close__position-bottom: false;
-$popup-button-close__position-left: false;
+$popup-button-close__position-bottom: inherit;
+$popup-button-close__position-left: inherit;
 $popup__height: auto;
 $popup__padding: 22px;
 
@@ -55,15 +55,15 @@ $popup__padding: 22px;
     $_popup-position-bottom                                   : 0,
     $_popup-position-left                                     : 0,
 
-    $_popup-margin-top                                        : false,
-    $_popup-margin-right                                      : false,
-    $_popup-margin-bottom                                     : false,
-    $_popup-margin-left                                       : false,
+    $_popup-margin-top                                        : inherit,
+    $_popup-margin-right                                      : inherit,
+    $_popup-margin-bottom                                     : inherit,
+    $_popup-margin-left                                       : inherit,
 
     $_popup-content-height                                    : auto,
     $_popup-header-margin                                     : 0 0 25px,
-    $_popup-content-margin                                    : false,
-    $_popup-footer-margin                                     : false,
+    $_popup-content-margin                                    : inherit,
+    $_popup-footer-margin                                     : inherit,
 
     $_popup-title-headings                                    : true, // [true|false]
     $_popup-title-headings-level                              : h3, // [h1|h2|h3|h4|h5|h6]
@@ -74,13 +74,13 @@ $popup__padding: 22px;
     $_popup-button-close-position                             : absolute,
     $_popup-button-close-position-top                         : $indent__s,
     $_popup-button-close-position-right                       : $indent__s,
-    $_popup-button-close-position-bottom                      : false,
-    $_popup-button-close-position-left                        : false,
+    $_popup-button-close-position-bottom                      : inherit,
+    $_popup-button-close-position-left                        : inherit,
     $_popup-icon-font-content                                 : $icon-remove,
     $_popup-icon-font                                         : $icon-font,
     $_popup-icon-font-size                                    : 22px,
     $_popup-icon-font-line-height                             : 22px,
-    $_popup-icon-font-color                                   : inhrit,
+    $_popup-icon-font-color                                   : inherit,
     $_popup-icon-font-color-hover                             : inherit,
     $_popup-icon-font-color-active                            : inherit,
     $_popup-icon-font-margin                                  : inherit,
@@ -89,7 +89,7 @@ $popup__padding: 22px;
     $_popup-icon-font-text-hide                               : true,
 
     // Actions toolbar parameters
-    $_popup-actions-toolbar                                   : false,
+    $_popup-actions-toolbar                                   : inherit,
     $_popup-actions-toolbar-actions-position                  : $actions-toolbar-actions__position,
     $_popup-actions-toolbar-actions-reverse                   : $actions-toolbar-actions__reverse,
     $_popup-actions-toolbar-actions-margin                    : $actions-toolbar-actions__margin,

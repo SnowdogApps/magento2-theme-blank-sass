@@ -212,7 +212,6 @@
 @mixin lib-typography__base() {
     html {
         font-size: $font-size__base;
-        font-size-adjust: 100%;
     }
 
     body {
