@@ -39,14 +39,31 @@ var cssLintSettings = {
 
 // css lint custom formater
 function customReporter(file) {
-    gutil.log(gutil.colors.cyan(file.csslint.errorCount) + ' errors in ' + gutil.colors.magenta(file.path));
+    gutil.log(
+        gutil.colors.cyan(file.csslint.errorCount) + ' errors in '
+        + gutil.colors.magenta(file.path)
+    );
 
     file.csslint.results.forEach(function(result) {
         if (result.error.type === 'warning') {
-            gutil.log( gutil.colors.yellow.bold('[Warining]') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+            gutil.log(
+                gutil.colors.yellow.bold('[Warining]')
+                + gutil.colors.green(' Line: ' + result.error.line)
+                + gutil.colors.cyan(' Column: ' + result.error.col) + ' '
+                + gutil.colors.magenta(result.error.message) + ' '
+                + gutil.colors.gray(result.error.rule.desc) + ' '
+                + gutil.colors.red('Browsers: ' + result.error.rule.browsers)
+            );
         }
         else {
-            gutil.log( gutil.colors.red.bold('[' + result.error.type + ']') + gutil.colors.green(' Line: ' + result.error.line) + gutil.colors.cyan(' Column: ' + result.error.col) + ' ' + gutil.colors.magenta(result.error.message) + ' ' +  gutil.colors.gray(result.error.rule.desc) + ' ' + gutil.colors.red('Browsers: ' + result.error.rule.browsers));
+            gutil.log(
+                gutil.colors.red.bold('[' + result.error.type + ']')
+                + gutil.colors.green(' Line: ' + result.error.line)
+                + gutil.colors.cyan(' Column: ' + result.error.col) + ' '
+                + gutil.colors.magenta(result.error.message) + ' '
+                + gutil.colors.gray(result.error.rule.desc) + ' '
+                + gutil.colors.red('Browsers: ' + result.error.rule.browsers)
+            );
         }
     });
 }
