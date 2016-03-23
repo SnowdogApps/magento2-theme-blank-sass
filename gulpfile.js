@@ -64,7 +64,6 @@ gulp.task('sass', () => {
 
 gulp.task('lint', () => {
     gulp.src('compiled/*.css')
-        .pipe(plumber())
         .pipe(csslint(cssLintSettings))
         .pipe(csslint.reporter(customReporter))
         .pipe(csslint.reporter('fail'));
