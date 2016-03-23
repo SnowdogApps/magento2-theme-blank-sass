@@ -56,14 +56,14 @@ gulp.task('default', () => {
 });
 
 gulp.task('sass', () => {
-    return gulp.src('css/*.scss')
+    return gulp.src('web/css/*.scss')
         .pipe(plumber())
         .pipe(sass())
-        .pipe(gulp.dest('compiled'));
+        .pipe(gulp.dest('web/css'));
 });
 
 gulp.task('lint', () => {
-    return gulp.src('compiled/*.css')
+    return gulp.src('web/css/*.css')
         .pipe(csslint(cssLintSettings))
         .pipe(csslint.reporter(customReporter))
         .pipe(csslint.reporter('fail'));
