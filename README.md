@@ -1,14 +1,23 @@
 [![Build Status](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass.svg?branch=master)](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass)
 # Magento 2 - Blank theme - SASS version
 
-## Want to help?
-If you want to contribute, please go to `develop` branch, check issues and pull requests.
-
 ## Current status
-This is copy of `Magento/blank` theme copied from `pub/static` after `bin/magento dev:source-theme:deploy`
+Theme is **ready to use** as Composer package with Magento 2.
+Still a lot of things needs to be fixed or polished, but definietly it's working :smile:
 
-Code is converted via `less2sass` node.js script and few files are manually edited to be fully SASS compatible.
-
-Use `gulp` default task to test if code compile.
-
-If are you sure that `scss` file works, remove `less` file with same name.
+## Instalation
+* Add new VCS repository and package name and version to `composer.json`
+```json
+  "theme-blank-sass": {
+    "type": "vcs",
+    "url": "git@github.com:SnowdogApps/magento2-theme-blank-sass.git"
+  }
+  [...]
+  "require": {
+    "snowdog/theme-blank-sass": "^0.2.1"
+  }
+```
+* Run `composer update`
+* If you are not in developer mode you should run `bin/magento setup:static-content:deploy`
+* Compile SASS files, i.e. via [Frontools](https://github.com/SnowdogApps/magento2-frontools)
+* Check your great looking theme :wink:
