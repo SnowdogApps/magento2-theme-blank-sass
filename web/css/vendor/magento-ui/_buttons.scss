@@ -285,7 +285,7 @@ $button__padding__s: $indent__xs 8px;
 @mixin lib-button-reset() {
     background-image: none; // Reset unusual Firefox-on-Android default style
     background: none;
-    -moz-box-sizing: content-box; // Hack: fix Firefox button line-height problem
+    box-sizing: content-box; // Hack: fix Firefox button line-height problem
     border: 0;
     box-shadow: none;
     line-height: inherit;
