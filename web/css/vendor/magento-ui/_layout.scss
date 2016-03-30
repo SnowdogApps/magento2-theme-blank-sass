@@ -91,10 +91,10 @@
 }
 
 @mixin _lib-column-width($_width, $_check, $_index) {
-    @if $_check == false and $_index == 1 {
+    @if $_check == false and $_index == 2 {
         @include lib-column-width($_width);
     }
-    @else if $_check == true and $_width == auto {
+    @else if $_check == true or $_width == 'auto' {
         width: $_width;
         $_index: 1;
     }
@@ -103,12 +103,12 @@
 @mixin _lib-set-column-width($_index, $_width) {
     @if $_index > 0 {
         $_units: 'px','%','em','rem','pt';
-        $_checkUnit: nth($_units, $_index);
-        @if $_checkUnit == 'px' or $_checkUnit == '%' or $_checkUnit == 'rem' {
+        $_unit: nth($_units, $_index);
+        @if unit($_width) == $_unit {
             $_checkUnit: true;
         }
         @else {
-            $_checkUnit: inherit;
+            $_checkUnit: false;
         }
         @include _lib-column-width($_width, $_checkUnit, $_index);
         @include _lib-set-column-width($_index - 1, $_width);
@@ -118,8 +118,7 @@
 
 @mixin lib-layout-column($_total-columns, $_order, $_width) {
     $_units: 'px','%','em','rem','pt';
-    $_test: length($_units);
-    @include _lib-set-column-width($_test, $_width);
+    @include _lib-set-column-width(length($_units), $_width);
     @include lib-flex-degradation($_total-columns, $_order);
     @if $use-flex == true {
         order: $_order;
