@@ -85,7 +85,7 @@ $button__padding__s: $indent__xs 8px;
     $_button-gradient-color-start-active: inherit,
     $_button-gradient-color-end-active  : inherit,
 
-    $_button-icon-use                   : inherit,
+    $_button-icon-use                   : false,
     $_button-font-content               : $icon-settings,
     $_button-icon-font                  : $button-icon__font,
     $_button-icon-font-size             : 22px,
@@ -285,7 +285,7 @@ $button__padding__s: $indent__xs 8px;
 @mixin lib-button-reset() {
     background-image: none; // Reset unusual Firefox-on-Android default style
     background: none;
-    -moz-box-sizing: content-box; // Hack: fix Firefox button line-height problem
+    box-sizing: content-box; // Hack: fix Firefox button line-height problem
     border: 0;
     box-shadow: none;
     line-height: inherit;
@@ -320,8 +320,8 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-primary(
-    $_button-line-height                : inherit,
-    $_button-width                      : inherit,
+    $_button-line-height                : $font-size__base + 2,
+    $_button-width                      : auto,
     $_button-margin                     : inherit,
     $_button-padding                    : 7px 15px,
 
@@ -429,7 +429,7 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin _lib-button-icon (
-    $_button-icon-use         : inherit,
+    $_button-icon-use         : false,
     $_icon-font-content       : $icon-settings,
     $_icon-font               : $icon-font,
     $_icon-font-size          : 22px,
