@@ -59,11 +59,11 @@ $h1__margin-bottom__desktop: $indent__xl;
 //  Footer
 //  ---------------------------------------------
 
-$footer__background-color: $color-gray-light01;
+$footer__background-color: $color-white;
 $footer-links-separator-border-color: $color-gray-light4;
-$footer-links-color: $color-gray34;
-$footer-links-color-hover: $color-gray20;
-$footer-links-color-current: $primary__color__light;
+$footer-links-color: $link__color;
+$footer-links-color-hover: $link__hover__color;
+$footer-links-color-current: $link__active__color;
 
 //
 //  Layered navigation
@@ -242,7 +242,7 @@ body {
             & > li {
                 background: $footer__background-color;
                 font-size: 16px;
-                border-top: 1px solid $footer-links-separator-border-color;
+                border-top: none;
                 margin: 0 -$layout__width-xs-indent;
                 padding: 0 $layout__width-xs-indent;
             }
@@ -276,10 +276,10 @@ body {
 
 .copyright {
     background-color: $copyright__background-color;
-    color: $color-white;
+    color: $primary__color;
     display: block;
-    padding: $indent__s;
-    text-align: center;
+    padding: $indent__s 0;
+    text-align: left;
 }
 
 .page-header,
@@ -634,7 +634,7 @@ body {
 
     .footer {
         &.content {
-            border-top: none;
+            border-top: 1px solid $border-color__base;
 
             .block {
                 float: right;

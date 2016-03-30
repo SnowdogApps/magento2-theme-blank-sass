@@ -54,9 +54,9 @@ $button__padding__s: $indent__xs 8px;
 
 @mixin lib-button(
     $_button-font-family                : $font-family__base,
-    $_button-font-size                  : $font-size__base,
+    $_button-font-size                  : $font-size__m,
     $_button-font-weight                : $font-weight__bold,
-    $_button-line-height                : $font-size__base + 2,
+    $_button-line-height                : $font-size__m + 2,
 
     $_button-cursor                     : pointer,
     $_button-display                    : inline-block,
@@ -85,7 +85,7 @@ $button__padding__s: $indent__xs 8px;
     $_button-gradient-color-start-active: inherit,
     $_button-gradient-color-end-active  : inherit,
 
-    $_button-icon-use                   : inherit,
+    $_button-icon-use                   : false,
     $_button-font-content               : $icon-settings,
     $_button-icon-font                  : $button-icon__font,
     $_button-icon-font-size             : 22px,
@@ -320,8 +320,8 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-primary(
-    $_button-line-height                : inherit,
-    $_button-width                      : inherit,
+    $_button-line-height                : $font-size__m + 2,
+    $_button-width                      : auto,
     $_button-margin                     : inherit,
     $_button-padding                    : 7px 15px,
 
@@ -429,7 +429,7 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin _lib-button-icon (
-    $_button-icon-use         : inherit,
+    $_button-icon-use         : false,
     $_icon-font-content       : $icon-settings,
     $_icon-font               : $icon-font,
     $_icon-font-size          : 22px,
