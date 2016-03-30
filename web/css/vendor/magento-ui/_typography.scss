@@ -30,7 +30,7 @@
     @if $heightValue != false and ispercentage($heightValue) == false {
         line-height: $font-size__base;
     }
-    @else if ispercentage($heightValue) and $heightValue != false {
+    @else {
         line-height: $heightValue;
     }
 }
