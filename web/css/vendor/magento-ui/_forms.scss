@@ -139,20 +139,19 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 @mixin lib-form-element-number-reset() {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-      -webkit-appearance: none;
+      appearance: none;
       margin: 0;
     }
-
-    -moz-appearance: textfield;
+    appearance: field;
 }
 
 @mixin lib-form-element-search-reset() {
-    -webkit-appearance: none;
+    appearance: none;
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
     &::-webkit-search-results-button,
     &::-webkit-search-results-decoration {
-        -webkit-appearance: none;
+        appearance: none;
     }
 }
 
@@ -364,8 +363,8 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     input[type="reset"],
     input[type="submit"] {
         cursor: pointer;
-        -webkit-appearance: button;
-        *overflow: visible;
+        appearance: button;
+        overflow: visible;
     }
 
     input::-moz-focus-inner {

@@ -21,12 +21,12 @@
 
 .map-popup {
     @include lib-popup(
-        $_popup-margin-top: $indent__s,
-        $_popup-margin-left: inherit,
-        $_popup-content-margin: inherit,
+        $_popup-margin-top     : $indent__s,
+        $_popup-margin-left    : inherit,
+        $_popup-content-margin : inherit,
         $_popup-position-bottom: inherit,
-        $_popup-position-right: inherit,
-        $_popup-position: absolute
+        $_popup-position-right : inherit,
+        $_popup-position       : absolute
     );
     .map-info-price {
         @extend .abs-add-clearfix;
