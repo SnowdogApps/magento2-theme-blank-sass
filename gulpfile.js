@@ -12,7 +12,7 @@ var cssLintSettings = {
     'empty-rules'                : false,
     'display-property-grouping'  : false,
     'duplicate-background-images': false,
-    'duplicate-properties'       : false,
+    'duplicate-properties'       : true,
     'fallback-colors'            : false,
     'floats'                     : false,
     'font-faces'                 : false,
