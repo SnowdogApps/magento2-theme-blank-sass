@@ -27,6 +27,8 @@ var cssLintSettings = {
     'qualified-headings'         : false,
     'regex-selectors'            : false,
     'shorthand'                  : false,
+    'selector-max'               : false, // IE max selectors quantity error
+    'selector-max-approaching'   : false, // IE max selectors quantity warning
     'star-property-hack'         : false,
     'text-indent'                : false,
     'underscore-property-hack'   : false,
