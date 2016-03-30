@@ -7,7 +7,6 @@ Still a lot of things needs to be fixed or polished, but definietly it's working
 
 ## Instalation
 * `composer require snowdog/theme-blank-sass`
-* Run `composer update`
 * If you are not in developer mode you should run `bin/magento setup:static-content:deploy`
 * Compile SASS files, i.e. via [Frontools](https://github.com/SnowdogApps/magento2-frontools)
 * Check your great looking theme :wink:
