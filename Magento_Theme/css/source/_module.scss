@@ -35,8 +35,8 @@ $message-global-note__border-color: $color-yellow-light3;
 $message-global-caution__border-color: none;
 
 $header__background-color: inherit;
-$header-panel__background-color: $color-gray-middle3;
-$header-panel__text-color: $color-white;
+$header-panel__background-color: $color-white;
+$header-panel__text-color: $color-gray20;
 $header-icons-color: $color-gray56;
 $header-icons-color-hover: $color-gray20;
 $customer-welcome__z-index: $dropdown-list__z-index + 1;
@@ -115,18 +115,18 @@ body {
         margin-right: $indent__base;
 
         & > li {
-            font-size: $font-size__base;
+            font-size: $font-size__s;
             margin: 0 0 0 15px;
 
             & > a {
                 @include lib-link(
-                    $_link-color                  : $header-panel__text-color,
+                    $_link-color                  : $link__color,
                     $_link-text-decoration        : none,
-                    $_link-color-visited          : $header-panel__text-color,
+                    $_link-color-visited          : $link__visited__color,
                     $_link-text-decoration-visited: none,
-                    $_link-color-hover            : $header-panel__text-color,
+                    $_link-color-hover            : $link__hover__color,
                     $_link-text-decoration-hover  : underline,
-                    $_link-color-active           : $header-panel__text-color,
+                    $_link-color-active           : $link__active__color,
                     $_link-text-decoration-active : underline
                 );
             }
