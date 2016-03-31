@@ -56,7 +56,7 @@
 //  ---------------------------------------------
 
 .abs-action-button-as-link {
-    @include lib-button-as-link(
+    @include lib-button-as-link (
         $_margin: inherit
     );
     border-radius: 0;
