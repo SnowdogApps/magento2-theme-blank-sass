@@ -68,6 +68,7 @@
     }
 }
 
+
 //
 //   Button revert secondary color
 //  ---------------------------------------------
@@ -90,6 +91,27 @@
 
 .abs-button-l {
     @include lib-button-l();
+}
+
+// 
+//  Action addto
+//  ---------------------------------------------
+
+.abs-action-addto-product {
+    @extend .abs-action-link-button;
+    @include lib-button-s();
+}
+
+.abs-actions-addto-gridlist {
+    @include lib-icon-font(
+        $_icon-font-content: '',
+        $_icon-font-size: 29px,
+        $_icon-font-color: $addto-color,
+        $_icon-font-color-hover: $addto-hover-color,
+        $_icon-font-text-hide: true,
+        $_icon-font-vertical-align: middle,
+        $_icon-font-line-height: 24px
+    );
 }
 
 //
