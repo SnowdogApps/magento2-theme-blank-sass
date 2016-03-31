@@ -1,0 +1,41 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//    Using buttons mixins
+//--------------------------------------
+
+button,
+a.action.primary {
+    border-radius: 3px;
+}
+
+button {
+    &:not(.primary) {
+        box-shadow: $button__shadow;
+
+        &:active {
+            box-shadow: $button__shadow-active;
+        }
+    }
+}
+
+body {
+    &:not(._keyfocus) {
+        button {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+a.action.primary {
+    @include lib-link-as-button();
+}
+
+.action.primary {
+    @include lib-button-primary();
+}

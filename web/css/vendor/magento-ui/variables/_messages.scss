@@ -1,0 +1,70 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Messages variables
+//
+
+$message-icon__font-size: 28px;
+$message-icon__lateral-width: 30px;
+$message-icon__lateral-arrow-size: 5px;
+$message-icon__top: 18px;
+$message-icon__right: inherit;
+$message-icon__bottom: inherit;
+$message-icon__left: 0;
+
+$message__border-width: inherit;
+$message__border-color: inherit;
+$message__border-style: inherit;
+$message__border-radius: inherit;
+
+// Default messages - info
+
+$message__color: $color-brownie1;
+$message__background: $color-yellow-light1;
+
+$message-icon: $icon-warning;
+$message-icon__color-inner: $color-brownie-light1;
+$message-icon__color-lateral: $color-white;
+$message-icon__background: $color-brownie1;
+
+$message-link__color: $link__color;
+$message-link__color-hover: $link__hover__color;
+$message-link__color-active: $link__hover__color;
+
+$messages-default: (
+    color: $message__color,
+    background: $message__background,
+    link-color: $message-link__color,
+    link-color-hover: $message-link__color-hover,
+    link-color-active: $message-link__color-active,
+    border-color: none,
+    icon: $message-icon,
+    icon-color-lateral: $message-icon__color-lateral,
+    icon-color-inner: $message-icon__color-inner,
+    icon-background: $message-icon__background,
+    icon-top: $message-icon__top,
+    icon-right: $message-icon__right,
+    icon-bottom: $message-icon__bottom,
+    icon-left: $message-icon__left
+);
+
+$messages-error: (
+    color: $error__color,
+    background: $color-pink1,
+    icon: $icon-warning,
+    icon-color-lateral: $color-white,
+    icon-color-inner: $color-red11,
+    icon-background: $color-red11
+);
+
+$messages-success: (
+    color: $color-dark-green1,
+    background: $color-gray-light1,
+    icon: $icon-checkmark,
+    icon-color-lateral: $color-white,
+    icon-color-inner: $color-dark-green1,
+    icon-background: $color-dark-green1
+);

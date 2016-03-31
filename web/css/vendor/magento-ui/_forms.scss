@@ -1,0 +1,1165 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Forms
+//  _____________________________________________
+
+//
+// variable
+
+$form-field-label-asterisk__color: $color-red10;
+$form-field-label-asterisk__font-size: $font-size__s;
+$form-field-label-asterisk__font-family: inherit;
+$form-field-label-asterisk__font-weight: inherit;
+$form-field-label-asterisk__font-style: inherit;
+$form-field-label-asterisk__line-height: inherit;
+$form-field-label-asterisk__margin: 0 0 0 $indent__xs;
+
+$form-element-input__height: 32px;
+$form-element-input__border-color: $color-gray76;
+$form-element-input-placeholder__color: $color-gray76;
+$form-validation-note__color-error: $error__color;
+$form-element-validation__border-error: lighten($form-validation-note__color-error, 20%);
+
+
+
+
+@mixin lib-form-element-input($_type) {
+    $_background                : $color-white;
+    $_border                    : 1px solid $form-element-input__border-color;
+    $_border-radius             : 1px;
+    $_height                    : $form-element-input__height;
+    $_width                     : 100%;
+    $_margin                    : inherit;
+    $_padding                   : 0 9px;
+    $_vertical-align            : baseline;
+    $_background-clip           : padding-box;
+
+    $_font-size                 : $font-size__base;
+    $_color                     : inherit;
+    $_font-family               : $font-family__base;
+    $_font-weight               : inherit;
+    $_line-height               : $line-height__base;
+    $_font-style                : inherit;
+
+    $_placeholder-color         : $color-gray76;
+    $_placeholder-font-style    : $_font-style;
+
+    $_disabled-background       : $_background;
+    $_disabled-border           : $_border;
+    $_disabled-opacity          : 0.5;
+    $_disabled-color            : $_color;
+    $_disabled-font-style       : $_font-style;
+
+    $_focus-background          : $_background;
+    $_focus-border              : $_border;
+    $_focus-color               : $_color;
+    $_focus-font-style          : $_font-style;
+
+    @if $_type == "select" {
+        $_padding               : $indent__s 4px;
+        $_placeholder-color     : inherit;
+        $_placeholder-font-style: inherit;
+    }
+    @else if $_type == "textarea" {
+        $_height                : auto;
+        $_padding               : $indent__s;
+        $_margin                : 0;
+    }
+    @else if $_type == "input-radio" or $_type == "input-checkbox"{
+        $_margin                : 2px $indent__xs 0 0;
+        $_vertical-align        : inherit;
+    }
+
+    background: $_background;
+    background-clip: $_background-clip;
+    border: $_border;
+    border-radius: $_border-radius;
+    color: $_color;
+    font-family: $_font-family;
+    font-size: $_font-size;
+    font-style: $_font-style;
+    font-weight: $_font-weight;
+    height: $_height;
+    line-height: $_line-height;
+    margin: $_margin;
+    padding: $_padding;
+    vertical-align: $_vertical-align;
+    width: $_width;
+    box-sizing: border-box;
+
+    @include _lib-form-element-focus(
+        $_background,
+        $_focus-background,
+        $_border,
+        $_focus-border,
+        $_color,
+        $_focus-color,
+        $_font-style,
+        $_focus-font-style
+    );
+
+    @include _lib-form-element-disabled(
+        $_background,
+        $_disabled-background,
+        $_border,
+        $_disabled-border,
+        $_color,
+        $_disabled-color,
+        $_font-style,
+        $_disabled-font-style,
+        $_disabled-opacity
+    );
+
+    @include _lib-form-element-placeholder(
+        $_type,
+        $_placeholder-color,
+        $_font-style,
+        $_placeholder-font-style
+    );
+}
+
+@mixin lib-form-element-choice($_type) {
+    @if $_type == "radio" or $_type == "checkbox" {
+        $_vertical-align  : auto;
+        $_margin          : 2px $indent__xs 0 0;
+        $_disabled-opacity: 0.5;
+    }
+    margin: $_margin;
+    vertical-align: $_vertical-align;
+
+    &:disabled {
+        opacity: $_disabled-opacity;
+    }
+}
+
+@mixin lib-form-element-number-reset() {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+    appearance: field;
+}
+
+@mixin lib-form-element-search-reset() {
+    appearance: none;
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+        appearance: none;
+    }
+}
+
+@mixin lib-form-element-textarea-resize($_textarea-resize: vertical) {
+    resize: $_textarea-resize;
+}
+
+@mixin lib-form-element-color(
+    $_border-color,
+    $_background,
+    $_color,
+    $_focus-border-color   : inherit,
+    $_focus-background     : inherit,
+    $_focus-color          : inherit,
+    $_disabled-border-color: inherit,
+    $_disabled-background  : inherit,
+    $_disabled-color       : inherit,
+    $_placeholder-color    : inherit
+) {
+    background: $_background;
+    border-color: $_border-color;
+    color: $_color;
+
+    &:focus {
+        @include _lib-form-element-state-add-border-color(
+            $_focus-border-color,
+            $_border-color
+        );
+        @include _lib-form-element-state-add-background(
+            $_focus-background,
+            $_background
+        );
+        @include _lib-form-element-state-add-font-color(
+            $_focus-color,
+            $_color
+        );
+    }
+
+    &:disabled {
+        @include _lib-form-element-state-add-border-color(
+            $_disabled-border-color,
+            $_border-color
+        );
+        @include _lib-form-element-state-add-background(
+            $_disabled-background,
+            $_background
+        );
+        @include _lib-form-element-state-add-font-color(
+            $_disabled-color,
+            $_color
+        );
+    }
+
+    @include lib-input-placeholder() {
+        color: $_placeholder-color;
+    }
+}
+
+@mixin lib-form-validation(
+    $_element-color-error       : inherit,
+    $_element-color-valid       : inherit,
+    $_element-border-color-error: lighten($error__color, 20%),
+    $_element-border-color-valid: inherit,
+    $_element-background-error  : inherit,
+    $_element-background-valid  : inherit
+) {
+    &.mage-error {
+        @include lib-form-element-color(
+            $_border-color: $_element-border-color-error,
+            $_background  : $_element-background-error,
+            $_color       : $_element-color-error
+        );
+    }
+
+    &.valid {
+        @include lib-form-element-color(
+            $_border-color: $_element-border-color-valid,
+            $_background  : $_element-background-valid,
+            $_color       : $_element-color-valid
+        );
+    }
+}
+
+@mixin lib-form-validation-note(
+    $_note-color                   : $error__color,
+    $_note-font-size               : $font-size__s,
+    $_note-font-family             : inherit,
+    $_note-font-style              : inherit,
+    $_note-font-weight             : inherit,
+    $_note-line-height             : inherit,
+    $_note-margin                  : 3px 0 0,
+    $_note-padding                 : inherit,
+    $_note-icon-use                : inherit,
+
+    $_note-icon-font-content       : $icon-pointer-up,
+    $_note-icon-font               : $icon-font,
+    $_note-icon-font-size          : $font-size__s * 2,
+    $_note-icon-font-line-height   : $font-size__s * 2,
+    $_note-icon-font-color         : $error__color,
+    $_note-icon-font-color-hover   : inherit,
+    $_note-icon-font-color-active  : inherit,
+    $_note-icon-font-margin        : inherit,
+    $_note-icon-font-vertical-align: $icon-font__vertical-align,
+    $_note-icon-font-position      : $icon-font__position,
+    $_note-icon-font-text-hide     : $icon-font__text-hide
+) {
+    @include lib-typography(
+        $_font-size  : $_note-font-size,
+        $_color      : $_note-color,
+        $_font-family: $_note-font-family,
+        $_font-weight: $_note-font-weight,
+        $_line-height: $_note-line-height,
+        $_font-style : $_note-font-style
+    );
+    @include _lib-form-validation-icon(
+        $_note-icon-use,
+        $_note-icon-font-content,
+        $_note-icon-font,
+        $_note-icon-font-size,
+        $_note-icon-font-line-height,
+        $_note-icon-font-color,
+        $_note-icon-font-color-hover,
+        $_note-icon-font-color-active,
+        $_note-icon-font-margin,
+        $_note-icon-font-vertical-align,
+        $_note-icon-font-position,
+        $_note-icon-font-text-hide
+    );
+}
+
+@mixin lib-form-validation-color(
+    $_element-border-color-error,
+    $_element-background-error,
+    $_element-color-error,
+    $_element-border-color-valid,
+    $_element-background-valid,
+    $_element-color-valid
+) {
+    &.mage-error {
+        @include lib-form-element-color(
+            $_border-color: $_element-border-color-error,
+            $_background  : $_element-background-error,
+            $_color       : $_element-color-error
+        );
+    }
+
+    &.valid {
+        @include lib-form-element-color(
+            $_border-color: $_element-border-color-valid,
+            $_background  : $_element-background-valid,
+            $_color       : $_element-color-valid
+        );
+    }
+}
+
+@mixin lib-form-element-all() {
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="search"],
+    input[type="number"],
+    input[type="datetime"],
+    input[type="email"] {
+        @include lib-form-element-input($_type: input-text);
+    }
+
+    input[type="number"] {
+        @include lib-form-element-number-reset();
+    }
+
+    input[type="search"] {
+        @include lib-form-element-search-reset();
+    }
+
+    select {
+        @include lib-form-element-input($_type: select);
+    }
+
+    select[multiple="multiple"] {
+        height: auto;
+        background-image: none;
+    }
+
+    textarea {
+        @include lib-form-element-input($_type: textarea);
+        @include lib-form-element-textarea-resize();
+    }
+
+    input[type="checkbox"] {
+        @include lib-form-element-choice($_type: checkbox);
+    }
+
+    input[type="radio"] {
+        @include lib-form-element-choice($_type: radio);
+    }
+
+    input,
+    select,
+    textarea {
+        @include lib-form-validation();
+    }
+
+    div.mage-error[generated] {
+        @include lib-form-validation-note();
+    }
+
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        cursor: pointer;
+        appearance: button;
+        overflow: visible;
+    }
+
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+}
+
+//
+//  Internal use mixins
+//  ---------------------------------------------
+
+@mixin _lib-form-validation-icon(
+    $_note-icon-use,
+    $_note-icon-font-content,
+    $_note-icon-font,
+    $_note-icon-font-size,
+    $_note-icon-font-line-height,
+    $_note-icon-font-color,
+    $_note-icon-font-color-hover,
+    $_note-icon-font-color-active,
+    $_note-icon-font-margin,
+    $_note-icon-font-vertical-align,
+    $_note-icon-font-position,
+    $_note-icon-font-text-hide
+) {
+    @if $_note-icon-use {
+        @include lib-icon-font(
+            $_icon-font-content       : $_note-icon-font-content,
+            $_icon-font               : $_note-icon-font,
+            $_icon-font-size          : $_note-icon-font-size,
+            $_icon-font-line-height   : $_note-icon-font-line-height,
+            $_icon-font-color         : $_note-icon-font-color,
+            $_icon-font-color-hover   : $_note-icon-font-color-hover,
+            $_icon-font-color-active  : $_note-icon-font-color-active,
+            $_icon-font-margin        : $_note-icon-font-margin,
+            $_icon-font-vertical-align: $_note-icon-font-vertical-align,
+            $_icon-font-position      : $_note-icon-font-position,
+            $_icon-font-text-hide     : $_note-icon-font-text-hide
+        );
+    }
+}
+
+//  Only for states :disabled: :focus: placeholder
+@mixin _lib-form-element-focus(
+    $_background-default,
+    $_background-state,
+    $_border-default,
+    $_border-state,
+    $_color-default,
+    $_color-state,
+    $_font-style-default,
+    $_font-style-state
+) {
+    &:focus {
+        @include _lib-form-element-state-add-background(
+            $_background-state,
+            $_background-default
+        );
+        @include _lib-form-element-state-add-border(
+            $_border-state,
+            $_border-default
+        );
+        @include _lib-form-element-state-add-font-color(
+            $_color-state,
+            $_color-default
+        );
+        @include _lib-form-element-state-add-font-style(
+            $_font-style-state,
+            $_font-style-default
+        );
+    }
+}
+
+@mixin _lib-form-element-disabled(
+    $_background-default,
+    $_background-state,
+    $_border-default,
+    $_border-state,
+    $_color-default,
+    $_color-state,
+    $_font-style-default,
+    $_font-style-state,
+    $_opacity
+) {
+    &:disabled {
+        opacity: $_opacity;
+        @include _lib-form-element-state-add-background(
+            $_background-state,
+            $_background-default
+        );
+        @include _lib-form-element-state-add-border(
+            $_border-state,
+            $_border-default
+        );
+        @include _lib-form-element-state-add-font-color(
+            $_color-state,
+            $_color-default
+        );
+        @include _lib-form-element-state-add-font-style(
+            $_font-style-state,
+            $_font-style-default
+        );
+    }
+}
+
+@mixin _lib-form-element-placeholder(
+    $_type,
+    $_color,
+    $_font-style-default,
+    $_font-style-state
+) {
+    @if $_type != "select" {
+        &::-moz-placeholder {
+            color: $_color;
+            @include _lib-form-element-state-add-font-style(
+                $_font-style-state,
+                $_font-style-default
+            );
+        }
+
+        &::-webkit-input-placeholder {
+            color: $_color;
+            @include _lib-form-element-state-add-font-style(
+                $_font-style-state,
+                $_font-style-default
+            );
+        }
+
+        &:-ms-input-placeholder {
+            color: $_color;
+            @include _lib-form-element-state-add-font-style(
+                $_font-style-state,
+                $_font-style-default
+            );
+        }
+    }
+}
+
+@mixin _lib-form-element-state-add-background(
+    $_background-state,
+    $_background-default
+) {
+    @if $_background-state != $_background-default {
+        background: $_background-state;
+    }
+}
+
+@mixin _lib-form-element-state-add-border(
+    $_border-state,
+    $_border-default
+) {
+    @if $_border-state != $_border-default{
+        border: $_border-state;
+    }
+}
+
+@mixin _lib-form-element-state-add-border-color(
+    $_border-state,
+    $_border-default
+) {
+    @if $_border-state != $_border-default {
+        border-color: $_border-state;
+    }
+}
+
+@mixin _lib-form-element-state-add-font-style(
+    $_font-style-state,
+    $_font-style-default
+) {
+    @if $_font-style-state != $_font-style-default {
+        font-style: $_font-style-state;
+    }
+}
+
+@mixin _lib-form-element-state-add-font-color(
+    $_color-state,
+    $_color-default
+) {
+    @if $_color-state != $_color-default {
+        color: $_color-state;
+    }
+}
+
+@mixin lib-form-fieldset(
+    $_border            : 0,
+    $_margin            : 0 0 $indent__xl,
+    $_padding           : 0,
+    $_legend-color      : inherit,
+    $_legend-font-size  : 20px,
+    $_legend-font-family: inherit,
+    $_legend-font-weight: inherit,
+    $_legend-font-style : inherit,
+    $_legend-line-height: 1.2,
+    $_legend-margin     : 0 0 $indent__m,
+    $_legend-padding    : 0,
+    $_legend-width      : inherit
+) {
+    border: $_border;
+    margin: $_margin;
+    padding: $_padding;
+    letter-spacing: -0.31em; // WTF
+    //word-spacing: -0.43em; // WTF
+
+
+    > * {
+        letter-spacing: normal;
+        //word-spacing: normal; // WTF
+    }
+
+    > .legend {
+        margin: $_legend-margin;
+        padding: $_legend-padding;
+        width: $_legend-width;
+        box-sizing: border-box;
+        float: left;
+
+        @include lib-typography(
+            $_font-size  : $_legend-font-size,
+            $_color      : $_legend-color,
+            $_font-family: $_legend-font-family,
+            $_font-weight: $_legend-font-weight,
+            $_line-height: $_legend-line-height,
+            $_font-style : $_legend-font-style
+        );
+
+        & + br {
+            clear: both;
+            display: block;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+    }
+}
+
+@mixin lib-form-field(
+    $_type                         : block,
+
+    $_type-inline-margin           : 0 0 $indent__base,
+    $_type-inline-label-margin     : inherit,
+    $_type-inline-label-padding    : 6px 15px 0 0,
+    $_type-inline-label-align      : right,
+    $_type-inline-label-width      : 25.8%,
+    $_type-inline-control-width    : 25.8%,
+
+    $_type-block-margin            : 0 0 $indent__base,
+    $_type-block-label-margin      : 0 0 $indent__xs,
+    $_type-block-label-padding     : inherit,
+    $_type-block-label-align       : inherit,
+
+    $_vertical-indent              : $indent__base,
+    $_additional-vertical-indent   : $indent__base / 2,
+
+    $_border                       : none,
+    $_column                       : inherit,
+    $_column-padding               : 0 12px 0 0,
+    $_column-number                : 2,
+
+    $_label-color                  : inherit,
+    $_label-font-size              : inherit,
+    $_label-font-family            : inherit,
+    $_label-font-weight            : $font-weight__bold,
+    $_label-font-style             : inherit,
+    $_label-line-height            : inherit,
+
+    $_label-asterisk-color         : $color-red10,
+    $_label-asterisk-font-size     : $font-size__s,
+    $_label-asterisk-font-family   : inherit,
+    $_label-asterisk-font-weight   : inherit,
+    $_label-asterisk-font-style    : inherit,
+    $_label-asterisk-line-height   : inherit,
+    $_label-asterisk-margin        : 0 0 0 $indent__xs,
+
+    $_note-color                   : $form-field-note__color,
+    $_note-font-size               : $font-size__s,
+    $_note-font-family             : inherit,
+    $_note-font-weight             : inherit,
+    $_note-line-height             : inherit,
+    $_note-font-style              : inherit,
+    $_note-margin                  : 3px 0 0,
+    $_note-padding                 : 0,
+
+    $_note-icon-font               : $icon-font,
+    $_note-icon-font-content       : $icon-pointer-up,
+    $_note-icon-font-size          : $font-size__s * 2,
+    $_note-icon-font-line-height   : $font-size__s,
+    $_note-icon-font-color         : inherit,
+    $_note-icon-font-color-hover   : inherit,
+    $_note-icon-font-color-active  : inherit,
+    $_note-icon-font-margin        : inherit,
+    $_note-icon-font-vertical-align: $icon-font__vertical-align,
+    $_note-icon-font-position      : $icon-font__position,
+    $_note-icon-font-text-hide     : $icon-font__text-hide
+) {
+    border: $_border;
+
+    @include lib-form-field-type(
+        $_type,
+        $_type-inline-margin,
+        $_type-inline-label-margin,
+        $_type-inline-label-padding,
+        $_type-inline-label-align,
+        $_type-inline-label-width,
+        $_type-inline-control-width,
+        $_vertical-indent,
+        $_type-block-margin,
+        $_type-block-label-margin,
+        $_type-block-label-padding,
+        $_type-block-label-align
+    );
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include lib-form-field-column(
+        $_column,
+        $_column-padding,
+        $_column-number
+    );
+
+    > .label {
+        @include lib-typography(
+            $_font-size  : $_label-font-size,
+            $_color      : $_label-color,
+            $_font-family: $_label-font-family,
+            $_font-weight: $_label-font-weight,
+            $_line-height: $_label-line-height,
+            $_font-style : $_label-font-style
+        );
+        & + br {
+            display: none;
+        }
+    }
+
+    .choice {
+        input {
+            vertical-align: top;
+        }
+    }
+
+    .fields.group {
+        @include lib-clearfix();
+        .field {
+            box-sizing: border-box;
+            float: left;
+        }
+
+        &.group-2 .field {
+            width: 50% !important;
+        }
+
+        &.group-3 .field {
+            width: 33.3% !important;
+        }
+
+        &.group-4 .field {
+            width: 25% !important;
+        }
+
+        &.group-5 .field {
+            width: 20% !important;
+        }
+    }
+
+    .addon {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        padding: 0;
+        width: 100%;
+
+        textarea,
+        select,
+        input {
+            order: 2;
+            flex-basis: 100%;
+            display: inline-block;
+            margin: 0;
+            width: auto;
+        }
+
+        .addbefore,
+        .addafter {
+            @include lib-form-element-input($_type: input-text);
+            order: 3;
+            display: inline-block;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: auto;
+        }
+
+        .addbefore {
+            float: left;
+            order: 1;
+        }
+    }
+
+    .additional {
+        margin-top: $_additional-vertical-indent;
+    }
+
+    @include _lib-form-field-required(
+        $_label-asterisk-color,
+        $_label-asterisk-font-size,
+        $_label-asterisk-font-family,
+        $_label-asterisk-font-weight,
+        $_label-asterisk-font-style,
+        $_label-asterisk-line-height,
+        $_label-asterisk-margin
+    );
+
+    @include _lib-form-field-note(
+        $_note-font-size,
+        $_note-color,
+        $_note-font-family,
+        $_note-font-weight,
+        $_note-line-height,
+        $_note-font-style,
+        $_note-margin,
+        $_note-padding,
+
+        $_note-icon-font-content,
+        $_note-icon-font,
+        $_note-icon-font-size,
+        $_note-icon-font-line-height,
+        $_note-icon-font-color,
+        $_note-icon-font-color-hover,
+        $_note-icon-font-color-active,
+        $_note-icon-font-margin,
+        $_note-icon-font-vertical-align,
+        $_note-icon-font-position,
+        $_note-icon-font-text-hide
+    );
+}
+
+@mixin lib-form-field-type(
+    $_type,
+
+    $_type-inline-margin       : 0 0 $indent__base,
+    $_type-inline-label-width  : 25.8%,
+    $_type-inline-label-margin : inherit,
+    $_type-inline-label-padding: 6px 15px 0 0,
+    $_type-inline-label-align  : right,
+    $_type-inline-control-width: 74.2%,
+
+    $_type-block-margin        : $indent__base,
+    $_type-block-label-margin  : 0 0 $indent__xs,
+    $_type-block-label-padding : inherit,
+    $_type-block-label-align   : inherit,
+
+    $_vertical-indent          : $indent__base / 2
+) {
+    @if $_type == "inline" {
+        @include _lib-form-field-type-inline(
+            $_type-inline-margin,
+            $_type-inline-label-margin,
+            $_type-inline-label-padding,
+            $_type-inline-label-width,
+            $_type-inline-control-width,
+            $_type-inline-label-align,
+            $_vertical-indent
+        );
+    }
+    @else if $_type == "block" {
+        @include _lib-form-field-type-block(
+            $_type-block-margin,
+            $_type-block-label-margin,
+            $_type-block-label-padding,
+            $_type-block-label-align
+        );
+    }
+}
+
+@mixin _lib-form-field-type-inline(
+    $_type-inline-margin,
+    $_type-inline-label-margin,
+    $_type-inline-label-padding,
+    $_type-inline-label-width,
+    $_type-inline-control-width,
+    $_type-inline-label-align,
+    $_vertical-indent
+) {
+    @include lib-clearfix();
+    margin: $_type-inline-margin;
+    box-sizing: border-box;
+
+    &.choice:before,
+    &.no-label:before {
+        padding: $_type-inline-label-padding;
+        width: $_type-inline-label-width;
+        box-sizing: border-box;
+        content: ' ';
+        float: left;
+        height: 1px;
+    }
+
+    .description {
+        padding: $_type-inline-label-padding;
+        text-align: $_type-inline-label-align;
+        width: $_type-inline-label-width;
+        box-sizing: border-box;
+        float: left;
+    }
+
+    &:not(.choice) {
+        > .label {
+            margin: $_type-inline-label-margin;
+            padding: $_type-inline-label-padding;
+            text-align: $_type-inline-label-align;
+            width: $_type-inline-label-width;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        > .control {
+            width: $_type-inline-control-width;
+            float: left;
+        }
+    }
+}
+
+@mixin _lib-form-field-type-block(
+    $_type-block-margin,
+    $_type-block-label-margin,
+    $_type-block-label-padding,
+    $_type-block-label-align
+) {
+    margin: $_type-block-margin;
+    > .label {
+        margin: $_type-block-label-margin;
+        padding: $_type-block-label-padding;
+        text-align: $_type-block-label-align;
+        display: inline-block;
+    }
+}
+
+@mixin _lib-form-field-required(
+    $_color      : $color-red10,
+    $_font-size  : $font-size__s,
+    $_font-family: inherit,
+    $_font-weight: inherit,
+    $_font-style : inherit,
+    $_line-height: inherit,
+    $_margin     : 0 0 0 $indent__xs
+) {
+    &.required > .label {
+        &:after {
+            content: '*';
+            @include lib-typography(
+                $_font-size  : $_font-size,
+                $_color      : $_color,
+                $_font-family: $_font-family,
+                $_font-weight: $_font-weight,
+                $_line-height: $_line-height,
+                $_font-style : $_font-style
+            );
+            margin: $_margin;
+        }
+    }
+}
+
+@mixin _lib-form-field-note(
+    $_note-font-size,
+    $_note-color,
+    $_note-font-family,
+    $_note-font-weight,
+    $_note-line-height,
+    $_note-font-style,
+    $_note-margin,
+    $_note-padding,
+
+    $_note-icon-font-content,
+    $_note-icon-font,
+    $_note-icon-font-size,
+    $_note-icon-font-line-height,
+    $_note-icon-font-color,
+    $_note-icon-font-color-hover,
+    $_note-icon-font-color-active,
+    $_note-icon-font-margin,
+    $_note-icon-font-vertical-align,
+    $_note-icon-font-position,
+    $_note-icon-font-text-hide
+) {
+    .note {
+        @include lib-typography(
+            $_font-size  : $_note-font-size,
+            $_color      : $_note-color,
+            $_font-family: $_note-font-family,
+            $_font-weight: $_note-font-weight,
+            $_line-height: $_note-line-height,
+            $_font-style : $_note-font-style
+        );
+
+        margin: $_note-margin;
+        padding: $_note-padding;
+
+        @include lib-icon-font(
+            $_icon-font-content       : $_note-icon-font-content,
+            $_icon-font               : $_note-icon-font,
+            $_icon-font-size          : $_note-icon-font-size,
+            $_icon-font-line-height   : $_note-icon-font-line-height,
+            $_icon-font-color         : $_note-icon-font-color,
+            $_icon-font-color-hover   : $_note-icon-font-color-hover,
+            $_icon-font-color-active  : $_note-icon-font-color-active,
+            $_icon-font-margin        : $_note-icon-font-margin,
+            $_icon-font-vertical-align: $_note-icon-font-vertical-align,
+            $_icon-font-position      : $_note-icon-font-position,
+            $_icon-font-text-hide     : $_note-icon-font-text-hide
+        );
+    }
+}
+
+@mixin lib-form-field-type-revert(
+    $_type                     : inline,
+
+    $_type-inline-margin       : 0 0 $indent__base,
+    $_type-inline-label-width  : 25.8%,
+    $_type-inline-label-margin : inherit,
+    $_type-inline-label-padding: 6px 15px 0 0,
+    $_type-inline-label-align  : right,
+    $_type-inline-control-width: 74.2%,
+
+    $_type-block-margin        : 0,
+    $_type-block-label-margin  : 0 0 $indent__xs,
+    $_type-block-label-padding : inherit,
+    $_type-block-label-align   : inherit,
+
+    $_vertical-indent          : $indent__base / 2
+) {
+    @if $_type == "block" {
+        &:not(.choice) {
+            > .label {
+                box-sizing: content-box;
+                float: none;
+                width: auto;
+
+                @include _lib-revert-type-block-label-align(
+                    $_type-block-label-align
+                );
+
+                @include _lib-revert-type-block-label-padding(
+                    $_type-block-label-padding
+                );
+            }
+
+            > .control {
+                float: none;
+                width: auto;
+            }
+        }
+
+        @include _lib-form-field-type-block(
+            $_type-block-margin,
+            $_type-block-label-margin,
+            $_type-block-label-padding,
+            $_type-block-label-align
+        );
+
+        &.choice,
+        &.no-label {
+            &:before {
+                display: none;
+            }
+        }
+    }
+    @else if $_type == "inline" {
+        > .label {
+            @include _lib-revert-type-inline-label-margin(
+                $_type-inline-label-margin
+            );
+        }
+        @include _lib-form-field-type-inline(
+            $_type-inline-margin,
+            $_type-inline-label-margin,
+            $_type-inline-label-padding,
+            $_type-inline-label-width,
+            $_type-inline-control-width,
+            $_type-inline-label-align,
+            $_vertical-indent
+        );
+    }
+}
+
+@mixin lib-form-field-column(
+    $_column        : inherit,
+    $_column-padding: 0 12px 0 0,
+    $_column-number : 2
+) {
+    @if $_column != inherit {
+        padding: $_column-padding;
+        box-sizing: border-box;
+        display: inline-block;
+
+        @include lib-form-field-column-number($_column-number);
+        vertical-align: top;
+
+        & + .fieldset {
+            clear: both;
+        }
+    }
+}
+
+@mixin lib-form-field-column-number(
+    $_column-number: 2
+) {
+    width: 100% / $_column-number;
+}
+
+@mixin _lib-revert-type-block-label-padding($_type-block-label-padding) {
+    @if $_type-block-label-padding == inherit {
+        padding: 0;
+    }
+}
+
+@mixin _lib-revert-type-block-label-align($_type-block-label-align) {
+    @if $_type-block-label-align == inherit {
+        text-align: left;
+    }
+}
+
+@mixin _lib-revert-type-inline-label-margin($_type-inline-label-margin) {
+    @if $_type-inline-label-margin == inherit {
+        margin: 0;
+    }
+}
+
+@mixin lib-form-hasrequired(
+    $_position   : top,
+    $_color      : $color-red10,
+    $_font-size  : $font-size__s,
+    $_font-family: inherit,
+    $_font-weight: inherit,
+    $_font-style : inherit,
+    $_line-height: inherit,
+    $_border     : none,
+    $_margin     : $indent__s 0 0,
+    $_padding    : inherit
+) {
+    @if $_position == "top" {
+        &:before {
+            @include _lib-form-hasrequired-position-any(
+                $_border,
+                $_margin,
+                $_padding,
+                $_font-size,
+                $_color,
+                $_font-family,
+                $_font-weight,
+                $_line-height,
+                $_font-style
+            );
+        }
+    }
+    @else if $_position == "bottom" {
+        &:after {
+            @include _lib-form-hasrequired-position-any(
+                $_border,
+                $_margin,
+                $_padding,
+                $_font-size,
+                $_color,
+                $_font-family,
+                $_font-weight,
+                $_line-height,
+                $_font-style
+            );
+        }
+    }
+}
+
+@mixin _lib-form-hasrequired-position-any(
+    $_border,
+    $_margin,
+    $_padding,
+    $_font-size,
+    $_color,
+    $_font-family,
+    $_font-weight,
+    $_line-height,
+    $_font-style
+) {
+    border: $_border;
+    margin: $_margin;
+    padding: $_padding;
+    content: attr(data-hasrequired);
+    display: block;
+    letter-spacing: normal;
+    word-spacing: normal;
+    @include lib-typography(
+        $_font-size  : $_font-size,
+        $_color      : $_color,
+        $_font-family: $_font-family,
+        $_font-weight: $_font-weight,
+        $_line-height: $_line-height,
+        $_font-style : $_font-style
+    );
+}

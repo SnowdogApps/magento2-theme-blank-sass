@@ -1,0 +1,33 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+$checkout-field-validation__border-color: $form-element-validation__border-error;
+
+//
+//  Common
+//  _____________________________________________
+
+
+.field {
+    .control {
+        &._with-tooltip {
+            @extend .abs-field-tooltip;
+        }
+    }
+
+    &._error {
+        .control {
+            input,
+            select,
+            textarea {
+                border-color: $checkout-field-validation__border-color;
+            }
+        }
+    }
+}

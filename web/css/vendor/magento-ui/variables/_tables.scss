@@ -1,0 +1,29 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Table variables
+//  _____________________________________________
+
+$table__width: 100%;
+$table__margin-bottom: inherit;
+$table__background-color: inherit;
+$table__border-color: $border-color__base;
+$table__border-width: $border-width__base;
+$table__border-style: solid;
+
+$table-cell__padding-horizontal: $indent__s;
+// $table-cell__padding-vertical: 8px;
+$table-td__color: inherit;
+
+//
+//  Tables
+//  ---------------------------------------------
+
+$table-cell__padding-vertical: 11px;
+$table-cell__hover__background-color: $panel__background-color;
+$table-cell-stripped__background-color: $table-cell__hover__background-color;
+$table-responsive-th__background-color: $table-cell-stripped__background-color;
+$table-responsive-cell__padding: $indent__xs $indent__s;

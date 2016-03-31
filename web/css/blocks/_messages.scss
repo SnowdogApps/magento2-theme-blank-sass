@@ -1,0 +1,28 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+.message.info {
+    @include lib-message-icon-inner(info);
+}
+
+.message.error {
+    @include lib-message-icon-inner(error);
+}
+
+.message.warning {
+    @include lib-message-icon-inner(warning);
+}
+
+.message.notice {
+    @include lib-message-icon-inner(notice);
+}
+
+.message.success {
+    @include lib-message-icon-inner(success);
+}

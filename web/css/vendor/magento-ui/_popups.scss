@@ -1,0 +1,325 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Popups
+//  _____________________________________________
+
+//
+// Variables
+//
+$popup__background: $color-white;
+$popup__border-color: $color-gray-light3;
+//  Popup icons
+$popup-icon-font: $icon-font;
+$popup-icon-font__content: $icon-remove;
+$popup-icon-font__size: 16px;
+$popup-icon-font__line-height: 16px;
+$popup-icon-font__color: $color-gray55;
+$popup-icon-font__color-hover: darken($popup-icon-font__color, 10%);
+$popup-icon-font__color-active: $popup-icon-font__color-hover;
+$popup-icon-font__margin: inherit;
+$popup-icon-font__vertical-align: top;
+$popup-icon-font__position: $button-icon__position;
+$popup-icon-font__text-hide: true;
+
+$popup-button-close__icon: true; // [true|false]
+$popup-button-close__reset: true; // [true|false]
+$popup-button-close__position: absolute;
+$popup-button-close__position-top: $indent__s;
+$popup-button-close__position-right: $indent__s;
+$popup-button-close__position-bottom: inherit;
+$popup-button-close__position-left: inherit;
+$popup__height: auto;
+$popup__padding: 22px;
+
+//
+// Mixins
+//
+
+@mixin lib-popup(
+    $_popup-width                                             : 100%,
+    $_popup-height                                            : $popup__height,
+    $_popup-padding                                           : 22px,
+    $_popup-background                                        : $popup__background,
+    $_popup-border                                            : 1px solid $color-gray-light3,
+    $_popup-shadow                                            : 0 3px 3px rgba(0, 0, 0, 0.15),
+    $_popup-fade                                              : opacity 0.3s linear,
+    $_popup-z-index                                           : 1001,
+
+    $_popup-position                                          : fixed,
+    $_popup-position-top                                      : 0,
+    $_popup-position-right                                    : 0,
+    $_popup-position-bottom                                   : 0,
+    $_popup-position-left                                     : 0,
+
+    $_popup-margin-top                                        : inherit,
+    $_popup-margin-right                                      : inherit,
+    $_popup-margin-bottom                                     : inherit,
+    $_popup-margin-left                                       : inherit,
+
+    $_popup-content-height                                    : auto,
+    $_popup-header-margin                                     : 0 0 25px,
+    $_popup-content-margin                                    : inherit,
+    $_popup-footer-margin                                     : inherit,
+
+    $_popup-title-headings                                    : true, // [true|false]
+    $_popup-title-headings-level                              : h3, // [h1|h2|h3|h4|h5|h6]
+
+    // Icons parameters
+    $_popup-button-close-icon                                 : true,
+    $_popup-button-close-reset                                : true,
+    $_popup-button-close-position                             : absolute,
+    $_popup-button-close-position-top                         : $indent__s,
+    $_popup-button-close-position-right                       : $indent__s,
+    $_popup-button-close-position-bottom                      : inherit,
+    $_popup-button-close-position-left                        : inherit,
+    $_popup-icon-font-content                                 : $icon-remove,
+    $_popup-icon-font                                         : $icon-font,
+    $_popup-icon-font-size                                    : 22px,
+    $_popup-icon-font-line-height                             : 22px,
+    $_popup-icon-font-color                                   : inherit,
+    $_popup-icon-font-color-hover                             : inherit,
+    $_popup-icon-font-color-active                            : inherit,
+    $_popup-icon-font-margin                                  : inherit,
+    $_popup-icon-font-vertical-align                          : top,
+    $_popup-icon-font-position                                : $button-icon__position,
+    $_popup-icon-font-text-hide                               : true,
+
+    // Actions toolbar parameters
+    $_popup-actions-toolbar                                   : inherit,
+    $_popup-actions-toolbar-actions-position                  : $actions-toolbar-actions__position,
+    $_popup-actions-toolbar-actions-reverse                   : $actions-toolbar-actions__reverse,
+    $_popup-actions-toolbar-actions-margin                    : $actions-toolbar-actions__margin,
+    $_popup-actions-toolbar-margin                            : $actions-toolbar__margin,
+    $_popup-actions-toolbar-padding                           : $actions-toolbar__padding,
+    $_popup-actions-toolbar-primary-actions-margin            : $actions-toolbar-actions-primary__margin,
+    $_popup-actions-toolbar-secondary-actions-margin          : $actions-toolbar-actions-secondary__margin,
+    $_popup-actions-toolbar-actions-links-margin-top          : $actions-toolbar-actions-links__margin-top,
+    $_popup-actions-toolbar-primary-actions-links-margin-top  : $actions-toolbar-actions-links-primary__margin-top,
+    $_popup-actions-toolbar-secondary-actions-links-margin-top: $actions-toolbar-actions-links-secondary__margin-top
+) {
+    background: $_popup-background;
+    border: $_popup-border;
+    padding: $_popup-padding;
+    width: $_popup-width;
+    @include _lib-popup-height($_popup-height);
+    @include _lib-popup-shadow($_popup-shadow);
+    @include _lib-popup-action-toolbar(
+        $_popup-actions-toolbar,
+        $_popup-actions-toolbar-actions-position,
+        $_popup-actions-toolbar-actions-reverse,
+        $_popup-actions-toolbar-margin,
+        $_popup-actions-toolbar-padding,
+        $_popup-actions-toolbar-actions-margin,
+        $_popup-actions-toolbar-primary-actions-margin,
+        $_popup-actions-toolbar-secondary-actions-margin,
+        $_popup-actions-toolbar-actions-links-margin-top,
+        $_popup-actions-toolbar-primary-actions-links-margin-top,
+        $_popup-actions-toolbar-secondary-actions-links-margin-top
+    );
+
+    .popup-header {
+        margin: $_popup-header-margin;
+
+        .title {
+            @include _lib-popup-headings(
+                $_popup-title-headings,
+                $_popup-title-headings-level
+            );
+        }
+
+        padding-right: $_popup-icon-font-size;
+    }
+
+    .popup-content {
+        @include _lib-popup-height($_popup-content-height);
+        margin: $_popup-content-margin;
+    }
+
+    .popup-footer {
+        margin: $_popup-footer-margin;
+    }
+
+    .popup-actions {
+        .action.close {
+            position: $_popup-button-close-position;
+            @include _lib-popup-button-close-icon(
+                $_popup-button-close-icon,
+                $_popup-icon-font-content,
+                $_popup-icon-font,
+                $_popup-icon-font-size,
+                $_popup-icon-font-line-height,
+                $_popup-icon-font-color,
+                $_popup-icon-font-color-hover,
+                $_popup-icon-font-color-active,
+                $_popup-icon-font-margin,
+                $_popup-icon-font-vertical-align,
+                $_popup-icon-font-position,
+                $_popup-icon-font-text-hide
+            );
+            @include _lib-popup-button-close-reset(
+                $_popup-button-close-reset
+            );
+            bottom: $_popup-button-close-position-bottom;
+            left: $_popup-button-close-position-left;
+            right: $_popup-button-close-position-right;
+            top: $_popup-button-close-position-top;
+        }
+    }
+
+    @include _lib-popup-fade($_popup-fade);
+    bottom: $_popup-position-bottom;
+    left: $_popup-position-left;
+    margin-bottom: $_popup-margin-bottom;
+    margin-left: $_popup-margin-left;
+    margin-right: $_popup-margin-right;
+    margin-top: $_popup-margin-top;
+    position: $_popup-position;
+    right: $_popup-position-right;
+    top: $_popup-position-top;
+    z-index: $_popup-z-index;
+    display: none;
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+@mixin lib-window-overlay(
+    $_overlay-background: $color-black,
+    $_overlay-opacity: 0.5,
+    $_overlay-opacity-old: 50,
+    $_overlay-fade: opacity 0.15s linear,
+    $_overlay-z-index: 1000
+) {
+    @include _lib-popup-fade($_overlay-fade);
+    background: $_overlay-background;
+    z-index: $_overlay-z-index;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    &.active {
+        opacity: $_overlay-opacity;
+        @if $_overlay-opacity-old == false {
+            filter: alpha(opacity=$_overlay-opacity-old);
+        }
+    }
+}
+
+//
+//  Internal use mixins
+//  ---------------------------------------------
+
+//  Popup fade
+@mixin _lib-popup-fade($_popup-fade) {
+    @if $_popup-fade != '' {
+        transition: $_popup-fade;
+    }
+}
+
+//  Popup shadow
+@mixin _lib-popup-shadow($_popup-shadow) {
+    @if $_popup-shadow != '' and $_popup-shadow != none {
+        box-shadow: $_popup-shadow;
+    }
+}
+
+//  Popup height
+@mixin _lib-popup-height($_popup-height) {
+    @if $_popup-height != auto {
+        overflow-y: auto;
+        max-height: $_popup-height;
+    }
+}
+
+//  Popup Headings
+// To do: probably not working, check function lib-heading() in typography.scss
+@mixin _lib-popup-headings(
+    $_popup-title-headings,
+    $_popup-title-headings-level
+) {
+    @if $_popup-title-headings == true {
+        @include lib-heading($_popup-title-headings-level);
+    }
+}
+
+//  Popup action-toolbar
+@mixin _lib-popup-action-toolbar(
+    $_popup-actions-toolbar,
+    $_popup-actions-toolbar-actions-position,
+    $_popup-actions-toolbar-actions-reverse,
+    $_popup-actions-toolbar-margin,
+    $_popup-actions-toolbar-padding,
+    $_popup-actions-toolbar-actions-margin,
+    $_popup-actions-toolbar-primary-actions-margin,
+    $_popup-actions-toolbar-secondary-actions-margin,
+    $_popup-actions-toolbar-actions-links-margin-top,
+    $_popup-actions-toolbar-primary-actions-links-margin-top,
+    $_popup-actions-toolbar-secondary-actions-links-margin-top
+) {
+    @if $_popup-actions-toolbar == true {
+        .popup-footer {
+            .actions.toolbar {
+                @include lib-actions-toolbar(
+                    $_actions-toolbar-actions-position                  : $_popup-actions-toolbar-actions-position,
+                    $_actions-toolbar-actions-reverse                   : $_popup-actions-toolbar-actions-reverse,
+                    $_actions-toolbar-margin                            : $_popup-actions-toolbar-margin,
+                    $_actions-toolbar-padding                           : $_popup-actions-toolbar-padding,
+                    $_actions-toolbar-actions-margin                    : $_popup-actions-toolbar-actions-margin,
+                    $_actions-toolbar-primary-actions-margin            : $_popup-actions-toolbar-primary-actions-margin,
+                    $_actions-toolbar-secondary-actions-margin          : $_popup-actions-toolbar-secondary-actions-margin,
+                    $_actions-toolbar-actions-links-margin-top          : $_popup-actions-toolbar-actions-links-margin-top,
+                    $_actions-toolbar-primary-actions-links-margin-top  : $_popup-actions-toolbar-primary-actions-links-margin-top,
+                    $_actions-toolbar-secondary-actions-links-margin-top: $_popup-actions-toolbar-secondary-actions-links-margin-top
+                );
+            }
+        }
+    }
+}
+
+//  Popup close button use icon
+@mixin _lib-popup-button-close-icon(
+    $_popup-button-close-icon,
+    $_popup-icon-font-content,
+    $_popup-icon-font,
+    $_popup-icon-font-size,
+    $_popup-icon-font-line-height,
+    $_popup-icon-font-color,
+    $_popup-icon-font-color-hover,
+    $_popup-icon-font-color-active,
+    $_popup-icon-font-margin,
+    $_popup-icon-font-vertical-align,
+    $_popup-icon-font-position,
+    $_popup-icon-font-text-hide
+)  {
+    @if $_popup-button-close-icon == true {
+        @include lib-button-icon(
+            $_icon-font-content       : $_popup-icon-font-content,
+            $_icon-font               : $_popup-icon-font,
+            $_icon-font-size          : $_popup-icon-font-size,
+            $_icon-font-line-height   : $_popup-icon-font-line-height,
+            $_icon-font-color         : $_popup-icon-font-color,
+            $_icon-font-color-hover   : $_popup-icon-font-color-hover,
+            $_icon-font-color-active  : $_popup-icon-font-color-active,
+            $_icon-font-margin        : $_popup-icon-font-margin,
+            $_icon-font-vertical-align: $_popup-icon-font-vertical-align,
+            $_icon-font-position      : $_popup-icon-font-position,
+            $_icon-font-text-hide     : $_popup-icon-font-text-hide
+        );
+    }
+}
+
+//  Popup close button reset
+@mixin _lib-popup-button-close-reset($_popup-button-close-reset) {
+    @if $_popup-button-close-reset == true {
+        @include lib-button-reset();
+    }
+}

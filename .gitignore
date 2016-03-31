@@ -1,0 +1,5 @@
+# Dependency directory
+node_modules
+
+# Styles compilation output
+/web/css/styles.css

@@ -1,0 +1,26 @@
+// /**
+//  * Copyright © 2015 Magento. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Page components
+//  ---------------------------------------------
+
+@import 'checkout/_checkout.scss';
+@import 'checkout/_estimated-total.scss';
+@import 'checkout/_progress-bar.scss';
+@import 'checkout/_fields.scss';
+@import 'checkout/_modals.scss';
+@import 'checkout/_tooltip.scss';
+@import 'checkout/_shipping.scss';
+@import 'checkout/_shipping-policy.scss';
+
+@import 'checkout/_sidebar.scss';
+@import 'checkout/_sidebar-shipping-information.scss';
+@import 'checkout/_order-summary.scss';
+@import 'checkout/_authentication.scss';
+
+@import 'checkout/_payments.scss';
+@import 'checkout/_payment-options.scss';
+@import 'checkout/_checkout-agreements.scss';
