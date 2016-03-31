@@ -987,8 +987,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
     $_type-inline-control-width: 74.2%,
-
-    $_type-block-margin        : $indent__base,
+    $_type-block-margin        : 0,
     $_type-block-label-margin  : 0 0 $indent__xs,
     $_type-block-label-padding : inherit,
     $_type-block-label-align   : inherit,
@@ -1054,7 +1053,8 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_column-padding: 0 12px 0 0,
     $_column-number : 2
 ) {
-    @if $_column {
+
+    @if $_column != inherit {
         padding: $_column-padding;
         box-sizing: border-box;
         display: inline-block;
@@ -1075,19 +1075,19 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 }
 
 @mixin _lib-revert-type-block-label-padding($_type-block-label-padding) {
-    @if $_type-block-label-padding == false {
+    @if $_type-block-label-padding == inherit {
         padding: 0;
     }
 }
 
 @mixin _lib-revert-type-block-label-align($_type-block-label-align) {
-    @if $_type-block-label-align == false {
+    @if $_type-block-label-align == inherit {
         text-align: left;
     }
 }
 
 @mixin _lib-revert-type-inline-label-margin($_type-inline-label-margin) {
-    @if $_type-inline-label-margin == false {
+    @if $_type-inline-label-margin == inherit {
         margin: 0;
     }
 }
