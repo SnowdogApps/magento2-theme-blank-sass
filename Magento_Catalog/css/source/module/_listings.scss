@@ -165,7 +165,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             margin: 0;
         }
 
-        .tocompare {
+        .action.tocompare {
             @include lib-icon-font-symbol($icon-compare-empty);
         }
 
