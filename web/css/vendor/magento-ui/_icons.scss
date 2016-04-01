@@ -106,7 +106,7 @@
     $_icon-font-content,
     $_icon-font-position: $icon-font__position
 ) {
-    @if $_icon-font-position = before {
+    @if $_icon-font-position == before {
         &:before {
             content: $_icon-font-content;
         }

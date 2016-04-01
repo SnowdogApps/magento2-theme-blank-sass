@@ -638,13 +638,6 @@ body.catalog-product-compare-index {
     clear: both;
     max-width: 100%;
     overflow-x: auto;
-
-    .table-comparison > tbody > tr{
-        & > th,
-        & > td {
-            border-top: 0;
-        }
-    }
 }
 
 .table-comparison {
@@ -692,17 +685,6 @@ body.catalog-product-compare-index {
                 height: auto;
             }
         }
-
-        &.remove {
-            padding-top: 0;
-            padding-bottom: 0;
-            text-align: right;
-
-            .action.delete {
-                @extend .abs-remove-button-for-blocks;
-                margin-right: .6rem;
-            }
-        }
     }
 
     .product-item-photo {
@@ -735,6 +717,22 @@ body.catalog-product-compare-index {
         }
     }
 
+    .cell.remove {
+        padding-top: 0;
+        padding-bottom: 0;
+        text-align: right;
+        .action.delete {
+            @extend .abs-remove-button-for-blocks;
+        }
+    }
+    .product-item-actions {
+        & > .actions-primary {
+            + .actions-secondary {
+                margin-top: $indent__s;
+            }
+        }
+    }
+
     .action {
         &.tocart {
             white-space: nowrap;
@@ -748,7 +746,7 @@ body.catalog-product-compare-index {
     top: 0;
     left: 0;
     width: auto;
-    background: $color-white;
+    background: $page__background-color;
 }
 
 .block-compare {
@@ -760,11 +758,17 @@ body.catalog-product-compare-index {
         margin-left: 22px;
     }
 
-    .action.delete {
-        @extend .abs-remove-button-for-blocks;
-        position: absolute;
-        left: 0;
-        top: 0;
+    .action {
+        &.delete {
+            @extend .abs-remove-button-for-blocks;
+            position: absolute;
+            left: -6;
+            top: 0;
+        }
+
+        &.compare {
+            @extend .abs-revert-secondary-color;
+        }
     }
 
     .counter {
@@ -774,106 +778,102 @@ body.catalog-product-compare-index {
     .actions-toolbar {
         margin: 17px 0 0;
     }
-
-    .action.primary {
-        @extend .abs-revert-to-action-secondary;
-    }
 }
 
 //
 //    Mobile
 //--------------------------------------
-@include max-screen($screen__s) {
-    .table-wrapper.comparison {
-        .table-comparison > tbody > tr {
-            & > th,
-            & > td {
-                display: table-cell;
-                @extend .abs-col-no-prefix;
-            }
-        }
-    }
-}
-@include max-screen($screen__m) {
-    .compare.wrapper,
-    [class*="block-compare"] {
-        display: none;
-    }
-}
+// @include max-screen($screen__s) {
+//     .table-wrapper.comparison {
+//         .table-comparison > tbody > tr {
+//             & > th,
+//             & > td {
+//                 display: table-cell;
+//                 @extend .abs-col-no-prefix;
+//             }
+//         }
+//     }
+// }
+// @include max-screen($screen__m) {
+//     .compare.wrapper,
+//     [class*="block-compare"] {
+//         display: none;
+//     }
+// }
 
 //
 //    Desktop
 //--------------------------------------
-@include min-screen($screen__m) {
-    .compare.wrapper {
-        float: right;
-        @include lib-list-reset-styles();
-
-        .action.compare {
-            line-height: $form-element-input__height;
-            @include lib-link(
-                $_link-color: $primary__color,
-                $_link-text-decoration: none,
-                $_link-color-visited: $primary__color,
-                $_link-text-decoration-visited: none,
-                $_link-color-hover: $primary__color,
-                $_link-text-decoration-hover: underline,
-                $_link-color-active: $primary__color,
-                $_link-text-decoration-active: underline
-            );
-        }
-
-        .counter.qty {
-            color: $primary__color__lighter;
-
-            &:before {
-                content: "(";
-            }
-
-            &:after {
-                content: ")";
-            }
-        }
-    }
-}
+// @include min-screen($screen__m) {
+//     .compare.wrapper {
+//         float: right;
+//         @include lib-list-reset-styles();
+//
+//         .action.compare {
+//             line-height: $form-element-input__height;
+//             @include lib-link(
+//                 $_link-color: $primary__color,
+//                 $_link-text-decoration: none,
+//                 $_link-color-visited: $primary__color,
+//                 $_link-text-decoration-visited: none,
+//                 $_link-color-hover: $primary__color,
+//                 $_link-text-decoration-hover: underline,
+//                 $_link-color-active: $primary__color,
+//                 $_link-text-decoration-active: underline
+//             );
+//         }
+//
+//         .counter.qty {
+//             color: $primary__color__lighter;
+//
+//             &:before {
+//                 content: "(";
+//             }
+//
+//             &:after {
+//                 content: ")";
+//             }
+//         }
+//     }
+// }
 
 //
 //    Common
 //--------------------------------------
 
-.block.related {
-    .action.select {
-        @extend .abs-action-button-as-link;
-        vertical-align: top;
-    }
-
-    .product-item-details {
-        position: relative;
-        z-index: 1;
-    }
-
-    .related-available .product-item-name {
-        margin-left: 20px;
-    }
-
-    .field.choice {
-        position: absolute;
-        top: 2px;
-        left: 0;
-
-        .label {
-            @extend .abs-visually-hidden;
-        }
-    }
-}
+// .block.related {
+//     .action.select {
+//         @extend .abs-action-button-as-link;
+//         vertical-align: top;
+//     }
+//
+//     .product-item-details {
+//         position: relative;
+//         z-index: 1;
+//     }
+//
+//     .related-available .product-item-name {
+//         margin-left: 20px;
+//     }
+//
+//     .field.choice {
+//         position: absolute;
+//         top: 2px;
+//         left: 0;
+//
+//         .label {
+//             @extend .abs-visually-hidden;
+//         }
+//     }
+// }
 
 //
 //    Desktop large
 //--------------------------------------
-@include min-screen($screen__l) {
-    .box-tocart {
-        .paypal:first-of-type {
-            margin-top: 13px;
-        }
-    }
-}
+// @include min-screen($screen__l) {
+//     .box-tocart {
+//         .paypal:first-of-type {
+//             margin-top: 13px;
+//         }
+//     }
+// }
