@@ -13,12 +13,18 @@
    @extend .abs-add-fields;
 }
 
-.product-social-links .action.mailto.friend {
-    @extend .abs-actions-addto;
-    @include lib-icon-font-symbol(
+.action.mailto.friend {
+    @include lib-icon-font(
         $_icon-font-content: $icon-envelope,
-        $_icon-font-position: before
+        $_icon-font-size: 28px,
+        $_icon-font-line-height: 28px,
+        $_icon-font-vertical-align: top
     );
+    span {
+        line-height: 28px;
+        vertical-align: top;
+        display: inline-block;
+    }
 }
 
 //
