@@ -55,8 +55,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         }
 
         &-info {
-            max-width: 100%;
             width: 152px;
+            max-width: 100%;
 
             .page-products & {
                 width: 240px;
@@ -68,7 +68,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
             .actions-secondary {
                 & > .action {
-                    @extend .abs-actions-addto;
+                    @extend .abs-actions-addto-gridlist;
                     &:before {
                         margin: 0;
                     }
@@ -101,19 +101,38 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
             .price {
                 font-weight: $font-weight__bold;
+                font-size: 14px;
             }
 
             .price-label {
-                color: $text__color__muted;
                 font-size: $font-size__s;
+                &:after {
+                    content: ":";
+                }
             }
         }
 
-        .old-price {
-            margin: $indent__xs 0;
-
+        .special-price,
+        .minimal-price {
             .price {
-                font-weight: normal;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            .price-wrapper {
+                display: inline-block;
+            }
+            .price-including-tax + .price-excluding-tax {
+                display: block;
+            }
+        }
+
+        .special-price {
+            display: block;
+        }
+
+        .old-price {
+            .price {
+                font-weight: $font-weight__regular;
             }
         }
 
@@ -124,7 +143,21 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         }
 
         .minimal-price-link {
-            margin-top: $indent__xs;
+            margin-top: 5px;
+            .price-label {
+                color: $link__color;
+                font-size: 14px;
+            }
+            .price {
+                font-weight: $font-weight__regular;
+            }
+        }
+
+        .minimal-price-link,
+        .price-excluding-tax,
+        .price-including-tax {
+            white-space: nowrap;
+            display: block;
         }
 
         .price-from,
@@ -132,16 +165,11 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             margin: 0;
         }
 
-        .tocompare {
-            @include lib-icon-font-symbol($icon-compare-full);
+        .action.tocompare {
+            @include lib-icon-font-symbol($icon-compare-empty);
         }
 
         .tocart {
-            font-size: 13px;
-            border-radius: 0;
-            line-height: 1;
-            padding-bottom: $indent__s;
-            padding-top: $indent__s;
             white-space: nowrap;
         }
     }
@@ -166,7 +194,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 
     .price-including-tax + .price-excluding-tax,
     .weee {
-        margin-top: $indent__xs;
+        margin-top: 5px;
     }
 
     .price-including-tax + .price-excluding-tax,
@@ -206,10 +234,10 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             }
 
             &-photo {
-                display: table-cell;
+                width: 1%;
                 padding: 0 $indent__l $indent__l 0;
                 vertical-align: top;
-                width: 1%;
+                display: table-cell;
             }
 
             &-details {
@@ -242,117 +270,42 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
 }
 
 @include min-screen($screen__s) {
-    .product-item-info {
-        .products-grid & {
-            &:hover,
-            &.active {
-                background: $product-item__hover__background-color;
-                box-shadow: $product-item__hover__box-shadow;
-                border: 1px solid $color-gray-light2;
-                margin: -10px;
-                padding: 9px;
-                position: relative;
-                z-index: 2;
-
-                .product-item-inner {
-                    display: block;
-                }
+    .product {
+        &-item {
+            .products-grid & {
+                margin-bottom: $indent__l;
             }
-        }
-    }
 
-    .product-item-inner {
-        .products-grid & {
-            background: $product-item__hover__background-color;
-            box-shadow: $product-item__hover__box-shadow;
-            border: 1px solid $color-gray-light2;
-            border-top: none;
-            left: 0;
-            margin: 9px 0 0 -1px;
-            padding: 0 9px 9px;
-            position: absolute;
-            right: -1px;
-            z-index: 2;
-        }
-    }
-
-    .product-item-actions {
-        display: block;
-
-        .products-grid & {
-            margin: -$indent__s 0 $indent__s;
-        }
-
-        .actions-primary + .actions-secondary {
-            display: table-cell;
-            padding-left: 10px;
-            width: 50%;
-
-            > .action {
-                margin-right: 10px;
-
-                &:last-child {
-                    margin-right: 0;
+            &-actions {
+                display: block;
+                .products-grid & {
+                    margin: $indent__s 0;
                 }
-            }
-        }
-
-        .actions-primary {
-            display: table-cell;
-        }
-    }
-
-    .page-products {
-        .products-grid {
-            .product-item-inner {
-                &:before {
-                    background: $product-item__hover__background-color;
-                    content: '';
-                    height: 3px;
-                    left: 0;
-                    position: absolute;
-                    top: -2px;
-                    width: 100%;
-                    z-index: 1;
-                }
-            }
-        }
-
-        .product-item-actions {
-            position: relative;
-            z-index: 2;
-        }
-    }
-
-    .products-grid {
-        .product-item-info {
-            &:not(:hover) {
-                &:not(.active) {
-                    .product-item-inner {
-                        @extend .abs-visually-hidden-desktop-s;
+                .actions-primary + .actions-secondary {
+                    display: table-cell;
+                    width: 50%;
+                    padding-left: 5px;
+                    white-space: nowrap;
+                    & > * {
+                        white-space: normal;
+                    }
+                    & > .action {
                     }
                 }
+                .actions-primary {
+                    display: table-cell;
+                }
             }
         }
     }
 
-    .products-grid {
-        .product-item {
-            margin-bottom: $indent__base;
-            width: 33.3333%;
-        }
-    }
-
-    .page-products,
-    .page-layout-1column,
-    .page-layout-3columns,
-    .page-products.page-layout-1column,
-    .page-products.page-layout-3columns {
-        .products-grid {
-            .product-item {
-                width: 33.3333%;
-            }
-        }
+    .products-grid .product-item,
+    .page-layout-1column .products-grid .product-item,
+    .page-layout-3columns .products-grid .product-item,
+    .page-products .products-grid .product-item,
+    .page-products.page-layout-1column .products-grid .product-item
+    .page-products.page-layout-3columns .products-grid .product-item {
+        width: 33.3333%;
     }
 }
 
@@ -417,9 +370,9 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
             }
 
             .product-item {
-                margin-left: calc("(100% - 4 * 24.439%) / 3");
+                margin-left: calc((100% - 4 * 23.233%) / 3);
                 padding: 0;
-                width: 24.439%;
+                width: 23.233%;
 
                 &:nth-child(4n+1) {
                     margin-left: 0;
@@ -432,7 +385,6 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         &.page-layout-1column {
             .products-grid {
                 .product-item {
-                    margin-left: 0;
                     width: 20%;
                 }
             }
@@ -441,16 +393,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3);
         &.page-layout-3columns {
             .products-grid {
                 .product-item {
-                    margin-left: 1%;
-                    width: 32.667%;
-
-                    &:nth-child(3n) {
-                        margin-left: 1%;
-                    }
-
-                    &:nth-child(3n+1) {
-                        margin-left: 0;
-                    }
+                    width: 20%;
                 }
             }
         }

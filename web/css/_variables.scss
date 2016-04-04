@@ -130,7 +130,7 @@ $icon-gift-registry: '\e62b';
 $icon-calendar__font-size: 23px;
 $icon-wishlist-empty: inherit;
 $icon-comment-reflected: inherit;
-$icon-compare-empty: inherit;
+$icon-compare-empty: '\e61f';
 $icon-arrow-up-thin: inherit;
 $icon-arrow-right-thin: inherit;
 $icon-arrow-left-thin: inherit;
@@ -282,6 +282,7 @@ $checkout-sidebar-shipping-information-edit-icon__top: $indent__s;
 
 // Checkout
 $checkout-step-title__padding: $indent__s;
+$checkout-step-title__border: $border-width__base solid $color-gray80;
 $checkout-step-title__font-size: 26px;
 $checkout-step-title__font-weight: $font-weight__light;
 $checkout-sidebar__columns: 8;

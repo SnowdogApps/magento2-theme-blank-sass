@@ -23,23 +23,6 @@
     border-radius: 3px;
 }
 
-//
-//  Secondary button
-//  ---------------------------------------------
-
-.abs-revert-to-action-secondary {
-    @extend .abs-revert-secondary-color;
-
-    border-radius: 3px;
-
-    &:not(:focus) {
-        box-shadow: $button__shadow;
-    }
-
-    &:active {
-        box-shadow: $button__shadow-active;
-    }
-}
 
 //
 //  Link as a button
@@ -56,17 +39,18 @@
 //  ---------------------------------------------
 
 .abs-action-button-as-link {
-    @include lib-button-as-link(
+    @include lib-button-as-link (
         $_margin: inherit
     );
     border-radius: 0;
     font-weight: $font-weight__regular;
-
+    font-size: inherit;
     &:active,
     &:not(:focus) {
         box-shadow: none;
     }
 }
+
 
 //
 //   Button revert secondary color
@@ -90,6 +74,27 @@
 
 .abs-button-l {
     @include lib-button-l();
+}
+
+//
+//  Action addto
+//  ---------------------------------------------
+
+.abs-action-addto-product {
+    @extend .abs-action-link-button;
+    @include lib-button-s();
+}
+
+.abs-actions-addto-gridlist {
+    @include lib-icon-font(
+        $_icon-font-content: '',
+        $_icon-font-size: 29px,
+        $_icon-font-color: $addto-color,
+        $_icon-font-color-hover: $addto-hover-color,
+        $_icon-font-text-hide: true,
+        $_icon-font-vertical-align: middle,
+        $_icon-font-line-height: 24px
+    );
 }
 
 //
@@ -130,37 +135,19 @@
 
 
 //
-//  Button reset width: floats: margins
-//  ---------------------------------------------
-
-.abs-button-responsive {
-    @include lib-button-responsive();
-}
-
-@include min-screen($screen__m) {
-    .abs-button-desktop {
-        width: auto;
-    }
-}
-
-//
 //  Blocks in 2 columns
 //  ---------------------------------------------
 
 @mixin abs-blocks-2columns() {
-    width: 48%;
+    width: 48.8%;
 
-    &:nth-child(1) {
+    &:nth-child(odd) {
         float: left;
         clear: left;
     }
 
-    &:nth-child(2) {
+    &:nth-child(even) {
         float: right;
-
-        & + * {
-            clear: both;
-        }
     }
 }
 
@@ -231,10 +218,6 @@
         $_icon-font-margin          : 0 0 0 5px,
         $_icon-font-vertical-align  : middle
     );
-
-    ul.items {
-        padding: 6px 0;
-    }
 }
 
 //
@@ -254,12 +237,6 @@
     margin-bottom: $indent__xl;
 }
 
-@include min-screen($screen__m) {
-    .abs-margin-for-blocks-and-widgets-desktop {
-        margin-bottom: $indent__xl + $indent__s;
-    }
-}
-
 //
 //  Remove button for blocks
 //  ---------------------------------------------
@@ -267,12 +244,12 @@
 .abs-remove-button-for-blocks {
     @include lib-icon-font(
         $icon-remove,
-        $_icon-font-size        : 12px,
+        $_icon-font-size        : 26px,
         $_icon-font-line-height : 15px,
         $_icon-font-text-hide   : true,
-        $_icon-font-color       : $color-gray60,
-        $_icon-font-color-hover : $color-gray-darken4,
-        $_icon-font-color-active: $color-gray60
+        $_icon-font-color       : $color-gray19,
+        $_icon-font-color-hover : $color-gray19,
+        $_icon-font-color-active: $color-gray19
     );
 }
 
@@ -282,7 +259,7 @@
 
 .abs-product-link {
     font-weight: $font-weight__regular;
-    > a {
+    & > a {
         @include lib-link(
             $_link-color                  : $product-name-link__color,
             $_link-text-decoration        : $product-name-link__text-decoration,
@@ -294,15 +271,6 @@
             $_link-text-decoration-active : $product-name-link__text-decoration__active
         );
     }
-}
-
-//
-//  Link
-//  ---------------------------------------------
-
-.abs-like-link {
-    @include lib-link();
-    cursor: pointer;
 }
 
 //
@@ -335,12 +303,11 @@
 
 .abs-action-remove {
     @extend .abs-action-button-as-link;
-
     width: auto;
-    line-height: normal;
     position: absolute;
-    top: 34px;
-    margin-left: 73%;
+    top: 31px;
+    left: $indent__s;
+    margin-left: 70%;
 }
 
 //
@@ -349,7 +316,10 @@
 
 @include min-screen($screen__m) {
     .abs-action-remove-desktop {
-        margin-left: 90%;
+        @if $form-field-type-label-inline__width != false and $form-field-type-label-inline__width != '' {
+            top: 6px;
+            margin-left: $form-field-type-label-inline__width + 50%;
+        }
     }
 }
 
@@ -359,23 +329,26 @@
 
 .abs-add-fields {
     .fieldset {
+        margin-bottom: 50px;
         .field {
-             .control {
-                width: 70%;
+            &:not(.choice) {
+                .control {
+                    width: 70%;
+                }
             }
         }
 
         .actions-toolbar {
-            @extend .abs-add-clearfix;
-
-            > .secondary {
-                .action {
-                    &.add {
-                        margin-top: $indent__l;
+            &:not(:first-child) {
+                @extend .abs-add-clearfix;
+                & > .secondary {
+                    .action {
+                        &.add {
+                            margin-top: $indent__l;
+                        }
                     }
+                    float: left;
                 }
-
-                float: left;
             }
         }
 
@@ -412,8 +385,10 @@
     .abs-add-fields-desktop {
         .fieldset {
             .field {
-                 .control {
-                    width: auto;
+                &:not(.choice) {
+                    .control {
+                        width: 50%;
+                    }
                 }
             }
 
@@ -434,6 +409,12 @@
 
 @include min-screen($screen__m) {
     .abs-margin-for-forms-desktop {
+        margin-left: $form-field-type-label-inline__width;
+    }
+}
+
+@include min-screen($screen__s) {
+    .abs-margin-for-forms-desktop-s {
         margin-left: $form-field-type-label-inline__width;
     }
 }
@@ -577,7 +558,7 @@
 
     &:after {
         position: absolute;
-        right: 5px;
+        right: $indent__xs;
         top: 0;
     }
 }
@@ -594,63 +575,15 @@
     vertical-align: middle;
 }
 
-//
-//  Field 2 column
-//  ---------------------------------------------
-
-@mixin abs-form-field-column-2() {
-    .fieldset {
-        .field {
-            &:nth-last-child(1),
-            &:nth-last-child(2) {
-                margin-bottom: 0;
-            }
-
-            @include lib-form-field-column($_column: true);
-            .field {
-                width: 100%;
-                padding: 0;
-            }
-        }
-    }
-}
-
-@include min-screen($screen__m) {
-    .abs-form-field-column-2 {
-        @include abs-form-field-column-2();
-    }
-}
-
-@include min-screen($screen__s) {
-    .abs-form-field-column-2-s {
-        @include abs-form-field-column-2();
-    }
-}
-
-//
-//  Field 1 column
-//  ---------------------------------------------
-
-@include min-screen($screen__m) {
-    .abs-form-field-revert-column-1 {
-        @include lib-form-field-column-number($_column-number: 1);
-    }
-}
-
-@include min-screen($screen__s) {
-    .abs-form-field-revert-column-1-s {
-        @include lib-form-field-column-number($_column-number: 1);
-    }
-}
 
 //
 //  Checkout shipping methods title
 //  ---------------------------------------------
 
 .abs-methods-shipping-title {
-    font-size: 16px;
-    margin-bottom: 15px;
-    font-weight: $font-weight__semibold;
+    font-size: 14px;
+    margin: 0 0 15px;
+    font-weight: $font-weight__bold;
 }
 
 //
@@ -666,7 +599,7 @@
                 border-bottom: $border-width__base solid $border-color__base;
             }
 
-            > td.col {
+            .col {
                 &.item {
                     &:before {
                         display: none;
@@ -689,44 +622,11 @@
                         padding-bottom: $indent__s;
                     }
                 }
-
-                &:last-child {
-                    border: 0;
-                }
+            }
+            .product-item-name {
+                margin: 0;
             }
         }
-
-        .product-item-name {
-            margin: 0;
-        }
-    }
-}
-
-//
-//  Add to Actions
-//  ---------------------------------------------
-
-.abs-actions-addto {
-    color: $addto-color;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: $font-weight__semibold;
-    letter-spacing: .05em;
-    @include lib-icon-font(
-        $_icon-font-content       : '',
-        $_icon-font-size          : 16px,
-        $_icon-font-line-height   : 16px,
-        $_icon-font-margin        : -2px 5px 0 0,
-        $_icon-font-vertical-align: middle
-    );
-
-    &:hover {
-        color: $addto-hover-color;
-        text-decoration: none;
-    }
-
-    &:before {
-        width: 18px;
     }
 }
 
@@ -735,36 +635,7 @@
 //  ---------------------------------------------
 
 .abs-box-tocart {
-    margin: 0 0 $indent__l;
-}
-
-//
-//  General pages forms
-//  ---------------------------------------------
-
-@include min-screen($screen__m) {
-    .abs-forms-general-desktop {
-        max-width: 500px;
-
-        .legend {
-            @include lib-visually-hidden();
-        }
-
-        .legend + br {
-            display: none;
-        }
-    }
-}
-
-//
-//  Revert side paddings
-//  ---------------------------------------------
-
-@include min-screen($screen__m) {
-    .abs-revert-side-paddings {
-        padding-left: 0;
-        padding-right: 0;
-    }
+    margin: $indent__s 0;
 }
 
 //
@@ -779,226 +650,12 @@
 
     &:after {
         position: absolute;
-        right: $indent__base;
-        top: $indent__s;
+        right: $indent__s;
+        top: 0;
     }
 }
 
-.abs-toggling-title {
-    @include abs-toggling-title();
-    padding: $indent__s $indent__xl $indent__s $mobile-cart-padding;
-
-    @include lib-icon-font(
-        $icon-down,
-        $_icon-font-size       : 12px,
-        $_icon-font-line-height: 12px,
-        $_icon-font-text-hide  : true,
-        $_icon-font-margin     : 3px 0 0,
-        $_icon-font-position   : after,
-        $_icon-font-display    : block
-    );
-}
-
-@include max-screen($screen__m) {
-    .abs-toggling-title-mobile {
-        @include abs-toggling-title();
-        border-bottom: $border-width__base solid $border-color__base;
-        padding: $indent__s $indent__xl $indent__s $layout__width-xs-indent;
-        @include lib-icon-font(
-            $icon-down,
-            $_icon-font-size: 12px,
-            $_icon-font-text-hide: inherit,
-            $_icon-font-margin: 3px 0 0 0,
-            $_icon-font-position: after,
-            $_icon-font-display: block
-        );
-
-        &.active {
-            @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-up,
-                $_icon-font-position: after
-            );
-        }
-    }
-}
-
-//
-//  Cart discount block
-//  ---------------------------------------------
-
-.abs-cart-block {
-    margin: 0;
-    > .title {
-        @extend .abs-toggling-title;
-
-        &:after {
-            color: $color-gray52;
-        }
-    }
-
-    .content {
-        display: none;
-        padding: 5px $mobile-cart-padding 23px;
-        position: relative;
-    }
-
-    &.active {
-        > .title {
-            @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-up,
-                $_icon-font-position: after
-            );
-        }
-
-        .content {
-            display: block;
-        }
-    }
-}
-
-.abs-cart-block-content {
-    margin: 0;
-}
-
-//
-//  Checkout order review price
-//  ---------------------------------------------
-
-.abs-checkout-cart-price {
-    color: $primary__color__lighter;
-    font-size: 16px;
-    font-weight: $font-weight__bold;
-}
-
-//
-//  Checkout order product name
-//  ---------------------------------------------
-
-.abs-checkout-product-name {
-    font-size: 18px;
-    font-weight: $font-weight__light;
-    margin: 0;
-}
-
-//
-//  Mobile checkout order product name
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .abs-product-items-summary {
-        tbody {
-            .col {
-                padding: $indent__s 0 0;
-
-                &:last-child {
-                    padding-bottom: $indent__s
-                }
-            }
-        }
-
-        tfoot {
-            .mark {
-                padding-bottom: $indent__xs;
-                text-align: left;
-            }
-
-            .amount {
-                padding-top: 0;
-                text-align: left;
-            }
-
-            .grand.totals {
-                font-size: 16px;
-                .mark {
-                    padding-top: $indent__xs;
-                    padding-bottom: 0;
-                }
-
-                .amount {
-                    padding-bottom: $indent__s;
-                    padding-top: 0;
-
-                    strong {
-                        border-top: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-//
-//  Account pages: title
-//  ---------------------------------------------
-
-.abs-account-title {
-    > strong,
-    > span {
-        font-size: 22px;
-        font-weight: $font-weight__light;
-    }
-
-    margin-bottom: $indent__m;
-    padding-bottom: $indent__s;
-    border-bottom: 1px solid $account-title-border-color;
-}
-
-//
-//  Account pages: block font size
-//  ---------------------------------------------
-
-@include min-screen($screen__m) {
-    .abs-account-block-font-size {
-        font-size: 16px;
-    }
-}
-
-//
-//  Account pages: block line-height
-//  ---------------------------------------------
-
-.abs-account-block-line-height {
-    line-height: 24px;
-}
-
-//
-//  Account pages: margin for table
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .abs-account-table-margin-mobile {
-        margin-top: -$indent__base;
-    }
-}
-@include min-screen($screen__m) {
-    .abs-account-table-margin-desktop {
-        margin-top: -$indent__m;
-    }
-}
-
-//
-//  Account pages: table col actions
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .abs-col-no-prefix {
-        &:before {
-            @include lib-visually-hidden();
-        }
-    }
-}
-
-//
-//  Account pages: order table summary
-//  ---------------------------------------------
-
-.abs-account-summary {
-    td {
-        background: $sidebar__background-color;
-    }
-}
-
-//
+// ?? from luma - to check
 //  Action print with icon
 //  ---------------------------------------------
 
@@ -1032,26 +689,12 @@
 //  Excl/Incl tax
 //  ---------------------------------------------
 
-.abs-incl-excl-tax {
-    .price-including-tax,
-    .price-excluding-tax {
-        color: $cart-price-color;
-        display: block;
-        font-size: 18px;
-        line-height: 1;
-        white-space: nowrap;
-
-        .price {
-            font-weight: $font-weight__bold;
-        }
-    }
-}
-
 .abs-adjustment-incl-excl-tax {
     .price-including-tax,
     .price-excluding-tax {
         display: inline-block;
         font-size: 14px;
+        white-space: nowrap;
     }
 
     .price-including-tax + .price-excluding-tax {
@@ -1074,20 +717,25 @@
 
 .abs-tax-total {
     cursor: pointer;
-    position: relative;
-    padding-right: $indent__s;
+    padding-right: 12px;
     @include lib-icon-font(
         $icon-down,
-        $_icon-font-size: 8px,
-        $_icon-font-line-height: 8px,
+        $_icon-font-size: 26px,
+        $_icon-font-line-height: 10px,
         $_icon-font-margin: 3px 0 0 0,
         $_icon-font-position: after
     );
 
     &:after {
         position: absolute;
-        right: -2px;
-        top: 4px;
+        right: -$indent__s;
+        top: 3px;
+    }
+    &-expanded {
+        @include lib-icon-font-symbol(
+            $_icon-font-content: $icon-up,
+            $_icon-font-position: after
+        );
     }
 }
 
@@ -1099,60 +747,6 @@
 }
 
 //
-//  Forms: margin-bottom for small forms
-//  ---------------------------------------------
-
-.abs-forms-margin-small {
-    margin-bottom: $indent__base;
-}
-
-//
-//  Forms: margin-bottom for small forms
-//  ---------------------------------------------
-
-.abs-rating-summary {
-    .rating {
-        &-summary {
-            display: table-row;
-        }
-
-        &-label {
-            display: table-cell;
-            vertical-align: top;
-            padding-top: 1px;
-            padding-right: $indent__m;
-            padding-bottom: $indent__xs;
-        }
-
-        &-result {
-            vertical-align: top;
-            display: table-cell;
-        }
-    }
-}
-
-//
-//  Account pages: actions
-//  ---------------------------------------------
-
-.abs-account-actions {
-    &:after {
-        content: '';
-        display: inline-block;
-        height: 12px;
-        margin: 0 $indent__s;
-        border-left: 1px solid $primary__color__light;
-        vertical-align: -1px;
-    }
-
-    &:last-child {
-        &:after {
-            display: none;
-        }
-    }
-}
-
-//
 //  Account blocks
 //  ---------------------------------------------
 
@@ -1160,22 +754,31 @@
     .block-title {
         @extend .abs-account-title;
 
-        > .action {
+        & > .action {
             margin-left: 15px;
         }
     }
 
     .box-title {
-        > span {
+        & > span {
             font-size: 16px;
         }
 
         display: inline-block;
         margin: 0 0 $indent__s;
 
-        > .action {
+        & > .action {
             font-weight: 400;
             margin-left: $indent__s;
+        }
+    }
+
+    .block-content {
+        p:last-child {
+            margin-bottom: 0;
+        }
+        .box {
+            margin-bottom: $indent__base;
         }
     }
 }
@@ -1262,107 +865,8 @@
 //  ---------------------------------------------
 
 .abs-status {
-    border: 2px solid $border-color__base;
-    border-radius: 3px;
     display: inline-block;
-    margin: 3px 0 0;
-    padding: 2px $indent__s;
-    text-transform: uppercase;
-    vertical-align: top;
-}
-
-@include min-screen($screen__m) {
-    .abs-status-desktop {
-        margin-top: 6px;
-        padding: $indent__xs $indent__s;
-    }
-}
-
-//
-//  Page title - orders pages
-//  ---------------------------------------------
-
-.abs-title-orders {
-    .page-main {
-        .page-title-wrapper {
-            .page-title {
-                margin-right: 25px;
-            }
-
-            .order-date {
-                font-size: 16px;
-                margin-bottom: $indent__s;
-
-                .label {
-                    display: none;
-                }
-            }
-        }
-    }
-}
-
-@include max-screen($screen__s) {
-    .abs-title-orders-mobile {
-        .page-main {
-            .page-title-wrapper {
-                .page-title {
-                    display: block;
-                }
-
-                .order-status {
-                    $order-status-indent: ceil($heading__margin-bottom__base / 2);
-                    margin: -$order-status-indent 0 $indent__s;
-                }
-            }
-        }
-    }
-}
-
-@include min-screen($screen__m) {
-    .abs-title-orders-desktop {
-        .page-main {
-            .page-title-wrapper {
-                .order-date {
-                    $order-date-indent: ceil($heading__margin-bottom__base / 1.5);
-                    margin: -$order-date-indent 0 18px;
-                }
-            }
-        }
-    }
-}
-
-//
-//  Table striped
-//  ---------------------------------------------
-
-.abs-table-striped {
-    @include lib-table-striped(
-        $_stripped-highlight: even
-    );
-    @include lib-table-bordered(
-        $_table_type: light
-    );
-}
-
-@include max-screen($screen__s) {
-    .abs-table-striped-mobile {
-        > tbody > tr > td:last-child {
-            border: 0;
-        }
-    }
-}
-
-//
-//  Table bordered desktop
-//  ---------------------------------------------
-
-@include min-screen($screen__m) {
-    .abs-table-bordered-desktop {
-        @include lib-table-bordered(
-            $_table_type: light,
-            $_table_border-width: 1px
-        );
-    }
+    margin-bottom: $indent__base;
 }
 
 //
@@ -1371,17 +875,21 @@
 
 @include min-screen($screen__m) {
     .abs-pager-toolbar {
+        margin-bottom: $indent__base;
         position: relative;
+        @extend .abs-add-clearfix-desktop;
 
-        .toolbar-amount,
-        .limiter {
+        .toolbar-amount {
+            float: left;
+            line-height: normal;
+            padding: 7px 0 0;
             position: relative;
             z-index: 1;
         }
-
-        .toolbar-amount {
-            line-height: $pager__line-height;
-            padding: 0;
+        .limiter {
+            float: right;
+            position: relative;
+            z-index: 1;
         }
 
         .pages {
@@ -1403,59 +911,72 @@
 }
 
 //
-//  Sidebar and widget blocks title
-//  ---------------------------------------------
-
-.abs-block-widget-title {
-    strong {
-        font-size: $font-size__l;
-        font-weight: $font-weight__light;
-    }
-
-    margin: 0 0 $indent__base;
-}
-
-//
 //  Shopping cart items
 //  ---------------------------------------------
 
 .abs-shopping-cart-items {
-    margin-bottom: $indent__base;
+    .action {
+        &.continue {
+            @include lib-link-as-button();
+            @include lib-button(
+            $_button-padding: 7px 15px 7px 0,
+            $_button-icon-use: true,
+            $_button-font-content: $icon-prev,
+            $_button-icon-font-size: 32px,
+            $_button-icon-font-line-height: 16px,
+            $_button-icon-font-position: before
+            );
+            border-radius: 3px;
+            font-weight: bold;
+            box-shadow: $button__shadow;
+        }
+        &.update {
+            @include lib-button-icon(
+            $icon-update,
+            $_icon-font-size: 32px,
+            $_icon-font-line-height: 16px
+            );
+            padding-left: $indent__xs;
+        }
+    }
 
-    .actions.main {
-        .continue,
-        .clear {
-            display: none;
+}
+
+@include max-screen($screen__m) {
+    .abs-shopping-cart-items-mobile {
+        .actions {
+            text-align: center;
+        }
+        .action {
+            &.update,
+            &.continue,
+            &.clear {
+                margin: 0 auto $indent__s;
+            }
+            &.update,
+            &.clear {
+                display: block;
+            }
         }
     }
 }
 
 @include min-screen($screen__m) {
     .abs-shopping-cart-items-desktop {
-        @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
-        @extend .abs-add-box-sizing-desktop;
-
-        padding-right: 4%;
+        float: left;
+        width: 73%;
         position: relative;
-    }
-}
-
-//
-//  Remove top border
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .abs-no-border-top {
-        border-top: 0;
-    }
-}
-
-//
-//  Remove bottom border
-//--------------------------------------
-@include max-screen($screen__s) {
-    .abs-no-border-bottom {
-        border-bottom: 0;
+        .actions {
+            text-align: right;
+        }
+        .action {
+            &.continue {
+                float: left;
+            }
+            &.clear {
+                margin-right: $indent__s;
+            }
+        }
     }
 }
 
@@ -1480,7 +1001,7 @@
 
 .abs-field-date-input {
     margin-right: $indent__s;
-    width: calc("100% - (#{$icon-calendar__font-size} + #{$indent__s})");
+    width: calc(100% - (#{$icon-calendar__font-size} + #{$indent__s}));
 }
 
 //
@@ -1494,7 +1015,7 @@
 
     input {
         margin-right: $indent__s;
-        width: calc("100% - (#{$checkout-tooltip-icon__font-size} + #{$indent__s} + #{$indent__xs})");
+        width: calc(100% - (#{$checkout-tooltip-icon__font-size} + #{$indent__s} + #{$indent__xs}));
     }
 }
 
@@ -1545,6 +1066,7 @@
 //  ---------------------------------------------
 
 .abs-checkout-title {
+    border-bottom: $checkout-step-title__border;
     padding-bottom: $checkout-step-title__padding;
     @include lib-typography(
     $_font-size: $checkout-step-title__font-size,
@@ -1560,23 +1082,21 @@
 //  ---------------------------------------------
 
 .abs-sidebar-totals {
-    border-top: 1px solid $border-color__base;
-    padding-top: 10px;
-
-    tbody,
-    tfoot {
-        .mark {
-            border: 0;
+    .mark {
+        font-weight: $font-weight__regular;
+        padding-left: 4px;
+        strong {
             font-weight: $font-weight__regular;
-            padding: 6px 0;
+
         }
+    }
 
-        .amount {
-            border: 0;
+    .amount {
+        padding-right: 4px;
+        text-align: right;
+        white-space: nowrap;
+        strong {
             font-weight: $font-weight__regular;
-            padding: 6px 0 6px 14px;
-            text-align: right;
-            white-space: nowrap;
         }
     }
 
@@ -1586,35 +1106,22 @@
     }
 
     .grand {
-        th,
-        td {
-            padding: 11px 0;
-        }
-
-        strong {
-            display: inline-block;
-            font-weight: $font-weight__semibold;
-            padding: 3px 0 0;
-        }
-
-        .mark {
-            border-top: 1px solid $border-color__base;
-            font-size: 18px;
-            padding-right: $indent__s;
+        .mark,
+        .amount {
+            padding-top: $indent__base;
         }
 
         .amount {
-            border-top: 1px solid $border-color__base;
-            font-size: 18px;
+            padding-right: 4px;
+            text-align: right;
+            strong {
+                font-weight: $font-weight__bold;
+            }
         }
     }
 
     .msrp {
         margin-bottom: $indent__s;
-    }
-
-    tbody tr:last-child td {
-        padding-bottom: 19px;
     }
 
     .totals-tax {
@@ -1631,16 +1138,16 @@
                 padding-right: $indent__base;
                 @include lib-icon-font(
                 $icon-down,
-                $_icon-font-size: 12px,
-                $_icon-font-line-height: 12px,
+                $_icon-font-size: 30px,
                 $_icon-font-text-hide: true,
-                $_icon-font-position: after
+                $_icon-font-position: after,
+                $_icon-font-display: block
                 );
 
                 &:after {
                     position: absolute;
-                    right: 3px;
-                    top: 3px;
+                    right: -5px;
+                    top: -12px;
                 }
             }
 
@@ -1668,33 +1175,9 @@
             }
         }
     }
-
-    .table-wrapper {
-        margin-bottom: 0;
-    }
 }
 
-@include max-screen($screen__s) {
-    .abs-sidebar-totals-mobile {
-        th {
-            @extend .abs-col-no-prefix;
-        }
-
-        td {
-            @extend .abs-col-no-prefix;
-        }
-
-        tbody tr:not(:last-child) td {
-            @extend .abs-no-border-bottom-top;
-        }
-
-        .amount {
-            text-align: right;
-        }
-    }
-}
-
-//
+// to check
 //  Shopping cart and payment disaount codes block
 //  ---------------------------------------------
 

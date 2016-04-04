@@ -85,10 +85,10 @@
     }
     .page-layout-1column .block.widget .products-grid .product-item {
         width: 16.6666%;
-        margin-left: calc("(100% - 5 * (100%/6)) / 4");
+        margin-left: calc((100% - 5 * (100%/6)) / 4);
 
         &:nth-child(4n+1) {
-            margin-left: calc("(100% - 5 * (100%/6)) / 4");
+            margin-left: calc((100% - 5 * (100%/6)) / 4);
         }
 
         &:nth-child(5n+1) {
@@ -104,7 +104,7 @@
     }
     .block.widget .products-grid .product-item {
         width: 24.439%;
-        margin-left: calc("(100% - 4 * 24.439%) / 3");
+        margin-left: calc((100% - 4 * 24.439%) / 3);
         padding: 0;
 
         &:nth-child(4n+1) {
