@@ -495,11 +495,10 @@ body {
         );
 
         li {
-            // to do: check - sass err:
+            // TO DO - check - sass err:
             // can't extend nested selectors
             // commented for now
             // @extend .switcher li;
-            @warn 'TO DO: test it';
             a {
                 @include lib-link(
                     $_link-color                  : $color-gray20,
