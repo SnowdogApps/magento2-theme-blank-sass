@@ -32,13 +32,13 @@
 
         &:before {
             @include _lib-icon-font(
-            $_icon-font-content,
-            $_icon-font,
-            $_icon-font-size,
-            $_icon-font-line-height,
-            $_icon-font-color,
-            $_icon-font-margin,
-            $_icon-font-vertical-align
+                $_icon-font-content,
+                $_icon-font,
+                $_icon-font-size,
+                $_icon-font-line-height,
+                $_icon-font-color,
+                $_icon-font-margin,
+                $_icon-font-vertical-align
             );
         }
 

@@ -139,8 +139,8 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 @mixin lib-form-element-number-reset() {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-      appearance: none;
-      margin: 0;
+        appearance: none;
+        margin: 0;
     }
     appearance: field;
 }

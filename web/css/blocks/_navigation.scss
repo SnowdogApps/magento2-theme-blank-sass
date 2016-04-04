@@ -93,7 +93,7 @@ $active-nav-indent: 54px;
             }
 
             &:last-child {
-                    border-bottom: 1px solid $color-gray82;
+                border-bottom: 1px solid $color-gray82;
             }
 
             &-trigger {
@@ -116,8 +116,8 @@ $active-nav-indent: 54px;
 
                 &.active strong {
                     @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
-                    $_icon-font-position: after
+                        $_icon-font-content: $icon-up,
+                        $_icon-font-position: after
                     );
                 }
             }

@@ -2,22 +2,17 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .form.send.friend {
-   @extend .abs-add-fields;
+    @extend .abs-add-fields;
 }
-
 .action.mailto.friend {
     @include lib-icon-font(
-        $_icon-font-content: $icon-envelope,
-        $_icon-font-size: 28px,
-        $_icon-font-line-height: 28px,
+        $_icon-font-content       : $icon-envelope,
+        $_icon-font-size          : 28px,
+        $_icon-font-line-height   : 28px,
         $_icon-font-vertical-align: top
     );
     span {
@@ -26,7 +21,6 @@
         display: inline-block;
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
@@ -39,7 +33,6 @@
             .field {
                 width: 45%;
             }
-
             .field.text {
                 //@extend .abs-form-field-revert-column-1;
                 //sass extend added however above line was

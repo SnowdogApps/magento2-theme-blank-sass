@@ -9,9 +9,9 @@
 
 .tooltip.wrapper {
     @include lib-tooltip(
-        $_tooltip-position: bottom,
+        $_tooltip-position        : bottom,
         $_tooltip-selector-content: ".tooltip.content",
-        $_tooltip-selector-toggle: ".tooltip.toggle"
+        $_tooltip-selector-toggle : ".tooltip.toggle"
     );
 
     .tooltip.content {
@@ -44,6 +44,6 @@
 }
 
 .ui-tooltip {
-  position: absolute;
-  z-index: 9999;
+    position: absolute;
+    z-index: 9999;
 }
