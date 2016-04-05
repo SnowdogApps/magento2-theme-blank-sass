@@ -25,7 +25,34 @@ var cssStylelintConfig = {
     };
 
 gulp.task('default', () => {
-    gulp.watch(['**/*.scss','!node_modules/**'], ['sass']);
+    gulp.watch(['**/*.scss','!node_modules/**'], () => {
+        gulp.src('web/css/*.scss')
+            .pipe(sassLint())
+            .pipe(sassLint.format())
+            .pipe(
+                sass({
+                    outputStyle   : 'expanded',
+                    sourceComments: true
+                })
+                .on('error', sass.logError)
+            )
+            .pipe(gulp.dest('web/css'));
+    });
+});
+
+gulp.task('scss-lint', () => {
+    return gulp.src(['**/*.scss','!node_modules/**'])
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError());
+});
+
+gulp.task('watch-scss-lint', () => {
+    gulp.watch(['**/*.scss','!node_modules/**'], event => {
+        gulp.src(event.path)
+        .pipe(sassLint())
+        .pipe(sassLint.format());
+    });
 });
 
 gulp.task('sass', () => {
@@ -35,7 +62,6 @@ gulp.task('sass', () => {
                 outputStyle   : 'expanded',
                 sourceComments: true
             })
-            .on('error', sass.logError)
         )
         .pipe(gulp.dest('web/css'));
 });
@@ -49,20 +75,4 @@ gulp.task('css-lint', () => {
                 throwError   : true
             })
         ]));
-});
-
-gulp.task('scss-lint', () => {
-    return gulp.src(['**/*.scss','!node_modules/**'])
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
-});
-
-
-gulp.task('test', () => {
-    gulp.watch(['**/*.scss','!node_modules/**'], event => {
-        gulp.src(event.path)
-            .pipe(sassLint())
-            .pipe(sassLint.format());
-    });
 });
