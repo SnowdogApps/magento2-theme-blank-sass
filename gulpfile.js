@@ -57,3 +57,12 @@ gulp.task('scss-lint', () => {
         .pipe(sassLint.format())
         .pipe(sassLint.failOnError());
 });
+
+
+gulp.task('test', () => {
+    gulp.watch(['**/*.scss','!node_modules/**'], event => {
+        gulp.src(event.path)
+            .pipe(sassLint())
+            .pipe(sassLint.format());
+    });
+});

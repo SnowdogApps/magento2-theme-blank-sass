@@ -23,10 +23,9 @@ rules:
   no-css-comments: 2
   no-debug: 1
   no-empty-rulesets: 2
-  no-ids: 2
+  no-ids: 1
   no-important: 1
   no-invalid-hex: 2
-  no-mergeable-selectors: 1
   no-misspelled-properties: 2
   no-vendor-prefixes: 1
   no-warn: 1

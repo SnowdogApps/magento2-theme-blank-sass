@@ -17,7 +17,8 @@ $braintree-success__color: $color-dark-green1;
 //  Common
 //  _____________________________________________
 
-.payment-method-braintreetwo, // ToDo Ui: Remove this selector when Payment Module is fully implemented.
+// ToDo Ui: Remove this selector when Payment Module is fully implemented.
+.payment-method-braintreetwo,
 .payment-method-braintree {
 
     .hosted-date-wrap {
@@ -92,7 +93,8 @@ $braintree-success__color: $color-dark-green1;
 //  _____________________________________________
 
 @include min-screen($screen__m) {
-    .payment-method-braintreetwo, // ToDo Ui: Remove this selector when Payment Module is fully implemented.
+    // ToDo Ui: Remove this selector when Payment Module is fully implemented.
+    .payment-method-braintreetwo,
     .payment-method-braintree {
         .field-tooltip {
             left: 100px;

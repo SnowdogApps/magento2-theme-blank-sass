@@ -1,4 +1,4 @@
-    // /**
+// /**
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
@@ -62,8 +62,8 @@ $tooltip__background: $color-white;
 
         @include _lib-tooltip-border($_tooltip-border-width, $_tooltip-border-color);
 
-        $_tooltip-arrow-after-margin: $_tooltip-arrow-size * -1;
-        $_tooltip-arrow-before-margin: ($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356)) * -1;
+        $_tooltip-arrow-after-margin: -($_tooltip-arrow-size);
+        $_tooltip-arrow-before-margin: -($_tooltip-arrow-size + round($_tooltip-border-width * 1.41421356));
 
         &:after,
         &:before {
@@ -80,7 +80,7 @@ $tooltip__background: $color-white;
         }
 
         &:before {
-            border-width: $_tooltip-arrow-before-margin * -1;
+            border-width: (-$_tooltip-arrow-before-margin);
             border-color: transparent;
         }
 

@@ -17,7 +17,7 @@
         $args: map-remove($args, $media-type-key);
     }
     @each $key, $value in $args {
-        @if $value{
+        @if $value {
             $expr: "#{$expr} and (#{$key}: #{$value})";
         }
     }
@@ -56,12 +56,7 @@
         @content;
     }
 }
-// --- hdpi --------------------------------------------------------------------
-@mixin hdpi($ratio: 1.3) {
-    @media only screen and (-webkit-min-device-pixel-ratio: $ratio), only screen and (min-resolution: #{round($ratio*96)}dpi) {
-        @content;
-    }
-}
+
 // --- orientation -------------------------------------------------------------
 @mixin landscape() {
     @include mq($orientation: landscape) {
@@ -73,4 +68,3 @@
         @content;
     }
 }
-// --- target devices ----------------------------------------------------------

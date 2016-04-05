@@ -301,7 +301,7 @@ $filter-quantity              : $color-gray52;
     .filter-no-options {
         .filter-title {
             &:before {
-                background: rgba(255,255,255,.5);
+                background: rgba(255, 255, 255, 0.5);
                 content: '';
                 display: block;
                 height: 40px;
@@ -414,7 +414,7 @@ $filter-quantity              : $color-gray52;
                     }
                 }
                 &-content {
-                    $_shadow: 0 3px 5px 0 rgba(50, 50, 50, .75);
+                    $_shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
                     background: $color-white;
                     box-shadow: $_shadow;
                     border: 1px solid $border-color__base;

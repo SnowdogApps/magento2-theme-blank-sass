@@ -125,7 +125,7 @@
 
         .control {
             margin-top: $indent__s;
-            margin-bottom: 1.2*$indent__xl;
+            margin-bottom: 1.2 * $indent__xl;
         }
     }
 
@@ -262,20 +262,17 @@
     }
 
     .rating-summary {
-        display:inline-block;
+        display: inline-block;
         vertical-align: middle;
     }
 
     .reviews-actions {
-        display:inline-block;
+        display: inline-block;
         vertical-align: middle;
         font-size: floor(0.8 * $font-size__base);
 
         a:not(:last-child) {
             margin-right: 30px;
-        }
-
-        .action.view span {
         }
     }
 }
@@ -397,9 +394,6 @@
         margin-right: 3%;
     }
 
-    .product-info {
-    }
-
     .review-details {
         margin: 0;
 
@@ -408,6 +402,7 @@
         }
 
         .customer-review-rating {
+            @extend .abs-rating-summary;
             margin-bottom: $indent__base;
             .item {
                 margin-bottom: $indent__s;
@@ -416,8 +411,6 @@
                     margin-bottom: 0;
                 }
             }
-
-            @extend .abs-rating-summary;
         }
 
         .review-title {

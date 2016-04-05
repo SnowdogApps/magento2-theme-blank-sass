@@ -161,7 +161,7 @@ $desktop-popup-position-top : 20%;
             &.private {
                 @include lib-icon-font(
                     $_icon-font-content       : $icon-private,
-                    $_icon-font-color         : lighten($text__color__muted,15%),
+                    $_icon-font-color         : lighten($text__color__muted, 15%),
                     $_icon-font-vertical-align: text-bottom,
                     $_icon-font-margin        : 0 $indent__xs 0 0
                 );

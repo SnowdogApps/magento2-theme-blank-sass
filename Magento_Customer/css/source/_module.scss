@@ -184,8 +184,6 @@ $account-table-action-delete: $color-red12;
     .title {
         strong {
             @include lib-heading(h4);
-            .column.main & {
-            }
         }
 
         margin-bottom: $indent__s;

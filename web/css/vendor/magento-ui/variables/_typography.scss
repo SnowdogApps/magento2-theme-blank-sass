@@ -183,7 +183,7 @@ $heading-h6: (
 
 $heading__small-color: $primary__color;
 $heading__small-line-height: 1;
-$heading__small-size: ($font-size__xs/$font-size__base) * 100%;
+$heading__small-size: ($font-size__xs / $font-size__base) * 100%;
 
 //  Code blocks
 $code__background-color: $panel__background-color;

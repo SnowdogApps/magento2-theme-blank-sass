@@ -69,7 +69,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
         $_padding               : $indent__s;
         $_margin                : 0;
     }
-    @else if $_type == "input-radio" or $_type == "input-checkbox"{
+    @else if $_type == "input-radio" or $_type == "input-checkbox" {
         $_margin                : 2px $indent__xs 0 0;
         $_vertical-align        : inherit;
     }
@@ -517,7 +517,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_border-state,
     $_border-default
 ) {
-    @if $_border-state != $_border-default{
+    @if $_border-state != $_border-default {
         border: $_border-state;
     }
 }

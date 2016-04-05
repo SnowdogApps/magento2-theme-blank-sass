@@ -102,7 +102,7 @@
 
 @mixin _lib-set-column-width($_index, $_width) {
     @if $_index > 0 {
-        $_units: 'px','%','em','rem','pt';
+        $_units: 'px', '%', 'em', 'rem', 'pt';
         $_unit: nth($_units, $_index);
         @if unit($_width) == $_unit {
             $_checkUnit: true;
@@ -117,7 +117,7 @@
 }
 
 @mixin lib-layout-column($_total-columns, $_order, $_width) {
-    $_units: 'px','%','em','rem','pt';
+    $_units: 'px', '%', 'em', 'rem', 'pt';
     @include _lib-set-column-width(length($_units), $_width);
     @include lib-flex-degradation($_total-columns, $_order);
     @if $use-flex == true {

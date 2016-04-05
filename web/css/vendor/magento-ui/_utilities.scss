@@ -70,11 +70,11 @@
     @if $_background-color-position == true {
         background-color: $_end-color;
         background-repeat: repeat-x;
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
     }
     @else if $_background-color-position == false {
         background-color: $_start-color;
-        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
     }
 }
@@ -87,12 +87,12 @@
 ) {
     @if $_background-color-position == true {
         background-color: $_end-color;
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
     }
     @else if $_background-color-position == false {
         background-color: $_start-color;
-        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
     }
 }
@@ -156,16 +156,6 @@
 //  Add url to property
 //  ---------------------------------------------
 
-// usage:
-// .column.left {
-//     .lib-url('images/fallback.png');
-//     background:url("#{$url}") repeat-y;
-// }
-// .columns {
-//     .lib-url('images/fallback.png', 'Magento_Catalog');
-//     background:url("#{$url}") repeat;
-// }
-
 $urls-resolved: inherit;
 
 @mixin lib-url($_path) {
@@ -182,10 +172,6 @@ $urls-resolved: inherit;
         }
     }
 }
-
-//
-//  Url existing check
-//  ---------------------------------------------
 
 @mixin lib-url-check($_path) {
     $lib-url-check-output: $_path;
@@ -224,11 +210,11 @@ $urls-resolved: inherit;
 //  Input placeholder
 //  ---------------------------------------------
 
-@mixin lib-input-placeholder() {
-    &::-webkit-input-placeholder { @content }
-    &:-moz-placeholder           { @content }
-    &::-moz-placeholder          { @content }
-    &:-ms-input-placeholder      { @content }
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder           { @content; }
+    &::-moz-placeholder          { @content; }
+    &:-ms-input-placeholder      { @content; }
 }
 
 //
