@@ -210,7 +210,7 @@ $urls-resolved: inherit;
 //  Input placeholder
 //  ---------------------------------------------
 
-@mixin placeholder {
+@mixin lib-input-placeholder() {
     &::-webkit-input-placeholder { @content; }
     &:-moz-placeholder           { @content; }
     &::-moz-placeholder          { @content; }
