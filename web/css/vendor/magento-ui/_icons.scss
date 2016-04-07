@@ -32,13 +32,13 @@
 
         &:before {
             @include _lib-icon-font(
-            $_icon-font-content,
-            $_icon-font,
-            $_icon-font-size,
-            $_icon-font-line-height,
-            $_icon-font-color,
-            $_icon-font-margin,
-            $_icon-font-vertical-align
+                $_icon-font-content,
+                $_icon-font,
+                $_icon-font-size,
+                $_icon-font-line-height,
+                $_icon-font-color,
+                $_icon-font-margin,
+                $_icon-font-vertical-align
             );
         }
 
@@ -95,7 +95,7 @@
             @include _lib-icon-font-size($_icon-font-size, $_icon-font-line-height);
         }
     }
-    @else if $_icon-font-position == after{
+    @else if $_icon-font-position == after {
         &:after {
             @include _lib-icon-font-size($_icon-font-size, $_icon-font-line-height);
         }
@@ -150,7 +150,7 @@
             margin: $_icon-image-margin;
         }
     }
-    @else if $_icon-image-position == after{
+    @else if $_icon-image-position == after {
         display: inline-block;
         @include _lib-icon-text-hide($_icon-image-text-hide);
 
@@ -298,7 +298,7 @@
     $_icon-sprite-position-y,
     $_icon-sprite-grid
 ) {
-    background-position: -($_icon-sprite-position-x*$_icon-sprite-grid) -($_icon-sprite-position-y*$_icon-sprite-grid);
+    background-position: (-$_icon-sprite-position-x * $_icon-sprite-grid) (-$_icon-sprite-position-y * $_icon-sprite-grid);
 }
 
 @mixin _lib-icon-font(

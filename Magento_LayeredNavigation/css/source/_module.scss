@@ -2,26 +2,22 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
 
 $filter-title-background-color: $color-gray94;
-$filter-link: $color-gray-darken4;
-$filter-link-hover: darken($filter-link, 30%);
-$filter-quantity: $color-gray52;
-
+$filter-link                  : $color-gray-darken4;
+$filter-link-hover            : darken($filter-link, 30%);
+$filter-quantity              : $color-gray52;
 
 .filter {
     &.block {
         margin-bottom: 0;
     }
-
     &-title {
         strong {
             $_shadow: inset 0 1px 0 0 $color-white, inset 0 -1px 0 0 fade-out($border-color__base, 0.3);
-
             background-color: $toolbar-element-background;
             box-shadow: $_shadow;
             border-radius: 3px;
@@ -34,7 +30,6 @@ $filter-quantity: $color-gray52;
             text-align: center;
             top: 0;
             z-index: 2;
-
             &[data-count]:after {
                 color: $color-white;
                 background: $color-orange-red4;
@@ -47,13 +42,11 @@ $filter-quantity: $color-gray52;
                 min-width: 12px;
                 padding: 2px;
             }
-
             &.disabled {
                 opacity: 0.5;
             }
         }
     }
-
     .block-subtitle {
         border-bottom: $border-width__base solid $border-color__base;
         font-size: $font-size__base;
@@ -61,30 +54,24 @@ $filter-quantity: $color-gray52;
         line-height: 1em;
         padding: $indent__s $indent__s $indent__base;
     }
-
     &-subtitle {
         display: none;
     }
-
     &-current {
         margin: 0;
-
         .items {
             padding: $indent__xs $indent__s;
         }
-
         .item {
             padding-left: 17px;
             position: relative;
             z-index: 1;
         }
-
         .filter &-subtitle {
             border: none;
             display: block;
             padding-bottom: $indent__s;
         }
-
         .action.remove {
             @extend .abs-remove-button-for-blocks;
             left: -2px;
@@ -92,32 +79,26 @@ $filter-quantity: $color-gray52;
             top: -1px;
         }
     }
-
     &-actions {
         margin-bottom: $indent__m;
         padding: 0 $indent__s;
     }
-
     &-label {
         font-weight: $font-weight__bold;
         &:after {
             content: ': ';
         }
     }
-
     &-value {
         color: $filter-quantity;
     }
-
     &-options {
         display: none;
         margin: 0;
-
         &-item {
             border-bottom: $border-width__base solid $border-color__base;
             padding-bottom: $indent__s;
         }
-
         &-title {
             cursor: pointer;
             font-weight: $font-weight__semibold;
@@ -129,81 +110,66 @@ $filter-quantity: $color-gray52;
             word-break: break-all;
             z-index: 1;
             @include lib-icon-font(
-            $_icon-font-content: $icon-down,
-            $_icon-font-size: 13px,
-            $_icon-font-position: after,
-            $_icon-font-display: block
+                $_icon-font-content : $icon-down,
+                $_icon-font-size    : 13px,
+                $_icon-font-position: after,
+                $_icon-font-display : block
             );
-
             &:after {
                 position: absolute;
                 right: 13px;
                 top: 9px;
             }
-
             &:hover {
                 color: $filter-link-hover;
             }
-
             .active > & {
                 @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
+                    $_icon-font-content : $icon-up,
                     $_icon-font-position: after
                 );
             }
         }
-
         &-content {
             margin: 0;
             padding: $indent__s;
-
             .item {
                 margin: $indent__s 0;
                 line-height: 1.5em;
             }
-
             a {
                 color: $filter-link;
                 margin-left: -5px;
                 margin-right: -5px;
                 padding-left: 5px;
                 padding-right: 7px;
-
                 &:hover {
                     background-color: $color-gray91;
                     text-decoration: none;
-
                     & + .count {
                         background-color: $color-gray91;
                     }
                 }
             }
-
             .count {
                 color: $filter-quantity;
                 padding-right: 5px;
-
                 &:before {
                     content: '(';
                 }
-
                 &:after {
                     content: ')';
                 }
             }
-
             .filter-count-label {
                 @extend .abs-visually-hidden;
             }
         }
     }
 }
-
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     body {
         &.filter-active {
@@ -212,23 +178,19 @@ $filter-quantity: $color-gray52;
                 margin-top: -999999em;
                 visibility: hidden;
             }
-
             .columns {
                 z-index: 999;
             }
         }
     }
-
     .filter {
         &.active {
             position: relative;
             visibility: visible;
             z-index: 99;
-
             .filter-options-item:last-child {
                 margin-bottom: $indent__xl;
             }
-
             .filter-title {
                 border-bottom: 1px solid $border-color__base;
                 height: 48px;
@@ -237,7 +199,6 @@ $filter-quantity: $color-gray52;
                 right: 0;
                 top: 0;
                 z-index: 2;
-
                 strong {
                     box-shadow: none;
                     background: none;
@@ -247,14 +208,13 @@ $filter-quantity: $color-gray52;
                     right: 3px;
                     top: 10px;
                     @include lib-icon-font(
-                    $icon-remove,
-                    $_icon-font-color: $text__color__muted,
-                    $_icon-font-size: 16px,
-                    $_icon-font-position: after
+                        $icon-remove,
+                        $_icon-font-color   : $text__color__muted,
+                        $_icon-font-size    : 16px,
+                        $_icon-font-position: after
                     );
                 }
             }
-
             .filter-subtitle {
                 background: $toolbar-background;
                 display: block;
@@ -266,7 +226,6 @@ $filter-quantity: $color-gray52;
                 top: 0;
                 z-index: 1;
             }
-
             .filter-options {
                 background: $color-white;
                 bottom: 0;
@@ -280,83 +239,69 @@ $filter-quantity: $color-gray52;
             }
         }
     }
-
     .filter {
         & &-subtitle {
             font-size: 20px;
             font-weight: $font-weight__light;
         }
-
         &-actions {
             margin: -35px -$indent__s $indent__m;
         }
-
         &-options-content {
             padding: $indent__xs $indent__s;
         }
     }
-
     .filter .filter-current {
         border: solid $border-color__base;
         border-width: 1px 0;
         margin: $indent__xs -$indent__s 0;
-
         .items {
             display: none;
         }
-
         &-subtitle {
             position: relative;
             text-transform: uppercase;
             z-index: 1;
             @include lib-icon-font(
-                $_icon-font-content: $icon-down,
-                $_icon-font-size: 13px,
+                $_icon-font-content : $icon-down,
+                $_icon-font-size    : 13px,
                 $_icon-font-position: before,
-                $_icon-font-display: block
+                $_icon-font-display : block
             );
-
             &:before {
                 position: absolute;
                 right: 10px;
                 top: 10px;
             }
-
             &:after {
                 color: $text__color__muted;
-                content:' (' attr(data-count) ')';
+                content: ' (' attr(data-count) ')';
                 font-size: 14px;
             }
         }
-
         &.active {
             padding-bottom: 30px;
-
             .block-subtitle {
                 @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
+                    $_icon-font-content : $icon-up,
                     $_icon-font-position: before
                 );
             }
-
             .items {
                 display: block;
             }
-
             & + .block-actions {
                 display: block;
             }
         }
-
         & + .block-actions {
             display: none;
         }
     }
-
     .filter-no-options {
         .filter-title {
             &:before {
-                background: rgba(255,255,255,.5);
+                background: rgba(255, 255, 255, 0.5);
                 content: '';
                 display: block;
                 height: 40px;
@@ -367,12 +312,10 @@ $filter-quantity: $color-gray52;
                 z-index: 99;
             }
         }
-
         .filter-content {
             margin-bottom: $indent__base;
         }
     }
-
     .page-with-filter {
         .columns {
             .sidebar-main {
@@ -381,86 +324,69 @@ $filter-quantity: $color-gray52;
         }
     }
 }
-
 @include min-screen($screen__s) {
-
     .filter {
         &.block {
             margin-bottom: $indent__xl;
         }
-
         &-title {
             display: none;
         }
-
         &-content {
             .item {
                 margin: $indent__s 0;
             }
         }
-
         &-actions {
             margin-bottom: $indent__l;
         }
-
-        &.active &-options,
-        &-options {
+        &-options,
+        &.active &-options {
             background: transparent;
             clear: both;
             display: block;
             position: static;
         }
-
         &-subtitle {
             position: static;
             display: block;
         }
     }
-
     .page-layout-1column {
         .toolbar-products {
             position: absolute;
             top: 0;
             width: 100%;
         }
-
         .products ~ .toolbar-products {
             position: static;
         }
-
         &.page-with-filter .column.main {
             padding-top: 45px;
             position: relative;
             z-index: 1;
         }
-
         .filter {
             &.block {
                 border-top: 1px solid $border-color__base;
             }
-
             &-content {
                 margin-top: $indent__s;
             }
-
             &-subtitle {
                 display: none;
             }
-
             &-options {
                 &-item {
                     border: 0;
                     display: inline-block;
                     margin-right: $indent__m;
-
                     &.active {
                         position: relative;
                         z-index: 2;
-
                         &:hover {
                             z-index: 3;
                         }
-
                         &:after,
                         &:before {
                             @include lib-arrow(up, 8px, $color-black);
@@ -472,28 +398,23 @@ $filter-quantity: $color-gray52;
                             position: absolute;
                             z-index: 3;
                         }
-
                         &:after {
                             border-bottom-color: $color-white;
-                            margin-top:2px;
+                            margin-top: 2px;
                             z-index: 4;
                         }
                     }
                 }
-
                 &-title {
                     padding: 0 $indent__base 0 0;
-
                     &:after {
                         right: 2px;
                         top: 3px;
                         z-index: 3;
                     }
                 }
-
                 &-content {
-                    $_shadow: 0 3px 5px 0 rgba(50, 50, 50, .75);
-
+                    $_shadow: 0 3px 5px 0 rgba(50, 50, 50, 0.75);
                     background: $color-white;
                     box-shadow: $_shadow;
                     border: 1px solid $border-color__base;
@@ -502,55 +423,44 @@ $filter-quantity: $color-gray52;
                     top: 100%;
                     width: 180px;
                     z-index: 2;
-
                     .item {
                         padding: $indent__xs;
-                        margin:0;
-
+                        margin: 0;
                         a {
                             margin-left: 0;
                         }
-
                         &:hover {
                             background-color: $color-gray91;
                         }
                     }
                 }
             }
-
             &-current {
                 display: inline;
                 line-height: 35px;
-
                 &-subtitle {
                     color: $text__color__muted;
                     display: inline;
                     font-size: $font-size__base;
                     font-weight: normal;
                     padding: 0;
-
                     &:after {
                         content: ':';
                     }
                 }
-
                 .item,
                 .items {
                     display: inline;
                 }
-
                 .item {
                     margin-right: $indent__m;
                 }
-
                 .action.remove {
                     line-height: normal;
                 }
             }
-
             &-actions {
                 display: inline;
-
                 & ~ .filter-options {
                     margin-top: $indent__m;
                 }

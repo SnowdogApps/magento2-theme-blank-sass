@@ -258,7 +258,7 @@
 
     sub,
     sup {
-        font-size: ($font-size__xs/$font-size__base)*100%;
+        font-size: ($font-size__xs / $font-size__base) * 100%;
         line-height: 0;
         position: relative;
         vertical-align: baseline;
@@ -306,7 +306,12 @@
         @include lib-heading(h6);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         small,
         .small {
             @include lib-typography(

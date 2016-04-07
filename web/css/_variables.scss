@@ -153,7 +153,7 @@ $message-success-icon: $icon-success;
 //  Loaders
 //  ---------------------------------------------
 
-$loader-overlay__background-color: rgba(255, 255, 255, .7);
+$loader-overlay__background-color: rgba(255, 255, 255, 0.7);
 $loader-overlay__z-index: 9999;
 
 //
@@ -246,7 +246,7 @@ $popup-title-headings__level: h2;
 
 //  Window overlay
 $overlay__background: $color-gray55;
-$overlay__opacity: .7;
+$overlay__opacity: 0.7;
 $overlay__opacity-old: 70;
 
 $gallery-thumb-border-color-active: $active__color;

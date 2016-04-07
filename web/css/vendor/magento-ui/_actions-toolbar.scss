@@ -127,7 +127,7 @@
             }
         }
     }
-    @else if $_actions-toolbar-actions-position == center{
+    @else if $_actions-toolbar-actions-position == center {
         .primary,
         .secondary {
             vertical-align: top;

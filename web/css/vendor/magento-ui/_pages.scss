@@ -335,8 +335,8 @@
             display: $_pager-label-display;
             font-weight: $_pager-font-weight;
             @include lib-inline-block-space-item(
-            $_font-size: $_pager-font-size,
-            $_line-height: $_pager-line-height
+                $_font-size: $_pager-font-size,
+                $_line-height: $_pager-line-height
             );
 
             &:after {

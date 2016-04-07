@@ -53,18 +53,18 @@
 }
 
 @mixin lib-table-typography(
-     $_table-td-font-size  : inherit,
-     $_table-td-color      : $table-td__color,
-     $_table-td-font-family: inherit,
-     $_table-td-font-weight: inherit,
-     $_table-td-line-height: inherit,
-     $_table-td-font-style : inherit,
-     $_table-th-font-size  : inherit,
-     $_table-th-color      : $text__color__intense,
-     $_table-th-font-family: inherit,
-     $_table-th-font-weight: $font-weight__bold,
-     $_table-th-line-height: inherit,
-     $_table-th-font-style : inherit
+    $_table-td-font-size  : inherit,
+    $_table-td-color      : $table-td__color,
+    $_table-td-font-family: inherit,
+    $_table-td-font-weight: inherit,
+    $_table-td-line-height: inherit,
+    $_table-td-font-style : inherit,
+    $_table-th-font-size  : inherit,
+    $_table-th-color      : $text__color__intense,
+    $_table-th-font-family: inherit,
+    $_table-th-font-weight: $font-weight__bold,
+    $_table-th-line-height: inherit,
+    $_table-th-font-style : inherit
 ) {
     & > thead,
     & > tbody,

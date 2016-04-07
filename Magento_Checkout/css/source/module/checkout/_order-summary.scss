@@ -84,13 +84,13 @@ $checkout-summary-items__padding: 15px;
             padding: $indent__s $indent__xl $indent__s 0;
             cursor: pointer;
             @include lib-icon-font(
-            $icon-down,
-            $_icon-font-size: 12px,
-            $_icon-font-line-height: 12px,
-            $_icon-font-text-hide: true,
-            $_icon-font-margin: 3px 0 0,
-            $_icon-font-position: after,
-            $_icon-font-display: block
+                $icon-down,
+                $_icon-font-size: 12px,
+                $_icon-font-line-height: 12px,
+                $_icon-font-text-hide: true,
+                $_icon-font-margin: 3px 0 0,
+                $_icon-font-position: after,
+                $_icon-font-display: block
             );
             margin-bottom: 0;
             position: relative;
@@ -111,8 +111,8 @@ $checkout-summary-items__padding: 15px;
         &.active {
             & > .title {
                 @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-up,
-                $_icon-font-position: after
+                    $_icon-font-content: $icon-up,
+                    $_icon-font-position: after
                 );
             }
         }
@@ -124,7 +124,7 @@ $checkout-summary-items__padding: 15px;
 
     //  Cart items
     .minicart-items-wrapper {
-        margin: 0 -($checkout-summary-items__padding) 0 0;
+        margin: 0 (-$checkout-summary-items__padding) 0 0;
         max-height: $checkout-summary-items__max-height;
         padding: $checkout-summary-items__padding $checkout-summary-items__padding 0 0;
         border: 0;

@@ -168,7 +168,7 @@
         .rating-#{$_index} {
             z-index: $_icon-count - ($_index - 2);
             &:before {
-               @include lib-rating-icons-content($_index, $_icon-content);
+                @include lib-rating-icons-content($_index, $_icon-content);
             }
         }
     }

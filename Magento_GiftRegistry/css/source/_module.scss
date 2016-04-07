@@ -2,19 +2,15 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
-
-.form-giftregistry-share,
-.form-giftregistry-edit {
+.form-giftregistry-edit,
+.form-giftregistry-share {
     @extend .abs-add-fields;
     .actions-toolbar:not(:last-child) {
         margin-bottom: $indent__xl;
     }
-
     .fieldset {
         .nested {
             .field:not(.choice) {
@@ -25,99 +21,81 @@
         }
     }
 }
-
 .form.giftregistry.items {
     .actions-toolbar {
         @extend .abs-reset-left-margin;
     }
 }
-
 .giftregisty-dropdown {
     @extend .abs-dropdown-simple;
     .action.toggle {
         color: $link__color;
     }
 }
-
 .table-giftregistry-items {
     .field.qty .qty {
         @extend .abs-input-qty;
     }
-
     .product-image {
         margin-right: $indent__s;
         float: left;
     }
 }
-
 .form.giftregistry .fieldset {
     .cart-summary & {
         margin: 15px 0 $indent__xs;
         text-align: left;
-
         .field {
             margin: 0 0 $indent__s;
-
             .control {
                 float: none;
                 width: auto;
             }
         }
-
         .action.primary {
             @extend .abs-revert-to-action-secondary;
         }
     }
 }
-
 .form-giftregistry-create {
     .fieldset {
         @extend .abs-forms-margin-small;
     }
 }
-
 .form-giftregistry-edit {
     .field.date {
         @extend .abs-field-date;
     }
 }
-
 .form-giftregistry-search {
     margin-bottom: $indent__l * 2;
-
     .legend {
         @extend .abs-account-title;
     }
-
     .fields-specific-options {
         .field {
             &:nth-last-of-type(1) {
                 margin-bottom: 0;
             }
         }
-
         .datetime-picker {
             @extend .abs-field-date-input;
         }
     }
 }
-
 .block-giftregistry-results {
     .block-title {
         @extend .abs-account-title;
     }
-
     .data.table {
         @extend .abs-table-striped;
     }
 }
-
 .block-giftregistry {
     .actions-toolbar {
         margin: 17px 0 0;
     }
 }
-
 .block-giftregistry-shared {
     .item-options {
         .item-value {
@@ -125,33 +103,26 @@
         }
     }
 }
-
 .block-giftregistry-shared-items {
     .block-title {
         @extend .abs-account-title;
     }
-
     .product-image-wrapper {
         @extend .abs-reset-image-wrapper;
     }
-
     .item {
         .col {
             border: 0;
         }
     }
-
     th {
         border-bottom: $border-width__base solid $border-color__base;
     }
-
     .col {
         padding: $cart-item-cell-padding-top 11px 10px;
-
         .price-box {
             display: inline-block;
         }
-
         .price-wrapper {
             font-size: 18px;
             display: block;
@@ -159,26 +130,22 @@
             white-space: nowrap;
         }
     }
-
     .qty {
         .qty {
             @extend .abs-input-qty;
         }
     }
-
     .product {
         .item-options {
             @extend .abs-product-options-list;
             @extend .abs-add-clearfix;
             margin: 0;
         }
-
         &-item-photo {
             display: block;
             max-width: 65px;
             padding: $indent__s 0;
         }
-
         &-item-name {
             font-size: 18px;
             display: block;
@@ -186,11 +153,9 @@
         }
     }
 }
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .account {
         .table-giftregistry {
@@ -199,7 +164,6 @@
             }
         }
     }
-
     .table-giftregistry-items {
         .col.product {
             &:before {
@@ -207,71 +171,61 @@
             }
             @extend .abs-add-clearfix-mobile;
         }
-
         .field.choice,
         .field.qty {
             display: inline-block;
         }
     }
-
     .form-giftregistry-search {
         .fieldset {
             margin-bottom: $indent__base;
         }
     }
-
     .block-giftregistry-results {
         .block-title {
             margin-bottom: 0;
         }
-
         .table-wrapper {
             border-top: none;
         }
     }
-
     .block-giftregistry-shared-items {
         .block-title {
             margin-bottom: $indent__s;
         }
-
         .table-wrapper {
             border-top: 0;
         }
     }
 }
-
 @include max-screen($screen__m) {
     //  Shopping cart link
     .cart.table-wrapper {
         .action-giftregistry {
             @include lib-icon-font(
-            $icon-gift-registry,
-            $_icon-font-size: 18px,
-            $_icon-font-line-height: 20px,
-            $_icon-font-text-hide: true,
-            $_icon-font-color: $minicart-icons-color,
-            $_icon-font-color-hover: $primary__color,
-            $_icon-font-color-active: $minicart-icons-color
+                $icon-gift-registry,
+                $_icon-font-size        : 18px,
+                $_icon-font-line-height : 20px,
+                $_icon-font-text-hide   : true,
+                $_icon-font-color       : $minicart-icons-color,
+                $_icon-font-color-hover : $primary__color,
+                $_icon-font-color-active: $minicart-icons-color
             );
         }
     }
 }
-
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__m) {
-    .form-giftregistry-share,
-    .form-giftregistry-edit {
+    .form-giftregistry-edit,
+    .form-giftregistry-share {
         @extend .abs-add-fields-desktop;
         @extend .abs-form-field-column-2;
         .fieldset .field {
             width: 45%;
         }
     }
-
     .form-giftregistry-edit {
         .fieldset.shipping_address {
             .fieldset {
@@ -279,39 +233,29 @@
             }
         }
     }
-
     .form-giftregistry-create {
         @extend .abs-forms-general-desktop;
     }
-
     .table-giftregistry {
         .col.create {
             white-space: nowrap;
         }
-
         .col.message {
             width: 40%;
         }
-
         .col.actions {
             width: 30%;
         }
     }
-
     .table-giftregistry-items {
         .col.note {
             width: 30%;
         }
-
         .account .data.table & {
-            @include lib-table-bordered(
-            $_table_type: horizontal
-            );
-
+            @include lib-table-bordered( $_table_type: horizontal );
             th {
                 border-bottom: 0;
             }
-
             & > tbody > tr:nth-child(even) {
                 & > td,
                 & > th {
@@ -320,48 +264,40 @@
             }
         }
     }
-
     .form-giftregistry-search {
         .fieldset {
             margin-bottom: $form-field__vertical-indent__desktop;
-
             .field {
-                &.name,
-                &.lastname {
+                &.lastname,
+                &.name {
                     @include lib-form-field-column($_column: true);
                     margin-bottom: auto;
                 }
-
                 &.lastname {
                     padding: 0;
                 }
             }
         }
     }
-
     .toolbar-giftregistry-results {
         @extend .abs-pager-toolbar;
     }
-
     .block-giftregistry-shared {
         .item-options {
             @extend .abs-product-options-list-desktop;
             @extend .abs-add-clearfix-desktop;
         }
     }
-
     .block-giftregistry-shared-items {
         .column.main & {
             .actions-toolbar {
                 @extend .abs-reset-left-margin-desktop;
             }
         }
-
         .item {
             border-bottom: $border-width__base solid $border-color__base;
             border-top: 0;
         }
-
         .product {
             &-item-photo {
                 display: table-cell;
@@ -370,7 +306,6 @@
                 vertical-align: top;
                 width: 1%;
             }
-
             &-item-details {
                 display: table-cell;
                 vertical-align: top;
@@ -378,21 +313,17 @@
                 word-break: normal;
             }
         }
-
         .col {
             &.product {
                 width: 48%;
             }
-
             &:not(.product) {
                 text-align: center;
             }
-
             &.price {
                 padding-top: 17px;
             }
         }
-
         .input-text {
             &.qty {
                 margin-top: -4px;

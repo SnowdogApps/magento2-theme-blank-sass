@@ -18,8 +18,8 @@ $form-field__vertical-indent: $indent__base;
         margin-bottom: 0;
     }
 
-    > .field,
-    > .fields > .field {
+    & > .field,
+    & > .fields > .field {
         @include lib-form-field();
         &.no-label {
             > .label {
@@ -91,8 +91,8 @@ fieldset.field {
     padding-right: 25px;
     text-indent: 0.01em;
 
-    &::-ms-expand{
-        display:none;
+    &::-ms-expand {
+        display: none;
     }
 
     .lt-ie10 & {
