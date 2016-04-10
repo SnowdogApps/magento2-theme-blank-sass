@@ -5,7 +5,7 @@
 Theme is **ready to use** as Composer package with Magento 2.
 Still a lot of things needs to be fixed or polished, but definietly it's working :smile:
 
-## Instalation
+## Installation
 * `composer require snowdog/theme-blank-sass`
 * If you are not in developer mode you should run `bin/magento setup:static-content:deploy`
 * Compile SASS files, i.e. via [Frontools](https://github.com/SnowdogApps/magento2-frontools)
