@@ -35,7 +35,6 @@ $autocomplete-item-amount__color: $color-gray60;
             $_icon-font-text-hide   : true
         );
         display: inline-block;
-        float: right;
         &.active {
             & + .control {
                 input {

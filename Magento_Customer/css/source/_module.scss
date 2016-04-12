@@ -59,7 +59,7 @@ $account-table-action-delete: $color-red12;
 }
 
 .form-address-edit {
-    #region_id {
+    .region select {
         display: none;
     }
 

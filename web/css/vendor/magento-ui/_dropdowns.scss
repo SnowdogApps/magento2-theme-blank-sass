@@ -55,7 +55,6 @@
     $_icon-font-text-hide                      : inherit
 ) {
     @include lib-clearfix();
-    display: inline-block;
     position: relative;
 
     #{$_toggle-selector} {
