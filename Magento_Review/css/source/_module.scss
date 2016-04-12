@@ -35,9 +35,7 @@
 .review-control-vote {
     @include lib-rating-vote();
     &:before {
-        @include lib-rating-icons-content(
-            $_icon-content: $icon-star-empty
-        );
+        content: $rating-icon__content;
     }
 }
 
@@ -255,24 +253,27 @@
 }
 
 .product-reviews-summary {
-    margin-bottom: $indent__xs;
-
+    display: table;
+    margin: $indent__s 0 12px;
     .products.wrapper.list & {
         margin: 0 auto;
     }
-
-    .rating-summary {
-        display: inline-block;
-        vertical-align: middle;
+    &.empty {
+        margin-left: 0;
     }
-
-    .reviews-actions {
-        display: inline-block;
+    .rating-summary {
+        position: relative;
+        left: (-$indent__xs);
+        display: table-cell;
         vertical-align: middle;
-        font-size: floor(0.8 * $font-size__base);
-
-        a:not(:last-child) {
-            margin-right: 30px;
+        text-align: left;
+    }
+    .reviews-actions {
+        display: table-cell;
+        vertical-align: middle;
+        line-height: $rating-icon__font-size;
+        a {
+            margin-right: $indent__xs;
         }
     }
 }

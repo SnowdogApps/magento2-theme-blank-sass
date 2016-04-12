@@ -26,10 +26,7 @@
             $_icon-letter-spacing,
             $_icon-color
         );
-        @include lib-rating-icons-content(
-            $_icon-count,
-            $_icon-content
-        );
+        content: $_icon-content;
         display: block;
         position: absolute;
         z-index: 1;
@@ -168,7 +165,7 @@
         .rating-#{$_index} {
             z-index: $_icon-count - ($_index - 2);
             &:before {
-                @include lib-rating-icons-content($_index, $_icon-content);
+                content: $_icon-content;
             }
         }
     }
@@ -200,8 +197,8 @@
     $_icon-content,
     $_icon-color
 ) {
+    content: $_icon-content;
     -webkit-font-smoothing: antialiased;
-    @include lib-rating-icons-content($_icon-count, $_icon-content);
     color: $_icon-color;
     font-family: $_icon-font;
     font-size: $_icon-font-size;
@@ -212,12 +209,4 @@
     font-style: normal;
     font-weight: normal;
     speak: none;
-}
-
-@mixin lib-rating-icons-content(
-    $_icon-count  : $rating-icon__count,
-    $_icon-content: $rating-icon__content
-) {
-    content: $_icon-content;
-
 }

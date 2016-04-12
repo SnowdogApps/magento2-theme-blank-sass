@@ -133,7 +133,8 @@ $pager__font-weight             : $font-weight__bold;
         }
     }
     .modes {
-        display: inline-block;
+        display: block;
+        float: left;
         margin-right: $indent__base;
         .products.wrapper ~ .toolbar & {
             display: none;
