@@ -219,8 +219,6 @@
     $_icon-count  : $rating-icon__count,
     $_icon-content: $rating-icon__content
 ) {
-    @if $_icon-count > 0 {
-        @include lib-rating-icons-content(($_icon-count - 1), $_icon-content);
-        content: $_icon-content;
-    }
+    content: $_icon-content;
+
 }
