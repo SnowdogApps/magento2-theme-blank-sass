@@ -132,7 +132,6 @@
                 &.remove {
                     @include lib-button-reset();
                     @include lib-button-as-link();
-                    margin-top: -4px;
                 }
             }
         }

@@ -1,39 +1,15 @@
-var gulp      = require('gulp'),
-    sass      = require('gulp-sass'),
-    plumber   = require('gulp-plumber'),
-    postcss   = require('gulp-postcss'),
-    reporter  = require('postcss-reporter'),
-    stylelint = require('stylelint'),
-    sassLint  = require('gulp-sass-lint');
+var gulp        = require('gulp'),
+    sass        = require('gulp-sass'),
+    plumber     = require('gulp-plumber'),
+    postcss     = require('gulp-postcss'),
+    reporter    = require('postcss-reporter'),
+    stylelint   = require('stylelint'),
+    sassLint    = require('gulp-sass-lint'),
+    runSequence = require('run-sequence');
 
 gulp.task('default', () => {
     gulp.watch(['**/*.scss','!node_modules/**'], () => {
-        gulp.src('web/css/*.scss')
-            .pipe(sassLint())
-            .pipe(sassLint.format())
-            .pipe(
-                sass({
-                    outputStyle   : 'expanded',
-                    sourceComments: true
-                })
-                .on('error', sass.logError)
-            )
-            .pipe(gulp.dest('web/css'));
-    });
-});
-
-gulp.task('scss-lint', () => {
-    return gulp.src(['**/*.scss','!node_modules/**'])
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
-});
-
-gulp.task('watch-scss-lint', () => {
-    gulp.watch(['**/*.scss','!node_modules/**'], event => {
-        gulp.src(event.path)
-        .pipe(sassLint())
-        .pipe(sassLint.format());
+        runSequence('sass-lint', 'sass', 'css-lint');
     });
 });
 
@@ -44,8 +20,15 @@ gulp.task('sass', () => {
                 outputStyle   : 'expanded',
                 sourceComments: true
             })
+            .on('error', sass.logError)
         )
         .pipe(gulp.dest('web/css'));
+});
+
+gulp.task('sass-lint', () => {
+    return gulp.src(['**/*.scss','!node_modules/**'])
+        .pipe(sassLint())
+        .pipe(sassLint.format());
 });
 
 gulp.task('css-lint', () => {
@@ -53,8 +36,28 @@ gulp.task('css-lint', () => {
         .pipe(postcss([
             stylelint(),
             reporter({
+                clearMessages: true
+            })
+        ]));
+});
+
+gulp.task('ci-tests', () => {
+    return gulp.src('web/css/*.scss')
+        .pipe(sassLint())
+        .pipe(sassLint.format())
+        .pipe(sassLint.failOnError())
+        .pipe(
+            sass({
+                outputStyle   : 'expanded',
+                sourceComments: true
+            })
+        )
+        .pipe(postcss([
+            stylelint(),
+            reporter({
                 clearMessages: true,
                 throwError   : true
             })
-        ]));
+        ]))
+        .pipe(gulp.dest('web/css'));
 });

@@ -327,7 +327,6 @@ $gift-item-block-title-icon__margin         : 0 0 0 $indent__s;
     //  ---------------------------------------------
     .cart.table-wrapper {
         .action-gift {
-            float: left;
             @include lib-icon-font(
                 $icon-down,
                 $_icon-font-size        : 18px,

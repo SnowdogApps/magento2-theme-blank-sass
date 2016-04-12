@@ -131,14 +131,14 @@ $block-auth__border: 1px solid $color-gray-light3;
         top: 100%;
         transform-origin: 0 0;
         transform: scale(1, 0);
-        transition: transform linear 0.1s, visibility 0s linear 0.1s;
+        transition: transform linear 150ms, visibility 150ms linear 150ms;
         visibility: hidden;
         width: 100%;
 
         &._show {
             z-index: $dropdown-list__z-index;
             transform: scale(1, 1);
-            transition: transform linear 0.1s, visibility 0s linear 0s;
+            transition: transform linear 150ms, visibility 150ms linear 0;
             visibility: visible;
         }
     }
@@ -158,7 +158,6 @@ $block-auth__border: 1px solid $color-gray-light3;
         .actions-toolbar {
             & > .primary {
                 display: inline;
-                float: right;
                 margin-right: 0;
                 .action {
                     margin-right: 0;

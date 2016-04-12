@@ -174,7 +174,6 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
             font-weight: $font-weight__semibold;
             display: inline-block;
             font-size: 14px;
-            float: none;
             padding: 0;
             margin: 0 0 $indent__xs;
         }
@@ -525,9 +524,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
             .product-item {
                 &-info {
                     .product-item-photo {
-                        float: none;
-                        margin: 0;
                         position: absolute;
+                        margin: 0;
                         left: 0;
                         top: 0;
                     }

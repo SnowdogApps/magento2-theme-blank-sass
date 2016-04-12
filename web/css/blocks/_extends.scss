@@ -30,7 +30,7 @@
 //   Button as a link
 //  ---------------------------------------------
 .abs-action-button-as-link {
-    @include lib-button-as-link ( $_margin: inherit );
+    @include lib-button-as-link();
     border-radius: 0;
     font-weight: $font-weight__regular;
     font-size: inherit;
@@ -88,7 +88,6 @@
         }
     }
     dd {
-        float: left;
         display: inline-block;
         margin: 0 0 $indent__xs;
     }
@@ -173,6 +172,7 @@
         $_icon-font-margin           : 0 0 0 5px,
         $_icon-font-vertical-align   : middle
     );
+    display: inline-block;
 }
 //
 //  Input quantity
