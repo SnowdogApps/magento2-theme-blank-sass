@@ -41,23 +41,35 @@ gulp.task('css-lint', () => {
         ]));
 });
 
-gulp.task('ci-tests', () => {
-    return gulp.src('web/css/*.scss')
+gulp.task('ci:sass-lint', () => {
+    return gulp.src(['**/*.scss','!node_modules/**'])
         .pipe(sassLint())
         .pipe(sassLint.format())
-        .pipe(sassLint.failOnError())
+        .pipe(sassLint.failOnError());
+});
+
+gulp.task('ci:sass', () => {
+    return gulp.src('web/css/*.scss')
         .pipe(
             sass({
                 outputStyle   : 'expanded',
                 sourceComments: true
             })
         )
+        .pipe(gulp.dest('web/css'));
+});
+
+gulp.task('ci:css-lint', () => {
+    return gulp.src('web/css/*.css')
         .pipe(postcss([
             stylelint(),
             reporter({
                 clearMessages: true,
                 throwError   : true
             })
-        ]))
-        .pipe(gulp.dest('web/css'));
+        ]));
+});
+
+gulp.task('ci-tests', () => {
+    runSequence('ci:sass-lint', 'ci:sass', 'ci:css-lint');
 });
