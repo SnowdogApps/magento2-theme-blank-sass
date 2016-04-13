@@ -37,6 +37,10 @@
 @import 'blocks/components/modals'; // from lib
 @import 'blocks/components/modals_extend'; // local
 
+// gallery
+
+@import '../gallery/gallery';
+
 // Modules
 @import '../../Magento_Braintree/css/source/module';
 @import '../../Magento_CatalogEvent/css/source/module';
