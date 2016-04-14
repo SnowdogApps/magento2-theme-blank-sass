@@ -15,52 +15,62 @@ $fotorama-thumb-arrow: 30px;
 // @import '../../css/source/lib/_responsive.less';
 
 @mixin fotorama-abs-center() {
-    @include fotorama-translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
     left: 50%;
     position: absolute;
     top: 50%;
 }
 
-@mixin fotorama-translate3d($x, $y, $z) {
-    -webkit-transform: translate3d($x, $y, $z);
-    transform: translate3d($x, $y, $z);
-}
+// @mixin fotorama-translate3d($x, $y, $z) {
+//     -webkit-transform: translate3d($x, $y, $z);
+//     transform: translate3d($x, $y, $z);
+// }
 
-@mixin fotorama-rotate($deg) {
-    -webkit-transform: rotate($deg);
-    -ms-transform: rotate($deg);
-    transform: rotate($deg);
-}
+// @mixin fotorama-rotate($deg) {
+//     -webkit-transform: rotate($deg);
+//     -ms-transform: rotate($deg);
+//     transform: rotate($deg);
+// }
 
-@mixin translateX($value) {
-    -webkit-transform: translateX($value);
-    -ms-transform: translateX($value);
-    -o-transform: translateX($value);
-    transform: translateX($value);
-}
+// @mixin translateX($value) {
+//     -webkit-transform: translateX($value);
+//     -ms-transform: translateX($value);
+//     -o-transform: translateX($value);
+//     transform: translateX($value);
+// }
 
-@mixin translateY($value) {
-    -webkit-transform: translateY($value);
-    -ms-transform: translateY($value);
-    -o-transform: translateY($value);
-    transform: translateY($value);
-}
+// @mixin translateY($value) {
+//     -webkit-transform: translateY($value);
+//     -ms-transform: translateY($value);
+//     -o-transform: translateY($value);
+//     transform: translateY($value);
+// }
 
 @mixin fotorama-shadow-gradient($x, $y) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.2) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), radial-gradient(farthest-side at $x $y, rgba(0, 0, 0, 0.4), transparent);
 }
 
 @mixin fotorama-arrow-gradient($d){
-    background-image: -webkit-linear-gradient($d, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-    background-image: -ms-linear-gradient($d, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
-    background-image: linear-gradient($d, rgba(255, 255, 255, .7), rgba(255, 255, 255, 0));
+    background-image: linear-gradient($d, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+}
+
+.fotorama-sprite {
+    @extend .fotorama-print-background;
+    background: url('../gallery/gallery.png') no-repeat;
+    //@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 2dppx) {
+    //  background: url('fotorama@2x.png') no-repeat;
+    //}
+}
+
+.fotorama-print-background {
+    @media print {
+        background: none !important;
+    }
 }
 
 .fotorama-inline-block {
     display: inline;
     zoom: 1;
-    -moz-box-orient: vertical;
-    display: -moz-inline-box;
     display: inline-block;
     vertical-align: middle;
 }
@@ -158,19 +168,11 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama-grab-cursor {
     cursor: move;
-    cursor: -webkit-grab;
-    cursor: -moz-grab;
-    cursor: -o-grab;
-    cursor: -ms-grab;
     cursor: grab;
 }
 
 .fotorama-grabbing-cursor {
     cursor: move;
-    cursor: -webkit-grabbing;
-    cursor: -moz-grabbing;
-    cursor: -o-grabbing;
-    cursor: -ms-grabbing;
     cursor: grabbing;
 }
 
@@ -232,18 +234,6 @@ $fotorama-thumb-arrow: 30px;
     padding: 0;
 }
 
-.fotorama-inline-block {
-    @extend .fotorama-inline-block;
-}
-
-.fotorama-content-box {
-    box-sizing: content-box;
-}
-
-.fotorama-border-box {
-    box-sizing: border-box;
-}
-
 .fotorama-hidden {
     left: -99999px;
     position: absolute;
@@ -269,20 +259,6 @@ $fotorama-thumb-arrow: 30px;
 
 .transitionDurationZero {
     transition-duration: 0ms;
-}
-
-.fotorama-sprite {
-    @extend .fotorama-print-background;
-    background: url('gallery.png') no-repeat;
-    //@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 2dppx) {
-    //  background: url('fotorama@2x.png') no-repeat;
-    //}
-}
-
-.fotorama-print-background {
-    @media print {
-        background: none !important;
-    }
 }
 
 .fotorama {
@@ -440,7 +416,7 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama__nav__frame {
     @extend .fotorama-auto-margin;
-    @extend .fotorama-content-box;
+    box-sizing: content-box;
     @extend .fotorama-focus;
     @extend .fotorama-inline-block;
     @extend .fotorama-no-tap;
@@ -527,7 +503,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__thumb-border {
-    @extend .fotorama-border-box;
+    box-sizing: border-box;
     @extend .fotorama-print-background;
     backface-visibility: hidden;
     background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(64, 64, 64, 0.1));
@@ -571,7 +547,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__caption__wrap {
-    @extend .fotorama-border-box;
+    box-sizing: border-box;
     @extend .fotorama-inline-block;
     background-color: $color-white;
     padding: 5px 10px;
@@ -657,11 +633,9 @@ $fotorama-thumb-arrow: 30px;
     }
 }
 
-// $-moz-document url-prefix() {
-//     .fotorama__active {
-//         box-shadow: 0 0 0 transparent;
-//     }
-// }
+.fotorama__active {
+    box-shadow: 0 0 0 transparent;
+}
 
 .fotorama__arr,
 .fotorama__fullscreen-icon,
@@ -682,7 +656,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__arr {
-    @extend .fotorama-border-box;
+    box-sizing: border-box;
     bottom: 0;
     margin-top: -($fotorama-arw-size / 2);
     position: absolute;
@@ -702,7 +676,7 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__arr--prev {
     left: 0;
     .fotorama__arr__arr {
-        background-position: -$size-fotorama-block -$size-fotorama-block;
+        background-position: (-$size-fotorama-block) (-$size-fotorama-block);
     }
 }
 
@@ -787,7 +761,7 @@ $fotorama-thumb-arrow: 30px;
     }
 
     .fotorama__wrap--css3 & {
-        @include fotorama-translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
+        transform: translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
     }
 
     .fotorama__wrap--video & {
@@ -894,24 +868,24 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__wrap--css3 {
     &.fotorama__wrap--no-controls.fotorama__wrap--slide.fotorama__wrap--toggle-arrows {
         .fotorama__fullscreen-icon:not(:focus) {
-            @include fotorama-translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
+            transform: translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
         }
         .fotorama__arr--prev:not(:focus) {
-            @include fotorama-translate3d(-$fotorama-arw-size * 1.5, 0, 0);
+            transform: translate3d(-$fotorama-arw-size * 1.5, 0, 0);
         }
         .fotorama__arr--next:not(:focus) {
-            @include fotorama-translate3d($fotorama-arw-size * 1.5, 0, 0);
+            transform: translate3d($fotorama-arw-size * 1.5, 0, 0);
         }
     }
     &.fotorama__wrap--video {
         .fotorama__fullscreen-icon {
-            @include fotorama-translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
+            transform: translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
         }
         .fotorama__arr--prev {
-            @include fotorama-translate3d(-$fotorama-arw-size * 1.5, 0, 0);
+            transform: translate3d(-$fotorama-arw-size * 1.5, 0, 0);
         }
         .fotorama__arr--next {
-            @include fotorama-translate3d($fotorama-arw-size * 1.5, 0, 0);
+            transform: translate3d($fotorama-arw-size * 1.5, 0, 0);
         }
     }
 }
@@ -1003,7 +977,7 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__nav-wrap {
     .fotorama_vertical_ratio {
         .fotorama__img {
-            @include translateY(-50%);
+            transform: translateY(-50%);
             height: auto;
             position: absolute;
             top: 50%;
@@ -1012,7 +986,7 @@ $fotorama-thumb-arrow: 30px;
     }
     .fotorama_horizontal_ratio {
         .fotorama__img {
-            @include translateX(-50%);
+            transform: translateX(-50%);
             height: 100%;
             left: 50%;
             position: absolute;
@@ -1088,7 +1062,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .magnify-opaque {
-    opacity: .5;
+    opacity: 0.5;
 }
 
 .magnify-hidden {
@@ -1176,7 +1150,7 @@ $fotorama-thumb-arrow: 30px;
         cursor: pointer;
         z-index: $z-index-10;
         .fotorama__thumb__arr {
-            @include fotorama-rotate(90deg);
+            transform: rotate(90deg);
             margin: auto;
             width: $fotorama-thumb-arrow;
         }
