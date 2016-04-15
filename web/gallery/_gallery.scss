@@ -33,16 +33,15 @@ $fotorama-thumb-arrow: 30px;
     top: 0;
     width: 100%;
 }
+.fotorama-print-background {
+    @media print {
+        background: none;
+    }
+}
 
 .fotorama-sprite {
     @extend .fotorama-print-background;
     background: url('../gallery/gallery.png') no-repeat;
-}
-
-.fotorama-print-background {
-    @media print {
-        background: none !important;
-    }
 }
 
 .fotorama-inline-block {
@@ -69,13 +68,13 @@ $fotorama-thumb-arrow: 30px;
     .fotorama__zoom-out {
         top: 51px;
         @extend .fotorama-sprite;
-        background-position: 0 (-$size-fotorama-block) !important;
+        background-position: 0 (-$size-fotorama-block);
     }
 
     .fotorama__zoom-in {
         top: 0;
         @extend .fotorama-sprite;
-        background-position: 0 0 !important;
+        background-position: 0 0;
     }
 }
 
@@ -96,13 +95,13 @@ $fotorama-thumb-arrow: 30px;
     .fotorama__zoom-out {
         top: 51px;
         @extend .fotorama-sprite;
-        background-position: 0 (-$size-fotorama-block) !important;
+        background-position: 0 (-$size-fotorama-block);
     }
 
     .fotorama__zoom-in {
         top: 0;
         @extend .fotorama-sprite;
-        background-position: 0 0 !important;
+        background-position: 0 0;
     }
 }
 
@@ -123,13 +122,13 @@ $fotorama-thumb-arrow: 30px;
     .fotorama__zoom-out {
         top: 51px;
         @extend .fotorama-sprite;
-        background-position: 0 (-$size-fotorama-block) !important;
+        background-position: 0 (-$size-fotorama-block);
     }
 
     .fotorama__zoom-in {
         top: 0;
         @extend .fotorama-sprite;
-        background-position: 0 0 !important;
+        background-position: 0 0;
     }
 }
 
@@ -175,7 +174,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama-transform-disabled {
-    transform: none !important;
+    transform: none;
 }
 
 .fotorama-transition-for-slide {
@@ -235,18 +234,18 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama--fullscreen {
     background: $color-white;
-    bottom: 0 !important;
-    float: none !important;
-    height: 100% !important;
-    left: 0 !important;
-    margin: 0 !important;
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-    width: 100% !important;
-    z-index: $z-index-10 !important;
+    bottom: 0;
+    float: none;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: $z-index-10;
     .fotorama__wrap {
-        max-width: 100% !important;
+        max-width: 100%;
     }
 }
 
@@ -293,7 +292,7 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama__wrap--slide {
     .fotorama__stage__frame {
-        opacity: 1 !important;
+        opacity: 1;
     }
 }
 
@@ -336,7 +335,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__img {
-    border: none !important;
+    border: none;
     max-width: inherit;
     opacity: 0;
     .fotorama__loaded &,
@@ -406,9 +405,9 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__nav--thumbs {
     display: block;
     .fotorama__nav__frame {
-        padding-left: 0 !important;
+        padding-left: 0;
         &:last-child {
-            padding-right: 0 !important;
+            padding-right: 0;
         }
     }
     .fotorama__nav__frame--dot {
@@ -810,7 +809,7 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__wrap--video {
     .fotorama__arr,
     .fotorama__fullscreen-icon {
-        opacity: 0 !important;
+        opacity: 0;
     }
 }
 
@@ -827,7 +826,7 @@ $fotorama-thumb-arrow: 30px;
     &.fotorama__wrap--video {
         .fotorama__arr,
         .fotorama__fullscreen-icon {
-            display: none !important;
+            display: none;
         }
     }
 }
@@ -1049,7 +1048,7 @@ $fotorama-thumb-arrow: 30px;
         background-color: white;
         .fotorama__nav__frame--thumb {
             display: block;
-            padding-bottom: inherit !important;
+            padding-bottom: inherit;
         }
     }
 }
@@ -1141,7 +1140,7 @@ $fotorama-thumb-arrow: 30px;
 .fotorama__wrap--only-active {
     .fotorama__stage,
     .fotorama__nav {
-        max-width: 99999px !important;
+        max-width: 99999px;
     }
     .fotorama__stage__frame {
         visibility: hidden;
@@ -1176,10 +1175,5 @@ body.fotorama__fullscreen {
     overflow-y: hidden;
     .magnify-fullimage {
         display: inline-block;
-    }
-    .fotorama__stage__shaft {
-        //.fotorama__img {
-        //    display: none;
-        //}
     }
 }
