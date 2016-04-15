@@ -157,13 +157,6 @@
 //  Mobile
 //  _____________________________________________
 @include max-screen($screen__s) {
-    .account {
-        .table-giftregistry {
-            .col.actions {
-                @extend .abs-col-no-prefix;
-            }
-        }
-    }
     .table-giftregistry-items {
         .col.product {
             &:before {

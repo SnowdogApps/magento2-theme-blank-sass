@@ -91,7 +91,6 @@
 
             & > tr {
                 & > td {
-                    @extend .abs-col-no-prefix;
                     padding: $table-cell__padding-vertical $table-cell__padding-horizontal;
                     border: 0;
                     display: table-cell;

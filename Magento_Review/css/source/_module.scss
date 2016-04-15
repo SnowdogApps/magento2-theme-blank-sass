@@ -350,19 +350,6 @@
 }
 
 //
-//    Mobile
-//--------------------------------------
-@include max-screen($screen__s) {
-    .account {
-        .table-reviews {
-            .col.actions {
-                @extend .abs-col-no-prefix;
-            }
-        }
-    }
-}
-
-//
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {

@@ -422,7 +422,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     }
     .product-info-price {
         margin: 0 -$indent__s;
-        width: calc(100% + 2 * #{$indent__s}) !important;
+        width: calc(100% + 2 * #{$indent__s});
         > *:first-child {
             padding-left: $indent__s;
         }
@@ -679,7 +679,6 @@ body.catalog-product-compare-index {
             & > td,
             & > th {
                 display: table-cell;
-                @extend .abs-col-no-prefix;
             }
         }
     }

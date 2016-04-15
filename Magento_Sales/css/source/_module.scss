@@ -411,13 +411,6 @@
             .action.show {
                 margin-top: 0;
             }
-
-            .col {
-                &.actions,
-                &.options {
-                    @extend .abs-col-no-prefix;
-                }
-            }
         }
     }
 
