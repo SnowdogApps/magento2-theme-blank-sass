@@ -9,42 +9,12 @@ $fotorama_close_size: 30px;
 $size-fotorama-block: 50px;
 $fotorama-thumb-arrow: 30px;
 
-// @import '../../css/source/lib/_lib.less'; // Global lib
-// @import '../../css/source/_theme.less'; // Theme overrides
-// @import '../../css/source/_variables.less'; // Local theme variables
-// @import '../../css/source/lib/_responsive.less';
-
 @mixin fotorama-abs-center() {
     transform: translate3d(-50%, -50%, 0);
     left: 50%;
     position: absolute;
     top: 50%;
 }
-
-// @mixin fotorama-translate3d($x, $y, $z) {
-//     -webkit-transform: translate3d($x, $y, $z);
-//     transform: translate3d($x, $y, $z);
-// }
-
-// @mixin fotorama-rotate($deg) {
-//     -webkit-transform: rotate($deg);
-//     -ms-transform: rotate($deg);
-//     transform: rotate($deg);
-// }
-
-// @mixin translateX($value) {
-//     -webkit-transform: translateX($value);
-//     -ms-transform: translateX($value);
-//     -o-transform: translateX($value);
-//     transform: translateX($value);
-// }
-
-// @mixin translateY($value) {
-//     -webkit-transform: translateY($value);
-//     -ms-transform: translateY($value);
-//     -o-transform: translateY($value);
-//     transform: translateY($value);
-// }
 
 @mixin fotorama-shadow-gradient($x, $y) {
     background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.2) 25%, rgba(0, 0, 0, 0.3) 75%, transparent), radial-gradient(farthest-side at $x $y, rgba(0, 0, 0, 0.4), transparent);
@@ -54,12 +24,19 @@ $fotorama-thumb-arrow: 30px;
     background-image: linear-gradient($d, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
 }
 
+@mixin fotorama-stretch() {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
 .fotorama-sprite {
     @extend .fotorama-print-background;
     background: url('../gallery/gallery.png') no-repeat;
-    //@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 2dppx) {
-    //  background: url('fotorama@2x.png') no-repeat;
-    //}
 }
 
 .fotorama-print-background {
@@ -156,16 +133,6 @@ $fotorama-thumb-arrow: 30px;
     }
 }
 
-.fotorama-stretch {
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-}
-
 .fotorama-grab-cursor {
     cursor: move;
     cursor: grab;
@@ -186,7 +153,7 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama-focus-overlay {
     &:after {
-        @extend .fotorama-stretch;
+        @include fotorama-stretch();
         background-color: $color-blue2;
         border-radius: inherit;
         content: '';
@@ -309,7 +276,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__stage__shaft {
-    @extend .fotorama-stretch;
+    @include fotorama-stretch();
     @extend .fotorama-no-tap;
     position: relative;
 }
@@ -336,7 +303,7 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama__stage__frame {
     @extend .fotorama-no-tap;
-    @extend .fotorama-stretch;
+    @include fotorama-stretch();
     overflow: hidden;
     &.fotorama__active {
         z-index: 8;
@@ -392,7 +359,7 @@ $fotorama-thumb-arrow: 30px;
 }
 
 .fotorama__html {
-    @extend .fotorama-stretch;
+    @include fotorama-stretch();
 }
 
 .fotorama__nav {
@@ -629,7 +596,7 @@ $fotorama-thumb-arrow: 30px;
     top: 32px;
     z-index: 10;
     iframe {
-        @extend .fotorama-stretch;
+        @include fotorama-stretch();
     }
 }
 
