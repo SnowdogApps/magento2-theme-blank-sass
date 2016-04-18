@@ -76,13 +76,13 @@
 
 .abs-actions-addto-gridlist {
     @include lib-icon-font(
-        $_icon-font-content : '',
-        $_icon-font-size : 29px,
-        $_icon-font-color : $addto-color,
-        $_icon-font-color-hover : $addto-hover-color,
-        $_icon-font-text-hide : true,
+        $_icon-font-content       : '',
+        $_icon-font-size          : 29px,
+        $_icon-font-color         : $addto-color,
+        $_icon-font-color-hover   : $addto-hover-color,
+        $_icon-font-text-hide     : true,
         $_icon-font-vertical-align: middle,
-        $_icon-font-line-height : 24px
+        $_icon-font-line-height   : 24px
     );
 }
 
@@ -194,9 +194,9 @@
 .abs-dropdown-simple {
     @include lib-dropdown(
         $_dropdown-list-item-padding : 5px 5px 5px 23px,
-        $_dropdown-list-min-width : 200px,
-        $_icon-font-margin : 0 0 0 5px,
-        $_icon-font-vertical-align : middle
+        $_dropdown-list-min-width    : 200px,
+        $_icon-font-margin           : 0 0 0 5px,
+        $_icon-font-vertical-align   : middle
     );
     display: inline-block;
 }
@@ -219,11 +219,11 @@
 .abs-remove-button-for-blocks {
     @include lib-icon-font(
         $icon-remove,
-        $_icon-font-size : 26px,
-        $_icon-font-line-height : 15px,
-        $_icon-font-text-hide : true,
-        $_icon-font-color : $color-gray19,
-        $_icon-font-color-hover : $color-gray19,
+        $_icon-font-size         : 26px,
+        $_icon-font-line-height  : 15px,
+        $_icon-font-text-hide    : true,
+        $_icon-font-color        : $color-gray19,
+        $_icon-font-color-hover  : $color-gray19,
         $_icon-font-color-active : $color-gray19
     );
 }
@@ -236,13 +236,13 @@
 
     & > a {
         @include lib-link(
-            $_link-color : $product-name-link__color,
-            $_link-text-decoration : $product-name-link__text-decoration,
-            $_link-color-visited : $product-name-link__color__visited,
+            $_link-color                  : $product-name-link__color,
+            $_link-text-decoration        : $product-name-link__text-decoration,
+            $_link-color-visited          : $product-name-link__color__visited,
             $_link-text-decoration-visited: $product-name-link__text-decoration__visited,
-            $_link-color-hover : $product-name-link__color__hover,
-            $_link-text-decoration-hover : $product-name-link__text-decoration__hover,
-            $_link-color-active : $product-name-link__color__active,
+            $_link-color-hover            : $product-name-link__color__hover,
+            $_link-text-decoration-hover  : $product-name-link__text-decoration__hover,
+            $_link-color-active           : $product-name-link__color__active,
             $_link-text-decoration-active : $product-name-link__text-decoration__active
         );
     }
@@ -746,9 +746,9 @@
 //  ---------------------------------------------
 .abs-icon-add {
     @include lib-icon-font(
-        $_icon-font-content : $icon-expand,
-        $_icon-font-size : 10px,
-        $_icon-font-line-height : 10px,
+        $_icon-font-content       : $icon-expand,
+        $_icon-font-size          : 10px,
+        $_icon-font-line-height   : 10px,
         $_icon-font-vertical-align: middle
     );
 }
@@ -756,12 +756,12 @@
 @include max-screen($screen__m) {
     .abs-icon-add-mobile {
         @include lib-icon-font(
-            $_icon-font-content : $icon-expand,
-            $_icon-font-size : 10px,
-            $_icon-font-line-height : 10px,
+            $_icon-font-content       : $icon-expand,
+            $_icon-font-size          : 10px,
+            $_icon-font-line-height   : 10px,
             $_icon-font-vertical-align: middle,
-            $_icon-font-margin : 0 5px 0 0,
-            $_icon-font-display : block
+            $_icon-font-margin        : 0 5px 0 0,
+            $_icon-font-display       : block
         );
     }
 }
@@ -861,12 +861,12 @@
         &.continue {
             @include lib-link-as-button();
             @include lib-button(
-                $_button-padding : 7px 15px 7px 0,
-                $_button-icon-use : true,
-                $_button-font-content : $icon-prev,
-                $_button-icon-font-size : 32px,
+                $_button-padding              : 7px 15px 7px 0,
+                $_button-icon-use             : true,
+                $_button-font-content         : $icon-prev,
+                $_button-icon-font-size       : 32px,
                 $_button-icon-font-line-height: 16px,
-                $_button-icon-font-position : before
+                $_button-icon-font-position   : before
             );
             border-radius: 3px;
             font-weight: bold;
@@ -876,7 +876,7 @@
         &.update {
             @include lib-button-icon(
                 $icon-update,
-                $_icon-font-size: 32px,
+                $_icon-font-size       : 32px,
                 $_icon-font-line-height: 16px
             );
             padding-left: $indent__xs;
@@ -971,7 +971,11 @@
 
     &:after,
     &:before {
-        @include lib-arrow( $_position: top, $_size : $checkout-tooltip-icon-arrow__font-size, $_color : $checkout-tooltip-content__background-color );
+        @include lib-arrow(
+            $_position: top,
+            $_size    : $checkout-tooltip-icon-arrow__font-size,
+            $_color   : $checkout-tooltip-content__background-color
+        );
         margin-top: $checkout-tooltip-icon-arrow__left;
         right: $indent__s;
         left: auto;
@@ -1003,7 +1007,13 @@
 .abs-checkout-title {
     border-bottom: $checkout-step-title__border;
     padding-bottom: $checkout-step-title__padding;
-    @include lib-typography( $_font-size : $checkout-step-title__font-size, $_font-weight: $checkout-step-title__font-weight, $_font-family: inherit, $_font-style : inherit, $_line-height: inherit );
+    @include lib-typography(
+        $_font-size  : $checkout-step-title__font-size,
+        $_font-weight: $checkout-step-title__font-weight,
+        $_font-family: inherit,
+        $_font-style : inherit,
+        $_line-height: inherit
+    );
 }
 //
 //  Shopping cart sidebar and checkout sidebar totals
@@ -1066,10 +1076,10 @@
                 padding-right: $indent__base;
                 @include lib-icon-font(
                     $icon-down,
-                    $_icon-font-size : 30px,
+                    $_icon-font-size     : 30px,
                     $_icon-font-text-hide: true,
                     $_icon-font-position : after,
-                    $_icon-font-display : block
+                    $_icon-font-display  : block
                 );
 
                 &:after {

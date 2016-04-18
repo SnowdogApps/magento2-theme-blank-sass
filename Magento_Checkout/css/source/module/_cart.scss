@@ -242,10 +242,10 @@ $cart-item-cell-padding-top: 20px;
                 top: 0;
                 @include lib-icon-font(
                     $icon-edit,
-                    $_icon-font-size : 18px,
+                    $_icon-font-size        : 18px,
                     $_icon-font-line-height : 20px,
-                    $_icon-font-text-hide : true,
-                    $_icon-font-color : $minicart-icons-color,
+                    $_icon-font-text-hide   : true,
+                    $_icon-font-color       : $minicart-icons-color,
                     $_icon-font-color-hover : $primary__color,
                     $_icon-font-color-active: $minicart-icons-color
                 );

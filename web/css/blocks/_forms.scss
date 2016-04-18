@@ -126,12 +126,12 @@ select:focus ~ .tooltip .tooltip-content {
     + .ui-datepicker-trigger {
         @include lib-button-reset();
         @include lib-icon-font(
-            $_icon-font-content : $icon-calendar,
-            $_icon-font-color : $primary__color__lighter,
-            $_icon-font-size : $icon-calendar__font-size,
+            $_icon-font-content    : $icon-calendar,
+            $_icon-font-color      : $primary__color__lighter,
+            $_icon-font-size       : $icon-calendar__font-size,
             $_icon-font-line-height: $icon-calendar__font-size,
-            $_icon-font-display : inline-block,
-            $_icon-font-text-hide : true
+            $_icon-font-display    : inline-block,
+            $_icon-font-text-hide  : true
         );
         vertical-align: middle;
 

@@ -302,7 +302,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
     .page-layout-1column .products-grid .product-item,
     .page-layout-3columns .products-grid .product-item,
     .page-products .products-grid .product-item,
-    .page-products.page-layout-1column .products-grid .product-item .page-products.page-layout-3columns .products-grid .product-item {
+    .page-products.page-layout-1column .products-grid .product-item
+    .page-products.page-layout-3columns .products-grid .product-item {
         width: 33.3333%;
     }
 }

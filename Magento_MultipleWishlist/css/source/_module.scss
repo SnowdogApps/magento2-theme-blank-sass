@@ -13,7 +13,19 @@ $desktop-popup-position-top: 20%;
     //  Wish list split button
     &.split.button {
         @extend .abs-dropdown-items-new;
-        @include lib-dropdown-split( $_options-selector : ".items", $_dropdown-split-button-border-radius-fix : inherit, $_dropdown-split-list-item-padding : 5px 5px 5px 23px, $_dropdown-split-toggle-icon-content: $icon-down, $_dropdown-split-toggle-active-icon-content : $icon-up, $_icon-font-size : 12px, $_icon-font-color : $addto-color, $_icon-font-color-hover : $addto-hover-color, $_icon-font-vertical-align : middle, $_dropdown-split-list-pointer-position : left, $_dropdown-split-list-min-width : 200px );
+        @include lib-dropdown-split(
+            $_options-selector                          : ".items",
+            $_dropdown-split-button-border-radius-fix   : inherit,
+            $_dropdown-split-list-item-padding          : 5px 5px 5px 23px,
+            $_dropdown-split-toggle-icon-content        : $icon-down,
+            $_dropdown-split-toggle-active-icon-content : $icon-up,
+            $_icon-font-size                            : 12px,
+            $_icon-font-color                           : $addto-color,
+            $_icon-font-color-hover                     : $addto-hover-color,
+            $_icon-font-vertical-align                  : middle,
+            $_dropdown-split-list-pointer-position      : left,
+            $_dropdown-split-list-min-width             : 200px
+        );
         margin-right: 5%;
         vertical-align: middle;
 
@@ -171,9 +183,15 @@ $desktop-popup-position-top: 20%;
             margin-right: $indent__base;
 
             &.private {
-                @include lib-icon-font( $_icon-font-content : $icon-private, $_icon-font-color : lighten($text__color__muted, 15%), $_icon-font-vertical-align: text-bottom, $_icon-font-margin : 0 $indent__xs 0 0 );
+                @include lib-icon-font(
+                    $_icon-font-content       : $icon-private,
+                    $_icon-font-color         : lighten($text__color__muted, 15%),
+                    $_icon-font-vertical-align: text-bottom,
+                    $_icon-font-margin        : 0 $indent__xs 0 0
+                );
             }
         }
+
         //  Wish list toolbar
         &-toolbar {
             &-actions,
@@ -201,6 +219,7 @@ $desktop-popup-position-top: 20%;
                 }
             }
         }
+
         //  Wish list toolbar actions
         &-dropdown.move {
             margin-right: $indent__base;
@@ -297,6 +316,7 @@ $desktop-popup-position-top: 20%;
         }
     }
 }
+
 //
 //  Mobile
 //  _____________________________________________
