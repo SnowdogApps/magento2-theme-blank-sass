@@ -7,10 +7,12 @@
 //  ---------------------------------------------
 .abs-reset-list {
     @include lib-list-reset-styles();
-    > li {
+
+    & > li {
         margin: 0;
     }
 }
+
 //
 //  Primary button
 //  ---------------------------------------------
@@ -18,6 +20,7 @@
     @include lib-button-primary();
     border-radius: 3px;
 }
+
 //
 //  Link as a button
 //  ---------------------------------------------
@@ -26,6 +29,7 @@
     @include lib-link-as-button();
     border-radius: 3px;
 }
+
 //
 //   Button as a link
 //  ---------------------------------------------
@@ -34,29 +38,34 @@
     border-radius: 0;
     font-weight: $font-weight__regular;
     font-size: inherit;
+
     &:active,
     &:not(:focus) {
         box-shadow: none;
     }
 }
+
 //
 //   Button revert secondary color
 //  ---------------------------------------------
 .abs-revert-secondary-color {
     @include lib-button-revert-secondary-color();
 }
+
 //
 //   Button revert secondary size
 //  ---------------------------------------------
 .abs-revert-secondary-size {
     @include lib-button-revert-secondary-size();
 }
+
 //
 //   Large button
 //  ---------------------------------------------
 .abs-button-l {
     @include lib-button-l();
 }
+
 //
 //  Action addto
 //  ---------------------------------------------
@@ -64,17 +73,19 @@
     @extend .abs-action-link-button;
     @include lib-button-s();
 }
+
 .abs-actions-addto-gridlist {
     @include lib-icon-font(
-        $_icon-font-content       : '',
-        $_icon-font-size          : 29px,
-        $_icon-font-color         : $addto-color,
-        $_icon-font-color-hover   : $addto-hover-color,
-        $_icon-font-text-hide     : true,
+        $_icon-font-content : '',
+        $_icon-font-size : 29px,
+        $_icon-font-color : $addto-color,
+        $_icon-font-color-hover : $addto-hover-color,
+        $_icon-font-text-hide : true,
         $_icon-font-vertical-align: middle,
-        $_icon-font-line-height   : 24px
+        $_icon-font-line-height : 24px
     );
 }
+
 //
 //  Product options list
 //  ---------------------------------------------
@@ -83,18 +94,22 @@
         float: left;
         clear: left;
         margin: 0 $indent__s $indent__xs 0;
+
         &:after {
             content: ': ';
         }
     }
+
     dd {
         display: inline-block;
         margin: 0 0 $indent__xs;
     }
 }
+
 .abs-product-options-list {
     @include abs-product-options-list();
 }
+
 //
 //  Desktop
 //  ---------------------------------------------
@@ -102,40 +117,48 @@
     .abs-product-options-list-desktop {
         @include abs-product-options-list();
     }
-};
+}
+
 //
 //  Blocks in 2 columns
 //  ---------------------------------------------
 @mixin abs-blocks-2columns() {
     width: 48.8%;
+
     &:nth-child(odd) {
         float: left;
         clear: left;
     }
+
     &:nth-child(even) {
         float: right;
     }
 }
+
 @include min-screen($screen__m) {
     .abs-blocks-2columns {
         @include abs-blocks-2columns();
     }
 }
+
 @include min-screen($screen__s) {
     .abs-blocks-2columns-s {
         @include abs-blocks-2columns();
     }
 }
+
 //
 //  Reset image alignment in container
 //  ---------------------------------------------
 .abs-reset-image-wrapper {
     height: auto;
-    padding: 0 !important;
+    padding: 0;
+
     .product-image-photo {
         position: static;
     }
 }
+
 //
 //  Adaptive images
 //  ---------------------------------------------
@@ -144,12 +167,14 @@
     height: auto;
     max-width: 100%;
 }
+
 .abs-adaptive-images-centered {
     display: block;
     height: auto;
     max-width: 100%;
     margin: 0 auto;
 }
+
 //
 //  Title for login blocks
 //  ---------------------------------------------
@@ -162,15 +187,16 @@
     border-bottom: 1px solid $secondary__color;
     font-size: 18px;
 }
+
 //
 //  Simple Dropdown
 //  ---------------------------------------------
 .abs-dropdown-simple {
     @include lib-dropdown(
         $_dropdown-list-item-padding : 5px 5px 5px 23px,
-        $_dropdown-list-min-width    : 200px,
-        $_icon-font-margin           : 0 0 0 5px,
-        $_icon-font-vertical-align   : middle
+        $_dropdown-list-min-width : 200px,
+        $_icon-font-margin : 0 0 0 5px,
+        $_icon-font-vertical-align : middle
     );
     display: inline-block;
 }
@@ -192,51 +218,59 @@
 //  ---------------------------------------------
 .abs-remove-button-for-blocks {
     @include lib-icon-font(
-        $icon-remove, $_icon-font-size : 26px,
-        $_icon-font-line-height        : 15px,
-        $_icon-font-text-hide          : true,
-        $_icon-font-color              : $color-gray19,
-        $_icon-font-color-hover        : $color-gray19,
-        $_icon-font-color-active       : $color-gray19
+        $icon-remove,
+        $_icon-font-size : 26px,
+        $_icon-font-line-height : 15px,
+        $_icon-font-text-hide : true,
+        $_icon-font-color : $color-gray19,
+        $_icon-font-color-hover : $color-gray19,
+        $_icon-font-color-active : $color-gray19
     );
 }
+
 //
 //  Product link
 //  ---------------------------------------------
 .abs-product-link {
     font-weight: $font-weight__regular;
+
     & > a {
         @include lib-link(
-            $_link-color                  : $product-name-link__color,
-            $_link-text-decoration        : $product-name-link__text-decoration,
-            $_link-color-visited          : $product-name-link__color__visited,
+            $_link-color : $product-name-link__color,
+            $_link-text-decoration : $product-name-link__text-decoration,
+            $_link-color-visited : $product-name-link__color__visited,
             $_link-text-decoration-visited: $product-name-link__text-decoration__visited,
-            $_link-color-hover            : $product-name-link__color__hover,
-            $_link-text-decoration-hover  : $product-name-link__text-decoration__hover,
-            $_link-color-active           : $product-name-link__color__active,
+            $_link-color-hover : $product-name-link__color__hover,
+            $_link-text-decoration-hover : $product-name-link__text-decoration__hover,
+            $_link-color-active : $product-name-link__color__active,
             $_link-text-decoration-active : $product-name-link__text-decoration__active
         );
     }
 }
+
 //
 //   Reset left margin
 //  ---------------------------------------------
 @mixin abs-reset-left-margin() {
     margin-left: 0;
 }
+
 .abs-reset-left-margin {
     @include abs-reset-left-margin();
 }
+
 @include min-screen($screen__m) {
     .abs-reset-left-margin-desktop {
         @include abs-reset-left-margin();
     }
 }
+
 @include min-screen($screen__s) {
     .abs-reset-left-margin-desktop-s {
         @include abs-reset-left-margin();
     }
 }
+
 //
 //  Action with icon remove with text
 //  ---------------------------------------------
@@ -248,6 +282,7 @@
     left: $indent__s;
     margin-left: 70%;
 }
+
 //
 //  Action with icon remove with text for desktop
 //  ---------------------------------------------
@@ -259,12 +294,14 @@
         }
     }
 }
+
 //
 //  Add Recipient
 //  ---------------------------------------------
 .abs-add-fields {
     .fieldset {
         margin-bottom: 50px;
+
         .field {
             &:not(.choice) {
                 .control {
@@ -272,9 +309,11 @@
                 }
             }
         }
+
         .actions-toolbar {
             &:not(:first-child) {
                 @extend .abs-add-clearfix;
+
                 & > .secondary {
                     .action {
                         &.add {
@@ -285,27 +324,32 @@
                 }
             }
         }
+
         .fields {
             .actions-toolbar {
                 margin: 0;
             }
         }
     }
+
     .additional {
         margin-top: 55px;
         position: relative;
     }
+
     .action {
         &.remove {
             @extend .abs-action-remove;
         }
     }
+
     .message {
         &.notice {
             margin: $indent__l 0 0;
         }
     }
 }
+
 //
 //  Add Recipient for desktop
 //  ---------------------------------------------
@@ -319,6 +363,7 @@
                     }
                 }
             }
+
             .additional {
                 .action {
                     &.remove {
@@ -329,6 +374,7 @@
         }
     }
 }
+
 //
 //  Margin for forms
 //  ---------------------------------------------
@@ -337,70 +383,83 @@
         margin-left: $form-field-type-label-inline__width;
     }
 }
+
 @include min-screen($screen__s) {
     .abs-margin-for-forms-desktop-s {
         margin-left: $form-field-type-label-inline__width;
     }
 }
+
 //
 //  Visibility hidden / show visibility hidden
 //  ---------------------------------------------
 .abs-hidden {
     @include lib-visibility-hidden();
 }
+
 //
 //  Visually hidden / show visually hidden
 //  ---------------------------------------------
 .abs-visually-hidden {
     @include lib-visually-hidden();
 }
+
 @include max-screen($screen__s) {
     .abs-visually-hidden-mobile {
         @include lib-visually-hidden();
     }
 }
+
 @include max-screen($screen__m) {
     .abs-visually-hidden-mobile-m {
         @include lib-visually-hidden();
     }
 }
+
 @include min-screen($screen__s) {
     .abs-visually-hidden-desktop-s {
         @include lib-visually-hidden();
     }
 }
+
 @include min-screen($screen__m) {
     .abs-visually-hidden-desktop {
         @include lib-visually-hidden();
     }
 }
+
 //
 //  Visually hidden reset
 //  ---------------------------------------------
 .abs-visually-hidden-reset {
     @include lib-visually-hidden-reset();
 }
+
 //
 //  Clearfix
 //  ---------------------------------------------
 .abs-add-clearfix {
     @include lib-clearfix();
 }
+
 @include min-screen($screen__m) {
     .abs-add-clearfix-desktop {
         @include lib-clearfix();
     }
 }
+
 @include min-screen($screen__s) {
     .abs-add-clearfix-desktop-s {
         @include lib-clearfix();
     }
 }
+
 @include max-screen($screen__s) {
     .abs-add-clearfix-mobile {
         @include lib-clearfix();
     }
 }
+
 @include max-screen($screen__m) {
     .abs-add-clearfix-mobile-m {
         @include lib-clearfix();
@@ -412,21 +471,25 @@
 .abs-add-box-sizing {
     box-sizing: border-box;
 }
+
 @include min-screen($screen__m) {
     .abs-add-box-sizing-desktop {
         box-sizing: border-box;
     }
 }
+
 @include min-screen($screen__s) {
     .abs-add-box-sizing-desktop-s {
         box-sizing: border-box;
     }
 }
+
 @include min-screen($screen__m) {
     .abs-add-box-sizing-desktop-m {
         box-sizing: border-box;
     }
 }
+
 //
 //  Revert field type
 //  ---------------------------------------------
@@ -436,6 +499,7 @@
             .fields > .field,
             > .field {
                 @include lib-form-field-type-revert($_type: block);
+
                 &:not(:first-child):last-of-type {
                     margin-bottom: 0;
                 }
@@ -443,31 +507,31 @@
         }
     }
 }
+
 //
 //  Settings icons
 //  ---------------------------------------------
 .abs-navigation-icon {
     @include lib-icon-font(
-        $_icon-font-content    : $icon-down,
-        $_icon-font-size       : 34px,
+        $_icon-font-content : $icon-down,
+        $_icon-font-size : 34px,
         $_icon-font-line-height: 1.2,
-        $_icon-font-position   : after,
-        $_icon-font-display    : block
+        $_icon-font-position : after,
+        $_icon-font-display : block
     );
+
     &:after {
         position: absolute;
         right: $indent__xs;
         top: 0;
     }
 }
+
 //
 //  Split button
 //  ---------------------------------------------
 .abs-split-button {
-    @include lib-dropdown-split(
-        $_options-selector                       : ".items",
-        $_dropdown-split-button-border-radius-fix: true
-    );
+    @include lib-dropdown-split( $_options-selector : ".items", $_dropdown-split-button-border-radius-fix: true );
     vertical-align: middle;
 }
 //
@@ -485,15 +549,18 @@
     .abs-checkout-order-review {
         tbody > tr {
             @extend .abs-add-clearfix-mobile;
+
             &:not(:last-child) {
                 border-bottom: $border-width__base solid $border-color__base;
             }
+
             .col {
                 &.item {
                     &:before {
                         display: none;
                     }
                 }
+
                 &.price,
                 &.qty,
                 &.subtotal {
@@ -502,26 +569,30 @@
                     text-align: center;
                     white-space: nowrap;
                     width: 33%;
+
                     &:before {
-                        content: attr(data-th) ":";
+                        content: attr(data-th) ':';
                         display: block;
                         font-weight: $font-weight__bold;
                         padding-bottom: $indent__s;
                     }
                 }
             }
+
             .product-item-name {
                 margin: 0;
             }
         }
     }
 }
+
 //
 //  Box-tocart block
 //  ---------------------------------------------
 .abs-box-tocart {
     margin: $indent__s 0;
 }
+
 //
 //  Abstract toggle title block
 //  ---------------------------------------------
@@ -530,31 +601,37 @@
     cursor: pointer;
     margin-bottom: 0;
     position: relative;
+
     &:after {
         position: absolute;
         right: $indent__s;
         top: 0;
     }
 }
+
 // ?? from luma - to check
 //  Action print with icon
 //  ---------------------------------------------
 @mixin abs-action-print() {
     @include lib-icon-font(
-        $icon-print, $_icon-font-size: 16px,
-        $_icon-font-line-height      : 16px,
-        $_icon-font-margin           : 0 4px 0 0,
+        $icon-print,
+        $_icon-font-size: 16px,
+        $_icon-font-line-height : 16px,
+        $_icon-font-margin : 0 4px 0 0,
         $_icon-font-position: before
     );
+
     &:hover {
         text-decoration: underline;
     }
 }
+
 @include min-screen($screen__m) {
     .abs-action-print {
         @include abs-action-print();
     }
 }
+
 @include min-screen($screen__s) {
     .abs-action-print-s {
         @include abs-action-print();
@@ -570,17 +647,21 @@
         font-size: 14px;
         white-space: nowrap;
     }
+
     .price-including-tax + .price-excluding-tax {
         display: inline-block;
         font-size: 11px;
+
         &:before {
-            content: "("attr(data-label)": ";
+            content: '("attr(data-label)": ';
         }
+
         &:after {
-            content: ")";
+            content: ')';
         }
     }
 }
+
 //
 //  Cart tax total
 //  ---------------------------------------------
@@ -589,83 +670,102 @@
     padding-right: 12px;
     @include lib-icon-font(
         $icon-down, $_icon-font-size: 26px,
-        $_icon-font-line-height     : 10px,
-        $_icon-font-margin          : 3px 0 0 0,
-        $_icon-font-position        : after
+        $_icon-font-line-height : 10px,
+        $_icon-font-margin : 3px 0 0 0,
+        $_icon-font-position : after
     );
+
     &:after {
         position: absolute;
         right: -$indent__s;
         top: 3px;
     }
+
     &-expanded {
-        @include lib-icon-font-symbol( $_icon-font-content: $icon-up, $_icon-font-position: after );
+        @include lib-icon-font-symbol(
+            $_icon-font-content: $icon-up,
+            $_icon-font-position: after
+        );
     }
 }
+
 .abs-tax-total-expanded {
-    @include lib-icon-font-symbol( $_icon-font-content: $icon-up, $_icon-font-position: after );
+    @include lib-icon-font-symbol(
+        $_icon-font-content: $icon-up,
+        $_icon-font-position: after
+    );
 }
+
 //
 //  Account blocks
 //  ---------------------------------------------
 .abs-account-blocks {
     .block-title {
         @extend .abs-account-title;
+
         & > .action {
             margin-left: 15px;
         }
     }
+
     .box-title {
         & > span {
             font-size: 16px;
         }
         display: inline-block;
         margin: 0 0 $indent__s;
+
         & > .action {
             font-weight: 400;
             margin-left: $indent__s;
         }
     }
+
     .block-content {
         p:last-child {
             margin-bottom: 0;
         }
+
         .box {
             margin-bottom: $indent__base;
         }
     }
 }
+
 //
 //  Add colon
 //  ---------------------------------------------
 .abs-colon {
     &:after {
-        content: ": ";
+        content: ': ';
     }
 }
+
 //
 //  Icon - create add
 //  ---------------------------------------------
 .abs-icon-add {
     @include lib-icon-font(
-        $_icon-font-content       : $icon-expand,
-        $_icon-font-size          : 10px,
-        $_icon-font-line-height   : 10px,
+        $_icon-font-content : $icon-expand,
+        $_icon-font-size : 10px,
+        $_icon-font-line-height : 10px,
         $_icon-font-vertical-align: middle
     );
 }
+
 @include max-screen($screen__m) {
     .abs-icon-add-mobile {
         @include lib-icon-font(
-            $_icon-font-content       : $icon-expand,
-            $_icon-font-size          : 10px,
-            $_icon-font-line-height   : 10px,
+            $_icon-font-content : $icon-expand,
+            $_icon-font-size : 10px,
+            $_icon-font-line-height : 10px,
             $_icon-font-vertical-align: middle,
-            $_icon-font-margin        : 0 5px 0 0,
-            $_icon-font-display       : block
+            $_icon-font-margin : 0 5px 0 0,
+            $_icon-font-display : block
         );
     }
 }
+
 //
 //  Dropdown items - create new
 //  ---------------------------------------------
@@ -675,30 +775,36 @@
             background: $dropdown-list-item__hover;
         }
     }
+
     .action.new {
         @extend .abs-icon-add;
+
         &:before {
             margin-left: -17px;
             margin-right: $indent__xs;
         }
     }
 }
+
 //
 //  Abstract no display
 //  ---------------------------------------------
 .abs-no-display {
     display: none;
 }
+
 @include max-screen($screen__s) {
     .abs-no-display-s {
         display: none;
     }
 }
+
 @include min-screen($screen__m) {
     .abs-no-display-desktop {
         display: none;
     }
 }
+
 //
 //  Status
 //  ---------------------------------------------
@@ -706,14 +812,16 @@
     display: inline-block;
     margin-bottom: $indent__base;
 }
+
 //
 //  Pager toolbar for non-catalog pages desktop
 //  ---------------------------------------------
 @include min-screen($screen__m) {
     .abs-pager-toolbar {
+        @extend .abs-add-clearfix-desktop;
         margin-bottom: $indent__base;
         position: relative;
-        @extend .abs-add-clearfix-desktop;
+
         .toolbar-amount {
             float: left;
             line-height: normal;
@@ -721,11 +829,13 @@
             position: relative;
             z-index: 1;
         }
+
         .limiter {
             float: right;
             position: relative;
             z-index: 1;
         }
+
         .pages {
             position: absolute;
             z-index: 0;
@@ -733,6 +843,7 @@
         }
     }
 }
+
 //
 //  Items counter in blocks
 //  ---------------------------------------------
@@ -741,6 +852,7 @@
     font-size: 12px;
     white-space: nowrap;
 }
+
 //
 //  Shopping cart items
 //  ---------------------------------------------
@@ -749,17 +861,18 @@
         &.continue {
             @include lib-link-as-button();
             @include lib-button(
-                $_button-padding              : 7px 15px 7px 0,
-                $_button-icon-use             : true,
-                $_button-font-content         : $icon-prev,
-                $_button-icon-font-size       : 32px,
+                $_button-padding : 7px 15px 7px 0,
+                $_button-icon-use : true,
+                $_button-font-content : $icon-prev,
+                $_button-icon-font-size : 32px,
                 $_button-icon-font-line-height: 16px,
-                $_button-icon-font-position   : before
+                $_button-icon-font-position : before
             );
             border-radius: 3px;
             font-weight: bold;
             box-shadow: $button__shadow;
         }
+
         &.update {
             @include lib-button-icon(
                 $icon-update,
@@ -770,17 +883,20 @@
         }
     }
 }
+
 @include max-screen($screen__m) {
     .abs-shopping-cart-items-mobile {
         .actions {
             text-align: center;
         }
+
         .action {
             &.clear,
             &.continue,
             &.update {
                 margin: 0 auto $indent__s;
             }
+
             &.clear,
             &.update {
                 display: block;
@@ -788,36 +904,43 @@
         }
     }
 }
+
 @include min-screen($screen__m) {
     .abs-shopping-cart-items-desktop {
         float: left;
         width: 73%;
         position: relative;
+
         .actions {
             text-align: right;
         }
+
         .action {
             &.continue {
                 float: left;
             }
+
             &.clear {
                 margin-right: $indent__s;
             }
         }
     }
 }
+
 //
 //  Form Field Date
 //  ---------------------------------------------
 .abs-field-date {
     .control {
-        position: relative;
         @extend .abs-add-box-sizing;
+        position: relative;
     }
+
     input {
         @extend .abs-field-date-input;
     }
 }
+
 //
 //  Form Field Date Input
 //  ---------------------------------------------
@@ -825,12 +948,14 @@
     margin-right: $indent__s;
     width: calc(100% - (#{$icon-calendar__font-size} + #{$indent__s}));
 }
+
 //
 //  Form Field Tooltip
 //  ---------------------------------------------
 .abs-field-tooltip {
     @extend .abs-add-box-sizing;
     position: relative;
+
     input {
         margin-right: $indent__s;
         width: calc(100% - (#{$checkout-tooltip-icon__font-size} + #{$indent__s} + #{$indent__xs}));
@@ -843,29 +968,30 @@
     right: $checkout-tooltip-content-mobile__right;
     top: $checkout-tooltip-content-mobile__top;
     left: auto;
+
     &:after,
     &:before {
-        @include lib-arrow(
-            $_position: top,
-            $_size    : $checkout-tooltip-icon-arrow__font-size,
-            $_color   : $checkout-tooltip-content__background-color
-        );
+        @include lib-arrow( $_position: top, $_size : $checkout-tooltip-icon-arrow__font-size, $_color : $checkout-tooltip-content__background-color );
         margin-top: $checkout-tooltip-icon-arrow__left;
         right: $indent__s;
         left: auto;
         top: 0;
     }
+
     &:before {
         border-bottom-color: $checkout-tooltip-content__active__border-color;
     }
+
     &:after {
         border-bottom-color: $checkout-tooltip-content__background-color;
         top: 1px;
     }
 }
+
 .abs-checkout-tooltip-content-position-top {
     @include abs-checkout-tooltip-content-position-top();
 }
+
 @include max-screen($screen__m + 1) {
     .abs-checkout-tooltip-content-position-top-mobile {
         @include abs-checkout-tooltip-content-position-top();
@@ -877,13 +1003,7 @@
 .abs-checkout-title {
     border-bottom: $checkout-step-title__border;
     padding-bottom: $checkout-step-title__padding;
-    @include lib-typography(
-        $_font-size  : $checkout-step-title__font-size,
-        $_font-weight: $checkout-step-title__font-weight,
-        $_font-family: inherit,
-        $_font-style : inherit,
-        $_line-height: inherit
-    );
+    @include lib-typography( $_font-size : $checkout-step-title__font-size, $_font-weight: $checkout-step-title__font-weight, $_font-family: inherit, $_font-style : inherit, $_line-height: inherit );
 }
 //
 //  Shopping cart sidebar and checkout sidebar totals
@@ -892,37 +1012,46 @@
     .mark {
         font-weight: $font-weight__regular;
         padding-left: 4px;
+
         strong {
             font-weight: $font-weight__regular;
         }
     }
+
     .amount {
         padding-right: 4px;
         text-align: right;
         white-space: nowrap;
+
         strong {
             font-weight: $font-weight__regular;
         }
     }
+
     .table-caption {
         @extend .abs-no-display;
     }
+
     .grand {
         .amount,
         .mark {
             padding-top: $indent__base;
         }
+
         .amount {
             padding-right: 4px;
             text-align: right;
+
             strong {
                 font-weight: $font-weight__bold;
             }
         }
     }
+
     .msrp {
         margin-bottom: $indent__s;
     }
+
     .totals-tax {
         &-summary {
             .amount,
@@ -931,27 +1060,31 @@
                 border-bottom: $border-width__base solid $border-color__base;
                 cursor: pointer;
             }
+
             .amount .price {
                 position: relative;
                 padding-right: $indent__base;
                 @include lib-icon-font(
                     $icon-down,
-                    $_icon-font-size     : 30px,
+                    $_icon-font-size : 30px,
                     $_icon-font-text-hide: true,
                     $_icon-font-position : after,
-                    $_icon-font-display  : block
+                    $_icon-font-display : block
                 );
+
                 &:after {
                     position: absolute;
                     right: -5px;
                     top: -12px;
                 }
             }
+
             &.expanded {
                 .amount,
                 .mark {
                     border-bottom: 0;
                 }
+
                 .amount .price {
                     @include lib-icon-font-symbol(
                         $_icon-font-content : $icon-up,
@@ -960,32 +1093,38 @@
                 }
             }
         }
+
         &-details {
             display: none;
             border-bottom: $border-width__base solid $border-color__base;
+
             &.shown {
                 display: table-row;
             }
         }
     }
 }
+
 // to check
 //  Shopping cart and payment disaount codes block
 //  ---------------------------------------------
 .abs-discount-block {
     .block {
         @extend .abs-cart-block;
-        > .title {
+
+        & > .title {
             strong {
                 color: $color-blue1;
                 font-weight: $font-weight__regular;
             }
         }
     }
+
     .actions-toolbar {
         display: table-cell;
         vertical-align: top;
         width: 1%;
+
         .action {
             &.cancel,
             &.primary {
@@ -997,50 +1136,61 @@
                 width: auto;
             }
         }
+
         .secondary {
             bottom: 5px;
             left: $mobile-cart-padding;
             position: absolute;
         }
     }
+
     .action.check {
         @extend .abs-action-button-as-link;
         font-weight: $font-weight__regular;
     }
+
     .fieldset {
         display: table;
         width: 100%;
-        > .field {
-            > .label {
+
+        & > .field {
+            & > .label {
                 display: none;
             }
         }
     }
+
     .field {
         display: table-cell;
     }
 }
+
 @include min-screen($screen__m) {
     .abs-discount-block-desktop {
         .block {
             @extend .abs-blocks-2columns;
             width: 48%;
-            > .title {
+
+            & > .title {
                 border: 0;
                 cursor: default;
                 padding: 0 0 $indent__s;
+
                 strong {
                     font-size: 16px;
                 }
+
                 &:after {
                     display: none;
                 }
             }
+
             .content {
                 display: block !important; // Need for overwriting collapsible widget
                 padding: 0;
             }
         }
+
         .actions-toolbar {
             .secondary {
                 bottom: -30px;

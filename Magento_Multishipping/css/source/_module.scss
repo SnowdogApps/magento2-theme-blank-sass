@@ -2,11 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
 .multicheckout {
     .title {
         margin-bottom: $indent__l;
@@ -90,11 +88,10 @@
     }
 
     .item-options {
-        margin: $indent__s 0 0;
         @extend .abs-product-options-list;
         @extend .abs-add-clearfix;
+        margin: $indent__s 0 0;
     }
-
     @extend .abs-account-blocks;
 
     .block {
@@ -142,6 +139,7 @@
 
     .block-content {
         @extend .abs-add-clearfix;
+
         .title {
             border-bottom: none;
             padding-bottom: 0;
@@ -216,11 +214,9 @@
         display: block;
     }
 }
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .multicheckout {
         .data.table {
@@ -342,6 +338,7 @@
 
         .block-billing {
             @extend .abs-add-clearfix-desktop-s;
+
             .box-billing-address {
                 @extend .abs-add-box-sizing-desktop-s;
                 float: left;
@@ -376,7 +373,6 @@
                 width: 75%;
             }
         }
-
         //  Payment methods
         .methods-payment {
             .item-content > .fieldset {

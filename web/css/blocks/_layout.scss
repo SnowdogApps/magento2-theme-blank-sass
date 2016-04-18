@@ -2,14 +2,11 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 $layout-column-main__sidebar-offset: 2%;
 $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
-
 //
 //    Common
 //--------------------------------------
-
 .columns {
     @include lib-layout-columns();
 
@@ -35,7 +32,6 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
         order: 2;
     }
 }
-
 //
 //    Mobile
 //--------------------------------------
@@ -62,7 +58,6 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
         }
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
@@ -91,6 +86,7 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: auto;
+
         .ie9 & {
             width: auto;
         }
@@ -101,15 +97,15 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .column.main {
-        @include lib-layout-columns__main();
         @extend .abs-add-box-sizing-desktop;
+        @include lib-layout-columns__main();
         min-height: 300px;
     }
 
     .sidebar-main {
+        @extend .abs-add-box-sizing-desktop;
         @include lib-layout-columns__left();
         padding-right: $layout-column-main__sidebar-offset;
-        @extend .abs-add-box-sizing-desktop;
     }
 
     .page-layout-2columns-right .sidebar-main {
@@ -118,10 +114,10 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .sidebar-additional {
+        @extend .abs-add-box-sizing-desktop;
         @include lib-layout-columns__right();
         padding-left: $layout-column__additional-sidebar-offset;
         clear: right;
-        @extend .abs-add-box-sizing-desktop;
     }
 
     .page-layout-2columns-left {

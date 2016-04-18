@@ -8,13 +8,15 @@
 .form.send.friend {
     @extend .abs-add-fields;
 }
+
 .action.mailto.friend {
     @include lib-icon-font(
-        $_icon-font-content       : $icon-envelope,
-        $_icon-font-size          : 28px,
-        $_icon-font-line-height   : 28px,
+        $_icon-font-content : $icon-envelope,
+        $_icon-font-size : 28px,
+        $_icon-font-line-height : 28px,
         $_icon-font-vertical-align: top
     );
+
     span {
         line-height: 28px;
         vertical-align: top;
@@ -26,17 +28,16 @@
 //--------------------------------------
 @include min-screen($screen__m) {
     .form.send.friend {
-        width: 60%;
         @extend .abs-add-fields-desktop;
         @extend .abs-form-field-column-2;
+        width: 60%;
+
         .fieldset {
             .field {
                 width: 45%;
             }
+
             .field.text {
-                //@extend .abs-form-field-revert-column-1;
-                //sass extend added however above line was
-                //commented out by default - junk?;
                 width: 90%;
             }
         }
