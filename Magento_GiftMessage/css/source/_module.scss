@@ -265,7 +265,8 @@ $gift-item-block-title-icon__margin         : 0 0 0 $indent__s;
 @include min-screen($screen__m) {
     .gift-message {
         .field {
-            @extend .abs-clearfix;
+            // TO DO - The selector ".abs-clearfix" was not found.
+            @extend .abs-clearfix !optional;
             @include lib-form-field-type-revert(
                 $_type: inline,
                 $_type-inline-label-align: left

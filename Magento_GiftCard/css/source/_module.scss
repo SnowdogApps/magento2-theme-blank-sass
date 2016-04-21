@@ -2,11 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
 .page-product-giftcard {
     .giftcard-amount {
         text-align: left;
@@ -16,7 +14,7 @@
         padding-top: 15px;
 
         .field:last-child {
-            padding-bottom: $form-field__vertical-indent !important;
+            padding-bottom: $form-field__vertical-indent;
         }
     }
 
@@ -91,12 +89,9 @@
         }
     }
 }
-
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__m) {
     .cart-discount {
         .giftcard .content {
@@ -114,11 +109,9 @@
         width: 100%;
     }
 }
-
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__m) {
     .page-product-giftcard {
         .product-info-main {
@@ -136,10 +129,7 @@
 
         .product-add-form {
             .field:not(.text) {
-                @include lib-form-field(
-                    $_type: block,
-                    $_column: true
-                );
+                @include lib-form-field( $_type: block, $_column: true );
 
                 &:nth-child(odd) {
                     padding-right: 25px;

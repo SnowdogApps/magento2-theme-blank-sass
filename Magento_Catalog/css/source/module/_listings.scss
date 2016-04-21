@@ -2,30 +2,23 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Variables
 //  ---------------------------------------------
-
 $product-name-link__color: $text__color;
 $product-name-link__color__active: $text__color;
 $product-name-link__color__hover: $text__color;
 $product-name-link__color__visited: $text__color;
-
 $product-name-link__text-decoration: none;
 $product-name-link__text-decoration__active: $link__hover__text-decoration;
 $product-name-link__text-decoration__hover: $link__hover__text-decoration;
 $product-name-link__text-decoration__visited: $link__hover__text-decoration;
-
 $product-item__hover__background-color: $color-white;
 $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
-
 //
-
 //
 //  Common
 //  _____________________________________________
-
 //  Product Lists
 .products {
     margin: $indent__l 0;
@@ -37,14 +30,13 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
     }
 
     &-item {
+        @extend .abs-add-box-sizing;
         vertical-align: top;
 
         .products-grid & {
             display: inline-block;
             width: 50%;
         }
-
-        @extend .abs-add-box-sizing;
 
         &-name {
             @extend .abs-product-link;
@@ -69,6 +61,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             .actions-secondary {
                 & > .action {
                     @extend .abs-actions-addto-gridlist;
+
                     &:before {
                         margin: 0;
                     }
@@ -106,8 +99,9 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
             .price-label {
                 font-size: $font-size__s;
+
                 &:after {
-                    content: ":";
+                    content: ':';
                 }
             }
         }
@@ -118,9 +112,11 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
                 font-size: 14px;
                 font-weight: bold;
             }
+
             .price-wrapper {
                 display: inline-block;
             }
+
             .price-including-tax + .price-excluding-tax {
                 display: block;
             }
@@ -144,10 +140,12 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
         .minimal-price-link {
             margin-top: 5px;
+
             .price-label {
                 color: $link__color;
                 font-size: 14px;
             }
+
             .price {
                 font-weight: $font-weight__regular;
             }
@@ -255,7 +253,6 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .products-list .product {
         &-item {
@@ -278,18 +275,22 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
             &-actions {
                 display: block;
+
                 .products-grid & {
                     margin: $indent__s 0;
                 }
+
                 .actions-primary + .actions-secondary {
                     display: table-cell;
                     width: 50%;
                     padding-left: 5px;
                     white-space: nowrap;
+
                     & > * {
                         white-space: normal;
                     }
                 }
+
                 .actions-primary {
                     display: table-cell;
                 }
@@ -306,11 +307,9 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         width: 33.3333%;
     }
 }
-
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__m) {
     .page-products {
         .products-grid {
@@ -338,7 +337,6 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 }
 
 @include min-screen($screen__l) {
-
     .products-grid {
         .product-item {
             width: 20%;

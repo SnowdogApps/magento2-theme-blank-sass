@@ -9,13 +9,16 @@
     .block-addbysku {
         .fieldset {
             margin: 0;
+
             .fields {
                 position: relative;
+
                 .field {
                     display: inline-block;
                     margin-bottom: $indent__s;
                     vertical-align: top;
                 }
+
                 .actions-toolbar {
                     position: absolute;
                     right: 0;
@@ -23,52 +26,55 @@
                 }
             }
         }
+
         .sku {
             @extend .abs-add-box-sizing;
             margin-right: -155px;
             padding-right: 160px;
             width: 100%;
         }
+
         .qty {
             .qty {
                 @extend .abs-input-qty;
+
                 + .mage-error {
                     width: 80px;
                 }
             }
         }
+
         .block-content {
             @extend .abs-add-clearfix-desktop;
+
             .box {
                 @extend .abs-blocks-2columns;
             }
+
             .actions-toolbar {
                 clear: both;
-                @include lib-actions-toolbar(
-                    $_actions-toolbar-actions-position: left,
-                    $_actions-toolbar-margin          : 0 0 $indent__base
-                );
+                @include lib-actions-toolbar( $_actions-toolbar-actions-position: left, $_actions-toolbar-margin : 0 0 $indent__base );
                 @include lib-actions-toolbar-clear-floats();
+
                 & > .secondary {
                     text-align: left;
                 }
             }
         }
+
         .action {
             &.add {
-                @include lib-button-icon(
-                    $_icon-font-content  : $icon-expand,
-                    $_icon-font-text-hide: true,
-                    $_icon-font-size     : 20px
-                );
+                @include lib-button-icon( $_icon-font-content : $icon-expand, $_icon-font-text-hide: true, $_icon-font-size : 20px );
                 line-height: normal;
                 padding: 4px;
                 width: auto;
             }
         }
+
         .reset {
             margin: 7px 0;
         }
+
         .note {
             display: block;
             margin: 0 0 $indent__base;
@@ -76,17 +82,22 @@
         }
     }
 }
+
 .block-cart-failed {
-    margin: $indent__xl 0;
     @extend .abs-shopping-cart-items;
+    margin: $indent__xl 0;
+
     .block-title {
         font-size: headings($heading-h2, font-size);
+
         strong {
             font-weight: headings($heading-h2, font-weight);
         }
     }
+
     .actions {
         text-align: center;
+
         .action {
             display: block;
             margin: 0 auto $indent__s;
@@ -103,21 +114,17 @@
                 margin-right: -85px;
                 padding-right: 90px;
             }
+
             .action {
                 &.remove {
-                    @include lib-button-icon(
-                        $_icon-font-content  : $icon-trash,
-                        $_icon-font-text-hide: true,
-                        $_icon-font-size     : 18px,
-                        $_icon-font-color    : $minicart-icons-color,
-                        $_icon-font-margin   : -4px 0 0
-                    );
+                    @include lib-button-icon( $_icon-font-content : $icon-trash, $_icon-font-text-hide: true, $_icon-font-size : 18px, $_icon-font-color : $minicart-icons-color, $_icon-font-margin : -4px 0 0 );
                     @include lib-button-reset();
                 }
             }
         }
     }
 }
+
 @include max-screen($screen__m) {
     .block-cart-failed {
         .block-title {
@@ -125,6 +132,7 @@
         }
     }
 }
+
 @include min-screen($screen__s) {
     .column {
         .block-addbysku {
@@ -143,14 +151,17 @@
 @include min-screen($screen__m) {
     .block-cart-failed {
         @extend .abs-shopping-cart-items-desktop;
+
         .secondary {
             .action {
                 margin: 0;
             }
         }
+
         .actions.primary {
             float: right;
         }
+
         .block-content {
             @extend .abs-add-clearfix-desktop;
         }
