@@ -123,7 +123,8 @@ body {
 
 //  Modals overlay
 .modals-overlay {
-    @extend .abs-modal-overlay;
+    // TO DO - The selector ".abs-modal-overlay" was not found.
+    // @extend .abs-modal-overlay;
     z-index: $overlay__z-index;
 }
 

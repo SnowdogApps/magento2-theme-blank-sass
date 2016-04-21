@@ -168,7 +168,7 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
                 font-size: $_submenu-font-size;
                 font-weight: $_submenu-font-weight;
                 line-height: $_submenu-line-height;
-                left: auto !important;
+                left: auto;
                 overflow-x: hidden;
                 padding: 0;
                 position: relative;

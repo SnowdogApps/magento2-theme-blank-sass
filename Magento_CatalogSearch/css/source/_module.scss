@@ -5,9 +5,9 @@
 //
 //  Variables
 //  _____________________________________________
-$autocomplete__background-color : $color-white;
-$autocomplete__border           : 1px solid $form-element-input__border-color;
-$autocomplete-item__border      : 1px solid $color-gray90;
+$autocomplete__background-color: $color-white;
+$autocomplete__border: 1px solid $form-element-input__border-color;
+$autocomplete-item__border: 1px solid $color-gray90;
 $autocomplete-item__hover__color: $color-gray91;
 $autocomplete-item-amount__color: $color-gray60;
 //
@@ -15,26 +15,21 @@ $autocomplete-item-amount__color: $color-gray60;
 //  _____________________________________________
 .block-search {
     margin-bottom: 0;
+
     .block {
         &-title {
             display: none;
         }
     }
+
     .block-content {
         margin-bottom: 0;
     }
+
     .label {
-        @include lib-icon-font(
-            $_icon-font-content     : $icon-search,
-            $_icon-font-size        : 22px,
-            $_icon-font-line-height : 28px,
-            $_icon-font-margin      : 0 $indent__s 0 0,
-            $_icon-font-color       : $minicart-icons-color,
-            $_icon-font-color-hover : $minicart-icons-color-hover,
-            $_icon-font-color-active: $minicart-icons-color-hover,
-            $_icon-font-text-hide   : true
-        );
+        @include lib-icon-font( $_icon-font-content : $icon-search, $_icon-font-size : 22px, $_icon-font-line-height : 28px, $_icon-font-margin : 0 $indent__s 0 0, $_icon-font-color : $minicart-icons-color, $_icon-font-color-hover : $minicart-icons-color-hover, $_icon-font-color-active: $minicart-icons-color-hover, $_icon-font-text-hide : true );
         display: inline-block;
+
         &.active {
             & + .control {
                 input {
@@ -43,38 +38,46 @@ $autocomplete-item-amount__color: $color-gray60;
             }
         }
     }
+
     .action.search {
         display: none;
     }
+
     .control {
         border-top: 1px solid $border-color__base;
         clear: both;
         margin: 0 -$layout__width-xs-indent -1px;
         padding: 0 $layout__width-xs-indent;
     }
+
     input {
         left: -300%;
         margin: 15px 0;
         position: absolute;
     }
+
     .nested {
         display: none;
     }
 }
+
 .search-autocomplete {
+    @extend .abs-add-box-sizing;
     display: none;
     margin-top: -15px;
     overflow: hidden;
     position: absolute;
     z-index: 3;
-    @extend .abs-add-box-sizing;
+
     ul {
         @include lib-list-reset-styles();
+
         &:not(:empty) {
             background: $autocomplete__background-color;
             border: $autocomplete__border;
             border-top: 0;
         }
+
         li {
             border-top: $autocomplete-item__border;
             cursor: pointer;
@@ -83,13 +86,16 @@ $autocomplete-item-amount__color: $color-gray60;
             position: relative;
             text-align: left;
             white-space: normal;
+
             &:first-child {
                 border-top: none;
             }
+
             &.selected,
             &:hover {
                 background: $autocomplete-item__hover__color;
             }
+
             .amount {
                 color: $autocomplete-item-amount__color;
                 position: absolute;
@@ -99,14 +105,18 @@ $autocomplete-item-amount__color: $color-gray60;
         }
     }
 }
+
 .form.search.advanced {
-    @extend .abs-forms-general-desktop;
+    // TO DO - The selector ".abs-forms-general-desktop" was not found.
+    @extend .abs-forms-general-desktop !optional;
     .fields.range {
         .field {
             &:first-child {
                 position: relative;
+
                 .control {
                     padding-right: 25px;
+
                     &:after {
                         content: ' \2013 ';
                         display: inline-block;
@@ -118,24 +128,29 @@ $autocomplete-item-amount__color: $color-gray60;
                     }
                 }
             }
+
             &:last-child {
                 position: relative;
+
                 div.mage-error[generated] {
                     left: 0;
                     position: absolute;
                     top: 32px;
                 }
             }
+
             &.with-addon {
                 .control {
                     padding-right: 45px;
                 }
             }
+
             &.date {
                 @extend .abs-field-date;
             }
         }
     }
+
     .group.price {
         .addon {
             .addafter {
@@ -149,14 +164,17 @@ $autocomplete-item-amount__color: $color-gray60;
         }
     }
 }
+
 .search-terms {
     @extend .abs-reset-list;
     line-height: 2;
+
     & > li {
         display: inline-block;
         margin-right: $indent__s;
     }
 }
+
 .search.found {
     margin-bottom: $indent__s;
 }
@@ -178,14 +196,17 @@ $autocomplete-item-amount__color: $color-gray60;
         position: relative;
         width: 250px;
         z-index: 4;
+
         .label {
             @extend .abs-visually-hidden-desktop;
         }
+
         .control {
             border-top: 0;
             margin: 0;
             padding: 0;
         }
+
         input {
             @include lib-input-placeholder() {
                 color: $form-element-input-placeholder__color;
@@ -194,21 +215,16 @@ $autocomplete-item-amount__color: $color-gray60;
             padding-right: 35px;
             position: static;
         }
+
         .action.search {
             display: inline-block;
-            @include lib-button-icon(
-                $_icon-font-content    : $icon-search,
-                $_icon-font-size       : 16px,
-                $_icon-font-text-hide  : true,
-                $_icon-font-color      : $header-icons-color,
-                $_icon-font-color-hover: $header-icons-color-hover,
-                $_icon-font-line-height: 32px
-            );
+            @include lib-button-icon( $_icon-font-content : $icon-search, $_icon-font-size : 16px, $_icon-font-text-hide : true, $_icon-font-color : $header-icons-color, $_icon-font-color-hover: $header-icons-color-hover, $_icon-font-line-height: 32px );
             @include lib-button-reset();
             position: absolute;
             right: $indent__s;
             top: 0;
             z-index: 1;
+
             &:focus {
                 &:before {
                     color: $color-gray20;
@@ -216,6 +232,7 @@ $autocomplete-item-amount__color: $color-gray60;
             }
         }
     }
+
     .search-autocomplete {
         margin-top: 0;
     }

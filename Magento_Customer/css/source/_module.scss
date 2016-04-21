@@ -48,13 +48,15 @@ $account-table-action-delete: $color-red12;
             margin-top: $indent__xs;
 
             .action {
-                @extend .abs-account-actions;
+                // TO DO - The selector ".abs-account-actions" was not found.
+                @extend .abs-account-actions !optional;
             }
         }
     }
 
     address {
-        @extend .abs-account-block-line-height;
+        // TO DO - The selector ".abs-account-block-line-height" was not found.
+        @extend .abs-account-block-line-height !optional;
     }
 }
 
@@ -89,7 +91,8 @@ $account-table-action-delete: $color-red12;
 .box-information,
 .box-newsletter {
     .box-content {
-        @extend .abs-account-block-line-height;
+        // TO DO  - The selector ".abs-account-block-line-height" was not found.
+        @extend .abs-account-block-line-height !optional;
     }
 }
 
@@ -131,7 +134,8 @@ $account-table-action-delete: $color-red12;
     }
 
     .legend {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        @extend .abs-account-title !optional;
     }
 }
 
@@ -142,7 +146,8 @@ $account-table-action-delete: $color-red12;
         .order-details-items {
             .table-wrapper {
                 .data.table {
-                    @extend .abs-table-striped;
+                    // TO DO - The selector ".abs-table-striped" was not found.
+                    @extend .abs-table-striped !optional;
                 }
             }
         }
@@ -151,7 +156,8 @@ $account-table-action-delete: $color-red12;
     .data.table {
         .col.actions {
             .action {
-                @extend .abs-account-actions;
+                // TO DO - The selector ".abs-account-actions" was not found.
+                @extend .abs-account-actions !optional;
                 &.delete {
                     color: $account-table-action-delete;
                 }
@@ -199,7 +205,8 @@ $account-table-action-delete: $color-red12;
         margin-top: $indent__xs;
 
         .action {
-            @extend .abs-account-actions;
+            // TO DO - The selector ".abs-account-actions" was not found.
+            @extend .abs-account-actions !optional;
         }
     }
 }
@@ -297,6 +304,7 @@ $account-table-action-delete: $color-red12;
 
     .account {
         .page-title-wrapper {
+            // TO DO -
             @extend .abs-add-clearfix-desktop;
         }
 
@@ -343,12 +351,14 @@ $account-table-action-delete: $color-red12;
         }
 
         address {
-            @extend .abs-account-block-font-size;
+            // TO DO - The selector ".abs-account-block-font-size" was not found.
+            @extend .abs-account-block-font-size !optional;
         }
     }
 
     .page-main .block {
-        @extend .abs-margin-for-blocks-and-widgets-desktop;
+        // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
+        @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
     }
 
     .form-edit-account,
@@ -362,7 +372,8 @@ $account-table-action-delete: $color-red12;
     .box-shipping-address,
     .box-information {
         .box-content {
-            @extend .abs-account-block-font-size;
+            // TO DO - The selector ".abs-account-block-font-size" was not found.
+            @extend .abs-account-block-font-size !optional;
         }
     }
 
@@ -385,7 +396,8 @@ $account-table-action-delete: $color-red12;
         }
 
         .data.table {
-            @extend .abs-table-striped-mobile;
+            // TO DO - The selector ".abs-table-striped-mobile" was not found.
+            @extend .abs-table-striped-mobile !optional;
         }
     }
 }

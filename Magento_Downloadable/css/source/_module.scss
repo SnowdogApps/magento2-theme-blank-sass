@@ -19,9 +19,9 @@
 }
 .page-product-downloadable {
     .product-add-form {
+        @extend .abs-add-clearfix;
         clear: both;
         margin-bottom: $indent__m;
-        @extend .abs-add-clearfix;
     }
     .product-options-bottom {
         .field.qty {
@@ -78,7 +78,8 @@
         border-bottom: 1px solid $color-gray92;
         padding-bottom: $indent__s;
         margin-bottom: $indent__s;
-        @extend .clearer;
+        // TO DO - The selector ".clearer" was not found.
+        @extend .clearer !optional;
         width: 100%;
         position: relative;
         z-index: 1;
@@ -147,7 +148,8 @@
 @include min-screen($screen__m) {
     .page-product-downloadable {
         .product-add-form {
-            @extend .clearer;
+            // TO DO - The selector ".clearer" was not found.
+            @extend .clearer !optional;
         }
         .product-options-wrapper {
             float: left;

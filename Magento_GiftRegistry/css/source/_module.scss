@@ -53,13 +53,15 @@
             }
         }
         .action.primary {
-            @extend .abs-revert-to-action-secondary;
+            // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
+            @extend .abs-revert-to-action-secondary !optional;
         }
     }
 }
 .form-giftregistry-create {
     .fieldset {
-        @extend .abs-forms-margin-small;
+        // TO DO - The selector ".abs-forms-margin-small" was not found.
+        @extend .abs-forms-margin-small !optional;
     }
 }
 .form-giftregistry-edit {
@@ -70,7 +72,8 @@
 .form-giftregistry-search {
     margin-bottom: $indent__l * 2;
     .legend {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        @extend .abs-account-title !optional;
     }
     .fields-specific-options {
         .field {
@@ -85,10 +88,12 @@
 }
 .block-giftregistry-results {
     .block-title {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        @extend .abs-account-title !optional;
     }
     .data.table {
-        @extend .abs-table-striped;
+        // TO DO - The selector ".abs-table-striped" was not found.
+        @extend .abs-table-striped !optional;
     }
 }
 .block-giftregistry {
@@ -105,7 +110,8 @@
 }
 .block-giftregistry-shared-items {
     .block-title {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        @extend .abs-account-title !optional;
     }
     .product-image-wrapper {
         @extend .abs-reset-image-wrapper;
@@ -160,7 +166,8 @@
     .account {
         .table-giftregistry {
             .col.actions {
-                @extend .abs-col-no-prefix;
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                @extend .abs-col-no-prefix !optional;
             }
         }
     }
@@ -221,7 +228,8 @@
     .form-giftregistry-edit,
     .form-giftregistry-share {
         @extend .abs-add-fields-desktop;
-        @extend .abs-form-field-column-2;
+        // TO DO - The selector ".abs-form-field-column-2" was not found.
+        @extend .abs-form-field-column-2 !optional;
         .fieldset .field {
             width: 45%;
         }
@@ -234,7 +242,8 @@
         }
     }
     .form-giftregistry-create {
-        @extend .abs-forms-general-desktop;
+        // TO DO - The selector ".abs-forms-general-desktop" was not found.
+        @extend .abs-forms-general-desktop !optional;
     }
     .table-giftregistry {
         .col.create {

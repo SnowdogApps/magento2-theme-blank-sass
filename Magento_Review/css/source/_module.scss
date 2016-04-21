@@ -2,22 +2,18 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .data.switch .counter {
     color: $text__color__muted;
 
     &:before {
-        content: "(";
+        content: '(';
     }
 
     &:after {
-        content: ")";
+        content: ')';
     }
 }
 
@@ -34,11 +30,11 @@
 
 .review-control-vote {
     @include lib-rating-vote();
+
     &:before {
         content: $rating-icon__content;
     }
 }
-
 //
 //    Review product page
 //--------------------------------------
@@ -96,7 +92,6 @@
             display: block;
             font-weight: 600;
         }
-
         margin-bottom: $indent__base;
     }
 
@@ -139,16 +134,19 @@
         border-bottom: 1px solid $color-gray79;
         margin: 0;
         @include lib-clearer();
+
         &:last-child {
             border-width: 0;
         }
     }
 
     &-ratings {
+        @extend .abs-rating-summary;
         display: table;
         max-width: 100%;
         margin-bottom: $indent__s;
-        @extend .abs-rating-summary;
+        // TO DO - The selector ".abs-rating-summary" was not found.
+        @extend .abs-rating-summary !optional;
     }
 
     &-author {
@@ -176,6 +174,7 @@
         margin-bottom: $indent__base;
     }
 }
+
 .page-main {
     .column {
         .review-add {
@@ -183,17 +182,16 @@
         }
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__s) {
+    $review-ratings-left: 280px;
+
     .review {
         &-form {
             max-width: 500px;
         }
-
-        $review-ratings-left: 280px;
 
         &-ratings {
             max-width: $review-ratings-left - $indent__xl;
@@ -231,13 +229,9 @@
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .data.table.reviews {
     .rating-summary {
         margin-top: -4px;
@@ -255,12 +249,15 @@
 .product-reviews-summary {
     display: table;
     margin: $indent__s 0 12px;
+
     .products.wrapper.list & {
         margin: 0 auto;
     }
+
     &.empty {
         margin-left: 0;
     }
+
     .rating-summary {
         position: relative;
         left: (-$indent__xs);
@@ -268,10 +265,12 @@
         vertical-align: middle;
         text-align: left;
     }
+
     .reviews-actions {
         display: table-cell;
         vertical-align: middle;
         line-height: $rating-icon__font-size;
+
         a {
             margin-right: $indent__xs;
         }
@@ -284,14 +283,13 @@
         margin-right: 30px;
     }
 }
-
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {
     .product-reviews-summary {
         margin-bottom: $indent__s + $indent__xs;
+
         .products.wrapper.list & {
             margin: 0;
         }
@@ -302,11 +300,9 @@
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
 //
 //    Account
 //--------------------------------------
@@ -314,6 +310,7 @@
     .items {
         .item {
             margin-bottom: $indent__base;
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -322,6 +319,7 @@
 
     .product-name {
         display: inline-block;
+
         &:not(:last-child) {
             margin-bottom: $indent__xs;
         }
@@ -356,7 +354,8 @@
     .account {
         .table-reviews {
             .col.actions {
-                @extend .abs-col-no-prefix;
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                @extend .abs-col-no-prefix !optional;
             }
         }
     }
@@ -368,21 +367,19 @@
 @include min-screen($screen__m) {
     .block-reviews-dashboard {
         .product-name {
-            @extend .abs-account-block-font-size;
+            // TO DO - The selector ".abs-account-block-font-size" was not found.
+            @extend .abs-account-block-font-size !optional;
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .customer-review {
     .product-details {
         @extend .abs-add-clearfix;
         @extend .abs-margin-for-blocks-and-widgets;
+
         .rating-average-label {
             @extend .abs-visually-hidden;
         }
@@ -399,12 +396,15 @@
         margin: 0;
 
         .title {
-            @extend .abs-account-title;
+            // TO DO - The selector ".abs-account-title" was not found.
+            @extend .abs-account-title !optional;
         }
 
         .customer-review-rating {
-            @extend .abs-rating-summary;
+            // TO DO - The selector ".abs-rating-summary" was not found.
+            @extend .abs-rating-summary !optional;
             margin-bottom: $indent__base;
+
             .item {
                 margin-bottom: $indent__s;
 
@@ -421,8 +421,7 @@
         }
 
         .review-content {
-            margin: 0;
-            margin-bottom: $indent__base;
+            margin: 0 0 $indent__base;
         }
 
         .review-date {
@@ -430,7 +429,6 @@
         }
     }
 }
-
 //
 //    Mobile
 //--------------------------------------
@@ -448,14 +446,14 @@
         }
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {
     .customer-review {
         .product-details {
-            @extend .abs-margin-for-blocks-and-widgets-desktop;
+            // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
+            @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
         }
     }
 }

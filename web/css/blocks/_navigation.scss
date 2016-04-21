@@ -98,7 +98,7 @@ $active-nav-indent: 54px;
 
             &-trigger {
                 strong {
-                    display: inline-block !important;
+                    display: inline-block;
                     position: relative;
                     @include lib-icon-font(
                         $_icon-font-content : $icon-down,
@@ -280,7 +280,7 @@ $active-nav-indent: 54px;
         }
 
         &-item-content {
-            display: block !important;
+            display: block;
         }
 
         &-item-content > * {
