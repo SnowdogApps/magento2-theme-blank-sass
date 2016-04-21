@@ -141,12 +141,11 @@
     }
 
     &-ratings {
-        @extend .abs-rating-summary;
+        // TO DO - The selector ".abs-rating-summary" was not found.
+        // @extend .abs-rating-summary !optional;
         display: table;
         max-width: 100%;
         margin-bottom: $indent__s;
-        // TO DO - The selector ".abs-rating-summary" was not found.
-        // @extend .abs-rating-summary !optional;
     }
 
     &-author {
