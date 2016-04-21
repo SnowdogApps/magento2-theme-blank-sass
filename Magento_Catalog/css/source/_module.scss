@@ -394,7 +394,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     .product-info-main .box-tocart {
         .actions {
             .action.tocart {
-                @extend .abs-button-responsive-smaller;
+                // TO DO - The selector ".abs-button-responsive-smaller" was not found.
+                @extend .abs-button-responsive-smaller !optional;
             }
         }
     }
@@ -432,7 +433,8 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     }
     .product.info.detailed {
         .additional-attributes-wrapper {
-            @extend .abs-no-border-top;
+            // TO DO - The selector ".abs-no-border-top" was not found.
+            @extend .abs-no-border-top !optional;
         }
     }
 }
@@ -647,7 +649,8 @@ body.catalog-product-compare-index {
 }
 .block-compare {
     .block-title {
-        @extend .abs-block-widget-title;
+        // TO DO - The selector ".abs-block-widget-title" was not found.
+        @extend .abs-block-widget-title !optional;
     }
     .product-item .product-item-name {
         margin-left: 22px;
@@ -679,7 +682,8 @@ body.catalog-product-compare-index {
             & > td,
             & > th {
                 display: table-cell;
-                @extend .abs-col-no-prefix;
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                @extend .abs-col-no-prefix !optional;
             }
         }
     }

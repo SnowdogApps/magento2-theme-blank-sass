@@ -610,7 +610,8 @@
 //  ---------------------------------------------
 .abs-account-blocks {
     .block-title {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        @extend .abs-account-title !optional;
         & > .action {
             margin-left: 15px;
         }
@@ -974,7 +975,8 @@
 //  ---------------------------------------------
 .abs-discount-block {
     .block {
-        @extend .abs-cart-block;
+        // TO DO - The selector ".abs-cart-block" was not found.
+        @extend .abs-cart-block !optional;
         > .title {
             strong {
                 color: $color-blue1;
@@ -989,7 +991,8 @@
         .action {
             &.cancel,
             &.primary {
-                @extend .abs-revert-to-action-secondary;
+                // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
+                @extend .abs-revert-to-action-secondary !optional;
                 border-bottom-left-radius: 0;
                 border-top-left-radius: 0;
                 margin: 0 0 0 -1px;

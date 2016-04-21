@@ -28,7 +28,8 @@
     .form.send.friend {
         width: 60%;
         @extend .abs-add-fields-desktop;
-        @extend .abs-form-field-column-2;
+        // TO DO - The selector ".abs-form-field-column-2" was not found.
+        @extend .abs-form-field-column-2 !optional;
         .fieldset {
             .field {
                 width: 45%;
@@ -36,7 +37,7 @@
             .field.text {
                 //@extend .abs-form-field-revert-column-1;
                 //sass extend added however above line was
-                //commented out by default - junk?;
+                //commented out by default - junk? - TO DO
                 width: 90%;
             }
         }

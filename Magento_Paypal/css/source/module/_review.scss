@@ -42,7 +42,8 @@
         .col {
             &.price,
             &.subtotal {
-                @extend .abs-incl-excl-tax;
+                // TO DO - The selector ".abs-incl-excl-tax" was not found.
+                @extend .abs-incl-excl-tax !optional;
             }
 
             &.name {
