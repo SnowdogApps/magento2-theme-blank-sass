@@ -78,6 +78,8 @@
         border-bottom: 1px solid $color-gray92;
         padding-bottom: $indent__s;
         margin-bottom: $indent__s;
+        // TO DO - The selector ".clearer" was not found.
+        @extend .clearer !optional;
         width: 100%;
         position: relative;
         z-index: 1;
@@ -145,6 +147,10 @@
 //--------------------------------------
 @include min-screen($screen__m) {
     .page-product-downloadable {
+        .product-add-form {
+            // TO DO - The selector ".clearer" was not found.
+            @extend .clearer !optional;
+        }
         .product-options-wrapper {
             float: left;
             width: 55%;

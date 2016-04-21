@@ -68,7 +68,8 @@ $cart-item-cell-padding-top: 20px;
                 text-align: left;
 
                 .action.primary {
-                    @extend .abs-revert-to-action-secondary;
+                    // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
+                    @extend .abs-revert-to-action-secondary !optional;
                     width: auto;
                 }
             }
@@ -80,7 +81,8 @@ $cart-item-cell-padding-top: 20px;
                 @extend .abs-no-display;
             }
         }
-
+        // TO DO - The selector ".abs-cart-block" was not found.
+        @extend .abs-cart-block !optional;
         .title {
             strong {
                 font-size: 14px;
@@ -186,6 +188,8 @@ $cart-item-cell-padding-top: 20px;
                 @extend .abs-incl-excl-tax;
                 padding: $cart-item-cell-padding-top 11px $indent__s;
                 text-align: center;
+                // TO DO - The selector ".abs-incl-excl-tax" was not found.
+                @extend .abs-incl-excl-tax !optional;
             }
 
             &.qty {
@@ -364,19 +368,26 @@ $cart-item-cell-padding-top: 20px;
 @include max-screen($screen__s) {
     .cart {
         .table.items {
+            .col.item,
+            .item-actions td {
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                @extend .abs-col-no-prefix !optional;
+            }
             .col.qty {
                 text-align: center;
             }
 
             tbody > tr > td:last-child {
-                @extend .abs-no-border-bottom-top;
+                // TO DO - The selector ".abs-no-border-bottom-top" was not found.
+                @extend .abs-no-border-bottom-top !optional;
             }
         }
     }
 
     .cart-totals {
         .totals {
-            @extend .abs-sidebar-totals-mobile;
+            // TO DO - The selector ".abs-sidebar-totals-mobile" was not found.
+            @extend .abs-sidebar-totals-mobile !optional;
         }
     }
 }
@@ -487,7 +498,8 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .page-title-wrapper {
-            @extend .abs-revert-side-paddings;
+            // TO DO - The selector ".abs-revert-side-paddings" was not found.
+            @extend .abs-revert-side-paddings !optional;
         }
     }
     //  Cart container
@@ -536,7 +548,8 @@ $cart-item-cell-padding-top: 20px;
             }
 
             .content {
-                @extend .abs-revert-side-paddings;
+                // TO DO - The selector ".abs-revert-side-paddings" was not found.
+                @extend .abs-revert-side-paddings !optional;
             }
 
             .fieldset {
@@ -609,7 +622,8 @@ $cart-item-cell-padding-top: 20px;
 
     //  Empty cart
     .cart-empty {
-        @extend .abs-revert-side-paddings;
+        // TO DO - The selector ".abs-revert-side-paddings" was not found.
+        @extend .abs-revert-side-paddings !optional;
     }
 
     //  Cross sell

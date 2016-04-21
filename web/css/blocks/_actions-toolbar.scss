@@ -12,7 +12,8 @@
     & > .secondary {
         text-align: center;
         .action {
-            @extend .abs-button-responsive;
+            // TO DO - The selector ".abs-button-responsive" was not found.
+            @extend .abs-button-responsive !optional;
             margin-bottom: $indent__s;
 
             &:last-child {
