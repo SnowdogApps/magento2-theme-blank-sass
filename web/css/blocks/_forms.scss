@@ -2,25 +2,24 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 $legend-border-bottom: 1px solid $color-gray-light6;
 $form-field__vertical-indent__desktop: 29px;
 $form-calendar-icon__color: $primary__color;
 $form-field__vertical-indent: $indent__base;
-
 //
 //    Common
 //--------------------------------------
-
 .fieldset {
     @include lib-form-fieldset();
+
     &:last-child {
         margin-bottom: 0;
     }
 
-    > .field,
-    > .fields > .field {
+    & > .field,
+    & > .fields > .field {
         @include lib-form-field();
+
         &.no-label {
             > .label {
                 @include lib-visually-hidden();
@@ -30,7 +29,6 @@ $form-field__vertical-indent: $indent__base;
         &.choice {
             .label {
                 font-weight: normal;
-                margin: 0;
                 display: inline;
             }
         }
@@ -43,6 +41,7 @@ $form-field__vertical-indent: $indent__base;
 
         .field.choice {
             margin-bottom: $indent__s;
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -91,8 +90,8 @@ fieldset.field {
     padding-right: 25px;
     text-indent: 0.01em;
 
-    &::-ms-expand{
-        display:none;
+    &::-ms-expand {
+        display: none;
     }
 
     .lt-ie10 & {
@@ -108,20 +107,21 @@ select {
 div.mage-error[generated] {
     margin-top: 7px;
 }
-
 // TEMP
-
 .field .tooltip {
     @include lib-tooltip(right);
+
     .tooltip-content {
         min-width: 200px;
         white-space: normal;
     }
 }
 
-input:focus ~ .tooltip .tooltip-content,
-select:focus ~ .tooltip .tooltip-content {
-    display: block;
+input,
+select {
+    &:focus ~ .tooltip .tooltip-content {
+        display: block;
+    }
 }
 
 .hasDatepicker {
@@ -132,10 +132,9 @@ select:focus ~ .tooltip .tooltip-content {
             $_icon-font-color      : $primary__color__lighter,
             $_icon-font-size       : $icon-calendar__font-size,
             $_icon-font-line-height: $icon-calendar__font-size,
-            $_icon-font-display    : block,
+            $_icon-font-display    : inline-block,
             $_icon-font-text-hide  : true
         );
-        display: inline-block;
         vertical-align: middle;
 
         &:focus {
@@ -152,7 +151,7 @@ select:focus ~ .tooltip .tooltip-content {
     .fieldset {
         margin: 0;
 
-        > .field:not(.choice),
+        & > .field:not(.choice),
         .fields > .field {
             &:not(:last-child) {
                 margin: 0 0 $form-field__vertical-indent;

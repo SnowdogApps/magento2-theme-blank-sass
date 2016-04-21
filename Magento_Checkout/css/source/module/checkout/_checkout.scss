@@ -8,7 +8,7 @@
 //  _____________________________________________
 
 $checkout-wrapper__margin: $indent__base;
-$checkout-wrapper__columns: 16;
+$checkout-wrapper__columns: 8;
 
 $checkout-step-title__border: $border-width__base solid $color-gray80;
 $checkout-step-title__font-size: 26px;
@@ -19,7 +19,7 @@ $checkout-step-title-mobile__font-size: 18px;
 
 $checkout-step-content-mobile__background: $color-gray-light01;
 $checkout-step-content-mobile__margin-s: 15px;
-$checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mobile__margin-s) $checkout-step-content-mobile__margin-s;
+$checkout-step-content-mobile__margin: $indent__base (-$checkout-step-content-mobile__margin-s) $checkout-step-content-mobile__margin-s;
 
 //
 //  Common
@@ -89,6 +89,7 @@ $checkout-step-content-mobile__margin: $indent__base -($checkout-step-content-mo
 //  _____________________________________________
 
 @include min-screen($screen__m) {
+
     .opc-wrapper {
         @extend .abs-add-box-sizing-desktop-m;
         @include lib-layout-column(2, 1, $checkout-wrapper__columns);

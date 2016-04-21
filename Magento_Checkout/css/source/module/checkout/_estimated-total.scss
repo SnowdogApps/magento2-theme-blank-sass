@@ -19,7 +19,7 @@
     background: $checkout-step-content-mobile__background;
     border-bottom: $checkout-step-title__border;
     border-top: $checkout-step-title__border;
-    margin: -21px -($checkout-step-content-mobile__margin-s) $checkout-step-content-mobile__margin-s;
+    margin: -21px (-$checkout-step-content-mobile__margin-s) $checkout-step-content-mobile__margin-s;
     padding: 18px 15px;
 
     .estimated-block {

@@ -157,7 +157,6 @@ body {
 
     .page-print & {
         display: inline-block;
-        float: none;
     }
 }
 
@@ -296,7 +295,7 @@ body {
                 $_icon-font-line-height              : 22px,
                 $_dropdown-list-min-width            : 160px
             );
-
+            display: inline-block;
             ul.dropdown {
                 a {
                     @include lib-link(
@@ -416,9 +415,9 @@ body {
 
     //to to: check
     .block-title {
-        @extend .abs-block-widget-title;
+        // TO DO - The selector ".abs-block-widget-title" was not found.
+        // @extend .abs-block-widget-title !optional;
     }
-
 }
 
 //
@@ -447,7 +446,7 @@ body {
 
         .panel.wrapper {
             border-bottom: 1px solid $secondary__color;
-            background:color, $header-panel__background-color;
+            background: color, $header-panel__background-color;
         }
 
         .header.panel {
@@ -493,13 +492,12 @@ body {
             $_dropdown-list-position-right       : 0,
             $_dropdown-list-z-index              : $customer-welcome__z-index
         );
-
+        display: inline-block;
         li {
-            // to do: check - sass err:
+            // TO DO - check - sass err:
             // can't extend nested selectors
             // commented for now
             // @extend .switcher li;
-            @warn 'TO DO: test it';
             a {
                 @include lib-link(
                     $_link-color                  : $color-gray20,
@@ -564,7 +562,6 @@ body {
 
                     &.welcome,
                     & > a {
-                        display: inline-block;
                         line-height: 1.4;
                     }
 
@@ -611,7 +608,7 @@ body {
         margin: 0;
         min-height: 100%; // Stretch content area for sticky footer
         position: relative;
-        transition: margin 0.3s ease-out 0s;
+        transition: margin 0.3s ease-out;
 
         & > .breadcrumbs,
         & > .top-container,
@@ -676,7 +673,7 @@ body {
 //  _____________________________________________
 
 
-.no-display{
+.no-display {
     @extend .abs-no-display;
 }
 

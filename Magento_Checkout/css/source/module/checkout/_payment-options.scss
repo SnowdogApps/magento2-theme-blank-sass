@@ -7,18 +7,18 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-payment-option-title__border: $checkout-payment-method-title__border;
-$checkout-payment-option-title__color: $link__color;
-$checkout-payment-option-title__padding: $checkout-payment-method-title__padding;
-$checkout-payment-option-title-mobile__padding: $checkout-payment-method-title-mobile__padding;
+$checkout-payment-option-title__border           : $checkout-payment-method-title__border;
+$checkout-payment-option-title__color            : $link__color;
+$checkout-payment-option-title__padding          : $checkout-payment-method-title__padding;
+$checkout-payment-option-title-mobile__padding   : $checkout-payment-method-title-mobile__padding;
 
-$checkout-payment-option-title-icon__font-size: 32px;
-$checkout-payment-option-title-icon__line-height: 16px;
-$checkout-payment-option-title-icon__margin: 0;
-$checkout-payment-option-title-icon__color: $minicart-icons-color;
+$checkout-payment-option-title-icon__font-size   : 32px;
+$checkout-payment-option-title-icon__line-height : 16px;
+$checkout-payment-option-title-icon__margin      : 0;
+$checkout-payment-option-title-icon__color       : $minicart-icons-color;
 $checkout-payment-option-title-icon__hover__color: $primary__color;
 
-$checkout-payment-option-content__padding__xl: $checkout-payment-method-content__padding__xl;
+$checkout-payment-option-content__padding__xl    : $checkout-payment-method-content__padding__xl;
 
 //
 //  Common
@@ -55,14 +55,14 @@ $checkout-payment-option-content__padding__xl: $checkout-payment-method-content_
         .action-toggle {
             color: $checkout-payment-option-title__color;
             @include lib-icon-font(
-            $icon-down,
-            $_icon-font-size: $checkout-payment-option-title-icon__font-size,
-            $_icon-font-line-height: $checkout-payment-option-title-icon__line-height,
-            $_icon-font-color: $checkout-payment-option-title-icon__color,
-            $_icon-font-color-hover: $checkout-payment-option-title-icon__hover__color,
-            $_icon-font-color-active: $checkout-payment-option-title-icon__color,
-            $_icon-font-margin: $checkout-payment-option-title-icon__margin,
-            $_icon-font-position: after
+                $icon-down,
+                $_icon-font-size        : $checkout-payment-option-title-icon__font-size,
+                $_icon-font-line-height : $checkout-payment-option-title-icon__line-height,
+                $_icon-font-color       : $checkout-payment-option-title-icon__color,
+                $_icon-font-color-hover : $checkout-payment-option-title-icon__hover__color,
+                $_icon-font-color-active: $checkout-payment-option-title-icon__color,
+                $_icon-font-margin      : $checkout-payment-option-title-icon__margin,
+                $_icon-font-position    : after
             );
         }
     }
@@ -181,7 +181,7 @@ $checkout-payment-option-content__padding__xl: $checkout-payment-method-content_
 @include max-screen($screen__m) {
     .checkout-payment-method {
         .payment-option {
-            margin: 0 -($checkout-payment-option-title-mobile__padding);
+            margin: 0 (-$checkout-payment-option-title-mobile__padding);
 
             .payment-option-title {
                 padding: $checkout-payment-option-title-mobile__padding;

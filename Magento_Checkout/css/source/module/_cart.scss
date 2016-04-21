@@ -2,19 +2,15 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 $mobile-cart-padding: 15px;
 $cart-price-color: $color-gray40;
 $cart-item-cell-padding-top: 20px;
-
 //
 //  Common
 //  _____________________________________________
-
 //
 //  Shopping cart
 //  ---------------------------------------------
-
 .checkout-cart-index {
     .page-main {
         padding-left: 0;
@@ -26,22 +22,21 @@ $cart-item-cell-padding-top: 20px;
         padding-right: $layout__width-xs-indent;
     }
 }
-
 //  Cart container
 .cart-container {
     .form-cart {
         @extend .abs-shopping-cart-items;
     }
 }
-
 //  Summary block
 .cart-summary {
     @extend .abs-add-box-sizing;
+    @extend .abs-adjustment-incl-excl-tax;
     background: $sidebar__background-color;
     margin-bottom: $indent__m;
     padding: 1px 0 $indent__m;
 
-    > .title {
+    & > .title {
         font-size: 24px;
         display: none;
         font-weight: $font-weight__light;
@@ -49,6 +44,8 @@ $cart-item-cell-padding-top: 20px;
     }
 
     .block {
+        // TO DO - The selector ".abs-incl-excl-tax" was not found.
+        // @extend .abs-cart-block;
         form:not(:last-of-type) {
             .fieldset {
                 margin: 0 0 $indent__m;
@@ -68,24 +65,25 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .actions-toolbar {
-            > .primary {
+            & > .primary {
                 text-align: left;
 
                 .action.primary {
-                    @extend .abs-revert-to-action-secondary;
+                    // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
+                    // @extend .abs-revert-to-action-secondary !optional;
                     width: auto;
                 }
             }
         }
 
         .fieldset.estimate {
-            > .legend,
-            > .legend + br {
+            & > .legend + br,
+            & > .legend {
                 @extend .abs-no-display;
             }
         }
-
-        @extend .abs-cart-block;
+        // TO DO - The selector ".abs-cart-block" was not found.
+        // @extend .abs-cart-block !optional;
         .title {
             strong {
                 font-size: 14px;
@@ -102,7 +100,7 @@ $cart-item-cell-padding-top: 20px;
                 }
 
                 .radio {
-                    + .label {
+                    & + .label {
                         display: block;
                         margin: 0;
                         overflow: hidden;
@@ -141,17 +139,16 @@ $cart-item-cell-padding-top: 20px;
     .message {
         padding-left: $indent__base;
 
-        > *:first-child:before {
+        & > *:first-child:before {
             display: none;
         }
     }
 
-    @extend .abs-adjustment-incl-excl-tax;
 }
-
 //  Totals block
 .cart-totals {
     @extend .abs-sidebar-totals;
+
     tbody,
     tfoot {
         .mark {
@@ -159,7 +156,6 @@ $cart-item-cell-padding-top: 20px;
         }
     }
 }
-
 //  Products table
 .cart {
     &.table-wrapper {
@@ -178,7 +174,7 @@ $cart-item-cell-padding-top: 20px;
                 }
             }
 
-            > .item {
+            & > .item {
                 border-bottom: $border-width__base solid $border-color__base;
                 position: relative;
             }
@@ -187,12 +183,13 @@ $cart-item-cell-padding-top: 20px;
         .col {
             padding-top: 15px;
 
+            &.msrp,
             &.price,
-            &.subtotal,
-            &.msrp {
+            &.subtotal {
+                // TO DO - The selector ".abs-incl-excl-tax" was not found.
+                // @extend .abs-incl-excl-tax !optional;
                 padding: $cart-item-cell-padding-top 11px $indent__s;
                 text-align: center;
-                @extend .abs-incl-excl-tax;
             }
 
             &.qty {
@@ -242,28 +239,26 @@ $cart-item-cell-padding-top: 20px;
             padding-bottom: 15px;
             position: relative;
 
-            & > .action-edit,
-            & > .action-delete {
+            & > .action-delete,
+            & > .action-edit {
                 position: absolute;
                 right: 16px;
                 top: 0;
                 @include lib-icon-font(
-                $icon-edit,
-                $_icon-font-size: 18px,
-                $_icon-font-line-height: 20px,
-                $_icon-font-text-hide: true,
-                $_icon-font-color: $minicart-icons-color,
-                $_icon-font-color-hover: $primary__color,
-                $_icon-font-color-active: $minicart-icons-color
+                    $icon-edit,
+                    $_icon-font-size        : 18px,
+                    $_icon-font-line-height : 20px,
+                    $_icon-font-text-hide   : true,
+                    $_icon-font-color       : $minicart-icons-color,
+                    $_icon-font-color-hover : $primary__color,
+                    $_icon-font-color-active: $minicart-icons-color
                 );
             }
 
-            > .action-delete {
+            & > .action-delete {
                 @extend .abs-action-button-as-link;
                 right: 0;
-                @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-trash
-                );
+                @include lib-icon-font-symbol( $_icon-font-content: $icon-trash );
             }
         }
 
@@ -306,9 +301,9 @@ $cart-item-cell-padding-top: 20px;
 
         //  Product options
         .item-options {
-            margin-bottom: 0;
             @extend .abs-product-options-list;
             @extend .abs-add-clearfix;
+            margin-bottom: 0;
         }
 
         .product-item-name + .item-options {
@@ -317,6 +312,7 @@ $cart-item-cell-padding-top: 20px;
 
         .cart-tax-total {
             @extend .abs-tax-total;
+
             &-expanded {
                 @extend .abs-tax-total-expanded;
             }
@@ -339,19 +335,18 @@ $cart-item-cell-padding-top: 20px;
 
 //  Discount
 .cart-discount {
+    @extend .abs-discount-block;
     border-bottom: $border-width__base solid $border-color__base;
     clear: left;
-    @extend .abs-discount-block;
 }
-
 //  Empty cart
 .cart-empty {
     padding-left: $layout__width-xs-indent;
     padding-right: $layout__width-xs-indent;
 }
 
-.cart-tax-info,
-.cart .cart-tax-info {
+.cart .cart-tax-info,
+.cart-tax-info {
     & + .cart-tax-total {
         display: block;
     }
@@ -359,10 +354,10 @@ $cart-item-cell-padding-top: 20px;
 
 .cart.table-wrapper,
 .order-items.table-wrapper {
+    .col.msrp,
     .col.price,
     .col.qty,
-    .col.subtotal,
-    .col.msrp {
+    .col.subtotal {
         text-align: right;
     }
 }
@@ -370,27 +365,29 @@ $cart-item-cell-padding-top: 20px;
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .cart {
         .table.items {
             .col.item,
             .item-actions td {
-                @extend .abs-col-no-prefix;
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                // @extend .abs-col-no-prefix !optional;
             }
-
             .col.qty {
                 text-align: center;
             }
 
             tbody > tr > td:last-child {
-                @extend .abs-no-border-bottom-top;
+                // TO DO - The selector ".abs-no-border-bottom-top" was not found.
+                // @extend .abs-no-border-bottom-top !optional;
             }
         }
     }
+
     .cart-totals {
         .totals {
-            @extend .abs-sidebar-totals-mobile;
+            // TO DO - The selector ".abs-sidebar-totals-mobile" was not found.
+            // @extend .abs-sidebar-totals-mobile !optional;
         }
     }
 }
@@ -412,23 +409,24 @@ $cart-item-cell-padding-top: 20px;
     .cart {
         &.table-wrapper {
             border-top: $border-width__base solid $border-color__base;
+
             thead {
                 .col {
                     &.item,
-                    &.qty,
+                    &.msrp,
                     &.price,
-                    &.subtotal,
-                    &.msrp {
+                    &.qty,
+                    &.subtotal {
                         display: none;
                     }
                 }
             }
 
             .col {
-                &.qty,
+                &.msrp,
                 &.price,
-                &.subtotal,
-                &.msrp {
+                &.qty,
+                &.subtotal {
                     box-sizing: border-box;
                     display: block;
                     float: left;
@@ -477,8 +475,6 @@ $cart-item-cell-padding-top: 20px;
 //
 //  Common
 //  _____________________________________________
-
-
 //  Cross sell
 .block {
     &.crosssell {
@@ -494,7 +490,6 @@ $cart-item-cell-padding-top: 20px;
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__m) {
     .checkout-cart-index {
         .page-main {
@@ -503,15 +498,17 @@ $cart-item-cell-padding-top: 20px;
         }
 
         .page-title-wrapper {
-            @extend .abs-revert-side-paddings;
+            // TO DO - The selector ".abs-revert-side-paddings" was not found.
+            // @extend .abs-revert-side-paddings !optional;
         }
     }
-
     //  Cart container
     .cart-container {
         @extend .abs-add-clearfix-desktop;
+
         .form-cart {
             @extend .abs-shopping-cart-items-desktop;
+
             .actions.main {
                 text-align: right;
             }
@@ -521,14 +518,13 @@ $cart-item-cell-padding-top: 20px;
             float: left;
         }
     }
-
     //  Summary block
     .cart-summary {
         @include lib-layout-column(2, 2, $layout-column-checkout__width-left);
         padding: 1px $indent__base $indent__m;
         position: relative;
 
-        > .title {
+        & > .title {
             display: block;
         }
 
@@ -536,14 +532,14 @@ $cart-item-cell-padding-top: 20px;
             .actions-toolbar {
                 margin-left: 0;
 
-                > .secondary {
+                & > .secondary {
                     float: none;
                 }
             }
         }
 
         .block {
-            > .title {
+            & > .title {
                 padding-left: 0;
 
                 &:after {
@@ -552,7 +548,8 @@ $cart-item-cell-padding-top: 20px;
             }
 
             .content {
-                @extend .abs-revert-side-paddings;
+                // TO DO - The selector ".abs-revert-side-paddings" was not found.
+                // @extend .abs-revert-side-paddings !optional;
             }
 
             .fieldset {
@@ -567,11 +564,11 @@ $cart-item-cell-padding-top: 20px;
             padding: 0;
         }
     }
-
     //  Products table
     .cart {
         &.table-wrapper {
-            .items { // Google Chrome version 44.0.2403.107 m fix
+            .items {
+                // Google Chrome version 44.0.2403.107 m fix
                 min-width: 100%;
                 width: auto;
             }
@@ -625,14 +622,15 @@ $cart-item-cell-padding-top: 20px;
 
     //  Empty cart
     .cart-empty {
-        @extend .abs-revert-side-paddings;
+        // TO DO - The selector ".abs-revert-side-paddings" was not found.
+        // @extend .abs-revert-side-paddings !optional;
     }
 
     //  Cross sell
     .block {
         &.crosssell {
-            @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
             @extend .abs-add-box-sizing-desktop;
+            @include lib-layout-column(2, 1, $layout-column-checkout__width-main);
             padding: 0 4% 0 0;
 
             .products-grid .product-item {

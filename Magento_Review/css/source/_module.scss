@@ -2,22 +2,18 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .data.switch .counter {
     color: $text__color__muted;
 
     &:before {
-        content: "(";
+        content: '(';
     }
 
     &:after {
-        content: ")";
+        content: ')';
     }
 }
 
@@ -34,13 +30,11 @@
 
 .review-control-vote {
     @include lib-rating-vote();
+
     &:before {
-        @include lib-rating-icons-content(
-            $_icon-content: $icon-star-empty
-        );
+        content: $rating-icon__content;
     }
 }
-
 //
 //    Review product page
 //--------------------------------------
@@ -98,7 +92,6 @@
             display: block;
             font-weight: 600;
         }
-
         margin-bottom: $indent__base;
     }
 
@@ -125,7 +118,7 @@
 
         .control {
             margin-top: $indent__s;
-            margin-bottom: 1.2*$indent__xl;
+            margin-bottom: 1.2 * $indent__xl;
         }
     }
 
@@ -141,16 +134,18 @@
         border-bottom: 1px solid $color-gray79;
         margin: 0;
         @include lib-clearer();
+
         &:last-child {
             border-width: 0;
         }
     }
 
     &-ratings {
+        // TO DO - The selector ".abs-rating-summary" was not found.
+        // @extend .abs-rating-summary !optional;
         display: table;
         max-width: 100%;
         margin-bottom: $indent__s;
-        @extend .abs-rating-summary;
     }
 
     &-author {
@@ -178,6 +173,7 @@
         margin-bottom: $indent__base;
     }
 }
+
 .page-main {
     .column {
         .review-add {
@@ -185,17 +181,16 @@
         }
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__s) {
+    $review-ratings-left: 280px;
+
     .review {
         &-form {
             max-width: 500px;
         }
-
-        $review-ratings-left: 280px;
 
         &-ratings {
             max-width: $review-ratings-left - $indent__xl;
@@ -233,13 +228,9 @@
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .data.table.reviews {
     .rating-summary {
         margin-top: -4px;
@@ -255,27 +246,32 @@
 }
 
 .product-reviews-summary {
-    margin-bottom: $indent__xs;
+    display: table;
+    margin: $indent__s 0 12px;
 
     .products.wrapper.list & {
         margin: 0 auto;
     }
 
+    &.empty {
+        margin-left: 0;
+    }
+
     .rating-summary {
-        display:inline-block;
+        position: relative;
+        left: (-$indent__xs);
+        display: table-cell;
         vertical-align: middle;
+        text-align: left;
     }
 
     .reviews-actions {
-        display:inline-block;
+        display: table-cell;
         vertical-align: middle;
-        font-size: floor(0.8 * $font-size__base);
+        line-height: $rating-icon__font-size;
 
-        a:not(:last-child) {
-            margin-right: 30px;
-        }
-
-        .action.view span {
+        a {
+            margin-right: $indent__xs;
         }
     }
 }
@@ -286,14 +282,13 @@
         margin-right: 30px;
     }
 }
-
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {
     .product-reviews-summary {
         margin-bottom: $indent__s + $indent__xs;
+
         .products.wrapper.list & {
             margin: 0;
         }
@@ -304,11 +299,9 @@
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
 //
 //    Account
 //--------------------------------------
@@ -316,6 +309,7 @@
     .items {
         .item {
             margin-bottom: $indent__base;
+
             &:last-child {
                 margin-bottom: 0;
             }
@@ -324,6 +318,7 @@
 
     .product-name {
         display: inline-block;
+
         &:not(:last-child) {
             margin-bottom: $indent__xs;
         }
@@ -358,7 +353,8 @@
     .account {
         .table-reviews {
             .col.actions {
-                @extend .abs-col-no-prefix;
+                // TO DO - The selector ".abs-col-no-prefix" was not found.
+                // @extend .abs-col-no-prefix !optional;
             }
         }
     }
@@ -370,21 +366,19 @@
 @include min-screen($screen__m) {
     .block-reviews-dashboard {
         .product-name {
-            @extend .abs-account-block-font-size;
+            // TO DO - The selector ".abs-account-block-font-size" was not found.
+            // @extend .abs-account-block-font-size !optional;
         }
     }
 }
-
 //
 //    Common
 //--------------------------------------
-
-
-
 .customer-review {
     .product-details {
         @extend .abs-add-clearfix;
         @extend .abs-margin-for-blocks-and-widgets;
+
         .rating-average-label {
             @extend .abs-visually-hidden;
         }
@@ -397,18 +391,19 @@
         margin-right: 3%;
     }
 
-    .product-info {
-    }
-
     .review-details {
         margin: 0;
 
         .title {
-            @extend .abs-account-title;
+            // TO DO - The selector ".abs-account-title" was not found.
+            // @extend .abs-account-title !optional;
         }
 
         .customer-review-rating {
+            // TO DO - The selector ".abs-rating-summary" was not found.
+            // @extend .abs-rating-summary !optional;
             margin-bottom: $indent__base;
+
             .item {
                 margin-bottom: $indent__s;
 
@@ -416,8 +411,6 @@
                     margin-bottom: 0;
                 }
             }
-
-            @extend .abs-rating-summary;
         }
 
         .review-title {
@@ -427,8 +420,7 @@
         }
 
         .review-content {
-            margin: 0;
-            margin-bottom: $indent__base;
+            margin: 0 0 $indent__base;
         }
 
         .review-date {
@@ -436,7 +428,6 @@
         }
     }
 }
-
 //
 //    Mobile
 //--------------------------------------
@@ -454,14 +445,14 @@
         }
     }
 }
-
 //
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {
     .customer-review {
         .product-details {
-            @extend .abs-margin-for-blocks-and-widgets-desktop;
+            // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
+            // @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
         }
     }
 }

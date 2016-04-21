@@ -2,11 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
 .column {
     .block-addbysku {
         .fieldset {
@@ -55,13 +53,10 @@
 
             .actions-toolbar {
                 clear: both;
-                @include lib-actions-toolbar(
-                $_actions-toolbar-actions-position: left,
-                $_actions-toolbar-margin: 0 0 $indent__base
-                );
+                @include lib-actions-toolbar( $_actions-toolbar-actions-position: left, $_actions-toolbar-margin : 0 0 $indent__base );
                 @include lib-actions-toolbar-clear-floats();
 
-                > .secondary {
+                & > .secondary {
                     text-align: left;
                 }
             }
@@ -69,11 +64,7 @@
 
         .action {
             &.add {
-                @include lib-button-icon(
-                $_icon-font-content: $icon-expand,
-                $_icon-font-text-hide: true,
-                $_icon-font-size: 20px
-                );
+                @include lib-button-icon( $_icon-font-content : $icon-expand, $_icon-font-text-hide: true, $_icon-font-size : 20px );
                 line-height: normal;
                 padding: 4px;
                 width: auto;
@@ -93,11 +84,10 @@
 }
 
 .block-cart-failed {
-    margin: $indent__xl 0;
     @extend .abs-shopping-cart-items;
+    margin: $indent__xl 0;
 
     .block-title {
-        // font-size: $h2__font-size;
         font-size: headings($heading-h2, font-size);
 
         strong {
@@ -114,11 +104,9 @@
         }
     }
 }
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .column {
         .block-addbysku {
@@ -129,13 +117,7 @@
 
             .action {
                 &.remove {
-                    @include lib-button-icon(
-                    $_icon-font-content: $icon-trash,
-                    $_icon-font-text-hide: true,
-                    $_icon-font-size: 18px,
-                    $_icon-font-color: $minicart-icons-color,
-                    $_icon-font-margin: -4px 0 0
-                    );
+                    @include lib-button-icon( $_icon-font-content : $icon-trash, $_icon-font-text-hide: true, $_icon-font-size : 18px, $_icon-font-color : $minicart-icons-color, $_icon-font-margin : -4px 0 0 );
                     @include lib-button-reset();
                 }
             }
@@ -158,17 +140,14 @@
                 &.remove {
                     @include lib-button-reset();
                     @include lib-button-as-link();
-                    margin-top: -4px;
                 }
             }
         }
     }
 }
-
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__m) {
     .block-cart-failed {
         @extend .abs-shopping-cart-items-desktop;

@@ -168,7 +168,7 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
                 font-size: $_submenu-font-size;
                 font-weight: $_submenu-font-weight;
                 line-height: $_submenu-line-height;
-                left: auto !important;
+                left: auto;
                 overflow-x: hidden;
                 padding: 0;
                 position: relative;
@@ -346,7 +346,8 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
                 box-sizing: border-box;
                 position: relative;
 
-                &:hover, &.ui-state-focus {
+                &:hover,
+                &.ui-state-focus {
                     background: $_nav-level0-item-background-color-hover;
                     border: $_nav-level0-item-border-hover;
                     color: $_nav-level0-item-color-hover;
@@ -426,7 +427,7 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
                     left: 100% !important;
                 }
 
-                .submenu-reverse{
+                .submenu-reverse {
                     left: auto !important;
                     right: 100%;
                 }

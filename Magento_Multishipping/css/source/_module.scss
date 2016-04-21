@@ -2,11 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
 .multicheckout {
     .title {
         margin-bottom: $indent__l;
@@ -46,11 +44,13 @@
         }
 
         .cart-price {
-            @extend .abs-checkout-cart-price;
+            // TO DO - The selector ".abs-checkout-cart-price" was not found.
+            // @extend .abs-checkout-cart-price !optional;
         }
 
         .product-item-name {
-            @extend .abs-checkout-product-name;
+            // TO DO - The selector ".abs-checkout-product-name" was not found.
+            // @extend .abs-checkout-product-name !optional;
         }
     }
 
@@ -90,11 +90,10 @@
     }
 
     .item-options {
-        margin: $indent__s 0 0;
         @extend .abs-product-options-list;
         @extend .abs-add-clearfix;
+        margin: $indent__s 0 0;
     }
-
     @extend .abs-account-blocks;
 
     .block {
@@ -127,7 +126,8 @@
 
     .block-title,
     .block-content .title {
-        @extend .abs-account-title;
+        // TO DO - The selector ".abs-account-title" was not found.
+        // @extend .abs-account-title !optional;
         border-bottom: $border-width__base solid $border-color__base;
         padding-bottom: $indent__s;
 
@@ -142,6 +142,7 @@
 
     .block-content {
         @extend .abs-add-clearfix;
+
         .title {
             border-bottom: none;
             padding-bottom: 0;
@@ -216,11 +217,9 @@
         display: block;
     }
 }
-
 //
 //  Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .multicheckout {
         .data.table {
@@ -342,6 +341,7 @@
 
         .block-billing {
             @extend .abs-add-clearfix-desktop-s;
+
             .box-billing-address {
                 @extend .abs-add-box-sizing-desktop-s;
                 float: left;
@@ -376,7 +376,6 @@
                 width: 75%;
             }
         }
-
         //  Payment methods
         .methods-payment {
             .item-content > .fieldset {

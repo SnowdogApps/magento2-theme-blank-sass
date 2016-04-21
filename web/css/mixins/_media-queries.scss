@@ -6,90 +6,65 @@
 //
 //  Version:
 //  1.6.1
-
 // --- generator ---------------------------------------------------------------
-
 @mixin mq($args...) {
-  $media-type: 'only screen';
-  $media-type-key: 'media-type';
-  $args: keywords($args);
-  $expr: '';
-
-  @if map-has-key($args, $media-type-key) {
-    $media-type: map-get($args, $media-type-key);
-    $args: map-remove($args, $media-type-key);
-  }
-
-  @each $key, $value in $args {
-    @if $value {
-      $expr: "#{$expr} and (#{$key}: #{$value})";
+    $media-type: 'only screen';
+    $media-type-key: 'media-type';
+    $args: keywords($args);
+    $expr: '';
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
     }
-  }
-
-  @media #{$media-type} #{$expr} {
-    @content;
-  }
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+    @media #{$media-type} #{$expr} {
+        @content;
+    }
 }
-
 // --- screen ------------------------------------------------------------------
-
 @mixin screen($min, $max, $orientation: inherit) {
-  @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
-    @content;
-  }
+    @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
+        @content;
+    }
 }
-
 @mixin max-screen($max) {
-  @include mq($max-width: $max) {
-    @content;
-  }
+    @include mq($max-width: $max) {
+        @content;
+    }
 }
-
 @mixin min-screen($min) {
-  @include mq($min-width: $min) {
-    @content;
-  }
+    @include mq($min-width: $min) {
+        @content;
+    }
 }
-
 @mixin screen-height($min, $max, $orientation: inherit) {
-  @include mq($min-height: $min, $max-height: $max, $orientation: $orientation) {
-    @content;
-  }
+    @include mq($min-height: $min, $max-height: $max, $orientation: $orientation) {
+        @content;
+    }
 }
-
 @mixin max-screen-height($max) {
-  @include mq($max-height: $max) {
-    @content;
-  }
+    @include mq($max-height: $max) {
+        @content;
+    }
 }
-
 @mixin min-screen-height($min) {
-  @include mq($min-height: $min) {
-    @content;
-  }
-}
-
-// --- hdpi --------------------------------------------------------------------
-
-@mixin hdpi($ratio: 1.3) {
-  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
-  only screen and (min-resolution: #{round($ratio*96)}dpi) {
-    @content;
-  }
+    @include mq($min-height: $min) {
+        @content;
+    }
 }
 
 // --- orientation -------------------------------------------------------------
-
 @mixin landscape() {
-  @include mq($orientation: landscape) {
-    @content;
-  }
+    @include mq($orientation: landscape) {
+        @content;
+    }
 }
-
 @mixin portrait() {
-  @include mq($orientation: portrait) {
-    @content;
-  }
+    @include mq($orientation: portrait) {
+        @content;
+    }
 }
-
-// --- target devices ----------------------------------------------------------

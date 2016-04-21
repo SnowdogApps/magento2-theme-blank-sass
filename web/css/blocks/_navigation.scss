@@ -93,12 +93,12 @@ $active-nav-indent: 54px;
             }
 
             &:last-child {
-                    border-bottom: 1px solid $color-gray82;
+                border-bottom: 1px solid $color-gray82;
             }
 
             &-trigger {
                 strong {
-                    display: inline-block !important;
+                    display: inline-block;
                     position: relative;
                     @include lib-icon-font(
                         $_icon-font-content : $icon-down,
@@ -116,8 +116,8 @@ $active-nav-indent: 54px;
 
                 &.active strong {
                     @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
-                    $_icon-font-position: after
+                        $_icon-font-content: $icon-up,
+                        $_icon-font-position: after
                     );
                 }
             }
@@ -139,10 +139,10 @@ $active-nav-indent: 54px;
                 &.greet.welcome {
                     border-top: 1px solid $color-gray82;
                     font-weight: 700;
-                    padding: .8rem $indent__base;
+                    padding: 0.8rem $indent__base;
                 }
 
-                > a {
+                & > a {
                     border-top: 1px solid $color-gray82;
                 }
             }
@@ -190,7 +190,7 @@ $active-nav-indent: 54px;
         }
 
         .nav-sections {
-            $_shadow: 0 0 5px 0 rgba(50, 50, 50, .75);
+            $_shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
 
             box-shadow: $_shadow;
             left: 0;
@@ -198,13 +198,13 @@ $active-nav-indent: 54px;
         }
 
         .nav-toggle {
-            &:after{
-                background: rgba(0,0,0,.01);
+            &:after {
+                background: rgba(0, 0, 0, 0.01);
                 content: '';
                 display: block;
                 height: 100%;
                 position: fixed;
-                right:0;
+                right: 0;
                 top: 0;
                 width: 100%;
                 z-index: 1;
@@ -220,8 +220,8 @@ $active-nav-indent: 54px;
         }
 
         &-item-title {
-            background: darken($navigation__background,5%);
-            border: solid darken($navigation__background,10%);
+            background: darken($navigation__background, 5%);
+            border: solid darken($navigation__background, 10%);
             border-width: 0 0 1px 1px;
             box-sizing: border-box;
             float: left;
@@ -280,7 +280,7 @@ $active-nav-indent: 54px;
         }
 
         &-item-content {
-            display: block !important;
+            display: block;
         }
 
         &-item-content > * {

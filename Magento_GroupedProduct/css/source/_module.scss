@@ -91,7 +91,8 @@
 
             & > tr {
                 & > td {
-                    @extend .abs-col-no-prefix;
+                    // TO DO - The selector ".abs-col-no-prefix" was not found.
+                    // @extend .abs-col-no-prefix !optional;
                     padding: $table-cell__padding-vertical $table-cell__padding-horizontal;
                     border: 0;
                     display: table-cell;

@@ -132,54 +132,34 @@
 // set adequant heading map
 
 @mixin lib-heading($_heading_level: h1) {
+    $map-type: $heading-default;
 
     @if $_heading_level == h1 {
         $map-type: $heading-h1;
     }
-    @else {
-        $h-type: $_heading_level;
-
-        // find maps adequate to heading level
-        @if $h-type == h2 {
-            @if variable-exists(heading-h2) {
-                $map-type: $heading-h2;
-            }
-            @else {
-                $map-type: $heading-default;
-            }
+    @else if $_heading_level == h2 {
+        @if variable-exists(heading-h2) {
+            $map-type: $heading-h2;
         }
-        @else if $h-type == h3 {
-            @if variable-exists(heading-h3) {
-                $map-type: $heading-h3;
-            }
-            @else {
-                $map-type: $heading-default;
-            }
+    }
+    @else if $_heading_level == h3 {
+        @if variable-exists(heading-h3) {
+            $map-type: $heading-h3;
         }
-        @else if $h-type == h4 {
-            @if variable-exists(heading-h4) {
-                $map-type: $heading-h4;
-            }
-            @else {
-                $map-type: $heading-default;
-            }
+    }
+    @else if $_heading_level == h4 {
+        @if variable-exists(heading-h4) {
+            $map-type: $heading-h4;
         }
-        @else if $h-type == h5 {
-            @if variable-exists(heading-h5) {
-                $map-type: $heading-h5;
-            }
-            @else {
-                $map-type: $heading-default;
-            }
+    }
+    @else if $_heading_level == h5 {
+        @if variable-exists(heading-h5) {
+            $map-type: $heading-h5;
         }
-
-        @else if $h-type == h6 {
-            @if variable-exists(heading-h6) {
-                $map-type: $heading-h6;
-            }
-            @else {
-                $map-type: $heading-default;
-            }
+    }
+    @else if $_heading_level == h6 {
+        @if variable-exists(heading-h6) {
+            $map-type: $heading-h6;
         }
     }
 
@@ -258,7 +238,7 @@
 
     sub,
     sup {
-        font-size: ($font-size__xs/$font-size__base)*100%;
+        font-size: ($font-size__xs / $font-size__base) * 100%;
         line-height: 0;
         position: relative;
         vertical-align: baseline;
@@ -306,7 +286,12 @@
         @include lib-heading(h6);
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         small,
         .small {
             @include lib-typography(

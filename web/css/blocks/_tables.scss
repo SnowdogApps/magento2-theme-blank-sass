@@ -2,11 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //  Common
 //  _____________________________________________
-
 .table-wrapper {
     margin-bottom: $indent__base;
 }
@@ -18,6 +16,7 @@ table {
 .table {
     tfoot {
         background: $sidebar__background-color;
+
         & > tr {
             &:first-child {
                 th,
@@ -39,11 +38,9 @@ table {
         }
     }
 }
-
 //
 //    Mobile
 //  _____________________________________________
-
 @include max-screen($screen__s) {
     .table-wrapper {
         border-top: $table__border-width $table__border-style $table__border-color;
@@ -74,7 +71,7 @@ table {
                 tbody {
                     th {
                         @extend .abs-no-display-s;
-                      }
+                    }
 
                     td {
                         &:last-child {
@@ -91,9 +88,9 @@ table {
                 display: block;
 
                 tr {
+                    @extend .abs-add-clearfix-mobile;
                     display: block;
 
-                    @extend .abs-add-clearfix-mobile;
                     &:first-child {
                         th,
                         td {
@@ -118,6 +115,7 @@ table {
 
                 .grand.totals {
                     font-size: 16px;
+
                     .amount {
                         padding-bottom: $indent__s;
                     }
@@ -147,11 +145,8 @@ table {
 //
 //  Desktop
 //  _____________________________________________
-
 @include min-screen($screen__s) {
     .table {
-        @include lib-table-bordered(
-            $_table_type: horizontal_body
-        );
+        @include lib-table-bordered( $_table_type: horizontal_body );
     }
 }

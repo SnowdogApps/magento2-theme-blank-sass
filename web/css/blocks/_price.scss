@@ -2,12 +2,9 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-
 //
 //    Common
 //--------------------------------------
-
-
 // Prices
 @mixin price-style-1() {
     .price {
@@ -22,15 +19,15 @@
     .price {
         &-including-tax,
         &-excluding-tax {
-            display: inline !important;
+            display: inline;
         }
 
         &-including-tax:before {
-            content:" / "
+            content: ' / ';
         }
 
         &-including-tax:after {
-            content: "("attr(data-label)")";
+            content: '("attr(data-label)")';
         }
     }
 }
@@ -48,6 +45,7 @@
 
         .cart-tax-total {
             @extend .abs-tax-total;
+
             &-expanded {
                 @extend .abs-tax-total-expanded;
             }
@@ -60,7 +58,7 @@
         font-size: 18px;
 
         &:before {
-            content: attr(data-label) ": ";
+            content: attr(data-label) ': ';
             font-size: 11px;
         }
 
@@ -69,8 +67,6 @@
         }
     }
 }
-
 @include price-style-1();
 @include price-style-3();
-
-@warn 'TO DO - No idea what the hell happened here - looks like piece of shit'
+// TO DO - No idea what the hell happened here - looks like piece of shit

@@ -97,7 +97,7 @@ $block-auth__border: 1px solid $color-gray-light3;
             &:before {
                 height: $block-auth__or-label__size;
                 line-height: $block-auth__or-label__size - 2px;
-                margin: -($block-auth__or-label__size / 2 + 1px) 0 0 -($block-auth__or-label__size / 2);
+                margin: -($block-auth__or-label__size / 2 + 1px) 0 0 (-$block-auth__or-label__size / 2);
                 min-width: $block-auth__or-label__size;
                 background: $color-white;
                 border-radius: 50%;
@@ -108,7 +108,7 @@ $block-auth__border: 1px solid $color-gray-light3;
                 display: inline-block;
                 left: 50%;
                 letter-spacing: normal;
-                padding: 0 .2rem;
+                padding: 0 0.2rem;
                 position: absolute;
                 text-align: center;
                 text-transform: uppercase;
@@ -130,15 +130,15 @@ $block-auth__border: 1px solid $color-gray-light3;
         text-align: left;
         top: 100%;
         transform-origin: 0 0;
-        transform: scale(1,0);
-        transition: transform linear 0.1s, visibility 0s linear 0.1s;
+        transform: scale(1, 0);
+        transition: transform linear 150ms, visibility 150ms linear 150ms;
         visibility: hidden;
         width: 100%;
 
         &._show {
             z-index: $dropdown-list__z-index;
             transform: scale(1, 1);
-            transition: transform linear 0.1s, visibility 0s linear 0s;
+            transition: transform linear 150ms, visibility 150ms linear 0;
             visibility: visible;
         }
     }
@@ -158,7 +158,6 @@ $block-auth__border: 1px solid $color-gray-light3;
         .actions-toolbar {
             & > .primary {
                 display: inline;
-                float: right;
                 margin-right: 0;
                 .action {
                     margin-right: 0;

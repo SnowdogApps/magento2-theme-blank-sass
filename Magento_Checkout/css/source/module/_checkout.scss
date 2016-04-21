@@ -7,20 +7,20 @@
 //  Page components
 //  ---------------------------------------------
 
-@import 'checkout/_checkout.scss';
-@import 'checkout/_estimated-total.scss';
-@import 'checkout/_progress-bar.scss';
-@import 'checkout/_fields.scss';
-@import 'checkout/_modals.scss';
-@import 'checkout/_tooltip.scss';
-@import 'checkout/_shipping.scss';
-@import 'checkout/_shipping-policy.scss';
+@import 'checkout/checkout';
+@import 'checkout/estimated-total';
+@import 'checkout/progress-bar';
+@import 'checkout/fields';
+@import 'checkout/modals';
+@import 'checkout/tooltip';
+@import 'checkout/shipping';
+@import 'checkout/shipping-policy';
 
-@import 'checkout/_sidebar.scss';
-@import 'checkout/_sidebar-shipping-information.scss';
-@import 'checkout/_order-summary.scss';
-@import 'checkout/_authentication.scss';
+@import 'checkout/sidebar';
+@import 'checkout/sidebar-shipping-information';
+@import 'checkout/order-summary';
+@import 'checkout/authentication';
 
-@import 'checkout/_payments.scss';
-@import 'checkout/_payment-options.scss';
-@import 'checkout/_checkout-agreements.scss';
+@import 'checkout/payments';
+@import 'checkout/payment-options';
+@import 'checkout/checkout-agreements';

@@ -25,7 +25,8 @@
         .table-billing-agreements-related {
             .col {
                 &.actions {
-                    @extend .abs-col-no-prefix;
+                    // TO DO - The selector ".abs-col-no-prefix" was not found.
+                    // @extend .abs-col-no-prefix !optional;
                 }
             }
         }
