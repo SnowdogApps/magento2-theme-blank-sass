@@ -189,7 +189,7 @@ $checkout-summary-items__padding: 15px;
             // should extend only the class below like less extend('.className')
             // not others selectors like "div.className" etc.
             // TO DO - The selector ".abs-sidebar-totals-mobile" was not found.
-            @extend .abs-sidebar-totals-mobile !optional;
+            // @extend .abs-sidebar-totals-mobile !optional;
         }
     }
 }

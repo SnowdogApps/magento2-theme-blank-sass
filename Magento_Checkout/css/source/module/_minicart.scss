@@ -247,7 +247,7 @@ $minicart-qty__height        : 24px;
         }
         .toggle {
             // TO DO - The selector ".abs-toggling-title" was not found.
-            @extend .abs-toggling-title !optional;
+            // @extend .abs-toggling-title !optional;
             &:after {
                 color: $color-gray56;
                 margin: 0 0 0 $indent__xs;

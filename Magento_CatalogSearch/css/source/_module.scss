@@ -108,7 +108,7 @@ $autocomplete-item-amount__color: $color-gray60;
 
 .form.search.advanced {
     // TO DO - The selector ".abs-forms-general-desktop" was not found.
-    @extend .abs-forms-general-desktop !optional;
+    // @extend .abs-forms-general-desktop !optional;
     .fields.range {
         .field {
             &:first-child {

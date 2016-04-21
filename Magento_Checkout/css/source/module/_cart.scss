@@ -69,7 +69,7 @@ $cart-item-cell-padding-top: 20px;
 
                 .action.primary {
                     // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
-                    @extend .abs-revert-to-action-secondary !optional;
+                    // @extend .abs-revert-to-action-secondary !optional;
                     width: auto;
                 }
             }
@@ -82,7 +82,7 @@ $cart-item-cell-padding-top: 20px;
             }
         }
         // TO DO - The selector ".abs-cart-block" was not found.
-        @extend .abs-cart-block !optional;
+        // @extend .abs-cart-block !optional;
         .title {
             strong {
                 font-size: 14px;
@@ -189,7 +189,7 @@ $cart-item-cell-padding-top: 20px;
                 padding: $cart-item-cell-padding-top 11px $indent__s;
                 text-align: center;
                 // TO DO - The selector ".abs-incl-excl-tax" was not found.
-                @extend .abs-incl-excl-tax !optional;
+                // @extend .abs-incl-excl-tax !optional;
             }
 
             &.qty {
@@ -371,7 +371,7 @@ $cart-item-cell-padding-top: 20px;
             .col.item,
             .item-actions td {
                 // TO DO - The selector ".abs-col-no-prefix" was not found.
-                @extend .abs-col-no-prefix !optional;
+                // @extend .abs-col-no-prefix !optional;
             }
             .col.qty {
                 text-align: center;
@@ -379,7 +379,7 @@ $cart-item-cell-padding-top: 20px;
 
             tbody > tr > td:last-child {
                 // TO DO - The selector ".abs-no-border-bottom-top" was not found.
-                @extend .abs-no-border-bottom-top !optional;
+                // @extend .abs-no-border-bottom-top !optional;
             }
         }
     }
@@ -387,7 +387,7 @@ $cart-item-cell-padding-top: 20px;
     .cart-totals {
         .totals {
             // TO DO - The selector ".abs-sidebar-totals-mobile" was not found.
-            @extend .abs-sidebar-totals-mobile !optional;
+            // @extend .abs-sidebar-totals-mobile !optional;
         }
     }
 }
@@ -499,7 +499,7 @@ $cart-item-cell-padding-top: 20px;
 
         .page-title-wrapper {
             // TO DO - The selector ".abs-revert-side-paddings" was not found.
-            @extend .abs-revert-side-paddings !optional;
+            // @extend .abs-revert-side-paddings !optional;
         }
     }
     //  Cart container
@@ -549,7 +549,7 @@ $cart-item-cell-padding-top: 20px;
 
             .content {
                 // TO DO - The selector ".abs-revert-side-paddings" was not found.
-                @extend .abs-revert-side-paddings !optional;
+                // @extend .abs-revert-side-paddings !optional;
             }
 
             .fieldset {
@@ -623,7 +623,7 @@ $cart-item-cell-padding-top: 20px;
     //  Empty cart
     .cart-empty {
         // TO DO - The selector ".abs-revert-side-paddings" was not found.
-        @extend .abs-revert-side-paddings !optional;
+        // @extend .abs-revert-side-paddings !optional;
     }
 
     //  Cross sell

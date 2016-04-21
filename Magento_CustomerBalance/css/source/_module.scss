@@ -45,7 +45,7 @@
 
     .table-wrapper.balance-history {
         // TO DO - The selector ".abs-account-table-margin-desktop" was not found.
-        @extend .abs-account-table-margin-desktop !optional;
+        // @extend .abs-account-table-margin-desktop !optional;
     }
 }
 
@@ -55,8 +55,8 @@
 @include max-screen($screen__s) {
     .table-wrapper.balance-history {
         // TO DO - The selector ".abs-account-table-margin-mobile" was not found.
-        @extend .abs-account-table-margin-mobile !optional;
+        // @extend .abs-account-table-margin-mobile !optional;
         // TO DO - The selector ".abs-no-border-top" was not found.
-        @extend .abs-no-border-top!optional;
+        // @extend .abs-no-border-top !optional;
     }
 }

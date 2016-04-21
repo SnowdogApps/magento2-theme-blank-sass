@@ -53,7 +53,7 @@
 .magento-rma-returns-returns,
 .magento-rma-returns-view {
     // TO DO - The selector ".abs-title-orders" was not found.
-    @extend .abs-title-orders !optional;
+    // @extend .abs-title-orders !optional;
 }
 //
 //    Guest return view page
@@ -65,7 +65,7 @@
         }
     }
     // TO DO - The selector ".abs-title-orders" was not found.
-    @extend .abs-title-orders !optional;
+    // @extend .abs-title-orders !optional;
 }
 //
 //    Mobile
@@ -84,7 +84,7 @@
     .magento-rma-returns-returns,
     .magento-rma-returns-view {
         // TO DO - The selector ".abs-title-orders-mobile" was not found.
-        @extend .abs-title-orders-mobile !optional;
+        // @extend .abs-title-orders-mobile !optional;
     }
     .account {
         .column.main {
@@ -103,7 +103,7 @@
     }
     .table-wrapper.table-returns {
         // TO DO - The selector ".abs-no-border-top" was not found.
-        @extend .abs-no-border-top !optional;
+        // @extend .abs-no-border-top !optional;
     }
 }
 //
@@ -113,19 +113,19 @@
     .form-create-return {
         @extend .abs-add-fields-desktop;
         // TO DO - The selector ".abs-form-field-column-2" was not found.
-        @extend .abs-form-field-column-2 !optional;
+        // @extend .abs-form-field-column-2 !optional;
         .fieldset .field {
             width: 45%;
         }
     }
     .return-status {
         // TO DO - The selector ".abs-status-desktop" was not found.
-        @extend .abs-status-desktop !optional;
+        // @extend .abs-status-desktop !optional;
     }
     .magento-rma-returns-returns,
     .magento-rma-returns-view {
         // TO DO - The selector ".abs-title-orders-desktop" was not found.
-        @extend .abs-title-orders-desktop !optional;
+        // @extend .abs-title-orders-desktop !optional;
     }
     .magento-rma-guest-returns {
         .column.main .block.block-order-details-view {

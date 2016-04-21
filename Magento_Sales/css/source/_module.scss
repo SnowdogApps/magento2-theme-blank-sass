@@ -161,7 +161,7 @@
         &.price,
         &.subtotal {
             // TO DO - The selector ".abs-incl-excl-tax" was not found.
-            @extend .abs-incl-excl-tax !optional;
+            // @extend .abs-incl-excl-tax !optional;
         }
 
         &.name {
@@ -178,7 +178,7 @@
 
     tfoot {
         // TO DO - The selector ".abs-account-summary" was not found.
-        @extend .abs-account-summary !optional;
+        // @extend .abs-account-summary !optional;
     }
 
     .action {
@@ -320,12 +320,12 @@
 .sales-guest-view,
 .magento-rma-guest-returns {
     // TO DO - The selector ".abs-title-orders" was not found.
-    @extend .abs-title-orders !optional;
+    // @extend .abs-title-orders !optional;
 }
 
 .form-orders-search {
     // TO DO - The selector ".abs-forms-general-desktop" was not found.
-    @extend .abs-forms-general-desktop !optional;
+    // @extend .abs-forms-general-desktop !optional;
     .field {
         &.email,
         &.zip {
@@ -337,7 +337,7 @@
 .block-reorder {
     .block-title {
         // TO DO - The selector ".abs-block-widget-title" was not found.
-        @extend .abs-block-widget-title !optional;
+        // @extend .abs-block-widget-title !optional;
     }
 
     .actions-toolbar {
@@ -378,7 +378,7 @@
             .table-wrapper {
                 .data.table {
                     // TO DO - The selector ".abs-table-striped" was not found.
-                    @extend .abs-table-striped !optional;
+                    // @extend .abs-table-striped !optional;
                 }
             }
         }
@@ -394,14 +394,14 @@
     .table-wrapper {
         &.orders-recent {
             // TO DO - The selector ".abs-account-table-margin-mobile" was not found.
-            @extend .abs-account-table-margin-mobile !optional;
+            // @extend .abs-account-table-margin-mobile !optional;
         }
     }
 
     .table-wrapper {
         &.orders-recent {
             // TO DO - The selector ".abs-no-border-top" was not found.
-            @extend .abs-no-border-top !optional;
+            // @extend .abs-no-border-top !optional;
         }
     }
 
@@ -424,7 +424,7 @@
                 &.actions,
                 &.options {
                     // TO DO - The selector ".abs-col-no-prefix" was not found.
-                    @extend .abs-col-no-prefix !optional;
+                    // @extend .abs-col-no-prefix !optional;
                 }
             }
         }
@@ -434,13 +434,13 @@
     [class^="sales-guest-"],
     .sales-guest-view {
         // TO DO - The selector ".abs-title-orders-mobile" was not found.
-        @extend .abs-title-orders-mobile !optional;
+        // @extend .abs-title-orders-mobile !optional;
     }
 
     .order-details-items {
         .table-wrapper {
             // TO DO - The selector ".abs-no-border-top" was not found.
-            @extend .abs-no-border-top !optional;
+            // @extend .abs-no-border-top !optional;
         }
 
         .order-title {
@@ -525,7 +525,7 @@
 @include min-screen($screen__m) {
     .table-wrapper.orders-recent {
         // TO DO - The selector ".abs-account-table-margin-desktop" was not found.
-        @extend .abs-account-table-margin-desktop !optional;
+        // @extend .abs-account-table-margin-desktop !optional;
     }
 
     .order-links {
@@ -557,7 +557,7 @@
     [class^="sales-guest-"],
     .sales-guest-view {
         // TO DO - The selector ".abs-title-orders-desktop" was not found.
-        @extend .abs-title-orders-desktop !optional;
+        // @extend .abs-title-orders-desktop !optional;
         .column.main .block.block-order-details-view {
             @extend .abs-add-clearfix-desktop;
             .block-content:not(.widget) .box {
@@ -571,7 +571,7 @@
 
     .order-status {
         // TO DO - The selector ".abs-status-desktop" was not found.
-        @extend .abs-status-desktop !optional;
+        // @extend .abs-status-desktop !optional;
     }
 
     .block-order-details-comments {
