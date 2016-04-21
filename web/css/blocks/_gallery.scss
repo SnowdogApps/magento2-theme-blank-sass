@@ -41,7 +41,7 @@ $fotorama-thumb-arrow: 30px;
 
 .fotorama-sprite {
     @extend .fotorama-print-background;
-    background: url('../gallery/gallery.png') no-repeat;
+    background: url('../images/gallery.png') no-repeat;
 }
 
 .fotorama-inline-block {
@@ -250,9 +250,8 @@ $fotorama-thumb-arrow: 30px;
     top: 0;
     width: 100%;
     z-index: $z-index-10;
-
     .fotorama__wrap {
-        max-width: 100%!important;
+        max-width: 100% !important;
     }
 }
 
@@ -456,7 +455,7 @@ $fotorama-thumb-arrow: 30px;
     }
 }
 
-.fotorama__nav__frame:focus & {
+.fotorama__nav__frame:focus {
     @extend .fotorama-focus-overlay;
     box-shadow: none;
 
