@@ -236,24 +236,23 @@ $fotorama-thumb-arrow: 30px;
 .fotorama {
     min-width: 1px;
     overflow: hidden;
-}
-
-.fotorama--fullscreen {
-    background: $color-white;
-    bottom: 0;
-    float: none;
-    height: 100%;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: $z-index-10;
-    .fotorama__wrap {
-        max-width: 100% !important;
+    &--fullscreen {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        background: $color-white;
+        z-index: $z-index-10;
+        .fotorama__wrap {
+            max-width: 100% !important;
+        }
     }
 }
+
 
 .fotorama__wrap {
     @extend .fotorama-no-select;
