@@ -44,7 +44,8 @@ $cart-item-cell-padding-top: 20px;
     }
 
     .block {
-        @extend .abs-cart-block;
+        // TO DO - The selector ".abs-incl-excl-tax" was not found.
+        // @extend .abs-cart-block;
         form:not(:last-of-type) {
             .fieldset {
                 margin: 0 0 $indent__m;
@@ -185,11 +186,10 @@ $cart-item-cell-padding-top: 20px;
             &.msrp,
             &.price,
             &.subtotal {
-                @extend .abs-incl-excl-tax;
-                padding: $cart-item-cell-padding-top 11px $indent__s;
-                text-align: center;
                 // TO DO - The selector ".abs-incl-excl-tax" was not found.
                 // @extend .abs-incl-excl-tax !optional;
+                padding: $cart-item-cell-padding-top 11px $indent__s;
+                text-align: center;
             }
 
             &.qty {
