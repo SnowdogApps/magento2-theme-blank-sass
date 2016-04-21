@@ -102,13 +102,12 @@
 
 @mixin _lib-set-column-width($_index, $_width) {
     @if $_index > 0 {
-        $_units: 'px', '%', 'em', 'rem', 'pt';
-        $_unit: nth($_units, $_index);
+        $_units    : 'px', '%', 'em', 'rem', 'pt';
+        $_unit     : nth($_units, $_index);
+        $_checkUnit: false;
+        
         @if unit($_width) == $_unit {
             $_checkUnit: true;
-        }
-        @else {
-            $_checkUnit: false;
         }
         @include _lib-column-width($_width, $_checkUnit, $_index);
         @include _lib-set-column-width($_index - 1, $_width);
