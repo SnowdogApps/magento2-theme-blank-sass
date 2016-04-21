@@ -266,7 +266,7 @@ $gift-item-block-title-icon__margin         : 0 0 0 $indent__s;
     .gift-message {
         .field {
             // TO DO - The selector ".abs-clearfix" was not found.
-            @extend .abs-clearfix !optional;
+            // @extend .abs-clearfix !optional;
             @include lib-form-field-type-revert(
                 $_type: inline,
                 $_type-inline-label-align: left

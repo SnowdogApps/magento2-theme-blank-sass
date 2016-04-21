@@ -12,7 +12,7 @@
     .action.primary.customize {
         @extend .abs-button-l;
         // TO DO - The selector ".abs-button-responsive" was not found.
-        @extend .abs-button-responsive !optional;
+        // @extend .abs-button-responsive !optional;
     }
 }
 
@@ -132,7 +132,7 @@
             .action.primary {
                 @extend .abs-button-l;
                 // TO DO - The selector ".abs-button-responsive" was not found.
-                @extend .abs-button-responsive !optional;
+                // @extend .abs-button-responsive !optional;
             }
         }
 
@@ -141,7 +141,7 @@
 
             & > .action {
                 // TO DO - The selector ".abs-actions-addto" was not found.
-                @extend .abs-actions-addto !optional;
+                // @extend .abs-actions-addto !optional;
                 margin-right: 5%;
 
                 &.tocompare {

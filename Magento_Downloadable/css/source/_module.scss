@@ -79,7 +79,7 @@
         padding-bottom: $indent__s;
         margin-bottom: $indent__s;
         // TO DO - The selector ".clearer" was not found.
-        @extend .clearer !optional;
+        // @extend .clearer !optional;
         width: 100%;
         position: relative;
         z-index: 1;
@@ -149,7 +149,7 @@
     .page-product-downloadable {
         .product-add-form {
             // TO DO - The selector ".clearer" was not found.
-            @extend .clearer !optional;
+            // @extend .clearer !optional;
         }
         .product-options-wrapper {
             float: left;

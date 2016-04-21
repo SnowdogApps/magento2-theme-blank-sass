@@ -20,7 +20,7 @@
 
         .fieldset {
             // TO DO - The selector ".abs-forms-margin-small" was not found.
-            @extend .abs-forms-margin-small !optional;
+            // @extend .abs-forms-margin-small !optional;
         }
     }
 }
@@ -55,13 +55,13 @@
 @include min-screen($screen__m) {
     .form-giftcard-redeem {
         // TO DO - The selector ".abs-forms-general-desktop" was not found.
-        @extend .abs-forms-general-desktop !optional;
+        // @extend .abs-forms-general-desktop !optional;
     }
 
     .block-balance-giftcard {
         .block-content {
             // TO DO - The selector ".abs-account-block-font-size" was not found.
-            @extend .abs-account-block-font-size !optional;
+            // @extend .abs-account-block-font-size !optional;
         }
     }
 }

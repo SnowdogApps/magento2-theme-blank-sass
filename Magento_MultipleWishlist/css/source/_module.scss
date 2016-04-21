@@ -40,7 +40,7 @@ $desktop-popup-position-top: 20%;
             &.split {
                 @include lib-icon-font-symbol($_icon-font-content: $icon-wishlist-full);
                 // TO DO - The selector ".abs-actions-addto" was not found.
-                @extend .abs-actions-addto !optional;
+                // @extend .abs-actions-addto !optional;
                 margin-right: 5px;
 
                 &:before {
@@ -231,7 +231,7 @@ $desktop-popup-position-top: 20%;
 .block-wishlist-search-form {
     .block-title {
         // TO DO - The selector ".abs-account-title" was not found.
-        @extend .abs-account-title !optional;
+        // @extend .abs-account-title !optional;
     }
 
     .form-wishlist-search {
@@ -249,12 +249,12 @@ $desktop-popup-position-top: 20%;
 .block-wishlist-search-results {
     .block-title {
         // TO DO - The selector ".abs-account-title" was not found.
-        @extend .abs-account-title !optional;
+        // @extend .abs-account-title !optional;
     }
 
     .data.table {
         // TO DO - The selector ".abs-table-striped" was not found.
-        @extend .abs-table-striped !optional;
+        // @extend .abs-table-striped !optional;
     }
 
     .table-wrapper {
@@ -337,7 +337,7 @@ $desktop-popup-position-top: 20%;
                 .wishlist-name {
                     font-size: 16px;
                     // TO DO - The selector ".abs-toggling-title-mobile" was not found.
-                    @extend .abs-toggling-title-mobile !optional;
+                    // @extend .abs-toggling-title-mobile !optional;
                 }
 
                 &-items {
