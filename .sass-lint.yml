@@ -5,7 +5,7 @@ options:
 # Rule Configuration
 rules:
   brace-style:
-    - 2
+    - 0 # Broken in 1.6.0 - check issue #632
     -
       style: 'stroustrup'
       clean-import-paths: 2

@@ -117,9 +117,11 @@ div.mage-error[generated] {
     }
 }
 
-input:focus ~ .tooltip .tooltip-content,
-select:focus ~ .tooltip .tooltip-content {
-    display: block;
+input,
+select {
+    &:focus ~ .tooltip .tooltip-content {
+        display: block;
+    }
 }
 
 .hasDatepicker {
