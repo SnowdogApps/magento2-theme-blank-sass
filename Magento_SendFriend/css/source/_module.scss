@@ -30,7 +30,7 @@
     .form.send.friend {
         @extend .abs-add-fields-desktop;
         // TO DO - The selector ".abs-form-field-column-2" was not found.
-        @extend .abs-form-field-column-2 !optional;
+        // @extend .abs-form-field-column-2 !optional;
         width: 60%;
 
         .fieldset {

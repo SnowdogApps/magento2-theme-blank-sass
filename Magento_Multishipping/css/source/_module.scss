@@ -45,12 +45,12 @@
 
         .cart-price {
             // TO DO - The selector ".abs-checkout-cart-price" was not found.
-            @extend .abs-checkout-cart-price !optional;
+            // @extend .abs-checkout-cart-price !optional;
         }
 
         .product-item-name {
             // TO DO - The selector ".abs-checkout-product-name" was not found.
-            @extend .abs-checkout-product-name !optional;
+            // @extend .abs-checkout-product-name !optional;
         }
     }
 
@@ -127,7 +127,7 @@
     .block-title,
     .block-content .title {
         // TO DO - The selector ".abs-account-title" was not found.
-        @extend .abs-account-title !optional;
+        // @extend .abs-account-title !optional;
         border-bottom: $border-width__base solid $border-color__base;
         padding-bottom: $indent__s;
 

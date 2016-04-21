@@ -146,7 +146,7 @@
         max-width: 100%;
         margin-bottom: $indent__s;
         // TO DO - The selector ".abs-rating-summary" was not found.
-        @extend .abs-rating-summary !optional;
+        // @extend .abs-rating-summary !optional;
     }
 
     &-author {
@@ -355,7 +355,7 @@
         .table-reviews {
             .col.actions {
                 // TO DO - The selector ".abs-col-no-prefix" was not found.
-                @extend .abs-col-no-prefix !optional;
+                // @extend .abs-col-no-prefix !optional;
             }
         }
     }
@@ -368,7 +368,7 @@
     .block-reviews-dashboard {
         .product-name {
             // TO DO - The selector ".abs-account-block-font-size" was not found.
-            @extend .abs-account-block-font-size !optional;
+            // @extend .abs-account-block-font-size !optional;
         }
     }
 }
@@ -397,12 +397,12 @@
 
         .title {
             // TO DO - The selector ".abs-account-title" was not found.
-            @extend .abs-account-title !optional;
+            // @extend .abs-account-title !optional;
         }
 
         .customer-review-rating {
             // TO DO - The selector ".abs-rating-summary" was not found.
-            @extend .abs-rating-summary !optional;
+            // @extend .abs-rating-summary !optional;
             margin-bottom: $indent__base;
 
             .item {
@@ -453,7 +453,7 @@
     .customer-review {
         .product-details {
             // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
-            @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
+            // @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
         }
     }
 }

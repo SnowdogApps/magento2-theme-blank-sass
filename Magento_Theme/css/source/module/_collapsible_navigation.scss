@@ -92,7 +92,7 @@ $collapsible-nav-current-font-weight: $font-weight__semibold;
 
         .title {
             // TO DO - The selector ".abs-toggling-title-mobile" was not found.
-            @extend .abs-toggling-title-mobile !optional;
+            // @extend .abs-toggling-title-mobile !optional;
         }
 
         .content {
