@@ -1,5 +1,4 @@
 {
-  "engine": "node >= 4.2.6",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-plumber": "^1.1.0",
