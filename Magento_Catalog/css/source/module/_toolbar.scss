@@ -28,14 +28,13 @@ $pager__font-weight             : $font-weight__bold;
         border-radius: 3px;
     }
     &-amount {
+        position: absolute;
+        top: 0;
         left: 0;
-        line-height: $toolbar-mode-icon-font-size + 2;
         margin: 0;
         padding: 7px 0;
-        position: absolute;
+        line-height: $toolbar-mode-icon-font-size + 2;
         text-align: left;
-        top: 0;
-        vertical-align: middle;
         .products.wrapper ~ .toolbar & {
             display: none;
         }
