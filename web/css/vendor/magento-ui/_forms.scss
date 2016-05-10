@@ -357,7 +357,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     }
 
     div.mage-error[generated] {
-        @include lib-form-validation-note();
+        @include lib-form-validation-note($_note-icon-font-margin:0);
     }
 
     input[type="button"],
