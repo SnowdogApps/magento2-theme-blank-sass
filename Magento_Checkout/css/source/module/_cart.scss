@@ -12,11 +12,6 @@ $cart-item-cell-padding-top: 20px;
 //  Shopping cart
 //  ---------------------------------------------
 .checkout-cart-index {
-    .page-main {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
     .page-title-wrapper {
         padding-left: $layout__width-xs-indent;
         padding-right: $layout__width-xs-indent;
@@ -34,21 +29,34 @@ $cart-item-cell-padding-top: 20px;
     @extend .abs-adjustment-incl-excl-tax;
     background: $sidebar__background-color;
     margin-bottom: $indent__m;
-    padding: 1px 0 $indent__m;
+    padding: 1px 15px $indent__m;
 
     & > .title {
-        font-size: 24px;
-        display: none;
+        font-size: 18px;
         font-weight: $font-weight__light;
-        margin: 12px 0;
+        margin: 15px 0 10px;
+        display: block;
     }
 
     .block {
-        // TO DO - The selector ".abs-incl-excl-tax" was not found.
-        // @extend .abs-cart-block;
-        form:not(:last-of-type) {
-            .fieldset {
-                margin: 0 0 $indent__m;
+        @extend .abs-discount-block;
+        .fieldset {
+            margin: 15px 0 $indent__m $indent__xs;
+
+            .field {
+                margin: 0 0 $indent__s;
+
+                &.note {
+                    font-size: $font-size__s;
+                }
+            }
+
+            .methods {
+                .field {
+                    > .label {
+                        display: inline;
+                    }
+                }
             }
         }
 
@@ -71,7 +79,6 @@ $cart-item-cell-padding-top: 20px;
                 .action.primary {
                     // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
                     // @extend .abs-revert-to-action-secondary !optional;
-                    width: auto;
                 }
             }
         }
@@ -106,6 +113,13 @@ $cart-item-cell-padding-top: 20px;
                         overflow: hidden;
                     }
                 }
+            }
+        }
+    }
+    .actions-toolbar {
+        > .primary {
+            button {
+                @extend .abs-revert-secondary-color;
             }
         }
     }
@@ -147,6 +161,8 @@ $cart-item-cell-padding-top: 20px;
 }
 //  Totals block
 .cart-totals {
+    border-top: 1px solid $border-color__base;
+    padding-top: $indent__s;
     @extend .abs-sidebar-totals;
 
     tbody,
@@ -221,6 +237,7 @@ $cart-item-cell-padding-top: 20px;
                 padding-left: $mobile-cart-padding;
                 padding-right: $mobile-cart-padding;
                 white-space: normal;
+                text-align: center;
             }
         }
 
@@ -235,30 +252,17 @@ $cart-item-cell-padding-top: 20px;
 
         .actions-toolbar {
             @extend .abs-add-clearfix;
-            min-height: 20px;
-            padding-bottom: 15px;
-            position: relative;
 
-            & > .action-delete,
-            & > .action-edit {
-                position: absolute;
-                right: 16px;
-                top: 0;
-                @include lib-icon-font(
-                    $icon-edit,
-                    $_icon-font-size        : 18px,
-                    $_icon-font-line-height : 20px,
-                    $_icon-font-text-hide   : true,
-                    $_icon-font-color       : $minicart-icons-color,
-                    $_icon-font-color-hover : $primary__color,
-                    $_icon-font-color-active: $minicart-icons-color
-                );
-            }
+            > .action {
+                @include lib-button();
+                @include lib-link-as-button();
+                margin-bottom: $indent__s;
+                margin-right: $indent__s;
+                border-radius: 3px;
 
-            & > .action-delete {
-                @extend .abs-action-button-as-link;
-                right: 0;
-                @include lib-icon-font-symbol( $_icon-font-content: $icon-trash );
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
 
@@ -396,6 +400,7 @@ $cart-item-cell-padding-top: 20px;
     //  Cart container
     .cart-container {
         .form-cart {
+            @extend .abs-shopping-cart-items-mobile;
             .actions.main {
                 text-align: center;
             }

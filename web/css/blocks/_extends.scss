@@ -67,6 +67,26 @@
 }
 
 //
+//  Button reset width, floats, margins
+//  ---------------------------------------------
+
+.abs-button-responsive {
+    @include lib-button-responsive();
+}
+
+@include min-screen($screen__m) {
+    .abs-button-desktop {
+        width: auto;
+    }
+}
+
+@include max-screen($screen__m) {
+    .abs-button-responsive-smaller {
+        @include lib-button-responsive();
+    }
+}
+
+//
 //  Action addto
 //  ---------------------------------------------
 .abs-action-addto-product {
@@ -152,7 +172,7 @@
 //  ---------------------------------------------
 .abs-reset-image-wrapper {
     height: auto;
-    padding: 0;
+    padding: 0 !important;
 
     .product-image-photo {
         position: static;
@@ -1115,66 +1135,60 @@
     }
 }
 
-// to check
+
+//
 //  Shopping cart and payment disaount codes block
 //  ---------------------------------------------
+
 .abs-discount-block {
-    .block {
-        // TO DO - The selector ".abs-cart-block" was not found.
-        // @extend .abs-cart-block !optional;
-        & > .title {
-            strong {
-                color: $color-blue1;
+    > .title {
+        border-top: $border-width__base solid $border-color__base;
+        cursor: pointer;
+        font-weight: $font-weight__semibold;
+        @include lib-icon-font(
+    $_icon-font-content: $icon-down,
+    $_icon-font-size: 30px,
+    $_icon-font-position: after,
+    $_icon-font-display: block
+    );
+        margin-bottom: 0;
+        overflow: hidden;
+        padding: 7px $indent__l 7px $indent__xs;
+        position: relative;
+
+        &:after {
+            position: absolute;
+            right: -5px;
+            top: -5px;
+        }
+
+        strong {
+            .column.main & {
+                font-size:18px;
                 font-weight: $font-weight__regular;
             }
         }
     }
 
-    .actions-toolbar {
-        display: table-cell;
-        vertical-align: top;
-        width: 1%;
-
-        .action {
-            &.cancel,
-            &.primary {
-                // TO DO - The selector ".abs-revert-to-action-secondary" was not found.
-                // @extend .abs-revert-to-action-secondary !optional;
-                border-bottom-left-radius: 0;
-                border-top-left-radius: 0;
-                margin: 0 0 0 -1px;
-                white-space: nowrap;
-                width: auto;
-            }
-        }
-
-        .secondary {
-            bottom: 5px;
-            left: $mobile-cart-padding;
-            position: absolute;
-        }
+    > .content {
+        display: none;
     }
 
-    .action.check {
-        @extend .abs-action-button-as-link;
-        font-weight: $font-weight__regular;
-    }
-
-    .fieldset {
-        display: table;
-        width: 100%;
-
-        & > .field {
-            & > .label {
-                display: none;
-            }
+    &.active {
+        > .title {
+            @include lib-icon-font-symbol(
+        $_icon-font-content: $icon-prev,
+        $_icon-font-position: after
+        );
         }
-    }
 
-    .field {
-        display: table-cell;
+        > .content {
+            display: block;
+        }
     }
 }
+
+
 
 @include min-screen($screen__m) {
     .abs-discount-block-desktop {

@@ -147,6 +147,10 @@ table {
 //  _____________________________________________
 @include min-screen($screen__s) {
     .table {
-        @include lib-table-bordered( $_table_type: horizontal_body );
+        &:not(.cart) {
+            &:not(.totals) {
+                @include lib-table-bordered( $_table_type: horizontal_body );
+            }
+        }
     }
 }
