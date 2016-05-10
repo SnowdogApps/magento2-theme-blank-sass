@@ -573,14 +573,6 @@ body {
                     }
                 }
 
-                & > .authorization-link {
-                    &:after {
-                        content: attr(data-label);
-                        display: inline-block;
-                        margin: 0 -$indent__xs 0 $indent__xs;
-                    }
-                }
-
                 & > .customer-welcome + .authorization-link {
                     display: none;
                 }
