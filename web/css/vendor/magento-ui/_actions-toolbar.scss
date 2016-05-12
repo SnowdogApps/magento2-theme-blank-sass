@@ -22,6 +22,7 @@
     @include lib-clearfix();
     margin: $_actions-toolbar-margin;
     padding: $_actions-toolbar-padding;
+    clear: both;
     @include _lib-actions-toolbar-align($_actions-toolbar-actions-position);
     @include _lib-actions-toolbar-floats($_actions-toolbar-actions-position, $_actions-toolbar-actions-reverse);
     .primary,

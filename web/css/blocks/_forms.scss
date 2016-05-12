@@ -170,12 +170,3 @@ select {
         }
     }
 }
-
-//
-//    Desktop
-//--------------------------------------
-@include min-screen($screen__m) {
-    .legend {
-        border-bottom: $legend-border-bottom;
-    }
-}
