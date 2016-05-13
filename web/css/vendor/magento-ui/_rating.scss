@@ -27,8 +27,8 @@
             $_icon-color
         );
         @include lib-rating-icons-content(
-        $_icon-count,
-        $_icon-content
+            $_icon-count,
+            $_icon-content
         );
         display: block;
         position: absolute;
@@ -220,7 +220,7 @@
 ) {
     $_icon-content-result: $_icon-content;
     @for $_index from $_icon-count to 1 {
-    $_icon-content-result:  $_icon-content-result + $_icon-content;
+        $_icon-content-result:  $_icon-content-result + $_icon-content;
     }
     content: $_icon-content-result;
 }
