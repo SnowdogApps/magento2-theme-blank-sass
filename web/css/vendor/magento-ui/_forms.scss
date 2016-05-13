@@ -60,7 +60,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_focus-font-style          : $_font-style;
 
     @if $_type == "select" {
-        $_padding               : $indent__s 4px;
+        $_padding               : 4px;
         $_placeholder-color     : inherit;
         $_placeholder-font-style: inherit;
     }
