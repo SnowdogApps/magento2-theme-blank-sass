@@ -32,7 +32,9 @@
     @include lib-rating-vote();
 
     &:before {
-        content: $rating-icon__content;
+        @include lib-rating-icons-content(
+            $_icon-content: $icon-star
+        );
     }
 }
 //
