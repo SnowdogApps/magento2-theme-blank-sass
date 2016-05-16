@@ -237,7 +237,6 @@ $cart-item-cell-padding-top: 20px;
                 padding-left: $mobile-cart-padding;
                 padding-right: $mobile-cart-padding;
                 white-space: normal;
-                text-align: center;
             }
         }
 
@@ -437,6 +436,7 @@ $cart-item-cell-padding-top: 20px;
                     float: left;
                     white-space: nowrap;
                     width: 33%;
+                    text-align: center;
 
                     &:before {
                         content: attr(data-th);
@@ -450,7 +450,9 @@ $cart-item-cell-padding-top: 20px;
                     white-space: normal;
                 }
             }
-
+            .item-actions td {
+                text-align: center;
+            }
             .item .col.item {
                 padding-bottom: 0;
             }
