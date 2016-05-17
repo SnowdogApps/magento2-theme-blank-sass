@@ -94,7 +94,7 @@ $checkout-shipping-method__padding: $indent__base;
                 font-family: $icons__font-name;
                 height: $checkout-shipping-item-icon__selected__height;
                 width: $checkout-shipping-item-icon__selected__width;
-                font-size: 19px;
+                font-size: 28px;
                 line-height: 21px;
                 padding-top: 2px;
                 position: absolute;
@@ -217,7 +217,6 @@ $checkout-shipping-method__padding: $indent__base;
         .form-login,
         .form-shipping-address,
         .methods-shipping {
-            background: $checkout-step-content-mobile__background;
             margin: $checkout-step-content-mobile__margin;
             padding: $indent__base $checkout-step-content-mobile__margin-s;
         }

@@ -86,7 +86,7 @@ $checkout-summary-items__padding: 15px;
             cursor: pointer;
             @include lib-icon-font(
                 $icon-down,
-                $_icon-font-size: 12px,
+                $_icon-font-size: 30px,
                 $_icon-font-line-height: 12px,
                 $_icon-font-text-hide: true,
                 $_icon-font-margin: 3px 0 0,
@@ -178,13 +178,6 @@ $checkout-summary-items__padding: 15px;
 
 @include max-screen($screen__s) {
     .opc-block-summary {
-        & > .title {
-            border-bottom: 0;
-            font-size: $checkout-step-title-mobile__font-size;
-            margin-bottom: $indent__base;
-            padding-bottom: 0;
-        }
-
         .totals {
             // should extend only the class below like less extend('.className')
             // not others selectors like "div.className" etc.
