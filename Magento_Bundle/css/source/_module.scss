@@ -11,8 +11,7 @@
     margin: 0 0 $indent__l;
     .action.primary.customize {
         @extend .abs-button-l;
-        // TO DO - The selector ".abs-button-responsive" was not found.
-        // @extend .abs-button-responsive !optional;
+        @extend .abs-button-responsive;
     }
 }
 
@@ -131,8 +130,7 @@
 
             .action.primary {
                 @extend .abs-button-l;
-                // TO DO - The selector ".abs-button-responsive" was not found.
-                // @extend .abs-button-responsive !optional;
+                @extend .abs-button-responsive;
             }
         }
 

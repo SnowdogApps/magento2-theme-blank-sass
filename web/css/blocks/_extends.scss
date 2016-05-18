@@ -67,6 +67,26 @@
 }
 
 //
+//  Button reset width, floats, margins
+//  ---------------------------------------------
+
+.abs-button-responsive {
+    @include lib-button-responsive();
+}
+
+@include min-screen($screen__m) {
+    .abs-button-desktop {
+        width: auto;
+    }
+}
+
+@include max-screen($screen__m) {
+    .abs-button-responsive-smaller {
+        @include lib-button-responsive();
+    }
+}
+
+//
 //  Action addto
 //  ---------------------------------------------
 .abs-action-addto-product {
