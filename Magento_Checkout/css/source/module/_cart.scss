@@ -352,13 +352,15 @@ $cart-item-cell-padding-top: 20px;
     }
 }
 
-.cart.table-wrapper,
-.order-items.table-wrapper {
-    .col.msrp,
-    .col.price,
-    .col.qty,
-    .col.subtotal {
-        text-align: right;
+@include min-screen($screen__m) {
+    .cart.table-wrapper,
+    .order-items.table-wrapper {
+        .col.msrp,
+        .col.price,
+        .col.qty,
+        .col.subtotal {
+            text-align: right;
+        }
     }
 }
 

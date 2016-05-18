@@ -343,9 +343,9 @@
 
 @mixin lib-table-responsive(
     $_table-background-color-responsive   : $table__background-color,
-    $_table-th-background-color-responsive: inherit,
-    $_reset-table-striped                 : inherit,
-    $_reset-table-hover                   : inherit,
+    $_table-th-background-color-responsive: $table-responsive-th__background-color,
+    $_reset-table-striped                 : false,
+    $_reset-table-hover                   : false,
     $_table-responsive-cell-padding       : $indent__xs 0
 ) {
     @if $_reset-table-striped == true {
