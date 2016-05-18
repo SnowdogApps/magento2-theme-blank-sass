@@ -787,6 +787,41 @@
 }
 
 //
+//  Abstract toggle title block
+//  ---------------------------------------------
+
+@include max-screen($screen__m) {
+    .abs-toggling-title-mobile {
+        border-top: $border-width__base solid $border-color__base;
+        border-bottom: $border-width__base solid $border-color__base;
+        cursor: pointer;
+        margin-bottom: 0;
+        padding: $indent__s $indent__xl $indent__s $layout__width-xs-indent;
+        position: relative;
+        @include lib-icon-font(
+            $_icon-font-content: $icon-down,
+            $_icon-font-size: 28px,
+            $_icon-font-text-hide: false,
+            $_icon-font-position: after,
+            $_icon-font-display: block
+        );
+
+        &:after {
+            position: absolute;
+            right: $indent__s;
+            top: 0;
+        }
+
+        &.active {
+            @include lib-icon-font-symbol(
+                $_icon-font-content: $icon-up,
+                $_icon-font-position: after
+            );
+        }
+    }
+}
+
+//
 //  Abstract no display
 //  ---------------------------------------------
 .abs-no-display {
