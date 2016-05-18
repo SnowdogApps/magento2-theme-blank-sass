@@ -610,7 +610,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_type-inline-label-padding    : 6px 15px 0 0,
     $_type-inline-label-align      : right,
     $_type-inline-label-width      : 25.8%,
-    $_type-inline-control-width    : 25.8%,
+    $_type-inline-control-width    : 74.2%,
 
     $_type-block-margin            : 0 0 $indent__base,
     $_type-block-label-margin      : 0 0 $indent__xs,
@@ -806,18 +806,19 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_type,
 
     $_type-inline-margin       : 0 0 $indent__base,
-    $_type-inline-label-width  : 25.8%,
     $_type-inline-label-margin : inherit,
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
+    $_type-inline-label-width  : 25.8%,
     $_type-inline-control-width: 74.2%,
+    $_vertical-indent          : $indent__base / 2,
 
     $_type-block-margin        : $indent__base,
     $_type-block-label-margin  : 0 0 $indent__xs,
     $_type-block-label-padding : inherit,
-    $_type-block-label-align   : inherit,
+    $_type-block-label-align   : inherit
 
-    $_vertical-indent          : $indent__base / 2
+
 ) {
     @if $_type == "inline" {
         @include _lib-form-field-type-inline(
