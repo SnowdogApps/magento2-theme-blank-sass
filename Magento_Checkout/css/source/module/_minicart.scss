@@ -89,7 +89,7 @@ $minicart-qty__height        : 24px;
         $_options-selector                   : ".block-minicart",
         $_dropdown-toggle-icon-content       : $icon-cart,
         $_dropdown-toggle-active-icon-content: $icon-cart,
-        $_dropdown-list-item-padding         : inherit,
+        $_dropdown-list-item-padding         : 20px 0,
         $_dropdown-list-item-hover           : inherit,
         $_icon-font-position                 : before,
         $_icon-font-size                     : 35px,
@@ -182,7 +182,7 @@ $minicart-qty__height        : 24px;
 }
 .minicart-items-wrapper {
     border: 1px solid $minicart__border-color;
-    margin: 0 -$minicart__padding-horizontal;
+    margin: 0 (-$minicart__padding-horizontal);
     border-left: 0;
     border-right: 0;
     overflow-x: auto;
@@ -248,6 +248,14 @@ $minicart-qty__height        : 24px;
         .toggle {
             // TO DO - The selector ".abs-toggling-title" was not found.
             // @extend .abs-toggling-title !optional;
+            @include lib-icon-font(
+                $_icon-font-content:     $icon-down,
+                $_icon-font-size:        28px,
+                $_icon-font-line-height: 16px,
+                $_icon-font-text-hide:   false,
+                $_icon-font-position:    after,
+                $_icon-font-display:     block
+            );
             &:after {
                 color: $color-gray56;
                 margin: 0 0 0 $indent__xs;

@@ -33,7 +33,7 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
     $_border-radius             : 1px;
     $_height                    : $form-element-input__height;
     $_width                     : 100%;
-    $_margin                    : inherit;
+    $_margin                    : 0;
     $_padding                   : 0 9px;
     $_vertical-align            : baseline;
     $_background-clip           : padding-box;
@@ -138,16 +138,18 @@ $form-element-validation__border-error: lighten($form-validation-note__color-err
 }
 
 @mixin lib-form-element-number-reset() {
+    appearance: textfield;
+
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
-        appearance: none;
+        -webkit-appearance: none;
         margin: 0;
     }
-    appearance: field;
 }
 
 @mixin lib-form-element-search-reset() {
     appearance: none;
+
     &::-webkit-search-cancel-button,
     &::-webkit-search-decoration,
     &::-webkit-search-results-button,
