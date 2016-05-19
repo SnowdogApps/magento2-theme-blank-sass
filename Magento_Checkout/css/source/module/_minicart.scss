@@ -92,8 +92,8 @@ $minicart-qty__height        : 24px;
         $_dropdown-list-item-padding         : inherit,
         $_dropdown-list-item-hover           : inherit,
         $_icon-font-position                 : before,
-        $_icon-font-size                     : 22px,
-        $_icon-font-line-height              : 28px,
+        $_icon-font-size                     : 35px,
+        $_icon-font-line-height              : 33px,
         $_icon-font-color                    : $minicart-icons-color,
         $_icon-font-color-hover              : $minicart-icons-color-hover,
         $_icon-font-color-active             : $minicart-icons-color
@@ -118,7 +118,7 @@ $minicart-qty__height        : 24px;
     .product {
         .actions {
             float: right;
-            margin: -24px 0 0;
+            margin: -30px 0 0;
             & > .primary,
             & > .secondary {
                 display: inline;
@@ -139,8 +139,8 @@ $minicart-qty__height        : 24px;
             @include lib-button-icon(
                 $icon-remove,
                 $_icon-font-color      : $minicart-icons-color,
-                $_icon-font-size       : 16px,
-                $_icon-font-line-height: 16px,
+                $_icon-font-size       : 32px,
+                $_icon-font-line-height: 32px,
                 $_icon-font-text-hide  : true
             );
         }
@@ -208,7 +208,7 @@ $minicart-qty__height        : 24px;
     .product-item-pricing {
         .label {
             display: inline-block;
-            width: 4.5rem;
+            width: 3.5rem;
         }
     }
     .price-minicart {
@@ -306,8 +306,8 @@ $minicart-qty__height        : 24px;
         &.edit {
             @include lib-icon-font(
                 $icon-edit,
-                $_icon-font-size        : 18px,
-                $_icon-font-line-height : 20px,
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 30px,
                 $_icon-font-text-hide   : true,
                 $_icon-font-color       : $minicart-icons-color,
                 $_icon-font-color-hover : $primary__color,
@@ -342,9 +342,5 @@ $minicart-qty__height        : 24px;
             right: -15px;
             width: 390px;
         }
-    }
-    .minicart-wrapper .action.edit,
-    .minilist .action.delete {
-        @include lib-icon-font-size( $_icon-font-size: 16px );
     }
 }

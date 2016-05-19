@@ -2,7 +2,7 @@
 //  * Copyright © 2015 Magento. All rights reserved.
 //  * See COPYING.txt for license details.
 //  */
-$toolbar-mode-icon-font-size    : 16px;
+$toolbar-mode-icon-font-size    : 24px;
 $toolbar-background             : transparent;
 $toolbar-element-background     : $color-gray94;
 $pager-action__background       : $toolbar-element-background;
@@ -75,10 +75,12 @@ $pager__font-weight             : $font-weight__bold;
     &-action {
         @include lib-icon-font(
             $icon-arrow-up,
-            $_icon-font-size       : 16px,
+            $_icon-font-size       : 28px,
+            $_icon-font-line-height: 32px,
             $_icon-font-color      : $header-icons-color,
             $_icon-font-color-hover: $header-icons-color-hover
         );
+        vertical-align: top;
         @include lib-icon-text-hide();
         &.sort-desc:before {
             content: $icon-arrow-down;
