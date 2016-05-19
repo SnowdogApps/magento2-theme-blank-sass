@@ -249,12 +249,12 @@ $minicart-qty__height        : 24px;
             // TO DO - The selector ".abs-toggling-title" was not found.
             // @extend .abs-toggling-title !optional;
             @include lib-icon-font(
-                $_icon-font-content: $icon-down,
-                $_icon-font-size: 28px,
+                $_icon-font-content:     $icon-down,
+                $_icon-font-size:        28px,
                 $_icon-font-line-height: 16px,
-                $_icon-font-text-hide: false,
-                $_icon-font-position: after,
-                $_icon-font-display: block
+                $_icon-font-text-hide:   false,
+                $_icon-font-position:    after,
+                $_icon-font-display:     block
             );
             &:after {
                 color: $color-gray56;
