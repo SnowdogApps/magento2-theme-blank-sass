@@ -1127,11 +1127,11 @@
         cursor: pointer;
         font-weight: $font-weight__semibold;
         @include lib-icon-font(
-    $_icon-font-content: $icon-down,
-    $_icon-font-size: 30px,
-    $_icon-font-position: after,
-    $_icon-font-display: block
-    );
+            $_icon-font-content: $icon-down,
+            $_icon-font-size: 30px,
+            $_icon-font-position: after,
+            $_icon-font-display: block
+        );
         margin-bottom: 0;
         overflow: hidden;
         padding: 7px $indent__l 7px $indent__xs;
@@ -1145,7 +1145,7 @@
 
         strong {
             .column.main & {
-                font-size:18px;
+                font-size: 18px;
                 font-weight: $font-weight__regular;
             }
         }
@@ -1158,9 +1158,9 @@
     &.active {
         > .title {
             @include lib-icon-font-symbol(
-        $_icon-font-content: $icon-prev,
-        $_icon-font-position: after
-        );
+                $_icon-font-content: $icon-prev,
+                $_icon-font-position: after
+            );
         }
 
         > .content {
