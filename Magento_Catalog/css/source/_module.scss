@@ -394,8 +394,7 @@ $product-h1-margin-bottom-desktop: $indent__s + $indent__xs;
     .product-info-main .box-tocart {
         .actions {
             .action.tocart {
-                // TO DO - The selector ".abs-button-responsive-smaller" was not found.
-                // @extend .abs-button-responsive-smaller !optional;
+                @extend .abs-button-responsive-smaller;
             }
         }
     }
