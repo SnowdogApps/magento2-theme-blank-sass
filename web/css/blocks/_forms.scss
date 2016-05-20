@@ -175,7 +175,14 @@ select {
 //    Desktop
 //--------------------------------------
 @include min-screen($screen__m) {
-    .legend {
-        border-bottom: $legend-border-bottom;
+    .fieldset {
+        .legend {
+            @extend .abs-margin-for-forms-desktop;
+        }
+
+        > .field {
+            @include lib-form-field-type-revert();
+            margin: 0 0 $form-field__vertical-indent__desktop;
+        }
     }
 }
