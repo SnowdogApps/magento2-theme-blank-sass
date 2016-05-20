@@ -143,3 +143,15 @@ table {
     }
 }
 
+//
+//  Desktop
+//  _____________________________________________
+@include min-screen($screen__s) {
+    .table {
+        &:not(.cart) {
+            &:not(.totals) {
+                @include lib-table-bordered( $_table_type: horizontal_body );
+            }
+        }
+    }
+}
