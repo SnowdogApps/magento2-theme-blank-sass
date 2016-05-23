@@ -336,8 +336,7 @@ $desktop-popup-position-top: 20%;
 
                 .wishlist-name {
                     font-size: 16px;
-                    // TO DO - The selector ".abs-toggling-title-mobile" was not found.
-                    // @extend .abs-toggling-title-mobile !optional;
+                    @extend .abs-toggling-title-mobile;
                 }
 
                 &-items {
