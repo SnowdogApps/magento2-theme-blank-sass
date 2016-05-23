@@ -43,20 +43,6 @@ $account-table-action-delete: $color-red12;
                 margin-bottom: 0;
             }
         }
-
-        .item.actions {
-            margin-top: $indent__xs;
-
-            .action {
-                // TO DO - The selector ".abs-account-actions" was not found.
-                // @extend .abs-account-actions !optional;
-            }
-        }
-    }
-
-    address {
-        // TO DO - The selector ".abs-account-block-line-height" was not found.
-        // @extend .abs-account-block-line-height !optional;
     }
 }
 
@@ -76,23 +62,12 @@ $account-table-action-delete: $color-red12;
     }
 }
 
-.form-create-account {
-    .fieldset-fullname {
-        .fields {
-            .field {
-                float: none;
-            }
-        }
-    }
-}
-
 .box-billing-address,
 .box-shipping-address,
 .box-information,
 .box-newsletter {
     .box-content {
-        // TO DO  - The selector ".abs-account-block-line-height" was not found.
-        // @extend .abs-account-block-line-height !optional;
+        line-height: 26px;
     }
 }
 
@@ -115,6 +90,19 @@ $account-table-action-delete: $color-red12;
             margin-top: 0;
         }
 
+        .toolbar {
+            text-align: center;
+            .limiter-options {
+                width: auto;
+            }
+        }
+
+        .limiter {
+            >.label {
+                @extend .abs-visually-hidden;
+            }
+        }
+
         .block:not(.widget) {
             @extend .abs-account-blocks;
         }
@@ -125,42 +113,23 @@ $account-table-action-delete: $color-red12;
     }
 
     .table-wrapper {
-        margin-bottom: $indent__base;
-        border-bottom: 1px solid $account-table-border-bottom-color;
-
         &:last-child {
             margin-bottom: 0;
         }
-    }
 
-    .legend {
-        // TO DO - The selector ".abs-account-title" was not found.
-        // @extend .abs-account-title !optional;
-    }
-}
+        .action {
+            margin-right: 15px;
 
-.account,
-[class^="sales-guest-"],
-.sales-guest-view {
-    .column.main {
-        .order-details-items {
-            .table-wrapper {
-                .data.table {
-                    // TO DO - The selector ".abs-table-striped" was not found.
-                    // @extend .abs-table-striped !optional;
-                }
+            &:last-child {
+                margin-right: 0;
             }
         }
     }
 
-    .data.table {
-        .col.actions {
-            .action {
-                // TO DO - The selector ".abs-account-actions" was not found.
-                // @extend .abs-account-actions !optional;
-                &.delete {
-                    color: $account-table-action-delete;
-                }
+    .table-return-items {
+        .qty {
+            .input-text {
+                @extend .abs-input-qty;
             }
         }
     }
@@ -188,11 +157,13 @@ $account-table-action-delete: $color-red12;
     }
 
     .title {
+        margin-bottom: $indent__s;
         strong {
             @include lib-heading(h4);
+            .column.main & {
+                font-size: $h3__font-size;
+            }
         }
-
-        margin-bottom: $indent__s;
     }
 
     p {
@@ -203,11 +174,6 @@ $account-table-action-delete: $color-red12;
 
     .box-actions {
         margin-top: $indent__xs;
-
-        .action {
-            // TO DO - The selector ".abs-account-actions" was not found.
-            // @extend .abs-account-actions !optional;
-        }
     }
 }
 
@@ -218,20 +184,55 @@ $account-table-action-delete: $color-red12;
     }
 }
 
-.account {
-    .data.table-return-items {
-        .qty {
-            .input-text {
-                @extend .abs-input-qty;
-            }
+//
+//  Mobile $screen__s
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
+    .account {
+        .column.main,
+        .sidebar-additional {
+            margin: 0;
         }
     }
 }
 
-.order-products-toolbar {
-    position: relative;
-}
+//
+//  Mobile $screen__m
+//  ---------------------------------------------
 
+@include max-screen($screen__m) {
+    .login-container {
+        .fieldset {
+            &:after {
+                text-align: center;
+            }
+        }
+    }
+
+    .account {
+        .page.messages {
+            margin-bottom: $indent__xl;
+        }
+
+        .toolbar {
+            @extend .abs-pager-toolbar-mobile;
+        }
+    }
+
+    .control.captcha-image {
+        .captcha-img {
+            display: block;
+            margin-bottom: $indent__s;
+        }
+    }
+
+    .customer-account-index {
+        .page-title-wrapper {
+            position: relative;
+        }
+    }
+}
 
 //
 //  Desktop
@@ -258,6 +259,9 @@ $account-table-action-delete: $color-red12;
         }
 
         .fieldset {
+            &:after {
+                @extend .abs-margin-for-forms-desktop;
+            }
             & > .field {
                 & > .control {
                     width: 55%;
@@ -303,11 +307,6 @@ $account-table-action-delete: $color-red12;
     }
 
     .account {
-        .page-title-wrapper {
-            // TO DO -
-            @extend .abs-add-clearfix-desktop;
-        }
-
         .column.main {
             .block:not(.widget) {
                 .block-content {
@@ -316,16 +315,6 @@ $account-table-action-delete: $color-red12;
                     .box {
                         @extend .abs-blocks-2columns;
                     }
-                }
-            }
-        }
-
-        .data.table {
-            margin-bottom: 0;
-
-            .col {
-                &.actions {
-                    white-space: nowrap;
                 }
             }
         }
@@ -356,103 +345,16 @@ $account-table-action-delete: $color-red12;
         }
     }
 
-    .page-main .block {
-        // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
-        // @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
-    }
-
-    .form-edit-account,
-    .form-address-edit {
-        .fieldset {
-            @extend .abs-blocks-2columns;
-        }
-    }
-
-    .box-billing-address,
-    .box-shipping-address,
-    .box-information {
-        .box-content {
-            // TO DO - The selector ".abs-account-block-font-size" was not found.
-            // @extend .abs-account-block-font-size !optional;
-        }
+    //
+    //    Welcome block
+    //--------------------------------------
+    .dashboard-welcome-toggler {
+        @extend .abs-visually-hidden-desktop;
     }
 
     .control.captcha-image {
         .captcha-img {
             margin: 0 $indent__s $indent__s 0;
-        }
-    }
-}
-
-//
-//  Mobile $screen__s
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .account {
-        .column.main,
-        .sidebar-additional {
-            margin: 0;
-        }
-
-        .data.table {
-            // TO DO - The selector ".abs-table-striped-mobile" was not found.
-            // @extend .abs-table-striped-mobile !optional;
-        }
-    }
-}
-
-//
-//  Mobile $screen__m
-//  ---------------------------------------------
-
-@include max-screen($screen__m) {
-    .login-container {
-        .fieldset {
-            &:after {
-                text-align: center;
-            }
-        }
-    }
-
-    .account {
-        .page.messages {
-            margin-bottom: $indent__xl;
-        }
-
-        .column.main {
-            .block:not(.widget) {
-                .block-title {
-                    @extend .abs-add-clearfix-mobile-m;
-
-                    & > .action {
-                        float: right;
-                        margin-top: $indent__xs;
-                    }
-                }
-
-                .block-content {
-                    .box {
-                        margin-bottom: $indent__base;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .control.captcha-image {
-        .captcha-img {
-            display: block;
-            margin-bottom: $indent__s;
-        }
-    }
-
-    .customer-account-index {
-        .page-title-wrapper {
-            position: relative;
         }
     }
 }

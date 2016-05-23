@@ -834,6 +834,21 @@
 }
 
 //
+//  Pager toolbar for non-catalog pages mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__m) {
+    .abs-pager-toolbar-mobile {
+        .toolbar-amount,
+        .limiter,
+        .pages {
+            margin-bottom: $indent__m;
+            float: none;
+        }
+    }
+}
+
+//
 //  Pager toolbar for non-catalog pages desktop
 //  ---------------------------------------------
 @include min-screen($screen__m) {
