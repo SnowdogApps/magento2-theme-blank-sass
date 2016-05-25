@@ -60,10 +60,6 @@
     .table-wrapper {
         margin: 0;
 
-        & + .actions-toolbar {
-            display: none;
-        }
-
         &:not(:last-child) {
             margin-bottom: $indent__l;
         }

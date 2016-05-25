@@ -225,7 +225,8 @@ $dropdown-list__z-index: 100;
 
 
 //  Actions-toolbar
-$actions-toolbar-actions__position: left;
+$actions-toolbar-actions__position: justify;
+$actions-toolbar-actions__reverse: false;
 $actions-toolbar-actions-primary__margin: 0 15px 0 0;
 
 //
