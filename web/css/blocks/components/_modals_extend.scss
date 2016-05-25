@@ -23,7 +23,7 @@ $modal-slide-mobile__background-color: $color-gray-light01;
 $modal-overlay__background-color     : fade-out($color-gray20, 0.55);
 
 $modal-action-close__color           : $primary__color;
-$modal-action-close__font-size       : $font-size__base;
+$modal-action-close__font-size       : 32px;
 $modal-action-close__hover__color    : darken($primary__color, 10%);
 
 $modal-slide-action-close__padding   : $modal-slide-header__padding-vertical $modal-popup__padding;
