@@ -115,7 +115,7 @@ body {
         margin-right: $indent__base;
 
         & > li {
-            font-size: $font-size__s;
+            font-size: $font-size__base;
             margin: 0 0 0 15px;
 
             & > a {
@@ -415,8 +415,7 @@ body {
 
     //to to: check
     .block-title {
-        // TO DO - The selector ".abs-block-widget-title" was not found.
-        // @extend .abs-block-widget-title !optional;
+         @extend .abs-block-title;
     }
 }
 
