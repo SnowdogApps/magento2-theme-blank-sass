@@ -87,7 +87,7 @@
 
     // Page action item (previous-next) - hover
     $_pager-action-color-hover                 : $pager-action__color,
-    $_pager-action-border-hover                : none,
+    $_pager-action-border-hover                : $border-width__base solid $border-color__light,
     $_pager-action-background-hover            : inherit,
     $_pager-action-gradient-color-start-hover  : inherit,
     $_pager-action-gradient-color-end-hover    : inherit,
