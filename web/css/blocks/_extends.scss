@@ -717,6 +717,18 @@
 }
 
 //
+//  Abstract block title
+//  ---------------------------------------------
+
+.abs-block-title {
+    > strong {
+        @include lib-heading(h3);
+    }
+
+    margin-bottom: 15px;
+}
+
+//
 //  Account blocks
 //  ---------------------------------------------
 .abs-account-blocks {
@@ -730,7 +742,7 @@
 
     .box-title {
         & > span {
-            font-size: 16px;
+            @include lib-heading(h4);
         }
         display: inline-block;
         margin: 0 0 $indent__s;

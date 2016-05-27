@@ -648,8 +648,7 @@ body.catalog-product-compare-index {
 }
 .block-compare {
     .block-title {
-        // TO DO - The selector ".abs-block-widget-title" was not found.
-        // @extend .abs-block-widget-title !optional;
+        @extend .abs-block-title;
     }
     .product-item .product-item-name {
         margin-left: 22px;
@@ -658,7 +657,7 @@ body.catalog-product-compare-index {
         &.delete {
             @extend .abs-remove-button-for-blocks;
             position: absolute;
-            left: -6;
+            left: -6px;
             top: 0;
         }
         &.compare {
