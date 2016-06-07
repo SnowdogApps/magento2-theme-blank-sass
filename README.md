@@ -3,7 +3,7 @@
 
 ## Current status
 Theme is **ready to use** as Composer package with Magento 2.
-Still a lot of things needs to be fixed or polished, but definietly it's working :smile:
+Still a lot of things needs to be fixed or polished, but it's definitely working :smile:
 
 ## Installation
 * `composer require snowdog/theme-blank-sass`
