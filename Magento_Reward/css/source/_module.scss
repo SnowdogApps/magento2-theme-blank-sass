@@ -1,18 +1,4 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//    Common
-//--------------------------------------
-
 .block-reward-info {
-    .reward-balance {
-        font-size: 18px;
-        margin-bottom: $indent__m;
-    }
-
     .reward-rates,
     .reward-limit,
     .reward-expiring {
@@ -28,21 +14,24 @@
 }
 
 //
-//    Mobile
-//--------------------------------------
-@include max-screen($screen__s) {
-    .table-wrapper.reward-history {
-        // TO DO - The selector ".abs-account-table-margin-mobile" was not found.
-        // @extend .abs-account-table-margin-mobile !optional;
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
+    .reward-settings {
+        + .actions-toolbar {
+            margin-top: 10px;
+        }
     }
 }
 
 //
-//    Desktop
-//--------------------------------------
+//  Desktop
+//  _____________________________________________
 @include min-screen($screen__m) {
-    .table-wrapper.reward-history {
-        // TO DO - The selector ".abs-account-table-margin-desktop" was not found.
-        // @extend .abs-account-table-margin-desktop !optional;
+    .reward-settings {
+        + .actions-toolbar {
+            margin-top: -32px;
+        }
     }
 }
