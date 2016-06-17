@@ -1,50 +1,33 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
 $checkout-summary__background-color: $color-white-smoke;
-$checkout-summary__padding: 22px $indent__l;
+$checkout-summary__padding         : 22px $indent__l;
 
-$checkout-summary-title__margin: $indent__s;
+$checkout-summary-title__margin    : $indent__s;
 $checkout-summary-mark-value__color: $color-gray60;
 
 $checkout-summary-items__max-height: 370px;
-$checkout-summary-items__padding: 15px;
-
-//
-//  Common
-//  _____________________________________________
-
+$checkout-summary-items__padding   : 15px;
 
 //
 //  Order Summary
 //  ---------------------------------------------
 
 .opc-block-summary {
-    // should extend only the class below like less extend('.className')
-    // not others selectors like "div.className" etc.
     @extend .abs-add-box-sizing;
     background: $checkout-summary__background-color;
-    margin: 0 0 $checkout-sidebar__margin;
     padding: $checkout-summary__padding;
+    margin: 0 0 $indent__base;
 
-
-    & > .title {
-        // should extend only the class below like less extend('.className')
-        // not others selectors like "div.className" etc.
+    > .title {
         @extend .abs-checkout-title;
         display: block;
     }
 
     //  Totals table
     .table-totals {
-        // should extend only the class below like less extend('.className')
-        // not others selectors like "div.className" etc.
         @extend .abs-sidebar-totals;
     }
 
@@ -80,18 +63,18 @@ $checkout-summary-items__padding: 15px;
 
     //  Block title
     .items-in-cart {
-        & > .title {
+        > .title {
             border-bottom: $border-width__base solid $border-color__base;
             padding: $indent__s $indent__xl $indent__s 0;
             cursor: pointer;
             @include lib-icon-font(
                 $icon-down,
-                $_icon-font-size: 30px,
+                $_icon-font-size       : 30px,
                 $_icon-font-line-height: 12px,
-                $_icon-font-text-hide: true,
-                $_icon-font-margin: 3px 0 0,
-                $_icon-font-position: after,
-                $_icon-font-display: block
+                $_icon-font-text-hide  : true,
+                $_icon-font-margin     : 3px 0 0,
+                $_icon-font-position   : after,
+                $_icon-font-display    : block
             );
             margin-bottom: 0;
             position: relative;
@@ -110,9 +93,9 @@ $checkout-summary-items__padding: 15px;
         }
 
         &.active {
-            & > .title {
+            > .title {
                 @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
+                    $_icon-font-content : $icon-up,
                     $_icon-font-position: after
                 );
             }
@@ -163,26 +146,12 @@ $checkout-summary-items__padding: 15px;
 
         .price-including-tax {
             & + .price-excluding-tax {
+                margin: 0;
+
                 .price {
                     font-size: 10px;
                 }
             }
-        }
-    }
-}
-
-
-//
-//  Mobile
-//  _____________________________________________
-
-@include max-screen($screen__s) {
-    .opc-block-summary {
-        .totals {
-            // should extend only the class below like less extend('.className')
-            // not others selectors like "div.className" etc.
-            // TO DO - The selector ".abs-sidebar-totals-mobile" was not found.
-            // @extend .abs-sidebar-totals-mobile !optional;
         }
     }
 }

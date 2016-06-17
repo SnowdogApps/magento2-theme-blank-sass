@@ -1,12 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  _____________________________________________
-
 //  PayPal Review Order page
 .paypal-review {
     .block {
@@ -20,47 +11,37 @@
         }
     }
 
-    .actions-toolbar {
-        margin-top: $indent__s;
+    .paypa-review-title {
+        > strong {
+            @include lib-heading(h3);
+            display: inline-block;
+        }
+    }
+
+    .items-qty {
+
+        @extend .abs-reset-list;
+
+        .item {
+            white-space: nowrap;
+        }
+
+        .title {
+            &:after {
+                content: ': ';
+            }
+        }
     }
 
     .paypal-review-title {
-        padding: 0 0 $indent__s;
-
         > strong {
-            font-size: 24px;
-            font-weight: $font-weight__light;
-        }
-
-        .action {
+            @include lib-heading(h3);
             display: inline-block;
-            margin: 12px 0 0 $indent__l;
         }
     }
 
-    .table-paypal-review-items {
-        .col {
-            &.price,
-            &.subtotal {
-                // TO DO - The selector ".abs-incl-excl-tax" was not found.
-                // @extend .abs-incl-excl-tax !optional;
-            }
-
-            &.name {
-                padding-top: 16px;
-            }
-
-            &.qty {
-                text-align: center;
-            }
-        }
-
-        .cart-tax-total {
-            @extend .abs-tax-total;
-            &-expanded {
-                @extend .abs-tax-total-expanded;
-            }
-        }
+    .actions-toolbar {
+        margin-top: $indent__s;
     }
 
     .item-options {
@@ -79,27 +60,16 @@
 
 //  Discounts
 .paypal-review-discount {
-    @extend .abs-discount-block;
     border-bottom: $border-width__base solid $border-color__base;
-    margin: 0 0 $indent__xl;
-    padding: $indent__s 0 0;
-}
+    margin: $indent__base 0;
 
+    .block {
 
-//
-//  Mobile
-//  _____________________________________________
+        @extend .abs-discount-block;
+        margin-bottom: 0;
 
-@include max-screen($screen__s) {
-    .table-paypal-review-items {
-        .col {
-            &.subtotal {
-                text-align: left;
-            }
-        }
-
-        .product-item-name {
-            display: inline-block;
+        .fieldset {
+            padding: $indent__s 0 $indent__base;
         }
     }
 }
@@ -115,8 +85,8 @@
         }
 
         .block-content {
-            @extend .abs-add-clearfix-desktop;
 
+            @extend .abs-add-clearfix-desktop;
             .box-order-shipping-address,
             .box-order-shipping-method,
             .box-order-shipping-method + .box-order-billing-address {
@@ -133,20 +103,8 @@
 
         .column.main & {
             .actions-toolbar {
+
                 @extend .abs-reset-left-margin-desktop;
-            }
-        }
-
-        .table-paypal-review-items {
-            .col {
-                &.price,
-                &.qty {
-                    text-align: center;
-                }
-
-                &.item {
-                    width: 60%;
-                }
             }
         }
 
@@ -155,12 +113,5 @@
         .amount {
             text-align: right;
         }
-    }
-
-    //  Discounts
-    .paypal-review-discount {
-        @extend .abs-add-clearfix-desktop;
-        @extend .abs-discount-block-desktop;
-        border-top: $border-width__base solid $border-color__base;
     }
 }

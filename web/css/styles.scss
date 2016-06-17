@@ -36,21 +36,15 @@
 @import 'blocks/components/modals_extend'; // local
 
 // Modules
-@import '../../Magento_Braintree/css/source/module';
-@import '../../Magento_CatalogEvent/css/source/module';
-@import '../../Magento_Multishipping/css/source/module';
-@import '../../Magento_Paypal/css/source/module';
-@import '../../Magento_ProductVideo/css/source/module';
-@import '../../Magento_SalesRule/css/source/module';
-@import '../../Magento_Weee/css/source/module';
 @import '../../Magento_AdvancedCheckout/css/source/module';
 @import '../../Magento_AdvancedSearch/css/source/module';
+@import '../../Magento_Braintree/css/source/module';
 @import '../../Magento_Bundle/css/source/module';
 @import '../../Magento_Catalog/css/source/module';
+@import '../../Magento_CatalogEvent/css/source/module';
 @import '../../Magento_CatalogSearch/css/source/module';
 @import '../../Magento_Checkout/css/source/module';
 @import '../../Magento_Customer/css/source/module';
-@import '../../Magento_CustomerBalance/css/source/module';
 @import '../../Magento_Downloadable/css/source/module';
 @import '../../Magento_GiftCard/css/source/module';
 @import '../../Magento_GiftCardAccount/css/source/module';
@@ -62,18 +56,24 @@
 @import '../../Magento_LayeredNavigation/css/source/module';
 @import '../../Magento_Msrp/css/source/module';
 @import '../../Magento_MultipleWishlist/css/source/module';
+@import '../../Magento_Multishipping/css/source/module';
 @import '../../Magento_Newsletter/css/source/module';
+@import '../../Magento_Paypal/css/source/module';
+@import '../../Magento_ProductVideo/css/source/module';
 @import '../../Magento_Review/css/source/module';
 @import '../../Magento_Reward/css/source/module';
 @import '../../Magento_Rma/css/source/module';
 @import '../../Magento_Sales/css/source/module';
+@import '../../Magento_SalesRule/css/source/module';
 @import '../../Magento_SendFriend/css/source/module';
 @import '../../Magento_Swatches/css/source/swatches';
 @import '../../Magento_Theme/css/source/module';
+@import '../../Magento_Weee/css/source/module';
 @import '../../Magento_Wishlist/css/source/module';
 
 
 // Widgets
+@import '../../Magento_AdvancedCheckout/css/source/widgets';
 @import '../../Magento_Banner/css/source/widgets';
 @import '../../Magento_Catalog/css/source/widgets';
 @import '../../Magento_CatalogEvent/css/source/widgets';
@@ -81,6 +81,4 @@
 @import '../../Magento_GiftRegistry/css/source/widgets';
 @import '../../Magento_MultipleWishlist/css/source/widgets';
 @import '../../Magento_Reports/css/source/widgets';
-@import '../../Magento_Sales/css/source/widgets';
 @import '../../Magento_VersionsCms/css/source/widgets';
-@import '../../Magento_AdvancedCheckout/css/source/widgets';

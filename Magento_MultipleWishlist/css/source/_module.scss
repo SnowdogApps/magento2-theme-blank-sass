@@ -1,113 +1,100 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-$desktop-popup-width: 380px;
-$desktop-popup-margin-left: -(($desktop-popup-width + ($popup__padding * 2)) / 2);
+$desktop-popup-width        : 380px;
+$desktop-popup-margin-left  : -(($desktop-popup-width + ($popup__padding * 2)) / 2);
 $desktop-popup-position-left: 50%;
-$desktop-popup-position-top: 20%;
+$desktop-popup-position-top : 20%;
+
 //
 //  Common
 //  _____________________________________________
+
 .wishlist {
     //  Wish list split button
     &.split.button {
-        @extend .abs-dropdown-items-new;
         @include lib-dropdown-split(
-            $_options-selector                          : ".items",
-            $_dropdown-split-button-border-radius-fix   : inherit,
-            $_dropdown-split-list-item-padding          : 5px 5px 5px 23px,
-            $_dropdown-split-toggle-icon-content        : $icon-down,
-            $_dropdown-split-toggle-active-icon-content : $icon-up,
-            $_icon-font-size                            : 12px,
-            $_icon-font-color                           : $addto-color,
-            $_icon-font-color-hover                     : $addto-hover-color,
-            $_icon-font-vertical-align                  : middle,
-            $_dropdown-split-list-pointer-position      : left,
-            $_dropdown-split-list-min-width             : 200px
+            $_options-selector                         : '.items',
+            $_dropdown-split-button-border-radius-fix  : true,
+            $_dropdown-split-list-item-padding         : 5px 5px 5px 23px,
+            $_dropdown-split-toggle-icon-content       : $icon-down,
+            $_dropdown-split-toggle-active-icon-content: $icon-up,
+            $_dropdown-split-toggle-actions-padding    : false,
+            $_icon-font-size                           : 22px,
+            $_icon-font-color                          : $addto-color,
+            $_icon-font-color-hover                    : $addto-hover-color,
+            $_dropdown-split-list-pointer-position     : left,
+            $_dropdown-split-list-min-width            : 200px
         );
-        margin-right: 5%;
         vertical-align: middle;
+        @extend .abs-dropdown-items-new;
 
         .items {
-            padding: 6px 0;
             text-align: left;
+            .item {
+                &:last-child {
+                    &:hover {
+                        background: $dropdown-list-item__hover;
+                    }
+                }
+            }
         }
 
-        & > .action {
-            @extend .abs-action-button-as-link;
+        .table-comparison &,
+        .product-items & {
+            > .action {
+                @extend .abs-action-button-as-link;
+                &.split {
+                    @extend .abs-actions-addto-gridlist;
+                    @include lib-icon-font-symbol(
+                        $_icon-font-content: $icon-wishlist-empty
+                    );
+                }
 
-            &.split {
-                @include lib-icon-font-symbol($_icon-font-content: $icon-wishlist-full);
-                // TO DO - The selector ".abs-actions-addto" was not found.
-                // @extend .abs-actions-addto !optional;
-                margin-right: 5px;
-
-                &:before {
-                    margin: 0;
-                    width: 18px;
+                &:active,
+                &:focus,
+                &:hover {
+                    color: $addto-hover-color;
                 }
             }
 
-            &:active,
-            &:focus,
-            &:hover {
-                color: $addto-hover-color;
+            > .action.toggle {
+                &:before {
+                    border-left: 1px solid lighten($addto-color, 30%);
+                    content: '';
+                    float: left;
+                    height: 15px;
+                    margin-top: 3px;
+                }
             }
         }
 
-        & > .action.toggle {
-            &:before {
-                border-left: 1px solid $addto-color;
-                content: '';
-                float: left;
-                height: 15px;
-                margin: 3px 4px 0 0;
-            }
-        }
+        .product-info-main &,
+        .block-bundle-summary &,
+        .product-add-form & {
+            .action {
+                &.split,
+                &.toggle {
+                    @include lib-button-s();
+                }
 
-        .product-items &,
-        .table-comparison & {
-            & > .action {
-                &.split {
-                    span {
-                        @extend .abs-visually-hidden;
-                    }
+                &.toggle {
+                    padding: 0;
                 }
             }
         }
 
         .cart.table-wrapper & {
-            vertical-align: baseline;
+            margin-bottom: $indent__s;
 
-            & > .action {
-                &.split {
-                    font-weight: normal;
-                    letter-spacing: normal;
-                    text-transform: none;
-                }
-
+            > .action {
                 &.toggle {
-                    &:after {
-                        color: $link__color;
-                    }
-                }
-
-                &.split,
-                &.toggle {
-                    color: $link__color;
-
-                    &:before {
-                        display: none;
-                    }
+                    padding: 4px $indent__xs;
                 }
             }
         }
     }
-    //  Wish list popup
+
     &.window.popup {
-        @include lib-popup();
         box-sizing: border-box;
+        @include lib-popup();
 
         &.active {
             display: block;
@@ -116,42 +103,14 @@ $desktop-popup-position-top: 20%;
 
     &.overlay {
         @include lib-window-overlay();
-
         &.active {
             display: block;
         }
     }
-    //  Wish list dropdown
+
     &-dropdown {
         @extend .abs-dropdown-simple;
         @extend .abs-dropdown-items-new;
-    }
-
-    &-dropdown.copy,
-    &-dropdown.move {
-        .action.toggle {
-            color: $link__color;
-        }
-    }
-}
-
-.page-multiple-wishlist {
-    .page-title-wrapper {
-        .page-title {
-            @extend .abs-visually-hidden;
-        }
-    }
-
-    .actions-toolbar {
-        & > .primary {
-            display: block;
-            float: none;
-            text-align: left;
-
-            .action.remove {
-                float: right;
-            }
-        }
     }
 }
 
@@ -163,11 +122,16 @@ $desktop-popup-position-top: 20%;
         &-select {
             .wishlist-name {
                 &-label {
-                    @extend .abs-colon;
                     font-weight: $font-weight__semibold;
+                    @extend .abs-colon;
                 }
             }
+
+            &-items {
+                @extend .abs-reset-list;
+            }
         }
+
         //  Wish list name
         &-title {
             margin-bottom: $indent__s;
@@ -182,45 +146,19 @@ $desktop-popup-position-top: 20%;
             color: $text__color__muted;
             display: inline-block;
             margin-right: $indent__base;
-
-            &.private {
-                @include lib-icon-font(
-                    $_icon-font-content       : $icon-private,
-                    $_icon-font-color         : lighten($text__color__muted, 15%),
-                    $_icon-font-vertical-align: text-bottom,
-                    $_icon-font-margin        : 0 $indent__xs 0 0
-                );
-            }
         }
 
         //  Wish list toolbar
         &-toolbar {
-            &-actions,
-            &-select {
+            &-select,
+            &-actions {
                 display: inline-block;
             }
 
             &-select {
                 margin-right: $indent__base;
             }
-
-            .copy {
-                .dropdown {
-                    right: 0;
-
-                    &:before {
-                        left: auto;
-                        right: 11px;
-                    }
-
-                    &:after {
-                        left: auto;
-                        right: 10px;
-                    }
-                }
-            }
         }
-
         //  Wish list toolbar actions
         &-dropdown.move {
             margin-right: $indent__base;
@@ -229,17 +167,12 @@ $desktop-popup-position-top: 20%;
 }
 
 .block-wishlist-search-form {
-    .block-title {
-        // TO DO - The selector ".abs-account-title" was not found.
-        // @extend .abs-account-title !optional;
-    }
-
     .form-wishlist-search {
-        margin-bottom: $indent__l * 2;
+        margin-bottom: $indent__l*2;
         max-width: 500px;
 
         .fieldset {
-            & > .legend {
+            > .legend {
                 @extend .abs-visually-hidden;
             }
         }
@@ -248,17 +181,19 @@ $desktop-popup-position-top: 20%;
 
 .block-wishlist-search-results {
     .block-title {
-        // TO DO - The selector ".abs-account-title" was not found.
-        // @extend .abs-account-title !optional;
+        @extend .abs-block-title;
     }
 
-    .data.table {
-        // TO DO - The selector ".abs-table-striped" was not found.
-        // @extend .abs-table-striped !optional;
+    .toolbar-wishlist-results {
+        text-align: center;
     }
+}
 
-    .table-wrapper {
-        border-top: none;
+.page-multiple-wishlist {
+    .page-title-wrapper {
+        .page-title {
+            @extend .abs-visually-hidden;
+        }
     }
 }
 
@@ -266,8 +201,7 @@ $desktop-popup-position-top: 20%;
     .block-title {
         margin-bottom: $indent__base;
         font-size: 22px;
-
-        & > strong {
+        > strong {
             font-weight: $font-weight__light;
         }
     }
@@ -298,13 +232,6 @@ $desktop-popup-position-top: 20%;
     .split {
         clear: both;
         padding: $indent__s 0;
-        visibility: hidden;
-    }
-
-    .wishlist-dropdown {
-        .change {
-            color: $link__color;
-        }
     }
 
     .action {
@@ -316,7 +243,7 @@ $desktop-popup-position-top: 20%;
     .input-text {
         &.qty {
             @extend .abs-input-qty;
-            margin-right: 10px;
+            margin-right: $indent__s;
         }
     }
 }
@@ -324,6 +251,7 @@ $desktop-popup-position-top: 20%;
 //
 //  Mobile
 //  _____________________________________________
+
 @include max-screen($screen__m) {
     .block-wishlist-management {
         clear: both;
@@ -335,13 +263,12 @@ $desktop-popup-position-top: 20%;
                 margin: 0 -$layout__width-xs-indent 20px;
 
                 .wishlist-name {
-                    font-size: 16px;
                     @extend .abs-toggling-title-mobile;
                 }
 
                 &-items {
                     border-bottom: $border-width__base solid $border-color__base;
-                    background: $collapsible-nav-background;
+                    background: $account-nav-background;
                     display: none;
                     padding: 15px 0;
 
@@ -361,13 +288,12 @@ $desktop-popup-position-top: 20%;
                         }
 
                         a {
-                            color: $text__color;
                             display: block;
                             padding: $indent__xs 18px;
                             text-decoration: none;
 
                             &:hover {
-                                background: $collapsible-nav-item-hover;
+                                background: $account-nav-item-hover;
                             }
                         }
                     }
@@ -379,26 +305,28 @@ $desktop-popup-position-top: 20%;
                     @extend .abs-icon-add-mobile;
                 }
             }
+
             //  Wish list name
             &-title {
                 strong {
                     font-size: 26px;
                 }
             }
+
             //  Wish list info
             &-info {
                 margin-bottom: 15px;
             }
+
             //  Wish list toolbar
             &-toolbar {
-                &-actions,
-                &-select {
+                &-select,
+                &-actions {
                     margin-bottom: 15px;
                 }
             }
         }
     }
-
     .products-grid.wishlist {
         .product {
             &-item {
@@ -414,10 +342,10 @@ $desktop-popup-position-top: 20%;
                     }
                 }
 
-                &-description,
                 &-name,
-                &-tooltip,
-                .price-box {
+                &-description,
+                .price-box,
+                &-tooltip {
                     .page-multiple-wishlist & {
                         margin-left: 115px;
                     }
@@ -429,10 +357,16 @@ $desktop-popup-position-top: 20%;
             display: none;
         }
     }
+
+    .toolbar-wishlist-results {
+        @extend .abs-pager-toolbar-mobile;
+    }
 }
+
 //
 //  Desktop
 //  _____________________________________________
+
 @include min-screen($screen__m) {
     .wishlist {
         &.window.popup {
@@ -442,6 +376,10 @@ $desktop-popup-position-top: 20%;
             margin-left: $desktop-popup-margin-left;
             width: $desktop-popup-width;
             right: auto;
+
+            .field {
+                @include lib-form-field-type-revert($_type: block);
+            }
         }
     }
 
@@ -496,16 +434,19 @@ $desktop-popup-position-top: 20%;
                 right: 0;
                 top: 0;
             }
+
             //  Wish list name
             &-title {
                 strong {
                     font-size: 40px;
                 }
             }
+
             //  Wish list info
             &-info {
                 float: left;
             }
+
             //  Wish list toolbar
             &-toolbar {
                 float: right;
