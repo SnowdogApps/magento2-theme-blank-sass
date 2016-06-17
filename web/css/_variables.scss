@@ -24,8 +24,10 @@ $icons__font-name: 'icons-blank-theme';
 //  Color nesting
 $panel__background-color: $color-gray-light0;
 $border-color__base: $color-gray80;
+$border-color__light: $color-gray82;
 
 //  Headings
+$h3__font-size: 18px;
 $h3__font-weight: $font-weight__semibold;
 $h3__margin-top: $indent__base;
 
@@ -50,7 +52,7 @@ $grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-colu
 $layout-column__sidebar-width: 5;
 
 //  Checkout columns width
-$layout-column-checkout__width-left: 6;
+$layout-column-checkout__width-left: 3;
 
 
 //
@@ -119,7 +121,7 @@ $accordion-content__padding: $indent__s $indent__s $indent__l;
 
 $icon-success: '\e60e';
 $icon-error: '\e61f';
-$icon-edit: '\e601';
+$icon-edit: '\e606';
 $icon-print: '\e624';
 $icon-star-empty: '\e625';
 $icon-download: '\e626';
@@ -224,7 +226,8 @@ $dropdown-list__z-index: 100;
 
 
 //  Actions-toolbar
-$actions-toolbar-actions__position: left;
+$actions-toolbar-actions__position: justify;
+$actions-toolbar-actions__reverse: false;
 $actions-toolbar-actions-primary__margin: 0 15px 0 0;
 
 //

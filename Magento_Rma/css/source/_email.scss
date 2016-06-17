@@ -1,0 +1,12 @@
+//
+//  RMA table styles
+//  _____________________________________________
+
+@include max-screen($screen__s) {
+    //  Shrink table size on small screens to fit as much as possible without requiring horizontal scrolling
+    .rma-items td,
+    .rma-items th {
+        font-size: $font-size__s !important;
+        padding: 5px !important;
+    }
+}

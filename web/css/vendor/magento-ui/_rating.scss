@@ -26,7 +26,10 @@
             $_icon-letter-spacing,
             $_icon-color
         );
-        content: $_icon-content;
+        @include lib-rating-icons-content(
+            $_icon-count,
+            $_icon-content
+        );
         display: block;
         position: absolute;
         z-index: 1;
@@ -161,11 +164,11 @@
     $_icon-content,
     $_icon-count
 ) {
-    @for $_index from $_icon-count to 1 {
+    @for $_index from $_icon-count to 0 {
         .rating-#{$_index} {
             z-index: $_icon-count - ($_index - 2);
             &:before {
-                content: $_icon-content;
+                @include lib-rating-icons-content($_index, $_icon-content);
             }
         }
     }
@@ -197,7 +200,7 @@
     $_icon-content,
     $_icon-color
 ) {
-    content: $_icon-content;
+    @include lib-rating-icons-content($_icon-count, $_icon-content);
     -webkit-font-smoothing: antialiased;
     color: $_icon-color;
     font-family: $_icon-font;
@@ -209,4 +212,15 @@
     font-style: normal;
     font-weight: normal;
     speak: none;
+}
+
+@mixin lib-rating-icons-content(
+    $_icon-count: $rating-icon__count,
+    $_icon-content: $rating-icon__content
+) {
+    $_icon-content-result: $_icon-content;
+    @for $_index from $_icon-count to 1 {
+        $_icon-content-result:  $_icon-content-result + $_icon-content;
+    }
+    content: $_icon-content-result;
 }

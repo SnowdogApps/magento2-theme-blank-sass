@@ -13,8 +13,12 @@
 
 $button-icon__position: $icon__position;
 $button-icon__font: $icon-font;
+$button-icon__font-size: 22px;
+$button-icon__line-height: $button-icon__font-size;
 $button-icon__margin: 0;
 $button-icon__color: inherit;
+$button-icon__hover__font-color: inherit;
+$button-icon__active__font-color: inherit;
 
 $button__font-size: $font-size__base;
 $button__font-weight: $font-weight__semibold;
@@ -32,12 +36,6 @@ $button-primary__hover__color: $color-white;
 $button-primary__active__background: $link__hover__color;
 $button-primary__active__border: 1px solid $link__hover__color;
 $button-primary__active__color: $color-white;
-
-//  Button with icon
-
-$button-icon__line-height: $icon-font__line-height;
-$button-icon__hover__font-color: inherit;
-$button-icon__active__font-color: inherit;
 
 $button__shadow: none;
 $button__shadow-active: none;
@@ -61,7 +59,7 @@ $button__padding__s: $indent__xs 8px;
     $_button-cursor                     : pointer,
     $_button-display                    : inline-block,
     $_button-disabled-opacity           : 0.5,
-    $_button-width                      : inherit,
+    $_button-width                      : auto,
     $_button-margin                     : 0,
     $_button-padding                    : 7px 15px,
     $_button-color                      : $primary__color,

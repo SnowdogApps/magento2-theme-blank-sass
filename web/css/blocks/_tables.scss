@@ -14,27 +14,29 @@ table {
 }
 
 .table {
-    tfoot {
-        background: $sidebar__background-color;
+    &:not(.cart) {
+        &:not(.totals) {
+            @include lib-table-bordered(
+                $_table_type: light,
+                $_table_border-width: $table__border-width
+            );
 
-        & > tr {
-            &:first-child {
-                th,
-                td {
-                    border-top: $table__border-width $table__border-style $table__border-color;
-                    padding-top: $indent__base;
+            tfoot {
+                > tr {
+                    &:first-child {
+                        th,
+                        td {
+                            border-top: $table__border-width $table__border-style $table__border-color;
+                            padding-top: $indent__base;
+                        }
+                    }
+                }
+
+                .mark {
+                    font-weight: $font-weight__regular;
+                    text-align: right;
                 }
             }
-        }
-
-        th,
-        td {
-            border: 0;
-        }
-
-        .mark {
-            font-weight: $font-weight__regular;
-            text-align: right;
         }
     }
 }
@@ -43,7 +45,6 @@ table {
 //  _____________________________________________
 @include max-screen($screen__s) {
     .table-wrapper {
-        border-top: $table__border-width $table__border-style $table__border-color;
         @include lib-table-overflow();
         position: relative; // To hide unnecessary horizontal scrollbar in Safari
 
@@ -147,6 +148,10 @@ table {
 //  _____________________________________________
 @include min-screen($screen__s) {
     .table {
-        @include lib-table-bordered( $_table_type: horizontal_body );
+        &:not(.cart) {
+            &:not(.totals) {
+                @include lib-table-bordered( $_table_type: horizontal_body );
+            }
+        }
     }
 }

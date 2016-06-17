@@ -1,11 +1,21 @@
-var gulp        = require('gulp'),
-    sass        = require('gulp-sass'),
-    plumber     = require('gulp-plumber'),
-    postcss     = require('gulp-postcss'),
-    reporter    = require('postcss-reporter'),
-    stylelint   = require('stylelint'),
-    sassLint    = require('gulp-sass-lint'),
-    runSequence = require('run-sequence');
+var gulp         = require('gulp'),
+    sass         = require('gulp-sass'),
+    plumber      = require('gulp-plumber'),
+    postcss      = require('gulp-postcss'),
+    reporter     = require('postcss-reporter'),
+    stylelint    = require('stylelint'),
+    sassLint     = require('gulp-sass-lint'),
+    runSequence  = require('run-sequence'),
+    postcss      = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer');
+
+var config = {
+    postcss: [
+        autoprefixer({
+            browsers: ['> 1%', 'last 2 versions', 'not ie < 11', 'not OperaMini >= 5.0']
+        })
+    ]
+};
 
 gulp.task('default', () => {
     gulp.watch(['**/*.scss','!node_modules/**'], () => {
@@ -22,6 +32,7 @@ gulp.task('sass', () => {
             })
             .on('error', sass.logError)
         )
+        .pipe(postcss(config.postcss))
         .pipe(gulp.dest('web/css'));
 });
 
@@ -56,6 +67,7 @@ gulp.task('ci:sass', () => {
                 sourceComments: true
             })
         )
+        .pipe(postcss(config.postcss))
         .pipe(gulp.dest('web/css'));
 });
 

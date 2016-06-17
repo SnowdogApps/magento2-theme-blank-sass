@@ -1,15 +1,26 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+//
+//  Variables
+//  _____________________________________________
 
-$account-title-border-color: $color-gray-middle2;
-$account-table-border-bottom-color: $color-gray-middle1;
-$account-table-action-delete: $color-red12;
+$account-nav-background          : $sidebar__background-color;
+$account-nav-color               : false;
+
+$account-nav-current-border      : 3px solid transparent;
+$account-nav-current-border-color: $color-orange-red1;
+$account-nav-current-color       : false;
+$account-nav-current-font-weight : $font-weight__semibold;
+
+$account-nav-item-hover          : $color-gray91;
+
+$_password-default               : $color-gray-light01;
+$_password-weak                  : #ffafae;
+$_password-medium                : #ffd6b3;
+$_password-strong                : #c5eeac;
+$_password-very-strong           : #81b562;
 
 //
 //  Common
-//  ---------------------------------------------
+//  _____________________________________________
 
 .login-container {
     .block {
@@ -27,7 +38,6 @@ $account-table-action-delete: $color-red12;
 
     .fieldset {
         @include lib-form-hasrequired(bottom);
-
         &:after {
             margin-top: 35px;
         }
@@ -36,27 +46,13 @@ $account-table-action-delete: $color-red12;
 
 .block-addresses-list {
     .items.addresses {
-        & > .item {
+        > .item {
             margin-bottom: $indent__base;
 
             &:last-child {
                 margin-bottom: 0;
             }
         }
-
-        .item.actions {
-            margin-top: $indent__xs;
-
-            .action {
-                // TO DO - The selector ".abs-account-actions" was not found.
-                // @extend .abs-account-actions !optional;
-            }
-        }
-    }
-
-    address {
-        // TO DO - The selector ".abs-account-block-line-height" was not found.
-        // @extend .abs-account-block-line-height !optional;
     }
 }
 
@@ -76,43 +72,36 @@ $account-table-action-delete: $color-red12;
     }
 }
 
-.form-create-account {
-    .fieldset-fullname {
-        .fields {
-            .field {
-                float: none;
-            }
-        }
-    }
-}
-
 .box-billing-address,
 .box-shipping-address,
 .box-information,
 .box-newsletter {
     .box-content {
-        // TO DO  - The selector ".abs-account-block-line-height" was not found.
-        // @extend .abs-account-block-line-height !optional;
+        line-height: 26px;
     }
 }
 
+//
 //  My account
+//  ---------------------------------------------
+
 .account {
-    .page-title-wrapper {
-        .page-title {
-            display: inline-block;
-        }
-    }
-
-    .messages {
-        margin-bottom: $indent__base;
-    }
-
     .column.main {
-        margin-bottom: $indent__l;
-
         h2 {
             margin-top: 0;
+        }
+
+        .toolbar {
+            text-align: center;
+            .limiter-options {
+                width: auto;
+            }
+        }
+
+        .limiter {
+            >.label {
+                @extend .abs-visually-hidden;
+            }
         }
 
         .block:not(.widget) {
@@ -121,46 +110,27 @@ $account-table-action-delete: $color-red12;
     }
 
     .sidebar-additional {
-        margin-top: $indent__xl;
+        margin-top: 40px;
     }
 
     .table-wrapper {
-        margin-bottom: $indent__base;
-        border-bottom: 1px solid $account-table-border-bottom-color;
-
         &:last-child {
             margin-bottom: 0;
         }
-    }
 
-    .legend {
-        // TO DO - The selector ".abs-account-title" was not found.
-        // @extend .abs-account-title !optional;
-    }
-}
+        .action {
+            margin-right: 15px;
 
-.account,
-[class^="sales-guest-"],
-.sales-guest-view {
-    .column.main {
-        .order-details-items {
-            .table-wrapper {
-                .data.table {
-                    // TO DO - The selector ".abs-table-striped" was not found.
-                    // @extend .abs-table-striped !optional;
-                }
+            &:last-child {
+                margin-right: 0;
             }
         }
     }
 
-    .data.table {
-        .col.actions {
-            .action {
-                // TO DO - The selector ".abs-account-actions" was not found.
-                // @extend .abs-account-actions !optional;
-                &.delete {
-                    color: $account-table-action-delete;
-                }
+    .table-return-items {
+        .qty {
+            .input-text {
+                @extend .abs-input-qty;
             }
         }
     }
@@ -171,6 +141,58 @@ $account-table-action-delete: $color-red12;
     .field.additional {
         .label {
             @extend .abs-visually-hidden;
+        }
+    }
+}
+
+//
+//  Account navigation
+//  ---------------------------------------------
+
+.account-nav {
+    .title {
+        @extend .abs-visually-hidden;
+    }
+
+    .content {
+        background: $account-nav-background;
+        padding: 15px 0;
+    }
+
+    .item {
+        margin: 3px 0 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        a,
+        > strong {
+            color: $account-nav-color;
+            border-left: 3px solid transparent;
+            display: block;
+            padding: $indent__xs 18px $indent__xs 15px;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: $account-nav-item-hover;
+            }
+        }
+
+        &.current {
+            a,
+            strong {
+                border-color: $account-nav-current-border-color;
+                color: $account-nav-current-color;
+                font-weight: $account-nav-current-font-weight;
+            }
+
+            a {
+                border-color: $account-nav-current-border-color;
+            }
         }
     }
 }
@@ -188,54 +210,152 @@ $account-table-action-delete: $color-red12;
     }
 
     .title {
+        margin-bottom: $indent__s;
+
         strong {
             @include lib-heading(h4);
+            .column.main & {
+                font-size: $h3__font-size;
+            }
         }
-
-        margin-bottom: $indent__s;
     }
 
-    p {
-        &:last-child {
-            margin: 0;
-        }
+    p:last-child {
+        margin: 0;
     }
 
     .box-actions {
         margin-top: $indent__xs;
+    }
+}
 
-        .action {
-            // TO DO - The selector ".abs-account-actions" was not found.
-            // @extend .abs-account-actions !optional;
+//
+//  Password Strength Meter
+//  ---------------------------------------------
+
+.field.password {
+    .control {
+        display: flex;
+        flex-direction: column;
+        .mage-error {
+            order: 2;
+        }
+        .input-text {
+            order: 0;
+        }
+    }
+}
+
+.password-strength-meter {
+    background-color: $_password-default;
+    height: $form-element-input__height;
+    line-height: $form-element-input__height;
+    padding: $form-element-input__padding;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+
+    .password-strength-meter-0 & {
+        &:before {
+            background-color: $_password-default;
+            width: 100%;
+        }
+    }
+
+    .password-strength-meter-1 & {
+        &:before {
+            background-color: $_password-weak;
+            width: 25%;
+        }
+    }
+
+    .password-strength-meter-2 & {
+        &:before {
+            background-color: $_password-medium;
+            width: 50%;
+        }
+    }
+
+    .password-strength-meter-3 & {
+        &:before {
+            background-color: $_password-strong;
+            width: 75%;
+        }
+    }
+
+    .password-strength-meter-4 & {
+        &:before {
+            background-color: $_password-very-strong;
+            width: 100%;
         }
     }
 }
 
 .control.captcha-image {
     margin-top: $indent__s;
+
     .captcha-img {
         vertical-align: middle;
     }
 }
 
-.account {
-    .data.table-return-items {
-        .qty {
-            .input-text {
-                @extend .abs-input-qty;
-            }
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__s) {
+    .account {
+        .column.main,
+        .sidebar-additional {
+            margin: 0;
         }
     }
 }
 
-.order-products-toolbar {
-    position: relative;
-}
+@include max-screen($screen__m) {
+    .login-container {
+        .fieldset {
+            &:after {
+                text-align: center;
+            }
+        }
+    }
 
+    .account {
+        .page.messages {
+            margin-bottom: $indent__xl;
+        }
+
+        .toolbar {
+            @extend .abs-pager-toolbar-mobile;
+        }
+    }
+
+    .control.captcha-image {
+        .captcha-img {
+            margin-bottom: $indent__s;
+            display: block;
+        }
+    }
+
+    .customer-account-index {
+        .page-title-wrapper {
+            position: relative;
+        }
+    }
+}
 
 //
 //  Desktop
-//  ---------------------------------------------
+//  _____________________________________________
 
 @include min-screen($screen__m) {
     .login-container {
@@ -245,12 +365,12 @@ $account-table-action-delete: $color-red12;
             @extend .abs-blocks-2columns;
             &.login {
                 .actions-toolbar {
-                    & > .primary {
+                    > .primary {
                         margin-bottom: 0;
                         margin-right: $indent__l;
                     }
 
-                    & > .secondary {
+                    > .secondary {
                         float: left;
                     }
                 }
@@ -258,8 +378,12 @@ $account-table-action-delete: $color-red12;
         }
 
         .fieldset {
-            & > .field {
-                & > .control {
+            &:after {
+                @extend .abs-margin-for-forms-desktop;
+            }
+
+            > .field {
+                > .control {
                     width: 55%;
                 }
             }
@@ -286,11 +410,14 @@ $account-table-action-delete: $color-red12;
     .form.send.confirmation,
     .form.password.forget,
     .form.create.account {
-        width: 50%;
         min-width: 600px;
+        width: 50%;
     }
 
+    //
     //  My account
+    //  ---------------------------------------------
+
     .account.page-layout-2columns-left {
         .sidebar-main,
         .sidebar-additional {
@@ -303,11 +430,6 @@ $account-table-action-delete: $color-red12;
     }
 
     .account {
-        .page-title-wrapper {
-            // TO DO -
-            @extend .abs-add-clearfix-desktop;
-        }
-
         .column.main {
             .block:not(.widget) {
                 .block-content {
@@ -316,16 +438,6 @@ $account-table-action-delete: $color-red12;
                     .box {
                         @extend .abs-blocks-2columns;
                     }
-                }
-            }
-        }
-
-        .data.table {
-            margin-bottom: 0;
-
-            .col {
-                &.actions {
-                    white-space: nowrap;
                 }
             }
         }
@@ -339,7 +451,7 @@ $account-table-action-delete: $color-red12;
         .items.addresses {
             @extend .abs-add-clearfix-desktop;
 
-            & > .item {
+            > .item {
                 @extend .abs-blocks-2columns;
                 margin-bottom: $indent__base;
 
@@ -349,110 +461,19 @@ $account-table-action-delete: $color-red12;
                 }
             }
         }
-
-        address {
-            // TO DO - The selector ".abs-account-block-font-size" was not found.
-            // @extend .abs-account-block-font-size !optional;
-        }
     }
 
-    .page-main .block {
-        // TO DO - The selector ".abs-margin-for-blocks-and-widgets-desktop" was not found.
-        // @extend .abs-margin-for-blocks-and-widgets-desktop !optional;
-    }
+    //
+    //  Welcome block
+    //  ---------------------------------------------
 
-    .form-edit-account,
-    .form-address-edit {
-        .fieldset {
-            @extend .abs-blocks-2columns;
-        }
-    }
-
-    .box-billing-address,
-    .box-shipping-address,
-    .box-information {
-        .box-content {
-            // TO DO - The selector ".abs-account-block-font-size" was not found.
-            // @extend .abs-account-block-font-size !optional;
-        }
+    .dashboard-welcome-toggler {
+        @extend .abs-visually-hidden-desktop;
     }
 
     .control.captcha-image {
         .captcha-img {
             margin: 0 $indent__s $indent__s 0;
-        }
-    }
-}
-
-//
-//  Mobile $screen__s
-//  ---------------------------------------------
-
-@include max-screen($screen__s) {
-    .account {
-        .column.main,
-        .sidebar-additional {
-            margin: 0;
-        }
-
-        .data.table {
-            // TO DO - The selector ".abs-table-striped-mobile" was not found.
-            // @extend .abs-table-striped-mobile !optional;
-        }
-    }
-}
-
-//
-//  Mobile $screen__m
-//  ---------------------------------------------
-
-@include max-screen($screen__m) {
-    .login-container {
-        .fieldset {
-            &:after {
-                text-align: center;
-            }
-        }
-    }
-
-    .account {
-        .page.messages {
-            margin-bottom: $indent__xl;
-        }
-
-        .column.main {
-            .block:not(.widget) {
-                .block-title {
-                    @extend .abs-add-clearfix-mobile-m;
-
-                    & > .action {
-                        float: right;
-                        margin-top: $indent__xs;
-                    }
-                }
-
-                .block-content {
-                    .box {
-                        margin-bottom: $indent__base;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .control.captcha-image {
-        .captcha-img {
-            display: block;
-            margin-bottom: $indent__s;
-        }
-    }
-
-    .customer-account-index {
-        .page-title-wrapper {
-            position: relative;
         }
     }
 }

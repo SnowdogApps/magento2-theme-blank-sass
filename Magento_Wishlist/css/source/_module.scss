@@ -87,8 +87,7 @@
 
 .block-wishlist {
     .block-title {
-        // TO DO - The selector ".abs-block-widget-title" was not found.
-        // @extend .abs-block-widget-title !optional;
+        @extend .abs-block-title;
     }
 
     .counter {

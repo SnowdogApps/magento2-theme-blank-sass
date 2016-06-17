@@ -320,6 +320,7 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
             margin-bottom: 0;
             padding: 0;
             position: relative;
+            font-weight: $_nav-font-weight;
         }
 
         li.level0 {

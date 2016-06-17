@@ -1,18 +1,17 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
 //
 //  Variables
 //  _____________________________________________
-$autocomplete__background-color: $color-white;
-$autocomplete__border: 1px solid $form-element-input__border-color;
-$autocomplete-item__border: 1px solid $color-gray90;
+
+$autocomplete__background-color : $color-white;
+$autocomplete__border           : 1px solid $form-element-input__border-color;
+$autocomplete-item__border      : 1px solid $color-gray90;
 $autocomplete-item__hover__color: $color-gray91;
 $autocomplete-item-amount__color: $color-gray60;
+
 //
 //  Common
 //  _____________________________________________
+
 .block-search {
     margin-bottom: 0;
 
@@ -27,11 +26,17 @@ $autocomplete-item-amount__color: $color-gray60;
     }
 
     .label {
-        @include lib-icon-font( $_icon-font-content : $icon-search, $_icon-font-size : 22px, $_icon-font-line-height : 28px, $_icon-font-margin : 0 $indent__s 0 0, $_icon-font-color : $minicart-icons-color, $_icon-font-color-hover : $minicart-icons-color-hover, $_icon-font-color-active: $minicart-icons-color-hover, $_icon-font-text-hide : true );
-        display: inline-block;
-
+        @include lib-icon-font(
+            $_icon-font-content     : $icon-search,
+            $_icon-font-size        : 35px,
+            $_icon-font-line-height : 33px,
+            $_icon-font-color       : $minicart-icons-color,
+            $_icon-font-color-hover : $minicart-icons-color-hover,
+            $_icon-font-color-active: $minicart-icons-color-hover,
+            $_icon-font-text-hide   : true
+        );
         &.active {
-            & + .control {
+            + .control {
                 input {
                     position: static;
                 }
@@ -72,12 +77,6 @@ $autocomplete-item-amount__color: $color-gray60;
     ul {
         @include lib-list-reset-styles();
 
-        &:not(:empty) {
-            background: $autocomplete__background-color;
-            border: $autocomplete__border;
-            border-top: 0;
-        }
-
         li {
             border-top: $autocomplete-item__border;
             cursor: pointer;
@@ -87,12 +86,18 @@ $autocomplete-item-amount__color: $color-gray60;
             text-align: left;
             white-space: normal;
 
+            &:not(:empty) {
+                border-top: 0;
+                border: $autocomplete__border;
+                background: $autocomplete__background-color;
+            }
+
             &:first-child {
                 border-top: none;
             }
 
-            &.selected,
-            &:hover {
+            &:hover,
+            &.selected {
                 background: $autocomplete-item__hover__color;
             }
 
@@ -107,8 +112,6 @@ $autocomplete-item-amount__color: $color-gray60;
 }
 
 .form.search.advanced {
-    // TO DO - The selector ".abs-forms-general-desktop" was not found.
-    // @extend .abs-forms-general-desktop !optional;
     .fields.range {
         .field {
             &:first-child {
@@ -144,10 +147,6 @@ $autocomplete-item-amount__color: $color-gray60;
                     padding-right: 45px;
                 }
             }
-
-            &.date {
-                @extend .abs-field-date;
-            }
         }
     }
 
@@ -165,30 +164,32 @@ $autocomplete-item-amount__color: $color-gray60;
     }
 }
 
-.search-terms {
-    @extend .abs-reset-list;
-    line-height: 2;
-
-    & > li {
-        display: inline-block;
-        margin-right: $indent__s;
-    }
-}
-
-.search.found {
+.search.summary {
     margin-bottom: $indent__s;
 }
+
 //
 //  Mobile
 //  _____________________________________________
+
+@include max-screen($screen__m) {
+    .block-search {
+        .block-content {
+            margin-bottom: 0;
+        }
+    }
+}
+
 @include max-screen($screen__s) {
     .block-search {
         margin-top: $indent__s;
     }
 }
+
 //
 //  Desktop
 //  _____________________________________________
+
 @include min-screen($screen__m) {
     .block-search {
         float: right;
@@ -204,7 +205,13 @@ $autocomplete-item-amount__color: $color-gray60;
         .control {
             border-top: 0;
             margin: 0;
-            padding: 0;
+            padding: 0 0 25px;
+        }
+
+        .nested {
+            display: block;
+            padding-top: 5px;
+            position: absolute;
         }
 
         input {
@@ -218,10 +225,15 @@ $autocomplete-item-amount__color: $color-gray60;
 
         .action.search {
             display: inline-block;
-            @include lib-button-icon( $_icon-font-content : $icon-search, $_icon-font-size : 16px, $_icon-font-text-hide : true, $_icon-font-color : $header-icons-color, $_icon-font-color-hover: $header-icons-color-hover, $_icon-font-line-height: 32px );
+            @include lib-button-icon(
+                $_icon-font-content  : $icon-search,
+                $_icon-font-text-hide: true,
+                $_icon-font-color    : $header-icons-color
+            );
             @include lib-button-reset();
+            padding: $indent__xs 0;
             position: absolute;
-            right: $indent__s;
+            right: 10px;
             top: 0;
             z-index: 1;
 

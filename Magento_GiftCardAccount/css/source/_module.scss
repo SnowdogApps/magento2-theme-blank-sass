@@ -1,13 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  _____________________________________________
-
-
 .giftcard-account {
     .please-wait {
         display: none;
@@ -16,11 +6,6 @@
     .form-giftcard-redeem {
         .giftcard.info {
             margin-bottom: $indent__l;
-        }
-
-        .fieldset {
-            // TO DO - The selector ".abs-forms-margin-small" was not found.
-            // @extend .abs-forms-margin-small !optional;
         }
     }
 }
@@ -43,25 +28,6 @@
 
         .giftcard-account-number {
             margin: 0 0 $indent__s;
-        }
-    }
-}
-
-
-//
-//  Desktop
-//  _____________________________________________
-
-@include min-screen($screen__m) {
-    .form-giftcard-redeem {
-        // TO DO - The selector ".abs-forms-general-desktop" was not found.
-        // @extend .abs-forms-general-desktop !optional;
-    }
-
-    .block-balance-giftcard {
-        .block-content {
-            // TO DO - The selector ".abs-account-block-font-size" was not found.
-            // @extend .abs-account-block-font-size !optional;
         }
     }
 }

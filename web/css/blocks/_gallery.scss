@@ -1131,7 +1131,6 @@ $fotorama-thumb-arrow: 30px;
         .fotorama__thumb__arr {
             @include fotorama-abs-center();
             width: 100%;
-
             .ie9 & {
                 margin: (-$fotorama-thumb-arrow / 2) 0 0 (-$fotorama-thumb-arrow / 2);
             }
@@ -1139,20 +1138,18 @@ $fotorama-thumb-arrow: 30px;
     }
 
     .fotorama__thumb__arr--left {
-        @include fotorama-arrow-gradient(left);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#00ffffff', GradientType=1);
+        @include fotorama-arrow-gradient(to right);
         left: 0;
-
         .fotorama__thumb__arr {
             background-position: (-$fotorama-thumb-arrow) (-$fotorama-thumb-arrow);
         }
     }
 
     .fotorama__thumb__arr--right {
-        @include fotorama-arrow-gradient(right);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff', GradientType=1);
+        @include fotorama-arrow-gradient(to left);
         right: 0;
-
         .fotorama__thumb__arr {
             background-position: (-$fotorama-thumb-arrow * 2) (-$fotorama-thumb-arrow);
         }
@@ -1168,7 +1165,6 @@ $fotorama-thumb-arrow: 30px;
         right: 0;
         cursor: pointer;
         z-index: $z-index-10;
-
         .fotorama__thumb__arr {
             transform: rotate(90deg);
             margin: auto;
@@ -1177,7 +1173,7 @@ $fotorama-thumb-arrow: 30px;
     }
 
     .fotorama__thumb__arr--left {
-        @include fotorama-arrow-gradient(top);
+        @include fotorama-arrow-gradient(to bottom);
         top: 0;
 
         .fotorama__thumb__arr {
@@ -1186,7 +1182,7 @@ $fotorama-thumb-arrow: 30px;
     }
 
     .fotorama__thumb__arr--right {
-        @include fotorama-arrow-gradient(bottom);
+        @include fotorama-arrow-gradient(to top);
         bottom: 0;
 
         .fotorama__thumb__arr {

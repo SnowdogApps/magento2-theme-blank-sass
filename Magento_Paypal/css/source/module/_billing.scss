@@ -1,40 +1,20 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  _____________________________________________
-
 
 //  Paypal billing agreement
-.table-wrapper {
-    &.billing-agreements {
-        margin-bottom: $indent__xl;
+.form-new-agreement {
+    .actions-toolbar {
+        @extend .abs-reset-left-margin;
     }
 }
 
 //
-//  Mobile
+//  Desktop
 //  _____________________________________________
 
-@include max-screen($screen__s) {
-    .account {
-        .table-billing-agreements,
-        .table-billing-agreements-related {
-            .col {
-                &.actions {
-                    // TO DO - The selector ".abs-col-no-prefix" was not found.
-                    // @extend .abs-col-no-prefix !optional;
-                }
-            }
-        }
-    }
-
+@include min-screen($screen__m) {
     .form-new-agreement {
-        select {
-            width: auto;
+        .fieldset .legend,
+        .actions-toolbar {
+            @extend .abs-reset-left-margin-desktop;
         }
     }
 }
