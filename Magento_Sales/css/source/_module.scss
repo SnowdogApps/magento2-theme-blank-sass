@@ -1,135 +1,62 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  ---------------------------------------------
-
-
-
 .order-links {
+    border-bottom: $border-width__base solid $border-color__base;
+    margin-bottom: 10px;
+
     .item {
-        line-height: $tab-control__height;
-        margin: 0 0 -1px;
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
 
-        strong {
-            background: $tab-control__active__background-color;
-            border: $border-width__base solid $border-color__base;
-            display: block;
-            font-weight: $tab-control__font-weight;
-            padding: 0 20px;
-        }
-
-        a {
-            background: $tab-control__background-color;
-            color: $tab-control__color;
-            border: $border-width__base solid $border-color__base;
-            display: block;
-            font-weight: $tab-control__font-weight;
-            padding: 0 20px;
-
-            &:hover {
-                background: $tab-control__hover__background-color;
-                text-decoration: $tab-control__hover__text-decoration;
-            }
-        }
+.order-actions-toolbar {
+    .action {
+        margin: 0 20px 0 0;
     }
 }
 
 .order-details-items {
-    border: $border-width__base solid $border-color__base;
-    margin-bottom: $indent__xl;
-    padding: $indent__s;
+    border-bottom: $border-width__base solid $border-color__base;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 
     .order-title {
-        border-bottom: $border-width__base solid $border-color__base;
-        padding: 0 0 $indent__s;
-
-        & > strong {
-            font-size: 24px;
-            font-weight: $font-weight__light;
-        }
-
-        .action {
+        > strong {
+            @include lib-heading(h3);
             display: inline-block;
         }
     }
 
-    .table-wrapper {
-        margin: 0;
+    .items-qty {
+        @extend .abs-reset-list;
 
-        &:not(:last-child) {
-            margin-bottom: $indent__l;
+        .item {
+            white-space: nowrap;
+        }
+
+        .title {
+            &:after {
+                content: ': ';
+            }
         }
     }
 
     .table-order-items {
-        & > thead > tr > th {
-            border-bottom: 1px solid $border-color__base;
-        }
-
-        tbody {
-            & + tbody {
-                border-top: 1px solid $border-color__base;
-            }
-
-            .account & {
-                tr:nth-child(even) td {
-                    background: none;
-                }
-            }
-
-            td {
-                padding-top: 20px;
-                padding-bottom: 20px;
-            }
-
-            .col {
-                &.label {
-                    font-weight: $font-weight__bold;
-                    padding-top: 0;
-                    padding-bottom: 5px;
-                }
-
-                &.options {
-                    padding: 0 0 15px;
-                }
-            }
-
-            & > .item-parent {
-                td {
-                    padding-bottom: 5px;
-                }
-
-                & + tr td {
-                    padding-top: 5px;
-                }
-            }
-
-            .item-options-container td {
-                padding-top: 0;
-                padding-bottom: 15px;
-            }
-        }
-
         .product-item-name {
-            margin: 0 0 10px;
+            margin-top: 0;
+        }
+
+        tbody + tbody {
+            border-top: $border-width__base solid $border-color__base;
         }
     }
-    .item-options {
-        margin: 0;
 
+    .item-options {
         dt {
             margin: 0;
         }
 
         dd {
             margin: 0 0 15px;
-            &:last-child {
-                margin-bottom: 0;
-            }
         }
 
         &.links {
@@ -137,7 +64,7 @@
                 display: inline-block;
 
                 &:after {
-                    content: ": ";
+                    content: ': ';
                 }
             }
 
@@ -146,77 +73,82 @@
             }
         }
     }
+}
 
-    thead {
-        .col.qty {
-            text-align: center;
-        }
-    }
-
-    .col {
-        &.price,
-        &.subtotal {
-            // TO DO - The selector ".abs-incl-excl-tax" was not found.
-            // @extend .abs-incl-excl-tax !optional;
-        }
-
-        &.name {
-            padding-top: 16px;
-        }
-    }
-
-    .cart-tax-total {
-        @extend .abs-tax-total;
-        &-expanded {
-            @extend .abs-tax-total-expanded;
-        }
-    }
-
-    tfoot {
-        // TO DO - The selector ".abs-account-summary" was not found.
-        // @extend .abs-account-summary !optional;
-    }
+.order-actions-toolbar {
+    margin-bottom: 25px;
 
     .action {
-        &.show {
-            @include lib-icon-font(
-                $icon-down,
-                $_icon-font-size: 10px,
-                $_icon-font-line-height: 10px,
-                $_icon-font-text-hide: true,
-                $_icon-font-position: after,
-                $_icon-font-display: inline-block
-            );
-            color: $primary__color;
+        margin-right: 30px;
 
-            &.expanded {
-                @include lib-icon-font-symbol(
-                    $_icon-font-content: $icon-up,
-                    $_icon-font-position: after
-                );
-            }
+        &.print {
+            margin: 0;
+        }
+    }
+}
+
+.order-status {
+    @extend .abs-status;
+}
+
+.page-title-wrapper {
+    .order-date {
+        margin: 0 0 $indent__base;
+    }
+}
+
+.account,
+[class^='sales-guest-'],
+.sales-guest-view {
+    .page-title-wrapper {
+        .page-title {
+            margin-right: $indent__m;
+        }
+    }
+}
+
+.form-orders-search {
+    .field {
+        &.email,
+        &.zip {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.block-reorder {
+    .block-title {
+        @extend .abs-block-title;
+    }
+
+    .product-item {
+        .checkbox {
+            position: relative;
+            top: 2px;
+            vertical-align: baseline;
+        }
+
+        .label {
+            @extend .abs-visually-hidden;
+        }
+
+        .field.item {
+            display: inline-block;
         }
     }
 
     .product-item-name {
-        font-size: 18px;
+        display: inline-block;
     }
 
-    .items-qty {
-        @extend .abs-reset-list;
-        .item {
-            white-space: nowrap;
-        }
-
-        .title {
-            &:after {
-                content: ": ";
-            }
-        }
+    .actions-toolbar {
+        margin: 17px 0;
+        max-width: 178px;
     }
 
-    .action.print {
-        display: none;
+    .sidebar-main & .subtitle,
+    .sidebar-additional & .subtitle {
+        @extend .abs-no-display;
     }
 }
 
@@ -235,14 +167,6 @@
     }
 
     &-view {
-        .block-content .box {
-            margin-bottom: 30px;
-        }
-
-        .box-title {
-            font-weight: $font-weight__semibold;
-        }
-
         .box-content {
             .payment-method {
                 .title {
@@ -252,7 +176,7 @@
                 .content {
                     margin: 0;
 
-                    & > strong {
+                    > strong {
                         font-weight: $font-weight__regular;
 
                         &:after {
@@ -263,23 +187,10 @@
             }
         }
     }
-
-    &-gift-message {
-        .column.main .order-details-items & {
-            margin: 40px 0 0;
-        }
-
-        & + .actions-toolbar {
-            display: none;
-        }
-    }
 }
 
 .order-tracking {
-    .order-title + & {
-        border-bottom: $border-width__base solid $border-color__base;
-    }
-
+    border-bottom: $border-width__base solid $border-color__base;
     margin: 0;
     padding: 20px 0;
 
@@ -293,72 +204,11 @@
     }
 }
 
-.order-actions-toolbar {
-    margin-bottom: 25px;
-
-    .action {
-        margin-right: 30px;
-
-        &.print {
-            @extend .abs-action-print;
-            display: none;
-            margin: 0;
-        }
-    }
-}
-
-.order-status {
-    @extend .abs-status;
-}
-
-.account,
-[class^="sales-guest-"],
-.sales-guest-view,
-.magento-rma-guest-returns {
-    // TO DO - The selector ".abs-title-orders" was not found.
-    // @extend .abs-title-orders !optional;
-}
-
-.form-orders-search {
-    // TO DO - The selector ".abs-forms-general-desktop" was not found.
-    // @extend .abs-forms-general-desktop !optional;
-    .field {
-        &.email,
-        &.zip {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.block-reorder {
-    .block-title {
-        @extend .abs-block-title;
-    }
-
-    .actions-toolbar {
-        margin: 17px 0;
-    }
-
-    .product-item-name {
-        display: inline-block;
-    }
-
-    .product-item {
-        .label {
-            @extend .abs-visually-hidden;
-        }
-
-        .field.item {
-            display: inline-block;
-        }
-    }
-}
-
 //
 //  Guest order view page
 //  ---------------------------------------------
 
-[class^="sales-guest-"],
+[class^='sales-guest-'],
 .sales-guest-view {
     .column.main {
         .block:not(.widget) {
@@ -367,133 +217,33 @@
     }
 }
 
-.magento-rma-guest-returns {
-    .column.main {
-        .order-details-items {
-            .table-wrapper {
-                .data.table {
-                    // TO DO - The selector ".abs-table-striped" was not found.
-                    // @extend .abs-table-striped !optional;
-                }
-            }
-        }
-    }
-}
-
-
 //
 //  Mobile
-//  ---------------------------------------------
+//  _____________________________________________
 
 @include max-screen($screen__s) {
-    .table-wrapper {
-        &.orders-recent {
-            // TO DO - The selector ".abs-account-table-margin-mobile" was not found.
-            // @extend .abs-account-table-margin-mobile !optional;
-        }
-    }
-
-    .table-wrapper {
-        &.orders-recent {
-            // TO DO - The selector ".abs-no-border-top" was not found.
-            // @extend .abs-no-border-top !optional;
-        }
-    }
-
     .account {
-        .table-order-items {
-            tbody tr {
-                display: block;
-            }
-
-            .product-item-name {
-                display: inline-block;
-                margin: 0;
-            }
-
-            .action.show {
-                margin-top: 0;
-            }
-
-            .col {
-                &.actions,
-                &.options {
-                    // TO DO - The selector ".abs-col-no-prefix" was not found.
-                    // @extend .abs-col-no-prefix !optional;
-                }
-            }
-        }
-    }
-
-    .account,
-    [class^="sales-guest-"],
-    .sales-guest-view {
-        // TO DO - The selector ".abs-title-orders-mobile" was not found.
-        // @extend .abs-title-orders-mobile !optional;
-    }
-
-    .order-details-items {
-        .table-wrapper {
-            // TO DO - The selector ".abs-no-border-top" was not found.
-            // @extend .abs-no-border-top !optional;
-        }
-
-        .order-title {
-            strong {
-                display: block;
-            }
-        }
-
-        .action {
-            margin-top: $indent__s;
-        }
-
-        .items-qty {
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        .col {
-            &.price,
-            &.subtotal {
+        .order-details-items {
+            .table-order-items {
+                .product-item-name,
                 .price-including-tax,
-                .price-excluding-tax {
+                .price-excluding-tax,
+                .items-qty {
                     display: inline-block;
+                    vertical-align: top;
                 }
             }
         }
 
-        .data.table .col.options {
-            padding: 0 10px 15px;
-            &:before {
-                display: none;
-            }
-        }
+        .toolbar {
+            @extend .abs-add-clearfix-desktop;
 
-        .table-order-items .options-label {
-            @extend .abs-no-display-s;
-        }
-
-        .options-label + .item-options-container,
-        .item-options-container + .item-options-container {
-            &:before {
-                content: attr(data-th) ":";
-                display: block;
-                font-weight: $font-weight__bold;
-                padding-left: 10px;
+            .pages {
+                float: right;
             }
 
-            .col {
-                font-size: 12px;
-                padding: 0 10px;
-
-                &:first-child {
-                    padding-top: 3px;
-                }
-
-                &:last-child {
-                    padding-bottom: 20px;
-                }
+            .limiter {
+                clear: both;
             }
         }
     }
@@ -501,141 +251,13 @@
 
 //
 //  Desktop
-//  ---------------------------------------------
-
-@include min-screen($screen__s) {
-    .order-details-items {
-        .order-title {
-            .action {
-                margin: 12px 0 0 30px;
-
-                &.track {
-                    float: right;
-                }
-            }
-        }
-    }
-}
+//  _____________________________________________
 
 @include min-screen($screen__m) {
-    .table-wrapper.orders-recent {
-        // TO DO - The selector ".abs-account-table-margin-desktop" was not found.
-        // @extend .abs-account-table-margin-desktop !optional;
-    }
-
-    .order-links {
-        @extend .abs-add-clearfix-desktop;
-        .item {
-            float: left;
-            margin: 0 $tab-control__margin-right 0 0;
-
-            a {
-                padding: $tab-control__padding-top $tab-control__padding-right;
-            }
-
-            strong {
-                border-bottom: 0;
-                margin-bottom: -1px;
-                padding: $tab-control__padding-top $tab-control__padding-right $tab-control__padding-bottom + 1 $tab-control__padding-left;
-            }
-        }
-    }
-
-    .order-actions-toolbar {
-        .action.print {
-            display: block;
-            float: right;
-        }
-    }
-
-    .account,
-    [class^="sales-guest-"],
-    .sales-guest-view {
-        // TO DO - The selector ".abs-title-orders-desktop" was not found.
-        // @extend .abs-title-orders-desktop !optional;
-        .column.main .block.block-order-details-view {
-            @extend .abs-add-clearfix-desktop;
-            .block-content:not(.widget) .box {
-                @extend .abs-add-box-sizing-desktop;
-                clear: none;
-                float: left;
-                width: 25%;
-            }
-        }
-    }
-
-    .order-status {
-        // TO DO - The selector ".abs-status-desktop" was not found.
-        // @extend .abs-status-desktop !optional;
-    }
-
-    .block-order-details-comments {
-        margin: 0 0 60px;
-
-        .comment-date {
-            clear: left;
-            float: left;
-            margin-right: 50px;
-            max-width: 90px;
-        }
-
-        .comment-content {
-            overflow: hidden;
-        }
-    }
-
-    .order-details-items {
-        margin-top: -1px;
-        padding: 25px;
-
-        .col {
-            &.name {
-                padding-left: 0;
-            }
-
-            &.price {
-                text-align: center;
-            }
-
-            &.subtotal {
-                text-align: right;
-            }
-        }
-
-        tbody td {
-            padding-top: 20px;
-            padding-bottom: 20px;
-        }
-
-        tfoot {
-            .amount,
-            .mark {
-                text-align: right;
-            }
-        }
-
-        &.ordered {
-            .order-title {
-                display: none;
-            }
-        }
-    }
-
     .table-order-items {
-        tbody {
-            .col {
-                &.label,
-                &.value {
-                    padding-left: 0;
-                }
-            }
-        }
-
-        &.invoice,
-        &.shipment {
-            .col.qty {
-                text-align: center;
-            }
+        .subtotal,
+        .amount {
+            text-align: right;
         }
 
         &.creditmemo {
@@ -648,6 +270,40 @@
 
                 &.total {
                     text-align: right;
+                }
+            }
+        }
+    }
+
+    .order-actions-toolbar {
+        .action.print {
+            display: block;
+            float: right;
+        }
+    }
+
+    .page-title-wrapper {
+        .order-date {
+            $order-status-indent: ceil($h1__margin-bottom__desktop / 2);
+            margin-top: -$order-status-indent;
+        }
+    }
+
+    //
+    //  Guest order view page
+    //  ---------------------------------------------
+
+    [class^='sales-guest-'],
+    .sales-guest-view {
+        .column.main {
+            .block:not(.widget) {
+                .block-content {
+                    @extend .abs-add-clearfix-desktop;
+
+                    .box {
+                        @extend .abs-blocks-2columns;
+                        margin-bottom: $indent__base;
+                    }
                 }
             }
         }
