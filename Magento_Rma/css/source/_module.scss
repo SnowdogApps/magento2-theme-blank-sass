@@ -1,99 +1,107 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-//
-//    Common
-//--------------------------------------
-.order-details-items.rma {
-    .order-title {
-        display: none;
-        & + .toolbar {
-            display: none;
-        }
-    }
-}
 .form-create-return {
     @extend .abs-add-fields;
+
+    .field {
+        .control > span,
+        address {
+            display: inline-block;
+            padding-top: 6px;
+        }
+    }
+
     .additional {
         &:first-child {
             margin-top: 0;
         }
+
+        .field:nth-last-child(2) {
+            margin-bottom: 0;
+        }
+
+        .field {
+            &:last-child {
+                margin-top: $form-field__vertical-indent;
+            }
+        }
     }
+
     .field.comment {
         margin-top: 55px;
     }
-    .actions-toolbar {
-        @extend .abs-add-clearfix;
-    }
 }
-.return-status {
-    @extend .abs-status;
-}
+
 .block-returns-comments {
     .returns-comments {
-        dd,
-        dt {
+        dt,
+        dd {
             margin: 0;
         }
+
         dt {
             font-weight: $font-weight__regular;
         }
+
         dd {
             margin-bottom: 15px;
+
             &:last-child {
                 margin-bottom: 0;
             }
         }
     }
+
     .fieldset {
-        margin-bottom: $indent__base;
+        margin-bottom: 20px;
     }
 }
-.magento-rma-returns-returns,
-.magento-rma-returns-view {
-    // TO DO - The selector ".abs-title-orders" was not found.
-    // @extend .abs-title-orders !optional;
+
+.return-status {
+    @extend .abs-status;
 }
+
+.magento-rma-returns-returns,
+.magento-rma-guest-returns,
+.magento-rma-returns-view {
+    .page-title-wrapper {
+        .page-title {
+            margin-right: 25px;
+        }
+    }
+}
+
 //
-//    Guest return view page
-//--------------------------------------
+//  Guest return view page
+//  ---------------------------------------------
+
 .magento-rma-guest-returns {
     .column.main {
         .block:not(.widget) {
             @extend .abs-account-blocks;
         }
     }
-    // TO DO - The selector ".abs-title-orders" was not found.
-    // @extend .abs-title-orders !optional;
 }
+
 //
-//    Mobile
-//--------------------------------------
-@include max-screen($screen__s) {
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
     .form-create-return {
-        .additional {
-            .field:nth-last-child(2) {
-                margin-bottom: 0;
-            }
-            .field:last-child {
-                margin-top: $form-field__vertical-indent;
+        .fieldset {
+            > .actions-toolbar {
+                @extend .abs-add-clearfix-mobile-m;
             }
         }
     }
-    .magento-rma-returns-returns,
-    .magento-rma-returns-view {
-        // TO DO - The selector ".abs-title-orders-mobile" was not found.
-        // @extend .abs-title-orders-mobile !optional;
-    }
+
     .account {
         .column.main {
             .returns-details-items {
                 .block-returns-tracking {
                     .block-title {
                         > .action.track {
-                            float: none;
                             display: block;
+                            float: none;
                             margin: $indent__s 0 0;
                         }
                     }
@@ -101,47 +109,46 @@
             }
         }
     }
-    .table-wrapper.table-returns {
-        // TO DO - The selector ".abs-no-border-top" was not found.
-        // @extend .abs-no-border-top !optional;
-    }
 }
+
 //
-//    Desktop
-//--------------------------------------
+//  Desktop
+//  _____________________________________________
+
 @include min-screen($screen__m) {
     .form-create-return {
         @extend .abs-add-fields-desktop;
-        // TO DO - The selector ".abs-form-field-column-2" was not found.
-        // @extend .abs-form-field-column-2 !optional;
-        .fieldset .field {
-            width: 45%;
-        }
-    }
-    .return-status {
-        // TO DO - The selector ".abs-status-desktop" was not found.
-        // @extend .abs-status-desktop !optional;
-    }
-    .magento-rma-returns-returns,
-    .magento-rma-returns-view {
-        // TO DO - The selector ".abs-title-orders-desktop" was not found.
-        // @extend .abs-title-orders-desktop !optional;
-    }
-    .magento-rma-guest-returns {
-        .column.main .block.block-order-details-view {
-            @extend .abs-add-clearfix-desktop;
-            .block-content:not(.widget) .box {
-                @extend .abs-add-box-sizing-desktop;
-                clear: none;
-                float: left;
-                width: 25%;
+        .additional {
+            .field:last-child {
+                margin-top: $form-field__vertical-indent__desktop;
             }
         }
     }
+
+    //
+    //  Guest return view page
+    //  ---------------------------------------------
+
+    .magento-rma-guest-returns {
+        .column.main {
+            .block:not(.widget) {
+                .block-content {
+                    @extend .abs-add-clearfix-desktop;
+
+                    .box {
+                        @extend .abs-blocks-2columns;
+                        margin-bottom: $indent__base;
+                    }
+                }
+            }
+        }
+    }
+
     .block-returns-tracking {
         .block-title {
             .action {
                 margin: 12px 0 0 30px;
+
                 &.track {
                     float: right;
                 }
