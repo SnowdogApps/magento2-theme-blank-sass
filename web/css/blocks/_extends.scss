@@ -733,8 +733,6 @@
 //  ---------------------------------------------
 .abs-account-blocks {
     .block-title {
-        // TO DO - The selector ".abs-account-title" was not found.
-        // @extend .abs-account-title !optional;
         & > .action {
             margin-left: 15px;
         }
