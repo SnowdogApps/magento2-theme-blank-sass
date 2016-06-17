@@ -885,7 +885,8 @@
 //  ---------------------------------------------
 
 @include max-screen($screen__m) {
-    .abs-pager-toolbar-mobile {
+    .abs-pager-toolbar-mobile,
+    .abs-pager-toolbar-mobile-s {
         .toolbar-amount,
         .limiter,
         .pages {
