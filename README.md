@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass.svg?branch=master)](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass)
+[![Travis branch](https://img.shields.io/travis/SnowdogApps/magento2-theme-blank-sass/master.svg?maxAge=2592000)](https://github.com/SnowdogApps/magento2-theme-blank-sass) [![Packagist](https://img.shields.io/packagist/v/snowdog/theme-blank-sass.svg?maxAge=2592000)](https://packagist.org/packages/snowdog/theme-blank-sass) [![Packagist](https://img.shields.io/packagist/dt/snowdog/theme-blank-sass.svg?maxAge=2592000)](https://packagist.org/packages/snowdog/theme-blank-sass)
 # Magento 2 - Blank theme - SASS version
 
 ## Current status
