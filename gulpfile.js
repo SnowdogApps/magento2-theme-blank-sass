@@ -1,4 +1,6 @@
 var gulp         = require('gulp'),
+    gulpif       = require('gulp-if'),
+    gutil        = require('gulp-util')
     sass         = require('gulp-sass'),
     plumber      = require('gulp-plumber'),
     postcss      = require('gulp-postcss'),
@@ -10,6 +12,7 @@ var gulp         = require('gulp'),
     autoprefixer = require('autoprefixer');
 
 var config = {
+    ci: gutil.env.ci || false,
     postcss: [
         autoprefixer({
             browsers: ['> 1%', 'last 2 versions', 'not ie < 11', 'not OperaMini >= 5.0']
@@ -30,7 +33,18 @@ gulp.task('sass', () => {
                 outputStyle   : 'expanded',
                 sourceComments: true
             })
-            .on('error', sass.logError)
+            /** @see sass.logError had to copy a part of this to generate a legitimate error status code */             
+            .on('error', function(error) {
+                var message = new gutil.PluginError('sass', error.messageFormatted).toString();
+
+                // Throw error instead of logging it when using --ci flag.
+                if(config.ci) {
+                    throw message;
+                }
+
+                process.stderr.write(message + '\n');
+                this.emit('end');
+            })
         )
         .pipe(postcss(config.postcss))
         .pipe(gulp.dest('web/css'));
@@ -39,7 +53,8 @@ gulp.task('sass', () => {
 gulp.task('sass-lint', () => {
     return gulp.src(['**/*.scss','!node_modules/**'])
         .pipe(sassLint())
-        .pipe(sassLint.format());
+        .pipe(sassLint.format())
+        .pipe(gulpif(config.ci, sassLint.failOnError()));
 });
 
 gulp.task('css-lint', () => {
@@ -47,41 +62,12 @@ gulp.task('css-lint', () => {
         .pipe(postcss([
             stylelint(),
             reporter({
-                clearMessages: true
-            })
-        ]));
-});
-
-gulp.task('ci:sass-lint', () => {
-    return gulp.src(['**/*.scss','!node_modules/**'])
-        .pipe(sassLint())
-        .pipe(sassLint.format())
-        .pipe(sassLint.failOnError());
-});
-
-gulp.task('ci:sass', () => {
-    return gulp.src('web/css/*.scss')
-        .pipe(
-            sass({
-                outputStyle   : 'expanded',
-                sourceComments: true
-            })
-        )
-        .pipe(postcss(config.postcss))
-        .pipe(gulp.dest('web/css'));
-});
-
-gulp.task('ci:css-lint', () => {
-    return gulp.src('web/css/*.css')
-        .pipe(postcss([
-            stylelint(),
-            reporter({
                 clearMessages: true,
-                throwError   : true
+                throwError: config.ci
             })
         ]));
 });
 
 gulp.task('ci-tests', () => {
-    runSequence('ci:sass-lint', 'ci:sass', 'ci:css-lint');
+    runSequence('sass-lint', 'sass', 'css-lint');
 });
