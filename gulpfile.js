@@ -2,6 +2,7 @@ var gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
     gutil        = require('gulp-util')
     sass         = require('gulp-sass'),
+    sassError    = require('gulp-sass-error'),
     plumber      = require('gulp-plumber'),
     postcss      = require('gulp-postcss'),
     reporter     = require('postcss-reporter'),
@@ -34,17 +35,7 @@ gulp.task('sass', () => {
                 sourceComments: true
             })
             /** @see sass.logError had to copy a part of this to generate a legitimate error status code */             
-            .on('error', function(error) {
-                var message = new gutil.PluginError('sass', error.messageFormatted).toString();
-
-                // Throw error instead of logging it when using --ci flag.
-                if(config.ci) {
-                    throw message;
-                }
-
-                process.stderr.write(message + '\n');
-                this.emit('end');
-            })
+            .on('error', sassError(config.ci))
         )
         .pipe(postcss(config.postcss))
         .pipe(gulp.dest('web/css'));
