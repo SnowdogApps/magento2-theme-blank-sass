@@ -2,7 +2,7 @@ var gulp         = require('gulp'),
     gulpif       = require('gulp-if'),
     gutil        = require('gulp-util')
     sass         = require('gulp-sass'),
-    sassError    = require('gulp-sass-error'),
+    sassError    = require('gulp-sass-error').gulpSassError,
     plumber      = require('gulp-plumber'),
     postcss      = require('gulp-postcss'),
     reporter     = require('postcss-reporter'),
@@ -59,6 +59,6 @@ gulp.task('css-lint', () => {
         ]));
 });
 
-gulp.task('ci-tests', () => {
+gulp.task('tests', () => {
     runSequence('sass-lint', 'sass', 'css-lint');
 });
