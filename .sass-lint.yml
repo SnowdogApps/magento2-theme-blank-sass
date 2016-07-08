@@ -26,7 +26,12 @@ rules:
   no-ids: 1
   no-important: 1
   no-invalid-hex: 2
-  no-misspelled-properties: 2
+  no-misspelled-properties:
+    - 2
+    -
+      extra-properties:
+        - 'touch-callout'
+        - 'overflow-scrolling'
   no-vendor-prefixes: 1
   no-warn: 1
   one-declaration-per-line: 2

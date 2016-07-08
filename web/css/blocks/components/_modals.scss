@@ -1,42 +1,31 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Lib -> Components -> Modals
 //  _____________________________________________
 
 //
 //  Variables
-//  ---------------------------------------------
+//  _____________________________________________
 
 $modal__background-color                        : $color-white;
 $modal__box-shadow                              : 0 0 12px 2px rgba(0, 0, 0, 0.35);
-
 $modal-popup__indent-vertical                   : 80px;
 $modal-popup__padding                           : 48px;
 $modal-popup__width                             : 75%;
 $modal-popup__z-index                           : $modal__z-index;
-
 $modal-slide__first__indent-left                : 236px;
 $modal-slide__indent-left                       : 72px;
 $modal-slide__padding                           : 41px;
 $modal-slide__z-index                           : $modal__z-index;
-
 $modal-slide-header__padding-vertical           : 33px;
-
 $modal-popup-confirm__width                     : 800px;
-
 $modal-popup-image-box__border-color            : $color-gray80;
 $modal-popup-image-box__max-width               : 1248px;
 $modal-popup-image-box-preview-image__max-height: 864px;
 $modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview-image__max-height + (2 * $indent__base);
 
-
 //
 //  Utilities
-//  ---------------------------------------------
+//  _____________________________________________
 
 @mixin lib-modal() {
     bottom: 0;
@@ -46,14 +35,12 @@ $modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview
     right: 0;
     top: 0;
     visibility: hidden;
-
     &._show {
         visibility: visible;
         .modal-inner-wrap {
             transform: translate(0, 0);
         }
     }
-
     .modal-inner-wrap {
         background-color: $modal__background-color;
         box-shadow: $modal__box-shadow;
@@ -61,58 +48,54 @@ $modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview
         pointer-events: auto;
     }
 }
-
 @mixin lib-modal-slide() {
     left: $modal-slide__first__indent-left;
     z-index: $modal-slide__z-index;
-
     &._show {
         .modal-inner-wrap {
             transform: translateX(0);
         }
     }
-
     .modal-inner-wrap {
         height: 100%;
         overflow-y: auto;
         position: static;
         transform: translateX(100%);
         transition-duration: 0.3s;
-        transition-property: transform, visibility;
         transition-timing-function: ease-in-out;
         width: auto;
     }
 }
-
 @mixin lib-modal-popup() {
     z-index: $modal-popup__z-index;
     left: 0;
     overflow-y: auto;
-
     &._show {
         .modal-inner-wrap {
             transform: translateY(0);
         }
     }
-
     .modal-inner-wrap {
         margin: $modal-popup__indent-vertical auto;
         width: $modal-popup__width;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
-        position: absolute;
-        left: 0;
-        right: 0;
         height: auto;
+        left: 0;
+        position: absolute;
+        right: 0;
         transform: translateY(-200%);
         transition-duration: 0.2s;
-        transition-property: transform, visibility;
         transition-timing-function: ease;
     }
 }
 
 //
+//  Styles
+//  _____________________________________________
+
+
 body {
     &._has-modal {
         height: 100%;
@@ -120,19 +103,14 @@ body {
         width: 100%;
     }
 }
-
 //  Modals overlay
 .modals-overlay {
-    // TO DO - The selector ".abs-modal-overlay" was not found.
-    // @extend .abs-modal-overlay;
     z-index: $overlay__z-index;
 }
-
-.modal-slide,
-.modal-popup {
+.modal-popup,
+.modal-slide {
     @include lib-modal();
 }
-
 .modal-slide {
     @include lib-modal-slide();
     &._inner-scroll {
@@ -141,34 +119,28 @@ body {
             display: flex;
             flex-direction: column;
         }
-
-        .modal-header,
-        .modal-footer {
+        .modal-footer,
+        .modal-header {
             flex-grow: 0;
             flex-shrink: 0;
         }
-
         .modal-content {
             overflow-y: auto;
         }
-
         .modal-footer {
             margin-top: auto;
         }
     }
-
-    .modal-header,
     .modal-content,
-    .modal-footer {
+    .modal-footer,
+    .modal-header {
         padding: 0 $modal-slide__padding $modal-slide__padding;
     }
-
     .modal-header {
         padding-bottom: $modal-slide-header__padding-vertical;
         padding-top: $modal-slide-header__padding-vertical;
     }
 }
-
 .modal-popup {
     @include lib-modal-popup();
     //  If applied, switching outer popup scroll to inner
@@ -178,7 +150,6 @@ body {
         .ie9 & {
             overflow-y: auto;
         }
-
         .modal-inner-wrap {
             max-height: 90%;
             .ie10 &,
@@ -186,36 +157,30 @@ body {
                 max-height: none;
             }
         }
-
         .modal-content {
             overflow-y: auto;
         }
     }
-
-    .modal-header,
     .modal-content,
-    .modal-footer {
+    .modal-footer,
+    .modal-header {
         padding-left: $modal-popup__padding;
         padding-right: $modal-popup__padding;
     }
-
-    .modal-header,
-    .modal-footer {
+    .modal-footer,
+    .modal-header {
         flex-grow: 0;
         flex-shrink: 0;
     }
-
     .modal-header {
         padding-bottom: $modal-popup__padding / 2.5;
         padding-top: $modal-popup__padding;
     }
-
     .modal-footer {
         margin-top: auto;
         padding-bottom: $modal-popup__padding;
         padding-top: $modal-popup__padding;
     }
-
     .modal-footer-actions {
         text-align: right;
     }
@@ -223,10 +188,10 @@ body {
 
 //
 //  Mobile
-//  ---------------------------------------------
+//  _____________________________________________
 
 //  Mobile transform to modal-slide
-@media (max-width: $screen__m) {
+@include max-screen($screen__m + 1) {
     .modal-popup {
         &.modal-slide {
             @include lib-modal-slide();
