@@ -1,21 +1,16 @@
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
-
 define([
     'jquery',
     'matchMedia',
     'mage/tabs',
     'domReady!'
-], function ($, mediaCheck) {
+], function($, mediaCheck) {
     'use strict';
 
     mediaCheck({
         media: '(min-width: 768px)',
         // Switch to Desktop Version
-        entry: function () {
-            (function () {
+        entry: function() {
+            (function() {
 
                 var productInfoMain = $('.product-info-main'),
                     productInfoAdditional = $('#product-info-additional');
@@ -38,15 +33,11 @@ define([
                 galleryElement.gallery('option', 'showNav', false);
                 galleryElement.gallery('option', 'showThumbs', true);
             }
-
-            setTimeout(function () {
-                $('.product.data.items').tabs('option', 'openOnFocus', true);
-            }, 500);
         },
         // Switch to Mobile Version
-        exit: function () {
+        exit: function() {
             $('.action.toggle.checkout.progress')
-                .on('click.gotoCheckoutProgress', function () {
+                .on('click.gotoCheckoutProgress', function() {
                     var myWrapper = '#checkout-progress-wrapper';
                     scrollTo(myWrapper + ' .title');
                     $(myWrapper + ' .title').addClass('active');
@@ -54,14 +45,14 @@ define([
                 });
 
             $('body')
-                .on('click.checkoutProgress', '#checkout-progress-wrapper .title', function () {
+                .on('click.checkoutProgress', '#checkout-progress-wrapper .title', function() {
                     $(this).toggleClass('active');
                     $('#checkout-progress-wrapper .content').toggle();
                 });
 
             var galleryElement = $('[data-role=media-gallery]');
 
-            setTimeout(function () {
+            setTimeout(function() {
                 if (galleryElement.length && galleryElement.data('mageZoom')) {
                     galleryElement.zoom('disable');
                 }
@@ -72,10 +63,6 @@ define([
                     galleryElement.gallery('option', 'showThumbs', false);
                 }
             }, 2000);
-
-            setTimeout(function () {
-                $('.product.data.items').tabs('option', 'openOnFocus', false);
-            }, 500);
         }
     });
 });
