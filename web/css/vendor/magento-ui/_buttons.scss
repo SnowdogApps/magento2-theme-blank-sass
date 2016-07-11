@@ -27,7 +27,8 @@ $button__line-height: $line-height__base;
 //  Default = secondary button
 $button__background: $color-gray-darken0;
 $button__border: 1px solid $border-color__base;
-//$button__hover__color: $button__color;
+$button__border-radius: 3px;
+// $button__hover__color: $button__color;
 $button__hover__background: darken($button__background, 5%);
 $button__active__background: $color-gray-darken1;
 

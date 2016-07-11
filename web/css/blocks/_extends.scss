@@ -1,73 +1,58 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
 //
 //  List default styles reset
 //  ---------------------------------------------
+
 .abs-reset-list {
     @include lib-list-reset-styles();
-
     & > li {
         margin: 0;
     }
 }
 
 //
-//  Primary button
-//  ---------------------------------------------
-.action-primary {
-    @include lib-button-primary();
-    border-radius: 3px;
-}
-
-//
 //  Link as a button
 //  ---------------------------------------------
+
 .abs-action-link-button {
     @include lib-button();
     @include lib-link-as-button();
-    border-radius: 3px;
+    border-radius: $button__border-radius;
 }
 
 //
-//   Button as a link
+//  Product options list
 //  ---------------------------------------------
-.abs-action-button-as-link {
-    @include lib-button-as-link();
-    border-radius: 0;
-    font-weight: $font-weight__regular;
-    font-size: inherit;
 
-    &:active,
-    &:not(:focus) {
-        box-shadow: none;
+@mixin abs-product-options-list() {
+    dt {
+        clear: left;
+        float: left;
+        margin: 0 $indent__s $indent__xs 0;
+
+        &:after {
+            content: ': ';
+        }
+    }
+
+    dd {
+        float: left;
+        margin: 0 0 $indent__xs;
+    }
+}
+
+
+.abs-product-options-list {
+    @include abs-product-options-list();
+}
+
+@include min-screen($screen__m) {
+    .abs-product-options-list-desktop {
+        @include abs-product-options-list();
     }
 }
 
 //
-//   Button revert secondary color
-//  ---------------------------------------------
-.abs-revert-secondary-color {
-    @include lib-button-revert-secondary-color();
-}
-
-//
-//   Button revert secondary size
-//  ---------------------------------------------
-.abs-revert-secondary-size {
-    @include lib-button-revert-secondary-size();
-}
-
-//
-//   Large button
-//  ---------------------------------------------
-.abs-button-l {
-    @include lib-button-l();
-}
-
-//
-//  Button reset width, floats, margins
+//  Button reset width: floats: margins
 //  ---------------------------------------------
 
 .abs-button-responsive {
@@ -87,67 +72,15 @@
 }
 
 //
-//  Action addto
-//  ---------------------------------------------
-.abs-action-addto-product {
-    @extend .abs-action-link-button;
-    @include lib-button-s();
-}
-
-.abs-actions-addto-gridlist {
-    @include lib-icon-font(
-        $_icon-font-content       : '',
-        $_icon-font-size          : 29px,
-        $_icon-font-color         : $addto-color,
-        $_icon-font-color-hover   : $addto-hover-color,
-        $_icon-font-text-hide     : true,
-        $_icon-font-vertical-align: middle,
-        $_icon-font-line-height   : 24px
-    );
-}
-
-//
-//  Product options list
-//  ---------------------------------------------
-@mixin abs-product-options-list() {
-    dt {
-        float: left;
-        clear: left;
-        margin: 0 $indent__s $indent__xs 0;
-
-        &:after {
-            content: ': ';
-        }
-    }
-
-    dd {
-        float: left;
-        margin: 0 0 $indent__xs;
-    }
-}
-
-.abs-product-options-list {
-    @include abs-product-options-list();
-}
-
-//
-//  Desktop
-//  ---------------------------------------------
-@include min-screen($screen__m) {
-    .abs-product-options-list-desktop {
-        @include abs-product-options-list();
-    }
-}
-
-//
 //  Blocks in 2 columns
 //  ---------------------------------------------
+
 @mixin abs-blocks-2columns() {
     width: 48.8%;
 
     &:nth-child(odd) {
-        float: left;
         clear: left;
+        float: left;
     }
 
     &:nth-child(even) {
@@ -170,6 +103,7 @@
 //
 //  Reset image alignment in container
 //  ---------------------------------------------
+
 .abs-reset-image-wrapper {
     height: auto;
     padding: 0 !important;
@@ -182,6 +116,7 @@
 //
 //  Adaptive images
 //  ---------------------------------------------
+
 .abs-adaptive-images {
     display: block;
     height: auto;
@@ -191,66 +126,124 @@
 .abs-adaptive-images-centered {
     display: block;
     height: auto;
-    max-width: 100%;
     margin: 0 auto;
+    max-width: 100%;
 }
 
 //
 //  Title for login blocks
 //  ---------------------------------------------
+
 .abs-login-block-title {
     strong {
         font-weight: 500;
     }
-    padding-bottom: 12px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid $secondary__color;
+
     font-size: 18px;
+    border-bottom: 1px solid $secondary__color;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+}
+
+//
+//  Abstract block title
+//  ---------------------------------------------
+
+.abs-block-title {
+    & > strong {
+        @include lib-heading(h3);
+    }
+
+    margin-bottom: 15px;
+}
+
+//
+//  Account blocks
+//  ---------------------------------------------
+
+.abs-account-blocks {
+    .block-title {
+        @extend .abs-block-title;
+        & > .action {
+            margin-left: 15px;
+        }
+    }
+
+    .box-title {
+        display: inline-block;
+        margin: 0 0 $indent__xs;
+
+        & > span {
+            @include lib-heading(h4);
+        }
+
+        & > .action {
+            font-weight: 400;
+            margin-left: $indent__s;
+        }
+    }
+
+    .block-content {
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        .box {
+            margin-bottom: $indent__base;
+        }
+    }
 }
 
 //
 //  Simple Dropdown
 //  ---------------------------------------------
+
 .abs-dropdown-simple {
     @include lib-dropdown(
-        $_dropdown-list-item-padding : 5px 5px 5px 23px,
-        $_dropdown-list-min-width    : 200px,
-        $_icon-font-margin           : 0 0 0 5px,
-        $_icon-font-vertical-align   : middle
+        $_dropdown-list-item-padding: 5px 5px 5px 23px,
+        $_dropdown-list-min-width   : 200px,
+        $_icon-font-margin          : 0 0 0 5px,
+        $_icon-font-vertical-align  : middle
     );
-    display: inline-block;
 }
+
 //
 //  Input quantity
 //  ---------------------------------------------
+
 .abs-input-qty {
-    width: 54px;
     text-align: center;
+    width: 47px;
 }
+
 //
 //  Marging for blocks & widgets
 //  ---------------------------------------------
+
 .abs-margin-for-blocks-and-widgets {
     margin-bottom: $indent__xl;
 }
+
 //
 //  Remove button for blocks
 //  ---------------------------------------------
+
 .abs-remove-button-for-blocks {
     @include lib-icon-font(
         $icon-remove,
-        $_icon-font-size         : 26px,
-        $_icon-font-line-height  : 15px,
-        $_icon-font-text-hide    : true,
-        $_icon-font-color        : $color-gray19,
-        $_icon-font-color-hover  : $color-gray19,
-        $_icon-font-color-active : $color-gray19
+        $_icon-font-size        : 26px,
+        $_icon-font-line-height : 15px,
+        $_icon-font-text-hide   : true,
+        $_icon-font-color       : $color-gray19,
+        $_icon-font-color-hover : $color-gray19,
+        $_icon-font-color-active: $color-gray19
     );
 }
 
 //
 //  Product link
 //  ---------------------------------------------
+
 .abs-product-link {
     font-weight: $font-weight__regular;
 
@@ -269,8 +262,9 @@
 }
 
 //
-//   Reset left margin
+//  Reset left margin
 //  ---------------------------------------------
+
 @mixin abs-reset-left-margin() {
     margin-left: 0;
 }
@@ -294,23 +288,25 @@
 //
 //  Action with icon remove with text
 //  ---------------------------------------------
+
 .abs-action-remove {
     @extend .abs-action-button-as-link;
-    width: auto;
-    position: absolute;
-    top: 31px;
     left: $indent__s;
     margin-left: 70%;
+    position: absolute;
+    top: 31px;
+    width: auto;
 }
 
 //
 //  Action with icon remove with text for desktop
 //  ---------------------------------------------
+
 @include min-screen($screen__m) {
-    .abs-action-remove-desktop {
-        @if $form-field-type-label-inline__width != false and $form-field-type-label-inline__width != '' {
-            top: 6px;
+    @if $form-field-type-label-inline__width != false and $form-field-type-label-inline__width != '' {
+        .abs-action-remove-desktop {
             margin-left: $form-field-type-label-inline__width + 50%;
+            top: 6px;
         }
     }
 }
@@ -318,6 +314,7 @@
 //
 //  Add Recipient
 //  ---------------------------------------------
+
 .abs-add-fields {
     .fieldset {
         margin-bottom: 50px;
@@ -340,6 +337,7 @@
                             margin-top: $indent__l;
                         }
                     }
+
                     float: left;
                 }
             }
@@ -349,6 +347,12 @@
             .actions-toolbar {
                 margin: 0;
             }
+        }
+    }
+
+    .message {
+        &.notice {
+            margin: $indent__l 0 0;
         }
     }
 
@@ -362,17 +366,12 @@
             @extend .abs-action-remove;
         }
     }
-
-    .message {
-        &.notice {
-            margin: $indent__l 0 0;
-        }
-    }
 }
 
 //
 //  Add Recipient for desktop
 //  ---------------------------------------------
+
 @include min-screen($screen__m) {
     .abs-add-fields-desktop {
         .fieldset {
@@ -398,21 +397,27 @@
 //
 //  Margin for forms
 //  ---------------------------------------------
+
+@mixin abs-margin-for-forms-desktop() {
+    margin-left: $form-field-type-label-inline__width;
+}
+
 @include min-screen($screen__m) {
     .abs-margin-for-forms-desktop {
-        margin-left: $form-field-type-label-inline__width;
+        @include abs-margin-for-forms-desktop();
     }
 }
 
 @include min-screen($screen__s) {
     .abs-margin-for-forms-desktop-s {
-        margin-left: $form-field-type-label-inline__width;
+        @include abs-margin-for-forms-desktop();
     }
 }
 
 //
 //  Visibility hidden / show visibility hidden
 //  ---------------------------------------------
+
 .abs-hidden {
     @include lib-visibility-hidden();
 }
@@ -420,6 +425,7 @@
 //
 //  Visually hidden / show visually hidden
 //  ---------------------------------------------
+
 .abs-visually-hidden {
     @include lib-visually-hidden();
 }
@@ -451,6 +457,7 @@
 //
 //  Visually hidden reset
 //  ---------------------------------------------
+
 .abs-visually-hidden-reset {
     @include lib-visually-hidden-reset();
 }
@@ -458,6 +465,7 @@
 //
 //  Clearfix
 //  ---------------------------------------------
+
 .abs-add-clearfix {
     @include lib-clearfix();
 }
@@ -485,39 +493,46 @@
         @include lib-clearfix();
     }
 }
+
 //
 //  Box-sizing
 //  ---------------------------------------------
-.abs-add-box-sizing {
+
+@mixin abs-add-box-sizing() {
     box-sizing: border-box;
+}
+
+.abs-add-box-sizing {
+    @include abs-add-box-sizing();
 }
 
 @include min-screen($screen__m) {
     .abs-add-box-sizing-desktop {
-        box-sizing: border-box;
+        @include abs-add-box-sizing();
     }
 }
 
 @include min-screen($screen__s) {
     .abs-add-box-sizing-desktop-s {
-        box-sizing: border-box;
+        @include abs-add-box-sizing();
     }
 }
 
 @include min-screen($screen__m) {
     .abs-add-box-sizing-desktop-m {
-        box-sizing: border-box;
+        @include abs-add-box-sizing();
     }
 }
 
 //
 //  Revert field type
 //  ---------------------------------------------
+
 @include min-screen($screen__m) {
     .abs-revert-field-type-desktop {
         .fieldset {
-            .fields > .field,
-            > .field {
+            & > .field,
+            .fields > .field {
                 @include lib-form-field-type-revert($_type: block);
 
                 &:not(:first-child):last-of-type {
@@ -531,13 +546,14 @@
 //
 //  Settings icons
 //  ---------------------------------------------
+
 .abs-navigation-icon {
     @include lib-icon-font(
-        $_icon-font-content : $icon-down,
-        $_icon-font-size : 34px,
+        $_icon-font-content    : $icon-down,
+        $_icon-font-size       : 34px,
         $_icon-font-line-height: 1.2,
-        $_icon-font-position : after,
-        $_icon-font-display : block
+        $_icon-font-position   : after,
+        $_icon-font-display    : block
     );
 
     &:after {
@@ -550,121 +566,93 @@
 //
 //  Split button
 //  ---------------------------------------------
+
 .abs-split-button {
-    @include lib-dropdown-split( $_options-selector : ".items", $_dropdown-split-button-border-radius-fix: true );
+    @include lib-dropdown-split(
+        $_options-selector                       : '.items',
+        $_dropdown-split-button-border-radius-fix: true
+    );
     vertical-align: middle;
 }
+
 //
-//  Checkout shipping methods title
+//  Action addto
 //  ---------------------------------------------
-.abs-methods-shipping-title {
-    font-size: 14px;
-    margin: 0 0 15px;
-    font-weight: $font-weight__bold;
+.abs-action-addto-product {
+    @extend .abs-action-link-button;
+    @include lib-button-s();
 }
+
+.abs-actions-addto-gridlist {
+    @include lib-icon-font(
+        $_icon-font-content       : '',
+        $_icon-font-size          : 29px,
+        $_icon-font-color         : $addto-color,
+        $_icon-font-color-hover   : $addto-hover-color,
+        $_icon-font-text-hide     : true,
+        $_icon-font-vertical-align: middle,
+        $_icon-font-line-height   : 24px
+    );
+}
+
 //
-//  Checkout order review
+//  Large button
 //  ---------------------------------------------
-@include max-screen($screen__s) {
-    .abs-checkout-order-review {
-        tbody > tr {
-            @extend .abs-add-clearfix-mobile;
 
-            &:not(:last-child) {
-                border-bottom: $border-width__base solid $border-color__base;
-            }
+.abs-button-l {
+    @include lib-button-l();
+}
 
-            .col {
-                &.item {
-                    &:before {
-                        display: none;
-                    }
-                }
+//
+//  Button as a link
+//  ---------------------------------------------
 
-                &.price,
-                &.qty,
-                &.subtotal {
-                    box-sizing: border-box;
-                    float: left;
-                    text-align: center;
-                    white-space: nowrap;
-                    width: 33%;
+.abs-action-button-as-link {
+    @include lib-button-as-link();
+    border-radius: 0;
+    font-size: inherit;
+    font-weight: $font-weight__regular;
 
-                    &:before {
-                        content: attr(data-th) ':';
-                        display: block;
-                        font-weight: $font-weight__bold;
-                        padding-bottom: $indent__s;
-                    }
-                }
-            }
-
-            .product-item-name {
-                margin: 0;
-            }
-        }
+    &:active,
+    &:not(:focus) {
+        box-shadow: none;
     }
+}
+
+//
+//  Button revert secondary color
+//  ---------------------------------------------
+
+.abs-revert-secondary-color {
+    @include lib-button-revert-secondary-color();
+}
+
+//
+//  Button revert secondary size
+//  ---------------------------------------------
+
+.abs-revert-secondary-size {
+    @include lib-button-revert-secondary-size();
 }
 
 //
 //  Box-tocart block
 //  ---------------------------------------------
+
 .abs-box-tocart {
     margin: $indent__s 0;
 }
 
 //
-//  Abstract toggle title block
-//  ---------------------------------------------
-@mixin abs-toggling-title() {
-    border-top: $border-width__base solid $border-color__base;
-    cursor: pointer;
-    margin-bottom: 0;
-    position: relative;
-
-    &:after {
-        position: absolute;
-        right: $indent__s;
-        top: 0;
-    }
-}
-
-// ?? from luma - to check
-//  Action print with icon
-//  ---------------------------------------------
-@mixin abs-action-print() {
-    @include lib-icon-font(
-        $icon-print,
-        $_icon-font-size: 16px,
-        $_icon-font-line-height : 16px,
-        $_icon-font-margin : 0 4px 0 0,
-        $_icon-font-position: before
-    );
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-@include min-screen($screen__m) {
-    .abs-action-print {
-        @include abs-action-print();
-    }
-}
-
-@include min-screen($screen__s) {
-    .abs-action-print-s {
-        @include abs-action-print();
-    }
-}
-//
 //  Excl/Incl tax
 //  ---------------------------------------------
+
 .abs-adjustment-incl-excl-tax {
+    .price-including-tax,
     .price-excluding-tax,
-    .price-including-tax {
-        display: inline-block;
+    .weee {
         font-size: 14px;
+        display: inline-block;
         white-space: nowrap;
     }
 
@@ -673,7 +661,7 @@
         font-size: 11px;
 
         &:before {
-            content: '("attr(data-label)": ';
+            content: '('attr(data-label)': ';
         }
 
         &:after {
@@ -685,14 +673,17 @@
 //
 //  Cart tax total
 //  ---------------------------------------------
+
 .abs-tax-total {
     cursor: pointer;
     padding-right: 12px;
+    position: relative;
     @include lib-icon-font(
-        $icon-down, $_icon-font-size: 26px,
-        $_icon-font-line-height : 10px,
-        $_icon-font-margin : 3px 0 0 0,
-        $_icon-font-position : after
+        $icon-down,
+        $_icon-font-size       : 26px,
+        $_icon-font-line-height: 10px,
+        $_icon-font-margin     : 3px 0 0 0,
+        $_icon-font-position   : after
     );
 
     &:after {
@@ -717,47 +708,72 @@
 }
 
 //
-//  Abstract block title
+//  Checkout shipping methods title
 //  ---------------------------------------------
 
-.abs-block-title {
-    > strong {
-        @include lib-heading(h3);
-    }
-
-    margin-bottom: 15px;
+.abs-methods-shipping-title {
+    font-size: 14px;
+    font-weight: $font-weight__bold;
+    margin: 0 0 15px;
 }
 
 //
-//  Account blocks
+//  Checkout order review price
 //  ---------------------------------------------
-.abs-account-blocks {
-    .block-title {
-        & > .action {
-            margin-left: 15px;
-        }
-    }
 
-    .box-title {
-        & > span {
-            @include lib-heading(h4);
-        }
-        display: inline-block;
-        margin: 0 0 $indent__s;
+.abs-checkout-cart-price {
+    display: auto;
+}
 
-        & > .action {
-            font-weight: 400;
-            margin-left: $indent__s;
-        }
-    }
+//
+//  Checkout order product name
+//  ---------------------------------------------
 
-    .block-content {
-        p:last-child {
-            margin-bottom: 0;
-        }
+.abs-checkout-product-name {
+    display: auto;
+}
 
-        .box {
-            margin-bottom: $indent__base;
+//
+//  Checkout order review
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
+    .abs-checkout-order-review {
+        tbody tr {
+            &:not(:last-child) {
+                border-bottom: $border-width__base solid $border-color__base;
+            }
+
+            @extend .abs-add-clearfix-mobile;
+
+            .col {
+                &.item {
+                    &:before {
+                        display: none;
+                    }
+                }
+
+                &.qty,
+                &.price,
+                &.subtotal {
+                    box-sizing: border-box;
+                    float: left;
+                    text-align: center;
+                    white-space: nowrap;
+                    width: 33%;
+
+                    &:before {
+                        content: attr(data-th) ':';
+                        display: block;
+                        font-weight: $font-weight__bold;
+                        padding-bottom: $indent__s;
+                    }
+                }
+            }
+
+            .product-item-name {
+                margin: 0;
+            }
         }
     }
 }
@@ -765,6 +781,7 @@
 //
 //  Add colon
 //  ---------------------------------------------
+
 .abs-colon {
     &:after {
         content: ': ';
@@ -774,6 +791,7 @@
 //
 //  Icon - create add
 //  ---------------------------------------------
+
 .abs-icon-add {
     @include lib-icon-font(
         $_icon-font-content       : $icon-expand,
@@ -799,6 +817,7 @@
 //
 //  Dropdown items - create new
 //  ---------------------------------------------
+
 .abs-dropdown-items-new {
     .items .item:last-child {
         &:hover {
@@ -808,7 +827,6 @@
 
     .action.new {
         @extend .abs-icon-add;
-
         &:before {
             margin-left: -17px;
             margin-right: $indent__xs;
@@ -822,18 +840,19 @@
 
 @include max-screen($screen__m) {
     .abs-toggling-title-mobile {
-        border-top: $border-width__base solid $border-color__base;
         border-bottom: $border-width__base solid $border-color__base;
+        border-top: $border-width__base solid $border-color__base;
         cursor: pointer;
         margin-bottom: 0;
         padding: $indent__s $indent__xl $indent__s $layout__width-xs-indent;
         position: relative;
+
         @include lib-icon-font(
-            $_icon-font-content: $icon-down,
-            $_icon-font-size: 28px,
+            $_icon-font-content  : $icon-down,
+            $_icon-font-size     : 28px,
             $_icon-font-text-hide: false,
-            $_icon-font-position: after,
-            $_icon-font-display: block
+            $_icon-font-position : after,
+            $_icon-font-display  : block
         );
 
         &:after {
@@ -844,7 +863,7 @@
 
         &.active {
             @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-up,
+                $_icon-font-content : $icon-up,
                 $_icon-font-position: after
             );
         }
@@ -854,6 +873,7 @@
 //
 //  Abstract no display
 //  ---------------------------------------------
+
 .abs-no-display {
     display: none;
 }
@@ -873,6 +893,7 @@
 //
 //  Status
 //  ---------------------------------------------
+
 .abs-status {
     display: inline-block;
     margin-bottom: $indent__base;
@@ -882,14 +903,28 @@
 //  Pager toolbar for non-catalog pages mobile
 //  ---------------------------------------------
 
+
 @include max-screen($screen__m) {
-    .abs-pager-toolbar-mobile,
+    .abs-pager-toolbar-mobile {
+        .toolbar-amount,
+        .limiter,
+        .pages {
+            float: none;
+            margin-bottom: $indent__m;
+        }
+    }
+}
+
+//
+//  Pager toolbar for non-catalog pages mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
     .abs-pager-toolbar-mobile-s {
         .toolbar-amount,
         .limiter,
         .pages {
             margin-bottom: $indent__m;
-            float: none;
         }
     }
 }
@@ -897,11 +932,17 @@
 //
 //  Pager toolbar for non-catalog pages desktop
 //  ---------------------------------------------
+
 @include min-screen($screen__m) {
     .abs-pager-toolbar {
         @extend .abs-add-clearfix-desktop;
         margin-bottom: $indent__base;
         position: relative;
+        .limiter {
+            float: right;
+            position: relative;
+            z-index: 1;
+        }
 
         .toolbar-amount {
             float: left;
@@ -911,16 +952,10 @@
             z-index: 1;
         }
 
-        .limiter {
-            float: right;
-            position: relative;
-            z-index: 1;
-        }
-
         .pages {
             position: absolute;
-            z-index: 0;
             width: 100%;
+            z-index: 0;
         }
     }
 }
@@ -928,6 +963,7 @@
 //
 //  Items counter in blocks
 //  ---------------------------------------------
+
 .abs-block-items-counter {
     color: $primary__color__lighter;
     font-size: 12px;
@@ -937,9 +973,12 @@
 //
 //  Shopping cart items
 //  ---------------------------------------------
+
 .abs-shopping-cart-items {
     .action {
         &.continue {
+            border-radius: 3px;
+            font-weight: $font-weight__bold;
             @include lib-link-as-button();
             @include lib-button(
                 $_button-padding              : 7px 15px 7px 0,
@@ -949,9 +988,10 @@
                 $_button-icon-font-line-height: 16px,
                 $_button-icon-font-position   : before
             );
-            border-radius: 3px;
-            font-weight: bold;
-            box-shadow: $button__shadow;
+
+            &:active {
+                box-shadow: $button__shadow;
+            }
         }
 
         &.update {
@@ -972,14 +1012,14 @@
         }
 
         .action {
-            &.clear,
+            &.update,
             &.continue,
-            &.update {
+            &.clear {
                 margin: 0 auto $indent__s;
             }
 
-            &.clear,
-            &.update {
+            &.update,
+            &.clear {
                 display: block;
             }
         }
@@ -989,8 +1029,8 @@
 @include min-screen($screen__m) {
     .abs-shopping-cart-items-desktop {
         float: left;
-        width: 73%;
         position: relative;
+        width: 73%;
 
         .actions {
             text-align: right;
@@ -1011,6 +1051,7 @@
 //
 //  Form Field Date
 //  ---------------------------------------------
+
 .abs-field-date {
     .control {
         @extend .abs-add-box-sizing;
@@ -1025,6 +1066,7 @@
 //
 //  Form Field Date Input
 //  ---------------------------------------------
+
 .abs-field-date-input {
     margin-right: $indent__s;
     width: calc(100% - (#{$icon-calendar__font-size} + #{$indent__s}));
@@ -1033,6 +1075,7 @@
 //
 //  Form Field Tooltip
 //  ---------------------------------------------
+
 .abs-field-tooltip {
     @extend .abs-add-box-sizing;
     position: relative;
@@ -1042,20 +1085,22 @@
         width: calc(100% - (#{$checkout-tooltip-icon__font-size} + #{$indent__s} + #{$indent__xs}));
     }
 }
+
 //
 //  Checkout Tooltip Content (position: top)
 //  ---------------------------------------------
+
 @mixin abs-checkout-tooltip-content-position-top() {
     right: $checkout-tooltip-content-mobile__right;
     top: $checkout-tooltip-content-mobile__top;
     left: auto;
 
-    &:after,
-    &:before {
+    &:before,
+    &:after {
         @include lib-arrow(
             $_position: top,
-            $_size    : $checkout-tooltip-icon-arrow__font-size,
-            $_color   : $checkout-tooltip-content__background-color
+            $_size: $checkout-tooltip-icon-arrow__font-size,
+            $_color: $checkout-tooltip-content__background-color
         );
         margin-top: $checkout-tooltip-icon-arrow__left;
         right: $indent__s;
@@ -1064,7 +1109,7 @@
     }
 
     &:before {
-        border-bottom-color: $checkout-tooltip-content__active__border-color;
+        border-bottom-color: $checkout-tooltip-content__border-color;
     }
 
     &:after {
@@ -1082,23 +1127,27 @@
         @include abs-checkout-tooltip-content-position-top();
     }
 }
+
 //
 //  Checkout title
 //  ---------------------------------------------
+
 .abs-checkout-title {
     border-bottom: $checkout-step-title__border;
     padding-bottom: $checkout-step-title__padding;
     @include lib-typography(
         $_font-size  : $checkout-step-title__font-size,
         $_font-weight: $checkout-step-title__font-weight,
-        $_font-family: inherit,
-        $_font-style : inherit,
-        $_line-height: inherit
+        $_font-family: false,
+        $_font-style : false,
+        $_line-height: false
     );
 }
+
 //
 //  Shopping cart sidebar and checkout sidebar totals
 //  ---------------------------------------------
+
 .abs-sidebar-totals {
     .mark {
         font-weight: $font-weight__regular;
@@ -1119,13 +1168,9 @@
         }
     }
 
-    .table-caption {
-        @extend .abs-no-display;
-    }
-
     .grand {
-        .amount,
-        .mark {
+        .mark,
+        .amount {
             padding-top: $indent__base;
         }
 
@@ -1145,16 +1190,14 @@
 
     .totals-tax {
         &-summary {
-            .amount,
-            .mark {
+            .mark,
+            .amount {
                 border-top: $border-width__base solid $border-color__base;
                 border-bottom: $border-width__base solid $border-color__base;
                 cursor: pointer;
             }
 
             .amount .price {
-                position: relative;
-                padding-right: $indent__base;
                 @include lib-icon-font(
                     $icon-down,
                     $_icon-font-size     : 30px,
@@ -1162,6 +1205,8 @@
                     $_icon-font-position : after,
                     $_icon-font-display  : block
                 );
+                padding-right: $indent__m;
+                position: relative;
 
                 &:after {
                     position: absolute;
@@ -1171,8 +1216,8 @@
             }
 
             &.expanded {
-                .amount,
-                .mark {
+                .mark,
+                .amount {
                     border-bottom: 0;
                 }
 
@@ -1194,23 +1239,26 @@
             }
         }
     }
+
+    .table-caption {
+        @extend .abs-no-display;
+    }
 }
 
-
 //
-//  Shopping cart and payment disaount codes block
+//  Shopping cart and payment discount codes block
 //  ---------------------------------------------
 
 .abs-discount-block {
-    > .title {
+    & > .title {
         border-top: $border-width__base solid $border-color__base;
         cursor: pointer;
         font-weight: $font-weight__semibold;
         @include lib-icon-font(
-            $_icon-font-content: $icon-down,
-            $_icon-font-size: 30px,
+            $_icon-font-content : $icon-down,
+            $_icon-font-size    : 30px,
             $_icon-font-position: after,
-            $_icon-font-display: block
+            $_icon-font-display : block
         );
         margin-bottom: 0;
         overflow: hidden;
@@ -1231,58 +1279,20 @@
         }
     }
 
-    > .content {
+    & > .content {
         display: none;
     }
 
     &.active {
-        > .title {
+        & > .title {
             @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-prev,
+                $_icon-font-content : $icon-prev,
                 $_icon-font-position: after
             );
         }
 
-        > .content {
+        & > .content {
             display: block;
-        }
-    }
-}
-
-
-
-@include min-screen($screen__m) {
-    .abs-discount-block-desktop {
-        .block {
-            @extend .abs-blocks-2columns;
-            width: 48%;
-
-            & > .title {
-                border: 0;
-                cursor: default;
-                padding: 0 0 $indent__s;
-
-                strong {
-                    font-size: 16px;
-                }
-
-                &:after {
-                    display: none;
-                }
-            }
-
-            .content {
-                display: block !important; // Need for overwriting collapsible widget
-                padding: 0;
-            }
-        }
-
-        .actions-toolbar {
-            .secondary {
-                bottom: -30px;
-                left: 0;
-                position: absolute;
-            }
         }
     }
 }
