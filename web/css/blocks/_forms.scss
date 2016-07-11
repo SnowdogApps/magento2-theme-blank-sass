@@ -1,17 +1,16 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-$legend-border-bottom: 1px solid $color-gray-light6;
+//
+//  Variables
+//  _____________________________________________
+
 $form-field__vertical-indent__desktop: 29px;
 $form-calendar-icon__color: $primary__color;
-$form-field__vertical-indent: $indent__base;
+
 //
-//    Common
-//--------------------------------------
+//  Common
+//  _____________________________________________
+
 .fieldset {
     @include lib-form-fieldset();
-
     &:last-child {
         margin-bottom: 0;
     }
@@ -22,14 +21,14 @@ $form-field__vertical-indent: $indent__base;
 
         &.no-label {
             > .label {
-                @include lib-visually-hidden();
+                @extend .abs-visually-hidden;
             }
         }
 
         &.choice {
             .label {
-                font-weight: normal;
                 display: inline;
+                font-weight: normal;
             }
         }
 
@@ -46,6 +45,10 @@ $form-field__vertical-indent: $indent__base;
                 margin-bottom: 0;
             }
         }
+
+        input[type=file] {
+            margin: $indent__xs 0;
+        }
     }
 }
 
@@ -55,8 +58,8 @@ $form-field__vertical-indent: $indent__base;
 }
 
 .legend {
-    span {
-        margin-right: $indent__xs;
+    strong {
+        margin-left: $indent__xs;
     }
 }
 
@@ -67,10 +70,12 @@ fieldset.field {
 
 .field {
     &.date {
+        @extend .abs-field-date;
+
         .time-picker {
-            white-space: nowrap;
-            margin-top: $indent__s;
             display: inline-block;
+            margin-top: $indent__s;
+            white-space: nowrap;
         }
     }
 
@@ -81,36 +86,12 @@ fieldset.field {
     }
 }
 
-@mixin select-styling() {
-    appearance: none;
-    border: 1px solid $border-color__base;
-    height: 32px;
-    background: $select__background url('../images/select-bg.svg') no-repeat 100% 45%;
-    background-size: 30px 60px;
-    padding-right: 25px;
-    text-indent: 0.01em;
-
-    &::-ms-expand {
-        display: none;
-    }
-
-    .lt-ie10 & {
-        background-image: none;
-        padding-right: 4px;
-    }
-}
-
-select {
-    @include select-styling();
-}
-
 div.mage-error[generated] {
     margin-top: 7px;
 }
-// TEMP
+
 .field .tooltip {
     @include lib-tooltip(right);
-
     .tooltip-content {
         min-width: 200px;
         white-space: normal;
@@ -124,8 +105,8 @@ select {
     }
 }
 
-.hasDatepicker {
-    + .ui-datepicker-trigger {
+._has-datepicker {
+    ~ .ui-datepicker-trigger {
         @include lib-button-reset();
         @include lib-icon-font(
             $_icon-font-content    : $icon-calendar,
@@ -145,8 +126,9 @@ select {
 }
 
 //
-//    Sidebar forms
-//--------------------------------------
+//  Sidebar forms
+//  -----------------------------------------
+
 .sidebar {
     .fieldset {
         margin: 0;
@@ -172,8 +154,9 @@ select {
 }
 
 //
-//    Desktop
-//--------------------------------------
+//  Desktop
+//  _____________________________________________
+
 @include min-screen($screen__m) {
     .fieldset {
         .legend {

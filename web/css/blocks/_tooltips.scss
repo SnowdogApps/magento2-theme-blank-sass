@@ -1,17 +1,8 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//    Common
-//--------------------------------------
-
 .tooltip.wrapper {
     @include lib-tooltip(
         $_tooltip-position        : bottom,
-        $_tooltip-selector-content: ".tooltip.content",
-        $_tooltip-selector-toggle : ".tooltip.toggle"
+        $_tooltip-selector-content: '.tooltip.content',
+        $_tooltip-selector-toggle : 'tooltip.toggle'
     );
 
     .tooltip.content {
@@ -25,13 +16,14 @@
 
         .subtitle {
             display: inline-block;
-            margin-bottom: 15px;
             font-size: 16px;
             font-weight: 500;
+            margin-bottom: 15px;
         }
 
         .label {
             margin-top: $indent__s;
+
             &:first-child {
                 margin-top: 0;
             }
@@ -46,4 +38,16 @@
 .ui-tooltip {
     position: absolute;
     z-index: 9999;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__xs) {
+    .tooltip.wrapper {
+        .tooltip.content {
+            min-width: 10rem;
+        }
+    }
 }
