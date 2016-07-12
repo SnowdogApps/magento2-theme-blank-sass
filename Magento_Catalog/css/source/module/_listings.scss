@@ -1,25 +1,21 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
 //
 //  Variables
 //  ---------------------------------------------
-$product-name-link__color: $text__color;
-$product-name-link__color__active: $text__color;
-$product-name-link__color__hover: $text__color;
-$product-name-link__color__visited: $text__color;
-$product-name-link__text-decoration: none;
-$product-name-link__text-decoration__active: $link__hover__text-decoration;
-$product-name-link__text-decoration__hover: $link__hover__text-decoration;
+
+$product-name-link__color                   : $text__color;
+$product-name-link__color__active           : $text__color;
+$product-name-link__color__hover            : $text__color;
+$product-name-link__color__visited          : $text__color;
+
+$product-name-link__text-decoration         : none;
+$product-name-link__text-decoration__active : $link__hover__text-decoration;
+$product-name-link__text-decoration__hover  : $link__hover__text-decoration;
 $product-name-link__text-decoration__visited: $link__hover__text-decoration;
-$product-item__hover__background-color: $color-white;
-$product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
+
 //
-//
-//  Common
-//  _____________________________________________
 //  Product Lists
+//  _____________________________________________
+
 .products {
     margin: $indent__l 0;
 }
@@ -30,13 +26,14 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
     }
 
     &-item {
-        @extend .abs-add-box-sizing;
         vertical-align: top;
 
         .products-grid & {
             display: inline-block;
             width: 50%;
         }
+
+        @extend .abs-add-box-sizing;
 
         &-name {
             @extend .abs-product-link;
@@ -47,8 +44,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         }
 
         &-info {
-            width: 152px;
             max-width: 100%;
+            width: 152px;
 
             .page-products & {
                 width: 240px;
@@ -61,7 +58,6 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             .actions-secondary {
                 & > .action {
                     @extend .abs-actions-addto-gridlist;
-
                     &:before {
                         margin: 0;
                     }
@@ -93,8 +89,9 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             margin: $indent__s 0 $indent__m;
 
             .price {
-                font-weight: $font-weight__bold;
                 font-size: 14px;
+                font-weight: $font-weight__bold;
+                white-space: nowrap;
             }
 
             .price-label {
@@ -110,7 +107,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         .minimal-price {
             .price {
                 font-size: 14px;
-                font-weight: bold;
+                font-weight: $font-weight__bold;
             }
 
             .price-wrapper {
@@ -154,8 +151,8 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         .minimal-price-link,
         .price-excluding-tax,
         .price-including-tax {
-            white-space: nowrap;
             display: block;
+            white-space: nowrap;
         }
 
         .price-from,
@@ -163,7 +160,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             margin: 0;
         }
 
-        .action.tocompare {
+        .tocompare {
             @include lib-icon-font-symbol($icon-compare-empty);
         }
 
@@ -183,6 +180,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             padding-left: $indent__base;
         }
     }
+
 }
 
 .price-container {
@@ -192,7 +190,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
     .price-including-tax + .price-excluding-tax,
     .weee {
-        margin-top: 5px;
+        margin-top: $indent__xs;
     }
 
     .price-including-tax + .price-excluding-tax,
@@ -206,7 +204,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
     .weee {
         &:before {
-            content: '(' attr(data-label) ': ';
+            content: '('attr(data-label) ': ';
         }
 
         &:after {
@@ -232,10 +230,10 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
             }
 
             &-photo {
-                width: 1%;
+                display: table-cell;
                 padding: 0 $indent__l $indent__l 0;
                 vertical-align: top;
-                display: table-cell;
+                width: 1%;
             }
 
             &-details {
@@ -253,6 +251,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 //
 //  Mobile
 //  _____________________________________________
+
 @include max-screen($screen__s) {
     .products-list .product {
         &-item {
@@ -282,10 +281,9 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
 
                 .actions-primary + .actions-secondary {
                     display: table-cell;
-                    width: 50%;
                     padding-left: 5px;
                     white-space: nowrap;
-
+                    width: 50%;
                     & > * {
                         white-space: normal;
                     }
@@ -298,18 +296,27 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         }
     }
 
-    .products-grid .product-item,
-    .page-layout-1column .products-grid .product-item,
-    .page-layout-3columns .products-grid .product-item,
-    .page-products .products-grid .product-item,
-    .page-products.page-layout-1column .products-grid .product-item
-    .page-products.page-layout-3columns .products-grid .product-item {
+    .products-grid .product-item {
         width: 33.3333%;
     }
+
+    .page-products,
+    .page-layout-1column,
+    .page-layout-3columns,
+    .page-products.page-layout-1column,
+    .page-products.page-layout-3columns {
+        .products-grid {
+            .product-item {
+                width: 33.3333%;
+            }
+        }
+    }
 }
+
 //
 //  Desktop
 //  _____________________________________________
+
 @include min-screen($screen__m) {
     .page-products {
         .products-grid {
@@ -335,7 +342,6 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         }
     }
 }
-
 @include min-screen($screen__l) {
     .products-grid {
         .product-item {
@@ -370,7 +376,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
                 padding: 0;
                 width: 23.233%;
 
-                &:nth-child(4n+1) {
+                &:nth-child(4n + 1) {
                     margin-left: 0;
                 }
             }
@@ -381,6 +387,7 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         &.page-layout-1column {
             .products-grid {
                 .product-item {
+                    margin-left: 0;
                     width: 20%;
                 }
             }
@@ -389,7 +396,16 @@ $product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, 0.3);
         &.page-layout-3columns {
             .products-grid {
                 .product-item {
-                    width: 20%;
+                    margin-left: 1%;
+                    width: 32.667%;
+
+                    &:nth-child(3n) {
+                        margin-left: 1%;
+                    }
+
+                    &:nth-child(3n + 1) {
+                        margin-left: 0;
+                    }
                 }
             }
         }

@@ -1,10 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-//
-//    Common
-//--------------------------------------
 .block-category-link,
 .block-product-link {
     &.widget {
@@ -38,9 +31,11 @@
         }
     }
 }
+
 //
 //    Mobile
-//--------------------------------------
+//  _____________________________________________
+
 @include min-screen($screen__s) {
     .block.widget .products-grid .product-item,
     .page-layout-1column .block.widget .products-grid .product-item,
@@ -50,7 +45,8 @@
 }
 //
 //    Desktop
-//--------------------------------------
+//  _____________________________________________
+
 @include min-screen($screen__m) {
     .block.widget .products-grid .product-item {
         width: 33.3333%;
@@ -62,6 +58,7 @@
         width: 50%;
     }
 }
+
 @include min-screen($screen__l) {
     .block.widget .products-grid .product-item {
         width: 20%;
@@ -91,6 +88,7 @@
         }
     }
 }
+
 @include min-screen($screen__m) {
     .sidebar .block.widget .pager {
         .item:not(.pages-item-next):not(.pages-item-previous) {
