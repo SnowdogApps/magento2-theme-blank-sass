@@ -33,8 +33,11 @@ $autocomplete-item-amount__color: $color-gray60;
             $_icon-font-color       : $minicart-icons-color,
             $_icon-font-color-hover : $minicart-icons-color-hover,
             $_icon-font-color-active: $minicart-icons-color-hover,
-            $_icon-font-text-hide   : true
+            $_icon-font-text-hide   : true,
+            $_icon-font-display     : block
         );
+        float: right;
+
         &.active {
             + .control {
                 input {
