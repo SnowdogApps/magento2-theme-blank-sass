@@ -62,8 +62,8 @@
     }
 }
 .block-cart-failed {
-    margin-top: $indent__xl;
     @extend .abs-shopping-cart-items;
+    margin-top: $indent__xl;
     .block-title {
         font-size: headings($heading-h2, font-size);
         strong {
