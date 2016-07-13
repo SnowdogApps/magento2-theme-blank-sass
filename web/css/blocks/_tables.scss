@@ -85,8 +85,8 @@ table {
                         display: block;
 
                         tr {
-                            display: block;
                             @extend .abs-add-clearfix-mobile;
+                            display: block;
 
                             &:first-child {
                                 th,

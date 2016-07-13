@@ -24,10 +24,10 @@ $toolbar-element-background : $panel__background-color;
 }
 
 .toolbar-products {
+    @extend .abs-add-clearfix;
     margin-bottom: $indent__xl;
     padding: 0 $indent__s;
     text-align: center;
-    @extend .abs-add-clearfix;
 
     .pages {
         display: none;

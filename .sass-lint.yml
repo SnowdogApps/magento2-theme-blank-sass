@@ -9,8 +9,8 @@ rules:
     -
       style: 'stroustrup'
       clean-import-paths: 2
-  extends-before-declarations: 1
-  extends-before-mixins: 1
+  extends-before-declarations: 2
+  extends-before-mixins: 2
   final-newline: 2
   indentation:
     - 2

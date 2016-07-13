@@ -26,14 +26,13 @@ $product-name-link__text-decoration__visited: $link__hover__text-decoration;
     }
 
     &-item {
+        @extend .abs-add-box-sizing;
         vertical-align: top;
 
         .products-grid & {
             display: inline-block;
             width: 50%;
         }
-
-        @extend .abs-add-box-sizing;
 
         &-name {
             @extend .abs-product-link;

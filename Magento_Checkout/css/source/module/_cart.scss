@@ -373,8 +373,8 @@
 
             .item-actions {
                 .actions-toolbar {
-                    text-align: left;
                     @extend .abs-reset-left-margin-desktop;
+                    text-align: left;
                 }
             }
         }
