@@ -1,19 +1,12 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-//
-//  Common
-//  _____________________________________________
 .form.wishlist.items {
     .actions-toolbar {
         @extend .abs-reset-left-margin;
     }
 }
 
-.block-bundle-summary,
 .product-info-main,
-.product-options-bottom {
+.product-options-bottom,
+.block-bundle-summary {
     .action.towishlist {
         @extend .abs-action-addto-product;
     }
@@ -140,19 +133,21 @@
             .box-tocart {
                 input.qty {
                     @extend .abs-input-qty;
+                    height: 32px;
                 }
             }
         }
     }
 }
+
 //
 //  Mobile
 //  _____________________________________________
+
 @include max-screen($screen__s) {
     .products-grid.wishlist {
         .product-item {
             border-bottom: 1px solid $secondary__color;
-
             &:first-child {
                 border-top: 1px solid $secondary__color;
             }
@@ -164,7 +159,6 @@
     .products-grid.wishlist {
         margin-bottom: $indent__l;
         margin-right: -$indent__s;
-
         .product {
             &-item {
                 padding: $indent__base $indent__s $indent__base $indent__base;
@@ -197,17 +191,17 @@
                             float: right;
                         }
 
-                        &.delete,
-                        &.edit {
+                        &.edit,
+                        &.delete {
                             margin-top: 7px;
                         }
                     }
                 }
 
-                &-description,
                 &-name,
-                &-tooltip,
-                .price-box {
+                &-description,
+                .price-box,
+                &-tooltip {
                     margin-left: 95px;
                 }
 
@@ -220,8 +214,8 @@
                     }
                 }
 
-                .field.qty,
-                .giftregisty-dropdown {
+                .giftregisty-dropdown,
+                .field.qty {
                     display: none;
                 }
             }
@@ -232,11 +226,14 @@
         }
     }
 
+    //
+    //  Grid view for wishlist
+    //  -----------------------------------------
+
     .wishlist-index-index {
         .product {
             &-item {
                 width: 100%;
-
                 &-info {
                     width: auto;
                 }
@@ -250,7 +247,6 @@
         .products-grid {
             .product-item {
                 margin-bottom: $indent__base;
-                width: 50%;
             }
 
             .product-item-actions {
@@ -259,9 +255,11 @@
         }
     }
 }
+
 //
 //  Desktop
 //  _____________________________________________
+
 @include min-screen($screen__m) {
     .products-grid.wishlist {
         .product {
@@ -325,12 +323,11 @@
             }
 
             .product-item {
-                margin-bottom: $indent__base;
                 margin-left: calc((100% - 4 * 24.439%) / 3);
                 padding: 0;
                 width: 24.439%;
 
-                &:nth-child(4n+1) {
+                &:nth-child(4n + 1) {
                     margin-left: 0;
                 }
             }
