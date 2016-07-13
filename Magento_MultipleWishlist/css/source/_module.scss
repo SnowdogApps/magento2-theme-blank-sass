@@ -39,7 +39,7 @@ $desktop-popup-position-top : 20%;
 
         .table-comparison &,
         .product-items & {
-            > .action {
+            & > .action {
                 @extend .abs-action-button-as-link;
                 &.split {
                     @extend .abs-actions-addto-gridlist;
@@ -55,7 +55,7 @@ $desktop-popup-position-top : 20%;
                 }
             }
 
-            > .action.toggle {
+            & > .action.toggle {
                 &:before {
                     border-left: 1px solid lighten($addto-color, 30%);
                     content: '';
@@ -84,7 +84,7 @@ $desktop-popup-position-top : 20%;
         .cart.table-wrapper & {
             margin-bottom: $indent__s;
 
-            > .action {
+            & > .action {
                 &.toggle {
                     padding: 4px $indent__xs;
                 }
@@ -168,11 +168,11 @@ $desktop-popup-position-top : 20%;
 
 .block-wishlist-search-form {
     .form-wishlist-search {
-        margin-bottom: $indent__l*2;
+        margin-bottom: $indent__l * 2;
         max-width: 500px;
 
         .fieldset {
-            > .legend {
+            & > .legend {
                 @extend .abs-visually-hidden;
             }
         }
@@ -201,7 +201,7 @@ $desktop-popup-position-top : 20%;
     .block-title {
         margin-bottom: $indent__base;
         font-size: 22px;
-        > strong {
+        & > strong {
             font-weight: $font-weight__light;
         }
     }

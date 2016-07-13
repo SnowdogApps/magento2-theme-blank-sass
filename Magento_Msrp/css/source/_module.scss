@@ -1,64 +1,40 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  _____________________________________________
-
-
-
-.map-popup-wrapper {
-    &.popup {
-        .action {
-            &.close {
-                top: $popup-button-close__position-top;
-            }
-        }
+.map-popup-wrapper.popup {
+    .action.close {
+        top: $popup-button-close__position-top;
     }
 }
 
 .map-popup {
     @include lib-popup(
         $_popup-margin-top     : $indent__s,
-        $_popup-margin-left    : inherit,
-        $_popup-content-margin : inherit,
-        $_popup-position-bottom: inherit,
-        $_popup-position-right : inherit,
+        $_popup-margin-left    : false,
+        $_popup-content-margin : $indent__s 0 0,
+        $_popup-position-bottom: false,
+        $_popup-position-right : false,
         $_popup-position       : absolute
     );
+    box-sizing: border-box;
+
     .map-info-price {
         @extend .abs-add-clearfix;
-        margin: 0 0 $indent__base;
+        margin-bottom: 15px;
 
         .price-box {
             margin: 0 0 $indent__base;
 
             .label {
                 &:after {
-                    content: ": ";
+                    content: ': ';
                 }
             }
         }
     }
+}
 
-    .action {
-        &.primary {
-            margin-right: $indent__s;
-        }
-    }
-
-    .map-msrp {
-        margin-bottom: $indent__s;
-    }
-
-    .actual-price {
-        margin: 3px 0 15px;
-    }
-
-    .popup-header {
-        display: none;
+.map-old-price,
+.product-info-price .map-show-info {
+    &:not(:last-child) {
+        margin-right: $indent__s;
     }
 }
 
@@ -67,23 +43,6 @@
 
     .price-wrapper {
         text-decoration: line-through;
-    }
-}
-
-.map-old-price,
-.product-item .map-old-price,
-.product-info-price .map-show-info {
-    &:not(:last-child) {
-        margin-right: $indent__s;
-    }
-}
-
-.product-options-bottom .price-box,
-.product-info-price .price-box {
-    .old-price {
-        .price-container > span {
-            display: inline;
-        }
     }
 }
 
@@ -96,7 +55,6 @@
         margin: 0 auto;
     }
 }
-
 
 //
 //  Mobile
