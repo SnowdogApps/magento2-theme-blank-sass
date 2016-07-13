@@ -82,7 +82,7 @@ $gift-wrapping-no-image-icon__font-size     : 22px;
     margin: $indent__s 0;
     .action-remove {
         @extend .abs-action-button-as-link;
-        margin: -$indent__xs 0 0 $indent__xs;
+        margin: (-$indent__xs) 0 0 $indent__xs;
         @include lib-icon-font(
             $icon-trash,
             $_icon-font-size        : 18px,

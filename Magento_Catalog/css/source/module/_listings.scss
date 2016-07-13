@@ -159,7 +159,7 @@ $product-name-link__text-decoration__visited: $link__hover__text-decoration;
             margin: 0;
         }
 
-        .tocompare {
+        .action.tocompare {
             @include lib-icon-font-symbol($icon-compare-empty);
         }
 

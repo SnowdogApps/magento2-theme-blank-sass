@@ -124,6 +124,7 @@ $toolbar-element-background : $panel__background-color;
     }
 
     .modes {
+        display: block;
         float: left;
         margin-right: $indent__base;
 

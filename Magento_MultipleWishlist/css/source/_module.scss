@@ -260,7 +260,7 @@ $desktop-popup-position-top : 20%;
         .wishlist {
             //  Select wish list
             &-select {
-                margin: 0 -$layout__width-xs-indent 20px;
+                margin: 0 (-$layout__width-xs-indent) 20px;
 
                 .wishlist-name {
                     @extend .abs-toggling-title-mobile;

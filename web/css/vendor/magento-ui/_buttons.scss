@@ -312,7 +312,7 @@ $button__padding__s: $indent__xs 8px;
 @mixin lib-button-primary(
     $_button-line-height                : $font-size__base + 2,
     $_button-width                      : auto,
-    $_button-margin                     : inherit,
+    $_button-margin                     : 0,
     $_button-padding                    : 7px 15px,
 
     $_button-color                      : $color-white,

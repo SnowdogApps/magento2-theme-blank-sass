@@ -585,7 +585,7 @@
 
 .abs-actions-addto-gridlist {
     @include lib-icon-font(
-        $_icon-font-content       : '',
+        $_icon-font-content       : inherit,
         $_icon-font-size          : 29px,
         $_icon-font-color         : $addto-color,
         $_icon-font-color-hover   : $addto-hover-color,
