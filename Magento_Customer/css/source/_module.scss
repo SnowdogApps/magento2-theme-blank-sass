@@ -46,7 +46,7 @@ $_password-very-strong           : #81b562;
 
 .block-addresses-list {
     .items.addresses {
-        > .item {
+        & > .item {
             margin-bottom: $indent__base;
 
             &:last-child {
@@ -167,7 +167,7 @@ $_password-very-strong           : #81b562;
         }
 
         a,
-        > strong {
+        & > strong {
             color: $account-nav-color;
             border-left: 3px solid transparent;
             display: block;
@@ -365,12 +365,12 @@ $_password-very-strong           : #81b562;
             @extend .abs-blocks-2columns;
             &.login {
                 .actions-toolbar {
-                    > .primary {
+                    & > .primary {
                         margin-bottom: 0;
                         margin-right: $indent__l;
                     }
 
-                    > .secondary {
+                    & > .secondary {
                         float: left;
                     }
                 }
@@ -382,8 +382,8 @@ $_password-very-strong           : #81b562;
                 @extend .abs-margin-for-forms-desktop;
             }
 
-            > .field {
-                > .control {
+            & > .field {
+                & > .control {
                     width: 55%;
                 }
             }
@@ -451,7 +451,7 @@ $_password-very-strong           : #81b562;
         .items.addresses {
             @extend .abs-add-clearfix-desktop;
 
-            > .item {
+            & > .item {
                 @extend .abs-blocks-2columns;
                 margin-bottom: $indent__base;
 
