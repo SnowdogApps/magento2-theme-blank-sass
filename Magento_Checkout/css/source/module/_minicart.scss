@@ -363,9 +363,7 @@ $minicart-qty__height        : 24px;
         }
 
         &.delete {
-            @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-trash
-            );
+            @include lib-icon-font-symbol($_icon-font-content: $icon-trash);
         }
     }
 }

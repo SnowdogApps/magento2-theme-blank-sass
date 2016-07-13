@@ -13,7 +13,7 @@ $checkout-summary-items__padding   : 15px;
 
 //
 //  Order Summary
-//  ---------------------------------------------
+//  _____________________________________________
 
 .opc-block-summary {
     @extend .abs-add-box-sizing;
@@ -21,12 +21,11 @@ $checkout-summary-items__padding   : 15px;
     padding: $checkout-summary__padding;
     margin: 0 0 $indent__base;
 
-    > .title {
+    & > .title {
         @extend .abs-checkout-title;
         display: block;
     }
 
-    //  Totals table
     .table-totals {
         @extend .abs-sidebar-totals;
     }
@@ -59,11 +58,10 @@ $checkout-summary-items__padding   : 15px;
 
     //
     //  Items list
-    //  ---------------------------------------------
+    //  _____________________________________________
 
-    //  Block title
     .items-in-cart {
-        > .title {
+        & > .title {
             border-bottom: $border-width__base solid $border-color__base;
             padding: $indent__s $indent__xl $indent__s 0;
             cursor: pointer;
@@ -93,7 +91,7 @@ $checkout-summary-items__padding   : 15px;
         }
 
         &.active {
-            > .title {
+            & > .title {
                 @include lib-icon-font-symbol(
                     $_icon-font-content : $icon-up,
                     $_icon-font-position: after
@@ -106,9 +104,12 @@ $checkout-summary-items__padding   : 15px;
         }
     }
 
+    //
     //  Cart items
+    //  _____________________________________________
+
     .minicart-items-wrapper {
-        margin: 0 (-$checkout-summary-items__padding) 0 0;
+        margin: 0 -$checkout-summary-items__padding 0 0;
         max-height: $checkout-summary-items__max-height;
         padding: $checkout-summary-items__padding $checkout-summary-items__padding 0 0;
         border: 0;

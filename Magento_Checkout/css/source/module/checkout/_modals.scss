@@ -1,8 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
@@ -13,47 +8,11 @@ $checkout-modal-popup__width: 800px;
 //  Common
 //  _____________________________________________
 
-
 .checkout-index-index {
     .modal-popup {
         .field-tooltip {
             .field-tooltip-content {
                 @extend .abs-checkout-tooltip-content-position-top;
-            }
-        }
-
-        .fieldset {
-            .field {
-                .label {
-                    font-weight: $font-weight__regular;
-                }
-            }
-        }
-
-        .modal-footer {
-            .action-hide-popup {
-                @extend .abs-action-button-as-link;
-                margin-top: 8px;
-            }
-        }
-    }
-}
-
-//
-//  Mobile
-//  _____________________________________________
-
-@include max-screen($screen__m) {
-    .checkout-index-index {
-        .modal-popup {
-            .modal-footer {
-                .action-save-address {
-                    width: 100%;
-                }
-
-                .action-hide-popup {
-                    margin-top: $indent__base;
-                }
             }
         }
     }
@@ -73,7 +32,7 @@ $checkout-modal-popup__width: 800px;
             .modal-footer {
                 .action-save-address {
                     float: right;
-                    margin: 0 0 0 $indent__base;
+                    margin: 0 0 0 $indent__s;
                 }
             }
         }
@@ -84,7 +43,7 @@ $checkout-modal-popup__width: 800px;
     .checkout-index-index {
         .modal-popup {
             .modal-inner-wrap {
-                margin-left: -($checkout-modal-popup__width / 2);
+                margin-left: (-$checkout-modal-popup__width / 2);
                 width: $checkout-modal-popup__width;
                 left: 50%;
             }

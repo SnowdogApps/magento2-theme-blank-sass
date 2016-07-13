@@ -1,42 +1,36 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
+$checkout-shipping-address__max-width          : 600px;
+$checkout-shipping-address__margin-top         : 28px;
 
-$checkout-shipping-address__margin-top: 28px;
-$checkout-shipping-item__active__border-color: $color-orange-red1;
+$checkout-shipping-item__border                : 2px solid transparent;
+$checkout-shipping-item__line-height           : 30px;
+$checkout-shipping-item__margin                : 0 0 $indent__base;
+$checkout-shipping-item__padding               : $indent__base ($indent__l + 5px) $indent__base $indent__base;
+$checkout-shipping-item__transition            : 0.3s border-color;
+$checkout-shipping-item__width                 : 33.3333%;
+$checkout-shipping-item-tablet__width          : 50%;
+$checkout-shipping-item-mobile__width          : 100%;
+$checkout-shipping-item__active__border-color  : $color-orange-red1;
 
-$checkout-shipping-item-icon__background-color: $checkout-shipping-item__active__border-color;
-$checkout-shipping-item-icon__color: $color-white;
-$checkout-shipping-item-icon__content: $icon-checkmark;
+$checkout-shipping-item-icon__background-color : $checkout-shipping-item__active__border-color;
+$checkout-shipping-item-icon__color            : $color-white;
+$checkout-shipping-item-icon__content          : $icon-checkmark;
 
-$checkout-shipping-item__border: 2px solid transparent;
-$checkout-shipping-item__line-height: 30px;
-$checkout-shipping-item__margin: 0 0 $indent__base;
-$checkout-shipping-item__padding: $indent__base ($indent__l + 5px) $indent__base $indent__base;
-$checkout-shipping-item__transition: 0.3s border-color;
-$checkout-shipping-item__width: 33.3333%;
-$checkout-shipping-item-tablet__width: 50%;
-$checkout-shipping-item-mobile__width: 100%;
+$checkout-shipping-item-icon__selected__height : 27px;
+$checkout-shipping-item-icon__selected__width  : 29px;
 
-
-$checkout-shipping-item-icon__selected__height: 27px;
-$checkout-shipping-item-icon__selected__width: 29px;
-
-$checkout-shipping-item-mobile__padding: 0 0 15px;
-$checkout-shipping-item-mobile__margin: $checkout-shipping-item-mobile__padding;
+$checkout-shipping-item-mobile__padding        : 0 0 15px;
+$checkout-shipping-item-mobile__margin         : $checkout-shipping-item-mobile__padding;
 $checkout-shipping-item-mobile__active__padding: 15px ($indent__l + 5px) 15px 18px;
 
-$checkout-shipping-item-before__border-color: $color-gray80;
-$checkout-shipping-item-before__height: calc(100% - 20px);
+$checkout-shipping-item-before__border-color   : $color-gray80;
+$checkout-shipping-item-before__height         : calc(100% - 20px);
 
-$checkout-shipping-method__border: $checkout-step-title__border;
-$checkout-shipping-method__padding: $indent__base;
+$checkout-shipping-method__border              : $checkout-step-title__border;
+$checkout-shipping-method__padding             : $indent__base;
 
 //
 //  Common
@@ -46,19 +40,14 @@ $checkout-shipping-method__padding: $indent__base;
 
     //
     //  Shipping Address
-    //  ---------------------------------------------
+    //  _____________________________________________
 
     .form-login,
     .form-shipping-address {
         margin-top: $checkout-shipping-address__margin-top;
-        margin-bottom: $checkout-shipping-address__margin-top;
-        .fieldset {
-            .field {
-                .label {
-                    font-weight: $font-weight__regular;
-                }
-            }
+        margin-bottom: $indent__base;
 
+        .fieldset {
             .note {
                 font-size: $font-size__base;
                 margin-top: $indent__s;
@@ -73,13 +62,13 @@ $checkout-shipping-method__padding: $indent__base;
     .shipping-address-item {
         @extend .abs-add-box-sizing;
         border: $checkout-shipping-item__border;
-        font-size: $font-size__base;
         line-height: $checkout-shipping-item__line-height;
         margin: $checkout-shipping-item__margin;
         padding: $checkout-shipping-item__padding;
         transition: $checkout-shipping-item__transition;
         width: $checkout-shipping-item-tablet__width;
         display: inline-block;
+        font-size: $font-size__base;
         position: relative;
         vertical-align: top;
         word-wrap: break-word;
@@ -94,7 +83,7 @@ $checkout-shipping-method__padding: $indent__base;
                 font-family: $icons__font-name;
                 height: $checkout-shipping-item-icon__selected__height;
                 width: $checkout-shipping-item-icon__selected__width;
-                font-size: 28px;
+                font-size: 27px;
                 line-height: 21px;
                 padding-top: 2px;
                 position: absolute;
@@ -119,7 +108,7 @@ $checkout-shipping-method__padding: $indent__base;
     .action-show-popup {
         margin: 0 0 $indent__base;
 
-        & > span {
+        > span {
             &:before {
                 content: '+';
                 padding-right: $indent__xs;
@@ -142,7 +131,7 @@ $checkout-shipping-method__padding: $indent__base;
 
 //
 //  Shipping Methods
-//  ---------------------------------------------
+//  _____________________________________________
 
 .checkout-shipping-method {
     .step-title {
@@ -192,11 +181,6 @@ $checkout-shipping-method__padding: $indent__base;
                 }
             }
         }
-
-        .col-price {
-            font-weight: $font-weight__semibold;
-        }
-
         .row-error {
             td {
                 border-top: none;
@@ -207,31 +191,23 @@ $checkout-shipping-method__padding: $indent__base;
     }
 }
 
-
 //
 //  Mobile
 //  _____________________________________________
 
 @include max-screen($screen__s) {
     .opc-wrapper {
-        .form-login,
-        .form-shipping-address,
-        .methods-shipping {
-            margin: $checkout-step-content-mobile__margin;
-            padding: $indent__base $checkout-step-content-mobile__margin-s;
-        }
-
         .form-login {
-            + .form-shipping-address {
-                margin-top: -($checkout-step-content-mobile__margin-s);
-            }
+            border-bottom: 1px solid $checkout-shipping-item-before__border-color;
+            margin: $checkout-shipping-item-mobile__padding;
+            padding: $checkout-shipping-item-mobile__padding;
         }
 
         .shipping-address-item {
             border-bottom: 1px solid $checkout-shipping-item-before__border-color;
             margin: $checkout-shipping-item-mobile__margin;
             padding: $checkout-shipping-item-mobile__padding;
-            width: $checkout-shipping-item-mobile__width;
+            width: 100%;
 
             &.selected-item {
                 padding: $checkout-shipping-item-mobile__active__padding;
@@ -241,6 +217,11 @@ $checkout-shipping-method__padding: $indent__base;
                     right: $checkout-shipping-item-icon__selected__width + $indent__s;
                 }
             }
+        }
+
+        .form-login,
+        .form-shipping-address {
+            margin-top: $checkout-shipping-address__margin-top;
         }
 
         .action-select-shipping-item {
@@ -253,25 +234,20 @@ $checkout-shipping-method__padding: $indent__base;
             width: 100%;
         }
 
-        .methods-shipping {
-            border-bottom: $checkout-step-title__border;
-            padding-top: $indent__l;
-        }
-
         .edit-address-link {
             @include lib-icon-font(
-                $icon-edit,
-                $_icon-font-size: 18px,
-                $_icon-font-line-height: 20px,
-                $_icon-font-text-hide: true,
-                $_icon-font-color: $minicart-icons-color,
-                $_icon-font-color-hover: $primary__color,
-                $_icon-font-color-active: $minicart-icons-color
+                $icon-settings,
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 28px,
+                $_icon-font-text-hide   : true,
+                $_icon-font-color       : $color-gray19,
+                $_icon-font-color-hover : $color-gray19,
+                $_icon-font-color-active: $color-gray19
             );
             margin: 0;
             position: absolute;
             right: 0;
-            top: 5px;
+            top: 1px;
         }
     }
 }
@@ -294,15 +270,11 @@ $checkout-shipping-method__padding: $indent__base;
             }
         }
     }
+
     .opc-wrapper {
         .form-login,
         .form-shipping-address {
             max-width: $checkout-shipping-address__max-width;
-        }
-
-        .form-login {
-            border-bottom: $checkout-step-title__border;
-            padding-bottom: $indent__base;
         }
     }
     .table-checkout-shipping-method {
@@ -325,7 +297,7 @@ $checkout-shipping-method__padding: $indent__base;
                 width: 1px;
             }
 
-            &:nth-child(3n+1) {
+            &:nth-child(3n + 1) {
                 &:before {
                     display: none;
                 }
@@ -336,7 +308,7 @@ $checkout-shipping-method__padding: $indent__base;
                     display: none;
                 }
 
-                & + .shipping-address-item {
+                + .shipping-address-item {
                     &:before {
                         display: none;
                     }

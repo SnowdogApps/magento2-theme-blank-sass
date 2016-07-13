@@ -1,22 +1,16 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
-$block-auth__dropdown__padding: $indent__m;
+$block-auth__dropdown__padding         : $indent__m;
 $block-auth__dropdown__background-color: $color-white;
-$block-auth__or-label__size: 36px;
-$block-auth__width: 0;
-$block-auth__border: 1px solid $color-gray-light3;
+$block-auth__or-label__size            : 36px;
+$block-auth__width                     : 0;
+$block-auth__border                    : 1px solid $color-gray-light3;
 
 //
 //  Common
 //  _____________________________________________
-
 
 .authentication-dropdown {
     box-sizing: border-box;
@@ -43,7 +37,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
 .block-authentication {
     .block-title {
-        font-size: headings($heading-h3, font-size);
+        font-size: $h3__font-size;
         border-bottom: 0;
         margin-bottom: $indent__m;
 
@@ -94,14 +88,14 @@ $block-auth__border: 1px solid $color-gray-light3;
             padding-top: $indent__xl;
             position: relative;
 
-            &:before {
+            &::before {
                 height: $block-auth__or-label__size;
                 line-height: $block-auth__or-label__size - 2px;
-                margin: -($block-auth__or-label__size / 2 + 1px) 0 0 (-$block-auth__or-label__size / 2);
+                margin: (-$block-auth__or-label__size / 2 + 1px) 0 0 (-$block-auth__or-label__size / 2);
                 min-width: $block-auth__or-label__size;
                 background: $color-white;
-                border-radius: 50%;
                 border: 1px solid $color-gray-light5;
+                border-radius: 50%;
                 box-sizing: border-box;
                 color: $color-gray-light5;
                 content: attr(data-label);
@@ -124,21 +118,21 @@ $block-auth__border: 1px solid $color-gray-light3;
 
 @include min-screen($screen__m) {
     .authentication-dropdown {
+        position: absolute;
+        top: 100%;
+        width: 100%;
         background-color: $block-auth__dropdown__background-color;
         border: $block-auth__border;
-        position: absolute;
         text-align: left;
-        top: 100%;
-        transform-origin: 0 0;
         transform: scale(1, 0);
-        transition: transform linear 150ms, visibility 150ms linear 150ms;
+        transform-origin: 0 0;
+        transition: transform linear 0.15s, visibility 0 linear 0.15s;
         visibility: hidden;
-        width: 100%;
 
         &._show {
             z-index: $dropdown-list__z-index;
             transform: scale(1, 1);
-            transition: transform linear 150ms, visibility 150ms linear 0;
+            transition: transform linear 0.15s, visibility 0 linear 0;
             visibility: visible;
         }
     }
@@ -157,7 +151,7 @@ $block-auth__border: 1px solid $color-gray-light3;
 
         .actions-toolbar {
             & > .primary {
-                display: inline;
+                float: right;
                 margin-right: 0;
                 .action {
                     margin-right: 0;
@@ -166,8 +160,8 @@ $block-auth__border: 1px solid $color-gray-light3;
 
             & > .secondary {
                 float: left;
-                margin-right: 32px;
-                padding-top: 16px;
+                margin-right: 2rem;
+                padding-top: 1rem;
             }
         }
     }

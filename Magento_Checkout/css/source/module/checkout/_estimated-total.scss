@@ -1,29 +1,18 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//  Common
-//  _____________________________________________
-
-
-
 //
 //  Checkout Estimated Total
-//  ---------------------------------------------
+//  _____________________________________________
 
 .opc-estimated-wrapper {
-    @extend .abs-no-display-desktop;
     @extend .abs-add-clearfix;
-    border-bottom: $checkout-step-title__border;
-    margin: 0 0 $checkout-step-content-mobile__margin-s;
+    @extend .abs-no-display-desktop;
+    border-bottom: $border-width__base solid $color-gray80;
+    margin: 0 0 15px;
     padding: 18px 15px;
 
     .estimated-block {
         font-size: $checkout-step-title-mobile__font-size;
-        float: left;
         font-weight: $font-weight__bold;
+        float: left;
 
         .estimated-label {
             display: block;
@@ -32,10 +21,8 @@
     }
 
     .minicart-wrapper {
-        button {
-            // todo ui: Change .action.showcart to .action-showcart
-            &.action.showcart {
-                padding: 7px 15px;
+        .action {
+            &.showcart {
                 &:before {
                     color: $primary__color;
                 }

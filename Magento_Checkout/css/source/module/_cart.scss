@@ -5,11 +5,12 @@
 //  Summary block
 .cart-summary {
     @extend .abs-add-box-sizing;
+    @extend .abs-adjustment-incl-excl-tax;
     background: $sidebar__background-color;
     margin-bottom: $indent__m;
     padding: 1px 15px $indent__m;
 
-    > .title {
+    & > .title {
         display: block;
         @include lib-heading(h3);
     }
@@ -35,7 +36,7 @@
 
             .methods {
                 .field {
-                    > .label {
+                    & > .label {
                         display: inline;
                     }
                 }
@@ -43,27 +44,26 @@
         }
 
         .fieldset.estimate {
-            > .legend,
-            > .legend + br {
+            & > .legend,
+            & > .legend + br {
                 @extend .abs-no-display;
             }
         }
     }
     .actions-toolbar {
-        > .primary {
+        & > .primary {
             button {
                 @extend .abs-revert-secondary-color;
             }
         }
     }
-    @extend .abs-adjustment-incl-excl-tax;
 }
 
 //  Totals block
 .cart-totals {
+    @extend .abs-sidebar-totals;
     border-top: 1px solid $border-color__base;
     padding-top: $indent__s;
-    @extend .abs-sidebar-totals;
 
     .table-wrapper {
         margin-bottom: 0;
@@ -78,7 +78,7 @@
             border-top: $border-width__base solid $border-color__base;
         }
 
-        > .item {
+        & > .item {
             border-bottom: $border-width__base solid $border-color__base;
             position: relative;
         }
@@ -89,8 +89,8 @@
 
         &.qty {
             .input-text {
-                margin-top: -5px;
                 @extend .abs-input-qty;
+                margin-top: -5px;
             }
 
             .label {
@@ -119,7 +119,7 @@
     .actions-toolbar {
         @extend .abs-add-clearfix;
 
-        > .action {
+        & > .action {
             @extend button;
             @include lib-link-as-button();
             margin-bottom: $indent__s;
@@ -168,10 +168,10 @@
 
     //  Product options
     .item-options {
-        font-size: $font-size__s;
-        margin-bottom: $indent__s;
         @extend .abs-product-options-list;
         @extend .abs-add-clearfix;
+        font-size: $font-size__s;
+        margin-bottom: $indent__s;
     }
 
     .product-item-name + .item-options {
@@ -221,7 +221,7 @@
 
 .cart-tax-info,
 .cart .cart-tax-info {
-    + .cart-tax-total {
+    & + .cart-tax-total {
         display: block;
     }
 }
@@ -316,7 +316,7 @@
         .actions-toolbar {
             .column.main & {
                 @extend .abs-reset-left-margin-desktop;
-                > .secondary {
+                & > .secondary {
                     float: none;
                 }
             }

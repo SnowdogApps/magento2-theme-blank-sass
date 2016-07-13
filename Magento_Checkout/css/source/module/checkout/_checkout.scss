@@ -1,30 +1,20 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
-$checkout-wrapper__margin: $indent__base;
-$checkout-wrapper__columns: 8;
+$checkout-wrapper__margin             : $indent__base;
+$checkout-wrapper__columns            : 8;
 
-$checkout-step-title__border: $border-width__base solid $color-gray80;
-$checkout-step-title__font-size: 26px;
-$checkout-step-title__font-weight: $font-weight__light;
-$checkout-step-title__padding: $indent__s;
+$checkout-step-title__border          : $border-width__base solid $color-gray80;
+$checkout-step-title__font-size       : 26px;
+$checkout-step-title__font-weight     : $font-weight__light;
+$checkout-step-title__padding         : $indent__s;
 
 $checkout-step-title-mobile__font-size: 18px;
-
-$checkout-step-content-mobile__background: $color-gray-light01;
-$checkout-step-content-mobile__margin-s: 15px;
-$checkout-step-content-mobile__margin: $indent__base (-$checkout-step-content-mobile__margin-s) $checkout-step-content-mobile__margin-s;
 
 //
 //  Common
 //  _____________________________________________
-
 
 .checkout-index-index,
 .checkout-onepage-success {
@@ -47,7 +37,6 @@ $checkout-step-content-mobile__margin: $indent__base (-$checkout-step-content-mo
 
     .step-title {
         @extend .abs-checkout-title;
-        border-bottom: $checkout-step-title__border;
     }
 
     .step-content {
@@ -77,10 +66,6 @@ $checkout-step-content-mobile__margin: $indent__base (-$checkout-step-content-mo
             border-bottom: 0;
             padding-bottom: 0;
         }
-
-        .step-content {
-            margin: 0 0 $checkout-step-content-mobile__margin-s;
-        }
     }
 }
 
@@ -89,7 +74,6 @@ $checkout-step-content-mobile__margin: $indent__base (-$checkout-step-content-mo
 //  _____________________________________________
 
 @include min-screen($screen__m) {
-
     .opc-wrapper {
         @extend .abs-add-box-sizing-desktop-m;
         @include lib-layout-column(2, 1, $checkout-wrapper__columns);
