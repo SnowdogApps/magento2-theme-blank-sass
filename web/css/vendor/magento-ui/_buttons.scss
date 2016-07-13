@@ -1,8 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Buttons
 //  _____________________________________________
@@ -27,7 +22,8 @@ $button__line-height: $line-height__base;
 //  Default = secondary button
 $button__background: $color-gray-darken0;
 $button__border: 1px solid $border-color__base;
-//$button__hover__color: $button__color;
+$button__border-radius: 3px;
+// $button__hover__color: $button__color;
 $button__hover__background: darken($button__background, 5%);
 $button__active__background: $color-gray-darken1;
 
@@ -316,7 +312,7 @@ $button__padding__s: $indent__xs 8px;
 @mixin lib-button-primary(
     $_button-line-height                : $font-size__base + 2,
     $_button-width                      : auto,
-    $_button-margin                     : inherit,
+    $_button-margin                     : 0,
     $_button-padding                    : 7px 15px,
 
     $_button-color                      : $color-white,

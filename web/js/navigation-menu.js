@@ -1,7 +1,3 @@
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
 /*jshint jquery:true*/
 
 define([
@@ -10,7 +6,7 @@ define([
     "mage/template",
     "mage/dropdowns",
     "mage/terms"
-],function($, mediaCheck, mageTemplate) {
+], function($, mediaCheck, mageTemplate) {
     'use strict';
 
     $.widget('mage.navigationMenu', {
@@ -24,13 +20,12 @@ define([
             hoverOutTimeout: 500,
             submenuAnimationSpeed: 200,
             collapsable: true,
-            collapsableDropdownTemplate:
-                '<script type="text/x-magento-template">' +
-                    '<li class="level0 level-top more parent">' +
-                        '<div class="submenu">' +
-                            '<ul><%= elems %></ul>' +
-                        '</div>' +
-                    '</li>' +
+            collapsableDropdownTemplate: '<script type="text/x-magento-template">' +
+                '<li class="level0 level-top more parent">' +
+                '<div class="submenu">' +
+                '<ul><%= elems %></ul>' +
+                '</div>' +
+                '</li>' +
                 '</script>'
         },
 
@@ -114,7 +109,7 @@ define([
                 $(e.target)
                     .addClass(this.options.topLevelHoverClass)
                     .siblings(this.options.topLevel)
-                        .removeClass(this.options.topLevelHoverClass);
+                    .removeClass(this.options.topLevelHoverClass);
             }
         },
 
@@ -161,8 +156,9 @@ define([
 
             this.collapsableDropdown = $(
                 mageTemplate(
-                    this.options.collapsableDropdownTemplate,
-                    {elems: this.elemsToCollapseClone}
+                    this.options.collapsableDropdownTemplate, {
+                        elems: this.elemsToCollapseClone
+                    }
                 )
             );
 
@@ -293,28 +289,24 @@ define([
             itemWithSubmenu: 'li.parent',
             titleWithSubmenu: 'li.parent > a',
             submenu: 'li.parent > .submenu',
-            toggleActionTemplate:
-                '<script type="text/x-magento-template">' +
-                    '<span data-action="toggle-nav" class="action toggle nav">Toggle Nav</span>' +
+            toggleActionTemplate: '<script type="text/x-magento-template">' +
+                '<span data-action="toggle-nav" class="action toggle nav">Toggle Nav</span>' +
                 '</script>',
-            submenuActionsTemplate:
-                '<script type="text/x-magento-template">' +
-                    '<li class="action all">' +
-                        '<a href="<%= categoryURL %>"><span>All <%= category %></span></a>' +
-                    '</li>' +
+            submenuActionsTemplate: '<script type="text/x-magento-template">' +
+                '<li class="action all">' +
+                '<a href="<%= categoryURL %>"><span>All <%= category %></span></a>' +
+                '</li>' +
                 '</script>',
-            navigationSectionsWrapperTemplate:
-                '<script type="text/x-magento-template">' +
-                    '<dl class="navigation-tabs" data-sections="tabs">' +
-                    '</dl>' +
+            navigationSectionsWrapperTemplate: '<script type="text/x-magento-template">' +
+                '<dl class="navigation-tabs" data-sections="tabs">' +
+                '</dl>' +
                 '</script>',
-            navigationItemWrapperTemplate:
-                '<script type="text/x-magento-template">' +
-                    '<dt class="item title <% if (active) { %>active<% } %>" data-section="title">' +
-                        '<a class="switch" data-toggle="switch" href="#TODO"><%= title %></a>' +
-                    '</dt>' +
-                    '<dd class="item content <% if (active) { %>active<%}%>" data-section="content">' +
-                    '</dd>' +
+            navigationItemWrapperTemplate: '<script type="text/x-magento-template">' +
+                '<dt class="item title <% if (active) { %>active<% } %>" data-section="title">' +
+                '<a class="switch" data-toggle="switch" href="#TODO"><%= title %></a>' +
+                '</dt>' +
+                '<dd class="item content <% if (active) { %>active<%}%>" data-section="content">' +
+                '</dd>' +
                 '</script>'
         },
 
@@ -382,12 +374,12 @@ define([
 
         _showMenu: function() {
             $(this.element).data('opened', true);
-            this.mainContainer.add( "html" ).addClass(this.options.openedMenuClass);
+            this.mainContainer.add("html").addClass(this.options.openedMenuClass);
         },
 
         _hideMenu: function() {
             $(this.element).data('opened', false);
-            this.mainContainer.add( "html" ).removeClass(this.options.openedMenuClass);
+            this.mainContainer.add("html").removeClass(this.options.openedMenuClass);
         },
 
         _showSubmenu: function(e) {
@@ -410,17 +402,16 @@ define([
                 $.proxy(
                     function(index, item) {
                         var actions = $(
-                            mageTemplate(
-                                this.options.submenuActionsTemplate,
-                                {
-                                    category: $('> a > span', item).text(),
-                                    categoryURL: $('> a', item).attr('href')
-                                }
-                            )
+                                mageTemplate(
+                                    this.options.submenuActionsTemplate, {
+                                        category: $('> a > span', item).text(),
+                                        categoryURL: $('> a', item).attr('href')
+                                    }
+                                )
                             ),
                             submenu = $('> .submenu', item),
                             items = $('> ul', submenu);
-                            items.prepend(actions);
+                        items.prepend(actions);
                     },
                     this
                 )
@@ -502,20 +493,26 @@ define([
             this.mobileNav.append(navigationSectionsWrapper);
 
             if (nav.length) {
-                navigationItemWrapper = $(mageTemplate(this.options.navigationItemWrapperTemplate, {title: 'Menu'}));
+                navigationItemWrapper = $(mageTemplate(this.options.navigationItemWrapperTemplate, {
+                    title: 'Menu'
+                }));
                 navigationSectionsWrapper.append(navigationItemWrapper);
                 navigationItemWrapper.eq(1).append(nav);
             }
 
             if (account.length) {
-                navigationItemWrapper = $(mageTemplate(this.options.navigationItemWrapperTemplate, {title: 'Account'}));
+                navigationItemWrapper = $(mageTemplate(this.options.navigationItemWrapperTemplate, {
+                    title: 'Account'
+                }));
                 navigationSectionsWrapper.append(navigationItemWrapper);
                 navigationItemWrapper.eq(1).append(account);
             }
 
             if (settings.length) {
                 navigationItemWrapper = $(
-                    mageTemplate(this.options.navigationItemWrapperTemplate, {title: 'Settings'})
+                    mageTemplate(this.options.navigationItemWrapperTemplate, {
+                        title: 'Settings'
+                    })
                 );
                 navigationSectionsWrapper.append(navigationItemWrapper);
                 navigationItemWrapper.eq(1).append(settings);
@@ -531,7 +528,7 @@ define([
 
             linksBack.removeClass('fixed');
 
-            if(linkBack.length) {
+            if (linkBack.length) {
                 var subMenu = linkBack.parent(),
                     navOffset = this.mobileNav.find('.nav').position().top,
                     linkBackHeight = linkBack.height();

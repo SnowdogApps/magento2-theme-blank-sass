@@ -40,7 +40,7 @@ $gift-item-block__border-width  : $border-width__base;
 }
 .gift-summary {
     .actions-toolbar {
-        > .secondary {
+        & > .secondary {
             float: none;
 
             .action {

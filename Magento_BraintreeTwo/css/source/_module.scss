@@ -1,0 +1,13 @@
+.braintree-paypal-logo {
+    margin-top: $indent__s;
+    text-align: center;
+}
+
+.action-braintree-paypal-logo {
+    @include lib-button-reset();
+
+    img {
+        margin: 0;
+        width: 114px;
+    }
+}

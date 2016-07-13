@@ -1,10 +1,7 @@
-
 .table.grouped {
-    @include lib-table-bordered(
-        $_table_type: horizontal
-    );
+    @include lib-table-bordered($_table_type: horizontal);
 
-    > thead > tr > th {
+    & > thead > tr > th {
         border-bottom: 0;
     }
 

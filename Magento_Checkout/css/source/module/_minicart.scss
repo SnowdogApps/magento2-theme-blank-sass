@@ -202,7 +202,7 @@ $minicart-qty__height        : 24px;
 
 .minicart-items-wrapper {
     border: 1px solid $minicart__border-color;
-    margin: 0 -$minicart__padding-horizontal;
+    margin: 0 (-$minicart__padding-horizontal);
     border-left: 0;
     border-right: 0;
     overflow-x: auto;
@@ -363,9 +363,7 @@ $minicart-qty__height        : 24px;
         }
 
         &.delete {
-            @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-trash
-            );
+            @include lib-icon-font-symbol($_icon-font-content: $icon-trash);
         }
     }
 }

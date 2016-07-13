@@ -1,74 +1,41 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
-//
-//    Common
-//--------------------------------------
-
-
-
 .form-add-invitations {
     @extend .abs-add-fields;
-
-    .fields {
-        .label {
-            @extend .abs-visually-hidden;
-        }
-    }
-
-    .additional,
-    .field.message {
-        margin-top: $form-field__vertical-indent;
-    }
-
     .action {
-        &.remove {
-            top: 4px;
-        }
-
         &.add {
             @include lib-button-icon(
-                $_icon-font-content: $icon-expand,
+                $_icon-font-content  : $icon-expand,
                 $_icon-font-text-hide: true,
-                $_icon-font-size: 18px
+                $_icon-font-size     : 31px
             );
             line-height: normal;
-            padding: 4px;
+            padding: 2px 0;
             width: auto;
         }
     }
 }
 
-//
-//    Mobile
-//--------------------------------------
-@include max-screen($screen__s) {
+@include max-screen($screen__m) {
     .form-add-invitations {
-        .action {
-            &.remove {
-                @include lib-button-icon(
-                    $_icon-font-content: $icon-trash,
-                    $_icon-font-text-hide: true,
-                    $_icon-font-size: 18px,
-                    $_icon-font-color: $minicart-icons-color
-                );
-            }
+        .additional,
+        .field.text {
+            margin-top: $form-field__vertical-indent;
         }
     }
 }
 
 //
-//    Desktop
-//--------------------------------------
-@include min-screen($screen__s) {
-    .form-add-invitations {
-        @extend .abs-add-fields-desktop;
-    }
-}
+//  Desktop
+//  _____________________________________________
 
 @include min-screen($screen__m) {
+    .form-add-invitations {
+        @extend .abs-add-fields-desktop;
+        .additional,
+        .field.text {
+            margin-top: $form-field__vertical-indent__desktop;
+        }
+    }
+
     .table-invitations {
         .col {
             width: 50%;

@@ -1,11 +1,7 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
+
 $gift-wrapping__border-color                : $color-gray-light5;
 $gift-wrapping__border-width                : $border-width__base;
 
@@ -22,6 +18,7 @@ $gift-wrapping-no-image-icon__font-size     : 22px;
 //
 //  Common
 //  _____________________________________________
+
 .gift-wrapping-info {
     font-weight: $font-weight__light;
     font-size: $font-size__l;
@@ -85,7 +82,7 @@ $gift-wrapping-no-image-icon__font-size     : 22px;
     margin: $indent__s 0;
     .action-remove {
         @extend .abs-action-button-as-link;
-        margin: -$indent__xs 0 0 $indent__xs;
+        margin: (-$indent__xs) 0 0 $indent__xs;
         @include lib-icon-font(
             $icon-trash,
             $_icon-font-size        : 18px,
@@ -155,6 +152,7 @@ $gift-wrapping-no-image-icon__font-size     : 22px;
 //
 //  Mobile
 //  _____________________________________________
+
 @include max-screen($screen__m) {
     .gift-wrapping {
         border-bottom: $gift-wrapping__border-width solid $gift-wrapping__border-color;
@@ -201,6 +199,7 @@ $gift-wrapping-no-image-icon__font-size     : 22px;
 //
 //  Desktop
 //  _____________________________________________
+
 @include min-screen($screen__m) {
     .gift-wrapping {
         box-sizing: border-box;

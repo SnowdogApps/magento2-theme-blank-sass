@@ -1,19 +1,10 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 $catalog-event-background-color: $color-gray94;
-$catalog-event-color: $primary__color;
+$catalog-event-color           : $primary__color;
 
 //
-//    Common
-//--------------------------------------
+//  Catalog Events
+//  _____________________________________________
 
-
-//
-//     Catalog Events
-// --------------------------------------
 .block-category-event {
     background: $catalog-event-background-color;
     color: $catalog-event-color;
@@ -77,7 +68,7 @@ $catalog-event-color: $primary__color;
 
             &:after {
                 font-size: 18px;
-                content: "\2013";
+                content: '\2013';
                 display: block;
                 position: absolute;
                 right: 15px;
@@ -88,8 +79,9 @@ $catalog-event-color: $primary__color;
 }
 
 //
-//    Desktop
-//--------------------------------------
+//  Desktop
+//  _____________________________________________
+
 @include min-screen($screen__m) {
     .block-category-event {
         &.block:last-child {

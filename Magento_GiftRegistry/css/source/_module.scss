@@ -50,9 +50,9 @@
         }
 
         .action.primary {
-            margin-bottom: 0;
             @extend .abs-revert-secondary-color;
             @extend .abs-revert-secondary-size;
+            margin-bottom: 0;
         }
     }
 }

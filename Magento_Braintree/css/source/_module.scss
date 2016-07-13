@@ -1,24 +1,17 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-
 //
 //  Variables
 //  _____________________________________________
 
 $braintree-input-border__color: $color-gray76;
 
-$braintree-error__color: $color-red10;
-$braintree-focus__color: $color-blue2;
-$braintree-success__color: $color-dark-green1;
+$braintree-error__color       : $color-red10;
+$braintree-focus__color       : $color-blue2;
+$braintree-success__color     : $color-dark-green1;
 
 //
 //  Common
 //  _____________________________________________
 
-// ToDo Ui: Remove this selector when Payment Module is fully implemented.
-.payment-method-braintreetwo,
 .payment-method-braintree {
 
     .hosted-date-wrap {
@@ -93,11 +86,11 @@ $braintree-success__color: $color-dark-green1;
 //  _____________________________________________
 
 @include min-screen($screen__m) {
-    // ToDo Ui: Remove this selector when Payment Module is fully implemented.
-    .payment-method-braintreetwo,
     .payment-method-braintree {
-        .field-tooltip {
-            left: 100px;
+        .cvv {
+            .field-tooltip {
+                left: 6rem;
+            }
         }
     }
 }

@@ -1,11 +1,13 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
+//
+//  Variables
+//  _____________________________________________
+
+$active-nav-indent: 54px;
 
 //
 //  Common
 //  _____________________________________________
+
 .panel.header {
     .links,
     .switcher {
@@ -38,8 +40,7 @@
 //  Mobile
 //  _____________________________________________
 
-$active-nav-indent: 54px;
-@include max-screen($screen__m - 1) {
+@include max-screen($screen__m) {
     .navigation {
         padding: 0;
 
@@ -70,6 +71,7 @@ $active-nav-indent: 54px;
     }
 
     .nav-sections {
+        -webkit-overflow-scrolling: touch;
         transition: left 0.3s;
         height: 100%;
         left: -80%;
@@ -95,37 +97,36 @@ $active-nav-indent: 54px;
             &:last-child {
                 border-bottom: 1px solid $color-gray82;
             }
+        }
 
-            &-trigger {
-                strong {
-                    display: inline-block;
-                    position: relative;
-                    @include lib-icon-font(
-                        $_icon-font-content : $icon-down,
-                        $_icon-font-size    : 42px,
-                        $_icon-font-position: after,
-                        $_icon-font-display : block
-                    );
+        .switcher-trigger {
+            strong {
+                position: relative;
+                @include lib-icon-font(
+                    $_icon-font-content : $icon-down,
+                    $_icon-font-size    : 42px,
+                    $_icon-font-position: after,
+                    $_icon-font-display : block
+                );
 
-                    &:after {
-                        position: absolute;
-                        right: -40px;
-                        top: -18px;
-                    }
-                }
-
-                &.active strong {
-                    @include lib-icon-font-symbol(
-                        $_icon-font-content: $icon-up,
-                        $_icon-font-position: after
-                    );
+                &:after {
+                    position: absolute;
+                    right: -40px;
+                    top: -16px;
                 }
             }
 
-            &-dropdown {
-                @include lib-list-reset-styles();
-                padding: $indent__s 0;
+            &.active strong {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content : $icon-up,
+                    $_icon-font-position: after
+                );
             }
+        }
+
+        .switcher-dropdown {
+            @include lib-list-reset-styles();
+            padding: $indent__s 0;
         }
 
         .header.links {
@@ -133,7 +134,7 @@ $active-nav-indent: 54px;
             border-bottom: 1px solid $color-gray82;
 
             li {
-                font-size: $font-size__base;
+                font-size: 1.6rem;
                 margin: 0;
 
                 &.greet.welcome {
@@ -199,7 +200,7 @@ $active-nav-indent: 54px;
 
         .nav-toggle {
             &:after {
-                background: rgba(0, 0, 0, 0.01);
+                background: rgba(0, 0, 0, $overlay__opacity);
                 content: '';
                 display: block;
                 height: 100%;
@@ -212,50 +213,48 @@ $active-nav-indent: 54px;
         }
     }
 
-    .nav-sections {
-        &-items {
-            @include lib-clearfix();
-            position: relative;
-            z-index: 1;
+    .nav-sections-items {
+        @include lib-clearfix();
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-sections-item-title {
+        background: darken($navigation__background, 5%);
+        border: solid darken($navigation__background, 10%);
+        border-width: 0 0 1px 1px;
+        box-sizing: border-box;
+        float: left;
+        height: 71px;
+        padding-top: 24px;
+        text-align: center;
+        width: 33.33%;
+
+        &.active {
+            background: transparent;
+            border-bottom: 0;
         }
 
-        &-item-title {
-            background: darken($navigation__background, 5%);
-            border: solid darken($navigation__background, 10%);
-            border-width: 0 0 1px 1px;
-            box-sizing: border-box;
-            float: left;
-            height: 71px;
-            padding-top: 24px;
-            text-align: center;
-            width: 33.33%;
-
-            &.active {
-                background: transparent;
-                border-bottom: 0;
-            }
-
-            .nav-sections-item-switch {
-                &:hover {
-                    text-decoration: none;
-                }
+        .nav-sections-item-switch {
+            &:hover {
+                text-decoration: none;
             }
         }
+    }
 
-        &-item-content {
-            @include lib-clearfix();
-            box-sizing: border-box;
-            float: right;
-            margin-left: -100%;
-            margin-top: 71px;
-            width: 100%;
+    .nav-sections-item-content {
+        @include lib-clearfix();
+        box-sizing: border-box;
+        float: right;
+        margin-left: -100%;
+        margin-top: 71px;
+        width: 100%;
 
-            &.active {
-                display: block;
-            }
-
-            padding: $indent__m 0;
+        &.active {
+            display: block;
         }
+
+        padding: $indent__m 0;
     }
 
     @include lib-main-navigation();
@@ -271,23 +270,25 @@ $active-nav-indent: 54px;
     }
 
     .nav-sections {
-        flex-grow: 0;
+        flex-shrink: 0;
         flex-basis: auto;
         margin-bottom: $indent__m;
+    }
 
-        &-item-title {
-            display: none;
-        }
+    .nav-sections-item-title {
+        display: none;
+    }
 
-        &-item-content {
-            display: block;
-        }
+    .nav-sections-item-content {
+        display: block !important;
+    }
 
-        &-item-content > * {
-            display: none;
-        }
+    .nav-sections-item-content > * {
+        display: none;
+    }
 
-        &-item-content > .navigation {
+    .nav-sections-item-content {
+        > .navigation {
             display: block;
         }
     }

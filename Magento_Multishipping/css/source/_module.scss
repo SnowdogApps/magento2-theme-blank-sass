@@ -44,12 +44,12 @@
         }
     }
 
-    > .actions-toolbar {
+    & > .actions-toolbar {
         margin-top: $indent__xl;
     }
 
     .actions-toolbar {
-        > .secondary {
+        & > .secondary {
             display: block;
 
             .action {
@@ -62,7 +62,7 @@
             }
         }
 
-        > .primary {
+        & > .primary {
             margin-right: $indent__s;
         }
     }
@@ -72,10 +72,9 @@
     }
 
     .item-options {
-        margin: $indent__s 0 0;
-
         @extend .abs-product-options-list;
         @extend .abs-add-clearfix;
+        margin: $indent__s 0 0;
     }
 
     @extend .abs-account-blocks;
@@ -86,15 +85,15 @@
         .methods-shipping {
             .item-content {
                 .fieldset {
-                    > .legend {
+                    & > .legend {
                         @extend .abs-visually-hidden;
                     }
 
-                    > .legend + br {
+                    & > .legend + br {
                         @extend .abs-no-display;
                     }
 
-                    > .field {
+                    & > .field {
                         &:before {
                             display: none;
                         }
@@ -147,7 +146,7 @@
             margin-right: $indent__s;
         }
 
-        > .action {
+        & > .action {
             margin: 0;
         }
     }
@@ -257,7 +256,7 @@
                 margin-bottom: $indent__m;
             }
 
-            > .primary {
+            & > .primary {
                 margin-bottom: $indent__m;
                 margin-right: 0;
             }
@@ -373,7 +372,7 @@
             }
 
             .fieldset > .field:not(.choice) {
-                > .label {
+                & > .label {
                     float: none;
                     margin-bottom: 8px;
                     text-align: left;

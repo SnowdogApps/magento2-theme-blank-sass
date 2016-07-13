@@ -1,10 +1,3 @@
-// /**
-//  * Copyright © 2015 Magento. All rights reserved.
-//  * See COPYING.txt for license details.
-//  */
-//
-//  Common
-//  _____________________________________________
 .table-wrapper {
     margin-bottom: $indent__base;
 }
@@ -17,7 +10,7 @@ table {
     &:not(.cart) {
         &:not(.totals) {
             @include lib-table-bordered(
-                $_table_type: light,
+                $_table_type        : light,
                 $_table_border-width: $table__border-width
             );
 
@@ -40,85 +33,86 @@ table {
         }
     }
 }
+
 //
-//    Mobile
+//  Mobile
 //  _____________________________________________
+
 @include max-screen($screen__s) {
     .table-wrapper {
         @include lib-table-overflow();
         position: relative; // To hide unnecessary horizontal scrollbar in Safari
 
-        .table:not(.totals):not(.cart):not(.table-comparison) {
-            @include lib-table-responsive();
+        .table {
+            &:not(.cart) {
+                &:not(.totals) {
+                    &:not(.table-comparison) {
+                        @include lib-table-responsive();
 
-            tbody {
-                > tr {
-                    > td:first-child {
-                        padding-top: 15px;
-                    }
+                        tbody > tr {
+                            > td:first-child {
+                                padding-top: $indent__base;
+                            }
 
-                    > td:last-child {
-                        border-bottom: $table__border-width $table__border-style $table__border-color;
-                        padding-bottom: 15px;
-                    }
+                            > td:last-child {
+                                padding-bottom: $indent__base;
+                            }
+                        }
 
-                    > td.col.qty {
-                        text-align: left;
-                    }
-                }
-            }
+                        &.additional-attributes {
+                            tbody {
+                                th {
+                                    @extend .abs-no-display-s;
+                                }
 
-            &.additional-attributes {
-                tbody {
-                    th {
-                        @extend .abs-no-display-s;
-                    }
-
-                    td {
-                        &:last-child {
-                            border: none;
-                            padding: 0 0 $indent__xs;
+                                td {
+                                    &:last-child {
+                                        border: none;
+                                        padding: 0 0 $indent__xs;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
         }
 
-        .table:not(.totals):not(.table-comparison) {
-            tfoot {
-                display: block;
+        .table {
+            &:not(.totals) {
+                &:not(.table-comparison) {
+                    tfoot {
+                        display: block;
 
-                tr {
-                    @extend .abs-add-clearfix-mobile;
-                    display: block;
+                        tr {
+                            @extend .abs-add-clearfix-mobile;
+                            display: block;
 
-                    &:first-child {
-                        th,
-                        td {
-                            padding-top: $indent__base;
+                            &:first-child {
+                                th,
+                                td {
+                                    padding-top: $indent__base;
+                                }
+                            }
                         }
-                    }
-                }
 
-                .mark {
-                    box-sizing: border-box;
-                    float: left;
-                    text-align: left;
-                    width: 70%;
-                }
+                        th {
+                            box-sizing: border-box;
+                            float: left;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                            width: 70%;
+                        }
 
-                .amount {
-                    box-sizing: border-box;
-                    float: left;
-                    text-align: right;
-                    width: 30%;
-                }
-
-                .grand.totals {
-                    font-size: 16px;
-
-                    .amount {
-                        padding-bottom: $indent__s;
+                        td {
+                            box-sizing: border-box;
+                            float: left;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: right;
+                            width: 30%;
+                        }
                     }
                 }
             }
@@ -139,19 +133,6 @@ table {
             display: block;
             padding-left: 0;
             padding-right: 0;
-        }
-    }
-}
-
-//
-//  Desktop
-//  _____________________________________________
-@include min-screen($screen__s) {
-    .table {
-        &:not(.cart) {
-            &:not(.totals) {
-                @include lib-table-bordered( $_table_type: horizontal_body );
-            }
         }
     }
 }
