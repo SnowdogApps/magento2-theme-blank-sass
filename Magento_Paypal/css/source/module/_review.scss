@@ -12,7 +12,7 @@
     }
 
     .paypa-review-title {
-        > strong {
+        & > strong {
             @include lib-heading(h3);
             display: inline-block;
         }
@@ -34,7 +34,7 @@
     }
 
     .paypal-review-title {
-        > strong {
+        & > strong {
             @include lib-heading(h3);
             display: inline-block;
         }
