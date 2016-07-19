@@ -1,5 +1,5 @@
 {
-  "name": "~magento2-theme-blank-sass",
+  "name": "magento2-theme-blank-sass",
   "private": true,
   "devDependencies": {
     "autoprefixer": "~6.3.7",
