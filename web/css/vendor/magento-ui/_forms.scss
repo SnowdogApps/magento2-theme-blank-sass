@@ -616,7 +616,7 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
     $_type                         : block,
 
     $_type-inline-margin           : 0 0 $indent__base,
-    $_type-inline-label-margin     : inherit,
+    $_type-inline-label-margin     : false,
     $_type-inline-label-padding    : 6px 15px 0 0,
     $_type-inline-label-align      : right,
     $_type-inline-label-width      : 25.8%,
@@ -816,7 +816,7 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
     $_type,
 
     $_type-inline-margin       : 0 0 $indent__base,
-    $_type-inline-label-margin : inherit,
+    $_type-inline-label-margin : false,
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
     $_type-inline-label-width  : 25.8%,
@@ -884,7 +884,9 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
 
     &:not(.choice) {
         > .label {
-            margin: $_type-inline-label-margin;
+            @if $_type-inline-label-margin {
+                margin: $_type-inline-label-margin;
+            }
             padding: $_type-inline-label-padding;
             text-align: $_type-inline-label-align;
             width: $_type-inline-label-width;
@@ -995,7 +997,7 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
 
     $_type-inline-margin       : 0 0 $indent__base,
     $_type-inline-label-width  : 25.8%,
-    $_type-inline-label-margin : inherit,
+    $_type-inline-label-margin : false,
     $_type-inline-label-padding: 6px 15px 0 0,
     $_type-inline-label-align  : right,
     $_type-inline-control-width: 74.2%,
@@ -1099,7 +1101,7 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
 }
 
 @mixin _lib-revert-type-inline-label-margin($_type-inline-label-margin) {
-    @if $_type-inline-label-margin == inherit {
+    @if $_type-inline-label-margin == false {
         margin: 0;
     }
 }

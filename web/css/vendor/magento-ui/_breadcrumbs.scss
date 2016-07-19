@@ -5,7 +5,7 @@
 @mixin lib-breadcrumbs(
     $_breadcrumbs-font-size                        : $font-size__s,
     $_breadcrumbs-display                          : inherit,
-    $_breadcrumbs-container-margin                 : 0 $indent__auto,
+    $_breadcrumbs-container-margin                 : auto auto $indent__base,
     $_breadcrumbs-padding                          : inherit,
 
     // Breadcrumbs separating symbol
