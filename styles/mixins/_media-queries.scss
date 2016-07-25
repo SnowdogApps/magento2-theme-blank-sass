@@ -1,0 +1,70 @@
+//  Author: Rafal Bromirski
+//  www: http://rafalbromirski.com/
+//  github: http://github.com/paranoida/sass-mediaqueries
+//
+//  Licensed under a MIT License
+//
+//  Version:
+//  1.6.1
+// --- generator ---------------------------------------------------------------
+@mixin mq($args...) {
+    $media-type: 'only screen';
+    $media-type-key: 'media-type';
+    $args: keywords($args);
+    $expr: '';
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+    @media #{$media-type} #{$expr} {
+        @content;
+    }
+}
+// --- screen ------------------------------------------------------------------
+@mixin screen($min, $max, $orientation: false) {
+    @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
+        @content;
+    }
+}
+@mixin max-screen($max) {
+    @include mq($max-width: $max) {
+        @content;
+    }
+}
+@mixin min-screen($min) {
+    @include mq($min-width: $min) {
+        @content;
+    }
+}
+@mixin screen-height($min, $max, $orientation: false) {
+    @include mq($min-height: $min, $max-height: $max, $orientation: $orientation) {
+        @content;
+    }
+}
+@mixin max-screen-height($max) {
+    @include mq($max-height: $max) {
+        @content;
+    }
+}
+@mixin min-screen-height($min) {
+    @include mq($min-height: $min) {
+        @content;
+    }
+}
+
+// --- orientation -------------------------------------------------------------
+@mixin landscape() {
+    @include mq($orientation: landscape) {
+        @content;
+    }
+}
+@mixin portrait() {
+    @include mq($orientation: portrait) {
+        @content;
+    }
+}

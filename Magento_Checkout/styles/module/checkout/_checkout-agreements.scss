@@ -1,0 +1,28 @@
+.checkout-agreements-block {
+    margin-bottom: $indent__base;
+
+    .action-show {
+        @extend .abs-action-button-as-link;
+        vertical-align: baseline;
+    }
+}
+
+//  Checkout Agreements in popup
+.checkout-agreements-items {
+    @extend .abs-reset-list;
+    padding-bottom: $indent__l;
+
+    .checkout-agreements-item {
+        margin-bottom: $indent__base;
+    }
+
+    .checkout-agreements-item-title {
+        @extend .abs-checkout-title;
+        border-bottom: 0;
+    }
+}
+
+//  Checkout Agreements
+.checkout-agreement-item-content {
+    overflow: auto;
+}

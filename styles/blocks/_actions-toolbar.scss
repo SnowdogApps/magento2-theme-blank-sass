@@ -1,0 +1,41 @@
+.actions-toolbar {
+    > .primary,
+    > .secondary {
+        text-align: center;
+        .action {
+            @extend .abs-button-responsive;
+            margin-bottom: $indent__s;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        margin-bottom: $indent__s;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+//
+//  Desktop
+//  _____________________________________________
+@include min-screen($screen__m) {
+    .actions-toolbar {
+        @include lib-actions-toolbar();
+        > .secondary,
+        > .primary {
+            margin-bottom: 0;
+            .action {
+                margin-bottom: 0;
+                width: auto;
+            }
+        }
+    }
+    form {
+        .actions-toolbar {
+            .column:not(.sidebar-additional) &,
+            .column:not(.sidebar-main) & {
+                @extend .abs-margin-for-forms-desktop;
+            }
+        }
+    }
+}

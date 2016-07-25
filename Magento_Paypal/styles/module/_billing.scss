@@ -1,0 +1,20 @@
+
+//  Paypal billing agreement
+.form-new-agreement {
+    .actions-toolbar {
+        @extend .abs-reset-left-margin;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .form-new-agreement {
+        .fieldset .legend,
+        .actions-toolbar {
+            @extend .abs-reset-left-margin-desktop;
+        }
+    }
+}

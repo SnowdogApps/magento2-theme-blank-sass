@@ -1,0 +1,138 @@
+.table-wrapper {
+    margin-bottom: $indent__base;
+}
+
+table {
+    @include lib-table-caption();
+}
+
+.table {
+    &:not(.cart) {
+        &:not(.totals) {
+            @include lib-table-bordered(
+                $_table_type        : light,
+                $_table_border-width: $table__border-width
+            );
+
+            tfoot {
+                > tr {
+                    &:first-child {
+                        th,
+                        td {
+                            border-top: $table__border-width $table__border-style $table__border-color;
+                            padding-top: $indent__base;
+                        }
+                    }
+                }
+
+                .mark {
+                    font-weight: $font-weight__regular;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__s) {
+    .table-wrapper {
+        @include lib-table-overflow();
+        position: relative; // To hide unnecessary horizontal scrollbar in Safari
+
+        .table {
+            &:not(.cart) {
+                &:not(.totals) {
+                    &:not(.table-comparison) {
+                        @include lib-table-responsive();
+
+                        tbody > tr {
+                            > td:first-child {
+                                padding-top: $indent__base;
+                            }
+
+                            > td:last-child {
+                                padding-bottom: $indent__base;
+                            }
+                        }
+
+                        &.additional-attributes {
+                            tbody {
+                                th {
+                                    @extend .abs-no-display-s;
+                                }
+
+                                td {
+                                    &:last-child {
+                                        border: none;
+                                        padding: 0 0 $indent__xs;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .table {
+            &:not(.totals) {
+                &:not(.table-comparison) {
+                    tfoot {
+                        display: block;
+
+                        tr {
+                            @extend .abs-add-clearfix-mobile;
+                            display: block;
+
+                            &:first-child {
+                                th,
+                                td {
+                                    padding-top: $indent__base;
+                                }
+                            }
+                        }
+
+                        th {
+                            box-sizing: border-box;
+                            float: left;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: left;
+                            width: 70%;
+                        }
+
+                        td {
+                            box-sizing: border-box;
+                            float: left;
+                            padding-left: 0;
+                            padding-right: 0;
+                            text-align: right;
+                            width: 30%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .data-table-definition-list {
+        thead {
+            display: none;
+        }
+
+        tbody th {
+            padding-bottom: 0;
+        }
+
+        tbody th,
+        tbody td {
+            display: block;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}

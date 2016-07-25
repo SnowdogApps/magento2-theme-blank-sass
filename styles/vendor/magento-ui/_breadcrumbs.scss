@@ -1,0 +1,175 @@
+//
+//  Breadcrumbs
+//  _____________________________________________
+
+@mixin lib-breadcrumbs(
+    $_breadcrumbs-font-size                        : $font-size__s,
+    $_breadcrumbs-display                          : inherit,
+    $_breadcrumbs-container-margin                 : auto auto $indent__base,
+    $_breadcrumbs-padding                          : inherit,
+
+    // Breadcrumbs separating symbol
+    $_breadcrumbs-separator-symbol                 : inherit,
+    $_breadcrumbs-separator-color                  : $color-gray64,
+
+    // Use icon as a separating symbol
+    $_breadcrumbs-icon-use                         : true,
+    $_breadcrumbs-icon-font-content                : $icon-next,
+    $_icon-font                                    : $icon-font,
+    $_icon-font-size                               : 24px,
+    $_icon-font-line-height                        : 18px,
+    $_icon-font-color                              : inherit,
+    $_icon-font-margin                             : 0,
+    $_icon-font-vertical-align                     : top,
+
+    // Breadcrumbs current
+    $_breadcrumbs-current-color                    : $color-gray64,
+    $_breadcrumbs-current-font-weight              : $font-weight__regular,
+    $_breadcrumbs-current-background               : inherit,
+    $_breadcrumbs-current-border                   : none,
+    $_breadcrumbs-current-gradient                 : inherit,
+    $_breadcrumbs-current-gradient-direction       : vertical,
+    $_breadcrumbs-current-gradient-color-start     : inherit,
+    $_breadcrumbs-current-gradient-color-end       : inherit,
+
+    // Breadcrumbs link - gradient
+    $_breadcrumbs-link-gradient                    : inherit,
+    $_breadcrumbs-link-gradient-direction          : inherit,
+
+    // Breadcrumbs link color
+    $_breadcrumbs-link-color                       : $primary__color,
+    $_breadcrumbs-link-background                  : inherit,
+    $_breadcrumbs-link-border                      : none,
+    $_breadcrumbs-link-text-decoration             : none,
+    $_breadcrumbs-link-gradient-color-start        : inherit,
+    $_breadcrumbs-link-gradient-color-end          : inherit,
+
+    // Breadcrumbs link - visited
+    $_breadcrumbs-link-color-visited               : $primary__color,
+    $_breadcrumbs-link-background-visited          : inherit,
+    $_breadcrumbs-link-border-visited              : none,
+    $_breadcrumbs-link-text-decoration-visited     : none,
+    $_breadcrumbs-link-gradient-color-start-visited: inherit,
+    $_breadcrumbs-link-gradient-color-end-visited  : inherit,
+
+    // Breadcrumbs link - hover
+    $_breadcrumbs-link-color-hover                 : $primary__color,
+    $_breadcrumbs-link-background-hover            : inherit,
+    $_breadcrumbs-link-border-hover                : none,
+    $_breadcrumbs-link-text-decoration-hover       : underline,
+    $_breadcrumbs-link-gradient-color-start-hover  : inherit,
+    $_breadcrumbs-link-gradient-color-end-hover    : inherit,
+
+    // Breadcrumbs link - active
+    $_breadcrumbs-link-color-active                : $primary__color,
+    $_breadcrumbs-link-background-active           : inherit,
+    $_breadcrumbs-link-border-active               : none,
+    $_breadcrumbs-link-text-decoration-active      : none,
+    $_breadcrumbs-link-gradient-color-start-active : inherit,
+    $_breadcrumbs-link-gradient-color-end-active   : inherit
+) {
+    margin: $_breadcrumbs-container-margin;
+    .items {
+        font-size: $_breadcrumbs-font-size;
+        color: $_breadcrumbs-current-color;
+        @include lib-list-inline();
+    }
+
+    .item {
+        margin: 0;
+    }
+
+    a {
+        background: $_breadcrumbs-link-background;
+        @include lib-background-gradient(
+            $_breadcrumbs-link-gradient-color-start,
+            $_breadcrumbs-link-gradient-color-end,
+            $_breadcrumbs-link-gradient-direction,
+            $_breadcrumbs-link-gradient
+        );
+        border: $_breadcrumbs-link-border;
+        color: $_breadcrumbs-link-color;
+        display: $_breadcrumbs-display;
+        padding: $_breadcrumbs-padding;
+        text-decoration: $_breadcrumbs-link-text-decoration;
+
+        &:visited {
+            background: $_breadcrumbs-link-background-visited;
+            @include lib-background-gradient(
+                $_breadcrumbs-link-gradient-color-start-visited,
+                $_breadcrumbs-link-gradient-color-end-visited,
+                $_breadcrumbs-link-gradient-direction,
+                $_breadcrumbs-link-gradient
+            );
+            border: $_breadcrumbs-link-border-visited;
+            color: $_breadcrumbs-link-color-visited;
+            text-decoration: $_breadcrumbs-link-text-decoration-visited;
+        }
+
+        &:hover {
+            background: $_breadcrumbs-link-background-hover;
+            @include lib-background-gradient(
+                $_breadcrumbs-link-gradient-color-start-hover,
+                $_breadcrumbs-link-gradient-color-end-hover,
+                $_breadcrumbs-link-gradient-direction,
+                $_breadcrumbs-link-gradient
+            );
+            border: $_breadcrumbs-link-border-hover;
+            color: $_breadcrumbs-link-color-hover;
+            text-decoration: $_breadcrumbs-link-text-decoration-hover;
+        }
+
+        &:active {
+            background: $_breadcrumbs-link-background-active;
+            @include lib-background-gradient(
+                $_breadcrumbs-link-gradient-color-start-active,
+                $_breadcrumbs-link-gradient-color-end-active,
+                $_breadcrumbs-link-gradient-direction,
+                $_breadcrumbs-link-gradient
+            );
+            border: $_breadcrumbs-link-border-active;
+            color: $_breadcrumbs-link-color-active;
+            text-decoration: $_breadcrumbs-link-text-decoration-active;
+        }
+    }
+
+    strong {
+        background: $_breadcrumbs-current-background;
+        @include lib-background-gradient(
+            $_breadcrumbs-current-gradient-color-start,
+            $_breadcrumbs-current-gradient-color-end,
+            $_breadcrumbs-current-gradient-direction,
+            $_breadcrumbs-current-gradient
+        );
+        border: $_breadcrumbs-current-border;
+        display: $_breadcrumbs-display;
+        font-weight: $_breadcrumbs-current-font-weight;
+        padding: $_breadcrumbs-padding;
+    }
+
+    @if $_breadcrumbs-separator-symbol != '' and $_breadcrumbs-separator-symbol != false {
+        // Insert separating symbol to "content"
+        .item:not(:last-child) {
+            &:after {
+                color: $_breadcrumbs-separator-color;
+                content: $_breadcrumbs-separator-symbol;
+            }
+        }
+    }
+
+    @if $_breadcrumbs-icon-use {
+        // Use font icon as a separating symbol
+        .item:not(:last-child) {
+            @include lib-icon-font(
+                $_icon-font-content: $_breadcrumbs-icon-font-content,
+                $_icon-font: $_icon-font,
+                $_icon-font-size: $_icon-font-size,
+                $_icon-font-line-height: $_icon-font-line-height,
+                $_icon-font-color: $_icon-font-color,
+                $_icon-font-margin: $_icon-font-margin,
+                $_icon-font-vertical-align: $_icon-font-vertical-align,
+                $_icon-font-position: after
+            );
+        }
+    }
+}

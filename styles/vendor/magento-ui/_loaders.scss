@@ -1,0 +1,88 @@
+//
+//  Loaders
+//  _____________________________________________
+
+@mixin lib-loader(
+    $_loader-overlay-background-color: rgba(255, 255, 255, 0.5),
+    $_loader-overlay-z-index         : $loader-overlay__z-index,
+    $_loader-icon-width              : 160px,
+    $_loader-icon-height             : 160px,
+    $_loader-icon-background-color   : transparent,
+    $_loader-icon-background-image   : url('../images/loader-2.gif'),
+    $_loader-icon-background-position: 50% 50%,
+    $_loader-icon-border-radius      : 5px,
+    $_loader-icon-padding            : inherit,
+    $_loader-text                    : inherit,
+    $_loader-text-color              : $primary__color,
+    $_loader-text-font-size          : $font-size__base,
+    $_loader-text-font-family        : $font-family__base,
+    $_loader-text-font-weight        : $font-weight__regular,
+    $_loader-text-font-style         : $font-style__base,
+    $_loader-text-padding            : 130px 0 0
+) {
+    background-color: $_loader-overlay-background-color;
+    z-index: $_loader-overlay-z-index;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    &:before {
+        @include _lib-loader-text($_loader-text);
+        background: $_loader-icon-background-color $_loader-icon-background-image no-repeat $_loader-icon-background-position;
+        border-radius: $_loader-icon-border-radius;
+        height: $_loader-icon-height;
+        padding: $_loader-icon-padding;
+        width: $_loader-icon-width;
+        bottom: 0;
+        box-sizing: border-box;
+        content: '';
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+@mixin _lib-loader-text($_loader-text) {
+    @if $_loader-text == true {
+        padding: $_loader-text-padding;
+        content: attr(data-text);
+        text-align: center;
+        vertical-align: baseline;
+        @include lib-typography(
+            $_color      : $_loader-text-color,
+            $_font-size  : $_loader-text-font-size,
+            $_font-family: $_loader-text-font-family,
+            $_font-weight: $_loader-text-font-weight,
+            $_font-style : $_loader-text-font-style
+        );
+    }
+}
+
+@mixin lib-loading(
+    $_loading-background-color: rgba(255, 255, 255, 0.7),
+    $_loading-background-image: inherit
+) {
+    position: relative;
+    &:before {
+        background: $_loading-background-color $_loading-background-image no-repeat 50% 50%;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+@mixin lib-loading-mask() {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}

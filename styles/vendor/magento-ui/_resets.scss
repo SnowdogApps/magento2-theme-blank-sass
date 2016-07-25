@@ -1,0 +1,103 @@
+//
+//  Resetes
+//  _____________________________________________
+
+//
+//  Magento reset
+//  ---------------------------------------------
+
+@mixin lib-magento-reset() {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    main,
+    footer,
+    header,
+    nav,
+    section,
+    summary {
+        display: block;
+    }
+
+    audio,
+    canvas,
+    video {
+        display: inline-block;
+    }
+
+    audio:not([controls]) {
+        display: none;
+        height: 0;
+    }
+
+    nav ul,
+    nav ol {
+        list-style: none none;
+    }
+
+    img {
+        border: 0;
+    }
+
+    img,
+    object,
+    video,
+    embed {
+        height: auto;
+        max-width: 100%;
+    }
+
+    svg:not(:root) {
+        overflow: hidden;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    @include lib-typography-all();
+
+    table {
+        @include lib-table();
+    }
+
+    button {
+        @include lib-button();
+        &::-moz-focus-inner {
+            border: 0;
+            padding: 0;
+        }
+    }
+
+    @include lib-form-element-all();
+    form {
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    address {
+        font-style: normal;
+    }
+
+    * {
+        &:focus {
+            box-shadow: none;
+            outline: 0;
+        }
+    }
+
+    ._keyfocus *,
+    input:not([disabled]),
+    textarea:not([disabled]),
+    select:not([disabled]) {
+        &:focus {
+            box-shadow: $focus__box-shadow;
+        }
+    }
+}

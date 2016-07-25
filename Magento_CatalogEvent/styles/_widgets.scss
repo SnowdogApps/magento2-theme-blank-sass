@@ -1,0 +1,179 @@
+.block-event {
+    .columns & {
+        position: relative;
+        z-index: 2;
+    }
+
+    .block-content {
+        position: relative;
+
+        & > .action {
+            cursor: pointer;
+            margin-top: -6px;
+            position: absolute;
+            top: 50%;
+            z-index: 3;
+
+            &.backward,
+            &.forward {
+                opacity: 0.5;
+                overflow: hidden;
+                width: 20px;
+
+                @include lib-icon-font(
+                    $_icon-font-content    : $icon-prev,
+                    $_icon-font-text-hide  : true,
+                    $_icon-font-size       : 55px,
+                    $_icon-font-line-height: 30px
+                );
+
+                &:before {
+                    margin-left: -15px;
+                }
+            }
+
+            &.backward {
+                left: 0;
+            }
+
+            &.forward {
+                @include lib-icon-font-symbol($icon-next);
+                right: 0;
+
+                &:before {
+                    margin-left: -20px;
+                }
+            }
+
+            &.inactive {
+                cursor: default;
+                display: none;
+            }
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .slider-panel {
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+
+        .slider {
+            @extend .abs-reset-list;
+            white-space: nowrap;
+
+            .item {
+                background: $catalog-event-background-color;
+                display: inline-block;
+                text-align: center;
+                vertical-align: top;
+                white-space: normal;
+                width: 16.35%;
+
+                .sidebar-main &,
+                .sidebar-additional & {
+                    width: 100%;
+                }
+
+                img {
+                    max-width: 100%;
+                }
+
+                .category-name {
+                    display: inline-block;
+                    font-size: 18px;
+                    padding: 15px 5px 0;
+                    word-break: break-all;
+                }
+
+                .ticker {
+                    @include lib-list-reset-styles();
+
+                    li {
+                        display: none;
+                        margin: 0 5px;
+                    }
+
+                    .value {
+                        font-size: 26px;
+                        font-weight: $font-weight__light;
+                    }
+
+                    .label {
+                        display: block;
+                        font-size: 13px;
+                    }
+                }
+
+                .dates {
+                    font-weight: $font-weight__light;
+
+                    .start,
+                    .end,
+                    .date {
+                        display: block;
+                    }
+
+                    .start {
+                        &:after {
+                            font-size: 18px;
+                            content: '\2013';
+                            display: block;
+                        }
+                    }
+
+                    .date {
+                        font-size: 18px;
+                        font-weight: $font-weight__light;
+                    }
+
+                    .time {
+                        font-size: 13px;
+                    }
+                }
+
+                .box-event {
+                    .box-content {
+                        padding: 5px 0 $indent__s;
+                    }
+
+                    .box-title {
+                        display: block;
+                        font-weight: $font-weight__light;
+                        margin: $indent__s 0 0;
+                    }
+                }
+
+                .action {
+                    &.show {
+                        @extend .abs-add-box-sizing;
+                        display: block;
+                        padding: 0;
+
+                        .category.name {
+                            display: inline-block;
+                            padding: 30px 10px 0;
+                        }
+
+                        img {
+                            display: block;
+                        }
+                    }
+
+                    &.event {
+                        @extend .abs-action-link-button;
+                        @include lib-button-primary();
+                        margin-top: 15px;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,221 @@
+//
+//  Ratings
+//  _____________________________________________
+
+//  Rating-vote mixin
+@mixin lib-rating-vote(
+    $_icon-count         : $rating-icon__count,
+    $_icon-content       : $rating-icon__content,
+    $_icon-font          : $rating-icon__font,
+    $_icon-font-size     : $rating-icon__font-size,
+    $_icon-letter-spacing: $rating-icon__letter-spacing,
+    $_icon-color         : $rating-icon__color,
+    $_icon-color-active  : $rating-icon__active__color
+) {
+    overflow: hidden;
+
+    &:before {
+        @include _lib-rating-icon-defalt(
+            $_icon-font,
+            $_icon-font-size,
+            $_icon-letter-spacing,
+            $_icon-color
+        );
+        @include lib-rating-icons-content(
+            $_icon-count,
+            $_icon-content
+        );
+        display: block;
+        position: absolute;
+        z-index: 1;
+    }
+
+    input[type="radio"] {
+        @include lib-visually-hidden();
+
+        &:focus,
+        &:checked {
+            + label {
+                &:before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    label {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+
+        span {
+            @include lib-visually-hidden();
+        }
+
+        &:before {
+            @include _lib-rating-icon-defalt(
+                $_icon-font,
+                $_icon-font-size,
+                $_icon-letter-spacing,
+                $_icon-color-active
+            );
+            opacity: 0;
+        }
+
+        &:hover {
+            &:before {
+                opacity: 1;
+            }
+
+            & ~ label {
+                &:before {
+                    opacity: 0;
+                }
+            }
+        }
+    }
+
+    @include _lib-rating-iteration(
+        $_icon-content,
+        $_icon-count
+    );
+}
+
+//  Rating-summary mixin
+@mixin lib-rating-summary(
+    $_icon-count         : $rating-icon__count,
+    $_icon-content       : $rating-icon__content,
+    $_icon-font          : $rating-icon__font,
+    $_icon-font-size     : $rating-icon__font-size,
+    $_icon-letter-spacing: $rating-icon__letter-spacing,
+    $_icon-color         : $rating-icon__color,
+    $_icon-color-active  : $rating-icon__active__color,
+    $_label-hide         : $rating-label__hide
+) {
+    overflow: hidden;
+    white-space: nowrap;
+    @include _lib-rating-label-hide($_label-hide);
+
+    .rating-result {
+        width: ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1));
+        display: inline-block;
+        position: relative;
+        vertical-align: middle;
+
+        &:before {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            @include _lib-rating-summary-icon-default(
+                $_icon-font,
+                $_icon-font-size,
+                $_icon-letter-spacing,
+                $_icon-count,
+                $_icon-content,
+                $_icon-color
+            );
+        }
+
+        & > span {
+            display: block;
+            overflow: hidden;
+
+            &:before {
+                position: relative;
+                z-index: 2;
+                @include _lib-rating-summary-icon-default(
+                    $_icon-font,
+                    $_icon-font-size,
+                    $_icon-letter-spacing,
+                    $_icon-count,
+                    $_icon-content,
+                    $_icon-color-active
+                );
+            }
+
+            span {
+                @include lib-visually-hidden();
+            }
+        }
+    }
+}
+
+@mixin lib-rating-summary-label-hide() {
+    .label {
+        @include lib-visually-hidden();
+    }
+}
+
+//  Internal use mixins
+@mixin _lib-rating-label-hide($_label-hide) {
+    @if $_label-hide == true {
+        @include lib-rating-summary-label-hide();
+    }
+}
+
+@mixin _lib-rating-iteration(
+    $_icon-content,
+    $_icon-count
+) {
+    @for $_index from $_icon-count to 0 {
+        .rating-#{$_index} {
+            z-index: $_icon-count - ($_index - 2);
+            &:before {
+                @include lib-rating-icons-content($_index, $_icon-content);
+            }
+        }
+    }
+}
+
+@mixin _lib-rating-icon-defalt(
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-letter-spacing,
+    $_icon-color
+) {
+    color: $_icon-color;
+    font-family: $_icon-font;
+    font-size: $_icon-font-size;
+    height: $_icon-font-size;
+    letter-spacing: $_icon-letter-spacing;
+    line-height: $_icon-font-size;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+@mixin _lib-rating-summary-icon-default(
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-letter-spacing,
+    $_icon-count,
+    $_icon-content,
+    $_icon-color
+) {
+    @include lib-rating-icons-content($_icon-count, $_icon-content);
+    -webkit-font-smoothing: antialiased;
+    color: $_icon-color;
+    font-family: $_icon-font;
+    font-size: $_icon-font-size;
+    height: $_icon-font-size;
+    letter-spacing: $_icon-letter-spacing;
+    line-height: $_icon-font-size;
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+}
+
+@mixin lib-rating-icons-content(
+    $_icon-count: $rating-icon__count,
+    $_icon-content: $rating-icon__content
+) {
+    $_icon-content-result: $_icon-content;
+    @for $_index from $_icon-count to 1 {
+        $_icon-content-result:  $_icon-content-result + $_icon-content;
+    }
+    content: $_icon-content-result;
+}

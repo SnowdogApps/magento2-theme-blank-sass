@@ -1,0 +1,250 @@
+@mixin lib-visibility-hidden() {
+    height: 0;
+    visibility: hidden;
+}
+
+@mixin lib-visually-hidden() {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+@mixin lib-visually-hidden-reset() {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+//
+//  Clearfix
+//  ---------------------------------------------
+
+@mixin lib-clearfix() {
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+@mixin lib-clearer() {
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+
+//
+//  Gradient
+//  ---------------------------------------------
+
+@mixin lib-gradient__horizontal(
+    $_start-color,
+    $_end-color,
+    $_start-percent            : 0%,
+    $_end-percent              : 100%,
+    $_background-color-position: true
+) {
+    @if $_background-color-position == true {
+        background-color: $_end-color;
+        background-repeat: repeat-x;
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
+    }
+    @else if $_background-color-position == false {
+        background-color: $_start-color;
+        background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
+        background-repeat: repeat-x;
+    }
+}
+@mixin lib-gradient__vertical(
+    $_start-color,
+    $_end-color,
+    $_start-percent            : 0%,
+    $_end-percent              : 100%,
+    $_background-color-position: true
+) {
+    @if $_background-color-position == true {
+        background-color: $_end-color;
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
+        background-repeat: repeat-x;
+    }
+    @else if $_background-color-position == false {
+        background-color: $_start-color;
+        background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
+        background-repeat: repeat-x;
+    }
+}
+
+//
+//  Custom background gradient
+//  ---------------------------------------------
+
+@mixin lib-background-gradient(
+    $_background-gradient-color-start,
+    $_background-gradient-color-end,
+    $_background-gradient-direction,
+    $_background-gradient,
+    $_background-gradient-color-position: true
+) {
+    @if $_background-gradient-direction == horizontal and $_background-gradient == true {
+        @include lib-gradient__horizontal(
+            $_start-color              : $_background-gradient-color-start,
+            $_end-color                : $_background-gradient-color-end,
+            $_background-color-position: $_background-gradient-color-position
+        );
+    }
+    @if $_background-gradient-direction == vertical and $_background-gradient == true {
+        @include lib-gradient__vertical(
+            $_start-color              : $_background-gradient-color-start,
+            $_end-color                : $_background-gradient-color-end,
+            $_background-color-position: $_background-gradient-color-position
+        );
+    }
+}
+
+//
+//  Rotate
+//  ---------------------------------------------
+
+@mixin lib-rotate($_rotation) {
+    transform: rotate($_rotation);
+}
+
+//
+//  Remove spaces between elements with display: inline-block
+//  ---------------------------------------------
+
+@mixin lib-inline-block-space-container() {
+    font-size: 0;
+    letter-spacing: -1px;
+    line-height: 0;
+}
+
+@mixin lib-inline-block-space-item(
+    $_font-size  : $font-size__base,
+    $_line-height: normal
+) {
+    font-size: $_font-size;
+    font-size: $_font-size;
+    letter-spacing: normal;
+    line-height: $_line-height;
+}
+
+//
+//  Add url to property
+//  ---------------------------------------------
+
+$urls-resolved: inherit;
+
+@mixin lib-url($_path) {
+    $url: "../#{$_path}";
+}
+
+@mixin lib-url($_path, $_module) {
+    @if $_module != false and $_module != '' {
+        @if $urls-resolved == true {
+            $url: "../#{$_module}/#{$_path}";
+        }
+        @else if $urls-resolved == false {
+            $url: "#{$_module}::#{$_path}";
+        }
+    }
+}
+
+@mixin lib-url-check($_path) {
+    $lib-url-check-output: $_path;
+    @if $_path != false {
+        $lib-url-check-output: url($_path);
+    }
+}
+
+//
+//  Arrow
+//  ---------------------------------------------
+
+@mixin lib-arrow($_position, $_size, $_color) {
+    border: $_size solid transparent;
+    height: 0;
+    width: 0;
+    @include _lib-abbor_el($_position, $_color);
+}
+
+@mixin _lib-abbor_el($_position, $_color) {
+    @if $_position == left {
+        border-right-color: $_color;
+    }
+    @if $_position == right {
+        border-left-color: $_color;
+    }
+    @if $_position == up {
+        border-bottom-color: $_color;
+    }
+    @if $_position == down {
+        border-top-color: $_color;
+    }
+}
+
+//
+//  Input placeholder
+//  ---------------------------------------------
+
+@mixin lib-input-placeholder() {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder           { @content; }
+    &::-moz-placeholder          { @content; }
+    &:-ms-input-placeholder      { @content; }
+}
+
+//
+//  Pointer for popups or dropdowns
+//
+
+@mixin lib-pointer(
+    $_size                       : 6px,
+    $_background-color           : $color-white,
+    $_border-color               : $color-gray-light3,
+    $_position__vertical         : top,
+    $_position__horizontal       : left,
+    $_position__vertical__value  : -12px,
+    $_position__horizontal__value: $indent__s,
+    $_z-index                    : 99
+) {
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-bottom-style: solid;
+    }
+
+    &:before {
+        $_position__horizontal: $_position__horizontal__value;
+        $_position__vertical: $_position__vertical__value;
+        border: solid $_size - 1;
+        border-color: transparent transparent $_background-color transparent;
+        z-index: $_z-index;
+    }
+
+    &:after {
+        $_position__horizontal: $_position__horizontal__value - 1;
+        $_position__vertical: $_position__vertical__value - 2;
+        border: solid $_size;
+        border-color: transparent transparent $_border-color transparent;
+        z-index: $_z-index - 1;
+    }
+}

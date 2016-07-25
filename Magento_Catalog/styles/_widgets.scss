@@ -1,0 +1,104 @@
+.block-category-link,
+.block-product-link {
+    &.widget {
+        display: block;
+        margin-bottom: $indent__base;
+    }
+}
+.block-product-link-inline {
+    &.widget {
+        margin: 0;
+    }
+}
+.block.widget {
+    .product-item-info {
+        width: auto;
+    }
+    .pager {
+        padding: 0;
+        .toolbar-amount {
+            float: none;
+            font-size: 12px;
+        }
+        .pages-item-previous {
+            padding-left: 0;
+        }
+        .pages-item-next {
+            position: relative;
+        }
+        .items {
+            white-space: nowrap;
+        }
+    }
+}
+
+//
+//    Mobile
+//  _____________________________________________
+
+@include min-screen($screen__s) {
+    .block.widget .products-grid .product-item,
+    .page-layout-1column .block.widget .products-grid .product-item,
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 33.3333%;
+    }
+}
+//
+//    Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .block.widget .products-grid .product-item {
+        width: 33.3333%;
+    }
+    .page-layout-1column .block.widget .products-grid .product-item {
+        width: 25%;
+    }
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 50%;
+    }
+}
+
+@include min-screen($screen__l) {
+    .block.widget .products-grid .product-item {
+        width: 20%;
+    }
+    .page-layout-1column .block.widget .products-grid .product-item {
+        width: 16.6666%;
+        margin-left: calc((100% - 5 * (100%/6)) / 4);
+        &:nth-child(4n+1) {
+            margin-left: calc((100% - 5 * (100%/6)) / 4);
+        }
+        &:nth-child(5n+1) {
+            margin-left: 0;
+        }
+    }
+    .page-layout-3columns .block.widget .products-grid .product-item {
+        width: 25%;
+    }
+    .block.widget .products-grid .product-items {
+        margin: 0;
+    }
+    .block.widget .products-grid .product-item {
+        width: 24.439%;
+        margin-left: calc((100% - 4 * 24.439%) / 3);
+        padding: 0;
+        &:nth-child(4n+1) {
+            margin-left: 0;
+        }
+    }
+}
+
+@include min-screen($screen__m) {
+    .sidebar .block.widget .pager {
+        .item:not(.pages-item-next):not(.pages-item-previous) {
+            @extend .abs-no-display-desktop;
+        }
+        .pages-item-next {
+            padding: 0;
+            .action {
+                margin: 0;
+            }
+        }
+    }
+}

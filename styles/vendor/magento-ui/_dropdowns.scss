@@ -1,0 +1,569 @@
+//
+//  Dropdowns
+//  _____________________________________________
+
+//
+//  Simple dropdown
+//  ---------------------------------------------
+
+@mixin lib-dropdown(
+    $_toggle-selector                          : ".action.toggle",
+    $_options-selector                         : "ul.dropdown",
+
+    $_dropdown-actions-padding                 : inherit,
+    $_dropdown-list-min-width                  : 100%,
+    $_dropdown-list-width                      : inherit,
+    $_dropdown-list-height                     : inherit,
+    $_dropdown-list-margin-top                 : 4px,
+    $_dropdown-list-position-top               : 100%,
+    $_dropdown-list-position-bottom            : inherit,
+    $_dropdown-list-position-left              : inherit,
+    $_dropdown-list-position-right             : inherit,
+    $_dropdown-list-background                 : $color-white,
+    $_dropdown-list-border                     : 1px solid $color-gray-light2,
+
+    $_dropdown-list-pointer                    : true,
+    $_dropdown-list-pointer-border             : $color-gray-light2,
+    $_dropdown-list-pointer-position           : left,
+    $_dropdown-list-pointer-position-top       : -12px,
+    $_dropdown-list-pointer-position-left-right: 10px,
+
+    $_dropdown-list-item-border                : 0,
+    $_dropdown-list-item-padding               : 3px $indent__xs,
+    $_dropdown-list-item-margin                : 0,
+    $_dropdown-list-item-hover                 : $color-gray91,
+    $_dropdown-list-shadow                     : 0 3px 3px rgba(0, 0, 0, 0.15),
+    $_dropdown-list-z-index                    : 100,
+
+    $_dropdown-toggle-icon-content             : '\e607',
+    $_dropdown-toggle-active-icon-content      : '\e621',
+
+    $_icon-font                                : $icon-font,
+    $_icon-font-size                           : 22px,
+    $_icon-font-line-height                    : $_icon-font-size,
+    $_icon-font-color                          : inherit,
+    $_icon-font-color-hover                    : inherit,
+    $_icon-font-color-active                   : inherit,
+    $_icon-font-margin                         : 0,
+    $_icon-font-position                       : $icon__position,
+    $_icon-font-vertical-align                 : top,
+    $_icon-font-text-hide                      : inherit
+) {
+    @include lib-clearfix();
+    position: relative;
+
+    #{$_toggle-selector} {
+        padding: $_dropdown-actions-padding;
+        cursor: pointer;
+        @include _lib-dropdown-icon(
+            $_dropdown-toggle-icon-content,
+            $_dropdown-toggle-active-icon-content,
+            $_icon-font,
+            $_icon-font-size,
+            $_icon-font-line-height,
+            $_icon-font-color,
+            $_icon-font-color-hover,
+            $_icon-font-color-active,
+            $_icon-font-margin,
+            $_icon-font-vertical-align,
+            $_icon-font-position,
+            $_icon-font-text-hide
+        );
+    }
+    @include _lib-dropdown-styles(
+        $_options-selector,
+        $_dropdown-list-min-width,
+        $_dropdown-list-width,
+        $_dropdown-list-height,
+        $_dropdown-list-margin-top,
+        $_dropdown-list-background,
+        $_dropdown-list-border,
+        $_dropdown-list-z-index,
+        $_dropdown-list-shadow,
+        $_dropdown-list-item-padding,
+        $_dropdown-list-item-margin,
+        $_dropdown-list-item-border,
+        $_dropdown-list-item-hover,
+        $_dropdown-list-position-top,
+        $_dropdown-list-position-bottom,
+        $_dropdown-list-position-left,
+        $_dropdown-list-position-right,
+        $_dropdown-list-pointer,
+        $_dropdown-list-pointer-border,
+        $_dropdown-list-pointer-position,
+        $_dropdown-list-pointer-position-top,
+        $_dropdown-list-pointer-position-left-right
+    );
+}
+
+//
+//  Split dropdown
+//  ---------------------------------------------
+
+@mixin lib-dropdown-split(
+    $_toggle-selector                                : ".action.toggle",
+    $_options-selector                               : "ul.dropdown",
+    $_button-selector                                : ".action.split",
+
+    $_dropdown-split-actions-padding                 : inherit,
+
+    $_dropdown-split-list-min-width                  : 100%,
+    $_dropdown-split-list-width                      : inherit,
+    $_dropdown-split-list-height                     : inherit,
+    $_dropdown-split-list-margin-top                 : 4px,
+    $_dropdown-split-list-position-top               : 100%,
+    $_dropdown-split-list-position-bottom            : inherit,
+    $_dropdown-split-list-position-left              : inherit,
+    $_dropdown-split-list-position-right             : inherit,
+    $_dropdown-split-list-background                 : $color-white,
+    $_dropdown-split-list-border                     : 1px solid $color-gray-light2,
+
+    $_dropdown-split-list-pointer                    : true,
+    $_dropdown-split-list-pointer-border             : $color-gray-light2,
+    $_dropdown-split-list-pointer-position           : left,
+    $_dropdown-split-list-pointer-position-top       : -12px,
+    $_dropdown-split-list-pointer-position-left-right: 10px,
+
+    $_dropdown-split-list-item-border                : 0,
+    $_dropdown-split-list-item-padding               : 3px $indent__xs,
+    $_dropdown-split-list-item-margin                : 0,
+    $_dropdown-split-list-item-hover                 : $color-gray91,
+    $_dropdown-split-list-shadow                     : 0 3px 3px rgba(0, 0, 0, 0.15),
+    $_dropdown-split-list-z-index                    : 100,
+
+    $_dropdown-split-button-border-radius-fix        : inherit,
+    $_dropdown-split-button-actions-padding          : inherit,
+
+    $_dropdown-split-toggle-actions-padding          : inherit,
+    $_dropdown-split-toggle-position                 : right,
+    $_dropdown-split-toggle-icon-content             : '\e607',
+    $_dropdown-split-toggle-active-icon-content      : '\e621',
+
+    $_icon-font                                      : $icons__font-name,
+    $_icon-font-size                                 : 22px,
+    $_icon-font-line-height                          : 22px,
+    $_icon-font-color                                : inherit,
+    $_icon-font-color-hover                          : inherit,
+    $_icon-font-color-active                         : inherit,
+    $_icon-font-margin                               : inherit,
+    $_icon-font-vertical-align                       : top,
+    $_icon-font-position                             : after,
+    $_icon-font-text-hide                            : true
+) {
+    @include lib-clearfix();
+    display: inline-block;
+    position: relative;
+    @include _lib-dropdown-split-toggle-position(
+        $_button-selector,
+        $_toggle-selector,
+        $_dropdown-split-toggle-position,
+        $_dropdown-split-button-border-radius-fix
+    );
+
+    #{$_button-selector} {
+        padding: $_dropdown-split-button-actions-padding;
+    }
+
+    #{$_toggle-selector} {
+        padding: $_dropdown-split-toggle-actions-padding;
+        @include _lib-dropdown-split-icon(
+            $_dropdown-split-toggle-icon-content,
+            $_dropdown-split-toggle-active-icon-content,
+            $_icon-font,
+            $_icon-font-size,
+            $_icon-font-line-height,
+            $_icon-font-color,
+            $_icon-font-color-hover,
+            $_icon-font-color-active,
+            $_icon-font-margin,
+            $_icon-font-vertical-align,
+            $_icon-font-position,
+            $_icon-font-text-hide
+        );
+    }
+    @include _lib-dropdown-styles(
+        $_options-selector,
+        $_dropdown-split-list-min-width,
+        $_dropdown-split-list-width,
+        $_dropdown-split-list-height,
+        $_dropdown-split-list-margin-top,
+        $_dropdown-split-list-background,
+        $_dropdown-split-list-border,
+        $_dropdown-split-list-z-index,
+        $_dropdown-split-list-shadow,
+        $_dropdown-split-list-item-padding,
+        $_dropdown-split-list-item-margin,
+        $_dropdown-split-list-item-border,
+        $_dropdown-split-list-item-hover,
+        $_dropdown-split-list-position-top,
+        $_dropdown-split-list-position-bottom,
+        $_dropdown-split-list-position-left,
+        $_dropdown-split-list-position-right,
+        $_dropdown-split-list-pointer,
+        $_dropdown-split-list-pointer-border,
+        $_dropdown-split-list-pointer-position,
+        $_dropdown-split-list-pointer-position-top,
+        $_dropdown-split-list-pointer-position-left-right
+    );
+}
+
+//
+//  Internal use mixins
+//  ---------------------------------------------
+
+@mixin _lib-dropdown-styles(
+    $_options-selector,
+    $_dropdown-list-min-width,
+    $_dropdown-list-width,
+    $_dropdown-list-height,
+    $_dropdown-list-margin-top,
+    $_dropdown-list-background,
+    $_dropdown-list-border,
+    $_dropdown-list-z-index,
+    $_dropdown-list-shadow,
+    $_dropdown-list-item-padding,
+    $_dropdown-list-item-margin,
+    $_dropdown-list-item-border,
+    $_dropdown-list-item-hover,
+    $_dropdown-list-position-top,
+    $_dropdown-list-position-bottom,
+    $_dropdown-list-position-left,
+    $_dropdown-list-position-right,
+    $_dropdown-list-pointer,
+    $_dropdown-list-pointer-border,
+    $_dropdown-list-pointer-position,
+    $_dropdown-list-pointer-position-top,
+    $_dropdown-list-pointer-position-left-right
+) {
+    #{$_options-selector} {
+        background: $_dropdown-list-background;
+        border: $_dropdown-list-border;
+        z-index: $_dropdown-list-z-index;
+        @include lib-list-reset-styles();
+        box-sizing: border-box;
+        position: absolute;
+
+        @include _lib-dropdown-list-position(
+            $_dropdown-list-position-top,
+            $_dropdown-list-position-bottom,
+            $_dropdown-list-position-left,
+            $_dropdown-list-position-right
+        );
+
+        @include _lib-dropdown-list-shadow($_dropdown-list-shadow);
+        height: $_dropdown-list-height;
+        margin-top: $_dropdown-list-margin-top;
+        min-width: $_dropdown-list-min-width;
+        width: $_dropdown-list-width;
+        display: none;
+
+        li {
+            margin: $_dropdown-list-item-margin;
+            padding: $_dropdown-list-item-padding;
+            @include _lib-dropdown-list-item-border(
+                $_dropdown-list-item-border
+            );
+
+            &:hover {
+                background: $_dropdown-list-item-hover;
+                cursor: pointer;
+            }
+        }
+
+        @include _lib-dropdown-list-pointer(
+            $_dropdown-list-background,
+            $_dropdown-list-pointer,
+            $_dropdown-list-pointer-border,
+            $_dropdown-list-pointer-position,
+            $_dropdown-list-pointer-position-top,
+            $_dropdown-list-pointer-position-left-right
+        );
+    }
+    &.active {
+        overflow: visible;
+        #{$_options-selector} {
+            display: block;
+        }
+    }
+}
+
+//
+//  Dropdown list position
+//  ---------------------------------------------
+
+@mixin _lib-dropdown-list-position(
+    $_dropdown-list-position-top,
+    $_dropdown-list-position-bottom,
+    $_dropdown-list-position-left,
+    $_dropdown-list-position-right
+) {
+    @if not $_dropdown-list-position-top and $_dropdown-list-position-top != auto {
+        top: $_dropdown-list-position-top;
+    }
+    @if not $_dropdown-list-position-bottom and $_dropdown-list-position-bottom != auto {
+        bottom: $_dropdown-list-position-bottom;
+    }
+    @if not $_dropdown-list-position-left and $_dropdown-list-position-left != auto {
+        left: $_dropdown-list-position-left;
+    }
+    @if not $_dropdown-list-position-right and $_dropdown-list-position-right != auto {
+        right: $_dropdown-list-position-right;
+    }
+}
+
+//
+//  Simple dropdown icon
+//  ---------------------------------------------
+
+@mixin _lib-dropdown-icon(
+    $_dropdown-toggle-icon-content,
+    $_dropdown-toggle-active-icon-content,
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-font-line-height,
+    $_icon-font-color,
+    $_icon-font-color-hover,
+    $_icon-font-color-active,
+    $_icon-font-margin,
+    $_icon-font-vertical-align,
+    $_icon-font-position,
+    $_icon-font-text-hide
+) {
+    @include lib-icon-font(
+        $_icon-font-content: $_dropdown-toggle-icon-content,
+        $_icon-font: $_icon-font,
+        $_icon-font-size: $_icon-font-size,
+        $_icon-font-line-height: $_icon-font-line-height,
+        $_icon-font-color: $_icon-font-color,
+        $_icon-font-color-hover: $_icon-font-color-hover,
+        $_icon-font-color-active: $_icon-font-color-active,
+        $_icon-font-margin: $_icon-font-margin,
+        $_icon-font-vertical-align: $_icon-font-vertical-align,
+        $_icon-font-position: $_icon-font-position,
+        $_icon-font-text-hide: $_icon-font-text-hide
+    );
+
+    &.active {
+        @include lib-icon-font(
+            $_icon-font-content: $_dropdown-toggle-active-icon-content,
+            $_icon-font: $_icon-font,
+            $_icon-font-size: $_icon-font-size,
+            $_icon-font-line-height: $_icon-font-line-height,
+            $_icon-font-color: $_icon-font-color,
+            $_icon-font-color-hover: $_icon-font-color-hover,
+            $_icon-font-color-active: $_icon-font-color-active,
+            $_icon-font-margin: $_icon-font-margin,
+            $_icon-font-vertical-align: $_icon-font-vertical-align,
+            $_icon-font-position: $_icon-font-position,
+            $_icon-font-text-hide: $_icon-font-text-hide
+        );
+    }
+}
+
+//
+//  Split dropdowns
+//  ---------------------------------------------
+
+//  Split dropdown icon
+@mixin _lib-dropdown-split-icon(
+    $_dropdown-toggle-icon-content,
+    $_dropdown-toggle-active-icon-content,
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-font-line-height,
+    $_icon-font-color,
+    $_icon-font-color-hover,
+    $_icon-font-color-active,
+    $_icon-font-margin,
+    $_icon-font-vertical-align,
+    $_icon-font-position,
+    $_icon-font-text-hide
+) {
+    @include lib-button-icon(
+        $_icon-font-content: $_dropdown-toggle-icon-content,
+        $_icon-font: $_icon-font,
+        $_icon-font-size: $_icon-font-size,
+        $_icon-font-line-height: $_icon-font-line-height,
+        $_icon-font-color: $_icon-font-color,
+        $_icon-font-color-hover: $_icon-font-color-hover,
+        $_icon-font-color-active: $_icon-font-color-active,
+        $_icon-font-margin: $_icon-font-margin,
+        $_icon-font-vertical-align: $_icon-font-vertical-align,
+        $_icon-font-position: $_icon-font-position,
+        $_icon-font-text-hide: $_icon-font-text-hide
+    );
+
+    &.active {
+        @include lib-button-icon(
+            $_icon-font-content: $_dropdown-toggle-active-icon-content,
+            $_icon-font: $_icon-font,
+            $_icon-font-size: $_icon-font-size,
+            $_icon-font-line-height: $_icon-font-line-height,
+            $_icon-font-color: $_icon-font-color,
+            $_icon-font-color-hover: $_icon-font-color-hover,
+            $_icon-font-color-active: $_icon-font-color-active,
+            $_icon-font-margin: $_icon-font-margin,
+            $_icon-font-vertical-align: $_icon-font-vertical-align,
+            $_icon-font-position: $_icon-font-position,
+            $_icon-font-text-hide: $_icon-font-text-hide
+        );
+    }
+}
+
+@mixin _lib-dropdown-split-toggle-position(
+    $_button-selector,
+    $_toggle-selector,
+    $_dropdown-split-toggle-position,
+    $_dropdown-split-button-border-radius-fix
+) {
+    @if $_dropdown-split-toggle-position == left {
+        #{$_button-selector} {
+            float: right;
+            margin: 0;
+        }
+        #{$_toggle-selector} {
+            float: left;
+            margin: 0;
+        }
+        @if $_dropdown-split-button-border-radius-fix {
+            button#{$_button-selector} {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+            }
+
+            button + #{$_toggle-selector} {
+                border-bottom-right-radius: 0;
+                border-right: 0;
+                border-top-right-radius: 0;
+            }
+        }
+    }
+    @else if $_dropdown-split-toggle-position == right {
+        #{$_button-selector} {
+            float: left;
+            margin: 0;
+        }
+        #{$_toggle-selector} {
+            float: right;
+            margin: 0;
+        }
+        @if $_dropdown-split-button-border-radius-fix {
+            button#{$_button-selector} {
+                border-bottom-right-radius: 0;
+                border-top-right-radius: 0;
+            }
+
+            button + #{$_toggle-selector} {
+                border-bottom-left-radius: 0;
+                border-left: 0;
+                border-top-left-radius: 0;
+            }
+        }
+    }
+}
+
+//
+//  Dropdown show pointer
+//  ---------------------------------------------
+
+@mixin _lib-dropdown-list-pointer(
+    $_dropdown-list-background,
+    $_dropdown-list-pointer,
+    $_dropdown-list-pointer-border,
+    $_dropdown-list-pointer-position,
+    $_dropdown-list-pointer-position-top,
+    $_dropdown-list-pointer-position-left-right
+) {
+    @if $_dropdown-list-pointer {
+        @include _lib-dropdown-pointer(
+            $_dropdown-list-background,
+            $_dropdown-list-pointer-border,
+            $_dropdown-list-pointer-position,
+            $_dropdown-list-pointer-position-top,
+            $_dropdown-list-pointer-position-left-right
+        );
+    }
+}
+
+@mixin _lib-dropdown-pointer(
+    $_dropdown-list-background,
+    $_dropdown-list-pointer-border,
+    $_dropdown-list-pointer-position,
+    $_dropdown-list-pointer-position-top,
+    $_dropdown-list-pointer-position-left-right
+) {
+    @if $_dropdown-list-pointer-position == left {
+        @include _lib-dropdown-pointer-default(
+            $_dropdown-list-background,
+            $_dropdown-list-pointer-border
+        );
+
+        &:before {
+            left: $_dropdown-list-pointer-position-left-right;
+            top: $_dropdown-list-pointer-position-top;
+        }
+
+        &:after {
+            left: $_dropdown-list-pointer-position-left-right - 1;
+            top: $_dropdown-list-pointer-position-top - 2;
+        }
+    }
+    @else if $_dropdown-list-pointer-position == right {
+        @include _lib-dropdown-pointer-default(
+            $_dropdown-list-background,
+            $_dropdown-list-pointer-border
+        );
+
+        &:before {
+            right: $_dropdown-list-pointer-position-left-right;
+            top: $_dropdown-list-pointer-position-top;
+        }
+
+        &:after {
+            right: $_dropdown-list-pointer-position-left-right - 1;
+            top: $_dropdown-list-pointer-position-top - 2;
+        }
+    }
+}
+
+@mixin _lib-dropdown-pointer-default(
+    $_dropdown-list-background,
+    $_dropdown-list-pointer-border
+) {
+    &:before,
+    &:after {
+        border-bottom-style: solid;
+        content: '';
+        display: block;
+        height: 0;
+        position: absolute;
+        width: 0;
+    }
+
+    &:before {
+        border: 6px solid;
+        border-color: transparent transparent $_dropdown-list-background transparent;
+        z-index: 99;
+    }
+
+    &:after {
+        border: 7px solid;
+        border-color: transparent transparent $_dropdown-list-pointer-border transparent;
+        z-index: 98;
+    }
+}
+
+//  Dropdown list item border != 0
+@mixin _lib-dropdown-list-item-border($_dropdown-list-item-border) {
+    @if not $_dropdown-list-item-border and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
+        border-top: $_dropdown-list-item-border;
+        &:first-child {
+            border: none;
+        }
+    }
+}
+
+//  Dropdown list shadow
+@mixin _lib-dropdown-list-shadow($_dropdown-list-shadow) {
+    box-shadow: $_dropdown-list-shadow;
+}

@@ -1,0 +1,64 @@
+@mixin price-style-1() {
+    .price {
+        &-tier_price .price-excluding-tax,
+        &-tier_price .price-including-tax {
+            display: inline;
+        }
+    }
+}
+
+@mixin price-style-2() {
+    .price {
+        &-including-tax,
+        &-excluding-tax {
+            display: inline;
+        }
+
+        &-including-tax:before {
+            content: ' / ';
+        }
+
+        &-including-tax:after {
+            content: '("attr(data-label)")';
+        }
+    }
+}
+
+@mixin price-style-3() {
+    .price-including-tax,
+    .price-excluding-tax {
+        display: block;
+        font-size: 18px;
+        line-height: 1;
+
+        .price {
+            font-weight: $font-weight__bold;
+        }
+
+        .cart-tax-total {
+            @extend .abs-tax-total;
+
+            &-expanded {
+                @extend .abs-tax-total-expanded;
+            }
+        }
+    }
+
+    .price-including-tax + .price-excluding-tax,
+    .weee[data-label] {
+        display: block;
+        font-size: 18px;
+
+        &:before {
+            content: attr(data-label) ': ';
+            font-size: 11px;
+        }
+
+        .price {
+            font-size: 11px;
+        }
+    }
+}
+@include price-style-1();
+@include price-style-3();
+// TO DO - No idea what the hell happened here - looks like piece of shit

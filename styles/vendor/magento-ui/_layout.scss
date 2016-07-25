@@ -1,0 +1,132 @@
+//
+//  Layout
+//  _____________________________________________
+
+//  Page Width mixin
+@mixin lib-layout-width(
+    $_layout__min-width: $layout__min-width,
+    $_layout__max-width: $layout__max-width,
+    $_layout__indent   : $layout-indent__width
+)  {
+    @if $responsive != true {
+        @include _lib-layout-width($_layout__min-width, $_layout__max-width);
+        padding-left: $layout-indent__width;
+        padding-right: $layout-indent__width;
+        margin: 0 auto;
+    }
+}
+
+@mixin _lib-layout-width(
+    $_layout__min-width: $layout__min-width,
+    $_layout__max-width: $layout__max-width
+) {
+    @if $_layout__min-width == $_layout__max-width {
+        width: $_layout__min-width;
+    }
+    @else {
+        max-width: $_layout__max-width;
+        min-width: $_layout__min-width;
+        width: auto;
+    }
+}
+
+@mixin lib-layout-columns() {
+    @if $use-flex == true {
+        display: flex;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+    }
+    &:after {
+        clear: both;
+        content: ' ';
+        display: block;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+    }
+}
+
+@mixin lib-layout-columns__main() {
+    .#{$layout-class-1column} & {
+        @include lib-layout-column(1, 2, 100%);
+    }
+    .#{$layout-class-3columns} & {
+        @include lib-layout-column(3, 2, $layout-column-main__width-3);
+    }
+    .#{$layout-class-2columns__left} & {
+        @include lib-layout-column(2, 2, $layout-column-main__width-2-left);
+    }
+    .#{$layout-class-2columns__right} & {
+        @include lib-layout-column(2, 1, $layout-column-main__width-2-right);
+    }
+}
+
+@mixin lib-layout-columns__left() {
+    .#{$layout-class-3columns} & {
+        @include lib-layout-column(3, 1, $layout-column__left-width);
+    }
+    .#{$layout-class-2columns__left} & {
+        @include lib-layout-column(2, 1, $layout-column__left-width);
+    }
+    .#{$layout-class-2columns__right} & {
+        @include lib-layout-column(2, 1, $layout-column__left-width);
+    }
+}
+
+@mixin lib-layout-columns__right() {
+    .#{$layout-class-3columns} & {
+        @include lib-layout-column(3, 3, $layout-column__right-width);
+    }
+    .#{$layout-class-2columns__left} & {
+        @include lib-layout-column(2, 2, $layout-column__right-width);
+    }
+    .#{$layout-class-2columns__right} & {
+        @include lib-layout-column(2, 2, $layout-column__right-width);
+    }
+}
+
+@mixin _lib-column-width($_width, $_check, $_index) {
+    @if $_check == false and $_index == 2 {
+        @include lib-column-width($_width);
+    }
+    @else if $_check == true or $_width == 'auto' {
+        width: $_width;
+        $_index: 1;
+    }
+}
+
+@mixin _lib-set-column-width($_index, $_width) {
+    @if $_index > 0 {
+        $_units    : 'px', '%', 'em', 'rem', 'pt';
+        $_unit     : nth($_units, $_index);
+        $_checkUnit: false;
+
+        @if unit($_width) == $_unit {
+            $_checkUnit: true;
+        }
+        @include _lib-column-width($_width, $_checkUnit, $_index);
+        @include _lib-set-column-width($_index - 1, $_width);
+
+    }
+}
+
+@mixin lib-layout-column($_total-columns, $_order, $_width) {
+    $_units: 'px', '%', 'em', 'rem', 'pt';
+    @include _lib-set-column-width(length($_units), $_width);
+    @include lib-flex-degradation($_total-columns, $_order);
+    @if $use-flex == true {
+        order: $_order;
+    }
+}
+
+@mixin lib-flex-degradation($_total-columns, $_order) {
+    @if $_order == 1 {
+        float: left;
+    }
+    @else if $_order == $_total-columns {
+        float: right;
+    }
+    @else if $_total-columns == 3 and $_order == 2 {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,284 @@
+//
+//  Sections
+//  _____________________________________________
+
+@mixin lib-data-tabs__base(
+    $_tab-control-height__base: $line-height__computed
+) {
+    @include lib-clearfix();
+    position: relative;
+    z-index: 1;
+
+    & > .item.title {
+        float: left;
+        width: auto;
+
+        & > .switch {
+            height: $_tab-control-height__base;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    & > .item.content {
+        @include lib-clearfix();
+        margin-top: $_tab-control-height__base;
+        box-sizing: border-box;
+        float: right;
+        margin-left: -100%;
+        width: 100%;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+@mixin lib-data-tabs(
+    $_tab-control-font-family            : inherit,
+    $_tab-control-font-size              : $font-size__base,
+    $_tab-control-font-style             : inherit,
+    $_tab-control-font-weight            : $font-weight__semibold,
+    $_tab-control-line-height            : $indent__base,
+
+    $_tab-control-background-color       : $tab-control__background-color,
+    $_tab-control-color                  : $tab-control__color,
+    $_tab-control-text-decoration        : $tab-control__text-decoration,
+
+    $_tab-control-color-visited          : $tab-control__color,
+    $_tab-control-text-decoration-visited: $tab-control__text-decoration,
+
+    $_tab-control-background-color-hover : lighten($tab-control__background-color, 5%),
+    $_tab-control-color-hover            : $tab-control__hover__color,
+    $_tab-control-text-decoration-hover  : $tab-control__text-decoration,
+
+    $_tab-control-background-color-active: $tab-control__active__background-color,
+    $_tab-control-color-active           : $text__color,
+    $_tab-control-text-decoration-active : $tab-control__text-decoration,
+
+    $_tab-control-height                 : $indent__base,
+    $_tab-control-margin-right           : $indent__xs,
+
+    $_tab-control-padding-top            : $indent__xs,
+    $_tab-control-padding-right          : $indent__base,
+    $_tab-control-padding-bottom         : $indent__xs,
+    $_tab-control-padding-left           : $indent__base,
+
+    $_tab-control-border-width           : $tab-control__border-width,
+    $_tab-control-border-color           : $tab-control__border-color,
+
+    $_tab-content-background-color       : lighten($tab-control__background-color, 15%),
+    $_tab-content-border                 : $tab-content__border,
+    $_tab-content-border-top-status      : inherit,
+    $_tab-content-margin-top             : $tab-content__margin-top,
+
+    $_tab-content-padding-top            : $indent__base,
+    $_tab-content-padding-right          : $indent__base,
+    $_tab-content-padding-bottom         : $indent__base,
+    $_tab-content-padding-left           : $indent__base
+) {
+    @include lib-data-tabs__base();
+    & > .item.title {
+        margin: 0 $_tab-control-margin-right 0 0;
+        & > .switch {
+            @include lib-typography(
+                $_color      : $_tab-control-color,
+                $_font-size  : $_tab-control-font-size,
+                $_font-family: $_tab-control-font-family,
+                $_font-weight: $_tab-control-font-weight,
+                $_font-style : $_tab-control-font-style,
+                $_line-height: $_tab-control-line-height
+            );
+            @include lib-link(
+                $_link-color                  : $_tab-control-color,
+                $_link-text-decoration        : $_tab-control-text-decoration,
+                $_link-color-visited          : $_tab-control-color-visited,
+                $_link-text-decoration-visited: $_tab-control-text-decoration-visited,
+                $_link-color-hover            : $_tab-control-color-hover,
+                $_link-text-decoration-hover  : $_tab-control-text-decoration-hover,
+                $_link-color-active           : $_tab-control-color-active,
+                $_link-text-decoration-active : $_tab-control-text-decoration-active
+            );
+            background: $_tab-control-background-color;
+            border: $_tab-content-border;
+            border-bottom: none;
+            height: $_tab-control-height;
+            padding: $_tab-control-padding-top $_tab-control-padding-right $_tab-control-padding-bottom $_tab-control-padding-left;
+        }
+
+        &:not(.disabled) > .switch:focus,
+        &:not(.disabled) > .switch:hover {
+            background: $_tab-control-background-color-hover;
+        }
+
+        &:not(.disabled) > .switch:active,
+        &.active > .switch,
+        &.active > .switch:focus,
+        &.active > .switch:hover {
+            background: $_tab-control-background-color-active;
+            color: $_tab-control-color-active;
+        }
+
+        &.active > .switch,
+        &.active > .switch:focus,
+        &.active > .switch:hover {
+            padding-bottom: $_tab-control-padding-bottom + $_tab-control-border-width;
+        }
+    }
+
+    & > .item.content {
+        background: $_tab-content-background-color;
+        margin-top: $_tab-content-margin-top;
+        padding: $_tab-content-padding-top $_tab-content-padding-right $_tab-content-padding-bottom $_tab-content-padding-left;
+
+        @include _lib-tab-content-border(
+            $_tab-content-border-top-status: $_tab-content-border-top-status,
+            $_tab-content-border           : $_tab-content-border
+        );
+    }
+}
+
+@mixin _lib-tab-content-border(
+    $_tab-content-border-top-status,
+    $_tab-content-border
+) {
+    @if $_tab-content-border-top-status == true {
+        border: 0;
+        border-top: $_tab-content-border;
+    }
+    @else if $_tab-content-border-top-status == false {
+        border: $_tab-content-border;
+    }
+}
+
+@mixin lib-data-accordion__base() {
+    margin: 0;
+    padding: 0;
+
+    & > .item.title {
+        box-sizing: border-box;
+        float: none;
+        width: 100%;
+
+        & > .switch {
+            display: block;
+        }
+    }
+
+    & > .item.content {
+        @include lib-clearfix();
+        box-sizing: border-box;
+        display: block;
+        float: none;
+        margin: 0;
+
+        &.active {
+            display: block;
+        }
+    }
+}
+
+@mixin lib-data-accordion(
+    $_accordion-control-font-family            : $tab-control__font-family,
+    $_accordion-control-font-size              : $font-size__l,
+    $_accordion-control-font-style             : $tab-control__font-style,
+    $_accordion-control-font-weight            : $font-weight__semibold,
+    $_accordion-control-line-height            : $indent__base * 2,
+
+    $_accordion-control-border-top             : $tab-control__border-width solid $tab-control__border-color,
+    $_accordion-control-border-right           : $tab-control__border-width solid $tab-control__border-color,
+    $_accordion-control-border-bottom          : $tab-control__border-width solid $tab-control__border-color,
+    $_accordion-control-border-left            : $tab-control__border-width solid $tab-control__border-color,
+
+    $_accordion-control-background-color       : $tab-control__background-color,
+    $_accordion-control-color                  : $tab-control__color,
+    $_accordion-control-text-decoration        : $tab-control__text-decoration,
+
+    $_accordion-control-color-visited          : $tab-control__color,
+    $_accordion-control-text-decoration-visited: $tab-control__text-decoration,
+
+    $_accordion-control-background-color-hover : lighten($tab-control__background-color, 5%),
+    $_accordion-control-color-hover            : $tab-control__color,
+    $_accordion-control-text-decoration-hover  : $tab-control__text-decoration,
+
+    $_accordion-control-background-color-active: lighten($tab-control__background-color, 15%),
+    $_accordion-control-color-active           : $text__color,
+    $_accordion-control-text-decoration-active : $tab-control__text-decoration,
+
+    $_accordion-control-height                 : $indent__base * 2,
+    $_accordion-control-margin-bottom          : $indent__xs,
+
+    $_accordion-control-padding-top            : $tab-control__padding-top,
+    $_accordion-control-padding-right          : $indent__base,
+    $_accordion-control-padding-bottom         : $tab-control__padding-bottom,
+    $_accordion-control-padding-left           : $indent__base,
+
+    $_accordion-content-background-color       : lighten($tab-control__background-color, 15%),
+    $_accordion-content-border                 : $tab-content__border,
+
+    $_accordion-content-margin                 : 0 0 $indent__xs,
+    $_accordion-content-padding                : $tab-content__padding-top $tab-content__padding-right $tab-content__padding-bottom $tab-content__padding-left
+) {
+    @include lib-data-accordion__base();
+    @if $_accordion-control-margin-bottom == 0 {
+        & > .item.title {
+            margin: 0;
+        }
+    }
+    @if $_accordion-control-margin-bottom == 0 {
+        & > .item.title {
+            margin: 0 0 $_accordion-control-margin-bottom;
+        }
+    }
+
+    & > .item.title {
+        & > .switch {
+            background: $_accordion-control-background-color;
+            border-bottom: $_accordion-control-border-bottom;
+            border-left: $_accordion-control-border-left;
+            border-right: $_accordion-control-border-right;
+            border-top: $_accordion-control-border-top;
+            height: $_accordion-control-height;
+            padding: $_accordion-control-padding-top $_accordion-control-padding-right $_accordion-control-padding-bottom $_accordion-control-padding-left;
+            @include lib-typography(
+                $_color      : $_accordion-control-color,
+                $_font-family: $_accordion-control-font-family,
+                $_font-size  : $_accordion-control-font-size,
+                $_font-style : $_accordion-control-font-style,
+                $_font-weight: $_accordion-control-font-weight,
+                $_line-height: $_accordion-control-line-height
+            );
+            @include lib-link(
+                $_link-color                  : $_accordion-control-color,
+                $_link-text-decoration        : $_accordion-control-text-decoration,
+                $_link-color-visited          : $_accordion-control-color-visited,
+                $_link-text-decoration-visited: $_accordion-control-text-decoration-visited,
+                $_link-color-hover            : $_accordion-control-color-hover,
+                $_link-text-decoration-hover  : $_accordion-control-text-decoration-hover,
+                $_link-color-active           : $_accordion-control-color-active,
+                $_link-text-decoration-active : $_accordion-control-text-decoration-active
+            );
+        }
+
+        &:not(.disabled) > .switch:focus,
+        &:not(.disabled) > .switch:hover {
+            background: $_accordion-control-background-color-hover;
+        }
+
+        &:not(.disabled) > .switch:active,
+        &.active > .switch,
+        &.active > .switch:focus,
+        &.active > .switch:hover {
+            background: $_accordion-control-background-color-active;
+            padding-bottom: $_accordion-control-padding-bottom;
+        }
+    }
+
+    & > .item.content {
+        background: $_accordion-content-background-color;
+        border: $_accordion-content-border;
+        margin: $_accordion-content-margin;
+        padding: $_accordion-content-padding;
+    }
+}

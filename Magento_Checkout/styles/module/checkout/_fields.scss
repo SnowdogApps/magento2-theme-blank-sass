@@ -1,0 +1,78 @@
+//
+//  Variables
+//  _____________________________________________
+
+$checkout-field-validation__border-color: $form-element-validation__border-error;
+
+//
+//  Common
+//  _____________________________________________
+
+.field {
+    .control {
+        &._with-tooltip {
+            @extend .abs-field-tooltip;
+        }
+    }
+
+    &.choice {
+        .field-tooltip {
+            display: inline-block;
+            margin-left: $indent__s;
+            position: relative;
+            top: -3px;
+        }
+
+        .field-tooltip-action {
+            line-height: $checkout-tooltip-icon__font-size;
+        }
+    }
+
+    &._error {
+        .control {
+            input,
+            select,
+            textarea {
+                border-color: $checkout-field-validation__border-color;
+            }
+        }
+    }
+}
+
+.opc-wrapper {
+    .fieldset {
+        & > .field {
+            & > .label {
+                font-weight: $font-weight__regular;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    //  ToDo UI: remove with global blank theme .field.required update
+    .opc-wrapper {
+        .fieldset {
+            & > .field {
+                &.required,
+                &._required {
+                    position: relative;
+
+                    & > label {
+                        padding-right: 25px;
+
+                        &:after {
+                            margin-left: $indent__s;
+                            position: absolute;
+                            top: 9px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

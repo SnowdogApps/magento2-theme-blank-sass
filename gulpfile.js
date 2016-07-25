@@ -28,13 +28,13 @@ gulp.task('default', () => {
 });
 
 gulp.task('sass', () => {
-    return gulp.src('web/css/*.scss')
+    return gulp.src('styles/*.scss')
         .pipe(
             sass({
                 outputStyle   : 'expanded',
                 sourceComments: true
             })
-            /** @see sass.logError had to copy a part of this to generate a legitimate error status code */             
+            /** @see sass.logError had to copy a part of this to generate a legitimate error status code */
             .on('error', sassError(config.ci))
         )
         .pipe(postcss(config.postcss))
