@@ -236,7 +236,7 @@
         }
 
         .toolbar {
-            @extend .abs-add-clearfix-desktop;
+            @extend .abs-add-clearfix-mobile;
 
             .pages {
                 float: right;
