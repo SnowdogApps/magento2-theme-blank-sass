@@ -2,5 +2,4 @@
 node_modules
 
 # Styles compilation output
-/web/css/styles.css
-/web/css/print.css
+/web/css
