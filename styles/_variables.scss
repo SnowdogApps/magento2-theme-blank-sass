@@ -32,16 +32,6 @@ $h3__font-weight: $font-weight__semibold;
 $h3__margin-top: $indent__base;
 
 //
-//  Tables
-//  ---------------------------------------------
-
-$table-cell__padding-vertical: 11px;
-$table-cell__hover__background-color: $panel__background-color;
-$table-cell-stripped__background-color: $table-cell__hover__background-color;
-$table-responsive-th__background-color: $table-cell-stripped__background-color;
-$table-responsive-cell__padding: $indent__xs $indent__s;
-
-//
 //  Layout grid
 //  ---------------------------------------------
 
@@ -54,10 +44,7 @@ $layout-column__sidebar-width: 5;
 //  Checkout columns width
 $layout-column-checkout__width-left: 3;
 
-
-//
-// header
-//
+//  Header
 $header-icons-color: $color-gray56;
 $header-icons-color-hover: $color-gray20;
 
@@ -66,53 +53,15 @@ $header-icons-color-hover: $color-gray20;
 //  ---------------------------------------------
 
 $navigation__background: $color-gray94;
-$navigation-level0-item__active__color: $primary__color;
-$submenu-item__active__color: $navigation-level0-item__active__color;
+
 $navigation-level0-item__color: $color-gray34;
 $navigation-level0-item__text-decoration: none;
-$navigation-desktop-level0-item__text-decoration: none;
-$navigation-desktop-level0-item__color: $primary__color;
-$navigation-desktop-level0-item__hover__color: $primary__color;
 
 //  Desktop navigation
 $navigation-desktop-level0-item__line-height: 47px;
+
 $submenu-desktop__font-weight: $font-weight__regular;
-$submenu-desktop-item__active__color: $navigation-level0-item__active__color;
-
-//  Tabs
-$tab-control__font-weight: $font-weight__regular;
-$tab-control__height: $indent__base * 2;
-$tab-control__margin-right: -1px;
-$tab-control__padding-top: 1px;
-$tab-control__padding-right: 35px;
-
-//  Tabs content
-$tab-content__padding-top: 35px;
-$tab-content__padding-right: $tab-control__padding-right;
-
-//
-//  Accordion
-//  ---------------------------------------------
-
-$accordion-control__font-family: inherit;
-$accordion-control__font-size: $font-size__base;
-$accordion-control__font-style: inherit;
-$accordion-control__font-weight: $font-weight__semibold;
-$accordion-control__border-right: inherit;
-$accordion-control__border-bottom: inherit;
-$accordion-control__border-left: inherit;
-$accordion-control__background-color: inherit;
-$accordion-control__color: $primary__color;
-$accordion-control__hover__background-color: inherit;
-$accordion-control__hover__color: $accordion-control__color;
-$accordion-control__active__background-color: inherit;
-$accordion-control__active__color: $accordion-control__color;
-$accordion-control__margin-bottom: 0;
-$accordion-control__padding-right: $indent__s;
-$accordion-control__padding-left: $indent__s;
-$accordion-content__border: inherit;
-$accordion-content__margin: 0;
-$accordion-content__padding: $indent__s $indent__s $indent__l;
+$submenu-desktop-item__active__color: $primary__color;
 
 //
 //  Icons
@@ -189,28 +138,9 @@ $form-field--vertical-indent: $indent__base;
 //  Pager
 //  ---------------------------------------------
 
-$pager__font-weight: $font-weight__regular;
-$pager__line-height: $indent__l;
-$pager-item__margin: 0 8px 0 0;
-$pager-item__padding: 0 $indent__xs;
+$pager-reset-spaces: true;  // Reset spaces between inline-block elements
+$pager-item__display: inline-block;
 
-//  Pager current page
-$pager-current__background: $color-gray90;
-
-//  Pager link.action
-$pager-icon__font-margin: 0;
-$pager-icon__font-size: 16px;
-
-//  Pager link.action visited
-$pager-action__visited__color: $text__color__muted;
-
-//  Pager link.action hover
-$pager-action__hover__color: $text__color__muted;
-
-//  Pager link.action active
-$pager-action__active__color: $text__color__muted;
-
-//
 //  Rating
 //  ---------------------------------------------
 
@@ -219,9 +149,6 @@ $rating-icon__letter-spacing: -9px;
 $rating-icon__active__color: $active__color;
 
 //  Split dropdown
-$dropdown-split-actions__padding: 0 $indent__xs;
-$dropdown-split-toggle__actions__padding: inherit;
-$dropdown-list-item__hover: $color-gray91;
 $dropdown-list__z-index: 100;
 
 
@@ -231,28 +158,8 @@ $actions-toolbar-actions__reverse: false;
 $actions-toolbar-actions-primary__margin: 0 15px 0 0;
 
 //
-//  Breadcrumbs
-//  ---------------------------------------------
-
-$breadcrumbs__container-margin: 0 0 15px;
-$breadcrumbs-icon__font-size: 10px;
-$breadcrumbs-icon__font-margin: 0 $indent__s;
-
-//
 //  Popups
 //  ---------------------------------------------
-
-$popup__border: 1px solid $color-gray68;
-$popup-title-headings__level: h2;
-
-
-
-//  Window overlay
-$overlay__background: $color-gray55;
-$overlay__opacity: 0.7;
-$overlay__opacity-old: 70;
-
-$gallery-thumb-border-color-active: $active__color;
 
 //  Checkout tooltip
 $checkout-tooltip-icon-arrow__font-size: 10px;
@@ -270,7 +177,6 @@ $checkout-tooltip-content__width: 270px;
 $checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%);
 $checkout-tooltip-icon-arrow__left: -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width);
 $checkout-billing-address-details__line-height: 27px;
-
 
 // Checkout Payment Option icon
 $checkout-payment-option-title-icon__font-size: 14px;
@@ -300,32 +206,18 @@ $font-family__base: $font-family-name__base, $font-family__sans-serif;
 
 //  Colors nesting
 $page__background-color: $color-white;
-$copyright__background-color: $color-white;
 
 //
 //  Sidebar
 //  ---------------------------------------------
 
-$sidebar__background-color: $color-white-smoke;
 // Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background
+$sidebar__background-color: $color-white-smoke;
 
 
-// variables missing in extend.scss
-// addto color
+//
+//  Variables missing in extend.scss
+//  ---------------------------------------------
+
 $addto-color: $primary__color;
 $addto-hover-color: $link__hover__color;
-
-// mobile cart padding
-$mobile-cart-padding: 15px;
-
-// account title border
-$account-title-border-color: $border-color__base;
-
-// price color
-$cart-price-color: $primary__color;
-$price-color: $color-gray34;
-$price-size: 22px;
-$price-size-desktop: 36px;
-
-$collapsible-nav-background: $sidebar__background-color;
-$collapsible-nav-item-hover: $color-gray91;
