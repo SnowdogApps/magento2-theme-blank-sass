@@ -200,7 +200,7 @@ $active-nav-indent: 54px;
 
         .nav-toggle {
             &:after {
-                background: rgba(0, 0, 0, $overlay__opacity);
+                background: rgba(0, 0, 0, 0.7);
                 content: '';
                 display: block;
                 height: 100%;
