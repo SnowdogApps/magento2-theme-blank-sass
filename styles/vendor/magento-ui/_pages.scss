@@ -8,7 +8,7 @@
 
 @mixin lib-pager(
     $_pager-label-display                      : none,
-    $_pager-item-display                       : $pager-item__display,
+    $_pager-item-display                       : inline-block,
     $_pager-reset-spaces                       : true,
     $_pager-font-size                          : $font-size__s,
     $_pager-font-weight                        : $font-weight__bold,
@@ -50,8 +50,8 @@
     $_pager-text-decoration-hover              : none,
 
     // Page item gradient
-    $_pager-gradient                           : $pager__gradient,
-    $_pager-gradient-direction                 : $pager__gradient-direction,
+    $_pager-gradient                           : inherit,
+    $_pager-gradient-direction                 : inherit,
     $_pager-gradient-color-start               : inherit,
     $_pager-gradient-color-end                 : inherit,
     $_pager-gradient-color-start-visited       : inherit,
@@ -62,42 +62,42 @@
     $_pager-gradient-color-end-active          : inherit,
 
     // Page action item (previous-next)
-    $_pager-action-text-decoration             : $pager__text-decoration,
+    $_pager-action-text-decoration             : none,
     $_pager-action-text-decoration-hover       : none,
 
     // Page action item (previous-next) - default
     $_pager-action-color                       : $text__color__muted,
     $_pager-action-border                      : $border-width__base solid $border-color__base,
-    $_pager-action-background                  : $pager__background,
+    $_pager-action-background                  : inherit,
     $_pager-action-gradient-color-start        : inherit,
     $_pager-action-gradient-color-end          : inherit,
-    $_pager-action-text-decoration             : $pager__text-decoration,
+    $_pager-action-text-decoration             : none,
 
     // Page action item (previous-next) - visited
-    $_pager-action-color-visited               : $pager-action__color,
+    $_pager-action-color-visited               : $text__color__muted,
     $_pager-action-border-visited              : none,
     $_pager-action-background-visited          : inherit,
     $_pager-action-gradient-color-start-visited: inherit,
     $_pager-action-gradient-color-end-visited  : inherit,
 
     // Page action item (previous-next) - hover
-    $_pager-action-color-hover                 : $pager-action__color,
+    $_pager-action-color-hover                 : $text__color__muted,
     $_pager-action-border-hover                : $border-width__base solid $border-color__light,
     $_pager-action-background-hover            : inherit,
     $_pager-action-gradient-color-start-hover  : inherit,
     $_pager-action-gradient-color-end-hover    : inherit,
-    $_pager-action-text-decoration-hover       : $pager__text-decoration,
+    $_pager-action-text-decoration-hover       : none,
 
     // Page action item (previous-next) - active
-    $_pager-action-color-active                : $pager-action__color,
+    $_pager-action-color-active                : $text__color__muted,
     $_pager-action-border-active               : none,
     $_pager-action-background-active           : inherit,
     $_pager-action-gradient-color-start-active : inherit,
     $_pager-action-gradient-color-end-active   : inherit,
 
     // Page action item (previous-next) - gradient
-    $_pager-action-gradient                    : $pager__gradient,
-    $_pager-action-gradient-direction          : $pager__gradient-direction,
+    $_pager-action-gradient                    : inherit,
+    $_pager-action-gradient-direction          : inherit,
 
     // Page action icons
     $_pager-icon-use                           : true,
@@ -300,7 +300,7 @@
 
 //  Delete spaces between elements when pager items have display: inline-block
 @mixin _lib-pager-inline-block-spaces-container() {
-    @if $_pager-reset-spaces == true and $pager-item__display == inline-block {
+    @if $pager-reset-spaces == true and $pager-item__display == inline-block {
         @include lib-inline-block-space-container();
         white-space: nowrap;
     }
@@ -310,7 +310,7 @@
     $_pager-font-size  : $_pager-font-size,
     $_pager-line-height: $_pager-line-height
 ) {
-    @if $_pager-reset-spaces == true and $pager-item__display == inline-block {
+    @if $pager-reset-spaces == true and $pager-item__display == inline-block {
         @include lib-inline-block-space-item(
             $_font-size  : $_pager-font-size,
             $_line-height: $_pager-line-height

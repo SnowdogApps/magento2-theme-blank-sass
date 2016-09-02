@@ -1,27 +1,6 @@
 //
 //  Navigation
-//  _____________________________________________
-
-
-//
-//  Navigation
 //  ---------------------------------------------
-
-$navigation__background: $color-gray94;
-$navigation-level0-item__active__color: $primary__color;
-$submenu-item__active__color: $navigation-level0-item__active__color;
-$navigation-level0-item__color: $color-gray34;
-$navigation-level0-item__text-decoration: none;
-$navigation-desktop-level0-item__text-decoration: none;
-$navigation-desktop-level0-item__color: $primary__color;
-$navigation-desktop-level0-item__hover__color: $primary__color;
-
-//  Desktop navigation
-$navigation-desktop-level0-item__line-height: 47px;
-$submenu-desktop__font-weight: $font-weight__regular;
-$submenu-desktop-item__active__color: $navigation-level0-item__active__color;
-
-
 
 @mixin lib-main-navigation(
     $_nav__indent-side                       : 15px,
@@ -233,7 +212,7 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
 //  _____________________________________________
 
 @mixin lib-main-navigation-desktop(
-    $_nav-background-color                   : $navigation__background,
+    $_nav-background-color                   : $color-gray94,
     $_nav-border                             : none,
     $_nav-font-size                          : inherit,
     $_nav-font-weight                        : $font-weight__bold,
@@ -250,14 +229,14 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
     $_nav-level0-item-background-color-hover : inherit,
     $_nav-level0-item-border-hover           : none,
     $_nav-level0-item-color-hover            : $primary__color,
-    $_nav-level0-item-text-decoration-hover  : $navigation-desktop-level0-item__text-decoration,
+    $_nav-level0-item-text-decoration-hover  : none,
 
     $_nav-level0-item-background-color-active: inherit,
     $_nav-level0-item__active__border-color  : $color-orange-red1,
     $_nav-level0-item__active__border-style  : solid,
     $_nav-level0-item__active__border-width  : 0 0 3px,
-    $_nav-level0-item-color-active           : $navigation-desktop-level0-item__hover__color,
-    $_nav-level0-item-text-decoration-active : $navigation-desktop-level0-item__text-decoration,
+    $_nav-level0-item-color-active           : $primary__color,
+    $_nav-level0-item-text-decoration-active : none,
 
     $_submenu-background-color               : $page__background-color,
     $_submenu-border-width                   : $border-width__base,
@@ -276,13 +255,13 @@ $submenu-desktop-item__active__color: $navigation-level0-item__active__color;
     $_submenu-item-padding                   : 8px $indent__base,
     $_submenu-item-background-color          : inherit,
     $_submenu-item-border                    : none,
-    $_submenu-item-color                     : $navigation-desktop-level0-item__color,
+    $_submenu-item-color                     : $primary__color,
     $_submenu-item-text-decoration           : inherit,
 
     $_submenu-item__hover__background-color  : $secondary__color,
     $_submenu-item-border-hover              : none,
-    $_submenu-item-color-hover               : $navigation-desktop-level0-item__hover__color,
-    $_submenu-item-text-decoration-hover     : $navigation-desktop-level0-item__text-decoration,
+    $_submenu-item-color-hover               : $primary__color,
+    $_submenu-item-text-decoration-hover     : none,
 
     $_submenu-item-background-color-active   : inherit,
     $_submenu-item__active__border-color     : $color-orange-red1,
