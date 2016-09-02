@@ -1,7 +1,7 @@
 {
     "name": "snowdog/theme-blank-sass",
     "description": "SASS based version of Magento 2 Blank theme",
-    "version": "0.8.0",
+    "version": "0.8.1",
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
