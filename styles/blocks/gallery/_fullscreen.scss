@@ -1,4 +1,5 @@
 .fotorama--fullscreen {
+    @extend .fotorama-gpu;
     background: $color-white;
     bottom: 0 !important;
     float: none !important;
@@ -9,7 +10,6 @@
     top: 0 !important;
     width: 100% !important;
     z-index: $z-index-10 !important;
-    @extend .fotorama-gpu;
     .fotorama__wrap {
         max-width: 100% !important;
     }

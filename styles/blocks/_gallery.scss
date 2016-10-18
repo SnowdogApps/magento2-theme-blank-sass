@@ -880,6 +880,7 @@
             top: 0;
         }
         .fotorama__img--full {
+            @extend .fotorama-gpu;
             cursor: default;
             display: block;
             height: auto;
@@ -891,7 +892,6 @@
             transition: $fotorama-fullscreen-zoom-time linear;
             vertical-align: middle;
             width: auto;
-            @extend .fotorama-gpu;
             &.fotorama__img--zoommable {
                 cursor: pointer;
                 max-height: none;
