@@ -40,7 +40,7 @@
 }
 
 .fotorama-transition-for-slide {
-    transition-duration: 0ms;
+    transition-duration: unset;
     transition-property: transform, width;
     transition-timing-function: cubic-bezier(0.1, 0, 0.25, 1);
 }
@@ -90,7 +90,7 @@
 }
 
 .transitionDurationZero {
-    transition-duration: 0ms;
+    transition-duration: unset;
 }
 
 .fotorama-sprite {
