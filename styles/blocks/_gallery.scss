@@ -1045,7 +1045,8 @@
 }
 
 .fotorama__product-video--loaded {
-    .fotorama__img, .fotorama__img--full {
+    .fotorama__img,
+    .fotorama__img--full {
         display: none !important;
     }
 }

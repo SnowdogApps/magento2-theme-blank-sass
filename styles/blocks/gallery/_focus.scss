@@ -22,7 +22,7 @@
 .fotorama__nav__frame--thumb:focus,
 .fotorama__nav__frame--dot:focus {
     .fotorama__thumb:after,
-    .fotorama__dot:after{
+    .fotorama__dot:after {
         bottom: 0;
         left: 0;
         right: 0;
@@ -38,19 +38,19 @@
 }
 
 .fotorama__nav__frame:nth-child(2):focus {
-    .fotorama__thumb:after{
+    .fotorama__thumb:after {
         left: 1px;
     }
-    .fotorama__thumb.fotorama_vertical_ratio:after{
+    .fotorama__thumb.fotorama_vertical_ratio:after {
         top: 1px;
     }
 }
 
 .fotorama__nav__frame:last-child:focus {
-    .fotorama__thumb:after{
+    .fotorama__thumb:after {
         right: 1px;
     }
-    .fotorama__thumb.fotorama_vertical_ratio:after{
+    .fotorama__thumb.fotorama_vertical_ratio:after {
         bottom: 1px;
     }
 }
