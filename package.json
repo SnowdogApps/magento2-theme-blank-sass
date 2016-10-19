@@ -13,6 +13,6 @@
     "gulp-util": "~3.0.7",
     "postcss-reporter": "~1.4.1",
     "run-sequence": "~1.2.2",
-    "stylelint": "~7.4.2"
+    "stylelint": "~7.5.0"
   }
 }
