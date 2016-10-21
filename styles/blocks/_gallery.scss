@@ -1021,7 +1021,7 @@
 
 // Styles for spinner in gallery.
 .fotorama__spinner {
-    background-image: url('#{$baseDir}../images/loader-1.gif');
+    background-image: url('../images/loader-1.gif');
     bottom: 0;
     display: none;
     height: $fotorama-spinner-size;
