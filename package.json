@@ -2,17 +2,17 @@
   "name": "magento2-theme-blank-sass",
   "private": true,
   "devDependencies": {
-    "autoprefixer": "~6.4.0",
+    "autoprefixer": "~6.5.1",
     "gulp": "~3.9.1",
     "gulp-if": "~2.0.1",
     "gulp-plumber": "~1.1.0",
-    "gulp-postcss": "~6.1.1",
+    "gulp-postcss": "~6.2.0",
     "gulp-sass": "~2.3.2",
     "gulp-sass-error": "~1.0.2",
     "gulp-sass-lint": "~1.2.0",
     "gulp-util": "~3.0.7",
     "postcss-reporter": "~1.4.1",
     "run-sequence": "~1.2.2",
-    "stylelint": "~7.1.0"
+    "stylelint": "~7.5.0"
   }
 }

@@ -1,6 +1,10 @@
 language: node_js
 node_js: 4
-before_script:
-  - npm install -g gulp
+cache:
+  directories:
+  - node_modules
+install:
+  - npm install -g gulp-cli
+  - npm install
 script:
   - gulp tests --ci
