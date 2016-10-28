@@ -1,0 +1,42 @@
+.fotorama__video-close {
+    @extend .fotorama-no-select;
+    @extend .fotorama-no-tap;
+    @extend .fotorama-sprite;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $fotorama_close_button;
+    height: $fotorama_close_button;
+    opacity: 0;
+    z-index: $z-index-10;
+    cursor: pointer;
+    background-position: (-$fotorama_close_button) 0;
+    transform: translate3d(($fotorama_close_button), (-$fotorama_close_button), 0);
+    transition: opacity 0.3s ease-in-out;
+
+    .fotorama__fullscreen & {
+        display: none;
+    }
+
+    .fotorama__wrap--toggle-arrows:not(.fotorama__wrap--video) & {
+        display: none;
+    }
+
+    .fotorama__wrap--toggle-arrows.fotorama__wrap--video & {
+        top: 97px;
+        right: 93px;
+        opacity: 1;
+    }
+
+    .fotorama__wrap--css3 &:not(:focus) {
+        transition-duration: $fotorama-duration-time;
+        transition-property: transform, opacity, background-color;
+    }
+
+    @media all and (max-width: 768px) {
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        background-position: -100px -20px;
+    }
+}

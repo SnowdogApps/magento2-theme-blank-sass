@@ -1,0 +1,59 @@
+.fotorama__nav {
+    @extend .fotorama-auto-margin;
+    @extend .fotorama-no-tap;
+    position: relative;
+    display: none;
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    white-space: nowrap;
+    z-index: 5;
+
+    &--dots {
+        display: block;
+        text-align: center;
+    }
+
+    &--thumbs {
+        display: block;
+    }
+
+    .fotorama__wrap--css3 & {
+        @extend .fotorama-gpu;
+    }
+
+    &:before,
+    &:after {
+        @extend .fotorama-gpu;
+        position: absolute;
+        display: block;
+        content: '';
+        text-decoration: none;
+        background-repeat: no-repeat;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+    &:before {
+        left: -10px;
+        top: -10px;
+    }
+
+    &:after {
+        right: -10px;
+        bottom: -10px;
+    }
+
+    .fotorama--fullscreen &,
+    .fotorama__wrap--no-shadows & {
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+
+    .fotorama__wrap--only-active & {
+        max-width: 99999px !important;
+    }
+}

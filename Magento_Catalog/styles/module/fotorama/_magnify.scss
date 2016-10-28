@@ -1,0 +1,27 @@
+.magnify-lens {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $color-white;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.5);
+    border: solid 1px $color-gray-light2;
+    z-index: $z-index-10;
+}
+
+.magnify-opaque {
+    opacity: 0.5;
+}
+
+.magnify-hidden {
+    display: none;
+}
+
+.magnify-fullimage {
+    display: none;
+
+    // TODO from which css file is this?
+    .fotorama__fullscreen & {
+        display: inline-block;
+    }
+}

@@ -1,0 +1,16 @@
+.fotorama__fade {
+    .fotorama__wrap--fade &-front,
+    .fotorama__wrap--fade &-rear {
+        display: block;
+        left: 0;
+        top: 0;
+    }
+
+    .fotorama__wrap--fade &-front {
+        z-index: 8;
+    }
+
+    .fotorama__wrap--fade &-rear {
+        z-index: 7;
+    }
+}

@@ -1,0 +1,20 @@
+.fotorama__arr__arr {
+    .fotorama__arr & {
+        @extend .fotorama-sprite;
+        width: $size-fotorama-block;
+        height: $size-fotorama-block;
+        @include fotorama-abs-center();
+
+        .ie9 & {
+            margin: (-$size-fotorama-block / 2) 0 0 (-$size-fotorama-block / 2);
+        }
+    }
+
+    .fotorama__arr--prev & {
+        background-position: (-$size-fotorama-block) (-$size-fotorama-block);
+    }
+
+    .fotorama__arr--next & {
+        background-position: (-$size-fotorama-block * 2) (-$size-fotorama-block);
+    }
+}

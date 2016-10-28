@@ -1,0 +1,17 @@
+.fotorama__nav__shaft {
+    @extend .fotorama-inline-block;
+    @extend .fotorama-no-tap;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+
+    .fotorama__wrap--css3 & {
+        @extend .fotorama-transition-for-slide;
+    }
+
+    .fotorama__nav-wrap--vertical & {
+        width: 100%;
+        background-color: white;
+    }
+}

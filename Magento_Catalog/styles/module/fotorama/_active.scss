@@ -1,0 +1,33 @@
+.fotorama__active {
+    box-shadow: 0 0 0 transparent;
+}
+
+.fotorama__stage__frame {
+    &.fotorama__active {
+        z-index: 8;
+    }
+}
+
+.fotorama__wrap--fade {
+    .fotorama__stage__frame {
+        &.fotorama__active {
+            display: block;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .fotorama__fade-rear {
+        &.fotorama__active {
+            z-index: 9;
+        }
+    }
+}
+
+.fotorama__wrap--only-active {
+    .fotorama__stage__frame {
+        &.fotorama__active {
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,79 @@
+.fotorama__fullscreen-icon {
+    @extend .fotorama-no-select;
+    @extend .fotorama-no-tap;
+    @extend .fotorama-sprite;
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    width: $size-fotorama-block;
+    height: $size-fotorama-block;
+    background-position: 0 0;
+    cursor: pointer;
+    z-index: $z-index-10;
+    &:focus {
+        @extend .fotorama-focus;
+        box-shadow: none;
+        &:after {
+            border-radius: inherit;
+            bottom: $fotorama-inner-box-shadow;
+            box-shadow: $focus__box-shadow;
+            content: '';
+            left: $fotorama-inner-box-shadow;
+            position: absolute;
+            right: $fotorama-inner-box-shadow;
+            top: $fotorama-inner-box-shadow;
+            z-index: $z-index-10;
+        }
+    }
+
+    .fotorama--fullscreen-icons & {
+        display: none;
+    }
+
+    .fotorama--fullscreen & {
+        display: inline-block;
+        background-position: (-$size-fotorama-block) 0;
+    }
+
+    .fotorama__wrap--no-controls.fotorama__wrap--toggle-arrows & {
+        opacity: 0;
+
+        &:focus {
+            opacity: 1;
+        }
+    }
+
+    .fotorama__wrap--video & {
+        opacity: 0 !important;
+    }
+
+    .fotorama__wrap--css2.fotorama__wrap--no-controls.fotorama__wrap--toggle-arrows & {
+        display: none;
+
+        &:focus {
+            display: block;
+        }
+    }
+
+    .fotorama__wrap--css2.fotorama__wrap--video & {
+        display: none !important;
+    }
+
+    .fotorama__wrap--css3.fotorama__wrap--no-controls.fotorama__wrap--slide.fotorama__wrap--toggle-arrows &:not(:focus) {
+        transform: translate3d($fotorama-arw-size, -$fotorama-arw-size, 0);
+    }
+
+    .fotorama__wrap--css3.fotorama__wrap--video & {
+        transform: translate3d($fotorama-arw-size, -$fotorama-arw-size, 0) !important;
+    }
+
+    .fotorama__wrap--css3 &:not(:focus) {
+        transition-duration: $fotorama-duration-time;
+        transition-property: transform, opacity, background-color;
+    }
+
+    .fotorama__wrap:not(.fotorama__wrap--toggle-arrows) & {
+        @include fotorama-button-background();
+    }
+}
