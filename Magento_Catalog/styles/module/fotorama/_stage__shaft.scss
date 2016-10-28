@@ -1,0 +1,28 @@
+.fotorama__stage__shaft {
+    @extend .fotorama-no-tap;
+    @extend .fotorama-stretch;
+    position: relative;
+
+    &:focus {
+        box-shadow: none;
+        &:after {
+            border-radius: inherit;
+            bottom: $fotorama-inner-box-shadow;
+            box-shadow: $focus__box-shadow;
+            content: '';
+            left: $fotorama-inner-box-shadow;
+            position: absolute;
+            right: $fotorama-inner-box-shadow;
+            top: $fotorama-inner-box-shadow;
+            z-index: $z-index-10;
+        }
+    }
+
+    .fotorama__wrap--video & {
+        @extend .fotorama-transform-disabled;
+    }
+
+    .fotorama__wrap--css3 & {
+        @extend .fotorama-transition-for-slide;
+    }
+}

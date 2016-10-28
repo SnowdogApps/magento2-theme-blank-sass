@@ -1,0 +1,19 @@
+.fotorama__nav__frame--thumb:focus,
+.fotorama__nav__frame--dot:focus {
+    .fotorama__thumb.fotorama_vertical_ratio:after {
+        left: 2px;
+        right: 2px;
+    }
+}
+
+.fotorama__nav__frame:nth-child(2):focus {
+    .fotorama__thumb.fotorama_vertical_ratio:after {
+        top: 1px;
+    }
+}
+
+.fotorama__nav__frame:last-child:focus {
+    .fotorama__thumb.fotorama_vertical_ratio:after {
+        bottom: 1px;
+    }
+}

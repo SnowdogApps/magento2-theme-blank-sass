@@ -1,0 +1,15 @@
+.fotorama__wrap {
+    @extend .fotorama-no-select;
+    position: relative;
+    direction: ltr;
+    text-size-adjust: 100%;
+    z-index: 0;
+
+    .fotorama--fullscreen & {
+        max-width: 100% !important;
+    }
+
+    &--pan-y {
+        touch-action: pan-y;
+    }
+}

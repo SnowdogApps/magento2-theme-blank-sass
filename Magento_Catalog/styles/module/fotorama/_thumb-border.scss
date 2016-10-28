@@ -1,0 +1,19 @@
+.fotorama__thumb-border {
+    @extend .fotorama-print-background;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border: 1px solid $color-orange-red1;
+    background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.25), rgba(64, 64, 64, 0.1));
+    backface-visibility: hidden;
+    z-index: 9;
+
+    .fotorama__nav--dots & {
+        display: none;
+    }
+
+    .fotorama__wrap--css3 & {
+        @extend .fotorama-transition-for-slide;
+    }
+}

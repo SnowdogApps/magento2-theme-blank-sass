@@ -1,0 +1,103 @@
+.fotorama__img {
+    max-width: inherit;
+    opacity: 0;
+    border: none !important;
+
+    .fotorama__loaded &,
+    .fotorama__error & {
+        opacity: 1;
+    }
+
+    &--full {
+        display: none;
+    }
+
+    .fotorama__wrap--video .fotorama__stage__frame--video & {
+        @extend .fotorama-transform-disabled;
+        opacity: 0;
+    }
+
+    .fotorama__nav-wrap .fotorama_vertical_ratio & {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        height: auto;
+        transform: translateY(-50%);
+    }
+
+    .fotorama__nav-wrap .fotorama_horizontal_ratio & {
+        position: absolute;
+        left: 50%;
+        width: auto;
+        height: 100%;
+        transform: translateX(-50%);
+    }
+
+    .fotorama__stage__frame & {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+        transform: translate3d(-50%, -50%, 0);
+        transition-duration: $fotorama-fullscreen-zoom-time;
+        transition-property: width, height, top, left;
+        //vertical-align: middle;
+    }
+
+    .fotorama--fullscreen .fotorama__stage__frame & {
+        display: none;
+    }
+
+    .fotorama--fullscreen .fotorama__stage__frame &,
+    .fotorama--fullscreen .fotorama__stage__frame &--full {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: inherit;
+        max-height: inherit;
+    }
+
+    .fotorama--fullscreen .fotorama__loaded--full & {
+        display: none;
+
+        &--full {
+            display: block;
+        }
+    }
+
+    .fotorama--fullscreen .fotorama__stage__frame &--full {
+        @extend .fotorama-gpu;
+        display: block;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        cursor: default;
+        transition: $fotorama-fullscreen-zoom-time linear;
+        //vertical-align: middle;
+        &.fotorama__img--zoommable {
+            max-width: none;
+            max-height: none;
+            cursor: pointer;
+            transition-property: width, height, bottom, right, top, left;
+        }
+        &.fotorama__img--draggable {
+            cursor: move;
+            transition-property: none;
+        }
+    }
+
+    .fotorama__product-video--loaded &,
+    .fotorama__product-video--loaded &--full {
+        display: none !important;
+    }
+}

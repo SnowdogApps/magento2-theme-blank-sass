@@ -1,0 +1,6 @@
+.fotorama__caption__wrap {
+    @extend .fotorama-inline-block;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background-color: $color-white;
+}

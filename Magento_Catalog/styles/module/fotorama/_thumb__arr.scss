@@ -1,0 +1,40 @@
+.fotorama__thumb__arr {
+    box-shadow: none;
+    @include fotorama-button-background();
+
+    .fotorama__nav-wrap--horizontal &--left,
+    .fotorama__nav-wrap--horizontal &--right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: $fotorama-thumb-arrow;
+        z-index: $z-index-10;
+        cursor: pointer;
+    }
+
+    .fotorama__nav-wrap--horizontal &--left {
+        left: 0;
+    }
+
+    .fotorama__nav-wrap--horizontal &--right {
+        right: 0;
+    }
+
+    .fotorama__nav-wrap--vertical &--left,
+    .fotorama__nav-wrap--vertical &--right {
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: $fotorama-thumb-arrow;
+        cursor: pointer;
+        z-index: $z-index-10;
+    }
+
+    .fotorama__nav-wrap--vertical &--left {
+        top: 0;
+    }
+
+    .fotorama__nav-wrap--vertical &--right {
+        bottom: 0;
+    }
+}

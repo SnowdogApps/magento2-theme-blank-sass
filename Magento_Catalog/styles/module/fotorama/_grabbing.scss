@@ -1,0 +1,5 @@
+.fotorama__grabbing {
+    * {
+        @extend .fotorama-grabbing-cursor;
+    }
+}
