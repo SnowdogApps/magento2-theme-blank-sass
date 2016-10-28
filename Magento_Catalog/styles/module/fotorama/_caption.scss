@@ -1,0 +1,33 @@
+.fotorama__caption {
+    @extend .fotorama-gpu;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: $color-black;
+    font-size: 14px;
+    line-height: 1.5;
+    z-index: 12;
+
+    a {
+        color: $color-black;
+        text-decoration: none;
+        border-bottom: 1px solid;
+        border-color: fade($color-black, 0.5);
+
+        &:hover {
+            color: $color-black;
+            border-color: fade($color-black, 0.5);
+        }
+    }
+
+    .fotorama__wrap--rtl & {
+        left: auto;
+        right: 0;
+    }
+
+    .fotorama__wrap--video &,
+    .fotorama__wrap--no-captions & {
+        display: none;
+    }
+}

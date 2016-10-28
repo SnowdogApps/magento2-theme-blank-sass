@@ -1,0 +1,35 @@
+.fotorama {
+    &__spinner {
+        @include fotorama-abs-center();
+        position: absolute;
+        display: none;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: $fotorama-spinner-size;
+        width: $fotorama-spinner-size;
+        margin: auto;
+        background-image: url('../images/loader-1.gif');
+        z-index: $z-index-1;
+
+        &--show {
+            display: block;
+        }
+
+        .fotorama__wrap--css3 & {
+            @extend .fotorama-gpu;
+            animation: spinner 24s infinite linear;
+        }
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,30 @@
+.fotorama__video-play {
+    @extend .fotorama-sprite;
+    width: $size-fotorama-block * 2;
+    height: $size-fotorama-block * 2;
+    background-position: (-$size-fotorama-block) (-$size-fotorama-block*2);
+    @include fotorama-abs-center();
+
+    .fotorama__wrap--css2 &,
+    .fotorama__wrap--video .fotorama__stage & {
+        display: none;
+    }
+
+    .fotorama__loaded &,
+    .fotorama__error &,
+    .fotorama__nav__frame & {
+        display: block;
+        opacity: 1;
+    }
+
+    .fotorama__nav__frame & {
+        width: $size-fotorama-block;
+        height: $size-fotorama-block;
+        background-position: 0 (-$size-fotorama-block * 3);
+    }
+
+    .fotorama__wrap--css3 &:not(:focus) {
+        transition-duration: $fotorama-duration-time;
+        transition-property: transform, opacity, background-color;
+    }
+}

@@ -1,0 +1,46 @@
+.fotorama__nav,
+.fotorama__stage {
+    &.fotorama__shadows {
+        &--left:before,
+        &--right:after {
+            top: 0;
+            bottom: 0;
+            width: 10px;
+            height: auto;
+            background-size: 1px 100%, 5px 100%;
+        }
+
+        &--top:before,
+        &--bottom:after {
+            left: 0;
+            right: 0;
+            width: auto;
+            height: 10px;
+            background-size: 100% 1px, 100% 5px;
+        }
+
+        &--left:before {
+            left: 0;
+            background-position: 0 0, 0 0;
+            @include fotorama-shadow-gradient(0, 50%);
+        }
+
+        &--right:after {
+            right: 0;
+            background-position: 100% 0, 100% 0;
+            @include fotorama-shadow-gradient(100%, 50%);
+        }
+
+        &--top:before {
+            top: 0;
+            background-position: 0 0, 0 0;
+            @include fotorama-shadow-gradient(50%, 0);
+        }
+
+        &--bottom:after {
+            bottom: 0;
+            background-position: 0 100%, 0 100%;
+            @include fotorama-shadow-gradient(50%, 100%);
+        }
+    }
+}

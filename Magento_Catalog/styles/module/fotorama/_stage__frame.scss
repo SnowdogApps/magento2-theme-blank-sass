@@ -1,0 +1,37 @@
+.fotorama__stage__frame {
+    @extend .fotorama-no-tap;
+    @extend .fotorama-stretch;
+    overflow: hidden;
+    text-align: center;
+
+    .fotorama__wrap--css3 & {
+        @extend .fotorama-gpu;
+    }
+
+    .fotorama__wrap--video &--video {
+        @extend .fotorama-transform-disabled;
+    }
+
+    .fotorama__wrap--rtl & {
+        direction: rtl;
+    }
+
+    .fotorama__wrap--slide & {
+        opacity: 1 !important;
+    }
+
+    .fotorama__wrap--fade & {
+        display: none;
+    }
+
+    .fotorama--fullscreen & {
+        iframe {
+            left: $fotorama-arw-size;
+            width: calc(100% - #{$fotorama-arw-size} * 2);
+        }
+    }
+
+    .fotorama__wrap--only-active & {
+        visibility: hidden;
+    }
+}
