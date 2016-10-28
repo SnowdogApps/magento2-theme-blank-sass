@@ -21,14 +21,8 @@ var config = {
     ]
 };
 
-gulp.task('default', () => {
-    gulp.watch(['**/*.scss','!node_modules/**'], () => {
-        runSequence('sass-lint', 'sass', 'css-lint');
-    });
-});
-
 gulp.task('sass', () => {
-    return gulp.src('styles/*.scss')
+    return gulp.src('../styles/*.scss')
         .pipe(
             sass({
                 outputStyle   : 'expanded',
@@ -42,14 +36,14 @@ gulp.task('sass', () => {
 });
 
 gulp.task('sass-lint', () => {
-    return gulp.src(['**/*.scss','!node_modules/**'])
+    return gulp.src(['../**/*.scss','!node_modules/**'])
         .pipe(sassLint())
         .pipe(sassLint.format())
         .pipe(gulpif(config.ci, sassLint.failOnError()));
 });
 
 gulp.task('css-lint', () => {
-    return gulp.src('web/css/*.css')
+    return gulp.src('../web/css/*.css')
         .pipe(postcss([
             stylelint(),
             reporter({
