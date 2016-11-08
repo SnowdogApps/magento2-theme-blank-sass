@@ -1115,9 +1115,9 @@
       "resolved": "https://registry.npmjs.org/gulp-sass-error/-/gulp-sass-error-1.0.2.tgz"
     },
     "gulp-sass-lint": {
-      "version": "1.2.0",
-      "from": "gulp-sass-lint@>=1.2.0 <1.3.0",
-      "resolved": "https://registry.npmjs.org/gulp-sass-lint/-/gulp-sass-lint-1.2.0.tgz"
+      "version": "1.3.1",
+      "from": "gulp-sass-lint@1.3.1",
+      "resolved": "https://registry.npmjs.org/gulp-sass-lint/-/gulp-sass-lint-1.3.1.tgz"
     },
     "gulp-util": {
       "version": "3.0.7",
