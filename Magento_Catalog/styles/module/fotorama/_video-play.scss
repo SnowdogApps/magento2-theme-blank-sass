@@ -2,7 +2,7 @@
     @extend .fotorama-sprite;
     width: $size-fotorama-block * 2;
     height: $size-fotorama-block * 2;
-    background-position: (-$size-fotorama-block) (-$size-fotorama-block*2);
+    background-position: (-$size-fotorama-block) (-$size-fotorama-block * 2);
     @include fotorama-abs-center();
 
     .fotorama__wrap--css2 &,
