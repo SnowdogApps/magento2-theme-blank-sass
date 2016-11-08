@@ -1,7 +1,7 @@
 {
   "name": "magento2-theme-blank-sass",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "autoprefixer": "~6.5.1",
     "gulp": "~3.9.1",
     "gulp-if": "~2.0.1",
