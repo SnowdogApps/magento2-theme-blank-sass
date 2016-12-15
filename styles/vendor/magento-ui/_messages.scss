@@ -146,7 +146,7 @@
         );
     }
     @else {
-        $mgs-type: $_message-type;
+        $msg-type: $_message-type;
         $map-type: $messages-default;
 
         @if $msg-type == error {
