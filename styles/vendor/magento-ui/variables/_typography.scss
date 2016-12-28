@@ -12,129 +12,129 @@
 //  ---------------------------------------------
 
 //  Path
-$font-path: "../../fonts/";
-$icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons";
+$font-path: "../../fonts/" !default;
+$icons__font-path: "../fonts/Blank-Theme-Icons/Blank-Theme-Icons" !default;
 
 //  Font families
-$font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family__serif     : Georgia, 'Times New Roman', Times, serif;
-$font-family__monospace : Menlo, Monaco, Consolas, 'Courier New', monospace;
-$font-family__base      : $font-family__sans-serif;
+$font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family__serif     : Georgia, 'Times New Roman', Times, serif !default;
+$font-family__monospace : Menlo, Monaco, Consolas, 'Courier New', monospace !default;
+$font-family__base      : $font-family__sans-serif !default;
 
 //  Sizes
-$font-size__base: 14px;
-$font-size__xl  : 21px;
-$font-size__l   : 18px;
-$font-size__s   : 12px;
-$font-size__xs  : 11px;
+$font-size__base: 14px !default;
+$font-size__xl  : 21px !default;
+$font-size__l   : 18px !default;
+$font-size__s   : 12px !default;
+$font-size__xs  : 11px !default;
 
 //  Weights
-$font-weight__light   : 300;
-$font-weight__regular : 400;
-$font-weight__heavier : 500;
-$font-weight__semibold: 600;
-$font-weight__bold    : 700;
+$font-weight__light   : 300 !default;
+$font-weight__regular : 400 !default;
+$font-weight__heavier : 500 !default;
+$font-weight__semibold: 600 !default;
+$font-weight__bold    : 700 !default;
 
 //  Styles
-$font-style__base: normal;
-$font-style__emphasis: italic;
+$font-style__base: normal !default;
+$font-style__emphasis: italic !default;
 
 //  Line heights
-$line-height__base: 1.428571429;
-$line-height__computed: floor($font-size__base * $line-height__base);
-$line-height__xl: 1.7;
-$line-height__l: 1.5;
-$line-height__s: 1.33;
+$line-height__base: 1.428571429 !default;
+$line-height__computed: floor($font-size__base * $line-height__base) !default;
+$line-height__xl: 1.7 !default;
+$line-height__l: 1.5 !default;
+$line-height__s: 1.33 !default;
 
 //  Colors
-$text__color: $primary__color;
-$text__color__intense: $primary__color__darker;
-$text__color__muted: $primary__color__lighter;
+$text__color: $primary__color !default;
+$text__color__intense: $primary__color__darker !default;
+$text__color__muted: $primary__color__lighter !default;
 
 //
 //  Borders
 //  ---------------------------------------------
 
-$border-color__base: darken($page__background-color, 18%);
-$border-width__base: 1px;
+$border-color__base: darken($page__background-color, 18%) !default;
+$border-width__base: 1px !default;
 
 //
 //  Focus
 //  ---------------------------------------------
 
-$focus__color: $color-sky-blue1;
-$focus__box-shadow: 0 0 3px 1px $focus__color;
+$focus__color: $color-sky-blue1 !default;
+$focus__box-shadow: 0 0 3px 1px $focus__color !default;
 
 //
 //  Links
 //  ---------------------------------------------
 
-$link__color: $color-blue1;
-$link__text-decoration: none;
+$link__color: $color-blue1 !default;
+$link__text-decoration: none !default;
 
-$link__visited__color: $link__color;
-$link__visited__text-decoration: none;
+$link__visited__color: $link__color !default;
+$link__visited__text-decoration: none !default;
 
-$link__hover__color: $color-blue2;
-$link__hover__text-decoration: underline;
+$link__hover__color: $color-blue2 !default;
+$link__hover__text-decoration: underline !default;
 
-$link__active__color: $active__color;
-$link__active__text-decoration: underline;
+$link__active__color: $active__color !default;
+$link__active__text-decoration: underline !default;
 
 //
 // Product links
 //
 
-$product-name-link__color: $link__color;
-$product-name-link__text-decoration: $link__text-decoration;
-$product-name-link__color__visited: $link__visited__color;
-$product-name-link__text-decoration__visited: $link__visited__text-decoration;
-$product-name-link__color__hover: $link__hover__color;
-$product-name-link__text-decoration__hover: $link__hover__text-decoration;
-$product-name-link__color__active: $link__active__color;
-$product-name-link__text-decoration__active: $link__active__text-decoration;
+$product-name-link__color: $link__color !default;
+$product-name-link__text-decoration: $link__text-decoration !default;
+$product-name-link__color__visited: $link__visited__color !default;
+$product-name-link__text-decoration__visited: $link__visited__text-decoration !default;
+$product-name-link__color__hover: $link__hover__color !default;
+$product-name-link__text-decoration__hover: $link__hover__text-decoration !default;
+$product-name-link__color__active: $link__active__color !default;
+$product-name-link__text-decoration__active: $link__active__text-decoration !default;
 //
 //  Lists
 //  ---------------------------------------------
 
-$list__color__base: inherit;
-$list__font-size__base: inherit;
-$list__margin-top: 0;
-$list__margin-bottom: $indent__m;
+$list__color__base: inherit !default;
+$list__font-size__base: inherit !default;
+$list__margin-top: 0 !default;
+$list__margin-bottom: $indent__m !default;
 
-$list-item__margin-top: 0;
-$list-item__margin-bottom: $indent__s;
+$list-item__margin-top: 0 !default;
+$list-item__margin-bottom: $indent__s !default;
 
-$dl__margin-top: 0;
-$dl__margin-bottom: $indent__base;
+$dl__margin-top: 0 !default;
+$dl__margin-bottom: $indent__base !default;
 
-$dt__margin-top: 0;
-$dt__margin-bottom: $indent__xs;
-$dt__font-weight: $font-weight__bold;
+$dt__margin-top: 0 !default;
+$dt__margin-bottom: $indent__xs !default;
+$dt__font-weight: $font-weight__bold !default;
 
-$dd__margin-top: 0;
-$dd__margin-bottom: $indent__s;
+$dd__margin-top: 0 !default;
+$dd__margin-bottom: $indent__s !default;
 
 //
 //  Paragraphs
 //  ---------------------------------------------
 
-$p__margin-top: 0;
-$p__margin-bottom: $indent__s;
+$p__margin-top: 0 !default;
+$p__margin-bottom: $indent__s !default;
 
 //
 //  Headings
 //  ---------------------------------------------
 
-$heading__font-family__base: inherit;
-$heading__font-weight__base: $font-weight__light;
-$heading__line-height__base: 1.1;
-$heading__color__base: inherit;
-$heading__font-style__base: inherit;
-$heading__margin-top__base: $indent__base;
-$heading__margin-bottom__base: $indent__base;
-$h1__font-size-desktop: ceil(($font-size__base * 2.85)); // 40px
-$h1__margin-bottom__desktop: $indent__xl;
+$heading__font-family__base: inherit !default;
+$heading__font-weight__base: $font-weight__light !default;
+$heading__line-height__base: 1.1 !default;
+$heading__color__base: inherit !default;
+$heading__font-style__base: inherit !default;
+$heading__margin-top__base: $indent__base !default;
+$heading__margin-bottom__base: $indent__base !default;
+$h1__font-size-desktop: ceil(($font-size__base * 2.85)) !default; // 40px
+$h1__margin-bottom__desktop: $indent__xl !default;
 
 $heading-default: (
     font-size        : $font-size__base,
@@ -146,79 +146,79 @@ $heading-default: (
     margin-top       : $heading__margin-top__base,
     margin-bottom    : $heading__margin-bottom__base,
     font-size-desktop: $h1__font-size-desktop
-);
+) !default;
 
 $heading-h1: (
     font-size: ceil(($font-size__base * 1.85)),
     margin-top: 0
-);
+) !default;
 
 $heading-h2: (
     font-size: ceil(($font-size__base * 1.85)),
     margin-top: $indent__m
-);
+) !default;
 
 $heading-h3: (
     font-size: ceil(($font-size__base * 1.28)),
     margin-top: $indent__base * 0.75,
     margin-bottom: $indent__s
-);
+) !default;
 
 $heading-h4: (
     font-size: $font-size__base,
     font-weight: $font-weight__bold
-);
+) !default;
 
 $heading-h5: (
     font-size: ceil(($font-size__base * 0.85)),
     font-weight: $font-weight__bold
-);
+) !default;
 
 $heading-h6: (
     font-size: ceil(($font-size__base * 0.7)),
     font-weight: $font-weight__bold
-);
+) !default;
 
 
 
-$heading__small-color: $primary__color;
-$heading__small-line-height: 1;
-$heading__small-size: ($font-size__xs / $font-size__base) * 100%;
+$heading__small-color: $primary__color !default;
+$heading__small-line-height: 1 !default;
+$heading__small-size: ($font-size__xs / $font-size__base) * 100% !default;
 
 //  Code blocks
-$code__background-color: $panel__background-color;
-$code__color: $primary__color__darker;
-$code__font-size: $font-size__s;
-$code__padding: 2px 4px;
+$code__background-color: $panel__background-color !default;
+$code__color: $primary__color__darker !default;
+$code__font-size: $font-size__s !default;
+$code__padding: 2px 4px !default;
 
-$pre__background-color: $panel__background-color;
-$pre__border-color: $border-color__base;
-$pre__border-width: $border-width__base;
-$pre__color: $primary__color__darker;
+$pre__background-color: $panel__background-color !default;
+$pre__border-color: $border-color__base !default;
+$pre__border-width: $border-width__base !default;
+$pre__color: $primary__color__darker !default;
 
-$kbd__background-color: $panel__background-color;
-$kbd__color: $primary__color__darker;
+$kbd__background-color: $panel__background-color !default;
+$kbd__color: $primary__color__darker !default;
 
 //  Blockquote
-$blockquote__border-color: $border-color__base;
-$blockquote__border-width: 0;
-$blockquote__content-before: '\2014 \00A0';
-$blockquote__font-size: $font-size__base;
-$blockquote__font-style: $font-style__emphasis;
-$blockquote__margin: 0 0 $indent__base $indent__xl;
-$blockquote__padding: 0;
+$blockquote__border-color: $border-color__base !default;
+$blockquote__border-width: 0 !default;
+$blockquote__content-before: '\2014 \00A0' !default;
+$blockquote__font-size: $font-size__base !default;
+$blockquote__font-style: $font-style__emphasis !default;
+$blockquote__margin: 0 0 $indent__base $indent__xl !default;
+$blockquote__padding: 0 !default;
 
-$blockquote-small__color: $primary__color;
-$blockquote-small__font-size: $font-size__xs;
+$blockquote-small__color: $primary__color !default;
+$blockquote-small__font-size: $font-size__xs !default;
 
-$cite__font-style: $font-style__base;
+$cite__font-style: $font-style__base !default;
 
 //  Misc
-$hr__border-color: $border-color__base;
-$hr__border-style: solid;
-$hr__border-width: $border-width__base;
+$hr__border-color: $border-color__base !default;
+$hr__border-style: solid !default;
+$hr__border-width: $border-width__base !default;
 
-$mark__color: $primary__color__dark;
-$mark__background-color: $panel__background-color;
+$mark__color: $primary__color__dark !default;
+$mark__background-color: $panel__background-color !default;
 
-$abbr__border-color: $border-color__base;
+$abbr__border-color: $border-color__base !default;

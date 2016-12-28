@@ -2,15 +2,15 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-wrapper__margin             : $indent__base;
-$checkout-wrapper__columns            : 8;
+$checkout-wrapper__margin             : $indent__base !default;
+$checkout-wrapper__columns            : 8 !default;
 
-$checkout-step-title__border          : $border-width__base solid $color-gray80;
-$checkout-step-title__font-size       : 26px;
-$checkout-step-title__font-weight     : $font-weight__light;
-$checkout-step-title__padding         : $indent__s;
+$checkout-step-title__border          : $border-width__base solid $color-gray80 !default;
+$checkout-step-title__font-size       : 26px !default;
+$checkout-step-title__font-weight     : $font-weight__light !default;
+$checkout-step-title__padding         : $indent__s !default;
 
-$checkout-step-title-mobile__font-size: 18px;
+$checkout-step-title-mobile__font-size: 18px !default;
 
 //
 //  Common

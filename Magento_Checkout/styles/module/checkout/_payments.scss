@@ -2,15 +2,15 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-payment-method-title__border        : $checkout-shipping-method__border;
-$checkout-payment-method-title__padding       : $checkout-shipping-method__padding;
-$checkout-payment-method-title-mobile__padding: 15px;
+$checkout-payment-method-title__border        : $checkout-shipping-method__border !default;
+$checkout-payment-method-title__padding       : $checkout-shipping-method__padding !default;
+$checkout-payment-method-title-mobile__padding: 15px !default;
 
-$checkout-payment-method-content__padding__xl : 22px;
+$checkout-payment-method-content__padding__xl : 22px !default;
 
-$checkout-billing-address-details__line-height: 27px;
-$checkout-billing-address-details__padding    : 0 0 0 23px;
-$checkout-billing-address-form__max-width     : $checkout-shipping-address__max-width;
+$checkout-billing-address-details__line-height: 27px !default;
+$checkout-billing-address-details__padding    : 0 0 0 23px !default;
+$checkout-billing-address-form__max-width     : $checkout-shipping-address__max-width !default;
 
 //
 //  Common

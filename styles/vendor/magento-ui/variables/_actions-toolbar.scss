@@ -2,16 +2,16 @@
 //  Actions-toolbar variables
 //  _____________________________________________
 
-$actions-toolbar__margin: inherit;
-$actions-toolbar__padding: inherit;
+$actions-toolbar__margin: inherit !default;
+$actions-toolbar__padding: inherit !default;
 
-$actions-toolbar-actions__position: justify; // [left|right|center|justify]
-$actions-toolbar-actions__reverse: inherit; // [true|false]
-$actions-toolbar-actions__margin: inherit;
+$actions-toolbar-actions__position: justify !default; // [left|right|center|justify]
+$actions-toolbar-actions__reverse: inherit !default; // [true|false]
+$actions-toolbar-actions__margin: inherit !default;
 
-$actions-toolbar-actions-primary__margin: 0 $indent__xs 0 0;
-$actions-toolbar-actions-secondary__margin: inherit;
+$actions-toolbar-actions-primary__margin: 0 $indent__xs 0 0 !default;
+$actions-toolbar-actions-secondary__margin: inherit !default;
 
-$actions-toolbar-actions-links__margin-top: inherit;
-$actions-toolbar-actions-links-primary__margin-top: inherit;
-$actions-toolbar-actions-links-secondary__margin-top: 6px;
+$actions-toolbar-actions-links__margin-top: inherit !default;
+$actions-toolbar-actions-links-primary__margin-top: inherit !default;
+$actions-toolbar-actions-links-secondary__margin-top: 6px !default;
