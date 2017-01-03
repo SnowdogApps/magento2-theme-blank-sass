@@ -2,15 +2,15 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-sidebar-shipping-information__padding               : $indent__l;
-$checkout-sidebar-shipping-information__line-height           : $checkout-billing-address-details__line-height;
+$checkout-sidebar-shipping-information__padding               : $indent__l !default;
+$checkout-sidebar-shipping-information__line-height           : $checkout-billing-address-details__line-height !default;
 
-$checkout-sidebar-shipping-information-edit-icon__color       : $minicart-icons-color;
-$checkout-sidebar-shipping-information-edit-icon__content     : $icon-settings;
-$checkout-sidebar-shipping-information-edit-icon__font-size   : 28px;
-$checkout-sidebar-shipping-information-edit-icon__line-height : 28px;
-$checkout-sidebar-shipping-information-edit-icon__top         : 2px;
-$checkout-sidebar-shipping-information-edit-icon__hover__color: $primary__color;
+$checkout-sidebar-shipping-information-edit-icon__color       : $minicart-icons-color !default;
+$checkout-sidebar-shipping-information-edit-icon__content     : $icon-settings !default;
+$checkout-sidebar-shipping-information-edit-icon__font-size   : 28px !default;
+$checkout-sidebar-shipping-information-edit-icon__line-height : 28px !default;
+$checkout-sidebar-shipping-information-edit-icon__top         : 2px !default;
+$checkout-sidebar-shipping-information-edit-icon__hover__color: $primary__color !default;
 
 //
 //  Shipping Information

@@ -6,20 +6,20 @@
 //  Variables
 //  ---------------------------------------------
 
-$modal-title__color                  : $text__color;
-$modal-title__border                 : 1px solid $color-gray-light5;
-$modal-popup-title__font-size        : 26px;
-$modal-popup-title-mobile__font-size : $font-size__base;
-$modal-popup-breakpoint-screen__m    : $screen__m + 1;
-$modal-slide__first__indent-left     : 44px;
-$modal-slide-mobile__background-color: $color-gray-light01;
-$modal-overlay__background-color     : fade($color-gray20, 55%);
-$modal-action-close__color           : $primary__color;
-$modal-action-close__font-size       : 32px;
-$modal-action-close__hover__color    : darken($primary__color, 10%);
-$modal-slide-action-close__padding   : $modal-slide-header__padding-vertical - 16px $modal-popup__padding - 16px;
-$minicart-icons-color                : $header-icons-color;
-$minicart-icons-color-hover          : $header-icons-color-hover;
+$modal-title__color                  : $text__color !default;
+$modal-title__border                 : 1px solid $color-gray-light5 !default;
+$modal-popup-title__font-size        : 26px !default;
+$modal-popup-title-mobile__font-size : $font-size__base !default;
+$modal-popup-breakpoint-screen__m    : $screen__m + 1 !default;
+$modal-slide__first__indent-left     : 44px !default;
+$modal-slide-mobile__background-color: $color-gray-light01 !default;
+$modal-overlay__background-color     : fade($color-gray20, 55%) !default;
+$modal-action-close__color           : $primary__color !default;
+$modal-action-close__font-size       : 32px !default;
+$modal-action-close__hover__color    : darken($primary__color, 10%) !default;
+$modal-slide-action-close__padding   : $modal-slide-header__padding-vertical - 16px $modal-popup__padding - 16px !default;
+$minicart-icons-color                : $header-icons-color !default;
+$minicart-icons-color-hover          : $header-icons-color-hover !default;
 
 //
 //  Common

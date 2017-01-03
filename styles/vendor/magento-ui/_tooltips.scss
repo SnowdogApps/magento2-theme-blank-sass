@@ -4,10 +4,10 @@
 
 // Variables
 //
-$tooltip__z-index: 100;
-$tooltip__border-width: 1px;
-$tooltip__border-color: $color-gray-light2;
-$tooltip__background: $color-white;
+$tooltip__z-index: 100 !default;
+$tooltip__border-width: 1px !default;
+$tooltip__border-color: $color-gray-light2 !default;
+$tooltip__background: $color-white !default;
 
 @mixin lib-tooltip(
     $_tooltip-position        : top,

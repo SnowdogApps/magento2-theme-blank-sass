@@ -3,10 +3,10 @@
 //  _____________________________________________
 
 //  You shouldn't need to touch this! Internal use only.
-$column-width : 1;
-$total-columns: 1;
-$gutter-width : 0;
-$grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1));
+$column-width : 1 !default;
+$total-columns: 1 !default;
+$gutter-width : 0 !default;
+$grid-width   : ($column-width * $total-columns) + ($gutter-width * ($total-columns - 1)) !default;
 
 @mixin lib-column-wrapper() {
     width: 100%;

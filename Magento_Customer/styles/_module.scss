@@ -2,21 +2,21 @@
 //  Variables
 //  _____________________________________________
 
-$account-nav-background          : $sidebar__background-color;
-$account-nav-color               : false;
+$account-nav-background          : $sidebar__background-color !default;
+$account-nav-color               : false !default;
 
-$account-nav-current-border      : 3px solid transparent;
-$account-nav-current-border-color: $color-orange-red1;
-$account-nav-current-color       : false;
-$account-nav-current-font-weight : $font-weight__semibold;
+$account-nav-current-border      : 3px solid transparent !default;
+$account-nav-current-border-color: $color-orange-red1 !default;
+$account-nav-current-color       : false !default;
+$account-nav-current-font-weight : $font-weight__semibold !default;
 
-$account-nav-item-hover          : $color-gray91;
+$account-nav-item-hover          : $color-gray91 !default;
 
-$_password-default               : $color-gray-light01;
-$_password-weak                  : #ffafae;
-$_password-medium                : #ffd6b3;
-$_password-strong                : #c5eeac;
-$_password-very-strong           : #81b562;
+$_password-default               : $color-gray-light01 !default;
+$_password-weak                  : #ffafae !default;
+$_password-medium                : #ffd6b3 !default;
+$_password-strong                : #c5eeac !default;
+$_password-very-strong           : #81b562 !default;
 
 //
 //  Common

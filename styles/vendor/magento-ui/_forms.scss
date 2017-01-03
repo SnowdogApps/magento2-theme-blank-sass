@@ -5,36 +5,36 @@
 //
 // variable
 
-$form-field-label-asterisk__color          : $color-red10;
-$form-field-label-asterisk__font-size      : $font-size__s;
-$form-field-label-asterisk__font-family    : inherit;
-$form-field-label-asterisk__font-weight    : inherit;
-$form-field-label-asterisk__font-style     : inherit;
-$form-field-label-asterisk__line-height    : inherit;
-$form-field-label-asterisk__margin         : 0 0 0 $indent__xs;
+$form-field-label-asterisk__color          : $color-red10 !default;
+$form-field-label-asterisk__font-size      : $font-size__s !default;
+$form-field-label-asterisk__font-family    : inherit !default;
+$form-field-label-asterisk__font-weight    : inherit !default;
+$form-field-label-asterisk__font-style     : inherit !default;
+$form-field-label-asterisk__line-height    : inherit !default;
+$form-field-label-asterisk__margin         : 0 0 0 $indent__xs !default;
 
-$form-element-input__background            : $color-white;
-$form-element-input__border-color          : $color-gray76;
-$form-element-input__border                : 1px solid $form-element-input__border-color;
-$form-element-input__border-radius         : 1px;
-$form-element-input__height                : 32px;
-$form-element-input__width                 : 100%;
-$form-element-input__margin                : 0;
-$form-element-input__padding               : 0 9px;
-$form-element-input__vertical-align        : baseline;
-$form-element-input__background-clip       : padding-box; // [border-box|content-box|padding-box]
-$form-element-input__font-size             : $font-size__base;
-$form-element-input__color                 : inherit;
-$form-element-input__font-family           : $font-family__base;
-$form-element-input__font-weight           : inherit;
-$form-element-input__font-style            : inherit;
-$form-element-input__line-height           : $line-height__base;
+$form-element-input__background            : $color-white !default;
+$form-element-input__border-color          : $color-gray76 !default;
+$form-element-input__border                : 1px solid $form-element-input__border-color !default;
+$form-element-input__border-radius         : 1px !default;
+$form-element-input__height                : 32px !default;
+$form-element-input__width                 : 100% !default;
+$form-element-input__margin                : 0 !default;
+$form-element-input__padding               : 0 9px !default;
+$form-element-input__vertical-align        : baseline !default;
+$form-element-input__background-clip       : padding-box !default; // [border-box|content-box|padding-box]
+$form-element-input__font-size             : $font-size__base !default;
+$form-element-input__color                 : inherit !default;
+$form-element-input__font-family           : $font-family__base !default;
+$form-element-input__font-weight           : inherit !default;
+$form-element-input__font-style            : inherit !default;
+$form-element-input__line-height           : $line-height__base !default;
 
-$form-element-input-placeholder__color     : $color-gray76;
-$form-element-input-placeholder__font-style: $form-element-input__font-style;
+$form-element-input-placeholder__color     : $color-gray76 !default;
+$form-element-input-placeholder__font-style: $form-element-input__font-style !default;
 
-$form-validation-note__color-error         : $error__color;
-$form-element-validation__border-error     : lighten($form-validation-note__color-error, 20%);
+$form-validation-note__color-error         : $error__color !default;
+$form-element-validation__border-error     : lighten($form-validation-note__color-error, 20%) !default;
 
 @mixin lib-form-element-input($_type) {
     $_background                : $color-white;

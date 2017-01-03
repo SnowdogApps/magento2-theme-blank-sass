@@ -2,10 +2,10 @@
 //  Variables
 //  _____________________________________________
 
-$minicart__border-color      : $color-gray80;
-$minicart__padding-horizontal: $indent__base;
+$minicart__border-color      : $color-gray80 !default;
+$minicart__padding-horizontal: $indent__base !default;
 
-$minicart-qty__height        : 24px;
+$minicart-qty__height        : 24px !default;
 
 //
 //  Minicart
