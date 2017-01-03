@@ -2,15 +2,15 @@
 //  Variables
 //  ---------------------------------------------
 
-$product-name-link__color                   : $text__color;
-$product-name-link__color__active           : $text__color;
-$product-name-link__color__hover            : $text__color;
-$product-name-link__color__visited          : $text__color;
+$product-name-link__color                   : $text__color !default;
+$product-name-link__color__active           : $text__color !default;
+$product-name-link__color__hover            : $text__color !default;
+$product-name-link__color__visited          : $text__color !default;
 
-$product-name-link__text-decoration         : none;
-$product-name-link__text-decoration__active : $link__hover__text-decoration;
-$product-name-link__text-decoration__hover  : $link__hover__text-decoration;
-$product-name-link__text-decoration__visited: $link__hover__text-decoration;
+$product-name-link__text-decoration         : none !default;
+$product-name-link__text-decoration__active : $link__hover__text-decoration !default;
+$product-name-link__text-decoration__hover  : $link__hover__text-decoration !default;
+$product-name-link__text-decoration__visited: $link__hover__text-decoration !default;
 
 //
 //  Product Lists

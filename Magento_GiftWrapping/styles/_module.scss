@@ -2,18 +2,18 @@
 //  Variables
 //  _____________________________________________
 
-$gift-wrapping__border-color                : $color-gray-light5;
-$gift-wrapping__border-width                : $border-width__base;
+$gift-wrapping__border-color                : $color-gray-light5 !default;
+$gift-wrapping__border-width                : $border-width__base !default;
 
-$gift-wrapping-preview__active__border-color: $color-gray20;
-$gift-wrapping-preview__active__border-width: 3px;
+$gift-wrapping-preview__active__border-color: $color-gray20 !default;
+$gift-wrapping-preview__active__border-width: 3px !default;
 
-$gift-wrapping-thumbnail__height            : 4rem;
-$gift-wrapping-thumbnail__width             : $gift-wrapping-thumbnail__height;
+$gift-wrapping-thumbnail__height            : 4rem !default;
+$gift-wrapping-thumbnail__width             : $gift-wrapping-thumbnail__height !default;
 
-$gift-wrapping-no-image__background         : $color-gray95;
-$gift-wrapping-no-image-icon__color         : $color-gray-darken4;
-$gift-wrapping-no-image-icon__font-size     : 22px;
+$gift-wrapping-no-image__background         : $color-gray95 !default;
+$gift-wrapping-no-image-icon__color         : $color-gray-darken4 !default;
+$gift-wrapping-no-image-icon__font-size     : 22px !default;
 
 //
 //  Common

@@ -2,18 +2,18 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-payment-option-title__border           : $checkout-payment-method-title__border;
-$checkout-payment-option-title__color            : $link__color;
-$checkout-payment-option-title__padding          : $checkout-payment-method-title__padding;
-$checkout-payment-option-title-mobile__padding   : $checkout-payment-method-title-mobile__padding;
+$checkout-payment-option-title__border           : $checkout-payment-method-title__border !default;
+$checkout-payment-option-title__color            : $link__color !default;
+$checkout-payment-option-title__padding          : $checkout-payment-method-title__padding !default;
+$checkout-payment-option-title-mobile__padding   : $checkout-payment-method-title-mobile__padding !default;
 
-$checkout-payment-option-title-icon__font-size   : 32px;
-$checkout-payment-option-title-icon__line-height : 16px;
-$checkout-payment-option-title-icon__margin      : 0;
-$checkout-payment-option-title-icon__color       : $minicart-icons-color;
-$checkout-payment-option-title-icon__hover__color: $primary__color;
+$checkout-payment-option-title-icon__font-size   : 32px !default;
+$checkout-payment-option-title-icon__line-height : 16px !default;
+$checkout-payment-option-title-icon__margin      : 0 !default;
+$checkout-payment-option-title-icon__color       : $minicart-icons-color !default;
+$checkout-payment-option-title-icon__hover__color: $primary__color !default;
 
-$checkout-payment-option-content__padding__xl    : $checkout-payment-method-content__padding__xl;
+$checkout-payment-option-content__padding__xl    : $checkout-payment-method-content__padding__xl !default;
 
 //
 //  Common

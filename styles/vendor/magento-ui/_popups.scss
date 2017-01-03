@@ -5,30 +5,30 @@
 //
 // Variables
 //
-$popup__background: $color-white;
-$popup__border-color: $color-gray-light3;
+$popup__background: $color-white !default;
+$popup__border-color: $color-gray-light3 !default;
 //  Popup icons
-$popup-icon-font: $icon-font;
-$popup-icon-font__content: $icon-remove;
-$popup-icon-font__size: 16px;
-$popup-icon-font__line-height: 16px;
-$popup-icon-font__color: $color-gray55;
-$popup-icon-font__color-hover: darken($popup-icon-font__color, 10%);
-$popup-icon-font__color-active: $popup-icon-font__color-hover;
-$popup-icon-font__margin: inherit;
-$popup-icon-font__vertical-align: top;
-$popup-icon-font__position: $button-icon__position;
-$popup-icon-font__text-hide: true;
+$popup-icon-font: $icon-font !default;
+$popup-icon-font__content: $icon-remove !default;
+$popup-icon-font__size: 16px !default;
+$popup-icon-font__line-height: 16px !default;
+$popup-icon-font__color: $color-gray55 !default;
+$popup-icon-font__color-hover: darken($popup-icon-font__color, 10%) !default;
+$popup-icon-font__color-active: $popup-icon-font__color-hover !default;
+$popup-icon-font__margin: inherit !default;
+$popup-icon-font__vertical-align: top !default;
+$popup-icon-font__position: $button-icon__position !default;
+$popup-icon-font__text-hide: true !default;
 
-$popup-button-close__icon: true; // [true|false]
-$popup-button-close__reset: true; // [true|false]
-$popup-button-close__position: absolute;
-$popup-button-close__position-top: $indent__s;
-$popup-button-close__position-right: $indent__s;
-$popup-button-close__position-bottom: inherit;
-$popup-button-close__position-left: inherit;
-$popup__height: auto;
-$popup__padding: 22px;
+$popup-button-close__icon: true !default; // [true|false]
+$popup-button-close__reset: true !default; // [true|false]
+$popup-button-close__position: absolute !default;
+$popup-button-close__position-top: $indent__s !default;
+$popup-button-close__position-right: $indent__s !default;
+$popup-button-close__position-bottom: inherit !default;
+$popup-button-close__position-left: inherit !default;
+$popup__height: auto !default;
+$popup__padding: 22px !default;
 
 //
 // Mixins
