@@ -1,0 +1,38 @@
+//
+//  Theme variables
+//  _____________________________________________
+
+//  Messages
+$message-global-note__background          : $color-yellow-light2 !default;
+$message-global-note__border-color        : $color-yellow-light3 !default;
+$message-global-note__color               : $text__color !default;
+
+$message-global-note-link__color          : $link__color !default;
+$message-global-note-link__color-hover    : $link__hover__color !default;
+$message-global-note-link__color-active   : $link__active__color !default;
+
+$message-global-caution__background       : $color-red9 !default;
+$message-global-caution__border-color     : none !default;
+$message-global-caution__color            : $color-white !default;
+
+$message-global-caution-link__color       : $link__color !default;
+$message-global-caution-link__color-hover : $link__hover__color !default;
+$message-global-caution-link__color-active: $link__active__color !default;
+
+// Header
+$header__background-color                 : false !default;
+$header-icons-color                       : $color-gray56 !default;
+$header-icons-color-hover                 : $color-gray20 !default;
+
+$addto-color                              : $text__color__muted !default;
+$addto-hover-color                        : $primary__color !default;
+
+$minicart-icons-color                     : $header-icons-color !default;
+$minicart-icons-color-hover               : $header-icons-color-hover !default;
+
+$button__shadow                           : inset 0 2px 1px rgba(0, 0, 0, 0.12) !default;
+
+$h1__margin-bottom__desktop               : $indent__xl !default;
+
+// Footer
+$footer__background-color                 : false !default;

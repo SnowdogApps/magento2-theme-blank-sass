@@ -1,16 +1,1 @@
-.minilist {
-    .weee {
-        display: table-row;
-        font-size: 11px;
-
-        &:before {
-            display: none;
-        }
-    }
-}
-
-.price-container.weee {
-    &:before {
-        display: none;
-    }
-}
+@import 'module/common';

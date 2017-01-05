@@ -1,0 +1,354 @@
+//
+//  Common
+//  _____________________________________________
+
+body {
+    background-color: $page__background-color;
+}
+
+//
+//  Header
+//  ---------------------------------------------
+
+.page-header {
+    background-color: $header__background-color;
+    border-bottom: 1px solid $border-color__base;
+    margin-bottom: $indent__base;
+}
+
+.header {
+    &.content {
+        @extend .abs-add-clearfix;
+        padding-top: $indent__s;
+        position: relative;
+    }
+}
+
+.logo {
+    float: left;
+    margin: 0 0 $indent__s $indent__xl;
+    max-width: 50%;
+    position: relative;
+    z-index: 5;
+
+    img {
+        display: block;
+    }
+
+    .page-print & {
+        float: none;
+    }
+}
+
+.page-main {
+    & > .page-title-wrapper {
+        .page-title + .action {
+            margin-top: $indent__l;
+        }
+    }
+}
+
+.action.skip {
+    &:not(:focus) {
+        @extend .abs-visually-hidden;
+    }
+
+    &:focus {
+        background: $color-gray94;
+        padding: $indent__s;
+        box-sizing: border-box;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: 15;
+    }
+}
+
+//
+//  Global notice
+//  ---------------------------------------------
+
+.message.global {
+    p {
+        margin: 0;
+    }
+
+    &.noscript,
+    &.cookie {
+        @include lib-message($_message-type: global-note);
+        margin: 0;
+    }
+
+    &.cookie {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: 3;
+
+        .actions {
+            margin-top: $indent__s;
+        }
+    }
+
+    &.demo {
+        @include lib-message($_message-type: global-caution);
+        margin-bottom: 0;
+        text-align: center;
+    }
+}
+
+//
+//  Footer
+//  ---------------------------------------------
+
+.page-footer {
+    background-color: $footer__background-color;
+    margin-top: auto;
+}
+
+.footer {
+    &.content {
+        border-top: 1px solid $border-color__base;
+        margin-top: 25px;
+        padding-bottom: 25px;
+        padding-top: 25px;
+
+        ul {
+            @extend .abs-reset-list;
+        }
+
+        .links {
+            & > li {
+                margin: 0 0 8px;
+            }
+        }
+
+        .switcher-store {
+            margin: 0 0 30px;
+        }
+    }
+
+    .copyright,
+    .bugs {
+        display: block;
+        margin: 20px 0 0;
+    }
+}
+
+.page-header,
+.page-footer {
+    .switcher {
+        margin-right: 10px;
+
+        .options {
+            @include lib-dropdown(
+                $_dropdown-actions-padding           : 0,
+                $_dropdown-list-item-padding         : 0,
+                $_dropdown-toggle-icon-content       : $icon-down,
+                $_dropdown-toggle-active-icon-content: $icon-up,
+                $_icon-font-text-hide                : true,
+                $_icon-font-size                     : 22px,
+                $_icon-font-line-height              : 22px,
+                $_dropdown-list-min-width            : 160px
+            );
+
+            ul.dropdown {
+                a {
+                    display: block;
+                    padding: 8px;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+
+        li {
+            font-size: $font-size__s;
+            margin: 0;
+        }
+
+        .label {
+            @extend .abs-visually-hidden;
+        }
+
+        strong {
+            font-weight: $font-weight__regular;
+        }
+    }
+}
+
+//
+//  Widgets
+//  ---------------------------------------------
+
+.sidebar {
+    .widget.block:not(:last-child),
+    .widget:not(:last-child) {
+        @extend .abs-margin-for-blocks-and-widgets;
+    }
+}
+
+.widget {
+    clear: both;
+
+    .block-title {
+        @extend .abs-block-title;
+    }
+}
+
+.page-header,
+.page-footer {
+    .widget.block {
+        margin: $indent__base 0;
+    }
+}
+
+.no-display {
+    @extend .abs-no-display;
+}
+
+//
+//  Calendar
+//  ---------------------------------------------
+
+.ui-datepicker {
+    td {
+        padding: 0;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+
+        & > .breadcrumbs,
+        & > .top-container,
+        & > .widget {
+            box-sizing: border-box;
+            width: 100%;
+        }
+
+        .ie10 &,
+        .ie11 & {
+            height: 100%;
+        }
+    }
+
+    .navigation ul {
+        padding: 0 8px;
+    }
+
+    .header {
+        &.panel {
+            & > .header.links {
+                float: right;
+                font-size: 0;
+                @include lib-list-inline();
+                margin-left: auto;
+
+                & > li {
+                    font-size: $font-size__base;
+                    margin: 0 0 0 15px;
+
+                    &.welcome,
+                    a {
+                        line-height: 1.4;
+                    }
+
+                    &.welcome {
+                        a {
+                            padding-left: $indent__xs;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.content {
+            @extend .abs-add-clearfix-desktop;
+            padding: $indent__l $indent__base 0;
+        }
+    }
+
+    .page-header {
+        border: 0;
+        margin-bottom: 0;
+
+        .panel.wrapper {
+            border-bottom: 1px solid $secondary__color;
+        }
+
+        .header.panel {
+            @extend .abs-add-clearfix-desktop;
+            padding-bottom: $indent__s;
+            padding-top: $indent__s;
+        }
+
+        .switcher {
+            display: inline-block;
+        }
+    }
+
+    .page-main {
+        & > .page-title-wrapper {
+            .page-title {
+                display: inline-block;
+            }
+
+            .page-title + .action {
+                float: right;
+                margin-top: $indent__base;
+            }
+        }
+    }
+
+    .logo {
+        margin: -8px auto 25px 0;
+
+        img {
+            max-height: inherit;
+        }
+    }
+
+    .footer {
+        &.content {
+            .block {
+                float: right;
+            }
+
+            .links {
+                display: inline-block;
+                margin-bottom: 20px;
+                padding: 0 50px 0 0;
+                vertical-align: top;
+            }
+
+            .switcher.store {
+                display: inline-block;
+                padding-right: 50px;
+                vertical-align: top;
+            }
+        }
+
+        .copyright {
+            @include lib-clearfix();
+        }
+    }
+}
