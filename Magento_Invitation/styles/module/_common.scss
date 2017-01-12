@@ -1,0 +1,44 @@
+.form-add-invitations {
+    @extend .abs-add-fields;
+    .action {
+        &.add {
+            @include lib-button-icon(
+                $_icon-font-content  : $icon-expand,
+                $_icon-font-text-hide: true,
+                $_icon-font-size     : 31px
+            );
+            line-height: normal;
+            padding: 2px 0;
+            width: auto;
+        }
+    }
+}
+
+@include max-screen($screen__m) {
+    .form-add-invitations {
+        .additional,
+        .field.text {
+            margin-top: $form-field__vertical-indent;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .form-add-invitations {
+        @extend .abs-add-fields-desktop;
+        .additional,
+        .field.text {
+            margin-top: $form-field__vertical-indent__desktop;
+        }
+    }
+
+    .table-invitations {
+        .col {
+            width: 50%;
+        }
+    }
+}

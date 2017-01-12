@@ -1,0 +1,34 @@
+//
+//  Advanced Search
+//  _____________________________________________
+
+// This part of code fixes the gap between page title and error message
+// In Luma on Mobile screens we have top padding on '.column' to give room for absolutely positioned toolbar controls.
+// If Advanced Search returns no results, controls do not appear, and visual gap appears.
+// We compensate it with negative top margin applied to '.message.error' on Mobile screens.
+
+//
+// Common
+// _____________________________________________
+
+.catalogsearch-advanced-result {
+    .message {
+        &.error {
+            margin-top: -60px;
+        }
+    }
+}
+
+//
+// Desktop
+// _____________________________________________
+
+@include min-screen($screen__s) {
+    .catalogsearch-advanced-result {
+        .message {
+            &.error {
+                margin-top: 0;
+            }
+        }
+    }
+}

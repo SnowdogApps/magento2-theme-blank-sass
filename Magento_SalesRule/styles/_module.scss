@@ -1,10 +1,1 @@
-.opc-wrapper {
-    .form-discount {
-        max-width: 500px;
-        .field {
-            .label {
-                @extend .abs-visually-hidden;
-            }
-        }
-    }
-}
+@import 'module/common';

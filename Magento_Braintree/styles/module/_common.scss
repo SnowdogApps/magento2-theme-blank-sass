@@ -1,0 +1,86 @@
+//
+//  Common
+//  _____________________________________________
+
+.payment-method-braintree {
+
+    .hosted-date-wrap {
+        @extend .abs-add-clearfix;
+    }
+
+    .hosted-control {
+        @include lib-form-element-input($_type: input-text);
+        position: relative;
+        width: 225px;
+
+        &.braintree-hosted-fields-focused {
+            border-color: $braintree-focus__color;
+        }
+
+        &.braintree-hosted-fields-invalid:not(.braintree-hosted-fields-focused) {
+            border-color: $braintree-error__color;
+
+            & ~ .hosted-error {
+                height: auto;
+                opacity: 1;
+            }
+        }
+
+        &.braintree-hosted-fields-valid {
+            border-color: $braintree-success__color;
+        }
+
+        &.hosted-cid {
+            width: 85px;
+        }
+
+        &.hosted-date {
+            $distance: 50px;
+
+            float: left;
+            margin-bottom: 7px;
+            width: 100px;
+
+            &:first-of-type {
+                margin-right: $distance;
+
+                &:after {
+                    content: '/';
+                    display: inline;
+                    padding-bottom: inherit;
+                    padding-top: inherit;
+                    position: absolute;
+                    right: -$distance / 2;
+                    top: 5px;
+                }
+            }
+        }
+    }
+
+    .field-tooltip {
+        right: 0;
+    }
+
+    .hosted-error {
+        clear: both;
+        color: $braintree-error__color;
+        font-size: 20px;
+        height: 0;
+        margin-top: 7px;
+        opacity: 0;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .payment-method-braintree {
+        .cvv {
+            .field-tooltip {
+                left: 6rem;
+            }
+        }
+    }
+}
