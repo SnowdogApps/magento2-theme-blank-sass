@@ -2,7 +2,7 @@
 //  Variables
 //  _____________________________________________
 
-$braintree-input-border__color: $color-gray76;
+$braintree-input-border__color: $color-gray76 !default;
 
 $braintree-error__color       : $color-red10 !default;
 $braintree-focus__color       : $color-blue2 !default;
