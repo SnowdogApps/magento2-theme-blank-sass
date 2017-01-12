@@ -1,0 +1,37 @@
+.block-reward-info {
+    .reward-rates,
+    .reward-limit,
+    .reward-expiring {
+        &:not(:last-child) {
+            margin-bottom: $indent__m;
+        }
+
+        .title {
+            display: inline-block;
+            margin-bottom: $indent__s;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
+    .reward-settings {
+        + .actions-toolbar {
+            margin-top: 10px;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+@include min-screen($screen__m) {
+    .reward-settings {
+        + .actions-toolbar {
+            margin-top: -32px;
+        }
+    }
+}

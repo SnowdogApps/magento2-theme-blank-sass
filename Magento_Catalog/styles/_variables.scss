@@ -1,0 +1,26 @@
+$product-grid-items-per-row-layout-default         : 2 !default;
+
+$product-grid-items-per-row-layout-1-screen-s      : 3 !default;
+$product-grid-items-per-row-layout-1-screen-m      : 4 !default;
+$product-grid-items-per-row-layout-1-screen-l      : 5 !default;
+
+$product-grid-items-per-row-layout-2-left-screen-s : 3 !default;
+$product-grid-items-per-row-layout-2-left-screen-m : 4 !default;
+$product-grid-items-per-row-layout-2-left-screen-l : '' !default;
+
+$product-grid-items-per-row-layout-2-right-screen-s: 3 !default;
+$product-grid-items-per-row-layout-2-right-screen-m: 4 !default;
+$product-grid-items-per-row-layout-2-right-screen-l: '' !default;
+
+$product-grid-items-per-row-layout-3-screen-s      : 3 !default;
+$product-grid-items-per-row-layout-3-screen-m      : '' !default;
+$product-grid-items-per-row-layout-3-screen-l      : '' !default;
+
+$product-grid-items-padding                        : 0 $indent__base $indent__base !default;
+$product-grid-items-margin                         : 0 0 $indent__s !default;
+
+$product-name-text-decoration                      : none !default;
+$product-name-text-decoration-hover                : $link__hover__text-decoration !default;
+
+$toolbar-mode-icon-font-size                       : 26px !default;
+$product-h1-margin-bottom-desktop                  : $indent__base !default;
