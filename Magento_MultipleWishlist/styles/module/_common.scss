@@ -368,9 +368,9 @@
             bottom: auto;
             top: $desktop-popup-position-top;
             left: $desktop-popup-position-left;
-            margin-left: $desktop-popup-margin-left;
-            width: $desktop-popup-width;
             right: auto;
+            width: $desktop-popup-width;
+            transform: translateX(-$desktop-popup-margin-left);
 
             .field {
                 @include lib-form-field-type-revert($_type: block);
