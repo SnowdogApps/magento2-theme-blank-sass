@@ -1,0 +1,459 @@
+//
+//  Common
+//  _____________________________________________
+
+.login-container {
+    .block {
+        &-new-customer {
+            .actions-toolbar {
+                margin-top: 25px;
+            }
+        }
+
+        .block-title {
+            @extend .abs-login-block-title;
+            font-size: 18px;
+        }
+    }
+
+    .fieldset {
+        @include lib-form-hasrequired(bottom);
+        &:after {
+            margin-top: 35px;
+        }
+    }
+}
+
+.block-addresses-list {
+    .items.addresses {
+        & > .item {
+            margin-bottom: $indent__base;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.form-address-edit {
+    .region select {
+        display: none;
+    }
+
+    .actions-toolbar .action.primary {
+        @extend .abs-button-l;
+    }
+}
+
+.form-edit-account {
+    .fieldset.password {
+        display: none;
+    }
+}
+
+.box-billing-address,
+.box-shipping-address,
+.box-information,
+.box-newsletter {
+    .box-content {
+        line-height: 26px;
+    }
+}
+
+//
+//  My account
+//  ---------------------------------------------
+
+.account {
+    .column.main {
+        h2 {
+            margin-top: 0;
+        }
+
+        .toolbar {
+            text-align: center;
+            .limiter-options {
+                width: auto;
+            }
+        }
+
+        .limiter {
+            >.label {
+                @extend .abs-visually-hidden;
+            }
+        }
+
+        .block:not(.widget) {
+            @extend .abs-account-blocks;
+        }
+    }
+
+    .sidebar-additional {
+        margin-top: 40px;
+    }
+
+    .table-wrapper {
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .action {
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .table-return-items {
+        .qty {
+            .input-text {
+                @extend .abs-input-qty;
+            }
+        }
+    }
+}
+
+//  Checkout address (create shipping address)
+.field.street {
+    .field.additional {
+        .label {
+            @extend .abs-visually-hidden;
+        }
+    }
+}
+
+//
+//  Account navigation
+//  ---------------------------------------------
+
+.account-nav {
+    .title {
+        @extend .abs-visually-hidden;
+    }
+
+    .content {
+        background: $account-nav-background;
+        padding: 15px 0;
+    }
+
+    .item {
+        margin: 3px 0 0;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        a,
+        & > strong {
+            color: $account-nav-color;
+            border-left: 3px solid transparent;
+            display: block;
+            padding: $indent__xs 18px $indent__xs 15px;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                background: $account-nav-item-hover;
+            }
+        }
+
+        &.current {
+            a,
+            strong {
+                border-color: $account-nav-current-border-color;
+                color: $account-nav-current-color;
+                font-weight: $account-nav-current-font-weight;
+            }
+
+            a {
+                border-color: $account-nav-current-border-color;
+            }
+        }
+    }
+}
+
+//
+//  Blocks & Widgets
+//  ---------------------------------------------
+
+.block {
+    @extend .abs-margin-for-blocks-and-widgets;
+    .column.main & {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .title {
+        margin-bottom: $indent__s;
+
+        strong {
+            @include lib-heading(h4);
+            .column.main & {
+                font-size: $h3__font-size;
+            }
+        }
+    }
+
+    p:last-child {
+        margin: 0;
+    }
+
+    .box-actions {
+        margin-top: $indent__xs;
+    }
+}
+
+//
+//  Password Strength Meter
+//  ---------------------------------------------
+
+.field.password {
+    .control {
+        display: flex;
+        flex-direction: column;
+        .mage-error {
+            order: 2;
+        }
+        .input-text {
+            order: 0;
+        }
+    }
+}
+
+.password-strength-meter {
+    background-color: $_password-default;
+    height: $form-element-input__height;
+    line-height: $form-element-input__height;
+    padding: $form-element-input__padding;
+    position: relative;
+    z-index: 1;
+
+    &:before {
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+
+    .password-strength-meter-0 & {
+        &:before {
+            background-color: $_password-default;
+            width: 100%;
+        }
+    }
+
+    .password-strength-meter-1 & {
+        &:before {
+            background-color: $_password-weak;
+            width: 25%;
+        }
+    }
+
+    .password-strength-meter-2 & {
+        &:before {
+            background-color: $_password-medium;
+            width: 50%;
+        }
+    }
+
+    .password-strength-meter-3 & {
+        &:before {
+            background-color: $_password-strong;
+            width: 75%;
+        }
+    }
+
+    .password-strength-meter-4 & {
+        &:before {
+            background-color: $_password-very-strong;
+            width: 100%;
+        }
+    }
+}
+
+.control.captcha-image {
+    margin-top: $indent__s;
+
+    .captcha-img {
+        vertical-align: middle;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__s) {
+    .account {
+        .column.main,
+        .sidebar-additional {
+            margin: 0;
+        }
+    }
+}
+
+@include max-screen($screen__m) {
+    .login-container {
+        .fieldset {
+            &:after {
+                text-align: center;
+            }
+        }
+    }
+
+    .account {
+        .page.messages {
+            margin-bottom: $indent__xl;
+        }
+
+        .toolbar {
+            @extend .abs-pager-toolbar-mobile;
+        }
+    }
+
+    .control.captcha-image {
+        .captcha-img {
+            margin-bottom: $indent__s;
+            display: block;
+        }
+    }
+
+    .customer-account-index {
+        .page-title-wrapper {
+            position: relative;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .login-container {
+        @extend .abs-add-clearfix-desktop;
+
+        .block {
+            @extend .abs-blocks-2columns;
+            &.login {
+                .actions-toolbar {
+                    & > .primary {
+                        margin-bottom: 0;
+                        margin-right: $indent__l;
+                    }
+
+                    & > .secondary {
+                        float: left;
+                    }
+                }
+            }
+        }
+
+        .fieldset {
+            &:after {
+                @extend .abs-margin-for-forms-desktop;
+            }
+
+            & > .field {
+                & > .control {
+                    width: 55%;
+                }
+            }
+        }
+    }
+
+    .form-create-account {
+        .fieldset-fullname {
+            .fields {
+                .field {
+                    float: left;
+                    margin: 0 $indent__s $indent__s 0;
+                }
+            }
+
+            .field-name-prefix,
+            .field-name-suffix {
+                width: 50px;
+            }
+        }
+    }
+
+    .form.password.reset,
+    .form.send.confirmation,
+    .form.password.forget,
+    .form.create.account {
+        min-width: 600px;
+        width: 50%;
+    }
+
+    //
+    //  My account
+    //  ---------------------------------------------
+
+    .account.page-layout-2columns-left {
+        .sidebar-main,
+        .sidebar-additional {
+            width: 22.3%;
+        }
+
+        .column.main {
+            width: 77.7%;
+        }
+    }
+
+    .account {
+        .column.main {
+            .block:not(.widget) {
+                .block-content {
+                    @extend .abs-add-clearfix-desktop;
+
+                    .box {
+                        @extend .abs-blocks-2columns;
+                    }
+                }
+            }
+        }
+
+        .toolbar {
+            @extend .abs-pager-toolbar;
+        }
+    }
+
+    .block-addresses-list {
+        .items.addresses {
+            @extend .abs-add-clearfix-desktop;
+
+            & > .item {
+                @extend .abs-blocks-2columns;
+                margin-bottom: $indent__base;
+
+                &:nth-last-child(1),
+                &:nth-last-child(2) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    //
+    //  Welcome block
+    //  ---------------------------------------------
+
+    .dashboard-welcome-toggler {
+        @extend .abs-visually-hidden-desktop;
+    }
+
+    .control.captcha-image {
+        .captcha-img {
+            margin: 0 $indent__s $indent__s 0;
+        }
+    }
+}

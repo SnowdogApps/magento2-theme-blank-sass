@@ -6,22 +6,22 @@
 //  Variables
 //  _____________________________________________
 
-$modal__background-color                        : $color-white;
-$modal__box-shadow                              : 0 0 12px 2px rgba(0, 0, 0, 0.35);
-$modal-popup__indent-vertical                   : 80px;
-$modal-popup__padding                           : 48px;
-$modal-popup__width                             : 75%;
-$modal-popup__z-index                           : $modal__z-index;
-$modal-slide__first__indent-left                : 236px;
-$modal-slide__indent-left                       : 72px;
-$modal-slide__padding                           : 41px;
-$modal-slide__z-index                           : $modal__z-index;
-$modal-slide-header__padding-vertical           : 33px;
-$modal-popup-confirm__width                     : 800px;
-$modal-popup-image-box__border-color            : $color-gray80;
-$modal-popup-image-box__max-width               : 1248px;
-$modal-popup-image-box-preview-image__max-height: 864px;
-$modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview-image__max-height + (2 * $indent__base);
+$modal__background-color                        : $color-white !default;
+$modal__box-shadow                              : 0 0 12px 2px rgba(0, 0, 0, 0.35) !default;
+$modal-popup__indent-vertical                   : 80px !default;
+$modal-popup__padding                           : 48px !default;
+$modal-popup__width                             : 75% !default;
+$modal-popup__z-index                           : $modal__z-index !default;
+$modal-slide__first__indent-left                : 236px !default;
+$modal-slide__indent-left                       : 72px !default;
+$modal-slide__padding                           : 41px !default;
+$modal-slide__z-index                           : $modal__z-index !default;
+$modal-slide-header__padding-vertical           : 33px !default;
+$modal-popup-confirm__width                     : 800px !default;
+$modal-popup-image-box__border-color            : $color-gray80 !default;
+$modal-popup-image-box__max-width               : 1248px !default;
+$modal-popup-image-box-preview-image__max-height: 864px !default;
+$modal-popup-image-box-preview__max-width       : $modal-popup-image-box-preview-image__max-height + (2 * $indent__base) !default;
 
 //
 //  Utilities

@@ -1,0 +1,244 @@
+//
+//  Common
+//  _____________________________________________
+
+.block-search {
+    margin-bottom: 0;
+
+    .block {
+        &-title {
+            display: none;
+        }
+    }
+
+    .block-content {
+        margin-bottom: 0;
+    }
+
+    .label {
+        @include lib-icon-font(
+            $_icon-font-content     : $icon-search,
+            $_icon-font-size        : 35px,
+            $_icon-font-line-height : 33px,
+            $_icon-font-color       : $minicart-icons-color,
+            $_icon-font-color-hover : $minicart-icons-color-hover,
+            $_icon-font-color-active: $minicart-icons-color-hover,
+            $_icon-font-text-hide   : true,
+            $_icon-font-display     : block
+        );
+        float: right;
+
+        &.active {
+            + .control {
+                input {
+                    position: static;
+                }
+            }
+        }
+    }
+
+    .action.search {
+        display: none;
+    }
+
+    .control {
+        border-top: 1px solid $border-color__base;
+        clear: both;
+        margin: 0 (-$layout__width-xs-indent) -1px;
+        padding: 0 $layout__width-xs-indent;
+    }
+
+    input {
+        left: -300%;
+        margin: 15px 0;
+        position: absolute;
+    }
+
+    .nested {
+        display: none;
+    }
+}
+
+.search-autocomplete {
+    @extend .abs-add-box-sizing;
+    display: none;
+    margin-top: -15px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+
+    ul {
+        @include lib-list-reset-styles();
+
+        li {
+            border-top: $autocomplete-item__border;
+            cursor: pointer;
+            margin: 0;
+            padding: $indent__xs $indent__xl $indent__xs $indent__s;
+            position: relative;
+            text-align: left;
+            white-space: normal;
+
+            &:not(:empty) {
+                border-top: 0;
+                border: $autocomplete__border;
+                background: $autocomplete__background-color;
+            }
+
+            &:first-child {
+                border-top: none;
+            }
+
+            &:hover,
+            &.selected {
+                background: $autocomplete-item__hover__color;
+            }
+
+            .amount {
+                color: $autocomplete-item-amount__color;
+                position: absolute;
+                right: 7px;
+                top: $indent__xs;
+            }
+        }
+    }
+}
+
+.form.search.advanced {
+    .fields.range {
+        .field {
+            &:first-child {
+                position: relative;
+
+                .control {
+                    padding-right: 25px;
+
+                    &:after {
+                        content: ' \2013 ';
+                        display: inline-block;
+                        position: absolute;
+                        right: 0;
+                        text-align: center;
+                        top: 6px;
+                        width: 25px;
+                    }
+                }
+            }
+
+            &:last-child {
+                position: relative;
+
+                div.mage-error[generated] {
+                    left: 0;
+                    position: absolute;
+                    top: 32px;
+                }
+            }
+
+            &.with-addon {
+                .control {
+                    padding-right: 45px;
+                }
+            }
+        }
+    }
+
+    .group.price {
+        .addon {
+            .addafter {
+                background: none;
+                border: 0;
+                padding-top: 6px;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.search.summary {
+    margin-bottom: $indent__s;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
+    .block-search {
+        .block-content {
+            margin-bottom: 0;
+        }
+    }
+}
+
+@include max-screen($screen__s) {
+    .block-search {
+        margin-top: $indent__s;
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .block-search {
+        float: right;
+        padding-left: 15px;
+        position: relative;
+        width: 250px;
+        z-index: 4;
+
+        .label {
+            @extend .abs-visually-hidden-desktop;
+        }
+
+        .control {
+            border-top: 0;
+            margin: 0;
+            padding: 0 0 25px;
+        }
+
+        .nested {
+            display: block;
+            padding-top: 5px;
+            position: absolute;
+        }
+
+        input {
+            @include lib-input-placeholder() {
+                color: $form-element-input-placeholder__color;
+            }
+            margin: 0;
+            padding-right: 35px;
+            position: static;
+        }
+
+        .action.search {
+            display: inline-block;
+            @include lib-button-icon(
+                $_icon-font-content  : $icon-search,
+                $_icon-font-text-hide: true,
+                $_icon-font-color    : $header-icons-color
+            );
+            @include lib-button-reset();
+            padding: $indent__xs 0;
+            position: absolute;
+            right: 10px;
+            top: 0;
+            z-index: 1;
+
+            &:focus {
+                &:before {
+                    color: $color-gray20;
+                }
+            }
+        }
+    }
+
+    .search-autocomplete {
+        margin-top: 0;
+    }
+}

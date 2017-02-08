@@ -1,0 +1,128 @@
+//
+//  Catalog Events
+//  _____________________________________________
+
+.block-category-event {
+    background: $catalog-event-background-color;
+    color: $catalog-event-color;
+    padding: $indent__s 0 15px;
+    text-align: center;
+
+    &.block:last-child {
+        margin-bottom: $indent__s;
+    }
+
+    .block-title {
+        margin: 0 0 $indent__s;
+
+        strong {
+            font-size: 15px;
+            font-weight: $font-weight__light;
+        }
+    }
+
+    .ticker {
+        @include lib-list-reset-styles();
+
+        li {
+            display: none;
+            margin: 0 15px;
+        }
+
+        .value {
+            font-size: 18px;
+            font-weight: $font-weight__light;
+        }
+
+        .label {
+            font-size: 10px;
+            display: block;
+            text-transform: lowercase;
+        }
+    }
+
+    .dates {
+        display: table;
+        margin: 0 auto;
+
+        .start,
+        .end {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .date {
+            font-size: 18px;
+        }
+
+        .time {
+            display: block;
+        }
+
+        .start {
+            padding-right: $indent__xl;
+            position: relative;
+
+            &:after {
+                font-size: 18px;
+                content: '\2013';
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 0;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .block-category-event {
+        &.block:last-child {
+            margin-bottom: $indent__l;
+            padding: $indent__s 0 $indent__l;
+        }
+
+        .block-title {
+            margin: 0;
+
+            strong {
+                font-size: 24px;
+            }
+        }
+
+        .ticker {
+            li {
+                display: none;
+                margin: 0 50px;
+            }
+
+            .value {
+                font-size: 60px;
+            }
+
+            .label {
+                font-size: 14px;
+                text-transform: none;
+            }
+        }
+
+        .dates {
+            .date {
+                font-size: 50px;
+            }
+
+            .start {
+                padding-right: 50px;
+
+                &:after {
+                    font-size: 50px;
+                    right: 10px;
+                }
+            }
+        }
+    }
+}

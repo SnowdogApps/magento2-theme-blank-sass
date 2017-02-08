@@ -2,28 +2,28 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-tooltip__hover__z-index              : $tooltip__z-index;
-$checkout-tooltip-breakpoint__screen-m         : $modal-popup-breakpoint-screen__m;
+$checkout-tooltip__hover__z-index              : $tooltip__z-index !default;
+$checkout-tooltip-breakpoint__screen-m         : $modal-popup-breakpoint-screen__m !default;
 
-$checkout-tooltip-icon-arrow__font-size        : 10px;
-$checkout-tooltip-icon-arrow__left             : -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width);
+$checkout-tooltip-icon-arrow__font-size        : 10px !default;
+$checkout-tooltip-icon-arrow__left             : -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width) !default;
 
-$checkout-tooltip-icon__color                  : $color-gray-light2;
-$checkout-tooltip-icon__content                : $icon-help;
-$checkout-tooltip-icon__font-size              : 24px;
-$checkout-tooltip-icon__hover__color           : $primary__color;
+$checkout-tooltip-icon__color                  : $color-gray-light2 !default;
+$checkout-tooltip-icon__content                : $icon-help !default;
+$checkout-tooltip-icon__font-size              : 24px !default;
+$checkout-tooltip-icon__hover__color           : $primary__color !default;
 
-$checkout-tooltip-content__background-color    : $color-gray-light01;
-$checkout-tooltip-content__border-color        : $color-gray60;
-$checkout-tooltip-content__border-width        : 1px;
-$checkout-tooltip-content__font-size           : $font-size__base;
-$checkout-tooltip-content__padding             : 12px;
-$checkout-tooltip-content__width               : 270px;
-$checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%);
+$checkout-tooltip-content__background-color    : $color-gray-light01 !default;
+$checkout-tooltip-content__border-color        : $color-gray60 !default;
+$checkout-tooltip-content__border-width        : 1px !default;
+$checkout-tooltip-content__font-size           : $font-size__base !default;
+$checkout-tooltip-content__padding             : 12px !default;
+$checkout-tooltip-content__width               : 270px !default;
+$checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%) !default;
 
-$checkout-tooltip-content-mobile-popup__width  : 200px;
-$checkout-tooltip-content-mobile__right        : -($indent__s);
-$checkout-tooltip-content-mobile__top          : 30px + $checkout-tooltip-icon-arrow__font-size;
+$checkout-tooltip-content-mobile-popup__width  : 200px !default;
+$checkout-tooltip-content-mobile__right        : -($indent__s) !default;
+$checkout-tooltip-content-mobile__top          : 30px + $checkout-tooltip-icon-arrow__font-size !default;
 
 //
 //  Common

@@ -2,9 +2,9 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-shipping-policy-action__color        : $link__color;
-$checkout-shipping-policy-tooltip__width       : 420px;
-$checkout-shipping-policy-tooltip-mobile__width: 300px;
+$checkout-shipping-policy-action__color        : $link__color !default;
+$checkout-shipping-policy-tooltip__width       : 420px !default;
+$checkout-shipping-policy-tooltip-mobile__width: 300px !default;
 
 //
 //  Common

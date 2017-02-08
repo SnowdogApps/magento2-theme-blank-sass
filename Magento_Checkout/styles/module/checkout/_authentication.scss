@@ -2,11 +2,11 @@
 //  Variables
 //  _____________________________________________
 
-$block-auth__dropdown__padding         : $indent__m;
-$block-auth__dropdown__background-color: $color-white;
-$block-auth__or-label__size            : 36px;
-$block-auth__width                     : 0;
-$block-auth__border                    : 1px solid $color-gray-light3;
+$block-auth__dropdown__padding         : $indent__m !default;
+$block-auth__dropdown__background-color: $color-white !default;
+$block-auth__or-label__size            : 36px !default;
+$block-auth__width                     : 0 !default;
+$block-auth__border                    : 1px solid $color-gray-light3 !default;
 
 //
 //  Common

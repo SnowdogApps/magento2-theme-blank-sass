@@ -2,14 +2,14 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-summary__background-color: $color-white-smoke;
-$checkout-summary__padding         : 22px $indent__l;
+$checkout-summary__background-color: $color-white-smoke !default;
+$checkout-summary__padding         : 22px $indent__l !default;
 
-$checkout-summary-title__margin    : $indent__s;
-$checkout-summary-mark-value__color: $color-gray60;
+$checkout-summary-title__margin    : $indent__s !default;
+$checkout-summary-mark-value__color: $color-gray60 !default;
 
-$checkout-summary-items__max-height: 370px;
-$checkout-summary-items__padding   : 15px;
+$checkout-summary-items__max-height: 370px !default;
+$checkout-summary-items__padding   : 15px !default;
 
 //
 //  Order Summary

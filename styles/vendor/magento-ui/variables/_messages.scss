@@ -2,32 +2,32 @@
 //  Messages variables
 //
 
-$message-icon__font-size: 28px;
-$message-icon__lateral-width: 30px;
-$message-icon__lateral-arrow-size: 5px;
-$message-icon__top: 18px;
-$message-icon__right: inherit;
-$message-icon__bottom: inherit;
-$message-icon__left: 0;
+$message-icon__font-size: 28px !default;
+$message-icon__lateral-width: 30px !default;
+$message-icon__lateral-arrow-size: 5px !default;
+$message-icon__top: 18px !default;
+$message-icon__right: inherit !default;
+$message-icon__bottom: inherit !default;
+$message-icon__left: 0 !default;
 
-$message__border-width: inherit;
-$message__border-color: inherit;
-$message__border-style: inherit;
-$message__border-radius: inherit;
+$message__border-width: inherit !default;
+$message__border-color: inherit !default;
+$message__border-style: inherit !default;
+$message__border-radius: inherit !default;
 
 // Default messages - info
 
-$message__color: $color-brownie1;
-$message__background: $color-yellow-light1;
+$message__color: $color-brownie1 !default;
+$message__background: $color-yellow-light1 !default;
 
-$message-icon: $icon-warning;
-$message-icon__color-inner: $color-brownie-light1;
-$message-icon__color-lateral: $color-white;
-$message-icon__background: $color-brownie1;
+$message-icon: $icon-warning !default;
+$message-icon__color-inner: $color-brownie-light1 !default;
+$message-icon__color-lateral: $color-white !default;
+$message-icon__background: $color-brownie1 !default;
 
-$message-link__color: $link__color;
-$message-link__color-hover: $link__hover__color;
-$message-link__color-active: $link__hover__color;
+$message-link__color: $link__color !default;
+$message-link__color-hover: $link__hover__color !default;
+$message-link__color-active: $link__hover__color !default;
 
 $messages-default: (
     color: $message__color,
@@ -44,7 +44,7 @@ $messages-default: (
     icon-right: $message-icon__right,
     icon-bottom: $message-icon__bottom,
     icon-left: $message-icon__left
-);
+) !default;
 
 $messages-error: (
     color: $error__color,
@@ -53,7 +53,7 @@ $messages-error: (
     icon-color-lateral: $color-white,
     icon-color-inner: $color-red11,
     icon-background: $color-red11
-);
+) !default;
 
 $messages-success: (
     color: $color-dark-green1,
@@ -62,4 +62,4 @@ $messages-success: (
     icon-color-lateral: $color-white,
     icon-color-inner: $color-dark-green1,
     icon-background: $color-dark-green1
-);
+) !default;

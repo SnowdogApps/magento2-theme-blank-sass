@@ -3,12 +3,12 @@
 
 ### Releases
 
-Using Magento 2.1? Use release [0.7.0 or later](https://github.com/SnowdogApps/magento2-theme-blank-sass/releases).  
+Using Magento 2.1? Use release [0.7.0 or later](https://github.com/SnowdogApps/magento2-theme-blank-sass/releases).
 Using Magento 2.0? Use release [0.6.0](https://github.com/SnowdogApps/magento2-theme-blank-sass/releases)
 
 ## Current status
 Theme is **ready to use** as Composer package with Magento 2.
-Still a lot of things needs to be fixed or polished, but it's definitely working :smile:
+Some things needs to be fixed or polished, but it's definitely working and is production ready.
 
 ## Installation
 1. Switch to your Magento project root

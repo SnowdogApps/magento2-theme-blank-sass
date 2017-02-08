@@ -1,0 +1,19 @@
+//
+//  Variables
+//  _____________________________________________
+
+$account-nav-background          : $sidebar__background-color !default;
+$account-nav-color               : false !default;
+
+$account-nav-current-border      : 3px solid transparent !default;
+$account-nav-current-border-color: $color-orange-red1 !default;
+$account-nav-current-color       : false !default;
+$account-nav-current-font-weight : $font-weight__semibold !default;
+
+$account-nav-item-hover          : $color-gray91 !default;
+
+$_password-default               : $color-gray-light01 !default;
+$_password-weak                  : #ffafae !default;
+$_password-medium                : #ffd6b3 !default;
+$_password-strong                : #c5eeac !default;
+$_password-very-strong           : #81b562 !default;
