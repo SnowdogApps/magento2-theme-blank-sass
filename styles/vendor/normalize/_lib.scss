@@ -1,3 +1,4 @@
+// sass-lint:disable-all
 // normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css
 html {
     font-family: sans-serif;
@@ -95,7 +96,9 @@ code,
 kbd,
 pre,
 samp {
+    /* stylelint-disable */
     font-family: monospace, monospace;
+    /* stylelint-enable */
     font-size: 1em;
 }
 figure {

@@ -82,7 +82,7 @@
 }
 
 .fotorama-no-tap {
-    tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); // sass-lint:disable-line no-vendor-prefixes
 }
 
 .transitionDuration {
