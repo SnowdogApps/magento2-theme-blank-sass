@@ -49,8 +49,8 @@
     text-overflow: ellipsis;
 
     &.text {
-        background: #F2F2F2;
-        color: #7F7F7F;
+        background: #f2f2f2;
+        color: #7f7f7f;
         font-size: 12px;
         font-weight: 700;
         line-height: 20px;
@@ -60,13 +60,13 @@
     }
 
     &.selected {
-        outline: 2px solid #FF5100;
+        outline: 2px solid #ff5100;
         border: 1px solid #fff;
         color: #333;
     }
 
     &.text.selected {
-        background-color: #FFF;
+        background-color: #fff;
     }
 
     &:not(.disabled):hover {
@@ -78,7 +78,7 @@
     &.color,
     &.image {
         &:not(.disabled):hover {
-            outline: 2px solid #FF5216;
+            outline: 2px solid #ff5216;
             border: 1px solid #fff;
         }
     }
