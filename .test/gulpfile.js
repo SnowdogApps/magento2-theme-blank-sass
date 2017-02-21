@@ -10,29 +10,30 @@ var gulp         = require('gulp'),
     sassLint     = require('gulp-sass-lint'),
     runSequence  = require('run-sequence'),
     postcss      = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer');
+    autoprefixer = require('autoprefixer'),
+    sourcemaps   = require('gulp-sourcemaps');
 
 var config = {
     ci: gutil.env.ci || false,
     postcss: [
-        autoprefixer({
-            browsers: ['> 1%', 'last 2 versions', 'not ie < 11', 'not OperaMini >= 5.0']
-        })
+        autoprefixer()
     ]
 };
 
 gulp.task('sass', () => {
     return gulp.src('../styles/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(
             sass({
-                outputStyle   : 'expanded',
+                outputStyle: 'expanded',
                 sourceComments: true
             })
-            /** @see sass.logError had to copy a part of this to generate a legitimate error status code */
             .on('error', sassError(config.ci))
         )
+        .pipe(sass().on('error', sass.logError))
         .pipe(postcss(config.postcss))
-        .pipe(gulp.dest('web/css'));
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('styles'));
 });
 
 gulp.task('sass-lint', () => {
@@ -43,7 +44,7 @@ gulp.task('sass-lint', () => {
 });
 
 gulp.task('css-lint', () => {
-    return gulp.src('../web/css/*.css')
+    return gulp.src('styles/*.css')
         .pipe(postcss([
             stylelint(),
             reporter({
