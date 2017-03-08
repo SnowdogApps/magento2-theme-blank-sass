@@ -28,7 +28,7 @@ $button__hover__background          : darken($button__background, 5%) !default;
 $button__active__background         : $color-gray-darken1 !default;
 
 //  Primary button
-$button-primary__hover__color: $color-white !default;
+$button-primary__hover__color       : $color-white !default;
 $button-primary__active__background : $link__hover__color !default;
 $button-primary__active__border     : 1px solid $link__hover__color !default;
 $button-primary__active__color      : $color-white !default;
