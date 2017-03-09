@@ -36,37 +36,70 @@ $form-element-input-placeholder__font-style: $form-element-input__font-style !de
 $form-validation-note__color-error         : $error__color !default;
 $form-element-validation__border-error     : lighten($form-validation-note__color-error, 20%) !default;
 
+$form-element-input-disabled__background   : $form-element-input__background !default;
+$form-element-input-disabled__border       : $form-element-input__border !default;
+$form-element-input-disabled__opacity      : 0.5 !default;
+$form-element-input-disabled__color        : $form-element-input__color !default;
+$form-element-input-disabled__font-style   : $form-element-input__font-style !default;
+
+$form-element-input-focus__background      : $form-element-input__background !default;
+$form-element-input-focus__border          : $form-element-input__border !default;
+$form-element-input-focus__color           : $form-element-input__color !default;
+$form-element-input-focus__font-style      : $form-element-input__font-style !default;
+
+$note__color                               : $error__color !default;
+$note__font-size                           : $font-size__s !default;
+$note__font-family                         : inherit !default;
+$note__font-style                          : inherit !default;
+$note__font-weight                         : inherit !default;
+$note__line-height                         : inherit !default;
+$note__margin                              : 3px 0 0 !default;
+$note__padding                             : inherit !default;
+$note__icon-use                            : inherit !default;
+
+$note-icon__font-content                   : $icon-pointer-up !default;
+$note-icon__font                           : $icon-font !default;
+$note-icon__font-size                      : $font-size__s * 2 !default;
+$note-icon__font-line-height               : $font-size__s * 2 !default;
+$note-icon__font-color                     : $error__color !default;
+$note-icon__font-color-hover               : inherit !default;
+$note-icon__font-color-active              : inherit !default;
+$note-icon__font-margin                    : inherit !default;
+$note-icon__font-vertical-align            : $icon-font__vertical-align !default;
+$note-icon__font-position                  : $icon-font__position !default;
+$note-icon__font-text-hide                 : $icon-font__text-hide !default;
+
 @mixin lib-form-element-input($_type) {
-    $_background                : $color-white;
-    $_border                    : 1px solid $form-element-input__border-color;
-    $_border-radius             : 1px;
+    $_background                : $form-element-input__background;
+    $_border                    : $form-element-input__border;
+    $_border-radius             : $form-element-input__border-radius;
     $_height                    : $form-element-input__height;
-    $_width                     : 100%;
-    $_margin                    : 0;
-    $_padding                   : 0 9px;
-    $_vertical-align            : baseline;
-    $_background-clip           : padding-box;
+    $_width                     : $form-element-input__width;
+    $_margin                    : $form-element-input__margin;
+    $_padding                   : $form-element-input__padding;
+    $_vertical-align            : $form-element-input__vertical-align;
+    $_background-clip           : $form-element-input__background-clip;
 
-    $_font-size                 : $font-size__base;
-    $_color                     : inherit;
-    $_font-family               : $font-family__base;
-    $_font-weight               : inherit;
-    $_line-height               : $line-height__base;
-    $_font-style                : inherit;
+    $_font-size                 : $form-element-input__font-size;
+    $_color                     : $form-element-input__color;
+    $_font-family               : $form-element-input__font-family;
+    $_font-weight               : $form-element-input__font-weight;
+    $_line-height               : $form-element-input__line-height;
+    $_font-style                : $form-element-input__font-style;
 
-    $_placeholder-color         : $color-gray76;
-    $_placeholder-font-style    : $_font-style;
+    $_placeholder-color         : $form-element-input-placeholder__color;
+    $_placeholder-font-style    : $form-element-input-placeholder__font-style;
 
-    $_disabled-background       : $_background;
-    $_disabled-border           : $_border;
-    $_disabled-opacity          : 0.5;
-    $_disabled-color            : $_color;
-    $_disabled-font-style       : $_font-style;
+    $_disabled-background       : $form-element-input-disabled__background;
+    $_disabled-border           : $form-element-input-disabled__border;
+    $_disabled-opacity          : $form-element-input-disabled__opacity;
+    $_disabled-color            : $form-element-input-disabled__color;
+    $_disabled-font-style       : $form-element-input-disabled__font-style;
 
-    $_focus-background          : $_background;
-    $_focus-border              : $_border;
-    $_focus-color               : $_color;
-    $_focus-font-style          : $_font-style;
+    $_focus-background          : $form-element-input-focus__background;
+    $_focus-border              : $form-element-input-focus__border;
+    $_focus-color               : $form-element-input-focus__color;
+    $_focus-font-style          : $form-element-input-focus__font-style;
 
     @if $_type == "select" {
         $_padding               : 4px;
@@ -87,6 +120,7 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
     background-clip: $_background-clip;
     border: $_border;
     border-radius: $_border-radius;
+    box-sizing: border-box;
     color: $_color;
     font-family: $_font-family;
     font-size: $_font-size;
@@ -98,7 +132,6 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
     padding: $_padding;
     vertical-align: $_vertical-align;
     width: $_width;
-    box-sizing: border-box;
 
     @include _lib-form-element-focus(
         $_background,
@@ -248,27 +281,27 @@ $form-element-validation__border-error     : lighten($form-validation-note__colo
 }
 
 @mixin lib-form-validation-note(
-    $_note-color                   : $error__color,
-    $_note-font-size               : $font-size__s,
-    $_note-font-family             : inherit,
-    $_note-font-style              : inherit,
-    $_note-font-weight             : inherit,
-    $_note-line-height             : inherit,
-    $_note-margin                  : 3px 0 0,
-    $_note-padding                 : inherit,
-    $_note-icon-use                : inherit,
+    $_note-color                   : $note__color,
+    $_note-font-size               : $note__font-size,
+    $_note-font-family             : $note__font-family,
+    $_note-font-style              : $note__font-style,
+    $_note-font-weight             : $note__font-weight,
+    $_note-line-height             : $note__line-height,
+    $_note-margin                  : $note__margin,
+    $_note-padding                 : $note__padding,
+    $_note-icon-use                : $note__icon-use,
 
-    $_note-icon-font-content       : $icon-pointer-up,
-    $_note-icon-font               : $icon-font,
-    $_note-icon-font-size          : $font-size__s * 2,
-    $_note-icon-font-line-height   : $font-size__s * 2,
-    $_note-icon-font-color         : $error__color,
-    $_note-icon-font-color-hover   : inherit,
-    $_note-icon-font-color-active  : inherit,
-    $_note-icon-font-margin        : inherit,
-    $_note-icon-font-vertical-align: $icon-font__vertical-align,
-    $_note-icon-font-position      : $icon-font__position,
-    $_note-icon-font-text-hide     : $icon-font__text-hide
+    $_note-icon-font-content       : $note-icon__font-content,
+    $_note-icon-font               : $note-icon__font,
+    $_note-icon-font-size          : $note-icon__font-size,
+    $_note-icon-font-line-height   : $note-icon__font-line-height,
+    $_note-icon-font-color         : $note-icon__font-color,
+    $_note-icon-font-color-hover   : $note-icon__font-color-active,
+    $_note-icon-font-color-active  : $note-icon__font-color-active,
+    $_note-icon-font-margin        : $note-icon__font-margin,
+    $_note-icon-font-vertical-align: $note-icon__font-vertical-align,
+    $_note-icon-font-position      : $note-icon__font-position,
+    $_note-icon-font-text-hide     : $note-icon__font-text-hide
 ) {
     @include lib-typography(
         $_font-size  : $_note-font-size,
