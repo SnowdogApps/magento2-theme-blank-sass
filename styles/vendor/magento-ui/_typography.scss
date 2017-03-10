@@ -176,8 +176,8 @@
         $_font-style
     );
 
-    margin-top: $font-size__base / 2;
-    margin-bottom: $font-size__base / 2;
+    margin-top: $_margin-top;
+    margin-bottom: $_margin-bottom;
 }
 
 //
