@@ -2,118 +2,107 @@
 //  Forms
 //  _____________________________________________
 
-//
-// variable
-
-$form-field-label-asterisk__color          : $color-red10 !default;
-$form-field-label-asterisk__font-size      : $font-size__s !default;
-$form-field-label-asterisk__font-family    : inherit !default;
-$form-field-label-asterisk__font-weight    : inherit !default;
-$form-field-label-asterisk__font-style     : inherit !default;
-$form-field-label-asterisk__line-height    : inherit !default;
-$form-field-label-asterisk__margin         : 0 0 0 $indent__xs !default;
-
-$form-element-input__background            : $color-white !default;
-$form-element-input__border-color          : $color-gray76 !default;
-$form-element-input__border                : 1px solid $form-element-input__border-color !default;
-$form-element-input__border-radius         : 1px !default;
-$form-element-input__height                : 32px !default;
-$form-element-input__width                 : 100% !default;
-$form-element-input__margin                : 0 !default;
-$form-element-input__padding               : 0 9px !default;
-$form-element-input__vertical-align        : baseline !default;
-$form-element-input__background-clip       : padding-box !default; // [border-box|content-box|padding-box]
-$form-element-input__font-size             : $font-size__base !default;
-$form-element-input__color                 : inherit !default;
-$form-element-input__font-family           : $font-family__base !default;
-$form-element-input__font-weight           : inherit !default;
-$form-element-input__font-style            : inherit !default;
-$form-element-input__line-height           : $line-height__base !default;
-
-$form-element-input-placeholder__color     : $color-gray76 !default;
-$form-element-input-placeholder__font-style: $form-element-input__font-style !default;
-
-$form-validation-note__color-error         : $error__color !default;
-$form-element-validation__border-error     : lighten($form-validation-note__color-error, 20%) !default;
-
-$form-element-input-disabled__background   : $form-element-input__background !default;
-$form-element-input-disabled__border       : $form-element-input__border !default;
-$form-element-input-disabled__opacity      : 0.5 !default;
-$form-element-input-disabled__color        : $form-element-input__color !default;
-$form-element-input-disabled__font-style   : $form-element-input__font-style !default;
-
-$form-element-input-focus__background      : $form-element-input__background !default;
-$form-element-input-focus__border          : $form-element-input__border !default;
-$form-element-input-focus__color           : $form-element-input__color !default;
-$form-element-input-focus__font-style      : $form-element-input__font-style !default;
-
-$note__color                               : $error__color !default;
-$note__font-size                           : $font-size__s !default;
-$note__font-family                         : inherit !default;
-$note__font-style                          : inherit !default;
-$note__font-weight                         : inherit !default;
-$note__line-height                         : inherit !default;
-$note__margin                              : 3px 0 0 !default;
-$note__padding                             : inherit !default;
-$note__icon-use                            : inherit !default;
-
-$note-icon__font-content                   : $icon-pointer-up !default;
-$note-icon__font                           : $icon-font !default;
-$note-icon__font-size                      : $font-size__s * 2 !default;
-$note-icon__font-line-height               : $font-size__s * 2 !default;
-$note-icon__font-color                     : $error__color !default;
-$note-icon__font-color-hover               : inherit !default;
-$note-icon__font-color-active              : inherit !default;
-$note-icon__font-margin                    : inherit !default;
-$note-icon__font-vertical-align            : $icon-font__vertical-align !default;
-$note-icon__font-position                  : $icon-font__position !default;
-$note-icon__font-text-hide                 : $icon-font__text-hide !default;
 
 @mixin lib-form-element-input($_type) {
-    $_background                : $form-element-input__background;
-    $_border                    : $form-element-input__border;
-    $_border-radius             : $form-element-input__border-radius;
-    $_height                    : $form-element-input__height;
-    $_width                     : $form-element-input__width;
-    $_margin                    : $form-element-input__margin;
-    $_padding                   : $form-element-input__padding;
-    $_vertical-align            : $form-element-input__vertical-align;
-    $_background-clip           : $form-element-input__background-clip;
+    $_background                    : $form-element-input__background;
+    $_border                        : $form-element-input__border;
+    $_border-radius                 : $form-element-input__border-radius;
+    $_height                        : $form-element-input__height;
+    $_width                         : $form-element-input__width;
+    $_margin                        : $form-element-input__margin;
+    $_padding                       : $form-element-input__padding;
+    $_vertical-align                : $form-element-input__vertical-align;
+    $_background-clip               : $form-element-input__background-clip;
 
-    $_font-size                 : $form-element-input__font-size;
-    $_color                     : $form-element-input__color;
-    $_font-family               : $form-element-input__font-family;
-    $_font-weight               : $form-element-input__font-weight;
-    $_line-height               : $form-element-input__line-height;
-    $_font-style                : $form-element-input__font-style;
+    $_font-size                     : $form-element-input__font-size;
+    $_color                         : $form-element-input__color;
+    $_font-family                   : $form-element-input__font-family;
+    $_font-weight                   : $form-element-input__font-weight;
+    $_line-height                   : $form-element-input__line-height;
+    $_font-style                    : $form-element-input__font-style;
 
-    $_placeholder-color         : $form-element-input-placeholder__color;
-    $_placeholder-font-style    : $form-element-input-placeholder__font-style;
+    $_placeholder-color             : $form-element-input-placeholder__color;
+    $_placeholder-font-style        : $form-element-input-placeholder__font-style;
 
-    $_disabled-background       : $form-element-input-disabled__background;
-    $_disabled-border           : $form-element-input-disabled__border;
-    $_disabled-opacity          : $form-element-input-disabled__opacity;
-    $_disabled-color            : $form-element-input-disabled__color;
-    $_disabled-font-style       : $form-element-input-disabled__font-style;
+    $_disabled-background           : $form-element-input__disabled__background;
+    $_disabled-border               : $form-element-input__disabled__border;
+    $_disabled-opacity              : $form-element-input__disabled__opacity;
+    $_disabled-color                : $form-element-input__disabled__color;
+    $_disabled-font-style           : $form-element-input__disabled__font-style;
 
-    $_focus-background          : $form-element-input-focus__background;
-    $_focus-border              : $form-element-input-focus__border;
-    $_focus-color               : $form-element-input-focus__color;
-    $_focus-font-style          : $form-element-input-focus__font-style;
+    $_focus-background              : $form-element-input__focus__background;
+    $_focus-border                  : $form-element-input__focus__border;
+    $_focus-color                   : $form-element-input__focus__color;
+    $_focus-font-style              : $form-element-input__focus__font-style;
 
     @if $_type == "select" {
-        $_padding               : 4px;
-        $_placeholder-color     : inherit;
-        $_placeholder-font-style: inherit;
+        $_background                : $select__background;
+        $_border                    : $select__border;
+        $_border-radius             : $select__border-radius;
+        $_height                    : $select__height;
+        $_width                     : $select__width;
+        $_margin                    : $select__margin;
+        $_padding                   : $select__padding;
+        $_vertical-align            : $select__vertical-align;
+        $_background-clip           : $select__background-clip;
+
+        $_font-size                 : $select__font-size;
+        $_color                     : $select__color;
+        $_font-family               : $select__font-family;
+        $_font-weight               : $select__font-weight;
+        $_line-height               : $select__line-height;
+        $_font-style                : $select__font-style;
+
+        $_placeholder-color         : $select-placeholder__color;
+        $_placeholder-font-style    : $select-placeholder__font-style;
+
+        $_disabled-background       : $select__disabled__background;
+        $_disabled-border           : $select__disabled__border;
+        $_disabled-opacity          : $select__disabled__opacity;
+        $_disabled-color            : $select__disabled__color;
+        $_disabled-font-style       : $select__disabled__font-style;
+
+        $_focus-background          : $select__focus__background;
+        $_focus-border              : $select__focus__border;
+        $_focus-color               : $select__focus__color;
+        $_focus-font-style          : $select__focus__font-style;
     }
     @else if $_type == "textarea" {
-        $_height                : auto;
-        $_padding               : $indent__s;
-        $_margin                : 0;
+        $_background                : $textarea__background;
+        $_border                    : $textarea__border;
+        $_border-radius             : $textarea__border-radius;
+        $_height                    : $textarea__height;
+        $_width                     : $textarea__width;
+        $_margin                    : $textarea__margin;
+        $_padding                   : $textarea__padding;
+        $_vertical-align            : $textarea__vertical-align;
+        $_background-clip           : $textarea__background-clip;
+
+        $_font-size                 : $textarea__font-size;
+        $_color                     : $textarea__color;
+        $_font-family               : $textarea__font-family;
+        $_font-weight               : $textarea__font-weight;
+        $_line-height               : $textarea__line-height;
+        $_font-style                : $textarea__font-style;
+
+        $_placeholder-color         : $textarea-placeholder__color;
+        $_placeholder-font-style    : $textarea-placeholder__font-style;
+
+        $_disabled-background       : $textarea__disabled__background;
+        $_disabled-border           : $textarea__disabled__border;
+        $_disabled-opacity          : $textarea__disabled__opacity;
+        $_disabled-color            : $textarea__disabled__color;
+        $_disabled-font-style       : $textarea__disabled__font-style;
+
+        $_focus-background          : $textarea__focus__background;
+        $_focus-border              : $textarea__focus__border;
+        $_focus-color               : $textarea__focus__color;
+        $_focus-font-style          : $textarea__focus__font-style;
     }
     @else if $_type == "input-radio" or $_type == "input-checkbox" {
-        $_margin                : 2px $indent__xs 0 0;
-        $_vertical-align        : inherit;
+        $_margin                : $form-element-choice__margin;
+        $_vertical-align        : $form-element-choice__vertical-align;
+        $_disabled-opacity      : $form-element-choice__disabled__opacity;
     }
 
     background: $_background;
@@ -281,27 +270,27 @@ $note-icon__font-text-hide                 : $icon-font__text-hide !default;
 }
 
 @mixin lib-form-validation-note(
-    $_note-color                   : $note__color,
-    $_note-font-size               : $note__font-size,
-    $_note-font-family             : $note__font-family,
-    $_note-font-style              : $note__font-style,
-    $_note-font-weight             : $note__font-weight,
-    $_note-line-height             : $note__line-height,
-    $_note-margin                  : $note__margin,
-    $_note-padding                 : $note__padding,
-    $_note-icon-use                : $note__icon-use,
+    $_note-color                   : $form-validation-note__color-error,
+    $_note-font-size               : $form-validation-note__font-size,
+    $_note-font-family             : $form-validation-note__font-family,
+    $_note-font-style              : $form-validation-note__font-style,
+    $_note-font-weight             : $form-validation-note__font-weight,
+    $_note-line-height             : $form-validation-note__line-height,
+    $_note-margin                  : $form-validation-note__margin,
+    $_note-padding                 : $form-validation-note__padding,
+    $_note-icon-use                : $form-validation-note-icon__use,
 
-    $_note-icon-font-content       : $note-icon__font-content,
-    $_note-icon-font               : $note-icon__font,
-    $_note-icon-font-size          : $note-icon__font-size,
-    $_note-icon-font-line-height   : $note-icon__font-line-height,
-    $_note-icon-font-color         : $note-icon__font-color,
-    $_note-icon-font-color-hover   : $note-icon__font-color-active,
-    $_note-icon-font-color-active  : $note-icon__font-color-active,
-    $_note-icon-font-margin        : $note-icon__font-margin,
-    $_note-icon-font-vertical-align: $note-icon__font-vertical-align,
-    $_note-icon-font-position      : $note-icon__font-position,
-    $_note-icon-font-text-hide     : $note-icon__font-text-hide
+    $_note-icon-font-content       : $form-validation-note-icon__font-content,
+    $_note-icon-font               : $form-validation-note-icon__font,
+    $_note-icon-font-size          : $form-validation-note-icon__font-size,
+    $_note-icon-font-line-height   : $form-validation-note-icon__font-line-height,
+    $_note-icon-font-color         : $form-validation-note-icon__font-color,
+    $_note-icon-font-color-hover   : $form-validation-note-icon__font-color-hover,
+    $_note-icon-font-color-active  : $form-validation-note-icon__font-color-active,
+    $_note-icon-font-margin        : $form-validation-note-icon__font-margin,
+    $_note-icon-font-vertical-align: $form-validation-note-icon__font-vertical-align,
+    $_note-icon-font-position      : $form-validation-note-icon__font-position,
+    $_note-icon-font-text-hide     : $form-validation-note-icon__font-text-hide
 ) {
     @include lib-typography(
         $_font-size  : $_note-font-size,
@@ -595,18 +584,18 @@ $note-icon__font-text-hide                 : $icon-font__text-hide !default;
 }
 
 @mixin lib-form-fieldset(
-    $_border            : 0,
-    $_margin            : 0 0 $indent__xl,
-    $_padding           : 0,
-    $_legend-color      : inherit,
-    $_legend-font-size  : 20px,
-    $_legend-font-family: inherit,
-    $_legend-font-weight: inherit,
-    $_legend-font-style : inherit,
-    $_legend-line-height: 1.2,
-    $_legend-margin     : 0 0 $indent__m,
-    $_legend-padding    : 0,
-    $_legend-width      : inherit
+    $_border            : $form-fieldset__border,
+    $_margin            : $form-fieldset__margin,
+    $_padding           : $form-fieldset__padding,
+    $_legend-color      : $form-fieldset-legend__color,
+    $_legend-font-size  : $form-fieldset-legend__font-size,
+    $_legend-font-family: $form-fieldset-legend__font-family,
+    $_legend-font-weight: $form-fieldset-legend__font-weight,
+    $_legend-font-style : $form-fieldset-legend__font-style,
+    $_legend-line-height: $form-fieldset-legend__line-height,
+    $_legend-margin     : $form-fieldset-legend__margin,
+    $_legend-padding    : $form-fieldset-legend__padding,
+    $_legend-width      : $form-fieldset-legend__width
 ) {
     border: $_border;
     margin: $_margin;
@@ -646,63 +635,63 @@ $note-icon__font-text-hide                 : $icon-font__text-hide !default;
 }
 
 @mixin lib-form-field(
-    $_type                         : block,
+    $_type                         : $form-field-type,
 
-    $_type-inline-margin           : 0 0 $indent__base,
-    $_type-inline-label-margin     : false,
-    $_type-inline-label-padding    : 6px 15px 0 0,
-    $_type-inline-label-align      : right,
-    $_type-inline-label-width      : 25.8%,
-    $_type-inline-control-width    : 74.2%,
+    $_type-inline-margin           : $form-field-type-label-inline__margin,
+    $_type-inline-label-margin     : $form-field-type-label-inline__margin,
+    $_type-inline-label-padding    : $form-field-type-label-inline__padding,
+    $_type-inline-label-align      : $form-field-type-label-inline__align,
+    $_type-inline-label-width      : $form-field-type-label-inline__width,
+    $_type-inline-control-width    : $form-field-type-control-inline__width,
 
-    $_type-block-margin            : 0 0 $indent__base,
-    $_type-block-label-margin      : 0 0 $indent__xs,
-    $_type-block-label-padding     : inherit,
-    $_type-block-label-align       : inherit,
+    $_type-block-margin            : $form-field-type-label-block__margin,
+    $_type-block-label-margin      : $form-field-type-label-block__margin,
+    $_type-block-label-padding     : $form-field-type-label-block__padding,
+    $_type-block-label-align       : $form-field-type-label-block__align,
 
-    $_vertical-indent              : $indent__base,
-    $_additional-vertical-indent   : $indent__base / 2,
+    $_vertical-indent              : $form-field__vertical-indent,
+    $_additional-vertical-indent   : $form-field__additional-vertical-indent,
 
-    $_border                       : none,
-    $_column                       : inherit,
-    $_column-padding               : 0 12px 0 0,
-    $_column-number                : 2,
+    $_border                       : $form-field__border,
+    $_column                       : $form-field-column,
+    $_column-padding               : $form-field-column__padding,
+    $_column-number                : $form-field-column__number,
 
-    $_label-color                  : inherit,
-    $_label-font-size              : inherit,
-    $_label-font-family            : inherit,
+    $_label-color                  : $form-field-label__color,
+    $_label-font-size              : $form-field-label__font-size,
+    $_label-font-family            : $form-field-label__font-family,
     $_label-font-weight            : $font-weight__bold,
-    $_label-font-style             : inherit,
-    $_label-line-height            : inherit,
+    $_label-font-style             : $form-field-label__font-style,
+    $_label-line-height            : $form-field-label__line-height,
 
-    $_label-asterisk-color         : $color-red10,
-    $_label-asterisk-font-size     : $font-size__s,
-    $_label-asterisk-font-family   : inherit,
-    $_label-asterisk-font-weight   : inherit,
-    $_label-asterisk-font-style    : inherit,
-    $_label-asterisk-line-height   : inherit,
-    $_label-asterisk-margin        : 0 0 0 $indent__xs,
+    $_label-asterisk-color         : $form-field-label-asterisk__color,
+    $_label-asterisk-font-size     : $form-field-label-asterisk__font-size,
+    $_label-asterisk-font-family   : $form-field-label-asterisk__font-family,
+    $_label-asterisk-font-weight   : $form-field-label-asterisk__font-weight,
+    $_label-asterisk-font-style    : $form-field-label-asterisk__font-style,
+    $_label-asterisk-line-height   : $form-field-label-asterisk__line-height,
+    $_label-asterisk-margin        : $form-field-label-asterisk__margin,
 
     $_note-color                   : $form-field-note__color,
-    $_note-font-size               : $font-size__s,
-    $_note-font-family             : inherit,
-    $_note-font-weight             : inherit,
-    $_note-line-height             : inherit,
-    $_note-font-style              : inherit,
-    $_note-margin                  : 3px 0 0,
-    $_note-padding                 : 0,
+    $_note-font-size               : $form-field-note__font-size,
+    $_note-font-family             : $form-field-note__font-family,
+    $_note-font-weight             : $form-field-note__font-weight,
+    $_note-line-height             : $form-field-note__line-height,
+    $_note-font-style              : $form-field-note__font-style,
+    $_note-margin                  : $form-field-note__margin,
+    $_note-padding                 : $form-field-note__padding,
 
-    $_note-icon-font               : $icon-font,
-    $_note-icon-font-content       : $icon-pointer-up,
-    $_note-icon-font-size          : $font-size__s * 2,
-    $_note-icon-font-line-height   : $font-size__s,
-    $_note-icon-font-color         : inherit,
-    $_note-icon-font-color-hover   : inherit,
-    $_note-icon-font-color-active  : inherit,
-    $_note-icon-font-margin        : inherit,
-    $_note-icon-font-vertical-align: $icon-font__vertical-align,
-    $_note-icon-font-position      : $icon-font__position,
-    $_note-icon-font-text-hide     : $icon-font__text-hide
+    $_note-icon-font               : $form-field-note-icon-font,
+    $_note-icon-font-content       : $form-field-note-icon-font__content,
+    $_note-icon-font-size          : $form-field-note-icon-font__size,
+    $_note-icon-font-line-height   : $form-field-note-icon-font__line-height,
+    $_note-icon-font-color         : $form-field-note-icon-font__color,
+    $_note-icon-font-color-hover   : $form-field-note-icon-font__color-hover,
+    $_note-icon-font-color-active  : $form-field-note-icon-font__color-active,
+    $_note-icon-font-margin        : $form-field-note-icon-font__margin,
+    $_note-icon-font-vertical-align: $form-field-note-icon-font__vertical-align,
+    $_note-icon-font-position      : $form-field-note-icon-font__position,
+    $_note-icon-font-text-hide     : $form-field-note-icon-font__text-hide
 ) {
     border: $_border;
 
@@ -1140,16 +1129,16 @@ $note-icon__font-text-hide                 : $icon-font__text-hide !default;
 }
 
 @mixin lib-form-hasrequired(
-    $_position   : top,
-    $_color      : $color-red10,
-    $_font-size  : $font-size__s,
-    $_font-family: inherit,
-    $_font-weight: inherit,
-    $_font-style : inherit,
-    $_line-height: inherit,
-    $_border     : none,
-    $_margin     : $indent__s 0 0,
-    $_padding    : inherit
+    $_position   : $form-hasrequired__position,
+    $_color      : $form-hasrequired__color,
+    $_font-size  : $form-hasrequired__font-size,
+    $_font-family: $form-hasrequired__font-family,
+    $_font-weight: $form-hasrequired__font-weight,
+    $_font-style : $form-hasrequired__font-style,
+    $_line-height: $form-hasrequired__line-height,
+    $_border     : $form-hasrequired__border,
+    $_margin     : $form-hasrequired__margin,
+    $_padding    : $form-hasrequired__padding
 ) {
     @if $_position == "top" {
         &:before {
