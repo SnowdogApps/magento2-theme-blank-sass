@@ -947,7 +947,8 @@
     $_line-height: inherit,
     $_margin     : 0 0 0 $indent__xs
 ) {
-    &.required > .label {
+    &.required > .label,
+    &._required > .label {
         &:after {
             content: '*';
             @include lib-typography(
