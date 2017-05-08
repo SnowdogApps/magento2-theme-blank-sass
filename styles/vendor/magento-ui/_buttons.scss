@@ -138,9 +138,9 @@
 //  ---------------------------------------------
 
 @mixin lib-button-l(
-    $_button-l-font-size: $font-size__l,
-    $_button-l-height   : $font-size__l + 4,
-    $_button-l-padding  : 14px 17px
+    $_button-l-font-size: $button__font-size__l,
+    $_button-l-height   : $button__line-height__l,
+    $_button-l-padding  : $button__padding__l
 ) {
     @include lib-button-size(
         $_button-line-height: $_button-l-height,
@@ -154,9 +154,9 @@
 //  ---------------------------------------------
 
 @mixin lib-button-s(
-    $_button-s-font-size: 11px,
-    $_button-s-height   : $button__font-size__s + 1,
-    $_button-s-padding  : $indent__xs 8px
+    $_button-s-font-size: $button__font-size__s,
+    $_button-s-height   : $button__line-height__s,
+    $_button-s-padding  : $button__padding__s
 ) {
     @include lib-button-size(
         $_button-line-height: $_button-s-height,
