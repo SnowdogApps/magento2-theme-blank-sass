@@ -13,13 +13,13 @@
     $_button-disabled-opacity           : 0.5,
     $_button-width                      : auto,
     $_button-margin                     : 0,
-    $_button-padding                    : 7px 15px,
-    $_button-color                      : $primary__color,
-    $_button-background                 : $color-gray95,
-    $_button-border                     : 1px solid $color-gray-darken2,
+    $_button-padding                    : $button__padding,
+    $_button-color                      : $button__color,
+    $_button-background                 : $button__background,
+    $_button-border                     : $button__border,
 
-    $_button-color-hover                : $color-gray-darken3,
-    $_button-background-hover           : $color-gray-darken1,
+    $_button-color-hover                : $button__hover__color,
+    $_button-background-hover           : $button__hover__background,
     $_button-border-hover               : $_button-border,
 
     $_button-color-active               : $_button-color,
@@ -125,7 +125,7 @@
 
 @mixin lib-button-size(
     $_button-line-height: $button__line-height,
-    $_button-padding    : 7px 15px
+    $_button-padding    : $button__padding
 ) {
     @include lib-line-height($_button-line-height);
     padding: $_button-padding;
@@ -269,7 +269,7 @@
     $_button-line-height                : $font-size__base + 2,
     $_button-width                      : auto,
     $_button-margin                     : 0,
-    $_button-padding                    : 7px 15px,
+    $_button-padding                    : $button__padding,
 
     $_button-color                      : $color-white,
     $_button-border                     : 1px solid $color-blue1,
@@ -361,7 +361,7 @@
 @mixin lib-button-revert-secondary-size(
     $_button-font-size  : $button__font-size,
     $_button-line-height: $button__line-height,
-    $_button-padding    : 7px 15px
+    $_button-padding    : $button__padding
 ) {
     font-size: $_button-font-size;
     @include lib-button-size(
