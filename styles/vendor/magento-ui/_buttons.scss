@@ -3,7 +3,7 @@
 //  _____________________________________________
 
 @mixin lib-button(
-    $_button-font-family                : $font-family__base,
+    $_button-font-family                : $button__font-family,
     $_button-font-size                  : $font-size__base,
     $_button-font-weight                : $font-weight__bold,
     $_button-line-height                : $font-size__base + 2,
@@ -17,6 +17,7 @@
     $_button-color                      : $button__color,
     $_button-background                 : $button__background,
     $_button-border                     : $button__border,
+    $_button-border-radius              : $button__border-radius,
 
     $_button-color-hover                : $button__hover__color,
     $_button-background-hover           : $button__hover__background,
@@ -57,6 +58,7 @@
         $_button-gradient
     );
     border: $_button-border;
+    border-radius: $_button-border-radius;
     color: $_button-color;
     cursor: $_button-cursor;
     display: $_button-display;
