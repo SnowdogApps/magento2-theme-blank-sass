@@ -269,18 +269,18 @@
     $_button-line-height                : $font-size__base + 2,
     $_button-width                      : auto,
     $_button-margin                     : 0,
-    $_button-padding                    : $button__padding,
+    $_button-padding                    : $button-primary__padding,
 
-    $_button-color                      : $color-white,
-    $_button-border                     : 1px solid $color-blue1,
-    $_button-background                 : $color-blue1,
+    $_button-color                      : $button-primary__color,
+    $_button-border                     : $button-primary__border,
+    $_button-background                 : $button-primary__background,
 
-    $_button-color-hover                : $_button-color,
-    $_button-border-hover               : $_button-border,
-    $_button-background-hover           : $color-blue2,
+    $_button-color-hover                : $button-primary__hover__color,
+    $_button-border-hover               : $button-primary__hover__border,
+    $_button-background-hover           : $button-primary__hover__background,
 
-    $_button-color-active               : $_button-color,
-    $_button-border-active              : $_button-border,
+    $_button-color-active               : $button-primary__active__color,
+    $_button-border-active              : $button-primary__active__border,
     $_button-background-active          : $button-primary__active__background,
 
     $_button-gradient                   : inherit,
@@ -324,13 +324,13 @@
 //  ---------------------------------------------
 
 @mixin lib-button-revert-secondary-color(
-    $_button-color            : $primary__color,
-    $_button-background       : $color-gray95,
-    $_button-border           : 1px solid $color-gray-darken2,
+    $_button-color            : $button__color,
+    $_button-background       : $button__background,
+    $_button-border           : $button__border,
 
-    $_button-color-hover      : $color-gray-darken3,
-    $_button-background-hover : $color-gray-darken1,
-    $_button-border-hover     : $_button-border,
+    $_button-color-hover      : $button__hover__color,
+    $_button-background-hover : $button__hover__background,
+    $_button-border-hover     : $button__active__background,
 
     $_button-color-active     : $_button-color,
     $_button-background-active: $_button-background-hover,
