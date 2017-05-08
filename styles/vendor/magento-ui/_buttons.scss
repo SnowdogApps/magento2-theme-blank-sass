@@ -2,50 +2,6 @@
 //  Buttons
 //  _____________________________________________
 
-//
-//  Button with solid or pictire background
-//  ---------------------------------------------
-
-$button-icon__position: $icon__position;
-$button-icon__font: $icon-font;
-$button-icon__font-size: 22px;
-$button-icon__line-height: $button-icon__font-size;
-$button-icon__margin: 0;
-$button-icon__color: inherit;
-$button-icon__hover__font-color: inherit;
-$button-icon__active__font-color: inherit;
-
-$button__font-size: $font-size__base;
-$button__font-weight: $font-weight__semibold;
-$button__line-height: $line-height__base;
-
-//  Default = secondary button
-$button__background: $color-gray-darken0;
-$button__border: 1px solid $border-color__base;
-$button__border-radius: 3px;
-// $button__hover__color: $button__color;
-$button__hover__background: darken($button__background, 5%);
-$button__active__background: $color-gray-darken1;
-
-//  Primary button
-$button-primary__hover__color: $color-white;
-$button-primary__active__background: $link__hover__color;
-$button-primary__active__border: 1px solid $link__hover__color;
-$button-primary__active__color: $color-white;
-
-$button__shadow: none;
-$button__shadow-active: none;
-
-//  Large button
-$button__font-size__l: $font-size__l;
-$button__line-height__l: $font-size__l + 4;
-$button__padding__l: 14px 17px;
-
-//  Small button
-$button__font-size__s: 11px;
-$button__line-height__s: $button__font-size__s + 1;
-$button__padding__s: $indent__xs 8px;
-
 @mixin lib-button(
     $_button-font-family                : $font-family__base,
     $_button-font-size                  : $font-size__base,
