@@ -93,6 +93,7 @@ $product-name-link__color__hover: $link__hover__color !default;
 $product-name-link__text-decoration__hover: $link__hover__text-decoration !default;
 $product-name-link__color__active: $link__active__color !default;
 $product-name-link__text-decoration__active: $link__active__text-decoration !default;
+
 //
 //  Lists
 //  ---------------------------------------------
@@ -133,6 +134,7 @@ $heading__color__base: inherit !default;
 $heading__font-style__base: inherit !default;
 $heading__margin-top__base: $indent__base !default;
 $heading__margin-bottom__base: $indent__base !default;
+$heading__text-transform__base: none !default;
 $h1__font-size-desktop: ceil(($font-size__base * 2.85)) !default; // 40px
 $h1__margin-bottom__desktop: $indent__xl !default;
 
@@ -145,7 +147,8 @@ $heading-default: (
     font-style       : $heading__font-style__base,
     margin-top       : $heading__margin-top__base,
     margin-bottom    : $heading__margin-bottom__base,
-    font-size-desktop: $h1__font-size-desktop
+    font-size-desktop: $h1__font-size-desktop,
+    text-transform   : $heading__text-transform__base
 ) !default;
 
 $heading-h1: (
