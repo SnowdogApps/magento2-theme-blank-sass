@@ -33,10 +33,10 @@ $button__shadow__hover: $button__shadow !default;
 $button__gradient-color-start__hover: inherit !default;
 $button__gradient-color-end__hover: inherit !default;
 
-$button__color__active: $button__color !default;
+$button__color__active: $button__color__hover !default;
 $button__background__active: $button__background__hover !default;
-$button__border__active: $button__border !default;
-$button__shadow__active: $button__shadow !default;
+$button__border__active: $button__border__hover !default;
+$button__shadow__active: $button__shadow__hover !default;
 $button__gradient-color-start__active: inherit !default;
 $button__gradient-color-end__active: inherit !default;
 
@@ -56,17 +56,17 @@ $button-primary__gradient-direction: inherit !default;
 $button-primary__gradient-color-start: inherit !default;
 $button-primary__gradient-color-end: inherit !default;
 
-$button-primary__color__hover: $button__color !default;
-$button-primary__border__hover: $button__border !default;
+$button-primary__color__hover: $button-primary__color !default;
+$button-primary__border__hover: $button-primary__border !default;
 $button-primary__background__hover: $color-blue2 !default;
 $button-primary__shadow__hover: $button-primary__shadow !default;
 $button-primary__gradient-color-start__hover: inherit !default;
 $button-primary__gradient-color-end__hover: inherit !default;
 
-$button-primary__color__active: $button__color !default;
-$button-primary__border__active: $button__border !default;
+$button-primary__color__active: $button-primary__color__hover !default;
+$button-primary__border__active: $button-primary__border__hover !default;
 $button-primary__background__active: $button-primary__background__hover !default;
-$button-primary__shadow__active: $button-primary__shadow !default;
+$button-primary__shadow__active: $button-primary__shadow__hover !default;
 $button-primary__gradient-color-start__active: inherit !default;
 $button-primary__gradient-color-end__active: inherit !default;
 
