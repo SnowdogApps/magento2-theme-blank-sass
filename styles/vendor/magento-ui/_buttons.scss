@@ -74,6 +74,7 @@
     box-sizing: border-box;
     vertical-align: middle;
     box-shadow: $_button-shadow;
+    border-radius: $_button-border-radius;
 
     @if $_button-icon-use {
         @include lib-button-icon(
