@@ -126,13 +126,13 @@ $block-auth__border                    : 1px solid $color-gray-light3 !default;
         text-align: left;
         transform: scale(1, 0);
         transform-origin: 0 0;
-        transition: transform linear 0.15s, visibility 0 linear 0.15s;
+        transition: transform linear 0.15s, visibility 0s linear 0.15s;
         visibility: hidden;
 
         &._show {
             z-index: $dropdown-list__z-index;
             transform: scale(1, 1);
-            transition: transform linear 0.15s, visibility 0 linear 0;
+            transition: transform linear 0.15s, visibility 0s linear 0s;
             visibility: visible;
         }
     }
