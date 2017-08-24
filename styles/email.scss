@@ -1,0 +1,71 @@
+//
+//  Styles for emails
+//  _____________________________________________
+
+//  See comments in source/_email-base.less for explanation of email styles
+
+@import 'vendor/magento-ui/lib'; // Global lib
+@import 'vendor/magento-ui/variables/email'; // Global email variables
+@import 'variables'; // Local theme variables
+@import 'email/email-variables'; // Theme variables for emails
+
+// Mixins
+@import "mixins/media-queries";
+
+//  Import these file by reference so that only the styles included in the .email-non-inline() and .media-width()
+//  mixins will be output. All other styles will be output via the email-inline.less file.
+
+@import 'email/email-base'; // Contains primary email styles
+@import 'email/email-extend'; // Contains theme-specific adjustments to email styles
+
+//
+//  Module-specific styles for emails
+//  ---------------------------------------------
+
+@import '../Magento_AdvancedCheckout/styles/email';
+@import '../Magento_AdvancedSearch/styles/email';
+@import '../Magento_Braintree/styles/email';
+@import '../Magento_BraintreeTwo/styles/email';
+@import '../Magento_Bundle/styles/email';
+@import '../Magento_Catalog/styles/email';
+@import '../Magento_CatalogEvent/styles/email';
+@import '../Magento_CatalogSearch/styles/email';
+@import '../Magento_Checkout/styles/email';
+@import '../Magento_Customer/styles/email';
+@import '../Magento_Downloadable/styles/email';
+@import '../Magento_GiftCard/styles/email';
+@import '../Magento_GiftCardAccount/styles/email';
+@import '../Magento_GiftMessage/styles/email';
+@import '../Magento_GiftRegistry/styles/email';
+@import '../Magento_GiftWrapping/styles/email';
+@import '../Magento_GroupedProduct/styles/email';
+@import '../Magento_Invitation/styles/email';
+@import '../Magento_LayeredNavigation/styles/email';
+@import '../Magento_Msrp/styles/email';
+@import '../Magento_MultipleWishlist/styles/email';
+@import '../Magento_Multishipping/styles/email';
+@import '../Magento_Newsletter/styles/email';
+@import '../Magento_Paypal/styles/email';
+@import '../Magento_ProductVideo/styles/email';
+@import '../Magento_Review/styles/email';
+@import '../Magento_Reward/styles/email';
+@import '../Magento_Rma/styles/email';
+@import '../Magento_Sales/styles/email';
+@import '../Magento_SalesRule/styles/email';
+@import '../Magento_SendFriend/styles/email';
+@import '../Magento_Swatches/styles/swatches';
+@import '../Magento_Theme/styles/email';
+@import '../Magento_Vault/styles/email';
+@import '../Magento_Weee/styles/email';
+@import '../Magento_Wishlist/styles/email';
+
+
+//  It is impossible to apply media queries as inline styles, so all media queries must be output in this file
+$media-target: 'all';
+
+//
+//  Non-inline styles
+//  ---------------------------------------------
+
+//  Include all styles that have been indicated as non-inline styles
+.email-non-inline();
