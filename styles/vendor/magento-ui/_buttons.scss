@@ -1,3 +1,36 @@
+
+//
+//  Button icon mixin
+//  ---------------------------------------------
+
+@mixin lib-button-icon(
+    $_icon-font-content         : $button-icon__content,
+    $_icon-font                 : $button-icon__font,
+    $_icon-font-size            : $button-icon__font-size,
+    $_icon-font-line-height     : $button-icon__line-height,
+    $_icon-font-color           : $button-icon__color,
+    $_icon-font-color-hover     : $button-icon__color__hover,
+    $_icon-font-color-active    : $button-icon__color__active,
+    $_icon-font-margin          : $button-icon__margin,
+    $_icon-font-vertical-align  : $button-icon__vertical-align,
+    $_icon-font-position        : $button-icon__position,
+    $_icon-font-text-hide       : $button-icon__text-hide
+) {
+    @include lib-icon-font(
+            $_icon-font-content       : $_icon-font-content,
+            $_icon-font               : $_icon-font,
+            $_icon-font-size          : $_icon-font-size,
+            $_icon-font-line-height   : $_icon-font-line-height,
+            $_icon-font-color         : $_icon-font-color,
+            $_icon-font-color-hover   : $_icon-font-color-hover,
+            $_icon-font-color-active  : $_icon-font-color-active,
+            $_icon-font-margin        : $_icon-font-margin,
+            $_icon-font-vertical-align: $_icon-font-vertical-align,
+            $_icon-font-position      : $_icon-font-position,
+            $_icon-font-text-hide     : $_icon-font-text-hide
+    );
+}
+
 //
 //  Buttons
 //  _____________________________________________
@@ -76,7 +109,6 @@
     box-sizing: border-box;
     vertical-align: middle;
     box-shadow: $_button-shadow;
-    border-radius: $_button-border-radius;
 
     @if $_button-icon-use {
         @include lib-button-icon(
@@ -385,37 +417,5 @@
     @include lib-button-size(
         $_button-line-height: $_button-line-height,
         $_button-padding: $_button-padding
-    );
-}
-
-//
-//  Button icon mixin
-//  ---------------------------------------------
-
-@mixin lib-button-icon(
-    $_icon-font-content         : $button-icon__content,
-    $_icon-font                 : $button-icon__font,
-    $_icon-font-size            : $button-icon__font-size,
-    $_icon-font-line-height     : $button-icon__line-height,
-    $_icon-font-color           : $button-icon__color,
-    $_icon-font-color-hover     : $button-icon__color__hover,
-    $_icon-font-color-active    : $button-icon__color__active,
-    $_icon-font-margin          : $button-icon__margin,
-    $_icon-font-vertical-align  : $button-icon__vertical-align,
-    $_icon-font-position        : $button-icon__position,
-    $_icon-font-text-hide       : $button-icon__text-hide
-) {
-    @include lib-icon-font(
-        $_icon-font-content       : $_icon-font-content,
-        $_icon-font               : $_icon-font,
-        $_icon-font-size          : $_icon-font-size,
-        $_icon-font-line-height   : $_icon-font-line-height,
-        $_icon-font-color         : $_icon-font-color,
-        $_icon-font-color-hover   : $_icon-font-color-hover,
-        $_icon-font-color-active  : $_icon-font-color-active,
-        $_icon-font-margin        : $_icon-font-margin,
-        $_icon-font-vertical-align: $_icon-font-vertical-align,
-        $_icon-font-position      : $_icon-font-position,
-        $_icon-font-text-hide     : $_icon-font-text-hide
     );
 }
