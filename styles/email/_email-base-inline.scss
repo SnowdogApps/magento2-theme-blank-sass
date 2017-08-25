@@ -56,7 +56,7 @@ table {
 
 //  See email-fonts.less for $font-face declarations
 
-lib-typography-all();
+@include lib-typography-all();
 
 body {
     font-family: $font-family__base;
@@ -124,11 +124,11 @@ body {
 
     .inner-wrapper {
         td {
-            .lib-css(border-radius, $button__border-radius, 1);
+            border-radius: $button__border-radius;
             background-color: $button-primary__background;
 
             a {
-                .lib-css(border-radius, $button__border-radius, 1);
+                border-radius: $button__border-radius;
                 border: 1px solid $button-primary__background;
                 color: $button-primary__color;
                 display: inline-block;

@@ -64,7 +64,7 @@
 
 //  Remove address and phone number link color on iOS
 .address-details a {
-    @extend .no-link a;
+    @extend .no-link-a;
 }
 
 @include max-screen($screen__xs) {

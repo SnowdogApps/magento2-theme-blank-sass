@@ -57,7 +57,8 @@ a:active {
 }
 
 //  Remove link color on iOS
-.no-link a {
+.no-link a,
+.no-link-a {
     color: $text__color !important;
     cursor: default !important;
     text-decoration: none !important;
