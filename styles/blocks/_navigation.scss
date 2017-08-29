@@ -40,7 +40,7 @@ $active-nav-indent: 54px;
 //  Mobile
 //  _____________________________________________
 
-@include max-screen($screen__m - 1) {
+@include max-screen($screen__m) {
     .navigation {
         padding: 0;
 

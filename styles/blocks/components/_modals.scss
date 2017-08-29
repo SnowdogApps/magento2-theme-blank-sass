@@ -191,7 +191,7 @@ body {
 //  _____________________________________________
 
 //  Mobile transform to modal-slide
-@include max-screen($screen__m + 1) {
+@include max-screen($screen__m) {
     .modal-popup {
         &.modal-slide {
             @include lib-modal-slide();
