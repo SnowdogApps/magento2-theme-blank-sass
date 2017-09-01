@@ -21,21 +21,23 @@ body,
 table,
 td,
 a {
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
 }
 
 //  Allow smoother rendering of resized images in Internet Explorer (such as high-resolution logo)
 img {
-    -ms-interpolation-mode: bicubic;
+    -ms-interpolation-mode: bicubic; // sass-lint:disable-line no-misspelled-properties no-vendor-prefixes
 }
 
 //  Remove spacing between tables in Outlook 2007 and up
+// sass-lint:disable-all
 table,
 td {
     mso-table-lspace: 0pt;
     mso-table-rspace: 0pt;
 }
+// sass-lint:enable-all
 
 //
 //  Typography

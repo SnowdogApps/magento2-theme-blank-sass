@@ -1,11 +1,4 @@
-/**
- * Copyright © 2013-2017 Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
-
-//
 //  Fonts for Emails
-//  _____________________________________________
 
 @import 'vendor/magento-ui/lib'; // Global lib
 @import 'vendor/magento-ui/variables/email'; // Global email variables
@@ -16,9 +9,7 @@
 @import "mixins/media-queries";
 
 
-//
 //  Output @font-face declarations
-//  ---------------------------------------------
 
 $media-common: true;
 
