@@ -2,52 +2,8 @@
 //  Buttons
 //  _____________________________________________
 
-//
-//  Button with solid or pictire background
-//  ---------------------------------------------
-
-$button-icon__position: $icon__position;
-$button-icon__font: $icon-font;
-$button-icon__font-size: 22px;
-$button-icon__line-height: $button-icon__font-size;
-$button-icon__margin: 0;
-$button-icon__color: inherit;
-$button-icon__hover__font-color: inherit;
-$button-icon__active__font-color: inherit;
-
-$button__font-size: $font-size__base;
-$button__font-weight: $font-weight__semibold;
-$button__line-height: $line-height__base;
-
-//  Default = secondary button
-$button__background: $color-gray-darken0;
-$button__border: 1px solid $border-color__base;
-$button__border-radius: 3px;
-// $button__hover__color: $button__color;
-$button__hover__background: darken($button__background, 5%);
-$button__active__background: $color-gray-darken1;
-
-//  Primary button
-$button-primary__hover__color: $color-white;
-$button-primary__active__background: $link__hover__color;
-$button-primary__active__border: 1px solid $link__hover__color;
-$button-primary__active__color: $color-white;
-
-$button__shadow: none;
-$button__shadow-active: none;
-
-//  Large button
-$button__font-size__l: $font-size__l;
-$button__line-height__l: $font-size__l + 4;
-$button__padding__l: 14px 17px;
-
-//  Small button
-$button__font-size__s: 11px;
-$button__line-height__s: $button__font-size__s + 1;
-$button__padding__s: $indent__xs 8px;
-
 @mixin lib-button(
-    $_button-font-family                : $font-family__base,
+    $_button-font-family                : $button__font-family,
     $_button-font-size                  : $font-size__base,
     $_button-font-weight                : $font-weight__bold,
     $_button-line-height                : $font-size__base + 2,
@@ -57,13 +13,14 @@ $button__padding__s: $indent__xs 8px;
     $_button-disabled-opacity           : 0.5,
     $_button-width                      : auto,
     $_button-margin                     : 0,
-    $_button-padding                    : 7px 15px,
-    $_button-color                      : $primary__color,
-    $_button-background                 : $color-gray95,
-    $_button-border                     : 1px solid $color-gray-darken2,
+    $_button-padding                    : $button__padding,
+    $_button-color                      : $button__color,
+    $_button-background                 : $button__background,
+    $_button-border                     : $button__border,
+    $_button-border-radius              : $button__border-radius,
 
-    $_button-color-hover                : $color-gray-darken3,
-    $_button-background-hover           : $color-gray-darken1,
+    $_button-color-hover                : $button__hover__color,
+    $_button-background-hover           : $button__hover__background,
     $_button-border-hover               : $_button-border,
 
     $_button-color-active               : $_button-color,
@@ -101,6 +58,7 @@ $button__padding__s: $indent__xs 8px;
         $_button-gradient
     );
     border: $_button-border;
+    border-radius: $_button-border-radius;
     color: $_button-color;
     cursor: $_button-cursor;
     display: $_button-display;
@@ -169,7 +127,7 @@ $button__padding__s: $indent__xs 8px;
 
 @mixin lib-button-size(
     $_button-line-height: $button__line-height,
-    $_button-padding    : 7px 15px
+    $_button-padding    : $button__padding
 ) {
     @include lib-line-height($_button-line-height);
     padding: $_button-padding;
@@ -180,9 +138,9 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-l(
-    $_button-l-font-size: $font-size__l,
-    $_button-l-height   : $font-size__l + 4,
-    $_button-l-padding  : 14px 17px
+    $_button-l-font-size: $button__font-size__l,
+    $_button-l-height   : $button__line-height__l,
+    $_button-l-padding  : $button__padding__l
 ) {
     @include lib-button-size(
         $_button-line-height: $_button-l-height,
@@ -196,9 +154,9 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-s(
-    $_button-s-font-size: 11px,
-    $_button-s-height   : $button__font-size__s + 1,
-    $_button-s-padding  : $indent__xs 8px
+    $_button-s-font-size: $button__font-size__s,
+    $_button-s-height   : $button__line-height__s,
+    $_button-s-padding  : $button__padding__s
 ) {
     @include lib-button-size(
         $_button-line-height: $_button-s-height,
@@ -313,18 +271,18 @@ $button__padding__s: $indent__xs 8px;
     $_button-line-height                : $font-size__base + 2,
     $_button-width                      : auto,
     $_button-margin                     : 0,
-    $_button-padding                    : 7px 15px,
+    $_button-padding                    : $button-primary__padding,
 
-    $_button-color                      : $color-white,
-    $_button-border                     : 1px solid $color-blue1,
-    $_button-background                 : $color-blue1,
+    $_button-color                      : $button-primary__color,
+    $_button-border                     : $button-primary__border,
+    $_button-background                 : $button-primary__background,
 
-    $_button-color-hover                : $_button-color,
-    $_button-border-hover               : $_button-border,
-    $_button-background-hover           : $color-blue2,
+    $_button-color-hover                : $button-primary__hover__color,
+    $_button-border-hover               : $button-primary__hover__border,
+    $_button-background-hover           : $button-primary__hover__background,
 
-    $_button-color-active               : $_button-color,
-    $_button-border-active              : $_button-border,
+    $_button-color-active               : $button-primary__active__color,
+    $_button-border-active              : $button-primary__active__border,
     $_button-background-active          : $button-primary__active__background,
 
     $_button-gradient                   : inherit,
@@ -368,13 +326,13 @@ $button__padding__s: $indent__xs 8px;
 //  ---------------------------------------------
 
 @mixin lib-button-revert-secondary-color(
-    $_button-color            : $primary__color,
-    $_button-background       : $color-gray95,
-    $_button-border           : 1px solid $color-gray-darken2,
+    $_button-color            : $button__color,
+    $_button-background       : $button__background,
+    $_button-border           : $button__border,
 
-    $_button-color-hover      : $color-gray-darken3,
-    $_button-background-hover : $color-gray-darken1,
-    $_button-border-hover     : $_button-border,
+    $_button-color-hover      : $button__hover__color,
+    $_button-background-hover : $button__hover__background,
+    $_button-border-hover     : $button__active__background,
 
     $_button-color-active     : $_button-color,
     $_button-background-active: $_button-background-hover,
@@ -405,7 +363,7 @@ $button__padding__s: $indent__xs 8px;
 @mixin lib-button-revert-secondary-size(
     $_button-font-size  : $button__font-size,
     $_button-line-height: $button__line-height,
-    $_button-padding    : 7px 15px
+    $_button-padding    : $button__padding
 ) {
     font-size: $_button-font-size;
     @include lib-button-size(

@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "magento2-theme",
     "require": {
-      "magento/framework": "100.1.*"
+      "magento/framework": "*"
     },
     "autoload": {
         "files": [
