@@ -10,7 +10,7 @@ $modal-title__color                  : $text__color !default;
 $modal-title__border                 : 1px solid $color-gray-light5 !default;
 $modal-popup-title__font-size        : 26px !default;
 $modal-popup-title-mobile__font-size : $font-size__base !default;
-$modal-popup-breakpoint-screen__m    : $screen__m + 1 !default;
+$modal-popup-breakpoint-screen__m    : $screen__m !default;
 $modal-slide__first__indent-left     : 44px !default;
 $modal-slide-mobile__background-color: $color-gray-light01 !default;
 $modal-overlay__background-color     : fade($color-gray20, 55%) !default;
