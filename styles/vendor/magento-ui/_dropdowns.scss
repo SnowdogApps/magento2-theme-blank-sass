@@ -72,6 +72,7 @@
     }
 
     @include _lib-dropdown-styles(
+        $_options-selector,
         $_dropdown-list-min-width,
         $_dropdown-list-width,
         $_dropdown-list-height,
@@ -80,7 +81,6 @@
         $_dropdown-list-border,
         $_dropdown-list-z-index,
         $_dropdown-list-shadow,
-        $_dropdown-list-background,
         $_dropdown-list-item-padding,
         $_dropdown-list-item-margin,
         $_dropdown-list-item-border,
@@ -93,8 +93,7 @@
         $_dropdown-list-pointer-border,
         $_dropdown-list-pointer-position,
         $_dropdown-list-pointer-position-top,
-        $_dropdown-list-pointer-position-left-right,
-        $_options-selector: $_options-selector
+        $_dropdown-list-pointer-position-left-right
     );
 }
 
@@ -190,7 +189,6 @@
         $_dropdown-split-list-border,
         $_dropdown-split-list-z-index,
         $_dropdown-split-list-shadow,
-        $_dropdown-split-list-background,
         $_dropdown-split-list-item-padding,
         $_dropdown-split-list-item-margin,
         $_dropdown-split-list-item-border,
@@ -222,7 +220,6 @@
     $_dropdown-list-border,
     $_dropdown-list-z-index,
     $_dropdown-list-shadow,
-    $_dropdown-list-background,
     $_dropdown-list-item-padding,
     $_dropdown-list-item-margin,
     $_dropdown-list-item-border,
@@ -275,11 +272,14 @@
 
         @include _lib-dropdown-list-pointer(
             $_dropdown-list-background,
+            $_dropdown-list-pointer,
             $_dropdown-list-pointer-border,
             $_dropdown-list-pointer-position,
             $_dropdown-list-pointer-position-top,
             $_dropdown-list-pointer-position-left-right
         );
+
+
     }
 
     &.active {
