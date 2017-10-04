@@ -3,75 +3,75 @@
 //  _____________________________________________
 
 @mixin lib-breadcrumbs(
-    $_breadcrumbs-font-size                        : $font-size__s,
-    $_breadcrumbs-display                          : inherit,
-    $_breadcrumbs-container-margin                 : auto auto $indent__base,
-    $_breadcrumbs-padding                          : inherit,
+    $_breadcrumbs-font-size                         : $breadcrumbs__font-size,
+    $_breadcrumbs-display                           : $breadcrumbs__display,
+    $_breadcrumbs-container-margin                  : $breadcrumbs__container-margin,
+    $_breadcrumbs-padding                           : $breadcrumbs__padding,
 
-    // Breadcrumbs separating symbol
-    $_breadcrumbs-separator-symbol                 : inherit,
-    $_breadcrumbs-separator-color                  : $color-gray64,
+    //  Breadcrumbs separating symbol
+    $_breadcrumbs-separator-symbol                  : $breadcrumbs-separator__symbol,
+    $_breadcrumbs-separator-color                   : $breadcrumbs-separator__color,
 
-    // Use icon as a separating symbol
-    $_breadcrumbs-icon-use                         : true,
-    $_breadcrumbs-icon-font-content                : $icon-next,
-    $_icon-font                                    : $icon-font,
-    $_icon-font-size                               : 24px,
-    $_icon-font-line-height                        : 18px,
-    $_icon-font-color                              : inherit,
-    $_icon-font-margin                             : 0,
-    $_icon-font-vertical-align                     : top,
+    //  Use icon as a separating symbol
+    $_breadcrumbs-icon-use                          : $breadcrumbs-icon__use,
+    $_breadcrumbs-icon-font-content                 : $breadcrumbs-icon__font-content,
+    $_icon-font                                     : $breadcrumbs-icon__font,
+    $_icon-font-size                                : $breadcrumbs-icon__font-size,
+    $_icon-font-line-height                         : $breadcrumbs-icon__font-line-height,
+    $_icon-font-color                               : $breadcrumbs-icon__font-color,
+    $_icon-font-margin                              : $breadcrumbs-icon__font-margin,
+    $_icon-font-vertical-align                      : $breadcrumbs-icon__font-vertical-align,
 
-    // Breadcrumbs current
-    $_breadcrumbs-current-color                    : $color-gray64,
-    $_breadcrumbs-current-font-weight              : $font-weight__regular,
-    $_breadcrumbs-current-background               : inherit,
-    $_breadcrumbs-current-border                   : none,
-    $_breadcrumbs-current-gradient                 : inherit,
-    $_breadcrumbs-current-gradient-direction       : vertical,
-    $_breadcrumbs-current-gradient-color-start     : inherit,
-    $_breadcrumbs-current-gradient-color-end       : inherit,
+    //  Breadcrumbs current
+    $_breadcrumbs-current-color                     : $breadcrumbs-current__color,
+    $_breadcrumbs-current-font-weight               : $breadcrumbs-current__font-weight,
+    $_breadcrumbs-current-background                : $breadcrumbs-current__background,
+    $_breadcrumbs-current-border                    : $breadcrumbs-current__border,
+    $_breadcrumbs-current-gradient                  : $breadcrumbs-current__gradient,
+    $_breadcrumbs-current-gradient-direction        : $breadcrumbs-current__gradient-direction,
+    $_breadcrumbs-current-gradient-color-start      : $breadcrumbs-current__gradient-color-start,
+    $_breadcrumbs-current-gradient-color-end        : $breadcrumbs-current__gradient-color-end,
 
-    // Breadcrumbs link - gradient
-    $_breadcrumbs-link-gradient                    : inherit,
-    $_breadcrumbs-link-gradient-direction          : inherit,
+    //  Breadcrumbs link - gradient
+    $_breadcrumbs-link-gradient                     : $breadcrumbs-link__gradient,
+    $_breadcrumbs-link-gradient-direction           : $breadcrumbs-link__gradient-direction,
 
-    // Breadcrumbs link color
-    $_breadcrumbs-link-color                       : $primary__color,
-    $_breadcrumbs-link-background                  : inherit,
-    $_breadcrumbs-link-border                      : none,
-    $_breadcrumbs-link-text-decoration             : none,
-    $_breadcrumbs-link-gradient-color-start        : inherit,
-    $_breadcrumbs-link-gradient-color-end          : inherit,
+    //  Breadcrumbs link color - default
+    $_breadcrumbs-link-color                        : $breadcrumbs-link__color,
+    $_breadcrumbs-link-background                   : $breadcrumbs-link__background,
+    $_breadcrumbs-link-border                       : $breadcrumbs-link__border,
+    $_breadcrumbs-link-text-decoration              : $breadcrumbs-link__text-decoration,
+    $_breadcrumbs-link-gradient-color-start         : $breadcrumbs-link__gradient-color-start,
+    $_breadcrumbs-link-gradient-color-end           : $breadcrumbs-link__gradient-color-end,
 
-    // Breadcrumbs link - visited
-    $_breadcrumbs-link-color-visited               : $primary__color,
-    $_breadcrumbs-link-background-visited          : inherit,
-    $_breadcrumbs-link-border-visited              : none,
-    $_breadcrumbs-link-text-decoration-visited     : none,
-    $_breadcrumbs-link-gradient-color-start-visited: inherit,
-    $_breadcrumbs-link-gradient-color-end-visited  : inherit,
+    //  Breadcrumbs link - visited
+    $_breadcrumbs-link-color-visited                : $breadcrumbs-link__visited__color,
+    $_breadcrumbs-link-background-visited           : $breadcrumbs-link__visited__background,
+    $_breadcrumbs-link-border-visited               : $breadcrumbs-link__visited__border,
+    $_breadcrumbs-link-text-decoration-visited      : $breadcrumbs-link__visited__text-decoration,
+    $_breadcrumbs-link-gradient-color-start-visited : $breadcrumbs-link__visited__gradient-color-start,
+    $_breadcrumbs-link-gradient-color-end-visited   : $breadcrumbs-link__visited__gradient-color-end,
 
-    // Breadcrumbs link - hover
-    $_breadcrumbs-link-color-hover                 : $primary__color,
-    $_breadcrumbs-link-background-hover            : inherit,
-    $_breadcrumbs-link-border-hover                : none,
-    $_breadcrumbs-link-text-decoration-hover       : underline,
-    $_breadcrumbs-link-gradient-color-start-hover  : inherit,
-    $_breadcrumbs-link-gradient-color-end-hover    : inherit,
+    //  Breadcrumbs link - hover
+    $_breadcrumbs-link-color-hover                  : $breadcrumbs-link__hover__color,
+    $_breadcrumbs-link-background-hover             : $breadcrumbs-link__hover__background,
+    $_breadcrumbs-link-border-hover                 : $breadcrumbs-link__hover__border,
+    $_breadcrumbs-link-text-decoration-hover        : $breadcrumbs-link__hover__text-decoration,
+    $_breadcrumbs-link-gradient-color-start-hover   : $breadcrumbs-link__hover__gradient-color-start,
+    $_breadcrumbs-link-gradient-color-end-hover     : $breadcrumbs-link__hover__gradient-color-end,
 
-    // Breadcrumbs link - active
-    $_breadcrumbs-link-color-active                : $primary__color,
-    $_breadcrumbs-link-background-active           : inherit,
-    $_breadcrumbs-link-border-active               : none,
-    $_breadcrumbs-link-text-decoration-active      : none,
-    $_breadcrumbs-link-gradient-color-start-active : inherit,
-    $_breadcrumbs-link-gradient-color-end-active   : inherit
+    //  Breadcrumbs link - active
+    $_breadcrumbs-link-color-active                 : $breadcrumbs-link__active__color,
+    $_breadcrumbs-link-background-active            : $breadcrumbs-link__active__background,
+    $_breadcrumbs-link-border-active                : $breadcrumbs-link__active__border,
+    $_breadcrumbs-link-text-decoration-active       : $breadcrumbs-link__active__text-decoration,
+    $_breadcrumbs-link-gradient-color-start-active  : $breadcrumbs-link__active__gradient-color-start,
+    $_breadcrumbs-link-gradient-color-end-active    : $breadcrumbs-link__active__gradient-color-end
 ) {
-    margin: $_breadcrumbs-container-margin;
+    @include lib-css(margin, $_breadcrumbs-container-margin);
     .items {
-        font-size: $_breadcrumbs-font-size;
-        color: $_breadcrumbs-current-color;
+        @include lib-font-size($_breadcrumbs-font-size);
+        @include lib-css(color, $_breadcrumbs-current-color);
         @include lib-list-inline();
     }
 
@@ -80,85 +80,85 @@
     }
 
     a {
-        background: $_breadcrumbs-link-background;
+        @include lib-css(background, $_breadcrumbs-link-background);
         @include lib-background-gradient(
             $_breadcrumbs-link-gradient-color-start,
             $_breadcrumbs-link-gradient-color-end,
             $_breadcrumbs-link-gradient-direction,
             $_breadcrumbs-link-gradient
         );
-        border: $_breadcrumbs-link-border;
-        color: $_breadcrumbs-link-color;
-        display: $_breadcrumbs-display;
-        padding: $_breadcrumbs-padding;
-        text-decoration: $_breadcrumbs-link-text-decoration;
+        @include lib-css(border, $_breadcrumbs-link-border);
+        @include lib-css(color, $_breadcrumbs-link-color);
+        @include lib-css(display, $_breadcrumbs-display);
+        @include lib-css(padding, $_breadcrumbs-padding);
+        @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration);
 
         &:visited {
-            background: $_breadcrumbs-link-background-visited;
+            @include lib-css(background, $_breadcrumbs-link-background-visited);
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-visited,
                 $_breadcrumbs-link-gradient-color-end-visited,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            border: $_breadcrumbs-link-border-visited;
-            color: $_breadcrumbs-link-color-visited;
-            text-decoration: $_breadcrumbs-link-text-decoration-visited;
+            @include lib-css(border, $_breadcrumbs-link-border-visited);
+            @include lib-css(color, $_breadcrumbs-link-color-visited);
+            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-visited);
         }
 
         &:hover {
-            background: $_breadcrumbs-link-background-hover;
+            @include lib-css(background, $_breadcrumbs-link-background-hover);
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-hover,
                 $_breadcrumbs-link-gradient-color-end-hover,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            border: $_breadcrumbs-link-border-hover;
-            color: $_breadcrumbs-link-color-hover;
-            text-decoration: $_breadcrumbs-link-text-decoration-hover;
+            @include lib-css(border, $_breadcrumbs-link-border-hover);
+            @include lib-css(color, $_breadcrumbs-link-color-hover);
+            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-hover);
         }
 
         &:active {
-            background: $_breadcrumbs-link-background-active;
+            @include lib-css(background, $_breadcrumbs-link-background-active);
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-active,
                 $_breadcrumbs-link-gradient-color-end-active,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            border: $_breadcrumbs-link-border-active;
-            color: $_breadcrumbs-link-color-active;
-            text-decoration: $_breadcrumbs-link-text-decoration-active;
+            @include lib-css(border, $_breadcrumbs-link-border-active);
+            @include lib-css(color, $_breadcrumbs-link-color-active);
+            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-active);
         }
     }
 
     strong {
-        background: $_breadcrumbs-current-background;
+        @include lib-css(background, $_breadcrumbs-current-background);
         @include lib-background-gradient(
             $_breadcrumbs-current-gradient-color-start,
             $_breadcrumbs-current-gradient-color-end,
             $_breadcrumbs-current-gradient-direction,
             $_breadcrumbs-current-gradient
         );
-        border: $_breadcrumbs-current-border;
-        display: $_breadcrumbs-display;
-        font-weight: $_breadcrumbs-current-font-weight;
-        padding: $_breadcrumbs-padding;
+        @include lib-css(border, $_breadcrumbs-current-border);
+        @include lib-css(display, $_breadcrumbs-display);
+        @include lib-css(font-weight, $_breadcrumbs-current-font-weight);
+        @include lib-css(padding, $_breadcrumbs-padding);
     }
 
+    // Insert separating symbol to "content"
     @if $_breadcrumbs-separator-symbol != '' and $_breadcrumbs-separator-symbol != false {
-        // Insert separating symbol to "content"
         .item:not(:last-child) {
             &:after {
-                color: $_breadcrumbs-separator-color;
-                content: $_breadcrumbs-separator-symbol;
+                @include lib-css(color, $_breadcrumbs-separator-color);
+                @include lib-css(content, $_breadcrumbs-separator-symbol);
             }
         }
     }
 
+    // Use font icon as a separating symbol
     @if $_breadcrumbs-icon-use {
-        // Use font icon as a separating symbol
         .item:not(:last-child) {
             @include lib-icon-font(
                 $_icon-font-content: $_breadcrumbs-icon-font-content,
