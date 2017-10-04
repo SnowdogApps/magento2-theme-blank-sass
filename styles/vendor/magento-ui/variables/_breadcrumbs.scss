@@ -7,9 +7,6 @@ $breadcrumbs__display                            : false !default;
 $breadcrumbs__container-margin                   : 0 0 $indent__base !default;
 $breadcrumbs__padding                            : false !default;
 
-$breadcrumbs-separator__symbol                   : false !default;
-$breadcrumbs-separator__color                    : $breadcrumbs-current__color !default;
-
 $breadcrumbs-icon__use                           : true !default;
 $breadcrumbs-icon__font-content                  : $icon-next !default;
 $breadcrumbs-icon__font                          : $icon-font !default;
@@ -30,6 +27,9 @@ $breadcrumbs-current__gradient                   : false !default;
 $breadcrumbs-current__gradient-direction         : vertical !default;
 $breadcrumbs-current__gradient-color-start       : false !default;
 $breadcrumbs-current__gradient-color-end         : false !default;
+
+$breadcrumbs-separator__symbol                   : false !default;
+$breadcrumbs-separator__color                    : $breadcrumbs-current__color !default;
 
 //
 //  Link

@@ -116,3 +116,9 @@ $message-notice-icon__top            : $message-icon__top !default;
 $message-notice-icon__right          : $message-icon__right !default;
 $message-notice-icon__bottom         : $message-icon__bottom !default;
 $message-notice-icon__left           : $message-icon__left !default;
+
+//  Email messages
+$message-email__color                : $text__color !default;
+$message-email__background           : $message-info__background !default;
+$message-email__border-color         : $message-info__border-color !default;
+$message-email-link__color           : $message-info-link__color !default;
