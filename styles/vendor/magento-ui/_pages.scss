@@ -114,11 +114,15 @@
     @include _lib-pager-label-display(  // To hide or to display label
         $_pager-label-display : $_pager-label-display,
         $_pager-font-size     : $_pager-font-size,
+        $_pager-font-weight   : $_pager-font-weight,
         $_pager-line-height   : $_pager-line-height
     );
 
     .items {
-        @include _lib-pager-inline-block-spaces-container();
+        @include _lib-pager-inline-block-spaces-container(
+            $_pager-reset-spaces,
+            $_pager-item-display
+        );
         @include lib-list-reset-styles();
         @include lib-css(display, $_pager-item-display);
         @include lib-css(font-weight, $_pager-font-weight);
@@ -126,8 +130,10 @@
 
     .item {
         @include _lib-pager-inline-block-spaces-item(
-            $_pager-font-size   : $_pager-font-size,
-            $_pager-line-height : $_pager-line-height
+            $_pager-reset-spaces,
+            $_pager-item-display,
+            $_pager-font-size,
+            $_pager-line-height
         );
         @include lib-css(margin, $_pager-item-margin);
         @include lib-css(display, $_pager-item-display);
@@ -199,8 +205,10 @@
         );
         @include lib-css(border, $_pager-current-border);
         @include _lib-pager-inline-block-spaces-item(
-            $_pager-font-size   : $_pager-font-size,
-            $_pager-line-height : $_pager-line-height
+            $_pager-reset-spaces,
+            $_pager-item-display,
+            $_pager-font-size,
+            $_pager-line-height
         );
         @include lib-css(color, $_pager-current-color);
         @include lib-css(display, $_pager-item-display);
@@ -296,7 +304,10 @@
 }
 
 //  Delete spaces between elements when pager items have display: inline-block
-@mixin _lib-pager-inline-block-spaces-container() {
+@mixin _lib-pager-inline-block-spaces-container(
+    $_pager-reset-spaces,
+    $_pager-item-display
+) {
     @if $_pager-reset-spaces == true and $_pager-item-display = inline-block {
         @include lib-inline-block-space-container();
         white-space: nowrap;
@@ -304,23 +315,25 @@
 }
 
 @mixin _lib-pager-inline-block-spaces-item(
-    $_pager-font-size   : $_pager-font-size,
-    $_pager-line-height : $_pager-line-height
+    $_pager-reset-spaces,
+    $_pager-item-display,
+    $_pager-font-size,
+    $_pager-line-height
 ) {
     @if $_pager-reset-spaces = true and $_pager-item-display = inline-block {
         @include lib-inline-block-space-item(
-            $_font-size: $_pager-font-size,
-            $_line-height: $_pager-line-height
+            $_font-size   : $_pager-font-size,
+            $_line-height : $_pager-line-height
         );
     }
 }
 
 // Display or hide "page" label
 @mixin _lib-pager-label-display(
-    $_pager-label-display : $_pager-label-display,
-    $_pager-font-size     : $_pager-font-size,
-    $_pager-font-weight   : $_pager-font-weight,
-    $_pager-line-height   : $_pager-line-height
+    $_pager-label-display,
+    $_pager-font-size,
+    $_pager-font-weight,
+    $_pager-line-height
 ) {
     @if $_pager-label-display == none or $_pager-label-display == false {
         > .label {
@@ -332,8 +345,8 @@
             @include lib-css(display, $_pager-label-display);
             @include lib-css(font-weight, $_pager-font-weight);
             @include lib-inline-block-space-item(
-                $_font-size: $_pager-font-size,
-                $_line-height: $_pager-line-height
+                $_font-size   : $_pager-font-size,
+                $_line-height : $_pager-line-height
             );
 
             &:after {

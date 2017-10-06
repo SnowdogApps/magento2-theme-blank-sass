@@ -4,23 +4,23 @@
 
 // Helper function to easier get values related to specific type
 @function message($_message-type, $_key) {
-    $_map: $messages-info-map;
+    $_map: $message-info-map;
 
     // find maps adequate to message type
     @if $_message-type == error {
-        $_map: $messages-error-map;
+        $_map: $message-error-map;
     }
 
     @if $_message-type == success {
-        $_map: $messages-success-map;
+        $_map: $message-success-map;
     }
 
     @if $_message-type == warning {
-        $_map: $messages-warning-map;
+        $_map: $message-warning-map;
     }
 
     @if $_message-type == notice {
-        $_map: $messages-notice-map;
+        $_map: $message-notice-map;
     }
 
     @return map-get($_map, $_key);
@@ -31,12 +31,12 @@
 ) {
     @include _lib-message();
     @include _lib-message-style(
-        $_message-color            : message($map-type, color),
-        $_message-background       : message($map-type, background),
-        $_message-link-color       : message($map-type, link__color),
-        $_message-link-color-hover : message($map-type, link__color-hover),
-        $_message-link-color-active: message($map-type, link__color-active),
-        $_message-border-color     : message($map-type, border-color)
+        $_message-color            : message($_message-type, color),
+        $_message-background       : message($_message-type, background),
+        $_message-link-color       : message($_message-type, link__color),
+        $_message-link-color-hover : message($_message-type, link__color-hover),
+        $_message-link-color-active: message($_message-type, link__color-active),
+        $_message-border-color     : message($_message-type, border-color)
     );
 }
 
