@@ -16,11 +16,7 @@
 @import 'email/email-base';
 @import 'email/email-extend';
 
-//
 //  Module-specific styles for emails
-//  TODO: decide if we will update this list manually or we will add empty _email.scss to each Module_Namespace/styles directory
-//  ---------------------------------------------
-
 @import '../Magento_Bundle/styles/email';
 @import '../Magento_Rma/styles/email';
 @import '../Magento_Sales/styles/email';
