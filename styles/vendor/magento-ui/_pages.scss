@@ -269,12 +269,13 @@
 
         &.next {
             @include _lib-pager-icon (
-                $_pager-icon-use           : $_pager-icon-use,
                 $_icon-font-content        : $_pager-icon-next-content,
+                $_pager-icon-use           : $_pager-icon-use,
                 $_icon-font                : $_pager-icon-font,
                 $_icon-font-size           : $_pager-icon-font-size,
                 $_icon-font-line-height    : $_pager-icon-font-line-height,
                 $_icon-font-color          : $_pager-action-color,
+                $_icon-font-color-visited  : $_pager-action-color-visited,
                 $_icon-font-color-hover    : $_pager-action-color-hover,
                 $_icon-font-color-active   : $_pager-action-color-active,
                 $_icon-font-margin         : $_pager-icon-font-margin,
@@ -286,12 +287,13 @@
 
         &.previous {
             @include _lib-pager-icon (
-                $_pager-icon-use           : $_pager-icon-use,
                 $_icon-font-content        : $_pager-icon-previous-content,
+                $_pager-icon-use           : $_pager-icon-use,
                 $_icon-font                : $_pager-icon-font,
                 $_icon-font-size           : $_pager-icon-font-size,
                 $_icon-font-line-height    : $_pager-icon-font-line-height,
                 $_icon-font-color          : $_pager-action-color,
+                $_icon-font-color-visited  : $_pager-action-color-visited,
                 $_icon-font-color-hover    : $_pager-action-color-hover,
                 $_icon-font-color-active   : $_pager-action-color-active,
                 $_icon-font-margin         : $_pager-icon-font-margin,
@@ -359,18 +361,18 @@
 
 @mixin _lib-pager-icon (
     $_icon-font-content,
-    $_pager-icon-use           : $_pager-icon-use,
-    $_icon-font                : $_pager-icon-font,
-    $_icon-font-size           : $_pager-icon-font-size,
-    $_icon-font-line-height    : $_pager-icon-font-line-height,
-    $_icon-font-color          : $_pager-action-color,
-    $_icon-font-color-visited  : $_pager-action-color-visited,
-    $_icon-font-color-hover    : $_pager-action-color-hover,
-    $_icon-font-color-active   : $_pager-action-color-active,
-    $_icon-font-margin         : $_pager-icon-font-margin,
-    $_icon-font-vertical-align : $_pager-icon-font-vertical-align,
-    $_icon-font-position       : $_pager-icon-font-position,
-    $_icon-font-text-hide      : $_pager-icon-font-text-hide
+    $_pager-icon-use,
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-font-line-height,
+    $_icon-font-color,
+    $_icon-font-color-visited,
+    $_icon-font-color-hover,
+    $_icon-font-color-active,
+    $_icon-font-margin,
+    $_icon-font-vertical-align,
+    $_icon-font-position,
+    $_icon-font-text-hide
 ) {
     @if $_pager-icon-use == true {
         @if $_icon-font-position == before {
