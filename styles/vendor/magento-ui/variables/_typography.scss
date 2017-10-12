@@ -14,21 +14,22 @@ $icons__font-path               : "../fonts/Blank-Theme-Icons/Blank-Theme-Icons"
 $icons__font-name               : 'icons-blank-theme' !default; // ToDo UI                                         : we need to rename (it shouldn't use blank theme name) or move icon fonts to blank theme
 
 //  Font families
+$font-family-name__base         : 'Open Sans' !default;
 $font-family__sans-serif        : 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-family__serif             : Georgia, 'Times New Roman', Times, serif !default;
 $font-family__monospace         : Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 
-$font-family__base              : $font-family__sans-serif !default;
+$font-family__base              : $font-family-name__base, $font-family__sans-serif !default;
 
 //  Sizes
 $root__font-size                : 62.5% !default; // Defines ratio between root font size and base font size, 1rem = 10px
 $font-size-ratio__base          : 1.4 !default; // Defines ratio of the root font-size to the base font-size
 
 $font-size-unit                 : rem !default; // The unit to which most typography values will be converted by default
-$font-size-unit-ratio           : $root__font-size * 16/100 !default; // Ratio of the root font-size to the font-size unit
+$font-size-unit-ratio           : $root__font-size * 16 / 100 / 1% !default; // Ratio of the root font-size to the font-size unit
 $font-size-unit-convert         : true !default; // Controls whether font-size values are converted to the specified font-size unit
 
-$font-size__base                : $font-size-unit-ratio * $font-size-ratio__base * 1px !default; // Base font size value in <b>px</b>
+$font-size__base                : $font-size-unit-ratio * $font-size-ratio__base * 1px !default; // Base font size value in px
 $font-size__xl                  : ceil(1.5 * $font-size__base) !default; // 21px
 $font-size__l                   : ceil(1.25 * $font-size__base) !default; // 18px
 $font-size__s                   : ceil(0.85 * $font-size__base) !default; // 12px
@@ -164,7 +165,7 @@ $h3__font-family                : $heading__font-family__base !default;
 $h3__font-weight                : $heading__font-weight__base !default;
 $h3__font-style                 : $heading__font-style__base !default;
 $h3__line-height                : $heading__line-height__base !default;
-$h3__margin-top                 : $indent__base * .75 !default;
+$h3__margin-top                 : $indent__base * 0.75 !default;
 $h3__margin-bottom              : $indent__s !default;
 
 $h4__font-size                  : $font-size__base !default; // 14px
@@ -176,7 +177,7 @@ $h4__line-height                : $heading__line-height__base !default;
 $h4__margin-top                 : $heading__margin-top__base !default;
 $h4__margin-bottom              : $heading__margin-bottom__base !default;
 
-$h5__font-size                  : ceil(($font-size__base * .85)) !default; // 12px
+$h5__font-size                  : ceil(($font-size__base * 0.85)) !default; // 12px
 $h5__font-color                 : $heading__color__base !default;
 $h5__font-family                : $heading__font-family__base !default;
 $h5__font-weight                : $font-weight__bold !default;
@@ -185,7 +186,7 @@ $h5__line-height                : $heading__line-height__base !default;
 $h5__margin-top                 : $heading__margin-top__base !default;
 $h5__margin-bottom              : $heading__margin-bottom__base !default;
 
-$h6__font-size                  : ceil(($font-size__base * .7)) !default; // 10px
+$h6__font-size                  : ceil(($font-size__base * 0.7)) !default; // 10px
 $h6__font-color                 : $heading__color__base !default;
 $h6__font-family                : $heading__font-family__base !default;
 $h6__font-weight                : $font-weight__bold !default;
@@ -196,7 +197,7 @@ $h6__margin-bottom              : $heading__margin-bottom__base !default;
 
 $heading__small-color           : $primary__color !default;
 $heading__small-line-height     : 1 !default;
-$heading__small-size            : ($font-size__xs/$font-size__base) * 100% !default;
+$heading__small-size            : ($font-size__xs / $font-size__base) * 100% !default;
 
 //  Code blocks
 $code__background-color         : $panel__background-color !default;

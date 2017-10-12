@@ -1,1 +1,16 @@
-@import 'module/common';
+.minilist {
+    .weee {
+        display: table-row;
+        @include lib-font-size(11);
+
+        &:before {
+            display: none;
+        }
+    }
+}
+
+.price-container.weee {
+    &:before {
+        display: none;
+    }
+}
