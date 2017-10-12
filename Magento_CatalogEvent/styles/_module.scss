@@ -1,2 +1,131 @@
-@import 'variables';
-@import 'module/common';
+$catalog-event-background-color : $color-gray94;
+$catalog-event-color            : $primary__color;
+
+//
+//  Catalog Events
+//  ---------------------------------------------
+
+.block-category-event {
+    @include lib-css(background, $catalog-event-background-color);
+    @include lib-css(color, $catalog-event-color);
+    padding: $indent__s 0 15px;
+    text-align: center;
+
+    &.block:last-child {
+        margin-bottom: $indent__s;
+    }
+
+    .block-title {
+        margin: 0 0 $indent__s;
+
+        strong {
+            @include lib-font-size(15);
+            font-weight: $font-weight__light;
+        }
+    }
+
+    .ticker {
+        @include lib-list-reset-styles();
+
+        li {
+            display: none;
+            margin: 0 15px;
+        }
+
+        .value {
+            @include lib-font-size(18);
+            font-weight: $font-weight__light;
+        }
+
+        .label {
+            @include lib-font-size(10);
+            display: block;
+            text-transform: lowercase;
+        }
+    }
+
+    .dates {
+        display: table;
+        margin: 0 auto;
+
+        .start,
+        .end {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .date {
+            @include lib-font-size(18);
+        }
+
+        .time {
+            display: block;
+        }
+
+        .start {
+            padding-right: $indent__xl;
+            position: relative;
+
+            &:after {
+                @include lib-font-size(18);
+                content: '\2013';
+                display: block;
+                position: absolute;
+                right: 15px;
+                top: 0;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .block-category-event {
+        &.block:last-child {
+            margin-bottom: $indent__l;
+            padding: $indent__s 0 $indent__l;
+        }
+
+        .block-title {
+            margin: 0;
+
+            strong {
+                @include lib-font-size(24);
+            }
+        }
+
+        .ticker {
+            li {
+                display: none;
+                margin: 0 50px;
+            }
+
+            .value {
+                @include lib-font-size(60);
+            }
+
+            .label {
+                @include lib-font-size(14);
+                text-transform: none;
+            }
+        }
+
+        .dates {
+            .date {
+                @include lib-font-size(50);
+            }
+
+            .start {
+                padding-right: 50px;
+
+                &:after {
+                    @include lib-font-size(50);
+                    right: 10px;
+                }
+            }
+        }
+    }
+}

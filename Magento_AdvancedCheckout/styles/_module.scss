@@ -52,8 +52,8 @@
             .actions-toolbar {
                 clear: both;
                 @include lib-actions-toolbar(
-                    $_actions-toolbar-actions-position: left,
-                    $_actions-toolbar-margin: 0 0 $indent__base
+                    $_actions-toolbar-actions-position : left,
+                    $_actions-toolbar-margin           : 0 0 $indent__base
                 );
                 @include lib-actions-toolbar-clear-floats();
 
@@ -75,8 +75,8 @@
 }
 
 .block-cart-failed {
-    @extend .abs-shopping-cart-items;
     margin-top: $indent__xl;
+    @extend .abs-shopping-cart-items;
 
     .block-title {
         @include lib-font-size($h2__font-size);
@@ -110,10 +110,10 @@
             .action {
                 &.remove {
                     @include lib-button-icon(
-                        $_icon-font-content: $icon-remove,
-                        $_icon-font-text-hide: true,
-                        $_icon-font-size: 28px,
-                        $_icon-font-margin: 1px 0 0
+                        $_icon-font-content   : $icon-remove,
+                        $_icon-font-text-hide : true,
+                        $_icon-font-size      : 28px,
+                        $_icon-font-margin    : 1px 0 0
                     );
                     @include lib-button-reset();
                 }

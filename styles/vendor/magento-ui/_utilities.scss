@@ -21,7 +21,7 @@
 @function lib-font-size-value($_value) {
     @if $font-size-unit-convert {
         @if $_value != false and $_value != '' {
-           @return strip-unit($_value) / ($font-size-unit-ratio / 100%) * 1#{$font-size-unit};
+           @return strip-unit($_value) / $font-size-unit-ratio * 1#{$font-size-unit};
         }
     }
     @else {
@@ -231,17 +231,6 @@ $urls-resolved: false;
         @else if $urls-resolved == false {
             $url: "#{$_module}::#{$_path}";
         }
-    }
-}
-
-//
-//  Url existing check
-//  ---------------------------------------------
-
-@mixin lib-url-check($_path) {
-    $lib-url-check-output: $_path;
-    @if $_path != false {
-        $lib-url-check-output: url($_path);
     }
 }
 

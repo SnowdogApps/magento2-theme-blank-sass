@@ -119,7 +119,6 @@ body {
 
 //  Modals overlay
 .modals-overlay {
-    @extend .abs-modal-overlay;
     @include lib-css(z-index, $overlay__z-index);
 }
 

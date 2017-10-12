@@ -23,7 +23,7 @@
 
 //  Rem font size
 @mixin lib-font-size($sizeValue) {
-    @if type-of($sizeValue) == number and unit($sizeValue) != '%' and $sizeValue == false {
+    @if type-of($sizeValue) == number and unit($sizeValue) != '%' and $sizeValue != false {
         @if unit($sizeValue) == $font-size-unit or unit($sizeValue) == 'em' {
             @include lib-css(font-size, $sizeValue);
         }
