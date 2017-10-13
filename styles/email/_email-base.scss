@@ -33,8 +33,10 @@ img {
 //  Remove spacing between tables in Outlook 2007 and up
 table,
 td {
-    mso-table-lspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit /* stylelint-disable-line */
-    mso-table-rspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit /* stylelint-disable-line */
+    /* stylelint-disable-next-line property-no-unknown, length-zero-no-unit */ // sass-lint:disable-line no-css-comments
+    mso-table-lspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit
+    /* stylelint-disable-next-line property-no-unknown, length-zero-no-unit */ // sass-lint:disable-line no-css-comments
+    mso-table-rspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit
 }
 
 //
