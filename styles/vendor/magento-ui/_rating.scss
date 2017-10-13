@@ -4,13 +4,13 @@
 
 //  Rating-vote mixin
 @mixin lib-rating-vote(
-    $_icon-count         : $rating-icon__count,
-    $_icon-content       : $rating-icon__content,
-    $_icon-font          : $rating-icon__font,
-    $_icon-font-size     : $rating-icon__font-size,
-    $_icon-letter-spacing: $rating-icon__letter-spacing,
-    $_icon-color         : $rating-icon__color,
-    $_icon-color-active  : $rating-icon__active__color
+    $_icon-count          : $rating-icon__count,
+    $_icon-content        : $rating-icon__content,
+    $_icon-font           : $rating-icon__font,
+    $_icon-font-size      : $rating-icon__font-size,
+    $_icon-letter-spacing : $rating-icon__letter-spacing,
+    $_icon-color          : $rating-icon__color,
+    $_icon-color-active   : $rating-icon__active__color
 ) {
     overflow: hidden;
 
@@ -67,7 +67,7 @@
                 opacity: 1;
             }
 
-            & ~ label {
+            ~ label {
                 &:before {
                     opacity: 0;
                 }
@@ -83,21 +83,21 @@
 
 //  Rating-summary mixin
 @mixin lib-rating-summary(
-    $_icon-count         : $rating-icon__count,
-    $_icon-content       : $rating-icon__content,
-    $_icon-font          : $rating-icon__font,
-    $_icon-font-size     : $rating-icon__font-size,
-    $_icon-letter-spacing: $rating-icon__letter-spacing,
-    $_icon-color         : $rating-icon__color,
-    $_icon-color-active  : $rating-icon__active__color,
-    $_label-hide         : $rating-label__hide
+    $_icon-count          : $rating-icon__count,
+    $_icon-content        : $rating-icon__content,
+    $_icon-font           : $rating-icon__font,
+    $_icon-font-size      : $rating-icon__font-size,
+    $_icon-letter-spacing : $rating-icon__letter-spacing,
+    $_icon-color          : $rating-icon__color,
+    $_icon-color-active   : $rating-icon__active__color,
+    $_label-hide          : $rating-label__hide
 ) {
     overflow: hidden;
     white-space: nowrap;
     @include _lib-rating-label-hide($_label-hide);
 
     .rating-result {
-        width: ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1));
+        @include lib-css(width, ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1)));
         display: inline-block;
         position: relative;
         vertical-align: middle;
@@ -118,7 +118,7 @@
             );
         }
 
-        & > span {
+        > span {
             display: block;
             overflow: hidden;
 
@@ -175,15 +175,16 @@
     $_icon-letter-spacing,
     $_icon-color
 ) {
-    color: $_icon-color;
-    font-family: $_icon-font;
-    font-size: $_icon-font-size;
-    height: $_icon-font-size;
-    letter-spacing: $_icon-letter-spacing;
-    line-height: $_icon-font-size;
+    @include lib-css(color, $_icon-color);
+    @include lib-css(font-family, $_icon-font);
+    @include lib-css(font-size, $_icon-font-size);
+    @include lib-css(height, $_icon-font-size);
+    @include lib-css(letter-spacing, $_icon-letter-spacing);
+    @include lib-css(line-height, $_icon-font-size);
     font-style: normal;
     font-weight: normal;
     speak: none;
+    vertical-align: top;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -195,14 +196,14 @@
     $_icon-content,
     $_icon-color
 ) {
-    @include lib-rating-icons-content($_icon-count, $_icon-content);
     -webkit-font-smoothing: antialiased;
-    color: $_icon-color;
-    font-family: $_icon-font;
-    font-size: $_icon-font-size;
-    height: $_icon-font-size;
-    letter-spacing: $_icon-letter-spacing;
-    line-height: $_icon-font-size;
+    @include lib-css(color, $_icon-color);
+    @include lib-css(font-family, $_icon-font);
+    @include lib-css(font-size, $_icon-font-size);
+    @include lib-css(height, $_icon-font-size);
+    @include lib-css(letter-spacing, $_icon-letter-spacing);
+    @include lib-css(line-height, $_icon-font-size);
+    @include lib-rating-icons-content($_icon-count, $_icon-content);
     display: block;
     font-style: normal;
     font-weight: normal;
@@ -214,8 +215,10 @@
     $_icon-content: $rating-icon__content
 ) {
     $_icon-content-result: $_icon-content;
+
     @for $_index from $_icon-count to 1 {
         $_icon-content-result:  $_icon-content-result + $_icon-content;
     }
+
     content: $_icon-content-result;
 }

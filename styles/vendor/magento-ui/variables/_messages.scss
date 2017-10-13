@@ -1,65 +1,209 @@
 //
 //  Messages variables
-//
+//  _____________________________________________
 
-$message-icon__font-size: 28px !default;
-$message-icon__lateral-width: 30px !default;
-$message-icon__lateral-arrow-size: 5px !default;
-$message-icon__top: 18px !default;
-$message-icon__right: inherit !default;
-$message-icon__bottom: inherit !default;
-$message-icon__left: 0 !default;
+$message__padding                    : $indent__s $indent__base !default;
+$message__margin                     : 0 0 $indent__s !default;
 
-$message__border-width: inherit !default;
-$message__border-color: inherit !default;
-$message__border-style: inherit !default;
-$message__border-radius: inherit !default;
+$message__color                      : false !default; // Each message type has its own message color
+$message__font-size                  : 13px !default;
+$message__font-family                : false !default;
+$message__font-style                 : false !default;
+$message__font-weight                : false !default;
+$message__line-height                : 1.2em !default;
 
-// Default messages - info
+$message-icon__font-size             : ceil($message__font-size * 2 + 2) !default;
+$message-icon__font-line-height      : $message-icon__font-size !default;
+$message-icon__inner-padding-left    : 40px !default;
+$message-icon__lateral-width         : 30px !default;
+$message-icon__lateral-arrow-size    : 5px !default;
+$message-icon__top                   : 18px !default;
+$message-icon__right                 : false !default;
+$message-icon__bottom                : false !default;
+$message-icon__left                  : 0 !default;
 
-$message__color: $color-brownie1 !default;
-$message__background: $color-yellow-light1 !default;
+$message__border-width               : false !default;
+$message__border-color               : false !default;
+$message__border-style               : false !default;
+$message__border-radius              : false !default;
 
-$message-icon: $icon-warning !default;
-$message-icon__color-inner: $color-brownie-light1 !default;
-$message-icon__color-lateral: $color-white !default;
-$message-icon__background: $color-brownie1 !default;
+//  Information message
+$message-info__color                 : $color-brownie1 !default;
+$message-info__background            : $color-yellow-light1 !default;
+$message-info__border-color          : $message__border-color !default;
 
-$message-link__color: $link__color !default;
-$message-link__color-hover: $link__hover__color !default;
-$message-link__color-active: $link__hover__color !default;
+$message-info-link__color            : $link__color !default;
+$message-info-link__color-hover      : $link__hover__color !default;
+$message-info-link__color-active     : $link__hover__color !default;
 
-$messages-default: (
-    color: $message__color,
-    background: $message__background,
-    link-color: $message-link__color,
-    link-color-hover: $message-link__color-hover,
-    link-color-active: $message-link__color-active,
-    border-color: none,
-    icon: $message-icon,
-    icon-color-lateral: $message-icon__color-lateral,
-    icon-color-inner: $message-icon__color-inner,
-    icon-background: $message-icon__background,
-    icon-top: $message-icon__top,
-    icon-right: $message-icon__right,
-    icon-bottom: $message-icon__bottom,
-    icon-left: $message-icon__left
+$message-info-icon                   : $icon-warning !default;
+$message-info-icon__color-inner      : $color-brownie-light1 !default;
+$message-info-icon__color-lateral    : $color-white !default;
+$message-info-icon__background       : $color-brownie1 !default;
+$message-info-icon__top              : $message-icon__top !default;
+$message-info-icon__right            : $message-icon__right !default;
+$message-info-icon__bottom           : $message-icon__bottom !default;
+$message-info-icon__left             : $message-icon__left !default;
+
+$message-info-map                   : (
+    color                            : $message-info__color,
+    background                       : $message-info__background,
+    border-color                     : $message-info__border-color,
+    link__color                      : $message-info-link__color,
+    link__color-hover                : $message-info-link__color-hover,
+    link__color-active               : $message-info-link__color-active,
+    icon                             : $message-info-icon,
+    icon__color-inner                : $message-info-icon__color-inner,
+    icon__color-lateral              : $message-info-icon__color-lateral,
+    icon__background                 : $message-info-icon__background,
+    icon__top                        : $message-info-icon__top,
+    icon__right                      : $message-info-icon__right,
+    icon__bottom                     : $message-info-icon__bottom,
+    icon__left                       : $message-info-icon__left
 ) !default;
 
-$messages-error: (
-    color: $error__color,
-    background: $color-pink1,
-    icon: $icon-warning,
-    icon-color-lateral: $color-white,
-    icon-color-inner: $color-red11,
-    icon-background: $color-red11
+//  Warning message
+$message-warning__color              : $message-info__color !default;
+$message-warning__background         : $message-info__background !default;
+$message-warning__border-color       : $message-info__border-color !default;
+
+$message-warning-link__color         : $message-info-link__color !default;
+$message-warning-link__color-hover   : $message-info-link__color-hover !default;
+$message-warning-link__color-active  : $message-info-link__color-active !default;
+
+$message-warning-icon                : $message-info-icon !default;
+$message-warning-icon__color-inner   : $message-info-icon__color-inner !default;
+$message-warning-icon__color-lateral : $message-info-icon__color-lateral !default;
+$message-warning-icon__background    : $message-info-icon__background !default;
+$message-warning-icon__top           : $message-icon__top !default;
+$message-warning-icon__right         : $message-icon__right !default;
+$message-warning-icon__bottom        : $message-icon__bottom !default;
+$message-warning-icon__left          : $message-icon__left !default;
+
+$message-warning-map                : (
+    color                            : $message-warning__color,
+    background                       : $message-warning__background,
+    border-color                     : $message-warning__border-color,
+    link__color                      : $message-warning-link__color,
+    link__color-hover                : $message-warning-link__color-hover,
+    link__color-active               : $message-warning-link__color-active,
+    icon                             : $message-warning-icon,
+    icon__color-inner                : $message-warning-icon__color-inner,
+    icon__color-lateral              : $message-warning-icon__color-lateral,
+    icon__background                 : $message-warning-icon__background,
+    icon__top                        : $message-warning-icon__top,
+    icon__right                      : $message-warning-icon__right,
+    icon__bottom                     : $message-warning-icon__bottom,
+    icon__left                       : $message-warning-icon__left
 ) !default;
 
-$messages-success: (
-    color: $color-dark-green1,
-    background: $color-gray-light1,
-    icon: $icon-checkmark,
-    icon-color-lateral: $color-white,
-    icon-color-inner: $color-dark-green1,
-    icon-background: $color-dark-green1
+//  Error message
+$message-error__color                : $error__color !default;
+$message-error__background           : $color-pink1 !default;
+$message-error__border-color         : $message__border-color !default;
+
+$message-error-link__color           : $link__color !default;
+$message-error-link__color-hover     : $link__hover__color !default;
+$message-error-link__color-active    : $link__hover__color !default;
+
+$message-error-icon                  : $icon-warning !default;
+$message-error-icon__color-inner     : $color-red11 !default;
+$message-error-icon__color-lateral   : $color-white !default;
+$message-error-icon__background      : $color-red11 !default;
+$message-error-icon__top             : $message-icon__top !default;
+$message-error-icon__right           : $message-icon__right !default;
+$message-error-icon__bottom          : $message-icon__bottom !default;
+$message-error-icon__left            : $message-icon__left !default;
+
+$message-error-map                  : (
+    color                            : $message-error__color,
+    background                       : $message-error__background,
+    border-color                     : $message-error__border-color,
+    link__color                      : $message-error-link__color,
+    link__color-hover                : $message-error-link__color-hover,
+    link__color-active               : $message-error-link__color-active,
+    icon                             : $message-error-icon,
+    icon__color-inner                : $message-error-icon__color-inner,
+    icon__color-lateral              : $message-error-icon__color-lateral,
+    icon__background                 : $message-error-icon__background,
+    icon__top                        : $message-error-icon__top,
+    icon__right                      : $message-error-icon__right,
+    icon__bottom                     : $message-error-icon__bottom,
+    icon__left                       : $message-error-icon__left
 ) !default;
+
+//  Success message
+$message-success__color              : $color-dark-green1 !default;
+$message-success__background         : $color-gray-light1 !default;
+$message-success__border-color       : $message__border-color !default;
+
+$message-success-link__color         : $link__color !default;
+$message-success-link__color-hover   : $link__hover__color !default;
+$message-success-link__color-active  : $link__hover__color !default;
+
+$message-success-icon                : $icon-checkmark !default;
+$message-success-icon__color-inner   : $color-dark-green1 !default;
+$message-success-icon__color-lateral : $color-white !default;
+$message-success-icon__background    : $color-dark-green1 !default;
+$message-success-icon__top           : $message-icon__top !default;
+$message-success-icon__right         : $message-icon__right !default;
+$message-success-icon__bottom        : $message-icon__bottom !default;
+$message-success-icon__left          : $message-icon__left !default;
+
+$message-success-map                : (
+    color                            : $message-success__color,
+    background                       : $message-success__background,
+    border-color                     : $message-success__border-color,
+    link__color                      : $message-success-link__color,
+    link__color-hover                : $message-success-link__color-hover,
+    link__color-active               : $message-success-link__color-active,
+    icon                             : $message-success-icon,
+    icon__color-inner                : $message-success-icon__color-inner,
+    icon__color-lateral              : $message-success-icon__color-lateral,
+    icon__background                 : $message-success-icon__background,
+    icon__top                        : $message-success-icon__top,
+    icon__right                      : $message-success-icon__right,
+    icon__bottom                     : $message-success-icon__bottom,
+    icon__left                       : $message-success-icon__left
+) !default;
+
+//  Notice message
+$message-notice__color               : $message-info__color !default;
+$message-notice__background          : $message-info__background !default;
+$message-notice__border-color        : $message-info__border-color !default;
+
+$message-notice-link__color          : $message-info-link__color !default;
+$message-notice-link__color-hover    : $message-info-link__color-hover !default;
+$message-notice-link__color-active   : $message-info-link__color-active !default;
+
+$message-notice-icon                 : $message-info-icon !default;
+$message-notice-icon__color-inner    : $message-info-icon__color-inner !default;
+$message-notice-icon__color-lateral  : $message-info-icon__color-lateral !default;
+$message-notice-icon__background     : $message-info-icon__background !default;
+$message-notice-icon__top            : $message-icon__top !default;
+$message-notice-icon__right          : $message-icon__right !default;
+$message-notice-icon__bottom         : $message-icon__bottom !default;
+$message-notice-icon__left           : $message-icon__left !default;
+
+$message-notice-map                 : (
+    color                            : $message-notice__color,
+    background                       : $message-notice__background,
+    border-color                     : $message-notice__border-color,
+    link__color                      : $message-notice-link__color,
+    link__color-hover                : $message-notice-link__color-hover,
+    link__color-active               : $message-notice-link__color-active,
+    icon                             : $message-notice-icon,
+    icon__color-inner                : $message-notice-icon__color-inner,
+    icon__color-lateral              : $message-notice-icon__color-lateral,
+    icon__background                 : $message-notice-icon__background,
+    icon__top                        : $message-notice-icon__top,
+    icon__right                      : $message-notice-icon__right,
+    icon__bottom                     : $message-notice-icon__bottom,
+    icon__left                       : $message-notice-icon__left
+) !default;
+
+//  Email messages
+$message-email__color                : $text__color !default;
+$message-email__background           : $message-info__background !default;
+$message-email__border-color         : $message-info__border-color !default;
+$message-email-link__color           : $message-info-link__color !default;

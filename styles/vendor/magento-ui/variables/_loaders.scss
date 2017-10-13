@@ -1,0 +1,25 @@
+//
+//  Loader variables
+//  _____________________________________________
+
+$loader-overlay__background-color : rgba(255, 255, 255, 0.5) !default;
+$loader-overlay__z-index          : 9999 !default;
+
+$loader-icon__width               : 160px !default;
+$loader-icon__height              : 160px !default;
+$loader-icon__background-color    : transparent !default;
+$loader-icon__background-image    : url('../images/loader-2.gif') !default;
+$loader-icon__background-position : 50% 50% !default;
+$loader-icon__border-radius       : 5px !default;
+$loader-icon__padding             : '' !default;
+
+$loader-text                      : false !default;
+$loader-text__color               : $primary__color !default;
+$loader-text__font-size           : $font-size__base !default;
+$loader-text__font-family         : $font-family__base !default;
+$loader-text__font-weight         : $font-weight__regular !default;
+$loader-text__font-style          : $font-style__base !default;
+$loader-text__padding             : 130px 0 0 !default;
+
+$loading__background-color        : $loader-overlay__background-color !default;
+$loading__background-image        : $loader-icon__background-image !default;

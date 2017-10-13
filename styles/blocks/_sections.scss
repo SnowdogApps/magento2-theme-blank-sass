@@ -9,9 +9,15 @@
 
 @include min-screen($screen__m) {
     .product.data.items {
-        @include lib-data-tabs();
+        @include lib-data-tabs(
+            $_tab-content-border-top-status: true
+        );
     }
 }
+
+//
+//  Mobile
+//  _____________________________________________
 
 @include max-screen($screen__m) {
     .product.data.items {

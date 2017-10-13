@@ -2,9 +2,9 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-shipping-policy-action__color        : $link__color !default;
-$checkout-shipping-policy-tooltip__width       : 420px !default;
-$checkout-shipping-policy-tooltip-mobile__width: 300px !default;
+$checkout-shipping-policy-action__color         : $link__color;
+$checkout-shipping-policy-tooltip__width        : 420px;
+$checkout-shipping-policy-tooltip-mobile__width : 300px;
 
 //
 //  Common
@@ -19,7 +19,7 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px !default;
         top: 12px;
 
         .field-tooltip-action {
-            color: $checkout-shipping-policy-action__color;
+            @include lib-css(color, $checkout-shipping-policy-action__color);
             cursor: pointer;
 
             &:before {
@@ -34,7 +34,7 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px !default;
         .field-tooltip-content {
             @extend .abs-add-box-sizing;
             @extend .abs-checkout-tooltip-content-position-top;
-            width: $checkout-shipping-policy-tooltip__width;
+            @include lib-css(width, $checkout-shipping-policy-tooltip__width);
             top: $indent__l;
         }
     }
@@ -53,7 +53,7 @@ $checkout-shipping-policy-tooltip-mobile__width: 300px !default;
             top: auto;
 
             .field-tooltip-content {
-                width: $checkout-shipping-policy-tooltip-mobile__width;
+                @include lib-css(width, $checkout-shipping-policy-tooltip-mobile__width);
                 right: auto;
 
                 &:before,

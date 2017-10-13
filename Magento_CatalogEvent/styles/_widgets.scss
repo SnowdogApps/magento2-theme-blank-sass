@@ -7,7 +7,7 @@
     .block-content {
         position: relative;
 
-        & > .action {
+        >  .action {
             cursor: pointer;
             margin-top: -6px;
             position: absolute;
@@ -21,10 +21,10 @@
                 width: 20px;
 
                 @include lib-icon-font(
-                    $_icon-font-content    : $icon-prev,
-                    $_icon-font-text-hide  : true,
-                    $_icon-font-size       : 55px,
-                    $_icon-font-line-height: 30px
+                    $_icon-font-content     : $icon-prev,
+                    $_icon-font-text-hide   : true,
+                    $_icon-font-size        : 55px,
+                    $_icon-font-line-height : 30px
                 );
 
                 &:before {
@@ -66,7 +66,7 @@
             white-space: nowrap;
 
             .item {
-                background: $catalog-event-background-color;
+                @include lib-css(background, $catalog-event-background-color);
                 display: inline-block;
                 text-align: center;
                 vertical-align: top;
@@ -84,7 +84,7 @@
 
                 .category-name {
                     display: inline-block;
-                    font-size: 18px;
+                    @include lib-font-size(18);
                     padding: 15px 5px 0;
                     word-break: break-all;
                 }
@@ -98,13 +98,13 @@
                     }
 
                     .value {
-                        font-size: 26px;
+                        @include lib-font-size(26);
                         font-weight: $font-weight__light;
                     }
 
                     .label {
                         display: block;
-                        font-size: 13px;
+                        @include lib-font-size(13);
                     }
                 }
 
@@ -119,19 +119,19 @@
 
                     .start {
                         &:after {
-                            font-size: 18px;
+                            @include lib-font-size(18);
                             content: '\2013';
                             display: block;
                         }
                     }
 
                     .date {
-                        font-size: 18px;
+                        @include lib-font-size(18);
                         font-weight: $font-weight__light;
                     }
 
                     .time {
-                        font-size: 13px;
+                        @include lib-font-size(13);
                     }
                 }
 

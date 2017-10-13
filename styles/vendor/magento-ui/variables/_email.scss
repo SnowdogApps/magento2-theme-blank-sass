@@ -1,0 +1,19 @@
+//
+//  Email variables
+//  _____________________________________________
+
+//  Structure
+$email-body__width               : 600px !default;
+$email-body__padding             : $indent__s !default;
+
+//  Content
+$email-content__padding__base    : $indent__s !default;
+$email-content__padding__s       : $indent__xs !default;
+$email-content__padding__m       : $indent__base !default;
+$email-content__padding__l       : $indent__l !default;
+$email-content__padding__xl      : $indent__xl !default;
+
+//  Colors
+$email__background-color         : $color-white !default;
+$email-content__background-color : $color-white !default;
+

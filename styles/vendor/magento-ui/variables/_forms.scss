@@ -183,12 +183,12 @@ $input-checkbox__disabled__opacity              : $form-element-choice__disabled
 
 $form-validation-note__color-error              : $error__color !default;
 $form-validation-note__font-size                : $font-size__s !default;
-$form-validation-note__font-family              : inherit !default;
-$form-validation-note__font-style               : inherit !default;
-$form-validation-note__font-weight              : inherit !default;
-$form-validation-note__line-height              : inherit !default;
+$form-validation-note__font-family              : false !default;
+$form-validation-note__font-style               : false !default;
+$form-validation-note__font-weight              : false !default;
+$form-validation-note__line-height              : false !default;
 $form-validation-note__margin                   : 3px 0 0 !default;
-$form-validation-note__padding                  : inherit !default;
+$form-validation-note__padding                  : false !default;
 
 $form-validation-note-icon__use                 : false !default;
 $form-validation-note-icon__font-content        : $icon-pointer-up !default;
@@ -196,9 +196,9 @@ $form-validation-note-icon__font                : $icon-font !default;
 $form-validation-note-icon__font-size           : $form-validation-note__font-size * 2 !default;
 $form-validation-note-icon__font-line-height    : $form-validation-note__font-size !default;
 $form-validation-note-icon__font-color          : $form-validation-note__color-error !default;
-$form-validation-note-icon__font-color-hover    : inherit !default;
-$form-validation-note-icon__font-color-active   : inherit !default;
-$form-validation-note-icon__font-margin         : inherit !default;
+$form-validation-note-icon__font-color-hover    : false !default;
+$form-validation-note-icon__font-color-active   : false !default;
+$form-validation-note-icon__font-margin         : false !default;
 $form-validation-note-icon__font-vertical-align : $icon-font__vertical-align !default;
 $form-validation-note-icon__font-position       : $icon-font__position !default;
 $form-validation-note-icon__font-text-hide      : $icon-font__text-hide !default;
@@ -217,15 +217,15 @@ $form-element-validation__background-valid      : false !default;
 $form-fieldset__border                          : 0 !default;
 $form-fieldset__margin                          : 0 0 $indent__xl !default;
 $form-fieldset__padding                         : 0 !default;
-$form-fieldset-legend__color                    : inherit !default;
+$form-fieldset-legend__color                    : false !default;
 $form-fieldset-legend__font-size                : 20px !default;
-$form-fieldset-legend__font-family              : inherit !default;
-$form-fieldset-legend__font-weight              : inherit !default;
-$form-fieldset-legend__font-style               : inherit !default;
+$form-fieldset-legend__font-family              : false !default;
+$form-fieldset-legend__font-weight              : false !default;
+$form-fieldset-legend__font-style               : false !default;
 $form-fieldset-legend__line-height              : 1.2 !default;
 $form-fieldset-legend__margin                   : 0 0 $indent__m !default;
 $form-fieldset-legend__padding                  : 0 !default;
-$form-fieldset-legend__width                    : inherit !default;
+$form-fieldset-legend__width                    : false !default;
 
 //
 //  Field
@@ -233,34 +233,34 @@ $form-fieldset-legend__width                    : inherit !default;
 
 $form-field-type                                : block !default; // [inline|block]
 $form-field-type-revert                         : inline !default; // [inline|block|false]
-$form-field__border                             : none !default;
+$form-field__border                             : false !default;
 $form-field__vertical-indent                    : $indent__base !default;
 $form-field__additional-vertical-indent         : $form-field__vertical-indent / 2 !default;
 $form-field-type-block__margin                  : 0 0 $form-field__vertical-indent !default;
 $form-field-type-inline__margin                 : 0 0 $form-field__vertical-indent !default;
 
-$form-field-column                              : inherit !default;
+$form-field-column                              : false !default;
 $form-field-column__padding                     : 0 12px 0 0 !default;
 $form-field-column__number                      : 2 !default;
 
 //  Form field label
 $form-field-label__align                        : false !default;
-$form-field-label__color                        : inherit !default;
-$form-field-label__font-size                    : inherit !default;
-$form-field-label__font-family                  : inherit !default;
+$form-field-label__color                        : false !default;
+$form-field-label__font-size                    : false !default;
+$form-field-label__font-family                  : false !default;
 $form-field-label__font-weight                  : $font-weight__bold !default;
-$form-field-label__font-style                   : inherit !default;
-$form-field-label__line-height                  : inherit !default;
+$form-field-label__font-style                   : false !default;
+$form-field-label__line-height                  : false !default;
 
-$form-field-type-label-inline__margin           : 0 0 $indent__base !default;
+$form-field-type-label-inline__margin           : false !default;
 $form-field-type-label-inline__padding-top      : 6px !default;
 $form-field-type-label-inline__padding          : $form-field-type-label-inline__padding-top 15px 0 0 !default;
 $form-field-type-label-inline__width            : 25.8% !default;
 $form-field-type-label-inline__align            : right !default;
 
 $form-field-type-label-block__margin            : 0 0 $indent__xs !default;
-$form-field-type-label-block__padding           : inherit !default;
-$form-field-type-label-block__align             : inherit !default;
+$form-field-type-label-block__padding           : false !default;
+$form-field-type-label-block__align             : $form-field-label__align !default;
 
 //  Form field control
 $form-field-type-control-inline__width          : 74.2% !default;
@@ -268,19 +268,19 @@ $form-field-type-control-inline__width          : 74.2% !default;
 //  Form field label asterisk
 $form-field-label-asterisk__color               : $color-red10 !default;
 $form-field-label-asterisk__font-size           : $font-size__s !default;
-$form-field-label-asterisk__font-family         : inherit !default;
-$form-field-label-asterisk__font-weight         : inherit !default;
-$form-field-label-asterisk__font-style          : inherit !default;
-$form-field-label-asterisk__line-height         : inherit !default;
+$form-field-label-asterisk__font-family         : false !default;
+$form-field-label-asterisk__font-weight         : false !default;
+$form-field-label-asterisk__font-style          : false !default;
+$form-field-label-asterisk__line-height         : false !default;
 $form-field-label-asterisk__margin              : 0 0 0 $indent__xs !default;
 
 //  Form field note
-$form-field-note__color                         : $error__color !default;
+$form-field-note__color                         : false !default;
 $form-field-note__font-size                     : $font-size__s !default;
-$form-field-note__font-family                   : inherit !default;
-$form-field-note__font-weight                   : inherit !default;
-$form-field-note__font-style                    : inherit !default;
-$form-field-note__line-height                   : inherit !default;
+$form-field-note__font-family                   : false !default;
+$form-field-note__font-weight                   : false !default;
+$form-field-note__font-style                    : false !default;
+$form-field-note__line-height                   : false !default;
 $form-field-note__margin                        : 3px 0 0 !default;
 $form-field-note__padding                       : 0 !default;
 
@@ -290,9 +290,9 @@ $form-field-note-icon-font__content             : $icon-pointer-up !default;
 $form-field-note-icon-font__size                : $form-field-note__font-size * 2 !default;
 $form-field-note-icon-font__line-height         : $form-field-note__font-size !default;
 $form-field-note-icon-font__color               : $form-field-note__color !default;
-$form-field-note-icon-font__color-hover         : inherit !default;
-$form-field-note-icon-font__color-active        : inherit !default;
-$form-field-note-icon-font__margin              : inherit !default;
+$form-field-note-icon-font__color-hover         : false !default;
+$form-field-note-icon-font__color-active        : false !default;
+$form-field-note-icon-font__margin              : false !default;
 $form-field-note-icon-font__vertical-align      : $icon-font__vertical-align !default;
 $form-field-note-icon-font__position            : $icon-font__position !default;
 $form-field-note-icon-font__text-hide           : $icon-font__text-hide !default;
@@ -301,10 +301,10 @@ $form-field-note-icon-font__text-hide           : $icon-font__text-hide !default
 $form-hasrequired__position                     : top !default; // [top|bottom]
 $form-hasrequired__color                        : $form-field-label-asterisk__color !default;
 $form-hasrequired__font-size                    : $font-size__s !default;
-$form-hasrequired__font-family                  : inherit !default;
-$form-hasrequired__font-weight                  : inherit !default;
-$form-hasrequired__font-style                   : inherit !default;
-$form-hasrequired__line-height                  : inherit !default;
-$form-hasrequired__border                       : none !default;
+$form-hasrequired__font-family                  : false !default;
+$form-hasrequired__font-weight                  : false !default;
+$form-hasrequired__font-style                   : false !default;
+$form-hasrequired__line-height                  : false !default;
+$form-hasrequired__border                       : false !default;
 $form-hasrequired__margin                       : $indent__s 0 0 !default;
-$form-hasrequired__padding                      : inherit !default;
+$form-hasrequired__padding                      : false !default;

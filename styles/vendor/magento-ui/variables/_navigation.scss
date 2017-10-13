@@ -1,0 +1,110 @@
+//
+//  Navigation variables
+//  _____________________________________________
+
+$navigation__background                                  : $secondary__color__light !default;
+$navigation__border                                      : '' !default;
+
+$navigation-level0-item__font-size                       : 16 !default;
+$navigation-level0-item__font-weight                     : $font-weight__bold !default;
+$navigation-level0-item__line-height                     : false !default;
+$navigation-level0-item__margin                          : 0 !default;
+$navigation-level0-item__padding                         : 8px $indent__xl 8px 15px !default;
+$navigation-level0-item__text-transform                  : uppercase !default;
+
+$navigation-level0-item__background                      : '' !default;
+$navigation-level0-item__border                          : 1px solid $color-gray82 !default;
+$navigation-level0-item__color                           : $color-gray34 !default;
+$navigation-level0-item__text-decoration                 : none !default;
+
+$navigation-level0-item__active__background              : '' !default;
+$navigation-level0-item__active__border-color            : $color-orange-red1 !default;
+$navigation-level0-item__active__border-style            : solid !default;
+$navigation-level0-item__active__border-width            : 0 0 0 8px !default;
+$navigation-level0-item__active__color                   : '' !default;
+$navigation-level0-item__active__text-decoration         : '' !default;
+
+$submenu__background                                     : '' !default;
+$submenu__border                                         : '' !default;
+$submenu__padding-top                                    : $indent__s !default;
+$submenu__padding-right                                  : 0 !default;
+$submenu__padding-bottom                                 : $indent__s !default;
+$submenu__padding-left                                   : 15px !default;
+$submenu__font-size                                      : '' !default;
+$submenu__font-weight                                    : $font-weight__regular !default;
+$submenu-item__line-height                               : 1.3 !default;
+
+$submenu-item__background                                : '' !default;
+$submenu-item__border                                    : '' !default;
+$submenu-item__color                                     : $color-gray34 !default;
+$submenu-item__text-decoration                           : '' !default;
+
+$submenu-item__active__background                        : '' !default;
+$submenu-item__active__border                            : 8px !default;
+$submenu-item__active__border-color                      : $color-orange-red1 !default;
+$submenu-item__active__border-style                      : solid !default;
+$submenu-item__active__border-width                      : 0 0 0 $submenu-item__active__border !default;
+$submenu-item__active__color                             : '' !default;
+$submenu-item__active__text-decoration                   : '' !default;
+
+//
+//  Desktop navigation
+//  ---------------------------------------------
+
+$navigation-desktop__background                          : $navigation__background !default;
+$navigation-desktop__border                              : '' !default;
+$navigation-desktop__font-size                           : '' !default;
+$navigation-desktop__font-weight                         : $font-weight__bold !default;
+
+$navigation-desktop-level0-item__line-height             : 53px !default;
+$navigation-desktop-level0-item__margin                  : 0 $indent__s 0 0 !default;
+$navigation-desktop-level0-item__padding                 : 0 12px !default;
+
+$navigation-desktop-level0-item__background              : '' !default;
+$navigation-desktop-level0-item__border                  : '' !default;
+$navigation-desktop-level0-item__color                   : $color-gray34 !default;
+$navigation-desktop-level0-item__text-decoration         : none !default;
+
+$navigation-desktop-level0-item__hover__background       : '' !default;
+$navigation-desktop-level0-item__hover__border           : '' !default;
+$navigation-desktop-level0-item__hover__color            : $primary__color !default;
+$navigation-desktop-level0-item__hover__text-decoration  : $navigation-desktop-level0-item__text-decoration !default;
+
+$navigation-desktop-level0-item__active__background      : '' !default;
+$navigation-desktop-level0-item__active__border-color    : $color-orange-red1 !default;
+$navigation-desktop-level0-item__active__border-style    : solid !default;
+$navigation-desktop-level0-item__active__border-width    : 0 0 3px !default;
+$navigation-desktop-level0-item__active__color           : $navigation-desktop-level0-item__hover__color !default;
+$navigation-desktop-level0-item__active__text-decoration : $navigation-desktop-level0-item__text-decoration !default;
+
+$submenu-desktop__background                             : $page__background-color !default;
+$submenu-desktop__border-width                           : $border-width__base !default;
+$submenu-desktop__border-style                           : solid !default;
+$submenu-desktop__border-color                           : $border-color__base !default;
+$submenu-desktop__box-shadow                             : 0 $indent__xs $indent__xs rgba(0, 0, 0, 0.19) !default;
+$submenu-desktop__font-size                              : '' !default;
+$submenu-desktop__font-weight                            : $font-weight__bold !default;
+$submenu-desktop__min-width                              : 230px !default;
+$submenu-desktop__padding                                : 15px 0 !default;
+
+$submenu-desktop-arrow                                   : true !default; // [true|false]
+$submenu-desktop-arrow__size                             : 10px !default;
+$submenu-desktop-arrow__left                             : 20px !default;
+
+$submenu-desktop-item__padding                           : 8px $indent__base !default;
+$submenu-desktop-item__background                        : '' !default;
+$submenu-desktop-item__border                            : '' !default;
+$submenu-desktop-item__color                             : $navigation-desktop-level0-item__color !default;
+$submenu-desktop-item__text-decoration                   : '' !default;
+
+$submenu-desktop-item__hover__background                 : $secondary__color !default;
+$submenu-desktop-item__hover__border                     : '' !default;
+$submenu-desktop-item__hover__color                      : $navigation-desktop-level0-item__hover__color !default;
+$submenu-desktop-item__hover__text-decoration            : $navigation-desktop-level0-item__text-decoration !default;
+
+$submenu-desktop-item__active__background                : '' !default;
+$submenu-desktop-item__active__border-color              : $color-orange-red1 !default;
+$submenu-desktop-item__active__border-style              : solid !default;
+$submenu-desktop-item__active__border-width              : 0 0 0 3px !default;
+$submenu-desktop-item__active__color                     : '' !default;
+$submenu-desktop-item__active__text-decoration           : '' !default;
