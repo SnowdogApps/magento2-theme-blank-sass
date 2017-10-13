@@ -72,10 +72,9 @@
     }
 
     .item-options {
-        margin: $indent__s 0 0;
-
         @extend .abs-product-options-list;
         @extend .abs-add-clearfix;
+        margin: $indent__s 0 0;
     }
 
     @extend .abs-account-blocks;

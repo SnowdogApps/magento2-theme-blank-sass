@@ -95,8 +95,8 @@ $checkout-summary-items__padding    : 15px;
         &.active {
             > .title {
                 @include lib-icon-font-symbol(
-                $_icon-font-content: $icon-up,
-                $_icon-font-position: after
+                    $_icon-font-content  : $icon-up,
+                    $_icon-font-position : after
                 );
             }
         }

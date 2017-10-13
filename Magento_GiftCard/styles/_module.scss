@@ -3,8 +3,8 @@
         .block {
             &.giftcard {
                 .action.check {
-                    @include lib-button-s();
                     @extend .abs-action-button-as-link;
+                    @include lib-button-s();
                     margin-top: $indent__base;
                 }
             }

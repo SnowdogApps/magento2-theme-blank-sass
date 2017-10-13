@@ -50,15 +50,15 @@
         }
 
         .action.primary {
-            margin-bottom: 0;
             @extend .abs-revert-secondary-color;
             @extend .abs-revert-secondary-size;
+            margin-bottom: 0;
         }
     }
 }
 
 .form-giftregistry-search {
-    margin-bottom: $indent__l*2;
+    margin-bottom: $indent__l * 2;
 
     .fields-specific-options {
         .field {

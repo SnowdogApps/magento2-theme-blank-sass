@@ -234,10 +234,10 @@
     > .item.title {
         > .switch {
             @include lib-css(background, $_accordion-control-background-color);
-            @include lib-css(border-bottom,$_accordion-control-border-bottom);
-            @include lib-css(border-left,$_accordion-control-border-left);
-            @include lib-css(border-right,$_accordion-control-border-right);
-            @include lib-css(border-top,$_accordion-control-border-top);
+            @include lib-css(border-bottom, $_accordion-control-border-bottom);
+            @include lib-css(border-left, $_accordion-control-border-left);
+            @include lib-css(border-right, $_accordion-control-border-right);
+            @include lib-css(border-top, $_accordion-control-border-top);
             @include lib-css(height, $_accordion-control-height);
             @include lib-css(padding, $_accordion-control-padding-top $_accordion-control-padding-right $_accordion-control-padding-bottom $_accordion-control-padding-left);
             @include lib-typography(
