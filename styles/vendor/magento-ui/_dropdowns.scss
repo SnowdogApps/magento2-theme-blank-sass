@@ -301,16 +301,16 @@
     $_dropdown-list-position-left,
     $_dropdown-list-position-right
 ) {
-    @if not $_dropdown-list-position-top and $_dropdown-list-position-top != auto {
+    @if $_dropdown-list-position-top != false and $_dropdown-list-position-top != auto {
         top: $_dropdown-list-position-top;
     }
-    @if not $_dropdown-list-position-bottom and $_dropdown-list-position-bottom != auto {
+    @if $_dropdown-list-position-bottom != false and $_dropdown-list-position-bottom != auto {
         bottom: $_dropdown-list-position-bottom;
     }
-    @if not $_dropdown-list-position-left and $_dropdown-list-position-left != auto {
+    @if $_dropdown-list-position-left != false and $_dropdown-list-position-left != auto {
         left: $_dropdown-list-position-left;
     }
-    @if not $_dropdown-list-position-right and $_dropdown-list-position-right != auto {
+    @if $_dropdown-list-position-right != false and $_dropdown-list-position-right != auto {
         right: $_dropdown-list-position-right;
     }
 }
