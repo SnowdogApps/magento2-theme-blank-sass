@@ -3,12 +3,8 @@
 
 ### Releases
 
-Using Magento 2.1? Use release [0.7.0 or later](https://github.com/SnowdogApps/magento2-theme-blank-sass/releases).
-Using Magento 2.0? Use release [0.6.0](https://github.com/SnowdogApps/magento2-theme-blank-sass/releases)
-
-## Current status
-Theme is **ready to use** as Composer package with Magento 2.
-Some things needs to be fixed or polished, but it's definitely working and is production ready.
+* Magento 2.1: v0.11.0 or older
+* Magento 2.0: v0.6.0 or older
 
 ## Installation
 1. Switch to your Magento project root
@@ -19,4 +15,4 @@ Some things needs to be fixed or polished, but it's definitely working and is pr
 6. Check your great looking theme :wink:
 
 ## Questions
-If you have any questions about this project let's go to offical Magento forum - [Less to Sass Community Project](https://community.magento.com/t5/Less-to-Sass-Community-Project/bd-p/less-to-sass)
+If you have any questions about this project, let's join Magefront community and ask questions on the Slack chanel - [MageFront Invite Form](https://docs.google.com/forms/d/e/1FAIpQLSeSlW7Wx_N9s316NzSLIPD7K5hyP_-EuNKkj9-KR4aJ4IngvA/viewform)
