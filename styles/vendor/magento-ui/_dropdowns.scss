@@ -560,7 +560,7 @@
 
 //  Dropdown list item border != 0
 @mixin _lib-dropdown-list-item-border($_dropdown-list-item-border) {
-    @if not $_dropdown-list-item-border and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
+    @if $_dropdown-list-item-border != false and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
         @include lib-css(border-top, $_dropdown-list-item-border);
         &:first-child {
             border: none;
