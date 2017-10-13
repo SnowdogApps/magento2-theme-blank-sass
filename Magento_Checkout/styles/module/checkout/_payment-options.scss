@@ -83,7 +83,7 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
             }
 
             &._inactive {
-                opacity: .4;
+                opacity: 0.4;
             }
 
             span {
@@ -95,7 +95,7 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
 
         img {
             filter: grayscale(100%); // For Webkit browsers
-            transition: all .6s ease; // Fade to color for Chrome and Safari
+            transition: all 0.6s ease; // Fade to color for Chrome and Safari
         }
     }
 

@@ -19,7 +19,7 @@ $dropdown-list__position-left                     : false !default;
 $dropdown-list__pointer                           : true !default; // [true|false]
 $dropdown-list__background                        : $color-white !default;
 $dropdown-list__border                            : 1px solid $color-gray-light2 !default;
-$dropdown-list__shadow                            : 0 3px 3px rgba(0,0,0,0.15) !default; // [''|none|value]
+$dropdown-list__shadow                            : 0 3px 3px rgba(0, 0, 0, 0.15) !default; // [''|none|value]
 $dropdown-list__z-index                           : 100 !default;
 
 $dropdown-list-pointer__border                    : $color-gray-light2 !default;

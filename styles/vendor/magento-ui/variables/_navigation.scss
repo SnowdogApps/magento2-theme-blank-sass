@@ -81,7 +81,7 @@ $submenu-desktop__background                             : $page__background-col
 $submenu-desktop__border-width                           : $border-width__base !default;
 $submenu-desktop__border-style                           : solid !default;
 $submenu-desktop__border-color                           : $border-color__base !default;
-$submenu-desktop__box-shadow                             : 0 $indent__xs $indent__xs rgba(0, 0, 0, .19) !default;
+$submenu-desktop__box-shadow                             : 0 $indent__xs $indent__xs rgba(0, 0, 0, 0.19) !default;
 $submenu-desktop__font-size                              : '' !default;
 $submenu-desktop__font-weight                            : $font-weight__bold !default;
 $submenu-desktop__min-width                              : 230px !default;

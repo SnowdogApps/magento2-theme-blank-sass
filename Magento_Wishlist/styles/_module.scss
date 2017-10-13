@@ -47,8 +47,8 @@
         margin: $indent__s 0;
 
         .qty {
-            vertical-align: middle;
             @extend .abs-input-qty;
+            vertical-align: middle;
         }
     }
 
@@ -113,9 +113,6 @@
                 margin: 0;
             }
 
-            &-tooltip {
-            }
-
             .comment-box {
                 .label {
                     @extend .abs-visually-hidden;
@@ -140,8 +137,8 @@
 
             .box-tocart {
                 input.qty {
-                    height: 32px;
                     @extend .abs-input-qty;
+                    height: 32px;
                 }
             }
         }

@@ -75,8 +75,8 @@
 }
 
 .block-cart-failed {
-    margin-top: $indent__xl;
     @extend .abs-shopping-cart-items;
+    margin-top: $indent__xl;
 
     .block-title {
         @include lib-font-size($h2__font-size);

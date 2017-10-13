@@ -92,15 +92,15 @@ $braintree-paypal-account__padding-vertical : 15px;
     position: relative;
 
     @include lib-icon-image(
-        $_icon-image: '../Magento_Braintree/images/paypal-small.png',
-        $_icon-image-position: before,
-        $_icon-image-width: $braintree-paypal-icon__width,
-        $_icon-image-height: $braintree-paypal-icon__height
+        $_icon-image          : '../Magento_Braintree/images/paypal-small.png',
+        $_icon-image-position : before,
+        $_icon-image-width    : $braintree-paypal-icon__width,
+        $_icon-image-height   : $braintree-paypal-icon__height
     );
 
     &:before {
-        left: $braintree-paypal-account__padding-right/2 - $braintree-paypal-icon__width/2;
-        margin-top: -$braintree-paypal-icon__height/2;
+        left: $braintree-paypal-account__padding-right / 2 - $braintree-paypal-icon__width / 2;
+        margin-top: -$braintree-paypal-icon__height / 2;
         position: absolute;
         top: 50%;
     }

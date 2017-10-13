@@ -6,6 +6,7 @@ $desktop-popup-position-top  : 20%;
 .wishlist {
     //  Wish list split button
     &.split.button {
+        @extend .abs-dropdown-items-new;
         @include lib-dropdown-split(
             $_options-selector                          : '.items',
             $_dropdown-split-button-border-radius-fix   : true,
@@ -20,7 +21,6 @@ $desktop-popup-position-top  : 20%;
             $_dropdown-split-list-min-width             : 200px
         );
         vertical-align: middle;
-        @extend .abs-dropdown-items-new;
 
         .items {
             text-align: left;
@@ -118,8 +118,8 @@ $desktop-popup-position-top  : 20%;
         &-select {
             .wishlist-name {
                 &-label {
-                    font-weight: $font-weight__semibold;
                     @extend .abs-colon;
+                    font-weight: $font-weight__semibold;
                 }
             }
 
@@ -256,7 +256,7 @@ $desktop-popup-position-top  : 20%;
         .wishlist {
             //  Select wish list
             &-select {
-                margin: 0 -$layout__width-xs-indent 20px;
+                margin: 0 (-$layout__width-xs-indent) 20px;
 
                 .wishlist-name {
                     @extend .abs-toggling-title-mobile;

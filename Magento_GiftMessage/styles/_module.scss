@@ -108,8 +108,8 @@ $gift-item-block__border-width   : $border-width__base;
     &._active {
         .title {
             @include lib-icon-font-symbol(
-            $icon-up,
-            $_icon-font-position: after
+                $icon-up,
+                $_icon-font-position : after
             );
         }
     }

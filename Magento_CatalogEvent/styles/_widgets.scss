@@ -16,7 +16,7 @@
 
             &.backward,
             &.forward {
-                opacity: .5;
+                opacity: 0.5;
                 overflow: hidden;
                 width: 20px;
 
@@ -164,8 +164,8 @@
                     }
 
                     &.event {
-                        @include lib-button-primary();
                         @extend .abs-action-link-button;
+                        @include lib-button-primary();
                         margin-top: 15px;
 
                         &:hover {

@@ -74,12 +74,12 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1;
         word-wrap: break-word;
 
         @include lib-typography(
-        $_color: $checkout-progress-bar-item__background-color,
-        $_font-family: false,
-        $_font-size: $checkout-progress-bar__font-size,
-        $_font-style: false,
-        $_font-weight: $checkout-progress-bar__font-weight,
-        $_line-height: false
+            $_color       : $checkout-progress-bar-item__background-color,
+            $_font-family : false,
+            $_font-size   : $checkout-progress-bar__font-size,
+            $_font-style  : false,
+            $_font-weight : $checkout-progress-bar__font-weight,
+            $_line-height : false
         );
 
         &:before, // Item element

@@ -8,8 +8,8 @@ $popup__padding                                            : 22px !default;
 $popup__background                                         : $color-white !default;
 $popup__border-color                                       : $color-gray-light3 !default;
 $popup__border                                             : 1px solid $popup__border-color !default;
-$popup__shadow                                             : 0 3px 3px rgba(0,0,0,.15) !default;
-$popup__fade                                               : opacity .3s linear !default;
+$popup__shadow                                             : 0 3px 3px rgba(0, 0, 0, 0.15) !default;
+$popup__fade                                               : opacity 0.3s linear !default;
 $popup__z-index                                            : 1001 !default;
 
 $popup__position                                           : fixed !default;
@@ -69,7 +69,7 @@ $popup-icon-font__text-hide                                : true !default;
 
 //  Window overlay variables
 $overlay__background                                       : $color-black !default;
-$overlay__opacity                                          : .5 !default;
+$overlay__opacity                                          : 0.5 !default;
 $overlay__opacity-old                                      : 50 !default;
-$overlay__fade                                             : opacity .15s linear !default;
+$overlay__fade                                             : opacity 0.15s linear !default;
 $overlay__z-index                                          : 1000 !default;

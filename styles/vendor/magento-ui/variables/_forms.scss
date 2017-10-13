@@ -31,7 +31,7 @@ $form-element-input-placeholder__font-style     : $form-element-input__font-styl
 //  Disabled state
 $form-element-input__disabled__background       : $form-element-input__background !default;
 $form-element-input__disabled__border           : $form-element-input__border !default;
-$form-element-input__disabled__opacity          : .5 !default;
+$form-element-input__disabled__opacity          : 0.5 !default;
 $form-element-input__disabled__color            : $form-element-input__color !default;
 $form-element-input__disabled__font-style       : $form-element-input__font-style !default;
 
@@ -235,7 +235,7 @@ $form-field-type                                : block !default; // [inline|blo
 $form-field-type-revert                         : inline !default; // [inline|block|false]
 $form-field__border                             : false !default;
 $form-field__vertical-indent                    : $indent__base !default;
-$form-field__additional-vertical-indent         : $form-field__vertical-indent/2 !default;
+$form-field__additional-vertical-indent         : $form-field__vertical-indent / 2 !default;
 $form-field-type-block__margin                  : 0 0 $form-field__vertical-indent !default;
 $form-field-type-inline__margin                 : 0 0 $form-field__vertical-indent !default;
 
