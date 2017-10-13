@@ -89,9 +89,9 @@
 @mixin lib-gradient__horizontal(
     $_start-color,
     $_end-color,
-    $_start-percent : 0%,
-    $_end-percent   : 100%,
-    $_background-color-position: true
+    $_start-percent             : 0%,
+    $_end-percent               : 100%,
+    $_background-color-position : true
 ) {
     @if $_background-color-position == true {
         background-color: $_end-color;
@@ -107,9 +107,9 @@
 @mixin lib-gradient__vertical(
     $_start-color,
     $_end-color,
-    $_start-percent : 0%,
-    $_end-percent   : 100%,
-    $_background-color-position: true
+    $_start-percent             : 0%,
+    $_end-percent               : 100%,
+    $_background-color-position : true
 ) {
     @if $_background-color-position == true {
         background-color: $_end-color;
@@ -132,7 +132,7 @@
     $_background-gradient-color-end,
     $_background-gradient-direction,
     $_background-gradient,
-    $_background-gradient-color-position: true
+    $_background-gradient-color-position : true
 ) {
     @if $_background-gradient-direction == horizontal and $_background-gradient == true {
         @include lib-gradient__horizontal(
