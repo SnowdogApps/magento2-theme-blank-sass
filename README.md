@@ -3,8 +3,8 @@
 
 ### Releases
 
-Magento 2.1 - v0.11.0 or older
-Magento 2.0 - v0.6.0 or older
+* Magento 2.1: v0.11.0 or older
+* Magento 2.0: v0.6.0 or older
 
 ## Installation
 1. Switch to your Magento project root
