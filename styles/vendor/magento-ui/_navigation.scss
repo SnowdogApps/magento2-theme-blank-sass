@@ -64,10 +64,7 @@
 
         a {
             display: block;
-            @include lib-css(padding-top, $_submenu-item__padding-top);
-            @include lib-css(padding-right, $_submenu-item__padding-right);
-            @include lib-css(padding-bottom, $_submenu-item__padding-bottom);
-            @include lib-css(padding-left, $_submenu-item__padding-left);
+            @include lib-css(padding, $_submenu-item__padding-top $_submenu-item__padding-right $_submenu-item__padding-bottom $_submenu-item__padding-left);
         }
 
         a,
