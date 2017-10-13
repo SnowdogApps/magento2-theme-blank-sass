@@ -21,7 +21,11 @@
 @function lib-font-size-value($_value) {
     @if $font-size-unit-convert {
         @if $_value != false and $_value != '' {
-            @return strip-unit($_value) / $font-size-unit-ratio * 1#{$font-size-unit};
+            $_value: strip-unit($_value) / $font-size-unit-ratio;
+            @if $_value > 0 {
+                $_value: $_value * 1#{$font-size-unit};
+            }
+            @return $_value;
         }
     }
     @else {
@@ -185,8 +189,12 @@
     $_value,
     $_prefix: 0
 ) {
+    @if $_value == 0 {
+        $_value: strip-unit($_value);
+    }
+
     @if $_value != '' and $_value != false {
-        @if length($_value) > 0 {
+        @if type-of($_value) == list {
             $_isFalse: false;
             @each $_item in $_value {
                 @if $_item == false {
