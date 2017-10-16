@@ -2,7 +2,7 @@
     @include lib-loader();
     position: absolute;
 
-    & > span {
+    > span {
         display: none;
     }
 }
@@ -12,18 +12,18 @@
     background: rgba(255, 255, 255, 0.5);
 
     .loader {
-        & > img {
+        > img {
             @include lib-loading-mask();
         }
 
-        & > p {
+        > p {
             display: none;
         }
     }
 }
 
 body {
-    & > .loading-mask {
+    > .loading-mask {
         z-index: $loader-overlay__z-index;
     }
 }

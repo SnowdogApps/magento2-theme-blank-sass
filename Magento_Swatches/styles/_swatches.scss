@@ -1,28 +1,20 @@
-.clearfix:after {
-    content: '';
-    visibility: hidden;
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-.swatch-attribute-label {
+ .swatch-attribute-label {
     font-weight: bold;
     position: relative;
+}
 
-    &.required {
-        padding-right: 10px;
-    }
+.swatch-attribute-label.required {
+    padding-right: 10px;
+}
 
-    &[data-required="1"]::after {
-        content: '*';
-        color: red;
-        position: absolute;
-        right: -11px;
-        top: -2px;
-        font-weight: bold;
-        font-size: 1em;
-    }
+.swatch-attribute-label[data-required="1"]:after {
+    content: '*';
+    color: red;
+    position: absolute;
+    right: -11px;
+    top: -2px;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 .swatch-attribute-selected-option {
@@ -47,81 +39,88 @@
     border: 1px solid rgb(218, 218, 218);
     overflow: hidden;
     text-overflow: ellipsis;
-
-    &.text {
-        background: #f2f2f2;
-        color: #7f7f7f;
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 20px;
-        padding: 4px 8px;
-        min-width: 22px;
-        margin-right: 7px;
-    }
-
-    &.selected {
-        outline: 2px solid #ff5100;
-        border: 1px solid #fff;
-        color: #333;
-    }
-
-    &.text.selected {
-        background-color: #fff;
-    }
-
-    &:not(.disabled):hover {
-        outline: 1px solid #999;
-        border: 1px solid #fff;
-        color: #333;
-    }
-
-    &.color,
-    &.image {
-        &:not(.disabled):hover {
-            outline: 2px solid #ff5216;
-            border: 1px solid #fff;
-        }
-    }
-
-    &.disabled {
-        cursor: default;
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background: linear-gradient(
-                to left top,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0) 42%,
-                rgba(255, 255, 255, 1) 43%,
-                rgba(255, 255, 255, 1) 46%,
-                rgba(255, 82, 22, 1) 47%,
-                rgba(255, 82, 22, 1) 53%,
-                rgba(255, 255, 255, 1) 54%,
-                rgba(255, 255, 255, 1) 57%,
-                rgba(255, 255, 255, 0) 58%,
-                rgba(255, 255, 255, 0) 100%
-            );
-        }
-    }
 }
 
-.swatch-attribute {
-    &.manufacturer,
-    &.size {
-        .swatch-option {
-            background: rgb(240, 240, 240);
-            color: rgb(148, 148, 148);
-            &.selected {
-                color: black;
-                background: #fff;
-                border: 1px solid #fff;
-            }
-        }
-    }
+.swatch-option.text {
+    background: #f0f0f0;
+    color: #686868;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 4px 8px;
+    min-width: 22px;
+    margin-right: 7px;
+}
+
+.swatch-option.selected {
+    outline: 2px solid #ff5501;
+    border: 1px solid #fff;
+    color: #333;
+}
+
+.swatch-option.text.selected {
+    background-color: #fff !important;
+}
+
+.clearfix:after {
+    content: '';
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.swatch-attribute.size .swatch-option,
+.swatch-attribute.manufacturer .swatch-option {
+    background: rgb(240, 240, 240);
+    color: rgb(148, 148, 148);
+}
+
+
+.swatch-attribute.size .swatch-option.selected,
+.swatch-attribute.manufacturer .swatch-option.selected {
+    color: black;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+
+.swatch-option:not(.disabled):hover {
+    outline: 1px solid #999;
+    border: 1px solid #fff;
+    color: #333;
+}
+
+.swatch-option.image:not(.disabled):hover,
+.swatch-option.color:not(.disabled):hover {
+    outline: 2px solid #ee0000;
+    border: 1px solid #fff;
+}
+
+.swatch-option.disabled {
+    cursor: default;
+}
+
+.swatch-option.disabled:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to left top,
+        rgba( 255, 255, 255, 0) 0%,
+        rgba( 255, 255, 255, 0) 42%,
+        rgba( 255, 255, 255, 1) 43%,
+        rgba( 255, 255, 255, 1) 46%,
+        rgba( 255, 82, 22, 1) 47%,
+        rgba( 255, 82, 22, 1) 53%,
+        rgba( 255, 255, 255, 1) 54%,
+        rgba( 255, 255, 255, 1) 57%,
+        rgba( 255, 255, 255, 0) 58%,
+        rgba( 255, 255, 255, 0) 100%
+    );
 }
 
 .swatch-option-tooltip {
@@ -139,44 +138,48 @@
     text-align: center;
 }
 
-.swatch-option-tooltip,
-.swatch-option-tooltip-layered {
-    .corner {
-        left: 40%;
-        position: absolute;
-        bottom: 0;
-        height: 8px;
-        &::before {
-            content: '';
-            position: relative;
-            top: 2px;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 8px 8.5px 0 8.5px;
-            border-color: #adadad transparent transparent transparent;
-            font-size: 1px;
-        }
-        &::after {
-            content: '';
-            position: relative;
-            top: 1px;
-            left: -15px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 7px 7.5px 0 7.5px;
-            border-color: #fff transparent transparent transparent;
-            font-size: 1px;
-        }
-    }
-    .image {
-        display: block;
-        height: 130px;
-        width: 130px;
-        margin: 0 auto;
-    }
+.swatch-option-tooltip .corner,
+.swatch-option-tooltip-layered .corner {
+    left: 40%;
+    position: absolute;
+    bottom: 0;
+    height: 8px;
+}
+
+.swatch-option-tooltip .corner:after,
+.swatch-option-tooltip-layered .corner:after {
+    content: '';
+    position: relative;
+    top: 1px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 7.5px 0 7.5px;
+    border-color: #fff transparent transparent transparent;
+    font-size: 1px;
+}
+
+.swatch-option-tooltip .corner:before,
+.swatch-option-tooltip-layered .corner:before {
+    content: '';
+    position: relative;
+    top: 2px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 8.5px 0 8.5px;
+    border-color: #adadad transparent transparent transparent;
+    font-size: 1px;
+}
+
+.swatch-option-tooltip .image,
+.swatch-option-tooltip-layered .image {
+    display: block;
+    height: 130px;
+    width: 130px;
+    margin: 0 auto;
 }
 
 .swatch-option-tooltip .title {
@@ -206,6 +209,10 @@
     position: relative;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+.swatch-option-link-layered:focus > div {
+    box-shadow: 0 0 3px 1px #68a8e0;
 }
 
 .swatch-option-tooltip-layered {
@@ -266,6 +273,13 @@
 .swatch-opt-listing {
     margin-bottom: 10px;
 }
+
 .swatch-option-loading {
     content: url(../Magento_Swatches/images/loader-2.gif);
+}
+
+.swatch-input {
+    left: -1000px;
+    position: absolute;
+    visibility: hidden;
 }

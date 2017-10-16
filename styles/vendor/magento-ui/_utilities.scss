@@ -1,3 +1,38 @@
+//
+//  Utilities
+//  _____________________________________________
+
+// Remove the unit of a length
+// @param {Number} $number - Number to remove unit from
+// @return {Number} - Unitless number
+
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+//
+//  Convert values to unit specified in typography variables
+//  ---------------------------------------------
+
+@function lib-font-size-value($_value) {
+    @if $font-size-unit-convert {
+        @if $_value != false and $_value != '' {
+            $_value: strip-unit($_value) / $font-size-unit-ratio;
+            @if $_value > 0 {
+                $_value: $_value * 1#{$font-size-unit};
+            }
+            @return $_value;
+        }
+    }
+    @else {
+        @return $_value;
+    }
+}
+
 @mixin lib-visibility-hidden() {
     height: 0;
     visibility: hidden;
@@ -54,9 +89,9 @@
 @mixin lib-gradient__horizontal(
     $_start-color,
     $_end-color,
-    $_start-percent            : 0%,
-    $_end-percent              : 100%,
-    $_background-color-position: true
+    $_start-percent             : 0%,
+    $_end-percent               : 100%,
+    $_background-color-position : true
 ) {
     @if $_background-color-position == true {
         background-color: $_end-color;
@@ -72,9 +107,9 @@
 @mixin lib-gradient__vertical(
     $_start-color,
     $_end-color,
-    $_start-percent            : 0%,
-    $_end-percent              : 100%,
-    $_background-color-position: true
+    $_start-percent             : 0%,
+    $_end-percent               : 100%,
+    $_background-color-position : true
 ) {
     @if $_background-color-position == true {
         background-color: $_end-color;
@@ -97,23 +132,24 @@
     $_background-gradient-color-end,
     $_background-gradient-direction,
     $_background-gradient,
-    $_background-gradient-color-position: true
+    $_background-gradient-color-position : true
 ) {
     @if $_background-gradient-direction == horizontal and $_background-gradient == true {
         @include lib-gradient__horizontal(
-            $_start-color              : $_background-gradient-color-start,
-            $_end-color                : $_background-gradient-color-end,
-            $_background-color-position: $_background-gradient-color-position
+            $_start-color               : $_background-gradient-color-start,
+            $_end-color                 : $_background-gradient-color-end,
+            $_background-color-position : $_background-gradient-color-position
         );
     }
     @if $_background-gradient-direction == vertical and $_background-gradient == true {
         @include lib-gradient__vertical(
-            $_start-color              : $_background-gradient-color-start,
-            $_end-color                : $_background-gradient-color-end,
-            $_background-color-position: $_background-gradient-color-position
+            $_start-color               : $_background-gradient-color-start,
+            $_end-color                 : $_background-gradient-color-end,
+            $_background-color-position : $_background-gradient-color-position
         );
     }
 }
+
 
 //
 //  Rotate
@@ -122,6 +158,7 @@
 @mixin lib-rotate($_rotation) {
     transform: rotate($_rotation);
 }
+
 
 //
 //  Remove spaces between elements with display: inline-block
@@ -134,20 +171,61 @@
 }
 
 @mixin lib-inline-block-space-item(
-    $_font-size  : $font-size__base,
-    $_line-height: normal
+    $_font-size   : $font-size__base,
+    $_line-height : normal
 ) {
-    font-size: $_font-size;
+    @include lib-font-size($_font-size);
     font-size: $_font-size;
     letter-spacing: normal;
     line-height: $_line-height;
 }
 
 //
+//  Add any css property
+//  ---------------------------------------------
+
+@mixin lib-css(
+    $_property,
+    $_value,
+    $_prefix: 0
+) {
+    @if $_value == 0 {
+        $_value: strip-unit($_value);
+    }
+
+    @if $_value != '' and $_value != false {
+        @if type-of($_value) == list {
+            $_isFalse: false;
+            @each $_item in $_value {
+                @if $_item == false {
+                    $_isFalse: true;
+                }
+            }
+            @if $_isFalse == false {
+                #{$_property}: $_value;
+            }
+        }
+        @else {
+            #{$_property}: $_value;
+        }
+    }
+}
+
+//
 //  Add url to property
 //  ---------------------------------------------
 
-$urls-resolved: inherit;
+// usage:
+// .column.left {
+//     .lib-url('images/fallback.png');
+//     background:url("#{$url}") repeat-y;
+// }
+// .columns {
+//     .lib-url('images/fallback.png', 'Magento_Catalog');
+//     background:url("#{$url}") repeat;
+// }
+
+$urls-resolved: false;
 
 @mixin lib-url($_path) {
     $url: "../#{$_path}";
@@ -164,13 +242,6 @@ $urls-resolved: inherit;
     }
 }
 
-@mixin lib-url-check($_path) {
-    $lib-url-check-output: $_path;
-    @if $_path != false {
-        $lib-url-check-output: url($_path);
-    }
-}
-
 //
 //  Arrow
 //  ---------------------------------------------
@@ -184,16 +255,16 @@ $urls-resolved: inherit;
 
 @mixin _lib-abbor_el($_position, $_color) {
     @if $_position == left {
-        border-right-color: $_color;
+        @include lib-css(border-right-color, $_color);
     }
     @if $_position == right {
-        border-left-color: $_color;
+        @include lib-css(border-left-color, $_color);
     }
     @if $_position == up {
-        border-bottom-color: $_color;
+        @include lib-css(border-bottom-color, $_color);
     }
     @if $_position == down {
-        border-top-color: $_color;
+        @include lib-css(border-top-color, $_color);
     }
 }
 
@@ -201,26 +272,108 @@ $urls-resolved: inherit;
 //  Input placeholder
 //  ---------------------------------------------
 
-@mixin lib-input-placeholder() {
-    &::-webkit-input-placeholder { @content; }
-    &:-moz-placeholder           { @content; }
-    &::-moz-placeholder          { @content; }
-    &:-ms-input-placeholder      { @content; }
+@mixin lib-input-placeholder(
+    $_input-placeholder-color: $form-element-input-placeholder__color,
+    $_input-placeholder-font-weight: $form-element-input__font-weight
+) {
+    &::-webkit-input-placeholder {
+        @include lib-css(color, $_input-placeholder-color);
+        @include lib-css(font-weight, $_input-placeholder-font-weight);
+    }
+
+    &:-moz-placeholder {
+        @include lib-css(color, $_input-placeholder-color);
+        @include lib-css(font-weight, $_input-placeholder-font-weight);
+    }
+
+    &::-moz-placeholder {
+        @include lib-css(color, $_input-placeholder-color);
+        @include lib-css(font-weight, $_input-placeholder-font-weight);
+    }
+
+    &:-ms-input-placeholder {
+        @include lib-css(color, $_input-placeholder-color);
+        @include lib-css(font-weight, $_input-placeholder-font-weight);
+    }
+}
+
+//
+//  Flex layout
+//  ---------------------------------------------
+
+@mixin lib-vendor-prefix-display(
+    $_value: flex
+) {
+    display: $_value;
+}
+
+@mixin lib-vendor-prefix-flex-grow(
+    $_value: 0
+) {
+    flex-grow: $_value;
+}
+
+@mixin lib-vendor-prefix-flex-shrink(
+    $_value: 1
+) {
+    flex-shrink: $_value;
+}
+
+@mixin lib-vendor-prefix-flex-basis(
+    $_value: auto
+) {
+    flex-basis: $_value;
+}
+
+@mixin lib-vendor-prefix-flex-wrap(
+    $_value: wrap
+) {
+    flex-wrap: $_value;
+}
+
+@mixin lib-vendor-prefix-flex-direction(
+    $_value: column
+) {
+    flex-direction: $_value;
+}
+
+@mixin lib-vendor-prefix-order(
+    $_value: 0
+) {
+    order: $_value;
+}
+
+@mixin lib-vendor-box-align(
+    $_value: stretch
+) {
+    align-items: $_value;
+}
+
+@mixin lib-vendor-prefix-appearance(
+    $value: none
+) {
+    appearance: $value;
+}
+
+@mixin lib-vendor-prefix-column-count(
+    $_value
+) {
+    column-count: $_value;
 }
 
 //
 //  Pointer for popups or dropdowns
-//
+//  ---------------------------------------------
 
 @mixin lib-pointer(
-    $_size                       : 6px,
-    $_background-color           : $color-white,
-    $_border-color               : $color-gray-light3,
-    $_position__vertical         : top,
-    $_position__horizontal       : left,
-    $_position__vertical__value  : -12px,
-    $_position__horizontal__value: $indent__s,
-    $_z-index                    : 99
+    $_size                        : 6px,
+    $_background-color            : $color-white,
+    $_border-color                : $color-gray-light3,
+    $_position__vertical          : top,
+    $_position__horizontal        : left,
+    $_position__vertical__value   : -12px,
+    $_position__horizontal__value : $indent__s,
+    $_z-index                     : 99
 ) {
     &:before,
     &:after {
@@ -233,18 +386,18 @@ $urls-resolved: inherit;
     }
 
     &:before {
-        $_position__horizontal: $_position__horizontal__value;
-        $_position__vertical: $_position__vertical__value;
-        border: solid $_size - 1;
-        border-color: transparent transparent $_background-color transparent;
-        z-index: $_z-index;
+        @include lib-css($_position__horizontal, $_position__horizontal__value);
+        @include lib-css($_position__vertical, $_position__vertical__value);
+        @include lib-css(border, solid $_size - 1);
+        @include lib-css(border-color, transparent transparent $_background-color transparent);
+        @include lib-css(z-index, $_z-index);
     }
 
     &:after {
-        $_position__horizontal: $_position__horizontal__value - 1;
-        $_position__vertical: $_position__vertical__value - 2;
-        border: solid $_size;
-        border-color: transparent transparent $_border-color transparent;
-        z-index: $_z-index - 1;
+        @include lib-css($_position__horizontal, $_position__horizontal__value - 1);
+        @include lib-css($_position__vertical, $_position__vertical__value - 2);
+        @include lib-css(border, solid $_size);
+        @include lib-css(border-color, transparent transparent $_border-color transparent);
+        @include lib-css(z-index, $_z-index - 1);
     }
 }

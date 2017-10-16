@@ -1,0 +1,75 @@
+//
+//  Popup variables
+//  _____________________________________________
+
+$popup__width                                              : 100% !default;
+$popup__height                                             : auto !default;
+$popup__padding                                            : 22px !default;
+$popup__background                                         : $color-white !default;
+$popup__border-color                                       : $color-gray-light3 !default;
+$popup__border                                             : 1px solid $popup__border-color !default;
+$popup__shadow                                             : 0 3px 3px rgba(0, 0, 0, 0.15) !default;
+$popup__fade                                               : opacity 0.3s linear !default;
+$popup__z-index                                            : 1001 !default;
+
+$popup__position                                           : fixed !default;
+$popup__position-top                                       : 0 !default;
+$popup__position-right                                     : 0 !default;
+$popup__position-bottom                                    : 0 !default;
+$popup__position-left                                      : 0 !default;
+
+$popup__margin-top                                         : false !default;
+$popup__margin-right                                       : false !default;
+$popup__margin-bottom                                      : false !default;
+$popup__margin-left                                        : false !default;
+
+$popup-content__height                                     : auto !default;
+$popup-content__margin                                     : false !default;
+$popup-header__margin                                      : 0 0 25px !default;
+$popup-footer__margin                                      : false !default;
+
+$popup-title-headings                                      : true !default; // [true|false]
+$popup-title-headings__level                               : h3 !default; // [h1|h2|h3|h4|h5|h6]
+
+$popup-button-close__icon                                  : true !default; // [true|false]
+$popup-button-close__reset                                 : true !default; // [true|false]
+$popup-button-close__position                              : absolute !default;
+$popup-button-close__position-top                          : $indent__s !default;
+$popup-button-close__position-right                        : $indent__s !default;
+$popup-button-close__position-bottom                       : false !default;
+$popup-button-close__position-left                         : false !default;
+
+//  Actions toolbar variables
+$popup-actions-toolbar                                     : false !default; // [true|false]
+$popup-actions-toolbar__margin                             : $actions-toolbar__margin !default;
+$popup-actions-toolbar__padding                            : $actions-toolbar__padding !default;
+
+$popup-actions-toolbar-actions__position                   : $actions-toolbar-actions__position !default;
+$popup-actions-toolbar-actions__reverse                    : $actions-toolbar-actions__reverse !default;
+$popup-actions-toolbar-actions__margin                     : $actions-toolbar-actions__margin !default;
+$popup-actions-toolbar-actions-primary__margin             : $actions-toolbar-actions-primary__margin !default;
+$popup-actions-toolbar-actions-secondary__margin           : $actions-toolbar-actions-secondary__margin !default;
+
+$popup-actions-toolbar-actions-links__margin-top           : $actions-toolbar-actions-links__margin-top !default;
+$popup-actions-toolbar-actions-links-primary__margin-top   : $actions-toolbar-actions-links-primary__margin-top !default;
+$popup-actions-toolbar-actions-links-secondary__margin-top : $actions-toolbar-actions-links-secondary__margin-top !default;
+
+//  Popup Icons variables
+$popup-icon-font                                           : $button-icon__font !default;
+$popup-icon-font__content                                  : $icon-remove !default;
+$popup-icon-font__size                                     : $button-icon__font-size !default;
+$popup-icon-font__line-height                              : $button-icon__line-height !default;
+$popup-icon-font__color                                    : $button-icon__color !default;
+$popup-icon-font__color-hover                              : $button-icon__hover__font-color !default;
+$popup-icon-font__color-active                             : $button-icon__active__font-color !default;
+$popup-icon-font__margin                                   : $button-icon__margin !default;
+$popup-icon-font__vertical-align                           : $button-icon__vertical-align !default;
+$popup-icon-font__position                                 : $button-icon__position !default;
+$popup-icon-font__text-hide                                : true !default;
+
+//  Window overlay variables
+$overlay__background                                       : $color-black !default;
+$overlay__opacity                                          : 0.5 !default;
+$overlay__opacity-old                                      : 50 !default;
+$overlay__fade                                             : opacity 0.15s linear !default;
+$overlay__z-index                                          : 1000 !default;

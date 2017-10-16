@@ -7,131 +7,136 @@
 //  ---------------------------------------------
 
 @mixin lib-pager(
-    $_pager-label-display                      : none,
-    $_pager-item-display                       : inline-block,
-    $_pager-reset-spaces                       : true,
-    $_pager-font-size                          : $font-size__s,
-    $_pager-font-weight                        : $font-weight__bold,
-    $_pager-line-height                        : 32px,
-    $_pager-item-margin                        : 0 2px 0 0,
-    $_pager-item-padding                       : 0 4px,
-    $_pager-actions-padding                    : 0,
+    $_pager-label-display                       : $pager-label__display,
+    $_pager-item-display                        : $pager-item__display,
+    $_pager-reset-spaces                        : $pager-reset-spaces,
+    $_pager-font-size                           : $pager__font-size,
+    $_pager-font-weight                         : $pager__font-weight,
+    $_pager-line-height                         : $pager__line-height,
+    $_pager-item-margin                         : $pager-item__margin,
+    $_pager-item-padding                        : $pager-item__padding,
+    $_pager-actions-padding                     : $pager-actions__padding,
 
-    // Page current
-    $_pager-current-font-weight                : $font-weight__bold,
-    $_pager-current-color                      : $primary__color,
-    $_pager-current-background                 : inherit,
-    $_pager-current-border                     : none,
-    $_pager-current-gradient                   : inherit,
-    $_pager-current-gradient-direction         : inherit,
-    $_pager-current-gradient-color-start       : inherit,
-    $_pager-current-gradient-color-end         : inherit,
+    //  Page current
+    $_pager-current-font-weight                 : $pager-current__font-weight,
+    $_pager-current-color                       : $pager-current__color,
+    $_pager-current-background                  : $pager-current__background,
+    $_pager-current-border                      : $pager-current__border,
+    $_pager-current-gradient                    : $pager-current__gradient,
+    $_pager-current-gradient-direction          : $pager-current__gradient-direction,
+    $_pager-current-gradient-color-start        : $pager-current__gradient-color-start,
+    $_pager-current-gradient-color-end          : $pager-current__gradient-color-end,
 
-    // Page item - text color
-    $_pager-color                              : $link__color,
-    $_pager-color-visited                      : $link__visited__color,
-    $_pager-color-hover                        : $link__hover__color,
-    $_pager-color-active                       : $link__active__color,
+    //  Page item - text color
+    $_pager-color                               : $pager__color,
+    $_pager-color-visited                       : $pager__visited__color,
+    $_pager-color-hover                         : $pager__hover__color,
+    $_pager-color-active                        : $pager__active__color,
 
-    // Page item - background
-    $_pager-background                         : inherit,
-    $_pager-background-visited                 : inherit,
-    $_pager-background-hover                   : inherit,
-    $_pager-background-active                  : inherit,
+    //  Page item - background
+    $_pager-background                          : $pager__background,
+    $_pager-background-visited                  : $pager__visited__background,
+    $_pager-background-hover                    : $pager__hover__background,
+    $_pager-background-active                   : $pager__active__background,
 
-    // Page item - border
-    $_pager-border                             : none,
-    $_pager-border-visited                     : none,
-    $_pager-border-hover                       : none,
-    $_pager-border-active                      : none,
+    //  Page item - border
+    $_pager-border                              : $pager__border,
+    $_pager-border-visited                      : $pager__visited__border,
+    $_pager-border-hover                        : $pager__hover__border,
+    $_pager-border-active                       : $pager__active__border,
 
-    // Page item - text decoration
-    $_pager-text-decoration                    : none,
-    $_pager-text-decoration-hover              : none,
+    //  Page item - text decoration
+    $_pager-text-decoration                     : $pager__text-decoration,
+    $_pager-text-decoration-hover               : $pager__text-decoration,
 
-    // Page item gradient
-    $_pager-gradient                           : inherit,
-    $_pager-gradient-direction                 : inherit,
-    $_pager-gradient-color-start               : inherit,
-    $_pager-gradient-color-end                 : inherit,
-    $_pager-gradient-color-start-visited       : inherit,
-    $_pager-gradient-color-end-visited         : inherit,
-    $_pager-gradient-color-start-hover         : inherit,
-    $_pager-gradient-color-end-hover           : inherit,
-    $_pager-gradient-color-start-active        : inherit,
-    $_pager-gradient-color-end-active          : inherit,
+    //  Page item gradient
+    $_pager-gradient                            : $pager__gradient,
+    $_pager-gradient-direction                  : $pager__gradient-direction,
+    $_pager-gradient-color-start                : $pager__gradient-color-start,
+    $_pager-gradient-color-end                  : $pager__gradient-color-end,
+    $_pager-gradient-color-start-visited        : $pager__visited__gradient-color-start,
+    $_pager-gradient-color-end-visited          : $pager__visited__gradient-color-end,
+    $_pager-gradient-color-start-hover          : $pager__hover__gradient-color-start,
+    $_pager-gradient-color-end-hover            : $pager__hover__gradient-color-end,
+    $_pager-gradient-color-start-active         : $pager__active__gradient-color-start,
+    $_pager-gradient-color-end-active           : $pager__active__gradient-color-end,
 
-    // Page action item (previous-next)
-    $_pager-action-text-decoration             : none,
-    $_pager-action-text-decoration-hover       : none,
+    //  Page action item (previous-next)
+    $_pager-action-text-decoration              : $pager-action__text-decoration,
+    $_pager-action-text-decoration-hover        : $pager-action__hover__text-decoration,
 
-    // Page action item (previous-next) - default
-    $_pager-action-color                       : $text__color__muted,
-    $_pager-action-border                      : $border-width__base solid $border-color__base,
-    $_pager-action-background                  : inherit,
-    $_pager-action-gradient-color-start        : inherit,
-    $_pager-action-gradient-color-end          : inherit,
-    $_pager-action-text-decoration             : none,
+    //  Page action item (previous-next) - default
+    $_pager-action-color                        : $pager-action__color,
+    $_pager-action-border                       : $pager-action__border,
+    $_pager-action-background                   : $pager-action__background,
+    $_pager-action-gradient-color-start         : $pager__gradient-color-start,
+    $_pager-action-gradient-color-end           : $pager__gradient-color-end,
+    $_pager-action-text-decoration              : $pager-action__text-decoration,
 
-    // Page action item (previous-next) - visited
-    $_pager-action-color-visited               : $text__color__muted,
-    $_pager-action-border-visited              : none,
-    $_pager-action-background-visited          : inherit,
-    $_pager-action-gradient-color-start-visited: inherit,
-    $_pager-action-gradient-color-end-visited  : inherit,
+    //  Page action item (previous-next) - visited
+    $_pager-action-color-visited                : $pager-action__visited__color,
+    $_pager-action-border-visited               : $pager-action__visited__border,
+    $_pager-action-background-visited           : $pager-action__visited__background,
+    $_pager-action-gradient-color-start-visited : $pager__visited__gradient-color-start,
+    $_pager-action-gradient-color-end-visited   : $pager__visited__gradient-color-end,
 
-    // Page action item (previous-next) - hover
-    $_pager-action-color-hover                 : $text__color__muted,
-    $_pager-action-border-hover                : $border-width__base solid $border-color__light,
-    $_pager-action-background-hover            : inherit,
-    $_pager-action-gradient-color-start-hover  : inherit,
-    $_pager-action-gradient-color-end-hover    : inherit,
-    $_pager-action-text-decoration-hover       : none,
+    //  Page action item (previous-next) - hover
+    $_pager-action-color-hover                  : $pager-action__hover__color,
+    $_pager-action-border-hover                 : $pager-action__hover__border,
+    $_pager-action-background-hover             : $pager-action__hover__background,
+    $_pager-action-gradient-color-start-hover   : $pager__hover__gradient-color-start,
+    $_pager-action-gradient-color-end-hover     : $pager__hover__gradient-color-end,
+    $_pager-action-text-decoration-hover        : $pager-action__text-decoration,
 
-    // Page action item (previous-next) - active
-    $_pager-action-color-active                : $text__color__muted,
-    $_pager-action-border-active               : none,
-    $_pager-action-background-active           : inherit,
-    $_pager-action-gradient-color-start-active : inherit,
-    $_pager-action-gradient-color-end-active   : inherit,
+    //  Page action item (previous-next) - active
+    $_pager-action-color-active                 : $pager-action__active__color,
+    $_pager-action-border-active                : $pager-action__active__border,
+    $_pager-action-background-active            : $pager-action__active__background,
+    $_pager-action-gradient-color-start-active  : $pager__active__gradient-color-start,
+    $_pager-action-gradient-color-end-active    : $pager__active__gradient-color-end,
 
-    // Page action item (previous-next) - gradient
-    $_pager-action-gradient                    : inherit,
-    $_pager-action-gradient-direction          : inherit,
+    //  Page action item (previous-next) - gradient
+    $_pager-action-gradient                     : $pager__gradient,
+    $_pager-action-gradient-direction           : $pager__gradient-direction,
 
-    // Page action icons
-    $_pager-icon-use                           : true,
-    $_pager-icon-previous-content              : $icon-prev,
-    $_pager-icon-next-content                  : $icon-next,
-    $_pager-icon-font                          : $icon-font,
-    $_pager-icon-font-size                     : 46px,
-    $_pager-icon-font-line-height              : $icon-font__line-height,
-    $_pager-icon-font-margin                   : 0 0 0 -6px,
-    $_pager-icon-font-vertical-align           : top,
-    $_pager-icon-font-position                 : before,
-    $_pager-icon-font-text-hide                : true
+    //  Page action icons
+    $_pager-icon-use                            : $pager-icon__use,
+    $_pager-icon-previous-content               : $pager-icon__previous-content,
+    $_pager-icon-next-content                   : $pager-icon__next-content,
+    $_pager-icon-font                           : $pager-icon__font,
+    $_pager-icon-font-size                      : $pager-icon__font-size,
+    $_pager-icon-font-line-height               : $pager-icon__font-line-height,
+    $_pager-icon-font-margin                    : $pager-icon__font-margin,
+    $_pager-icon-font-vertical-align            : $pager-icon__font-vertical-align,
+    $_pager-icon-font-position                  : $pager-icon__position,
+    $_pager-icon-font-text-hide                 : $pager-icon__text-hide
 ) {
     @include _lib-pager-label-display(  // To hide or to display label
-        $_pager-label-display: $_pager-label-display,
-        $_pager-font-size    : $_pager-font-size,
-        $_pager-font-weight  : $_pager-font-weight,
-        $_pager-line-height  : $_pager-line-height
+        $_pager-label-display : $_pager-label-display,
+        $_pager-font-size     : $_pager-font-size,
+        $_pager-font-weight   : $_pager-font-weight,
+        $_pager-line-height   : $_pager-line-height
     );
 
     .items {
-        @include _lib-pager-inline-block-spaces-container();
+        @include _lib-pager-inline-block-spaces-container(
+            $_pager-reset-spaces,
+            $_pager-item-display
+        );
         @include lib-list-reset-styles();
-        display: $_pager-item-display;
-        font-weight: $_pager-font-weight;
+        @include lib-css(display, $_pager-item-display);
+        @include lib-css(font-weight, $_pager-font-weight);
     }
 
     .item {
         @include _lib-pager-inline-block-spaces-item(
-            $_pager-font-size  : $_pager-font-size,
-            $_pager-line-height: $_pager-line-height
+            $_pager-reset-spaces,
+            $_pager-item-display,
+            $_pager-font-size,
+            $_pager-line-height
         );
-        margin: $_pager-item-margin;
-        display: $_pager-item-display;
+        @include lib-css(margin, $_pager-item-margin);
+        @include lib-css(display, $_pager-item-display);
 
         .label {
             @include lib-visually-hidden();
@@ -139,199 +144,211 @@
     }
 
     a.page {
-        background: $_pager-background;
+        @include lib-css(background, $_pager-background);
         @include lib-background-gradient(
             $_pager-gradient-color-start,
             $_pager-gradient-color-end,
             $_pager-gradient-direction,
             $_pager-gradient
         );
-        border: $_pager-border;
-        color: $_pager-color;
-        display: $_pager-item-display;
-        padding: $_pager-item-padding;
-        text-decoration: $_pager-text-decoration;
+        @include lib-css(border, $_pager-border);
+        @include lib-css(color, $_pager-color);
+        @include lib-css(display, $_pager-item-display);
+        @include lib-css(padding, $_pager-item-padding);
+        @include lib-css(text-decoration, $_pager-text-decoration);
 
         &:visited {
-            background: $_pager-background-visited;
+            @include lib-css(background, $_pager-background-visited);
             @include lib-background-gradient(
                 $_pager-gradient-color-start-visited,
                 $_pager-gradient-color-end-visited,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            border: $_pager-border-visited;
-            color: $_pager-color-visited;
+            @include lib-css(border, $_pager-border-visited);
+            @include lib-css(color, $_pager-color-visited);
         }
 
         &:hover {
-            background: $_pager-background-hover;
+            @include lib-css(background, $_pager-background-hover);
             @include lib-background-gradient(
                 $_pager-gradient-color-start-hover,
                 $_pager-gradient-color-end-hover,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            border: $_pager-border-hover;
-            color: $_pager-color-hover;
-            text-decoration: $_pager-text-decoration-hover;
+            @include lib-css(border, $_pager-border-hover);
+            @include lib-css(color, $_pager-color-hover);
+            @include lib-css(text-decoration, $_pager-text-decoration-hover);
         }
 
         &:active {
-            background: $_pager-background-active;
+            @include lib-css(background, $_pager-background-active);
             @include lib-background-gradient(
                 $_pager-gradient-color-start-active,
                 $_pager-gradient-color-end-active,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            border: $_pager-border-active;
-            color: $_pager-color-active;
+            @include lib-css(border, $_pager-border-active);
+            @include lib-css(color, $_pager-color-active);
         }
     }
 
     strong.page {
-        background: $_pager-current-background;
+        @include lib-css(background, $_pager-current-background);
         @include lib-background-gradient(
             $_pager-current-gradient-color-start,
             $_pager-current-gradient-color-end,
             $_pager-current-gradient-direction,
             $_pager-current-gradient
         );
-        border: $_pager-current-border;
+        @include lib-css(border, $_pager-current-border);
         @include _lib-pager-inline-block-spaces-item(
-            $_pager-font-size  : $_pager-font-size,
-            $_pager-line-height: $_pager-line-height
+            $_pager-reset-spaces,
+            $_pager-item-display,
+            $_pager-font-size,
+            $_pager-line-height
         );
-        color: $_pager-current-color;
-        display: $_pager-item-display;
-        font-weight: $_pager-current-font-weight;
-        padding: $_pager-item-padding;
+        @include lib-css(color, $_pager-current-color);
+        @include lib-css(display, $_pager-item-display);
+        @include lib-css(font-weight, $_pager-current-font-weight);
+        @include lib-css(padding, $_pager-item-padding);
     }
 
     .action {
-        background: $_pager-action-background;
+        @include lib-css(background, $_pager-action-background);
         @include lib-background-gradient(
             $_pager-action-gradient-color-start,
             $_pager-action-gradient-color-end,
             $_pager-gradient-direction,
             $_pager-action-gradient
         );
-        border: $_pager-action-border;
-        color: $_pager-action-color;
-        display: $_pager-item-display;
-        padding: $_pager-actions-padding;
-        text-decoration: $_pager-action-text-decoration;
+        @include lib-css(border, $_pager-action-border);
+        @include lib-css(color, $_pager-action-color);
+        @include lib-css(display, $_pager-item-display);
+        @include lib-css(padding, $_pager-actions-padding);
+        @include lib-css(text-decoration, $_pager-action-text-decoration);
 
         &:visited {
-            background: $_pager-action-background-visited;
+            @include lib-css(background, $_pager-action-background-visited);
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-visited,
                 $_pager-action-gradient-color-end-visited,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            border: $_pager-action-border-visited;
-            color: $_pager-action-color-visited;
+            @include lib-css(border, $_pager-action-border-visited);
+            @include lib-css(color, $_pager-action-color-visited);
         }
 
         &:hover {
-            background: $_pager-action-background-hover;
+            @include lib-css(background, $_pager-action-background-hover);
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-hover,
                 $_pager-action-gradient-color-end-hover,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            border: $_pager-action-border-hover;
-            color: $_pager-action-color-hover;
-            text-decoration: $_pager-action-text-decoration-hover;
+            @include lib-css(border, $_pager-action-border-hover);
+            @include lib-css(color, $_pager-action-color-hover);
+            @include lib-css(text-decoration, $_pager-action-text-decoration-hover);
         }
 
         &:active {
-            background: $_pager-action-background-active;
+            @include lib-css(background, $_pager-action-background-active);
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-active,
                 $_pager-action-gradient-color-end-active,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            border: $_pager-action-border-active;
-            color: $_pager-action-color-active;
+            @include lib-css(border, $_pager-action-border-active);
+            @include lib-css(color, $_pager-action-color-active);
         }
 
         &.next {
             @include _lib-pager-icon (
-                $_pager-icon-use          : $_pager-icon-use,
-                $_icon-font-content       : $_pager-icon-next-content,
-                $_icon-font               : $_pager-icon-font,
-                $_icon-font-size          : $_pager-icon-font-size,
-                $_icon-font-line-height   : $_pager-icon-font-line-height,
-                $_icon-font-color         : $_pager-action-color,
-                $_icon-font-color-visited : $_pager-action-color-visited,
-                $_icon-font-color-hover   : $_pager-action-color-hover,
-                $_icon-font-color-active  : $_pager-action-color-active,
-                $_icon-font-margin        : $_pager-icon-font-margin,
-                $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
-                $_icon-font-position      : $_pager-icon-font-position,
-                $_icon-font-text-hide     : $_pager-icon-font-text-hide
+                $_icon-font-content        : $_pager-icon-next-content,
+                $_pager-icon-use           : $_pager-icon-use,
+                $_icon-font                : $_pager-icon-font,
+                $_icon-font-size           : $_pager-icon-font-size,
+                $_icon-font-line-height    : $_pager-icon-font-line-height,
+                $_icon-font-color          : $_pager-action-color,
+                $_icon-font-color-visited  : $_pager-action-color-visited,
+                $_icon-font-color-hover    : $_pager-action-color-hover,
+                $_icon-font-color-active   : $_pager-action-color-active,
+                $_icon-font-margin         : $_pager-icon-font-margin,
+                $_icon-font-vertical-align : $_pager-icon-font-vertical-align,
+                $_icon-font-position       : $_pager-icon-font-position,
+                $_icon-font-text-hide      : $_pager-icon-font-text-hide
             );
         }
 
         &.previous {
             @include _lib-pager-icon (
-                $_pager-icon-use          : $_pager-icon-use,
-                $_icon-font-content       : $_pager-icon-previous-content,
-                $_icon-font               : $_pager-icon-font,
-                $_icon-font-size          : $_pager-icon-font-size,
-                $_icon-font-line-height   : $_pager-icon-font-line-height,
-                $_icon-font-color         : $_pager-action-color,
-                $_icon-font-color-hover   : $_pager-action-color-hover,
-                $_icon-font-color-visited : $_pager-action-color-visited,
-                $_icon-font-color-active  : $_pager-action-color-active,
-                $_icon-font-margin        : $_pager-icon-font-margin,
-                $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
-                $_icon-font-position      : $_pager-icon-font-position,
-                $_icon-font-text-hide     : $_pager-icon-font-text-hide
+                $_icon-font-content        : $_pager-icon-previous-content,
+                $_pager-icon-use           : $_pager-icon-use,
+                $_icon-font                : $_pager-icon-font,
+                $_icon-font-size           : $_pager-icon-font-size,
+                $_icon-font-line-height    : $_pager-icon-font-line-height,
+                $_icon-font-color          : $_pager-action-color,
+                $_icon-font-color-visited  : $_pager-action-color-visited,
+                $_icon-font-color-hover    : $_pager-action-color-hover,
+                $_icon-font-color-active   : $_pager-action-color-active,
+                $_icon-font-margin         : $_pager-icon-font-margin,
+                $_icon-font-vertical-align : $_pager-icon-font-vertical-align,
+                $_icon-font-position       : $_pager-icon-font-position,
+                $_icon-font-text-hide      : $_pager-icon-font-text-hide
             );
         }
     }
 }
 
 //  Delete spaces between elements when pager items have display: inline-block
-@mixin _lib-pager-inline-block-spaces-container() {
-    @if $pager-reset-spaces == true and $pager-item__display == inline-block {
+@mixin _lib-pager-inline-block-spaces-container(
+    $_pager-reset-spaces,
+    $_pager-item-display
+) {
+    @if $_pager-reset-spaces == true and $_pager-item-display = inline-block {
         @include lib-inline-block-space-container();
         white-space: nowrap;
     }
 }
 
 @mixin _lib-pager-inline-block-spaces-item(
-    $_pager-font-size  : $_pager-font-size,
-    $_pager-line-height: $_pager-line-height
+    $_pager-reset-spaces,
+    $_pager-item-display,
+    $_pager-font-size,
+    $_pager-line-height
 ) {
-    @if $pager-reset-spaces == true and $pager-item__display == inline-block {
+    @if $_pager-reset-spaces = true and $_pager-item-display = inline-block {
         @include lib-inline-block-space-item(
-            $_font-size  : $_pager-font-size,
-            $_line-height: $_pager-line-height
+            $_font-size   : $_pager-font-size,
+            $_line-height : $_pager-line-height
         );
     }
 }
 
 // Display or hide "page" label
 @mixin _lib-pager-label-display(
-    $_pager-label-display: $_pager-label-display,
-    $_pager-font-size    : $_pager-font-size,
-    $_pager-font-weight  : $_pager-font-weight,
-    $_pager-line-height  : $_pager-line-height
+    $_pager-label-display,
+    $_pager-font-size,
+    $_pager-font-weight,
+    $_pager-line-height
 ) {
-    @if $_pager-label-display != none {
+    @if $_pager-label-display == none or $_pager-label-display == false {
         > .label {
-            display: $_pager-label-display;
-            font-weight: $_pager-font-weight;
+            @include lib-visually-hidden();
+        }
+    }
+    @else {
+        > .label {
+            @include lib-css(display, $_pager-label-display);
+            @include lib-css(font-weight, $_pager-font-weight);
             @include lib-inline-block-space-item(
-                $_font-size: $_pager-font-size,
-                $_line-height: $_pager-line-height
+                $_font-size   : $_pager-font-size,
+                $_line-height : $_pager-line-height
             );
 
             &:after {
@@ -341,80 +358,72 @@
     }
 }
 
-@mixin _lib-pager-label-display(
-    $_pager-label-display: $_pager-label-display,
-    $_pager-font-size    : $_pager-font-size,
-    $_pager-font-weight  : $_pager-font-weight,
-    $_pager-line-height  : $_pager-line-height
-) {
-    @if $_pager-label-display == none {
-        & > .label {
-            @include lib-visually-hidden();
-        }
-    }
-}
 
 @mixin _lib-pager-icon (
-    $_pager-icon-use          : $_pager-icon-use,
-    $_icon-font-content       : '',
-    $_icon-font               : $_pager-icon-font,
-    $_icon-font-size          : $_pager-icon-font-size,
-    $_icon-font-line-height   : $_pager-icon-font-line-height,
-    $_icon-font-color         : $_pager-action-color,
-    $_icon-font-color-visited : $_pager-action-color-visited,
-    $_icon-font-color-hover   : $_pager-action-color-hover,
-    $_icon-font-color-active  : $_pager-action-color-active,
-    $_icon-font-margin        : $_pager-icon-font-margin,
-    $_icon-font-vertical-align: $_pager-icon-font-vertical-align,
-    $_icon-font-position      : $_pager-icon-font-position,
-    $_icon-font-text-hide     : $_pager-icon-font-text-hide
+    $_icon-font-content,
+    $_pager-icon-use,
+    $_icon-font,
+    $_icon-font-size,
+    $_icon-font-line-height,
+    $_icon-font-color,
+    $_icon-font-color-visited,
+    $_icon-font-color-hover,
+    $_icon-font-color-active,
+    $_icon-font-margin,
+    $_icon-font-vertical-align,
+    $_icon-font-position,
+    $_icon-font-text-hide
 ) {
     @if $_pager-icon-use == true {
         @if $_icon-font-position == before {
             &:visited {
                 &:before {
-                    color: $_icon-font-color-visited;
+                    @include lib-css(color, $_icon-font-color-visited);
                 }
             }
 
             &:active {
                 &:before {
-                    color: $_icon-font-color-active;
+                    @include lib-css(color, $_icon-font-color-active);
                 }
             }
+
             @include lib-icon-font(
-                $_icon-font-content       : $_icon-font-content,
-                $_icon-font               : $_icon-font,
-                $_icon-font-size          : $_icon-font-size,
-                $_icon-font-line-height   : $_icon-font-line-height,
-                $_icon-font-color         : $_icon-font-color,
-                $_icon-font-color-hover   : $_icon-font-color-hover,
-                $_icon-font-color-active  : $_icon-font-color-active,
-                $_icon-font-margin        : $_icon-font-margin,
-                $_icon-font-vertical-align: $_icon-font-vertical-align,
-                $_icon-font-position      : $_icon-font-position,
-                $_icon-font-text-hide     : $_icon-font-text-hide
+                $_icon-font-content        : $_icon-font-content,
+                $_icon-font                : $_icon-font,
+                $_icon-font-size           : $_icon-font-size,
+                $_icon-font-line-height    : $_icon-font-line-height,
+                $_icon-font-color          : $_icon-font-color,
+                $_icon-font-color-hover    : $_icon-font-color-hover,
+                $_icon-font-color-active   : $_icon-font-color-active,
+                $_icon-font-margin         : $_icon-font-margin,
+                $_icon-font-vertical-align : $_icon-font-vertical-align,
+                $_icon-font-position       : $_icon-font-position,
+                $_icon-font-text-hide      : $_icon-font-text-hide
             );
         }
-        @else if $_icon-font-position == after {
+
+        @if $_icon-font-position == after {
             @include lib-icon-font(
-                $_icon-font-content       : $_icon-font-content,
-                $_icon-font               : $_icon-font,
-                $_icon-font-size          : $_icon-font-size,
-                $_icon-font-line-height   : $_icon-font-line-height,
-                $_icon-font-color         : $_icon-font-color,
-                $_icon-font-color-hover   : $_icon-font-color-hover,
-                $_icon-font-color-active  : $_icon-font-color-active,
-                $_icon-font-margin        : $_icon-font-margin,
-                $_icon-font-vertical-align: $_icon-font-vertical-align,
-                $_icon-font-position      : $_icon-font-position,
-                $_icon-font-text-hide     : $_icon-font-text-hide
+                $_icon-font-content        : $_icon-font-content,
+                $_icon-font                : $_icon-font,
+                $_icon-font-size           : $_icon-font-size,
+                $_icon-font-line-height    : $_icon-font-line-height,
+                $_icon-font-color          : $_icon-font-color,
+                $_icon-font-color-hover    : $_icon-font-color-hover,
+                $_icon-font-color-active   : $_icon-font-color-active,
+                $_icon-font-margin         : $_icon-font-margin,
+                $_icon-font-vertical-align : $_icon-font-vertical-align,
+                $_icon-font-position       : $_icon-font-position,
+                $_icon-font-text-hide      : $_icon-font-text-hide
             );
+
             &:visited:after {
-                color: $_icon-font-color-visited;
+                @include lib-css(color, $_icon-font-color-visited);
             }
+
             &:active:after {
-                color: $_icon-font-color-active;
+                @include lib-css(color, $_icon-font-color-active);
             }
         }
     }

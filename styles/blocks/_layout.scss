@@ -1,33 +1,30 @@
-$layout-column-main__sidebar-offset: 2%;
-$layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
-
-//
-//  Common
-//  _____________________________________________
+$layout-column-main__sidebar-offset       : 2%;
+$layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset;
 
 .columns {
     @include lib-layout-columns();
 
     .column.main {
         @extend .abs-add-box-sizing;
-        padding-bottom: $indent__xl;
-        flex-basis: 100%;
-        flex-grow: 1;
-        order: 1;
+        @include lib-css(padding-bottom, $indent__xl);
+        @include lib-vendor-prefix-flex-basis(100%);
+        @include lib-vendor-prefix-flex-grow(1);
+        @include lib-vendor-prefix-order(1);
+        width: 100%;
     }
 
     .sidebar-main {
         @extend .abs-add-box-sizing;
-        flex-grow: 1;
-        flex-basis: 100%;
-        order: 1;
+        @include lib-vendor-prefix-flex-grow(1);
+        @include lib-vendor-prefix-flex-basis(100%);
+        @include lib-vendor-prefix-order(1);
     }
 
     .sidebar-additional {
         @extend .abs-add-box-sizing;
-        flex-grow: 1;
-        flex-basis: 100%;
-        order: 2;
+        @include lib-vendor-prefix-flex-grow(1);
+        @include lib-vendor-prefix-flex-basis(100%);
+        @include lib-vendor-prefix-order(2);
     }
 }
 
@@ -85,9 +82,11 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
 
     .page-main {
         width: 100%;
-        flex-grow: 1;
-        flex-shrink: 0;
-        flex-basis: auto;
+
+        @include lib-vendor-prefix-flex-grow(1);
+        @include lib-vendor-prefix-flex-shrink(0);
+        @include lib-vendor-prefix-flex-basis(auto);
+
         .ie9 & {
             width: auto;
         }
