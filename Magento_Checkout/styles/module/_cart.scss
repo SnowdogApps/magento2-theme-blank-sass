@@ -340,7 +340,7 @@
 
         .actions-toolbar {
             .column.main & {
-                @extend .abs-reset-left-margin-desktop;
+                @include abs-reset-left-margin();
                 > .secondary {
                     float: none;
                 }
@@ -398,7 +398,7 @@
 
             .item-actions {
                 .actions-toolbar {
-                    @extend .abs-reset-left-margin-desktop;
+                    @include abs-reset-left-margin();
                     text-align: left;
                 }
             }
