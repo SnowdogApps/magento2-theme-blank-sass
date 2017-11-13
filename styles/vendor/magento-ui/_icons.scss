@@ -8,23 +8,23 @@
 
 @mixin lib-icon-font(
     $_icon-font-content,
-    $_icon-font               : $icon-font,
-    $_icon-font-size          : $icon-font__size,
-    $_icon-font-line-height   : $icon-font__line-height,
-    $_icon-font-color         : $icon-font__color,
-    $_icon-font-color-hover   : $icon-font__color-hover,
-    $_icon-font-color-active  : $icon-font__color-active,
-    $_icon-font-margin        : $icon-font__margin,
-    $_icon-font-vertical-align: $icon-font__vertical-align,
-    $_icon-font-position      : $icon-font__position,
-    $_icon-font-text-hide     : $icon-font__text-hide,
-    $_icon-font-display       : $icon-font__display
+    $_icon-font                : $icon-font,
+    $_icon-font-size           : $icon-font__size,
+    $_icon-font-line-height    : $icon-font__line-height,
+    $_icon-font-color          : $icon-font__color,
+    $_icon-font-color-hover    : $icon-font__color-hover,
+    $_icon-font-color-active   : $icon-font__color-active,
+    $_icon-font-margin         : $icon-font__margin,
+    $_icon-font-vertical-align : $icon-font__vertical-align,
+    $_icon-font-position       : $icon-font__position,
+    $_icon-font-text-hide      : $icon-font__text-hide,
+    $_icon-font-display        : $icon-font__display
 ) {
-    @if $_icon-font-position == before {
-        @include _lib-icon-text-hide($_icon-font-text-hide);
-        display: $_icon-font-display;
-        text-decoration: none;
+    @include _lib-icon-text-hide($_icon-font-text-hide);
+    @include lib-css(display, $_icon-font-display);
+    text-decoration: none;
 
+    @if $_icon-font-position == before {
         &:before {
             @include _lib-icon-font(
                 $_icon-font-content,
@@ -36,24 +36,18 @@
                 $_icon-font-vertical-align
             );
         }
-
         &:hover {
             &:before {
-                color: $_icon-font-color-hover;
+                @include lib-css(color, $_icon-font-color-hover);
             }
         }
-
         &:active {
             &:before {
-                color: $_icon-font-color-active;
+                @include lib-css(color, $_icon-font-color-active);
             }
         }
     }
     @else if $_icon-font-position == after {
-        @include _lib-icon-text-hide($_icon-font-text-hide);
-        display: $_icon-font-display;
-        text-decoration: none;
-
         &:after {
             @include _lib-icon-font(
                 $_icon-font-content,
@@ -65,25 +59,24 @@
                 $_icon-font-vertical-align
             );
         }
-
         &:hover {
             &:after {
-                color: $_icon-font-color-hover;
+                @include lib-css(color, $_icon-font-color-hover);
             }
         }
 
         &:active {
             &:after {
-                color: $_icon-font-color-active;
+                @include lib-css(color, $_icon-font-color-active);
             }
         }
     }
 }
 
 @mixin lib-icon-font-size(
-    $_icon-font-size       : $icon-font__size,
-    $_icon-font-line-height: $icon-font__line-height,
-    $_icon-font-position   : $icon-font__position
+    $_icon-font-size        : $icon-font__size,
+    $_icon-font-line-height : $icon-font__line-height,
+    $_icon-font-position    : $icon-font__position
 ) {
     @if $_icon-font-position == before {
         &:before {
@@ -103,12 +96,12 @@
 ) {
     @if $_icon-font-position == before {
         &:before {
-            content: $_icon-font-content;
+            @include lib-css(content, $_icon-font-content);
         }
     }
     @else if $_icon-font-position == after {
         &:after {
-            content: $_icon-font-content;
+            @include lib-css(content, $_icon-font-content);
         }
     }
 }
@@ -119,19 +112,19 @@
 
 @mixin lib-icon-image(
     $_icon-image,
-    $_icon-image-width         : $icon__width,
-    $_icon-image-height        : $icon__height,
-    $_icon-image-margin        : $icon__margin,
-    $_icon-image-vertical-align: $icon__vertical-align,
-    $_icon-image-position-x    : $icon-image__position-x,
-    $_icon-image-position-y    : $icon-image__position-y,
-    $_icon-image-position      : $icon__position,
-    $_icon-image-text-hide     : $icon__text-hide
+    $_icon-image-width          : $icon__width,
+    $_icon-image-height         : $icon__height,
+    $_icon-image-margin         : $icon__margin,
+    $_icon-image-vertical-align : $icon__vertical-align,
+    $_icon-image-position-x     : $icon-image__position-x,
+    $_icon-image-position-y     : $icon-image__position-y,
+    $_icon-image-position       : $icon__position,
+    $_icon-image-text-hide      : $icon__text-hide
 ) {
-    @if $_icon-image-position == before {
-        display: inline-block;
-        @include _lib-icon-text-hide($_icon-image-text-hide);
+    display: inline-block;
+    @include _lib-icon-text-hide($_icon-image-text-hide);
 
+    @if $_icon-image-position == before {
         &:before {
             @include _lib-icon-image(
                 $_icon-image,
@@ -146,9 +139,6 @@
         }
     }
     @else if $_icon-image-position == after {
-        display: inline-block;
-        @include _lib-icon-text-hide($_icon-image-text-hide);
-
         &:after {
             @include _lib-icon-image(
                 $_icon-image,
@@ -165,9 +155,9 @@
 }
 
 @mixin lib-icon-image-position(
-    $_icon-image-position-x: $icon-image__position-x,
-    $_icon-image-position-y: $icon-image__position-y,
-    $_icon-image-position  : $icon__position
+    $_icon-image-position-x : $icon-image__position-x,
+    $_icon-image-position-y : $icon-image__position-y,
+    $_icon-image-position   : $icon__position
 ) {
     @if $_icon-image-position == before {
         &:before {
@@ -188,10 +178,10 @@
 }
 
 @mixin lib-icon-sprite-position(
-    $_icon-sprite-position-x: $icon-sprite__position-x,
-    $_icon-sprite-position-y: $icon-sprite__position-y,
-    $_icon-sprite-grid      : $icon-sprite__grid,
-    $_icon-sprite-position  : $icon__position
+    $_icon-sprite-position-x : $icon-sprite__position-x,
+    $_icon-sprite-position-y : $icon-sprite__position-y,
+    $_icon-sprite-grid       : $icon-sprite__grid,
+    $_icon-sprite-position   : $icon__position
 ) {
     @if $_icon-sprite-position == before {
         &:before {
@@ -213,11 +203,10 @@
     }
 }
 
-
 @mixin lib-icon-image-size(
-    $_icon-image-width   : $icon__width,
-    $_icon-image-height  : $icon__height,
-    $_icon-image-position: $icon__position
+    $_icon-image-width    : $icon__width,
+    $_icon-image-height   : $icon__height,
+    $_icon-image-position : $icon__position
 ) {
     @if $_icon-image-position == before {
         &:before {
@@ -247,6 +236,16 @@
     }
 }
 
+//
+//  Url existing check
+//  ---------------------------------------------
+
+@mixin _lib-icon-image-url($_path) {
+    @if $_path != false {
+        @include lib-css(background-image, url($_path));
+    }
+}
+
 @mixin _lib-icon-image(
     $_icon-image,
     $_icon-image-width,
@@ -256,14 +255,12 @@
     $_icon-image-position-x,
     $_icon-image-position-y
 ) {
-    @include lib-url-check($_icon-image);
-
-    background-image: $lib-url-check-output;
-    background-position-x: $_icon-image-position-x;
-    background-position-y: $_icon-image-position-y;
-    line-height: $_icon-image-height;
-    margin: $_icon-image-margin;
-    vertical-align: $_icon-image-vertical-align;
+    @include _lib-icon-image-url($_icon-image);
+    @include lib-css(background-position-x, $_icon-image-position-x);
+    @include lib-css(background-position-y, $_icon-image-position-y);
+    @include lib-css(line-height, $_icon-image-height);
+    @include lib-css(margin, $_icon-image-margin);
+    @include lib-css(vertical-align, $_icon-image-vertical-align);
     @include _lib-icon-image-size(
         $_icon-image-width,
         $_icon-image-height
@@ -277,15 +274,15 @@
     $_icon-image-position-x,
     $_icon-image-position-y
 ) {
-    background-position: $_icon-image-position-x $_icon-image-position-y;
+    @include lib-css(background-position, $_icon-image-position-x $_icon-image-position-y);
 }
 
 @mixin _lib-icon-image-size(
     $icon__width,
     $icon__height
 ) {
-    height: $icon__height;
-    width: $icon__width;
+    @include lib-css(height, $icon__height);
+    @include lib-css(width, $icon__width);
 }
 
 @mixin _lib-icon-sprite-position(
@@ -293,7 +290,7 @@
     $_icon-sprite-position-y,
     $_icon-sprite-grid
 ) {
-    background-position: (-$_icon-sprite-position-x * $_icon-sprite-grid) (-$_icon-sprite-position-y * $_icon-sprite-grid);
+    @include lib-css(background-position, -($_icon-sprite-position-x * $_icon-sprite-grid) -($_icon-sprite-position-y * $_icon-sprite-grid));
 }
 
 @mixin _lib-icon-font(
@@ -306,22 +303,21 @@
     $_icon-font-vertical-align
 ) {
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     @include _lib-icon-font-size($_icon-font-size, $_icon-font-line-height);
-    color: $_icon-font-color;
-    content: $_icon-font-content;
-    font-family: $_icon-font;
-    margin: $_icon-font-margin;
+    @include lib-css(color, $_icon-font-color);
+    @include lib-css(content, $_icon-font-content);
+    @include lib-css(font-family, $_icon-font);
+    @include lib-css(margin, $_icon-font-margin);
+    @include lib-css(vertical-align, $_icon-font-vertical-align);
     display: inline-block;
     font-weight: normal;
     overflow: hidden;
     speak: none;
     text-align: center;
-    @if ($_icon-font-vertical-align != false) {
-        vertical-align: $_icon-font-vertical-align;
-    }
 }
 
 @mixin _lib-icon-font-size($_icon-font-size, $_icon-font-line-height) {
-    font-size: $_icon-font-size;
-    line-height: $_icon-font-line-height;
+    @include lib-css(font-size, $_icon-font-size);
+    @include lib-css(line-height, $_icon-font-line-height);
 }

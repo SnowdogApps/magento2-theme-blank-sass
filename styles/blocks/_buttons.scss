@@ -1,10 +1,10 @@
 a.action.primary,
 button {
-    border-radius: 3px;
+    @include lib-css(border-radius, $button__border-radius);
 }
 button {
     &:active {
-        box-shadow: $button__shadow;
+        @include lib-css(box-shadow, $button__shadow);
     }
 }
 a.action.primary {

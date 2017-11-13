@@ -1,0 +1,8 @@
+//
+//  Lib -> Components -> Variables
+//  _____________________________________________
+
+$component__shadow-size__base: 5px !default;
+$component__box-shadow__base: 1px 1px $component__shadow-size__base rgba(0, 0, 0, 0.5) !default;
+
+$component-modal__opacity: 0.98 !default;

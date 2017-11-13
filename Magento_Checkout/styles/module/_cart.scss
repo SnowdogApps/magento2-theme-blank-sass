@@ -6,11 +6,11 @@
 .cart-summary {
     @extend .abs-add-box-sizing;
     @extend .abs-adjustment-incl-excl-tax;
-    background: $sidebar__background-color;
+    @include lib-css(background, $sidebar__background-color);
     margin-bottom: $indent__m;
     padding: 1px 15px $indent__m;
 
-    & > .title {
+    > .title {
         display: block;
         @include lib-heading(h3);
     }
@@ -36,7 +36,7 @@
 
             .methods {
                 .field {
-                    & > .label {
+                    > .label {
                         display: inline;
                     }
                 }
@@ -44,14 +44,14 @@
         }
 
         .fieldset.estimate {
-            & > .legend,
-            & > .legend + br {
+            > .legend,
+            > .legend + br {
                 @extend .abs-no-display;
             }
         }
     }
     .actions-toolbar {
-        & > .primary {
+        > .primary {
             button {
                 @extend .abs-revert-secondary-color;
             }
@@ -78,7 +78,7 @@
             border-top: $border-width__base solid $border-color__base;
         }
 
-        & > .item {
+        > .item {
             border-bottom: $border-width__base solid $border-color__base;
             position: relative;
         }
@@ -119,7 +119,7 @@
     .actions-toolbar {
         @extend .abs-add-clearfix;
 
-        & > .action {
+        > .action {
             @extend button;
             @include lib-link-as-button();
             margin-bottom: $indent__s;
@@ -211,6 +211,30 @@
     }
 }
 
+//  Products pager
+.cart-products-toolbar {
+    .toolbar-amount {
+        margin: $indent__m 0 15px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .pages {
+        margin: 0 0 $indent__m;
+        text-align: center;
+
+        .items {
+            > .item {
+                border-bottom: 0;
+            }
+        }
+    }
+}
+
+.cart-products-toolbar-top {
+    border-bottom: $border-width__base solid $border-color__base;
+}
+
 //
 //  Cross sell
 //  ---------------------------------------------
@@ -221,7 +245,7 @@
 
 .cart-tax-info,
 .cart .cart-tax-info {
-    & + .cart-tax-total {
+    + .cart-tax-total {
         display: block;
     }
 }
@@ -264,6 +288,7 @@
                     text-align: center;
                     white-space: nowrap;
                     width: 33%;
+
                     &:before {
                         content: attr(data-th) ':';
                         display: block;
@@ -316,7 +341,7 @@
         .actions-toolbar {
             .column.main & {
                 @extend .abs-reset-left-margin-desktop;
-                & > .secondary {
+                > .secondary {
                     float: none;
                 }
             }
@@ -376,6 +401,50 @@
                     @extend .abs-reset-left-margin-desktop;
                     text-align: left;
                 }
+            }
+        }
+
+        .action {
+            margin-bottom: $indent__s;
+        }
+    }
+
+    //  Products pager
+    .cart-products-toolbar {
+        .toolbar-amount {
+            line-height: 30px;
+            margin: 0;
+        }
+
+        .pages {
+            float: right;
+            margin: 0 0 1px;
+
+            .item {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .cart.table-wrapper {
+        .cart-products-toolbar {
+            + .cart {
+                thead {
+                    tr {
+                        th.col {
+                            padding-bottom: 7px;
+                            padding-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .cart {
+            + .cart-products-toolbar {
+                margin-top: $indent__m;
             }
         }
     }

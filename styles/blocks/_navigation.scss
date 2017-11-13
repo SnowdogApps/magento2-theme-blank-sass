@@ -4,10 +4,6 @@
 
 $active-nav-indent: 54px;
 
-//
-//  Common
-//  _____________________________________________
-
 .panel.header {
     .links,
     .switcher {
@@ -16,15 +12,15 @@ $active-nav-indent: 54px;
 }
 
 .nav-sections {
-    background: $navigation__background;
+    @include lib-css(background, $navigation__background);
 }
 
 .nav-toggle {
     @include lib-icon-font(
         $icon-menu,
-        $_icon-font-size       : 28px,
-        $_icon-font-color      : $header-icons-color,
-        $_icon-font-color-hover: $header-icons-color-hover
+        $_icon-font-size        : 28px,
+        $_icon-font-color       : $header-icons-color,
+        $_icon-font-color-hover : $header-icons-color-hover
     );
     @include lib-icon-text-hide();
     cursor: pointer;
@@ -48,10 +44,10 @@ $active-nav-indent: 54px;
             .level-top {
                 position: relative;
                 @include lib-icon-font(
-                    $_icon-font-content : $icon-down,
-                    $_icon-font-size    : 42px,
-                    $_icon-font-position: after,
-                    $_icon-font-display : block
+                    $_icon-font-content  : $icon-down,
+                    $_icon-font-size     : 42px,
+                    $_icon-font-position : after,
+                    $_icon-font-display  : block
                 );
 
                 &:after {
@@ -62,8 +58,8 @@ $active-nav-indent: 54px;
 
                 &.ui-state-active {
                     @include lib-icon-font-symbol(
-                        $_icon-font-content : $icon-up,
-                        $_icon-font-position: after
+                        $_icon-font-content  : $icon-up,
+                        $_icon-font-position : after
                     );
                 }
             }
@@ -72,7 +68,7 @@ $active-nav-indent: 54px;
 
     .nav-sections {
         -webkit-overflow-scrolling: touch;
-        transition: left 0.3s;
+        @include lib-css(transition, left 0.3s, 1);
         height: 100%;
         left: -80%;
         left: calc(-1 * (100% - #{$active-nav-indent}));
@@ -103,10 +99,10 @@ $active-nav-indent: 54px;
             strong {
                 position: relative;
                 @include lib-icon-font(
-                    $_icon-font-content : $icon-down,
-                    $_icon-font-size    : 42px,
-                    $_icon-font-position: after,
-                    $_icon-font-display : block
+                    $_icon-font-content  : $icon-down,
+                    $_icon-font-size     : 42px,
+                    $_icon-font-position : after,
+                    $_icon-font-display  : block
                 );
 
                 &:after {
@@ -118,8 +114,8 @@ $active-nav-indent: 54px;
 
             &.active strong {
                 @include lib-icon-font-symbol(
-                    $_icon-font-content : $icon-up,
-                    $_icon-font-position: after
+                    $_icon-font-content  : $icon-up,
+                    $_icon-font-position : after
                 );
             }
         }
@@ -143,15 +139,15 @@ $active-nav-indent: 54px;
                     padding: 0.8rem $indent__base;
                 }
 
-                & > a {
+                > a {
                     border-top: 1px solid $color-gray82;
                 }
             }
 
             a,
             a:hover {
-                color: $navigation-level0-item__color;
-                text-decoration: $navigation-level0-item__text-decoration;
+                @include lib-css(color, $navigation-level0-item__color);
+                @include lib-css(text-decoration, $navigation-level0-item__text-decoration);
                 display: block;
                 font-weight: 700;
                 padding: 0.8rem $indent__base;
@@ -169,7 +165,7 @@ $active-nav-indent: 54px;
         width: 100%;
 
         .page-wrapper {
-            transition: left 0.3s;
+            @include lib-css(transition, left 0.3s, 1);
             height: 100%;
             left: 0;
             overflow: hidden;
@@ -193,14 +189,14 @@ $active-nav-indent: 54px;
         .nav-sections {
             $_shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
 
-            box-shadow: $_shadow;
+            @include lib-css(box-shadow, $_shadow, 1);
             left: 0;
             z-index: 99;
         }
 
         .nav-toggle {
             &:after {
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 0, 0, $overlay__opacity);
                 content: '';
                 display: block;
                 height: 100%;
@@ -270,8 +266,8 @@ $active-nav-indent: 54px;
     }
 
     .nav-sections {
-        flex-shrink: 0;
-        flex-basis: auto;
+        @include lib-vendor-prefix-flex-shrink(0);
+        @include lib-vendor-prefix-flex-basis(auto);
         margin-bottom: $indent__m;
     }
 

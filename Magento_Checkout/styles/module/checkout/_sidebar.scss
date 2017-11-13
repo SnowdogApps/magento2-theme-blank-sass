@@ -2,9 +2,9 @@
 //  Variables
 //  _____________________________________________
 
-$checkout-sidebar__margin: $indent__base !default;
-$checkout-sidebar__margin__xl: 46px !default;
-$checkout-sidebar__columns: 4 !default;
+$checkout-sidebar__margin: $indent__base;
+$checkout-sidebar__margin__xl: 46px;
+$checkout-sidebar__columns: 4;
 
 //
 //  Desktop
@@ -12,7 +12,7 @@ $checkout-sidebar__columns: 4 !default;
 
 @include min-screen($screen__m) {
     .opc-sidebar {
-        margin: $checkout-sidebar__margin__xl 0 $checkout-sidebar__margin;
+        @include lib-css(margin, $checkout-sidebar__margin__xl 0 $checkout-sidebar__margin);
         @include lib-layout-column(2, 2, $checkout-sidebar__columns);
     }
 }

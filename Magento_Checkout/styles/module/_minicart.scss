@@ -2,10 +2,10 @@
 //  Variables
 //  _____________________________________________
 
-$minicart__border-color      : $color-gray80 !default;
-$minicart__padding-horizontal: $indent__base !default;
+$minicart__border-color       : $color-gray80;
+$minicart__padding-horizontal : $indent__base;
 
-$minicart-qty__height        : 24px !default;
+$minicart-qty__height         : 24px;
 
 //
 //  Minicart
@@ -22,7 +22,7 @@ $minicart-qty__height        : 24px !default;
     }
 
     .subtotal {
-        margin: 0 $indent__s;
+        margin: 0 $indent__s $indent__s;
         text-align: right;
 
         .label {
@@ -93,25 +93,26 @@ $minicart-qty__height        : 24px !default;
 
 .minicart-wrapper {
     @include lib-dropdown(
-        $_toggle-selector                    : '.action.showcart',
-        $_options-selector                   : '.block-minicart',
-        $_dropdown-toggle-icon-content       : $icon-cart,
-        $_dropdown-toggle-active-icon-content: $icon-cart,
-        $_dropdown-list-item-padding         : false,
-        $_dropdown-list-item-hover           : false,
-        $_icon-font-position                 : before,
-        $_icon-font-size                     : 35px,
-        $_icon-font-line-height              : 33px,
-        $_icon-font-color                    : $minicart-icons-color,
-        $_icon-font-color-hover              : $minicart-icons-color-hover,
-        $_icon-font-color-active             : $minicart-icons-color
+        $_toggle-selector                     : '.action.showcart',
+        $_options-selector                    : '.block-minicart',
+        $_dropdown-toggle-icon-content        : $icon-cart,
+        $_dropdown-toggle-active-icon-content : $icon-cart,
+        $_dropdown-list-item-padding          : false,
+        $_dropdown-list-item-hover            : false,
+        $_icon-font-position                  : before,
+        $_icon-font-size                      : 35px,
+        $_icon-font-line-height               : 33px,
+        $_icon-font-color                     : $minicart-icons-color,
+        $_icon-font-color-hover               : $minicart-icons-color-hover,
+        $_icon-font-color-active              : $minicart-icons-color
     );
     float: right;
 
     .block-minicart {
-        padding: 25px $minicart__padding-horizontal;
+        @include lib-css(padding, 25px $minicart__padding-horizontal);
         right: 0;
         width: 320px;
+        z-index: 101;
 
         .block-title {
             display: none;
@@ -145,9 +146,9 @@ $minicart-qty__height        : 24px !default;
         &.close {
             @include lib-button-icon(
                 $icon-remove,
-                $_icon-font-size       : 32px,
-                $_icon-font-line-height: 32px,
-                $_icon-font-text-hide  : true
+                $_icon-font-size        : 32px,
+                $_icon-font-line-height : 32px,
+                $_icon-font-text-hide   : true
             );
             @include lib-button-reset();
             height: 40px;
@@ -165,10 +166,10 @@ $minicart-qty__height        : 24px !default;
             }
 
             .counter.qty {
-                background: $active__color;
-                color: $page__background-color;
-                height: $minicart-qty__height;
-                line-height: $minicart-qty__height;
+                @include lib-css(background, $active__color);
+                @include lib-css(color, $page__background-color);
+                @include lib-css(height, $minicart-qty__height);
+                @include lib-css(line-height, $minicart-qty__height);
                 border-radius: 2px;
                 display: inline-block;
                 margin: 3px 0 0;
@@ -184,7 +185,7 @@ $minicart-qty__height        : 24px !default;
 
                 .loader {
                     > img {
-                        max-width: $minicart-qty__height;
+                        @include lib-css(max-width, $minicart-qty__height);
                     }
                 }
             }
@@ -201,8 +202,8 @@ $minicart-qty__height        : 24px !default;
 }
 
 .minicart-items-wrapper {
-    border: 1px solid $minicart__border-color;
-    margin: 0 (-$minicart__padding-horizontal);
+    @include lib-css(border, 1px solid $minicart__border-color);
+    @include lib-css(margin, 0 (-$minicart__padding-horizontal));
     border-left: 0;
     border-right: 0;
     overflow-x: auto;
@@ -216,7 +217,7 @@ $minicart-qty__height        : 24px !default;
         padding: $indent__base 0;
 
         &:not(:first-child) {
-            border-top: 1px solid $minicart__border-color;
+            @include lib-css(border-top, 1px solid $minicart__border-color);
         }
 
         &:first-child {
@@ -251,26 +252,28 @@ $minicart-qty__height        : 24px !default;
 
         .toggle {
             @include lib-icon-font(
-                $_icon-font-content    : $icon-down,
-                $_icon-font-size       : 28px,
-                $_icon-font-line-height: 16px,
-                $_icon-font-text-hide  : false,
-                $_icon-font-position   : after,
-                $_icon-font-display    : block
+                $_icon-font-content     : $icon-down,
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 16px,
+                $_icon-font-text-hide   : false,
+                $_icon-font-position    : after,
+                $_icon-font-display     : block
             );
             cursor: pointer;
             position: relative;
 
             &:after {
                 position: static;
+                right: $indent__base;
+                top: 0;
             }
         }
 
         &.active {
             > .toggle {
                 @include lib-icon-font-symbol(
-                    $_icon-font-content : $icon-up,
-                    $_icon-font-position: after
+                    $_icon-font-content  : $icon-up,
+                    $_icon-font-position : after
                 );
             }
         }
@@ -281,7 +284,7 @@ $minicart-qty__height        : 24px !default;
         margin: 0 0 $indent__s;
 
         a {
-            color: $link__color;
+            @include lib-css(color, $link__color);
         }
     }
 
@@ -298,7 +301,7 @@ $minicart-qty__height        : 24px !default;
         }
 
         .weee[data-label] {
-            font-size: 11px;
+            @include lib-font-size(11);
             .label {
                 @extend .abs-no-display;
             }
@@ -313,11 +316,11 @@ $minicart-qty__height        : 24px !default;
         .tooltip.toggle {
             @include lib-icon-font(
                 $icon-down,
-                $_icon-font-size       : 28px,
-                $_icon-font-line-height: 28px,
-                $_icon-font-text-hide  : true,
-                $_icon-font-margin     : -3px 0 0 7px,
-                $_icon-font-position   : after
+                $_icon-font-size        : 28px,
+                $_icon-font-line-height : 28px,
+                $_icon-font-text-hide   : true,
+                $_icon-font-margin      : -3px 0 0 7px,
+                $_icon-font-position    : after
             );
 
             .details {
@@ -340,7 +343,7 @@ $minicart-qty__height        : 24px !default;
     }
 
     .update-cart-item {
-        font-size: 11px;
+        @include lib-font-size(11);
         vertical-align: top;
     }
 
@@ -353,17 +356,19 @@ $minicart-qty__height        : 24px !default;
         &.delete {
             @include lib-icon-font(
                 $icon-settings,
-                $_icon-font-size        : 28px,
-                $_icon-font-line-height : 28px,
-                $_icon-font-text-hide   : true,
-                $_icon-font-color       : $color-gray19,
-                $_icon-font-color-hover : $color-gray19,
-                $_icon-font-color-active: $color-gray19
+                $_icon-font-size         : 28px,
+                $_icon-font-line-height  : 28px,
+                $_icon-font-text-hide    : true,
+                $_icon-font-color        : $color-gray19,
+                $_icon-font-color-hover  : $color-gray19,
+                $_icon-font-color-active : $color-gray19
             );
         }
 
         &.delete {
-            @include lib-icon-font-symbol($_icon-font-content: $icon-trash);
+            @include lib-icon-font-symbol(
+                $_icon-font-content : $icon-trash
+            );
         }
     }
 }

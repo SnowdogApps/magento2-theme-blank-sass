@@ -5,18 +5,14 @@
 $form-field__vertical-indent__desktop: 29px;
 $form-calendar-icon__color: $primary__color;
 
-//
-//  Common
-//  _____________________________________________
-
 .fieldset {
     @include lib-form-fieldset();
     &:last-child {
         margin-bottom: 0;
     }
 
-    & > .field,
-    & > .fields > .field {
+    > .field,
+    > .fields > .field {
         @include lib-form-field();
 
         &.no-label {
@@ -86,8 +82,13 @@ fieldset.field {
     }
 }
 
+.field-error,
 div.mage-error[generated] {
     margin-top: 7px;
+}
+
+.field-error {
+    @include lib-form-validation-note();
 }
 
 .field .tooltip {
@@ -109,13 +110,14 @@ select {
     ~ .ui-datepicker-trigger {
         @include lib-button-reset();
         @include lib-icon-font(
-            $_icon-font-content    : $icon-calendar,
-            $_icon-font-color      : $primary__color__lighter,
-            $_icon-font-size       : $icon-calendar__font-size,
-            $_icon-font-line-height: $icon-calendar__font-size,
-            $_icon-font-display    : inline-block,
-            $_icon-font-text-hide  : true
+            $_icon-font-content     : $icon-calendar,
+            $_icon-font-color       : $primary__color__lighter,
+            $_icon-font-size        : $icon-calendar__font-size,
+            $_icon-font-line-height : $icon-calendar__font-size,
+            $_icon-font-display     : block,
+            $_icon-font-text-hide   : true
         );
+        display: inline-block;
         vertical-align: middle;
 
         &:focus {
