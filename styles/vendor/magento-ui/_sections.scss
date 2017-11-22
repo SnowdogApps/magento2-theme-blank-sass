@@ -105,6 +105,7 @@
             border-bottom: none;
             @include lib-css(height, $_tab-control-height);
             @include lib-css(padding, $_tab-control-padding-top $_tab-control-padding-right $_tab-control-padding-bottom $_tab-control-padding-left);
+            @include lib-css(box-sizing, unset);
         }
 
         &:not(.disabled) > .switch:focus,
