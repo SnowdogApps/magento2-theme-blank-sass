@@ -3,9 +3,10 @@
 //  _____________________________________________
 
 // Global variables
+@import 'variables/global';
 @import 'variables/colors';
-@import 'variables/typography';
 @import 'variables/icons';
+@import 'variables/typography';
 
 // All variables
 @import 'variables/actions-toolbar';
@@ -13,6 +14,7 @@
 @import 'variables/buttons';
 @import 'variables/components';
 @import 'variables/dropdowns';
+@import 'variables/email';
 @import 'variables/forms';
 @import 'variables/layout';
 @import 'variables/loaders';
@@ -26,3 +28,29 @@
 @import 'variables/structure';
 @import 'variables/tables';
 @import 'variables/tooltips';
+
+//
+//  Global lib
+//  _____________________________________________
+
+@import 'actions-toolbar';
+@import 'breadcrumbs';
+@import 'buttons';
+@import 'dropdowns';
+@import 'forms';
+@import 'grids';
+@import 'icons';
+@import 'layout';
+@import 'loaders';
+@import 'messages';
+@import 'navigation';
+@import 'pages';
+@import 'popups';
+@import 'rating';
+@import 'resets';
+@import 'sections';
+@import 'tables';
+@import 'tooltips';
+@import 'typography';
+@import 'utilities';
+@import 'variables';
