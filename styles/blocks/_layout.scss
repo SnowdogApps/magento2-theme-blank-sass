@@ -83,9 +83,14 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset;
     .page-main {
         width: 100%;
 
+        // These flex properties should be combined to `flex: 1 0 auto`
+        // sass-lint:disable no-css-comments
+        /* stylelint-disable declaration-block-no-redundant-longhand-properties */
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-shrink(0);
         @include lib-vendor-prefix-flex-basis(auto);
+        /* stylelint-enable declaration-block-no-redundant-longhand-properties */
+        // sass-lint:enable  no-css-comments
 
         .ie9 & {
             width: auto;

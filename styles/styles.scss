@@ -9,7 +9,7 @@
 @import 'variables';
 
 // Reset default styles with magento-reset
-@include lib-magento-reset();
+@import 'blocks/reset';
 
 // Theme blocks
 @import 'blocks/actions-toolbar';
@@ -25,7 +25,6 @@
 @import 'blocks/pages'; // Theme pager
 @import 'blocks/popups';
 @import 'blocks/price';
-@import 'blocks/reset';
 @import 'blocks/sections';
 @import 'blocks/tables';
 @import 'blocks/tooltips';
