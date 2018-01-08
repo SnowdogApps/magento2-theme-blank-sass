@@ -84,10 +84,14 @@ $layout-column__additional-sidebar-offset: $layout-column-main__sidebar-offset;
     }
 
     .page-main {
+        // sass-lint:disable no-css-comments
+        /* stylelint-disable declaration-block-no-redundant-longhand-properties */
         width: 100%;
         flex-grow: 1;
         flex-shrink: 0;
         flex-basis: auto;
+        /* stylelint-enable declaration-block-no-redundant-longhand-properties */
+        // sass-lint:enable  no-css-comments
         .ie9 & {
             width: auto;
         }
