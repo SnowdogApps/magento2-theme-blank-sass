@@ -1,3 +1,5 @@
+@import 'extends/before';
+
 // Mixins
 @import "mixins/media-queries";
 
@@ -79,3 +81,5 @@
 @import '../Magento_Cms/styles/widgets';
 @import '../Magento_MultipleWishlist/styles/widgets';
 @import '../Magento_VersionsCms/styles/widgets';
+
+@import 'extends/after';
