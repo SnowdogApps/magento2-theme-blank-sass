@@ -2,16 +2,16 @@
 //  Variables
 //  _____________________________________________
 
-$braintree-input-border__color              : $color-gray76;
+$braintree-input-border__color              : $color-gray76 !default;
 
-$braintree-error__color                     : $color-red10;
-$braintree-focus__color                     : $color-blue2;
-$braintree-success__color                   : $color-dark-green1;
+$braintree-error__color                     : $color-red10 !default;
+$braintree-focus__color                     : $color-blue2 !default;
+$braintree-success__color                   : $color-dark-green1 !default;
 
-$braintree-paypal-icon__height              : 16px;
-$braintree-paypal-icon__width               : 16px;
-$braintree-paypal-account__padding-right    : 50px;
-$braintree-paypal-account__padding-vertical : 15px;
+$braintree-paypal-icon__height              : 16px !default;
+$braintree-paypal-icon__width               : 16px !default;
+$braintree-paypal-account__padding-right    : 50px !default;
+$braintree-paypal-account__padding-vertical : 15px !default;
 
 .payment-method-braintree {
 
