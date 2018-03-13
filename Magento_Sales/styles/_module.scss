@@ -251,7 +251,7 @@
         }
 
         .toolbar {
-            @extend .abs-add-clearfix-desktop;
+            @include abs-add-clearfix();
 
             .pages {
                 float: right;
@@ -365,10 +365,10 @@
         .column.main {
             .block:not(.widget) {
                 .block-content {
-                    @extend .abs-add-clearfix-desktop;
+                    @include abs-add-clearfix();
 
                     .box {
-                        @extend .abs-blocks-2columns;
+                        @include abs-blocks-2columns();
                         margin-bottom: $indent__base;
                     }
                 }
