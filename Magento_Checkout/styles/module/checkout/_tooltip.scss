@@ -3,7 +3,6 @@
 //  _____________________________________________
 
 $checkout-tooltip__hover__z-index               : $tooltip__z-index;
-$checkout-tooltip-breakpoint__screen-m          : $modal-popup-breakpoint-screen__m;
 
 $checkout-tooltip-icon-arrow__font-size         : 10px;
 $checkout-tooltip-icon-arrow__left              : -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width);
@@ -130,7 +129,7 @@ $checkout-tooltip-content-mobile__top           : 30px + $checkout-tooltip-icon-
     }
 }
 
-@include max-screen($checkout-tooltip-breakpoint__screen-m) {
+@include max-screen($screen__m) {
     .field-tooltip {
         .field-tooltip-content {
             @extend .abs-checkout-tooltip-content-position-top-mobile;

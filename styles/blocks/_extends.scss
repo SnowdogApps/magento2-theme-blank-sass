@@ -1129,7 +1129,7 @@
     @include abs-checkout-tooltip-content-position-top();
 }
 
-@include max-screen($screen__m + 1) {
+@include max-screen($screen__m) {
     .abs-checkout-tooltip-content-position-top-mobile {
         @include abs-checkout-tooltip-content-position-top();
     }
