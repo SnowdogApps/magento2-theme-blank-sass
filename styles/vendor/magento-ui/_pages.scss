@@ -310,7 +310,7 @@
     $_pager-reset-spaces,
     $_pager-item-display
 ) {
-    @if $_pager-reset-spaces == true and $_pager-item-display = inline-block {
+    @if $_pager-reset-spaces == true and $_pager-item-display == inline-block {
         @include lib-inline-block-space-container();
         white-space: nowrap;
     }
@@ -322,7 +322,7 @@
     $_pager-font-size,
     $_pager-line-height
 ) {
-    @if $_pager-reset-spaces = true and $_pager-item-display = inline-block {
+    @if $_pager-reset-spaces == true and $_pager-item-display == inline-block {
         @include lib-inline-block-space-item(
             $_font-size   : $_pager-font-size,
             $_line-height : $_pager-line-height

@@ -71,9 +71,11 @@ $toolbar-element-background : $panel__background-color !default;
     );
 }
 
-.sorter.sort-desc {
-    &:before {
-        content: $icon-arrow-down;
+.sorter {
+    .sort-desc {
+        &:before {
+            content: $icon-arrow-down;
+        }
     }
 }
 

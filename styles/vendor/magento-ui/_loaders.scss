@@ -29,7 +29,7 @@
     top: 0;
 
     &:before {
-        @if $_loader-text = true {
+        @if $_loader-text == true {
             @include lib-css(padding, $_loader-text-padding);
             content: attr(data-text);
             text-align: center;
