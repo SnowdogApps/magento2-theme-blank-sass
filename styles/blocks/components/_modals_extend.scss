@@ -11,7 +11,6 @@ $modal-title__border                  : 1px solid $color-gray-light5 !default;
 
 $modal-popup-title__font-size         : 26px !default;
 $modal-popup-title-mobile__font-size  : $font-size__base !default;
-$modal-popup-breakpoint-screen__m     : $screen__m !default;
 
 $modal-slide__first__indent-left      : 44px !default;
 $modal-slide-mobile__background-color : $color-gray-light01 !default;
@@ -142,7 +141,7 @@ body {
     }
 }
 
-@include max-screen($modal-popup-breakpoint-screen__m) {
+@include max-screen($screen__m) {
     .modal-popup {
         &.modal-slide {
             .modal-inner-wrap[class] {
@@ -173,7 +172,7 @@ body {
 //  Desktop
 //  _____________________________________________
 
-@include min-screen($modal-popup-breakpoint-screen__m) {
+@include min-screen($screen__m) {
     .modal-popup {
         &.modal-slide {
             .modal-footer {
