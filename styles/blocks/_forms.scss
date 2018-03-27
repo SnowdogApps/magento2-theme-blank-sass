@@ -2,8 +2,8 @@
 //  Variables
 //  _____________________________________________
 
-$form-field__vertical-indent__desktop: 29px;
-$form-calendar-icon__color: $primary__color;
+$form-field__vertical-indent__desktop: 29px !default;
+$form-calendar-icon__color: $primary__color !default;
 
 .fieldset {
     @include lib-form-fieldset();

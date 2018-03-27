@@ -1,5 +1,5 @@
-$layout-column-main__sidebar-offset       : 2%;
-$layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset;
+$layout-column-main__sidebar-offset       : 2% !default;
+$layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset !default;
 
 .columns {
     @include lib-layout-columns();

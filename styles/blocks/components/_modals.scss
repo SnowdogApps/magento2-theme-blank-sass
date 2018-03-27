@@ -6,28 +6,28 @@
 //  Variables
 //  ---------------------------------------------
 
-$modal__background-color                         : $color-white;
-$modal__box-shadow                               : 0 0 12px 2px rgba(0, 0, 0, 0.35);
+$modal__background-color                         : $color-white !default;
+$modal__box-shadow                               : 0 0 12px 2px rgba(0, 0, 0, 0.35) !default;
 
-$modal-popup__indent-vertical                    : 5rem;
-$modal-popup__padding                            : 3rem;
-$modal-popup__width                              : 75%;
-$modal-popup__z-index                            : $modal__z-index;
+$modal-popup__indent-vertical                    : 5rem !default;
+$modal-popup__padding                            : 3rem !default;
+$modal-popup__width                              : 75% !default;
+$modal-popup__z-index                            : $modal__z-index !default;
 
-$modal-slide__first__indent-left                 : 14.8rem;
-$modal-slide__indent-left                        : 4.5rem;
-$modal-slide__padding                            : 2.6rem;
-$modal-slide__z-index                            : $modal__z-index;
+$modal-slide__first__indent-left                 : 14.8rem !default;
+$modal-slide__indent-left                        : 4.5rem !default;
+$modal-slide__padding                            : 2.6rem !default;
+$modal-slide__z-index                            : $modal__z-index !default;
 
-$modal-slide-header__padding-vertical            : 2.1rem;
+$modal-slide-header__padding-vertical            : 2.1rem !default;
 
-$modal-popup-confirm__width                      : 50rem;
+$modal-popup-confirm__width                      : 50rem !default;
 
-$modal-popup-image-box__border-color             : $color-gray80;
-$modal-popup-image-box__max-width                : 78rem;
+$modal-popup-image-box__border-color             : $color-gray80 !default;
+$modal-popup-image-box__max-width                : 78rem !default;
 
-$modal-popup-image-box-preview-image__max-height : 54rem;
-$modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box-preview-image__max-height} + #{(2 * $indent__base)});
+$modal-popup-image-box-preview-image__max-height : 54rem !default;
+$modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box-preview-image__max-height} + #{(2 * $indent__base)}) !default;
 
 //
 //  Utilities
