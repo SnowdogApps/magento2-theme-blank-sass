@@ -245,9 +245,9 @@
     $_message-icon-color,
     $_message-icon-background,
     $_message-icon-top,
-    $_message-icon-left,
+    $_message-icon-right,
     $_message-icon-bottom,
-    $_message-icon-right
+    $_message-icon-left
 ) {
     @include lib-css(padding-left, $message-icon__inner-padding-left);
     position: relative;
