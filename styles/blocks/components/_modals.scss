@@ -86,7 +86,8 @@ $modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box
     @include lib-css(z-index, $modal-popup__z-index);
     left: 0;
     overflow-y: auto;
-
+    pointer-events: none;
+    
     &._show {
         .modal-inner-wrap {
             transform: translateY(0);
