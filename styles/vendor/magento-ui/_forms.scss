@@ -118,7 +118,7 @@
         $_width                  : $textarea__width !default;
     }
 
-    @if if $_type == "input-radio" {
+    @if $_type == "input-radio" {
         $_disabled-opacity : $input-radio__disabled__opacity !default;
         $_margin           : $input-radio__margin !default;
         $_vertical-align   : $input-radio__vertical-align !default;
