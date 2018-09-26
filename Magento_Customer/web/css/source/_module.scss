@@ -233,8 +233,6 @@ $_password-very-strong               : #81b562 !default;
     }
 
     .title {
-        margin-bottom: $indent__s;
-
         strong {
             @include lib-heading(h4);
             .column.main & {

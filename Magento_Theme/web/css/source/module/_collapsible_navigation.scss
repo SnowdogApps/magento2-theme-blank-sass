@@ -1,0 +1,103 @@
+//
+//  Variables
+//  _____________________________________________
+
+$collapsible-nav-background: $sidebar__background-color !default;
+$collapsible-nav-color: $color-gray34 !default;
+$collapsible-nav-current-border: 3px solid transparent !default;
+$collapsible-nav-current-border-color: $active__color !default;
+$collapsible-nav-current-color: $color-black !default;
+$collapsible-nav-current-font-weight: $font-weight__semibold !default;
+$collapsible-nav-delimiter__border-color: $color-gray82 !default;
+$collapsible-nav-item-hover: $color-gray91 !default;
+
+//
+//  Collapsible navigation
+//  -----------------------------------------
+
+.block-collapsible-nav {
+    .content {
+        @include lib-css(background, $collapsible-nav-background);
+        padding: 15px 0;
+    }
+    .item {
+        margin: 3px 0 0;
+        &:first-child {
+            margin-top: 0;
+        }
+
+        a,
+        > strong {
+            border-left: 3px solid transparent;
+            @include lib-css(color, $collapsible-nav-color);
+            display: block;
+            padding: 5px 18px 5px 15px;
+        }
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                @include lib-css(background, $collapsible-nav-item-hover);
+            }
+        }
+
+        &.current {
+            a,
+            > strong {
+                @include lib-css(border-color, $collapsible-nav-current-border-color);
+                @include lib-css(color, $collapsible-nav-current-color);
+                @include lib-css(font-weight, $collapsible-nav-current-font-weight);
+            }
+
+            a {
+                @include lib-css(border-color, $collapsible-nav-current-border-color);
+            }
+        }
+
+        .delimiter {
+            border-top: 1px solid $collapsible-nav-delimiter__border-color;
+            display: block;
+            margin: $indent__s 1.8rem;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+@include min-screen($screen__m) {
+    .block-collapsible-nav {
+        .title {
+            @extend .abs-visually-hidden-desktop;
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m) {
+    .block-collapsible-nav {
+        left: 0;
+        position: absolute;
+        top: -21px;
+        width: 100%;
+        z-index: 5;
+
+        .title {
+            @extend .abs-toggling-title-mobile;
+        }
+
+        .content {
+            border-bottom: $border-width__base solid $border-color__base;
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
