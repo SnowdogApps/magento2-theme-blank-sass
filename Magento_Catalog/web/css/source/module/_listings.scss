@@ -1,3 +1,6 @@
+$product-item__hover__background-color: $color-white !default;
+$product-item__hover__box-shadow: 3px 3px 4px 0 rgba(0, 0, 0, .3) !default;
+
 //
 //  Product Lists
 //  _____________________________________________
@@ -293,6 +296,58 @@
         .products-grid {
             .product-item {
                 width: 33.3333%;
+            }
+        }
+    }
+
+    .product-item-info {
+        .products-grid & {
+            &:hover,
+            &.active {
+                @include lib-css(background, $product-item__hover__background-color);
+                @include lib-css(box-shadow, $product-item__hover__box-shadow);
+                border: 1px solid $color-gray-light2;
+                margin: -10px;
+                padding: 9px;
+                position: relative;
+                z-index: 2;
+
+                .product-item-inner {
+                    display: block;
+                }
+                .sidebar & {
+                    .product-item-photo {
+                        top: 9px;
+                        left: 9px;
+                    }
+                }
+            }
+        }
+    }
+
+    .product-item-inner {
+        .products-grid & {
+            @include lib-css(background, $product-item__hover__background-color);
+            @include lib-css(box-shadow, $product-item__hover__box-shadow);
+            border: 1px solid $color-gray-light2;
+            border-top: none;
+            left: 0;
+            margin: 9px 0 0 -1px;
+            padding: 0 9px 9px;
+            position: absolute;
+            right: -1px;
+            z-index: 2;
+        }
+    }
+
+    .products-grid {
+        .product-item-info {
+            &:not(:hover) {
+                &:not(.active) {
+                    .product-item-inner {
+                        @extend .abs-visually-hidden-desktop-s;
+                    }
+                }
             }
         }
     }

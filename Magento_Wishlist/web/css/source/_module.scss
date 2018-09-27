@@ -1,3 +1,5 @@
+$wishlist-product-item-shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3) !default;
+
 .form.wishlist.items {
     .actions-toolbar {
         @extend .abs-reset-left-margin;
@@ -269,6 +271,14 @@
     .products-grid.wishlist {
         .product {
             &-item {
+                &-info {
+                    &:hover {
+                        .product-item-inner {
+                            display: block;
+                        }
+                    }
+                }
+
                 &-tooltip {
                     display: inline-block;
                 }
@@ -306,6 +316,22 @@
             &-item {
                 &-info {
                     width: 240px;
+                }
+                &-inner {
+                    @include lib-css(background, $color-white);
+                    @include lib-css(border, $border-width__base solid $color-gray-light2);
+                    @include lib-css(box-shadow, $wishlist-product-item-shadow);
+                    border-top: none;
+                    left: 0;
+                    margin: 9px 0 0 -1px;
+                    padding: 0 9px 9px;
+                    position: absolute;
+                    right: -1px;
+                    z-index: 2;
+
+                    .comment-box {
+                        margin-top: -18px;
+                    }
                 }
             }
         }
