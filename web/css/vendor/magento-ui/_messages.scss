@@ -120,9 +120,9 @@
         message($_message-type, icon__color-inner),
         message($_message-type, icon__background),
         message($_message-type, icon__top),
-        message($_message-type, icon__right),
+        message($_message-type, icon__left),
         message($_message-type, icon__bottom),
-        message($_message-type, icon__left)
+        message($_message-type, icon__right)
     );
 }
 
