@@ -1,7 +1,7 @@
 $grid-cols: 12 !default;
 $grid-gutter: 60px !default;
 
-@mixin flex-col($counter: 1, $grid-cols: 1, $gutter: $grid-gutter){
+@mixin flex-col($counter: 1, $grid-cols: 1, $gutter: $grid-gutter) {
     box-sizing: border-box;
     flex: 1;
     padding-right: $gutter / 2;
@@ -10,13 +10,13 @@ $grid-gutter: 60px !default;
     max-width: percentage($counter/$grid-cols);
 }
 
-@mixin flex-col-offset($counter: 1, $grid-cols: 1){
+@mixin flex-col-offset($counter: 1, $grid-cols: 1) {
     $width: ($counter / $grid-cols ) * 100;
 
     margin-left: #{"${width}%"};
 }
 
-@mixin flex-row($fluid: true){
+@mixin flex-row($fluid: true) {
     box-sizing: border-box;
     display: flex;
     flex: 0 1 auto;
