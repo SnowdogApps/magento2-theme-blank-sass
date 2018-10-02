@@ -10,10 +10,6 @@ $color-white-dark-smoke         : #E8E6E6;
 $color-white-smoke              : lighten($color-white-dark-smoke, 0.5);
 $text__color                    : $primary__color;
 
-//  Font families
-$font-family-name__base         : 'Century Gothic', 'Open Sans';
-$font-family__base              : $font-family-name__base, $font-family__sans-serif;
-
 // Typography
 
 $font-size-ratio__base          : 1.2;
