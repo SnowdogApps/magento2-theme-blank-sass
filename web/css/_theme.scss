@@ -1,0 +1,98 @@
+//
+//  Theme overrides
+//  _____________________________________________
+
+// Colors
+
+$primary__color                 : $color-black;
+$secondary__color               : #9B9B9B;
+$color-white-dark-smoke         : #E8E6E6;
+$color-white-smoke              : lighten($color-white-dark-smoke, 0.5);
+$text__color                    : $primary__color;
+
+// Typography
+
+$font-size-ratio__base          : 1.2;
+$font-size__base                : $font-size-unit-ratio * $font-size-ratio__base * 1px; // 12px
+$font-size__s                   : ceil(0.91 * $font-size__base); // 11px
+
+$focus__box-shadow              : none;
+
+//  Links
+
+$link__color                    : $primary__color;
+$link__text-decoration          : none;
+
+$link__visited__color           : $link__color;
+$link__visited__text-decoration : $link__text-decoration;
+
+$link__hover__color             : $secondary__color;
+$link__hover__text-decoration   : $link__text-decoration;
+
+$link__active__color            : $secondary__color;
+$link__active__text-decoration  : $link__text-decoration;
+
+
+// Headings
+
+$h1__font-size                  : ceil(($font-size__base * 2.16)); // 26px
+$h1__font-size-desktop          : ceil(($font-size__base * 3.5)); // 42px
+$h1__line-height                : ceil(($font-size__base * 5.5)); // 66px
+
+$h2__font-size                  : ceil(($font-size__base * 1.5)); // 18px
+$h2__font-weight                : $font-weight__bold;
+$h2__line-height                : ceil(($font-size__base * 1.83)); // 22px
+
+$h3__font-size                  : ceil(($font-size__base * 1.16)); // 14px
+$h3__line-height                : ceil(($font-size__base * 1.41)); // 17px
+
+// Buttons
+$button__padding                              : 8px 50px;
+
+// Primary Button
+$button-primary__background                   : $primary__color;
+$button-primary__border                       : 1px solid $primary__color;
+$button-primary__padding                      : $button__padding;
+
+$button-primary__hover__background            : $secondary__color;
+$button-primary__hover__border                : 1px solid $secondary__color;
+
+$button-primary__active__background           : $button-primary__hover__background;
+$button-primary__active__border               : $button-primary__hover__border;
+$button-primary__active__color                : $button-primary__color;
+
+// Forms
+$form-element-input__border-color               : $color-gray76;
+$form-element-input__border                     : 1px solid $form-element-input__border-color !default;
+
+// Breadcrumbs
+$breadcrumbs__font-size                          : ceil($font-size__base * 1.08); //13px
+$breadcrumbs-current__color                      : $secondary__color;
+
+// Navigation
+
+$navigation__background                                  : #fff;
+$navigation-desktop__background                          : $navigation__background;
+$navigation-desktop__font-weight                         : $font-weight__regular;
+$navigation-desktop__font-size                           : ceil($font-size__base * 1.08); //13px
+$navigation-desktop-level0-item__active__border-color    : $secondary__color;
+
+$navigation-level0-item__font-weight                     : $font-weight__regular;
+$navigation-level0-item__text-transform                  : uppercase;
+$navigation-level0-item__color                           : $text__color;
+$navigation-level0-item__active__border-color            : $navigation-desktop-level0-item__active__border-color;
+
+$submenu-item__color                                     : $text__color;
+
+$submenu-item__active__border                            : none;
+$submenu-item__active__border-color                      : $navigation-desktop-level0-item__active__border-color;
+$submenu-desktop__box-shadow                             : false;
+$submenu-desktop__font-size                              : $navigation-desktop__font-size;
+$submenu-desktop__font-weight                            : $font-weight__regular;
+
+$submenu-desktop-item__color                             : $navigation-level0-item__color;
+
+$submenu-desktop-item__hover__color                      : $submenu-item__color;
+
+$submenu-desktop-item__active__border-color              : transparent;
+$submenu-desktop-item__active__background                : $color-gray91;

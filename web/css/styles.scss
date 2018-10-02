@@ -1,5 +1,3 @@
-// Mixins
-@import "mixins/media-queries";
 
 // Vendor libs
 @import 'vendor/normalize/lib'; // Normalize.css
@@ -7,6 +5,11 @@
 
 // Theme variables
 @import 'variables';
+@import 'theme';
+
+// Mixins
+@import "mixins/media-queries";
+@import "mixins/flex";
 
 // Reset default styles with magento-reset
 @import 'blocks/reset';
