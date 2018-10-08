@@ -2,79 +2,79 @@
 //  Icons variables
 //  _____________________________________________
 
-$icon__position            : before !default;
-$icon__text-hide           : false !default;
-$icon__height              : 26px !default;
-$icon__width               : 26px !default;
-$icon__margin              : '' !default;
-$icon__vertical-align      : middle !default;
+$icon__position: before !default;
+$icon__text-hide: false !default;
+$icon__height: 26px !default;
+$icon__width: 26px !default;
+$icon__margin: '' !default;
+$icon__vertical-align: middle !default;
 
-$icon-image__position-x    : 0 !default;
-$icon-image__position-y    : 0 !default;
+$icon-image__position-x: 0 !default;
+$icon-image__position-y: 0 !default;
 
-$icon-sprite__position-x   : 0 !default;
-$icon-sprite__position-y   : 0 !default;
-$icon-sprite__grid         : 26px !default;
+$icon-sprite__position-x: 0 !default;
+$icon-sprite__position-y: 0 !default;
+$icon-sprite__grid: 26px !default;
 
-$icon-font                 : $icons__font-name !default;
-$icon-font__position       : $icon__position !default;
-$icon-font__text-hide      : $icon__text-hide !default;
-$icon-font__margin         : $icon__margin !default;
-$icon-font__size           : inherit !default;
-$icon-font__line-height    : $icon-font__size !default;
-$icon-font__color          : inherit !default;
-$icon-font__color-hover    : false !default;
-$icon-font__color-active   : false !default;
-$icon-font__vertical-align : $icon__vertical-align !default;
-$icon-font__display        : inline-block !default;
+$icon-font: $icons__font-name !default;
+$icon-font__position: $icon__position !default;
+$icon-font__text-hide: $icon__text-hide !default;
+$icon-font__margin: $icon__margin !default;
+$icon-font__size: inherit !default;
+$icon-font__line-height: $icon-font__size !default;
+$icon-font__color: inherit !default;
+$icon-font__color-hover: false !default;
+$icon-font__color-active: false !default;
+$icon-font__vertical-align: $icon__vertical-align !default;
+$icon-font__display: inline-block !default;
 
-$icon-calendar__font-size  : 40px !default;
+$icon-calendar__font-size: 40px !default;
 
 //
 //  Variables for icons-blank-theme
 //  ---------------------------------------------
 
 // ToDo UI                 : move it to blank theme variables
-$icon-wishlist-full        : '\e600' !default;
-$icon-wishlist-empty       : '\e601' !default;
-$icon-warning              : '\e602' !default;
-$icon-update               : '\e603' !default;
-$icon-trash                : '\e604' !default;
-$icon-star                 : '\e605' !default;
-$icon-settings             : '\e606' !default;
-$icon-pointer-down         : '\e607' !default;
-$icon-next                 : '\e608' !default;
-$icon-menu                 : '\e609' !default;
-$icon-location             : '\e60a' !default;
-$icon-list                 : '\e60b' !default;
-$icon-info                 : '\e60c' !default;
-$icon-grid                 : '\e60d' !default;
-$icon-comment-reflected    : '\e60e' !default;
-$icon-collapse             : '\e60f' !default;
-$icon-checkmark            : '\e610' !default;
-$icon-cart                 : '\e611' !default;
-$icon-calendar             : '\e612' !default;
-$icon-arrow-up             : '\e613' !default;
-$icon-arrow-down           : '\e614' !default;
-$icon-search               : '\e615' !default;
-$icon-remove               : '\e616' !default;
-$icon-prev                 : '\e617' !default;
-$icon-pointer-up           : '\e618' !default;
-$icon-pointer-right        : '\e619' !default;
-$icon-pointer-left         : '\e61a' !default;
-$icon-flag                 : '\e61b' !default;
-$icon-expand               : '\e61c' !default;
-$icon-envelope             : '\e61d' !default;
-$icon-compare-full         : '\e61e' !default;
-$icon-compare-empty        : '\e61f' !default;
-$icon-comment              : '\e620' !default;
-$icon-up                   : '\e621' !default;
-$icon-down                 : '\e622' !default;
-$icon-help                 : '\e623' !default;
-$icon-arrow-right-thin     : '\e624' !default;
-$icon-arrow-left-thin      : '\e625' !default;
-$icon-arrow-down-thin      : '\e626' !default;
-$icon-account              : '\e627' !default;
-$icon-gift-registry        : '\e628' !default;
-$icon-present              : '\e629' !default;
-$icon-arrow-up-thin        : '\e633' !default;
+$icon-wishlist-full: '\e600' !default;
+$icon-wishlist-empty: '\e601' !default;
+$icon-warning: '\e602' !default;
+$icon-update: '\e603' !default;
+$icon-trash: '\e604' !default;
+$icon-star: '\e605' !default;
+$icon-settings: '\e606' !default;
+$icon-pointer-down: '\e607' !default;
+$icon-next: '\e608' !default;
+$icon-menu: '\e609' !default;
+$icon-location: '\e60a' !default;
+$icon-list: '\e60b' !default;
+$icon-info: '\e60c' !default;
+$icon-grid: '\e60d' !default;
+$icon-comment-reflected: '\e60e' !default;
+$icon-collapse: '\e60f' !default;
+$icon-checkmark: '\e610' !default;
+$icon-cart: '\e611' !default;
+$icon-calendar: '\e612' !default;
+$icon-arrow-up: '\e613' !default;
+$icon-arrow-down: '\e614' !default;
+$icon-search: '\e615' !default;
+$icon-remove: '\e616' !default;
+$icon-prev: '\e617' !default;
+$icon-pointer-up: '\e618' !default;
+$icon-pointer-right: '\e619' !default;
+$icon-pointer-left: '\e61a' !default;
+$icon-flag: '\e61b' !default;
+$icon-expand: '\e61c' !default;
+$icon-envelope: '\e61d' !default;
+$icon-compare-full: '\e61e' !default;
+$icon-compare-empty: '\e61f' !default;
+$icon-comment: '\e620' !default;
+$icon-up: '\e621' !default;
+$icon-down: '\e622' !default;
+$icon-help: '\e623' !default;
+$icon-arrow-right-thin: '\e624' !default;
+$icon-arrow-left-thin: '\e625' !default;
+$icon-arrow-down-thin: '\e626' !default;
+$icon-account: '\e627' !default;
+$icon-gift-registry: '\e628' !default;
+$icon-present: '\e629' !default;
+$icon-arrow-up-thin: '\e633' !default;

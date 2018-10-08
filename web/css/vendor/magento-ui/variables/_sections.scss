@@ -7,78 +7,78 @@
 //  ---------------------------------------------
 
 //  Tabs controls
-$tab-control__font-size                      : $font-size__base !default;
-$tab-control__font-family                    : false !default;
-$tab-control__font-weight                    : $font-weight__semibold !default;
-$tab-control__font-style                     : false !default;
-$tab-control__height__base                   : $line-height__computed !default;
-$tab-control__height                         : $indent__base !default;
-$tab-control__line-height                    : $tab-control__height !default;
-$tab-control__margin-right                   : $indent__xs !default;
-$tab-control__padding-top                    : $indent__xs !default;
-$tab-control__padding-right                  : $indent__base !default;
-$tab-control__padding-bottom                 : $tab-control__padding-top !default;
-$tab-control__padding-left                   : $tab-control__padding-right !default;
-$tab-control__border-color                   : $border-color__base !default;
-$tab-control__border-width                   : $border-width__base !default;
+$tab-control__font-size: $font-size__base !default;
+$tab-control__font-family: false !default;
+$tab-control__font-weight: $font-weight__semibold !default;
+$tab-control__font-style: false !default;
+$tab-control__height__base: $line-height__computed !default;
+$tab-control__height: $indent__base !default;
+$tab-control__line-height: $tab-control__height !default;
+$tab-control__margin-right: $indent__xs !default;
+$tab-control__padding-top: $indent__xs !default;
+$tab-control__padding-right: $indent__base !default;
+$tab-control__padding-bottom: $tab-control__padding-top !default;
+$tab-control__padding-left: $tab-control__padding-right !default;
+$tab-control__border-color: $border-color__base !default;
+$tab-control__border-width: $border-width__base !default;
 
 //  Current tab
-$tab-control__background-color               : $panel__background-color !default;
-$tab-control__color                          : $text__color__muted !default;
-$tab-control__text-decoration                : none !default;
+$tab-control__background-color: $panel__background-color !default;
+$tab-control__color: $text__color__muted !default;
+$tab-control__text-decoration: none !default;
 
-$tab-control__hover__background-color        : lighten($tab-control__background-color, 5%) !default;
-$tab-control__hover__color                   : $tab-control__color !default;
-$tab-control__hover__text-decoration         : $tab-control__text-decoration !default;
+$tab-control__hover__background-color: lighten($tab-control__background-color, 5%) !default;
+$tab-control__hover__color: $tab-control__color !default;
+$tab-control__hover__text-decoration: $tab-control__text-decoration !default;
 
-$tab-control__active__background-color       : lighten($tab-control__background-color, 15%) !default;
-$tab-control__active__color                  : $text__color !default;
-$tab-control__active__text-decoration        : $tab-control__text-decoration !default;
+$tab-control__active__background-color: lighten($tab-control__background-color, 15%) !default;
+$tab-control__active__color: $text__color !default;
+$tab-control__active__text-decoration: $tab-control__text-decoration !default;
 
-$tab-content__background-color               : $tab-control__active__background-color !default;
-$tab-content__border-top-status              : false !default;
-$tab-content__border                         : $tab-control__border-width solid $tab-control__border-color !default;
-$tab-content__margin-top                     : $tab-control__height + $tab-control__border-width + $tab-control__padding-top + $tab-control__padding-bottom !default;
-$tab-content__padding-top                    : $indent__base !default;
-$tab-content__padding-right                  : $indent__base !default;
-$tab-content__padding-bottom                 : $tab-content__padding-top !default;
-$tab-content__padding-left                   : $tab-content__padding-right !default;
+$tab-content__background-color: $tab-control__active__background-color !default;
+$tab-content__border-top-status: false !default;
+$tab-content__border: $tab-control__border-width solid $tab-control__border-color !default;
+$tab-content__margin-top: $tab-control__height + $tab-control__border-width + $tab-control__padding-top + $tab-control__padding-bottom !default;
+$tab-content__padding-top: $indent__base !default;
+$tab-content__padding-right: $indent__base !default;
+$tab-content__padding-bottom: $tab-content__padding-top !default;
+$tab-content__padding-left: $tab-content__padding-right !default;
 
 //
 //  Accordions
 //  ---------------------------------------------
 
-$accordion-control__font-family              : $tab-control__font-family !default;
-$accordion-control__font-size                : $font-size__l !default;
-$accordion-control__font-style               : $tab-control__font-style !default;
-$accordion-control__font-weight              : $tab-control__font-weight !default;
-$accordion-control__height                   : $indent__xl !default;
-$accordion-control__line-height              : $accordion-control__height !default;
-$accordion-control__border-top               : $tab-control__border-width solid $tab-control__border-color !default;
-$accordion-control__border-right             : $tab-control__border-width solid $tab-control__border-color !default;
-$accordion-control__border-bottom            : $tab-control__border-width solid $tab-control__border-color !default;
-$accordion-control__border-left              : $tab-control__border-width solid $tab-control__border-color !default;
-$accordion-control__background-color         : $tab-control__background-color !default;
-$accordion-control__color                    : $tab-control__color !default;
-$accordion-control__text-decoration          : $tab-control__text-decoration !default;
-$accordion-control__margin-bottom            : $indent__xs !default;
-$accordion-control__padding-top              : $tab-control__padding-top !default;
-$accordion-control__padding-right            : $indent__base !default;
-$accordion-control__padding-bottom           : $tab-control__padding-bottom !default;
-$accordion-control__padding-left             : $accordion-control__padding-right !default;
+$accordion-control__font-family: $tab-control__font-family !default;
+$accordion-control__font-size: $font-size__l !default;
+$accordion-control__font-style: $tab-control__font-style !default;
+$accordion-control__font-weight: $tab-control__font-weight !default;
+$accordion-control__height: $indent__xl !default;
+$accordion-control__line-height: $accordion-control__height !default;
+$accordion-control__border-top: $tab-control__border-width solid $tab-control__border-color !default;
+$accordion-control__border-right: $tab-control__border-width solid $tab-control__border-color !default;
+$accordion-control__border-bottom: $tab-control__border-width solid $tab-control__border-color !default;
+$accordion-control__border-left: $tab-control__border-width solid $tab-control__border-color !default;
+$accordion-control__background-color: $tab-control__background-color !default;
+$accordion-control__color: $tab-control__color !default;
+$accordion-control__text-decoration: $tab-control__text-decoration !default;
+$accordion-control__margin-bottom: $indent__xs !default;
+$accordion-control__padding-top: $tab-control__padding-top !default;
+$accordion-control__padding-right: $indent__base !default;
+$accordion-control__padding-bottom: $tab-control__padding-bottom !default;
+$accordion-control__padding-left: $accordion-control__padding-right !default;
 
-$accordion-control__visited__color           : $accordion-control__color !default;
-$accordion-control__visited__text-decoration : $accordion-control__text-decoration !default;
+$accordion-control__visited__color: $accordion-control__color !default;
+$accordion-control__visited__text-decoration: $accordion-control__text-decoration !default;
 
-$accordion-control__hover__background-color  : $tab-control__hover__background-color !default;
-$accordion-control__hover__color             : $tab-control__hover__color !default;
-$accordion-control__hover__text-decoration   : $tab-control__hover__text-decoration !default;
+$accordion-control__hover__background-color: $tab-control__hover__background-color !default;
+$accordion-control__hover__color: $tab-control__hover__color !default;
+$accordion-control__hover__text-decoration: $tab-control__hover__text-decoration !default;
 
-$accordion-control__active__background-color : $tab-control__active__background-color !default;
-$accordion-control__active__color            : $tab-control__active__color !default;
-$accordion-control__active__text-decoration  : $tab-control__active__text-decoration !default;
+$accordion-control__active__background-color: $tab-control__active__background-color !default;
+$accordion-control__active__color: $tab-control__active__color !default;
+$accordion-control__active__text-decoration: $tab-control__active__text-decoration !default;
 
-$accordion-content__background-color         : $tab-control__active__background-color !default;
-$accordion-content__border                   : $tab-content__border !default;
-$accordion-content__margin                   : 0 0 $indent__xs !default;
-$accordion-content__padding                  : $tab-content__padding-top $tab-content__padding-right $tab-content__padding-bottom $tab-content__padding-left !default;
+$accordion-content__background-color: $tab-control__active__background-color !default;
+$accordion-content__border: $tab-content__border !default;
+$accordion-content__margin: 0 0 $indent__xs !default;
+$accordion-content__padding: $tab-content__padding-top $tab-content__padding-right $tab-content__padding-bottom $tab-content__padding-left !default;

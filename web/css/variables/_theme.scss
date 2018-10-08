@@ -1,0 +1,92 @@
+//
+//  Typography
+//  ---------------------------------------------
+
+//  Headings
+$h1__margin-bottom__desktop: $indent__xl !default;
+
+//
+//  Layout grid
+//  ---------------------------------------------
+
+//  Header
+$header-icons-color: $color-gray56 !default;
+$header-icons-color-hover: $color-gray20 !default;
+
+//
+//  Icons
+//  ---------------------------------------------
+//
+
+$icon-edit: '\e606' !default;
+
+//
+//  Popups
+//  ---------------------------------------------
+
+//  Checkout tooltip
+$checkout-tooltip-icon-arrow__font-size: 10px !default;
+$checkout-tooltip-icon__font-size: 21px !default;
+
+$checkout-tooltip-content-mobile__right: -($indent__s) !default;
+$checkout-tooltip-content-mobile__top: 30px + $checkout-tooltip-icon-arrow__font-size !default;
+$checkout-tooltip-content__background-color: $color-gray-light01 !default;
+$checkout-tooltip-content__padding: 12px !default;
+$checkout-tooltip-content__border-width: 1px !default;
+
+$checkout-tooltip-content__border-color: $color-gray60 !default;
+$checkout-tooltip-content__font-size: $font-size__base !default;
+$checkout-tooltip-content__width: 270px !default;
+$checkout-tooltip-content__active__border-color: darken($checkout-tooltip-content__border-color, 20%) !default;
+$checkout-tooltip-icon-arrow__left: -( $checkout-tooltip-content__padding + $checkout-tooltip-icon-arrow__font-size - $checkout-tooltip-content__border-width) !default;
+
+$checkout-billing-address-details__line-height: 27px !default;
+
+// Checkout
+$checkout-step-title__padding: $indent__s !default;
+$checkout-step-title__border: $border-width__base solid $color-gray80 !default;
+$checkout-step-title__font-size: 26px !default;
+$checkout-step-title__font-weight: $font-weight__light !default;
+$checkout-sidebar__columns: 4 !default;
+$checkout-shipping-address__max-width: 500px !default;
+
+//
+//  Sidebar
+//  ---------------------------------------------
+
+// Used in cart sidebar, Checkout sidebar, Tier Prices, My account navigation, Rating block background
+$sidebar__background-color: $color-white-smoke !default;
+
+//
+//  Variables missing in extend.scss
+//  ---------------------------------------------
+
+$addto-color: $primary__color !default;
+$addto-hover-color: $link__hover__color !default;
+
+//
+//  Product
+//  ---------------------------------------------
+
+$product-name-link__color: $text__color !default;
+$product-name-link__color__active: $text__color !default;
+$product-name-link__color__hover: $text__color !default;
+$product-name-link__color__visited: $text__color !default;
+
+$product-name-link__text-decoration: none !default;
+$product-name-link__text-decoration__active: $link__hover__text-decoration !default;
+$product-name-link__text-decoration__hover: $link__hover__text-decoration !default;
+$product-name-link__text-decoration__visited: $link__hover__text-decoration !default;
+
+//
+//  Button
+//  ---------------------------------------------
+
+$button__shadow: inset 0 2px 1px rgba(0, 0, 0, 0.12) !default;
+
+//
+//  Minicart
+//  ---------------------------------------------
+
+$minicart-icons-color: $header-icons-color !default;
+$minicart-icons-color-hover: $header-icons-color-hover !default;

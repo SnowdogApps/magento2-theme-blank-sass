@@ -2,49 +2,49 @@
 //  Table variables
 //  _____________________________________________
 
-$table__width                          : 100% !default;
-$table__margin-bottom                  : false !default;
-$table__background-color               : false !default;
-$table__border-color                   : $border-color__base !default;
-$table__border-width                   : $border-width__base !default;
-$table__border-style                   : solid !default;
+$table__width: 100% !default;
+$table__margin-bottom: false !default;
+$table__background-color: false !default;
+$table__border-color: $border-color__base !default;
+$table__border-width: $border-width__base !default;
+$table__border-style: solid !default;
 
-$table-head__background-color          : $table__background-color !default;
-$table-foot__background-color          : $table__background-color !default;
-$table-body-th__background-color       : $table__background-color !default;
+$table-head__background-color: $table__background-color !default;
+$table-foot__background-color: $table__background-color !default;
+$table-body-th__background-color: $table__background-color !default;
 
-$table-caption__hide                   : true !default; // [true|false]
-$table-caption__font-size              : false !default;
-$table-caption__color                  : false !default;
-$table-caption__font-family            : false !default;
-$table-caption__font-weight            : false !default;
-$table-caption__font-style             : false !default;
-$table-caption__line-height            : false !default;
-$table-caption__alignment              : false !default;
-$table-caption__margin-top             : false !default;
-$table-caption__margin-bottom          : false !default;
+$table-caption__hide: true !default; // [true|false]
+$table-caption__font-size: false !default;
+$table-caption__color: false !default;
+$table-caption__font-family: false !default;
+$table-caption__font-weight: false !default;
+$table-caption__font-style: false !default;
+$table-caption__line-height: false !default;
+$table-caption__alignment: false !default;
+$table-caption__margin-top: false !default;
+$table-caption__margin-bottom: false !default;
 
-$table-td__background-color            : $table__background-color !default;
-$table-td__font-size                   : false !default;
-$table-td__color                       : false !default;
-$table-td__font-family                 : false !default;
-$table-td__font-weight                 : false !default;
-$table-td__line-height                 : false !default;
-$table-td__font-style                  : false !default;
+$table-td__background-color: $table__background-color !default;
+$table-td__font-size: false !default;
+$table-td__color: false !default;
+$table-td__font-family: false !default;
+$table-td__font-weight: false !default;
+$table-td__line-height: false !default;
+$table-td__font-style: false !default;
 
-$table-th__font-size                   : false !default;
-$table-th__color                       : $text__color__intense !default;
-$table-th__font-family                 : false !default;
-$table-th__font-weight                 : $font-weight__bold !default;
-$table-th__line-height                 : false !default;
-$table-th__font-style                  : false !default;
+$table-th__font-size: false !default;
+$table-th__color: $text__color__intense !default;
+$table-th__font-family: false !default;
+$table-th__font-weight: $font-weight__bold !default;
+$table-th__line-height: false !default;
+$table-th__font-style: false !default;
 
-$table-cell__padding-horizontal        : $indent__s !default;
-$table-cell__padding-vertical          : 8px !default;
-$table-cell__hover__background-color   : $panel__background-color !default;
-$table-cell-stripped__background-color : lighten($table-cell__hover__background-color, 15%) !default;
-$table-cell-stripped__color            : $table-td__color !default;
+$table-cell__padding-horizontal: $indent__s !default;
+$table-cell__padding-vertical: 8px !default;
+$table-cell__hover__background-color: $panel__background-color !default;
+$table-cell-stripped__background-color: lighten($table-cell__hover__background-color, 15%) !default;
+$table-cell-stripped__color: $table-td__color !default;
 
-$table-responsive__background-color    : $table__background-color !default;
-$table-responsive-th__background-color : false !default;
-$table-responsive-cell__padding        : $indent__xs 0 !default;
+$table-responsive__background-color: $table__background-color !default;
+$table-responsive-th__background-color: false !default;
+$table-responsive-cell__padding: $indent__xs 0 !default;

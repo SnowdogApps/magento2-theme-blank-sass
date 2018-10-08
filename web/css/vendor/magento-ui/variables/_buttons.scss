@@ -7,91 +7,91 @@
 //  ---------------------------------------------
 
 //  Font style
-$button__font-family                          : $font-family__base !default;
-$button__font-size                            : $font-size__base !default;
-$button__font-weight                          : $font-weight__bold !default;
-$button__line-height                          : $font-size__base + 2 !default;
-$button__margin                               : 0 !default;
-$button__padding                              : 7px 15px !default; // is set up to false when buttons don't depend on side paddings or have fixed width
-$button__width                                : false !default; // is set up to false when buttons depend on side paddings or to fixed value when needed
+$button__font-family: $font-family__base !default;
+$button__font-size: $font-size__base !default;
+$button__font-weight: $font-weight__bold !default;
+$button__line-height: $font-size__base + 2 !default;
+$button__margin: 0 !default;
+$button__padding: 7px 15px !default; // is set up to false when buttons don't depend on side paddings or have fixed width
+$button__width: false !default; // is set up to false when buttons depend on side paddings or to fixed value when needed
 
 //  Display settings
-$button__display                              : inline-block !default;
-$button__cursor                               : pointer !default;
-$button__border-radius                        : 3px !default;
+$button__display: inline-block !default;
+$button__cursor: pointer !default;
+$button__border-radius: 3px !default;
 
-$button__disabled__opacity                    : 0.5 !default;
+$button__disabled__opacity: 0.5 !default;
 
 //  Default                                   = secondary button
-$button__color                                : $primary__color !default;
-$button__background                           : $color-gray95 !default;
-$button__border                               : 1px solid $color-gray-darken2 !default;
-$button__gradient-color-start                 : false !default;
-$button__gradient-color-end                   : false !default;
+$button__color: $primary__color !default;
+$button__background: $color-gray95 !default;
+$button__border: 1px solid $color-gray-darken2 !default;
+$button__gradient-color-start: false !default;
+$button__gradient-color-end: false !default;
 
-$button__hover__color                         : $color-gray-darken3 !default;
-$button__hover__background                    : $color-gray-darken1 !default;
-$button__hover__border                        : $button__border !default;
-$button__hover__gradient-color-start          : false !default;
-$button__hover__gradient-color-end            : false !default;
+$button__hover__color: $color-gray-darken3 !default;
+$button__hover__background: $color-gray-darken1 !default;
+$button__hover__border: $button__border !default;
+$button__hover__gradient-color-start: false !default;
+$button__hover__gradient-color-end: false !default;
 
-$button__active__color                        : $button__color !default;
-$button__active__background                   : $button__hover__background !default;
-$button__active__border                       : $button__border !default;
-$button__active__gradient-color-start         : false !default;
-$button__active__gradient-color-end           : false !default;
+$button__active__color: $button__color !default;
+$button__active__background: $button__hover__background !default;
+$button__active__border: $button__border !default;
+$button__active__gradient-color-start: false !default;
+$button__active__gradient-color-end: false !default;
 
 //  Primary button
-$button-primary__line-height                  : false !default;
-$button-primary__width                        : false !default;
-$button-primary__margin                       : false !default;
-$button-primary__padding                      : $button__padding !default;
-$button-primary__gradient                     : false !default;
-$button-primary__gradient-direction           : false !default;
+$button-primary__line-height: false !default;
+$button-primary__width: false !default;
+$button-primary__margin: false !default;
+$button-primary__padding: $button__padding !default;
+$button-primary__gradient: false !default;
+$button-primary__gradient-direction: false !default;
 
-$button-primary__background                   : $color-blue1 !default;
-$button-primary__border                       : 1px solid $color-blue1 !default;
-$button-primary__color                        : $color-white !default;
-$button-primary__gradient-color-start         : false !default;
-$button-primary__gradient-color-end           : false !default;
+$button-primary__background: $color-blue1 !default;
+$button-primary__border: 1px solid $color-blue1 !default;
+$button-primary__color: $color-white !default;
+$button-primary__gradient-color-start: false !default;
+$button-primary__gradient-color-end: false !default;
 
-$button-primary__hover__background            : $color-blue2 !default;
-$button-primary__hover__border                : 1px solid $color-blue2 !default;
-$button-primary__hover__color                 : $button-primary__color !default;
-$button-primary__hover__gradient-color-start  : false !default;
-$button-primary__hover__gradient-color-end    : false !default;
+$button-primary__hover__background: $color-blue2 !default;
+$button-primary__hover__border: 1px solid $color-blue2 !default;
+$button-primary__hover__color: $button-primary__color !default;
+$button-primary__hover__gradient-color-start: false !default;
+$button-primary__hover__gradient-color-end: false !default;
 
-$button-primary__active__background           : $button-primary__hover__background !default;
-$button-primary__active__border               : $button-primary__hover__border !default;
-$button-primary__active__color                : $button-primary__color !default;
-$button-primary__active__gradient-color-start : false !default;
-$button-primary__active__gradient-color-end   : false !default;
+$button-primary__active__background: $button-primary__hover__background !default;
+$button-primary__active__border: $button-primary__hover__border !default;
+$button-primary__active__color: $button-primary__color !default;
+$button-primary__active__gradient-color-start: false !default;
+$button-primary__active__gradient-color-end: false !default;
 
 //  Gradient button
-$button__gradient                             : false !default; // [true|false] - button has a gradient background
-$button__gradient-direction                   : false !default; // button gradient direction if button has a gradient background
+$button__gradient: false !default; // [true|false] - button has a gradient background
+$button__gradient-direction: false !default; // button gradient direction if button has a gradient background
 
 //  Button with icon
-$button-icon__use                             : false !default;
-$button-icon__content                         : $icon-settings !default;
-$button-icon__font                            : $icon-font !default;
-$button-icon__font-size                       : 22px !default;
-$button-icon__line-height                     : $button-icon__font-size !default;
-$button-icon__color                           : inherit !default;
-$button-icon__margin                          : 0 !default;
-$button-icon__vertical-align                  : top !default;
-$button-icon__position                        : $icon__position !default;
-$button-icon__text-hide                       : false !default;
+$button-icon__use: false !default;
+$button-icon__content: $icon-settings !default;
+$button-icon__font: $icon-font !default;
+$button-icon__font-size: 22px !default;
+$button-icon__line-height: $button-icon__font-size !default;
+$button-icon__color: inherit !default;
+$button-icon__margin: 0 !default;
+$button-icon__vertical-align: top !default;
+$button-icon__position: $icon__position !default;
+$button-icon__text-hide: false !default;
 
-$button-icon__hover__font-color               : inherit !default;
-$button-icon__active__font-color              : inherit !default;
+$button-icon__hover__font-color: inherit !default;
+$button-icon__active__font-color: inherit !default;
 
 //  Large button
-$button__font-size__l                         : $font-size__l !default;
-$button__line-height__l                       : $font-size__l + 4 !default;
-$button__padding__l                           : 14px 17px !default;
+$button__font-size__l: $font-size__l !default;
+$button__line-height__l: $font-size__l + 4 !default;
+$button__padding__l: 14px 17px !default;
 
 //  Small button
-$button__font-size__s                         : 11px !default;
-$button__line-height__s                       : $button__font-size__s + 1 !default;
-$button__padding__s                           : $indent__xs 8px !default;
+$button__font-size__s: 11px !default;
+$button__line-height__s: $button__font-size__s + 1 !default;
+$button__padding__s: $indent__xs 8px !default;
