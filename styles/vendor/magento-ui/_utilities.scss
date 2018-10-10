@@ -304,60 +304,70 @@ $urls-resolved: false;
 @mixin lib-vendor-prefix-display(
     $_value: flex
 ) {
+    @warn "Mixin deprecated. Use 'display' property directly";
     display: $_value;
 }
 
 @mixin lib-vendor-prefix-flex-grow(
     $_value: 0
 ) {
+    @warn "Mixin deprecated. Use 'flex-grow' property directly";
     flex-grow: $_value;
 }
 
 @mixin lib-vendor-prefix-flex-shrink(
     $_value: 1
 ) {
+    @warn "Mixin deprecated. Use 'flex-shrink' property directly";
     flex-shrink: $_value;
 }
 
 @mixin lib-vendor-prefix-flex-basis(
     $_value: auto
 ) {
+    @warn "Mixin deprecated. Use 'flex-basis' property directly";
     flex-basis: $_value;
 }
 
 @mixin lib-vendor-prefix-flex-wrap(
     $_value: wrap
 ) {
+    @warn "Mixin deprecated. Use 'flex-wrap' property directly";
     flex-wrap: $_value;
 }
 
 @mixin lib-vendor-prefix-flex-direction(
     $_value: column
 ) {
+    @warn "Mixin deprecated. Use 'flex-direction' property directly";
     flex-direction: $_value;
 }
 
 @mixin lib-vendor-prefix-order(
     $_value: 0
 ) {
+    @warn "Mixin deprecated. Use 'order' property directly";
     order: $_value;
 }
 
 @mixin lib-vendor-box-align(
     $_value: stretch
 ) {
+    @warn "Mixin deprecated. Use 'align-items' property directly";
     align-items: $_value;
 }
 
 @mixin lib-vendor-prefix-appearance(
     $value: none
 ) {
+    @warn "Mixin deprecated. Use 'appearance' property directly";
     appearance: $value;
 }
 
 @mixin lib-vendor-prefix-column-count(
     $_value
 ) {
+    @warn "Mixin deprecated. Use 'column-count' property directly";
     column-count: $_value;
 }
 
