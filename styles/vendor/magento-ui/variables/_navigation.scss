@@ -7,7 +7,7 @@ $navigation__border                                      : '' !default;
 
 $navigation-level0-item__font-size                       : 16 !default;
 $navigation-level0-item__font-weight                     : $font-weight__bold !default;
-$navigation-level0-item__line-height                     : false !default;
+$navigation-level0-item__line-height                     : null !default;
 $navigation-level0-item__margin                          : 0 !default;
 $navigation-level0-item__padding                         : 8px $indent__xl 8px 15px !default;
 $navigation-level0-item__text-transform                  : uppercase !default;
@@ -87,7 +87,7 @@ $submenu-desktop__font-weight                            : $font-weight__bold !d
 $submenu-desktop__min-width                              : 230px !default;
 $submenu-desktop__padding                                : 15px 0 !default;
 
-$submenu-desktop-arrow                                   : true !default; // [true|false]
+$submenu-desktop-arrow                                   : true !default; // [true|null]
 $submenu-desktop-arrow__size                             : 10px !default;
 $submenu-desktop-arrow__left                             : 20px !default;
 

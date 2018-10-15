@@ -2,8 +2,8 @@
 //  Responsive variables
 //  _____________________________________________
 
-$use-flex    : true !default; // Use flexbox [true|false]
-$responsive  : true !default; // Theme is responsive [true|false]
+$use-flex    : true !default; // Use flexbox [true|null]
+$responsive  : true !default; // Theme is responsive [true|null]
 
 $screen__xxs : 320px !default;
 $screen__xs  : 480px !default;

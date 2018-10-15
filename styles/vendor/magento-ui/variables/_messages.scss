@@ -5,11 +5,11 @@
 $message__padding                    : $indent__s $indent__base !default;
 $message__margin                     : 0 0 $indent__s !default;
 
-$message__color                      : false !default; // Each message type has its own message color
+$message__color                      : null !default; // Each message type has its own message color
 $message__font-size                  : 13px !default;
-$message__font-family                : false !default;
-$message__font-style                 : false !default;
-$message__font-weight                : false !default;
+$message__font-family                : null !default;
+$message__font-style                 : null !default;
+$message__font-weight                : null !default;
 $message__line-height                : 1.2em !default;
 
 $message-icon__font-size             : ceil($message__font-size * 2 + 2) !default;
@@ -18,14 +18,14 @@ $message-icon__inner-padding-left    : 40px !default;
 $message-icon__lateral-width         : 30px !default;
 $message-icon__lateral-arrow-size    : 5px !default;
 $message-icon__top                   : 18px !default;
-$message-icon__right                 : false !default;
-$message-icon__bottom                : false !default;
+$message-icon__right                 : null !default;
+$message-icon__bottom                : null !default;
 $message-icon__left                  : 0 !default;
 
-$message__border-width               : false !default;
-$message__border-color               : false !default;
-$message__border-style               : false !default;
-$message__border-radius              : false !default;
+$message__border-width               : null !default;
+$message__border-color               : null !default;
+$message__border-style               : null !default;
+$message__border-radius              : null !default;
 
 //  Information message
 $message-info__color                 : $color-brownie1 !default;
