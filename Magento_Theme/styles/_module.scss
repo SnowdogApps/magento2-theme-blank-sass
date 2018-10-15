@@ -275,8 +275,8 @@ body {
     }
 
     .page-wrapper {
-        @include lib-vendor-prefix-display(flex);
-        @include lib-vendor-prefix-flex-direction(column);
+        display: flex;
+        flex-direction: column;
         min-height: 100%; // Stretch content area for sticky footer
 
         > .breadcrumbs,

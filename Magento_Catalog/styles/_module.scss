@@ -494,12 +494,12 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 @include max-screen($screen__m) {
     .catalog-product-view {
         .column.main {
-            @include lib-vendor-prefix-display(flex);
-            @include lib-vendor-prefix-flex-direction(column);
+            display: flex;
+            flex-direction: column;
         }
 
         .product.media {
-            @include lib-vendor-prefix-order(-1);
+            order: -1;
         }
     }
 

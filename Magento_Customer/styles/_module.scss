@@ -258,15 +258,15 @@ $_password-very-strong               : #81b562 !default;
 
 .field.password {
     .control {
-        @include lib-vendor-prefix-display();
-        @include lib-vendor-prefix-flex-direction();
+        display: flex;
+        flex-direction: column;
 
         .mage-error {
-            @include lib-vendor-prefix-order(2);
+            order: 2;
         }
 
         .input-text {
-            @include lib-vendor-prefix-order(0);
+            order: 0;
             z-index: 2;
         }
     }

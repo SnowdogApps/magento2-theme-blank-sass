@@ -96,8 +96,8 @@ $modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box
     .modal-inner-wrap {
         margin: $modal-popup__indent-vertical auto;
         width: $modal-popup__width;
-        @include lib-vendor-prefix-display(flex);
-        @include lib-vendor-prefix-flex-direction(column);
+        display: flex;
+        flex-direction: column;
         box-sizing: border-box;
         height: auto;
         left: 0;
@@ -132,14 +132,14 @@ body {
     &._inner-scroll {
         .modal-inner-wrap {
             overflow-y: visible;
-            @include lib-vendor-prefix-display(flex);
-            @include lib-vendor-prefix-flex-direction(column);
+            display: flex;
+            flex-direction: column;
         }
 
         .modal-header,
         .modal-footer {
-            @include lib-vendor-prefix-flex-grow(0);
-            @include lib-vendor-prefix-flex-shrink(0);
+            flex-grow: 0;
+            flex-shrink: 0;
         }
 
         .modal-content {
@@ -200,8 +200,8 @@ body {
 
     .modal-header,
     .modal-footer {
-        @include lib-vendor-prefix-flex-grow(0);
-        @include lib-vendor-prefix-flex-shrink(0);
+        flex-grow: 0;
+        flex-shrink: 0;
     }
 
     .modal-header {

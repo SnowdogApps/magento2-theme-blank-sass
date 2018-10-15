@@ -32,8 +32,8 @@
 
 @mixin lib-layout-columns() {
     @if $use-flex == true {
-        @include lib-vendor-prefix-display(flex);
-        @include lib-vendor-prefix-flex-wrap(wrap);
+        display: flex;
+        flex-wrap: wrap;
         box-sizing: border-box;
     }
     &:after {
@@ -115,7 +115,7 @@
     @include _lib-set-column-width(length($_units), $_width);
     @include lib-flex-degradation($_total-columns, $_order);
     @if $use-flex == true {
-        @include lib-vendor-prefix-order($_order);
+        order: $_order;
     }
 }
 
