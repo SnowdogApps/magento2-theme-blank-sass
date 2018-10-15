@@ -55,16 +55,16 @@ $modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box
     }
 
     .modal-inner-wrap {
-        @include lib-css(background-color, $modal__background-color);
-        @include lib-css(box-shadow, $modal__box-shadow);
+        background-color: $modal__background-color;
+        box-shadow: $modal__box-shadow;
         opacity: 1;
         pointer-events: auto;
     }
 }
 
 @mixin lib-modal-slide() {
-    @include lib-css(left, $modal-slide__first__indent-left);
-    @include lib-css(z-index, $modal-slide__z-index);
+    left: $modal-slide__first__indent-left;
+    z-index: $modal-slide__z-index;
 
     &._show {
         .modal-inner-wrap {
@@ -83,7 +83,7 @@ $modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box
 }
 
 @mixin lib-modal-popup() {
-    @include lib-css(z-index, $modal-popup__z-index);
+    z-index: $modal-popup__z-index;
     left: 0;
     overflow-y: auto;
 
@@ -94,8 +94,8 @@ $modal-popup-image-box-preview__max-width        : calc(#{$modal-popup-image-box
     }
 
     .modal-inner-wrap {
-        @include lib-css(margin, $modal-popup__indent-vertical auto);
-        @include lib-css(width, $modal-popup__width);
+        margin: $modal-popup__indent-vertical auto;
+        width: $modal-popup__width;
         @include lib-vendor-prefix-display(flex);
         @include lib-vendor-prefix-flex-direction(column);
         box-sizing: border-box;
@@ -119,7 +119,7 @@ body {
 
 //  Modals overlay
 .modals-overlay {
-    @include lib-css(z-index, $overlay__z-index);
+    z-index: $overlay__z-index;
 }
 
 .modal-slide,
@@ -154,12 +154,12 @@ body {
     .modal-header,
     .modal-content,
     .modal-footer {
-        @include lib-css(padding, 0 $modal-slide__padding $modal-slide__padding);
+        padding: 0 $modal-slide__padding $modal-slide__padding;
     }
 
     .modal-header {
-        @include lib-css(padding-bottom, $modal-slide-header__padding-vertical);
-        @include lib-css(padding-top, $modal-slide-header__padding-vertical);
+        padding-bottom: $modal-slide-header__padding-vertical;
+        padding-top: $modal-slide-header__padding-vertical;
     }
 }
 
@@ -194,8 +194,8 @@ body {
     .modal-header,
     .modal-content,
     .modal-footer {
-        @include lib-css(padding-left, $modal-popup__padding);
-        @include lib-css(padding-right, $modal-popup__padding);
+        padding-left: $modal-popup__padding;
+        padding-right: $modal-popup__padding;
     }
 
     .modal-header,
@@ -205,14 +205,14 @@ body {
     }
 
     .modal-header {
-        @include lib-css(padding-bottom, $modal-popup__padding / 2.5);
-        @include lib-css(padding-top, $modal-popup__padding);
+        padding-bottom: $modal-popup__padding / 2.5;
+        padding-top: $modal-popup__padding;
     }
 
     .modal-footer {
         margin-top: auto;
-        @include lib-css(padding-bottom, $modal-popup__padding);
-        @include lib-css(padding-top, $modal-popup__padding);
+        padding-bottom: $modal-popup__padding;
+        padding-top: $modal-popup__padding;
     }
 
     .modal-footer-actions {

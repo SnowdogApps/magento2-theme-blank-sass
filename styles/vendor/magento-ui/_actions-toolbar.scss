@@ -15,8 +15,8 @@
     $_actions-toolbar-secondary-actions-links-margin-top : $actions-toolbar-actions-links-secondary__margin-top
 ) {
     @include lib-clearfix();
-    @include lib-css(margin, $_actions-toolbar-margin);
-    @include lib-css(padding, $_actions-toolbar-padding);
+    margin: $_actions-toolbar-margin;
+    padding: $_actions-toolbar-padding;
     @include _lib-actions-toolbar-align($_actions-toolbar-actions-position);
     @include _lib-actions-toolbar-floats($_actions-toolbar-actions-position, $_actions-toolbar-actions-reverse);
     .primary,
@@ -24,32 +24,32 @@
         display: inline-block;
 
         .action {
-            @include lib-css(margin, $_actions-toolbar-actions-margin);
+            margin: $_actions-toolbar-actions-margin;
         }
 
         a.action {
             display: inline-block;
-            @include lib-css(margin-top, $_actions-toolbar-actions-links-margin-top);
+            margin-top: $_actions-toolbar-actions-links-margin-top;
         }
     }
 
     .primary {
         .action {
-            @include lib-css(margin, $_actions-toolbar-primary-actions-margin);
+            margin: $_actions-toolbar-primary-actions-margin;
         }
 
         a.action {
-            @include lib-css(margin-top, $_actions-toolbar-primary-actions-links-margin-top);
+            margin-top: $_actions-toolbar-primary-actions-links-margin-top;
         }
     }
 
     .secondary {
         .action {
-            @include lib-css(margin, $_actions-toolbar-secondary-actions-margin);
+            margin: $_actions-toolbar-secondary-actions-margin;
         }
 
         a.action {
-            @include lib-css(margin-top, $_actions-toolbar-secondary-actions-links-margin-top);
+            margin-top: $_actions-toolbar-secondary-actions-links-margin-top;
         }
     }
 }
@@ -72,7 +72,7 @@
 
 @mixin _lib-actions-toolbar-align($_actions-toolbar-actions-position) {
     @if $_actions-toolbar-actions-position != justify {
-        @include lib-css(text-align, $_actions-toolbar-actions-position);
+        text-align: $_actions-toolbar-actions-position;
     }
 }
 

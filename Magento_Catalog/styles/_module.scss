@@ -130,7 +130,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     }
 
     .notice {
-        @include lib-css(color, $text__color__muted);
+        color: $text__color__muted;
         @include lib-font-size($font-size__s);
         margin: $indent__s 0;
     }
@@ -188,7 +188,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
             &.sku {
                 display: inline-block;
                 vertical-align: top;
-                @include lib-css(color, $text__color__muted);
+                color: $text__color__muted;
 
                 > .value {
                     display: inline-block;
@@ -223,8 +223,8 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 .product-options-wrapper {
     .fieldset-product-options-inner {
         .legend {
-            @include lib-css(font-weight, $font-weight__bold);
-            @include lib-css(margin, 0 0 $indent__xs);
+            font-weight: $font-weight__bold;
+            margin: 0 0 $indent__xs;
             @include lib-font-size(14px);
             border: none;
             display: inline-block;
@@ -252,7 +252,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
                         $_line-height : $form-field-label-asterisk__line-height,
                         $_font-style  : $form-field-label-asterisk__font-style
                     );
-                    @include lib-css(margin, $form-field-label-asterisk__margin);
+                    margin: $form-field-label-asterisk__margin;
                 }
             }
         }
@@ -352,7 +352,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 
 .prices-tier {
     @extend .abs-reset-list;
-    @include lib-css(background, $sidebar__background-color);
+    background: $sidebar__background-color;
     margin: $indent__s 0;
     padding: $indent__s (0.75 * $indent__base);
 
@@ -427,7 +427,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
         }
 
         .counter {
-            @include lib-css(color, $primary__color__lighter);
+            color: $primary__color__lighter;
             @include lib-font-size(12);
             white-space: nowrap;
         }
@@ -763,7 +763,7 @@ body.catalog-product-compare-index {
 }
 
 .comparison.headings {
-    @include lib-css(background, $page__background-color);
+    background: $page__background-color;
     left: 0;
     position: absolute;
     top: 0;

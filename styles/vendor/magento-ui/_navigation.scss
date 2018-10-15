@@ -49,8 +49,8 @@
     $_submenu-item-text-decoration-active     : $submenu-item__active__text-decoration
 ) {
     .navigation {
-        @include lib-css(background, $_nav-background-color);
-        @include lib-css(border, $_nav-border);
+        background: $_nav-background-color;
+        border: $_nav-border;
         box-sizing: border-box;
 
         ul {
@@ -64,59 +64,59 @@
 
         a {
             display: block;
-            @include lib-css(padding, $_submenu-item__padding-top $_submenu-item__padding-right $_submenu-item__padding-bottom $_submenu-item__padding-left);
+            padding: $_submenu-item__padding-top $_submenu-item__padding-right $_submenu-item__padding-bottom $_submenu-item__padding-left;
         }
 
         a,
         a:hover {
-            @include lib-css(color, $_nav-level0-item-color);
-            @include lib-css(text-decoration, $_nav-level0-item-text-decoration);
+            color: $_nav-level0-item-color;
+            text-decoration: $_nav-level0-item-text-decoration;
         }
 
         .level0 {
-            @include lib-css(border-top, $_nav-level0-item-border);
+            border-top: $_nav-level0-item-border;
             @include lib-font-size($_nav-level0-font-size);
 
             > .level-top {
-                @include lib-css(background, $_nav-level0-item-background-color);
-                @include lib-css(font-weight, $_nav-level0-font-weight);
-                @include lib-css(line-height, $_nav-level0-item-line-height);
-                @include lib-css(padding, $_nav-level0-item-padding);
-                @include lib-css(text-transform, $_nav-level0-text-transform);
+                background: $_nav-level0-item-background-color;
+                font-weight: $_nav-level0-font-weight;
+                line-height: $_nav-level0-item-line-height;
+                padding: $_nav-level0-item-padding;
+                text-transform: $_nav-level0-text-transform;
                 word-wrap: break-word;
             }
 
             &.active {
                 .all-category {
                     .ui-state-focus {
-                        @include lib-css(background, $_nav-level0-item-background-color-active);
-                        @include lib-css(border-color, $_nav-level0-item__active__border-color);
-                        @include lib-css(border-style, $_nav-level0-item__active__border-style);
-                        @include lib-css(border-width, $_nav-level0-item__active__border-width);
-                        @include lib-css(color, $_nav-level0-item-color-active);
-                        @include lib-css(padding-left, $_nav__indent-side - $_submenu-item__active__border);
-                        @include lib-css(text-decoration, $_nav-level0-item-text-decoration-active);
+                        background: $_nav-level0-item-background-color-active;
+                        border-color: $_nav-level0-item__active__border-color;
+                        border-style: $_nav-level0-item__active__border-style;
+                        border-width: $_nav-level0-item__active__border-width;
+                        color: $_nav-level0-item-color-active;
+                        padding-left: $_nav__indent-side - $_submenu-item__active__border;
+                        text-decoration: $_nav-level0-item-text-decoration-active;
                         display: inline-block;
                     }
                 }
             }
 
             > .level1 {
-                @include lib-css(font-weight, $font-weight__semibold);
+                font-weight: $font-weight__semibold;
             }
 
             &.active,
             &.has-active { // ToDo UI: remove "has_active" here, when mobile navigation default open state is implemented
                 > a:not(.ui-state-active) {
-                    @include lib-css(background, $_nav-level0-item-background-color-active);
-                    @include lib-css(border-color, $_nav-level0-item__active__border-color);
-                    @include lib-css(border-style, $_nav-level0-item__active__border-style);
-                    @include lib-css(border-width, $_nav-level0-item__active__border-width);
-                    @include lib-css(color, $_nav-level0-item-color-active);
-                    @include lib-css(text-decoration, $_nav-level0-item-text-decoration-active);
+                    background: $_nav-level0-item-background-color-active;
+                    border-color: $_nav-level0-item__active__border-color;
+                    border-style: $_nav-level0-item__active__border-style;
+                    border-width: $_nav-level0-item__active__border-width;
+                    color: $_nav-level0-item-color-active;
+                    text-decoration: $_nav-level0-item-text-decoration-active;
 
                     span:not(.ui-menu-icon) {
-                        @include lib-css(margin-left, -$_submenu-item__active__border);
+                        margin-left: -$_submenu-item__active__border;
                     }
                 }
             }
@@ -124,7 +124,7 @@
 
         li.level0 {
             &:last-child {
-                @include lib-css(border-bottom, $_nav-level0-item-border);
+                border-bottom: $_nav-level0-item-border;
             }
         }
 
@@ -134,11 +134,11 @@
             }
 
             &:not(:first-child) {
-                @include lib-css(background, $_submenu-background-color);
-                @include lib-css(border, $_submenu-border);
-                @include lib-css(font-size, $_submenu-font-size);
-                @include lib-css(font-weight, $_submenu-font-weight);
-                @include lib-css(line-height, $_submenu-line-height);
+                background: $_submenu-background-color;
+                border: $_submenu-border;
+                font-size: $_submenu-font-size;
+                font-weight: $_submenu-font-weight;
+                line-height: $_submenu-line-height;
                 left: auto !important;
                 overflow-x: hidden;
                 padding: 0;
@@ -148,7 +148,7 @@
 
                 > li {
                     > a {
-                        @include lib-css(padding-left, $_nav__indent-side);
+                        padding-left: $_nav__indent-side;
                     }
 
                     &:last-child {
@@ -158,16 +158,16 @@
 
                 ul {
                     display: block;
-                    @include lib-css(padding-left, $_submenu-item__padding-left);
+                    padding-left: $_submenu-item__padding-left;
 
                     > li {
                         margin: 0;
 
                         a {
-                            @include lib-css(background, $_submenu-item-background-color);
-                            @include lib-css(border, $_submenu-item-border);
-                            @include lib-css(color, $_submenu-item-color);
-                            @include lib-css(text-decoration, $_submenu-item-text-decoration);
+                            background: $_submenu-item-background-color;
+                            border: $_submenu-item-border;
+                            color: $_submenu-item-color;
+                            text-decoration: $_submenu-item-text-decoration;
                             display: block;
                             line-height: normal;
                         }
@@ -182,20 +182,20 @@
 
                 .active {
                     > a {
-                        @include lib-css(background, $_submenu-item-background-color-active);
-                        @include lib-css(border-color, $_submenu-item__active__border-color);
-                        @include lib-css(border-style, $_submenu-item__active__border-style);
-                        @include lib-css(border-width, $_submenu-item__active__border-width);
-                        @include lib-css(color, $_submenu-item-color-active);
-                        @include lib-css(padding-left, $_nav__indent-side - $_submenu-item__active__border);
-                        @include lib-css(text-decoration, $_submenu-item-text-decoration-active);
+                        background: $_submenu-item-background-color-active;
+                        border-color: $_submenu-item__active__border-color;
+                        border-style: $_submenu-item__active__border-style;
+                        border-width: $_submenu-item__active__border-width;
+                        color: $_submenu-item-color-active;
+                        padding-left: $_nav__indent-side - $_submenu-item__active__border;
+                        text-decoration: $_submenu-item-text-decoration-active;
                     }
                 }
 
                 .level1 {
                     &.active {
                         > a {
-                            @include lib-css(padding-left, $_nav__indent-side - $_submenu-item__active__border);
+                            padding-left: $_nav__indent-side - $_submenu-item__active__border;
                         }
                     }
                 }
@@ -269,10 +269,10 @@
 ) {
 
     .navigation {
-        @include lib-css(background, $_nav-background-color);
-        @include lib-css(border, $_nav-border);
-        @include lib-css(font-size, $_nav-font-size);
-        @include lib-css(font-weight, $_nav-font-weight);
+        background: $_nav-background-color;
+        border: $_nav-border;
+        font-size: $_nav-font-size;
+        font-weight: $_nav-font-weight;
         height: inherit;
         left: auto;
         overflow: inherit;
@@ -294,11 +294,11 @@
         }
 
         li.level0 {
-            @include lib-css(border-top, none);
+            border-top: none;
         }
 
         .level0 {
-            @include lib-css(margin, $_nav-level0-item-margin);
+            margin: $_nav-level0-item-margin;
             display: inline-block;
             position: relative;
 
@@ -308,33 +308,33 @@
             }
 
             > .level-top {
-                @include lib-css(background, $_nav-level0-item-background-color);
-                @include lib-css(border, $_nav-level0-item-border);
-                @include lib-css(color, $_nav-level0-item-color);
-                @include lib-css(line-height, $_nav-level0-item-line-height);
-                @include lib-css(padding, $_nav-level0-item-padding);
-                @include lib-css(text-decoration, $_nav-level0-item-text-decoration);
+                background: $_nav-level0-item-background-color;
+                border: $_nav-level0-item-border;
+                color: $_nav-level0-item-color;
+                line-height: $_nav-level0-item-line-height;
+                padding: $_nav-level0-item-padding;
+                text-decoration: $_nav-level0-item-text-decoration;
                 box-sizing: border-box;
                 position: relative;
 
                 &:hover,
                 &.ui-state-focus {
-                    @include lib-css(background, $_nav-level0-item-background-color-hover);
-                    @include lib-css(border, $_nav-level0-item-border-hover);
-                    @include lib-css(color, $_nav-level0-item-color-hover);
-                    @include lib-css(text-decoration, $_nav-level0-item-text-decoration-hover);
+                    background: $_nav-level0-item-background-color-hover;
+                    border: $_nav-level0-item-border-hover;
+                    color: $_nav-level0-item-color-hover;
+                    text-decoration: $_nav-level0-item-text-decoration-hover;
                 }
             }
 
             &.active,
             &.has-active {
                 > .level-top {
-                    @include lib-css(background, $_nav-level0-item-background-color-active);
-                    @include lib-css(border-color, $_nav-level0-item__active__border-color);
-                    @include lib-css(border-style, $_nav-level0-item__active__border-style);
-                    @include lib-css(border-width, $_nav-level0-item__active__border-width);
-                    @include lib-css(color, $_nav-level0-item-color-active);
-                    @include lib-css(text-decoration, $_nav-level0-item-text-decoration-active);
+                    background: $_nav-level0-item-background-color-active;
+                    border-color: $_nav-level0-item__active__border-color;
+                    border-style: $_nav-level0-item__active__border-style;
+                    border-width: $_nav-level0-item__active__border-width;
+                    color: $_nav-level0-item-color-active;
+                    text-decoration: $_nav-level0-item-text-decoration-active;
                     display: inline-block;
                 }
             }
@@ -344,13 +344,13 @@
             }
 
             .submenu {
-                @include lib-css(background, $_submenu-background-color);
-                @include lib-css(border, $_submenu-border-width $_submenu-border-style $_submenu-border-color);
-                @include lib-css(box-shadow, $_submenu-box-shadow);
-                @include lib-css(font-size, $_submenu-font-size);
-                @include lib-css(font-weight, $_submenu-font-weight);
-                @include lib-css(min-width, $_submenu-min-width);
-                @include lib-css(padding, $_submenu-padding);
+                background: $_submenu-background-color;
+                border: $_submenu-border-width $_submenu-border-style $_submenu-border-color;
+                box-shadow: $_submenu-box-shadow;
+                font-size: $_submenu-font-size;
+                font-weight: $_submenu-font-weight;
+                min-width: $_submenu-min-width;
+                padding: $_submenu-padding;
                 display: none;
                 left: 0;
                 margin: 0 !important;
@@ -369,28 +369,28 @@
                 a {
                     display: block;
                     line-height: inherit;
-                    @include lib-css(background, $_submenu-item-background-color);
-                    @include lib-css(border, $_submenu-item-border);
-                    @include lib-css(color, $_submenu-item-color);
-                    @include lib-css(padding, $_submenu-item-padding);
-                    @include lib-css(text-decoration, $_submenu-item-text-decoration);
+                    background: $_submenu-item-background-color;
+                    border: $_submenu-item-border;
+                    color: $_submenu-item-color;
+                    padding: $_submenu-item-padding;
+                    text-decoration: $_submenu-item-text-decoration;
 
                     &:hover,
                     &.ui-state-focus {
-                        @include lib-css(background, $_submenu-item__hover__background-color);
-                        @include lib-css(border, $_submenu-item-border-hover);
-                        @include lib-css(color, $_submenu-item-color-hover);
-                        @include lib-css(text-decoration, $_submenu-item-text-decoration-hover);
+                        background: $_submenu-item__hover__background-color;
+                        border: $_submenu-item-border-hover;
+                        color: $_submenu-item-color-hover;
+                        text-decoration: $_submenu-item-text-decoration-hover;
                     }
                 }
 
                 .active > a {
-                    @include lib-css(background, $_submenu-item-background-color-active);
-                    @include lib-css(border-color, $_submenu-item__active__border-color);
-                    @include lib-css(border-style, $_submenu-item__active__border-style);
-                    @include lib-css(border-width, $_submenu-item__active__border-width);
-                    @include lib-css(color, $_submenu-item-color-active);
-                    @include lib-css(text-decoration, $_submenu-item-text-decoration-active);
+                    background: $_submenu-item-background-color-active;
+                    border-color: $_submenu-item__active__border-color;
+                    border-style: $_submenu-item__active__border-style;
+                    border-width: $_submenu-item__active__border-width;
+                    color: $_submenu-item-color-active;
+                    text-decoration: $_submenu-item-text-decoration-active;
                 }
 
                 .submenu {
@@ -447,10 +447,10 @@
         @if iscolor($_bg) and iscolor($_border) {
             $_outer-size: $_size + 1;
             $_outer-left: $_left - 1;
-            @include lib-css(margin-top, $_outer-size);
+            margin-top: $_outer-size;
 
             > ul {
-                @include lib-css(margin-top, $_outer-size);
+                margin-top: $_outer-size;
 
                 &:before,
                 &:after {
@@ -461,34 +461,34 @@
                 }
 
                 &:before {
-                    @include lib-css(color, $_bg);
-                    @include lib-css(left, $_left);
-                    @include lib-css(top, -$_size*2);
+                    color: $_bg;
+                    left: $_left;
+                    top: -$_size*2;
                     @include lib-arrow(up, $_size, $_bg);
                     z-index: 4;
                 }
 
                 &:after {
                     @include lib-arrow(up, $_outer-size, $_border);
-                    @include lib-css(color, $_border);
-                    @include lib-css(left, $_outer-left);
-                    @include lib-css(top, -$_outer-size*2);
+                    color: $_border;
+                    left: $_outer-left;
+                    top: -$_outer-size*2;
                     z-index: 3;
                 }
             }
         }
 
         @if iscolor($_bg) and iscolor($_border) == false {
-            @include lib-css(margin-top, -$_size);
+            margin-top: -$_size;
 
             > ul {
-                @include lib-css(margin-top, $_size);
+                margin-top: $_size;
 
                 &:before {
                     @include lib-arrow(up, $_size, $_bg);
-                    @include lib-css(color, $_bg);
-                    @include lib-css(left, $_left);
-                    @include lib-css(top, -$_size*2);
+                    color: $_bg;
+                    left: $_left;
+                    top: -$_size*2;
                     content: '';
                     display: block;
                     overflow: hidden;
@@ -499,16 +499,16 @@
         }
 
         @if iscolor($_border) and iscolor($_bg) == false {
-            @include lib-css(margin-top, -$_size);
+            margin-top: -$_size;
 
             > ul {
-                @include lib-css(margin-top, $_size);
+                margin-top: $_size;
 
                 &:before {
                     @include lib-arrow(up, $_size, $_border);
-                    @include lib-css(color, $_border);
-                    @include lib-css(left, $_left);
-                    @include lib-css(top, -$_size*2);
+                    color: $_border;
+                    left: $_left;
+                    top: -$_size*2;
                     content: '';
                     display: block;
                     overflow: hidden;

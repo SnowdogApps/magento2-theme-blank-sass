@@ -18,7 +18,7 @@
     .form-add-invitations {
         .additional,
         .field.text {
-            @include lib-css(margin-top, $form-field__vertical-indent);
+            margin-top: $form-field__vertical-indent;
         }
     }
 }
@@ -32,7 +32,7 @@
         @extend .abs-add-fields-desktop;
         .additional,
         .field.text {
-            @include lib-css(margin-top, $form-field__vertical-indent__desktop);
+            margin-top: $form-field__vertical-indent__desktop;
         }
     }
 

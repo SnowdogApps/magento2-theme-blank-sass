@@ -6,7 +6,7 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset 
 
     .column.main {
         @extend .abs-add-box-sizing;
-        @include lib-css(padding-bottom, $indent__xl);
+        padding-bottom: $indent__xl;
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-order(1);

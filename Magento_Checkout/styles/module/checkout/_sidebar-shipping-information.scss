@@ -17,17 +17,17 @@ $checkout-sidebar-shipping-information-edit-icon__hover__color : $primary__color
 //  ---------------------------------------------
 
 .opc-block-shipping-information {
-    @include lib-css(padding, 0 $checkout-sidebar-shipping-information__padding);
+    padding: 0 $checkout-sidebar-shipping-information__padding;
 
     .shipping-information-title {
         @extend .abs-checkout-title;
-        @include lib-css(border-bottom, $checkout-step-title__border);
+        border-bottom: $checkout-step-title__border;
         margin: 0 0 $indent__base;
         position: relative;
 
         .action-edit {
             @extend .abs-action-button-as-link;
-            @include lib-css(top, $checkout-sidebar-shipping-information-edit-icon__top);
+            top: $checkout-sidebar-shipping-information-edit-icon__top;
             @include lib-icon-font(
                 $checkout-sidebar-shipping-information-edit-icon__content,
                 $_icon-font-size         : $checkout-sidebar-shipping-information-edit-icon__font-size,
@@ -44,7 +44,7 @@ $checkout-sidebar-shipping-information-edit-icon__hover__color : $primary__color
     }
 
     .shipping-information-content {
-        @include lib-css(line-height, $checkout-sidebar-shipping-information__line-height);
+        line-height: $checkout-sidebar-shipping-information__line-height;
         .actions-toolbar {
             margin-left: 0;
         }

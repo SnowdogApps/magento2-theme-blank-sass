@@ -11,7 +11,7 @@
     }
 
     .banner-item-content {
-        @include lib-css(margin-bottom, $indent__base);
+        margin-bottom: $indent__base;
 
         img {
             display: block;

@@ -116,7 +116,7 @@
             font-weight: $font-weight__regular;
 
             span {
-                @include lib-css(color, $primary__color__light);
+                color: $primary__color__light;
             }
         }
     }

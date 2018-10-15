@@ -172,7 +172,7 @@ $_password-very-strong               : #81b562 !default;
     }
 
     .content {
-        @include lib-css(background, $account-nav-background);
+        background: $account-nav-background;
         padding: 15px 0;
     }
 
@@ -185,7 +185,7 @@ $_password-very-strong               : #81b562 !default;
 
         a,
         > strong {
-            @include lib-css(color, $account-nav-color);
+            color: $account-nav-color;
             border-left: 3px solid transparent;
             display: block;
             padding: $indent__xs 18px $indent__xs 15px;
@@ -195,20 +195,20 @@ $_password-very-strong               : #81b562 !default;
             text-decoration: none;
 
             &:hover {
-                @include lib-css(background, $account-nav-item-hover);
+                background: $account-nav-item-hover;
             }
         }
 
         &.current {
             a,
             strong {
-                @include lib-css(border-color, $account-nav-current-border-color);
-                @include lib-css(color, $account-nav-current-color);
-                @include lib-css(font-weight, $account-nav-current-font-weight);
+                border-color: $account-nav-current-border-color;
+                color: $account-nav-current-color;
+                font-weight: $account-nav-current-font-weight;
             }
 
             a {
-                @include lib-css(border-color, $account-nav-current-border-color);
+                border-color: $account-nav-current-border-color;
             }
         }
 
@@ -326,7 +326,7 @@ $_password-very-strong               : #81b562 !default;
 }
 
 .control.captcha-image {
-    @include lib-css(margin-top, $indent__s);
+    margin-top: $indent__s;
 
     .captcha-img {
         vertical-align: middle;
@@ -367,7 +367,7 @@ $_password-very-strong               : #81b562 !default;
 
     .control.captcha-image {
         .captcha-img {
-            @include lib-css(margin-bottom, $indent__s);
+            margin-bottom: $indent__s;
             display: block;
         }
     }
@@ -421,16 +421,16 @@ $_password-very-strong               : #81b562 !default;
         .fullname {
             .field {
                 .label {
-                    @include lib-css(margin, $form-field-type-label-inline__margin);
-                    @include lib-css(padding, $form-field-type-label-inline__padding);
-                    @include lib-css(text-align, $form-field-type-label-inline__align);
-                    @include lib-css(width, $form-field-type-label-inline__width);
+                    margin: $form-field-type-label-inline__margin;
+                    padding: $form-field-type-label-inline__padding;
+                    text-align: $form-field-type-label-inline__align;
+                    width: $form-field-type-label-inline__width;
                     box-sizing: border-box;
                     float: left;
                 }
 
                 .control {
-                    @include lib-css(width, $form-field-type-control-inline__width);
+                    width: $form-field-type-control-inline__width;
                     float: left;
                 }
             }

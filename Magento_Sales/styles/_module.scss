@@ -352,7 +352,7 @@
     .page-title-wrapper {
         .order-date {
             $order-status-indent: ceil($h1__margin-bottom__desktop/2);
-            @include lib-css(margin-top, -$order-status-indent);
+            margin-top: -$order-status-indent;
         }
     }
 
