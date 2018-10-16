@@ -312,7 +312,7 @@
 //  ---------------------------------------------
 
 @include min-screen($screen__m) {
-    @if $form-field-type-label-inline__width != false and $form-field-type-label-inline__width != '' {
+    @if $form-field-type-label-inline__width and $form-field-type-label-inline__width != '' {
         .abs-action-remove-desktop {
             margin-left: $form-field-type-label-inline__width + 50%;
             top: 6px;
@@ -626,7 +626,7 @@
 //  ---------------------------------------------
 
 .abs-action-button-as-link {
-    @include lib-button-as-link($_margin: false);
+    @include lib-button-as-link($_margin: null);
     border-radius: 0;
     font-size: inherit;
     font-weight: $font-weight__regular;
@@ -852,7 +852,7 @@
         @include lib-icon-font(
             $_icon-font-content   : $icon-down,
             $_icon-font-size      : 28px,
-            $_icon-font-text-hide : false,
+            $_icon-font-text-hide : null,
             $_icon-font-position  : after,
             $_icon-font-display   : block
         );
@@ -1145,9 +1145,9 @@
     @include lib-typography(
         $_font-size   : $checkout-step-title__font-size,
         $_font-weight : $checkout-step-title__font-weight,
-        $_font-family : false,
-        $_font-style  : false,
-        $_line-height : false
+        $_font-family : null,
+        $_font-style  : null,
+        $_line-height : null
     );
 }
 

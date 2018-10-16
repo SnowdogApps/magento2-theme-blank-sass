@@ -349,7 +349,7 @@
     $_reset-table-hover                    : false,
     $_table-responsive-cell-padding        : $table-responsive-cell__padding
 ) {
-    @if $_reset-table-striped == false and $_reset-table-hover == false {
+    @if not $_reset-table-striped and not $_reset-table-hover {
         @include _lib-responsive-table(
             $_table-background-color-responsive : $_table-background-color-responsive,
             $_table-responsive-cell-padding     : $_table-responsive-cell-padding
@@ -379,7 +379,7 @@
         }
     }
 
-    @if $_reset-table-striped == true and $_reset-table-hover == false {
+    @if $_reset-table-striped == true and not $_reset-table-hover {
         @include lib-table-striped(
             $_stripped-background-color : $_table-background-color-responsive
         );
@@ -392,7 +392,7 @@
         @include lib-css(background-color, $_table-th-background-color-responsive);
     }
 
-    @if $_reset-table-striped == false and $_reset-table-hover == true {
+    @if not $_reset-table-striped and $_reset-table-hover == true {
         @include lib-table-hover(
             $_table_cell-background-color-hover     : $_table-background-color-responsive,
             $_table_cell-odd-background-color-hover : $_table-background-color-responsive
@@ -422,7 +422,7 @@
     $_table-caption-margin-top    : $table-caption__margin-top,
     $_table-caption-margin-bottom : $table-caption__margin-bottom
 ) {
-    @if $_table-caption-hide == false {
+    @if not $_table-caption-hide {
         > caption {
             @include lib-typography(
                 $_table-caption-font-size,

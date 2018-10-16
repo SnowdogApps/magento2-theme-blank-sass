@@ -23,24 +23,24 @@
 
 //  Rem font size
 @mixin lib-font-size($sizeValue) {
-    @if type-of($sizeValue) == number and unit($sizeValue) != '%' and $sizeValue != false {
+    @if type-of($sizeValue) == number and unit($sizeValue) != '%' and $sizeValue != null {
         @if unit($sizeValue) == $font-size-unit or unit($sizeValue) == 'em' {
             @include lib-css(font-size, $sizeValue);
         }
         @else {
-            @include lib-css(font-size, lib-font-size-value($sizeValue));
+            font-size: lib-font-size-value($sizeValue);
         }
     }
 }
 
 //  Rem line height
 @mixin lib-line-height($heightValue) {
-    @if $heightValue != false {
+    @if $heightValue != null {
         @if unit($heightValue) == '%' {
             @include lib-css(line-height, $heightValue);
         }
         @else {
-            @include lib-css(line-height, lib-font-size-value($heightValue));
+            line-height: lib-font-size-value($heightValue);
         }
     }
 }

@@ -173,7 +173,7 @@
     &.active {
         @include lib-css(opacity, $_overlay-opacity);
 
-        @if $_overlay-opacity-old != false {
+        @if $_overlay-opacity-old {
             filter: alpha(opacity=$_overlay-opacity-old);
         }
     }

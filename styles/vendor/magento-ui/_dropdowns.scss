@@ -51,24 +51,26 @@
     display: inline-block;
     position: relative;
 
-    #{$_toggle-selector} {
-        @include lib-css(padding, $_dropdown-actions-padding);
-        cursor: pointer;
+    @if $_icon-font {
+        #{$_toggle-selector} {
+            @include lib-css(padding, $_dropdown-actions-padding);
+            cursor: pointer;
 
-        @include _lib-dropdown-icon(
-            $_dropdown-toggle-icon-content,
-            $_dropdown-toggle-active-icon-content,
-            $_icon-font,
-            $_icon-font-size,
-            $_icon-font-line-height,
-            $_icon-font-color,
-            $_icon-font-color-hover,
-            $_icon-font-color-active,
-            $_icon-font-margin,
-            $_icon-font-vertical-align,
-            $_icon-font-position,
-            $_icon-font-text-hide
-        );
+            @include _lib-dropdown-icon(
+                $_dropdown-toggle-icon-content,
+                $_dropdown-toggle-active-icon-content,
+                $_icon-font,
+                $_icon-font-size,
+                $_icon-font-line-height,
+                $_icon-font-color,
+                $_icon-font-color-hover,
+                $_icon-font-color-active,
+                $_icon-font-margin,
+                $_icon-font-vertical-align,
+                $_icon-font-position,
+                $_icon-font-text-hide
+            );
+        }
     }
 
     @include _lib-dropdown-styles(
@@ -301,16 +303,16 @@
     $_dropdown-list-position-left,
     $_dropdown-list-position-right
 ) {
-    @if $_dropdown-list-position-top != false and $_dropdown-list-position-top != auto {
+    @if $_dropdown-list-position-top and $_dropdown-list-position-top != auto {
         top: $_dropdown-list-position-top;
     }
-    @if $_dropdown-list-position-bottom != false and $_dropdown-list-position-bottom != auto {
+    @if $_dropdown-list-position-bottom and $_dropdown-list-position-bottom != auto {
         bottom: $_dropdown-list-position-bottom;
     }
-    @if $_dropdown-list-position-left != false and $_dropdown-list-position-left != auto {
+    @if $_dropdown-list-position-left and $_dropdown-list-position-left != auto {
         left: $_dropdown-list-position-left;
     }
-    @if $_dropdown-list-position-right != false and $_dropdown-list-position-right != auto {
+    @if $_dropdown-list-position-right and $_dropdown-list-position-right != auto {
         right: $_dropdown-list-position-right;
     }
 }
@@ -560,8 +562,8 @@
 
 //  Dropdown list item border != 0
 @mixin _lib-dropdown-list-item-border($_dropdown-list-item-border) {
-    @if $_dropdown-list-item-border != false and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
-        @include lib-css(border-top, $_dropdown-list-item-border);
+    @if  $_dropdown-list-item-border and $_dropdown-list-item-border != 0 and $_dropdown-list-item-border != '' {
+        border-top: $_dropdown-list-item-border;
         &:first-child {
             border: none;
         }

@@ -147,7 +147,7 @@
         border: 0;
         @include lib-css(border-top, $_tab-content-border);
     }
-    @else if $_tab-content-border-top-status == false {
+    @else if not $_tab-content-border-top-status {
         @include lib-css(border, $_tab-content-border);
     }
 }

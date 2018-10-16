@@ -148,7 +148,7 @@
     }
 
     // Insert separating symbol to "content"
-    @if $_breadcrumbs-separator-symbol != '' and $_breadcrumbs-separator-symbol != false {
+    @if $_breadcrumbs-separator-symbol and $_breadcrumbs-separator-symbol != '' {
         .item:not(:last-child) {
             &:after {
                 @include lib-css(color, $_breadcrumbs-separator-color);

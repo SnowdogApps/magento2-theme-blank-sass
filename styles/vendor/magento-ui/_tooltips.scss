@@ -98,7 +98,7 @@
     $_tooltip-border-width,
     $_tooltip-border-color
 ) {
-    @if $_tooltip-border-width != 0 and $_tooltip-border-width != false and $_tooltip-border-color != false {
+    @if $_tooltip-border-width != 0 and $_tooltip-border-width and $_tooltip-border-color {
         @include lib-css(border, $_tooltip-border-width solid $_tooltip-border-color);
     }
 }

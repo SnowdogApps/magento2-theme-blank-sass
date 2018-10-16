@@ -20,7 +20,7 @@
 
 @function lib-font-size-value($_value) {
     @if $font-size-unit-convert {
-        @if $_value != false and $_value != '' {
+        @if $_value and $_value != '' {
             $_value: strip-unit($_value) / $font-size-unit-ratio;
             @if $_value > 0 {
                 $_value: $_value * 1#{$font-size-unit};
@@ -98,7 +98,7 @@
         background-repeat: repeat-x;
         background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
     }
-    @else if $_background-color-position == false {
+    @else if not $_background-color-position {
         background-color: $_start-color;
         background-image: linear-gradient(to right, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
@@ -116,7 +116,7 @@
         background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
     }
-    @else if $_background-color-position == false {
+    @else if not $_background-color-position {
         background-color: $_start-color;
         background-image: linear-gradient(to bottom, $_start-color $_start-percent, $_end-color $_end-percent);
         background-repeat: repeat-x;
@@ -193,15 +193,15 @@
         $_value: strip-unit($_value);
     }
 
-    @if $_value != '' and $_value != false {
+    @if $_value != '' and $_value {
         @if type-of($_value) == list {
             $_isFalse: false;
             @each $_item in $_value {
-                @if $_item == false {
+                @if not $_item {
                     $_isFalse: true;
                 }
             }
-            @if $_isFalse == false {
+            @if not $_isFalse {
                 #{$_property}: $_value;
             }
         }
@@ -232,11 +232,11 @@ $urls-resolved: false;
 }
 
 @mixin lib-url($_path, $_module) {
-    @if $_module != false and $_module != '' {
+    @if $_module and $_module != '' {
         @if $urls-resolved == true {
             $url: "../#{$_module}/#{$_path}";
         }
-        @else if $urls-resolved == false {
+        @else if not $urls-resolved {
             $url: "#{$_module}::#{$_path}";
         }
     }

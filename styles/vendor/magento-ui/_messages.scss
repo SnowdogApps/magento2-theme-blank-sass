@@ -230,7 +230,7 @@
 }
 
 @mixin _lib-message-icon-lateral-border-radius($_message-icon-position) {
-    @if $message__border-radius != false and $message__border-width != false {
+    @if $message__border-radius and $message__border-width {
         @if $_message-icon-position == left {
             @include lib-css(border-radius, ($message__border-radius - $message__border-width) 0 0 ($message__border-radius - $message__border-width));
         }
