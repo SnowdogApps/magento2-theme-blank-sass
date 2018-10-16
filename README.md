@@ -6,9 +6,10 @@ This is a fork of https://github.com/SnowdogApps/magento2-theme-blank-sass, whic
 
 ## Changelog
 
-2.0 - First forked version
-    * Remove lib-css mixin and usage of it. Mixin was puting property only if value is not false. By default SASS doesn't include properties with `null` value. Therefore it required to change some variables from `false` to `null`
-    * Fix incorect divisions, which were resulting in incorectly generated CSS
+**2.0 - First forked version**
+
+* Remove lib-css mixin and usage of it. Mixin was puting property only if value is not false. By default SASS doesn't include properties with `null` value. Therefore it required to change some variables from `false` to `null`
+* Fix incorect divisions, which were resulting in incorectly generated CSS
 
 ## Installation
 Not packaged yet
