@@ -290,7 +290,7 @@
     $_icon-sprite-position-y,
     $_icon-sprite-grid
 ) {
-    @include lib-css(background-position, -($_icon-sprite-position-x * $_icon-sprite-grid) -($_icon-sprite-position-y * $_icon-sprite-grid));
+    background-position: -($_icon-sprite-position-x * $_icon-sprite-grid) -($_icon-sprite-position-y * $_icon-sprite-grid);
 }
 
 @mixin _lib-icon-font(

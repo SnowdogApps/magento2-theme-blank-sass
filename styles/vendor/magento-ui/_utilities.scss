@@ -19,18 +19,14 @@
 //  ---------------------------------------------
 
 @function lib-font-size-value($_value) {
-    @if $font-size-unit-convert {
-        @if $_value and $_value != '' {
-            $_value: strip-unit($_value) / $font-size-unit-ratio;
-            @if $_value > 0 {
-                $_value: $_value * 1#{$font-size-unit};
-            }
-            @return $_value;
+    @if $font-size-unit-convert and $_value and $_value != '' {
+        $_value: strip-unit($_value) / $font-size-unit-ratio;
+        @if $_value > 0 {
+            $_value: $_value * 1#{$font-size-unit};
         }
     }
-    @else {
-        @return $_value;
-    }
+ 
+    @return $_value;
 }
 
 @mixin lib-visibility-hidden() {
@@ -178,50 +174,6 @@
     font-size: $_font-size;
     letter-spacing: normal;
     line-height: $_line-height;
-}
-
-//
-//  Add any css property
-//  ---------------------------------------------
-
-
-/**
- * Puts the CSS property with value. It skips property if value is empty, or
- * value is a list with at least one empty value
- *
- * @param {string} $_property     - The property
- * @param {mixed}  $_value        - The value
- * @param {number} $_prefix   [0] - The prefix
- *
- * @return {null}
- */
-@mixin lib-css(
-    $_property,
-    $_value,
-    $_prefix: 0
-) {
-    @warn 'lib-css deprecated, use "#{$_property}: #{$_value}" directly';
-
-    @if $_value == 0 {
-        $_value: 0;
-    }
-
-    @if $_value != '' and $_value {
-        @if type-of($_value) == list {
-            $_isFalse: false;
-            @each $_item in $_value {
-                @if not $_item {
-                    $_isFalse: true;
-                }
-            }
-            @if not $_isFalse {
-                #{$_property}: $_value;
-            }
-        }
-        @else {
-            #{$_property}: $_value;
-        }
-    }
 }
 
 //

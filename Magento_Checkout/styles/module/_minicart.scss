@@ -203,7 +203,7 @@ $minicart-qty__height         : 24px !default;
 
 .minicart-items-wrapper {
     border: 1px solid $minicart__border-color;
-    @include lib-css(margin, 0 (-$minicart__padding-horizontal));
+    margin: 0 (-$minicart__padding-horizontal);
     border-left: 0;
     border-right: 0;
     overflow-x: auto;

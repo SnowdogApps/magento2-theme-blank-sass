@@ -68,7 +68,7 @@ $active-nav-indent: 54px !default;
 
     .nav-sections {
         -webkit-overflow-scrolling: touch;
-        @include lib-css(transition, left 0.3s, 1);
+        transition: left 0.3s;
         height: 100%;
         left: -80%;
         left: calc(-1 * (100% - #{$active-nav-indent}));
@@ -165,7 +165,7 @@ $active-nav-indent: 54px !default;
         width: 100%;
 
         .page-wrapper {
-            @include lib-css(transition, left 0.3s, 1);
+            transition: left 0.3s;
             height: 100%;
             left: 0;
             overflow: hidden;
@@ -187,9 +187,7 @@ $active-nav-indent: 54px !default;
         }
 
         .nav-sections {
-            $_shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
-
-            @include lib-css(box-shadow, $_shadow, 1);
+            box-shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
             left: 0;
             z-index: 99;
         }

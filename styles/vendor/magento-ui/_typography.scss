@@ -232,8 +232,8 @@
         $_font-style
     );
 
-    @include lib-css(margin-top, lib-font-size-value($_margin-top));
-    @include lib-css(margin-bottom, lib-font-size-value($_margin-bottom));
+    margin-top: lib-font-size-value($_margin-top);
+    margin-bottom: lib-font-size-value($_margin-bottom);
 }
 
 //
@@ -269,11 +269,11 @@
 
     p {
         & {
-            @include lib-css(margin-top, lib-font-size-value($_p-margin-top));
+            margin-top: lib-font-size-value($_p-margin-top);
         }
 
         & {
-            @include lib-css(margin-bottom, lib-font-size-value($_p-margin-bottom));
+            margin-bottom: lib-font-size-value($_p-margin-bottom);
         }
     }
 
@@ -412,12 +412,12 @@
 ) {
     ul,
     ol {
-        @include lib-css(margin-top, lib-font-size-value($_list-margin-top));
-        @include lib-css(margin-bottom, lib-font-size-value($_list-margin-bottom));
+        margin-top: lib-font-size-value($_list-margin-top);
+        margin-bottom: lib-font-size-value($_list-margin-bottom);
 
         & > li {
-            @include lib-css(margin-top, lib-font-size-value($_list-item-margin-top));
-            @include lib-css(margin-bottom, lib-font-size-value($_list-item-margin-bottom));
+            margin-top: lib-font-size-value($_list-item-margin-top);
+            margin-bottom: lib-font-size-value($_list-item-margin-bottom);
         }
 
         ul,
