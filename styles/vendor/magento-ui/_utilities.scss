@@ -200,7 +200,7 @@
     $_value,
     $_prefix: 0
 ) {
-    @info 'lib-css deprecated, use "#{$_property}: #{$_value}" directly';
+    @warn 'lib-css deprecated, use "#{$_property}: #{$_value}" directly';
 
     @if $_value == 0 {
         $_value: 0;
@@ -409,16 +409,16 @@ $urls-resolved: false;
     }
 
     &:before {
-        $_position__horizontal: $_position__horizontal__value;
-        $_position__vertical: $_position__vertical__value;
+        #{$_position__horizontal}: $_position__horizontal__value;
+        #{$_position__vertical}: $_position__vertical__value;
         border: solid $_size - 1;
         border-color: transparent transparent $_background-color transparent;
         z-index: $_z-index;
     }
 
     &:after {
-        $_position__horizontal: $_position__horizontal__value - 1;
-        $_position__vertical: $_position__vertical__value - 2;
+        #{$_position__horizontal}: $_position__horizontal__value - 1;
+        #{$_position__vertical}: $_position__vertical__value - 2;
         border: solid $_size;
         border-color: transparent transparent $_border-color transparent;
         z-index: $_z-index - 1;

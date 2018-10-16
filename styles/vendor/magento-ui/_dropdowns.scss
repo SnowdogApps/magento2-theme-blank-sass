@@ -51,7 +51,7 @@
     display: inline-block;
     position: relative;
 
-    @if ($_icon-font != null) {
+    @if $_icon-font {
         #{$_toggle-selector} {
             padding: $_dropdown-actions-padding;
             cursor: pointer;

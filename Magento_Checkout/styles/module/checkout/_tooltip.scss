@@ -55,7 +55,7 @@ $checkout-tooltip-content-mobile__top           : 30px + $checkout-tooltip-icon-
             $_icon-font-text-hide    : true,
             $_icon-font-color        : $checkout-tooltip-icon__color,
             $_icon-font-color-hover  : $checkout-tooltip-icon__hover__color,
-            $_icon-font-color-active : false
+            $_icon-font-color-active : null
         );
 
         &:focus {
