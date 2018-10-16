@@ -337,7 +337,7 @@
     $_pager-font-weight,
     $_pager-line-height
 ) {
-    @if $_pager-label-display == none or $_pager-label-display == false {
+    @if not $_pager-label-display or $_pager-label-display == none {
         > .label {
             @include lib-visually-hidden();
         }

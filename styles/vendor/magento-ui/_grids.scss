@@ -33,7 +33,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
 }
 
 @mixin lib-column($span) {
-    @if $span == false {
+    @if not $span {
         float: left;
     }
 }
@@ -85,7 +85,7 @@ $grid-width    : ($column-width * $total-columns) + ($gutter-width * ($total-col
     $total-columns : $total-columns,
     $end-column    : false
 ) {
-    @if $span == false {
+    @if not $span {
         display: inline-block;
         letter-spacing: normal;
         vertical-align: top;

@@ -241,8 +241,8 @@
 //  ---------------------------------------------
 
 @mixin _lib-icon-image-url($_path) {
-    @if $_path != false {
-        @include lib-css(background-image, url($_path));
+    @if $_path {
+        background-image: url($_path);
     }
 }
 

@@ -1103,7 +1103,7 @@
 @mixin _lib-revert-type-block-label-padding(
     $_type-block-label-padding
 ) {
-    @if $_type-block-label-padding == false {
+    @if not $_type-block-label-padding {
         padding: 0;
     }
 }
@@ -1111,7 +1111,7 @@
 @mixin _lib-revert-type-block-label-align(
     $_type-block-label-align
 ) {
-    @if $_type-block-label-align == false {
+    @if not $_type-block-label-align {
         text-align: left;
     }
 }
@@ -1119,7 +1119,7 @@
 @mixin _lib-revert-type-inline-label-margin(
     $_type-inline-label-margin
 ) {
-    @if $_type-inline-label-margin == false {
+    @if not $_type-inline-label-margin {
         margin: 0;
     }
 }
