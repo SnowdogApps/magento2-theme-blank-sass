@@ -68,10 +68,10 @@
     $_breadcrumbs-link-gradient-color-start-active  : $breadcrumbs-link__active__gradient-color-start,
     $_breadcrumbs-link-gradient-color-end-active    : $breadcrumbs-link__active__gradient-color-end
 ) {
-    @include lib-css(margin, $_breadcrumbs-container-margin);
+    margin: $_breadcrumbs-container-margin;
     .items {
         @include lib-font-size($_breadcrumbs-font-size);
-        @include lib-css(color, $_breadcrumbs-current-color);
+        color: $_breadcrumbs-current-color;
         @include lib-list-inline();
     }
 
@@ -80,79 +80,79 @@
     }
 
     a {
-        @include lib-css(background, $_breadcrumbs-link-background);
+        background: $_breadcrumbs-link-background;
         @include lib-background-gradient(
             $_breadcrumbs-link-gradient-color-start,
             $_breadcrumbs-link-gradient-color-end,
             $_breadcrumbs-link-gradient-direction,
             $_breadcrumbs-link-gradient
         );
-        @include lib-css(border, $_breadcrumbs-link-border);
-        @include lib-css(color, $_breadcrumbs-link-color);
-        @include lib-css(display, $_breadcrumbs-display);
-        @include lib-css(padding, $_breadcrumbs-padding);
-        @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration);
+        border: $_breadcrumbs-link-border;
+        color: $_breadcrumbs-link-color;
+        display: $_breadcrumbs-display;
+        padding: $_breadcrumbs-padding;
+        text-decoration: $_breadcrumbs-link-text-decoration;
 
         &:visited {
-            @include lib-css(background, $_breadcrumbs-link-background-visited);
+            background: $_breadcrumbs-link-background-visited;
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-visited,
                 $_breadcrumbs-link-gradient-color-end-visited,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            @include lib-css(border, $_breadcrumbs-link-border-visited);
-            @include lib-css(color, $_breadcrumbs-link-color-visited);
-            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-visited);
+            border: $_breadcrumbs-link-border-visited;
+            color: $_breadcrumbs-link-color-visited;
+            text-decoration: $_breadcrumbs-link-text-decoration-visited;
         }
 
         &:hover {
-            @include lib-css(background, $_breadcrumbs-link-background-hover);
+            background: $_breadcrumbs-link-background-hover;
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-hover,
                 $_breadcrumbs-link-gradient-color-end-hover,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            @include lib-css(border, $_breadcrumbs-link-border-hover);
-            @include lib-css(color, $_breadcrumbs-link-color-hover);
-            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-hover);
+            border: $_breadcrumbs-link-border-hover;
+            color: $_breadcrumbs-link-color-hover;
+            text-decoration: $_breadcrumbs-link-text-decoration-hover;
         }
 
         &:active {
-            @include lib-css(background, $_breadcrumbs-link-background-active);
+            background: $_breadcrumbs-link-background-active;
             @include lib-background-gradient(
                 $_breadcrumbs-link-gradient-color-start-active,
                 $_breadcrumbs-link-gradient-color-end-active,
                 $_breadcrumbs-link-gradient-direction,
                 $_breadcrumbs-link-gradient
             );
-            @include lib-css(border, $_breadcrumbs-link-border-active);
-            @include lib-css(color, $_breadcrumbs-link-color-active);
-            @include lib-css(text-decoration, $_breadcrumbs-link-text-decoration-active);
+            border: $_breadcrumbs-link-border-active;
+            color: $_breadcrumbs-link-color-active;
+            text-decoration: $_breadcrumbs-link-text-decoration-active;
         }
     }
 
     strong {
-        @include lib-css(background, $_breadcrumbs-current-background);
+        background: $_breadcrumbs-current-background;
         @include lib-background-gradient(
             $_breadcrumbs-current-gradient-color-start,
             $_breadcrumbs-current-gradient-color-end,
             $_breadcrumbs-current-gradient-direction,
             $_breadcrumbs-current-gradient
         );
-        @include lib-css(border, $_breadcrumbs-current-border);
-        @include lib-css(display, $_breadcrumbs-display);
-        @include lib-css(font-weight, $_breadcrumbs-current-font-weight);
-        @include lib-css(padding, $_breadcrumbs-padding);
+        border: $_breadcrumbs-current-border;
+        display: $_breadcrumbs-display;
+        font-weight: $_breadcrumbs-current-font-weight;
+        padding: $_breadcrumbs-padding;
     }
 
     // Insert separating symbol to "content"
-    @if $_breadcrumbs-separator-symbol != '' and $_breadcrumbs-separator-symbol != false {
+    @if $_breadcrumbs-separator-symbol and $_breadcrumbs-separator-symbol != '' {
         .item:not(:last-child) {
             &:after {
-                @include lib-css(color, $_breadcrumbs-separator-color);
-                @include lib-css(content, $_breadcrumbs-separator-symbol);
+                color: $_breadcrumbs-separator-color;
+                content: $_breadcrumbs-separator-symbol;
             }
         }
     }

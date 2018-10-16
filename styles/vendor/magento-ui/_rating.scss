@@ -97,7 +97,7 @@
     @include _lib-rating-label-hide($_label-hide);
 
     .rating-result {
-        @include lib-css(width, ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1)));
+        width: ($_icon-font-size * $_icon-count) + ceil($_icon-letter-spacing * ($_icon-count - 1));
         display: inline-block;
         position: relative;
         vertical-align: middle;
@@ -175,12 +175,12 @@
     $_icon-letter-spacing,
     $_icon-color
 ) {
-    @include lib-css(color, $_icon-color);
-    @include lib-css(font-family, $_icon-font);
-    @include lib-css(font-size, $_icon-font-size);
-    @include lib-css(height, $_icon-font-size);
-    @include lib-css(letter-spacing, $_icon-letter-spacing);
-    @include lib-css(line-height, $_icon-font-size);
+    color: $_icon-color;
+    font-family: $_icon-font;
+    font-size: $_icon-font-size;
+    height: $_icon-font-size;
+    letter-spacing: $_icon-letter-spacing;
+    line-height: $_icon-font-size;
     font-style: normal;
     font-weight: normal;
     speak: none;
@@ -197,12 +197,12 @@
     $_icon-color
 ) {
     -webkit-font-smoothing: antialiased;
-    @include lib-css(color, $_icon-color);
-    @include lib-css(font-family, $_icon-font);
-    @include lib-css(font-size, $_icon-font-size);
-    @include lib-css(height, $_icon-font-size);
-    @include lib-css(letter-spacing, $_icon-letter-spacing);
-    @include lib-css(line-height, $_icon-font-size);
+    color: $_icon-color;
+    font-family: $_icon-font;
+    font-size: $_icon-font-size;
+    height: $_icon-font-size;
+    letter-spacing: $_icon-letter-spacing;
+    line-height: $_icon-font-size;
     @include lib-rating-icons-content($_icon-count, $_icon-content);
     display: block;
     font-style: normal;

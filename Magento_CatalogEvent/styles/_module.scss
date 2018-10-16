@@ -6,8 +6,8 @@ $catalog-event-color            : $primary__color !default;
 //  ---------------------------------------------
 
 .block-category-event {
-    @include lib-css(background, $catalog-event-background-color);
-    @include lib-css(color, $catalog-event-color);
+    background: $catalog-event-background-color;
+    color: $catalog-event-color;
     padding: $indent__s 0 15px;
     text-align: center;
 

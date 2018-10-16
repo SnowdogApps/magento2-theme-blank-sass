@@ -20,11 +20,11 @@ $checkout-step-title-mobile__font-size : 18px !default;
 
 .checkout-container {
     @extend .abs-add-clearfix;
-    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    margin: 0 0 $checkout-wrapper__margin;
 }
 
 .opc-wrapper {
-    @include lib-css(margin, 0 0 $checkout-wrapper__margin);
+    margin: 0 0 $checkout-wrapper__margin;
 
     .opc {
         @extend .abs-reset-list;
@@ -65,7 +65,7 @@ $checkout-step-title-mobile__font-size : 18px !default;
 @include max-screen($screen__s) {
     .opc-wrapper {
         .step-title {
-            @include lib-css(font-size, $checkout-step-title-mobile__font-size);
+            font-size: $checkout-step-title-mobile__font-size;
             border-bottom: 0;
             padding-bottom: 0;
         }

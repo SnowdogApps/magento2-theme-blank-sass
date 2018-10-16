@@ -147,10 +147,10 @@ $reviews-indent-desktop: 30px !default;
 
     .review-details {
         .customer-review-rating {
-            @include lib-css(margin-bottom, $indent__base);
+            margin-bottom: $indent__base;
 
             .item {
-                @include lib-css(margin-bottom, $indent__s);
+                margin-bottom: $indent__s;
 
                 &:last-child {
                     margin-bottom: 0;
@@ -160,12 +160,12 @@ $reviews-indent-desktop: 30px !default;
 
         .review-title {
             @include lib-heading(h3);
-            @include lib-css(font-weight, $font-weight__semibold);
-            @include lib-css(margin-bottom, $indent__base);
+            font-weight: $font-weight__semibold;
+            margin-bottom: $indent__base;
         }
 
         .review-content {
-            @include lib-css(margin-bottom, $indent__base);
+            margin-bottom: $indent__base;
         }
     }
 

@@ -10,8 +10,8 @@
 )  {
     @if $responsive != true {
         @include _lib-layout-width($_layout__min-width, $_layout__max-width);
-        @include lib-css(padding-left, $layout-indent__width);
-        @include lib-css(padding-right, $layout-indent__width);
+        padding-left: $layout-indent__width;
+        padding-right: $layout-indent__width;
         margin: 0 auto;
     }
 }
@@ -21,19 +21,19 @@
     $_layout__max-width: $layout__max-width
 ) {
     @if $_layout__min-width == $_layout__max-width {
-        @include lib-css(width, $_layout__min-width);
+        width: $_layout__min-width;
     }
     @else {
-        @include lib-css(max-width, $_layout__max-width);
-        @include lib-css(min-width, $_layout__min-width);
+        max-width: $_layout__max-width;
+        min-width: $_layout__min-width;
         width: auto;
     }
 }
 
 @mixin lib-layout-columns() {
     @if $use-flex == true {
-        @include lib-vendor-prefix-display(flex);
-        @include lib-vendor-prefix-flex-wrap(wrap);
+        display: flex;
+        flex-wrap: wrap;
         box-sizing: border-box;
     }
     &:after {
@@ -90,7 +90,7 @@
         @include lib-column-width($_width);
     }
     @else if $_check == true or $_width == 'auto' {
-        @include lib-css(width, $_width);
+        width: $_width;
         $_index: 1;
     }
 }
@@ -115,7 +115,7 @@
     @include _lib-set-column-width(length($_units), $_width);
     @include lib-flex-degradation($_total-columns, $_order);
     @if $use-flex == true {
-        @include lib-vendor-prefix-order($_order);
+        order: $_order;
     }
 }
 

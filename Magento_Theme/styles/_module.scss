@@ -20,7 +20,7 @@ $message-global-caution-link__color-hover  : $link__hover__color !default;
 $message-global-caution-link__color-active : $link__active__color !default;
 
 //  Header
-$header__background-color                  : false !default;
+$header__background-color                  : null !default;
 $header-icons-color                        : $color-gray56 !default;
 $header-icons-color-hover                  : $color-gray20 !default;
 
@@ -35,11 +35,11 @@ $button__shadow                            : inset 0 2px 1px rgba(0, 0, 0, 0.12)
 $h1__margin-bottom__desktop                : $indent__xl !default;
 
 //  Footer
-$footer__background-color                  : false !default;
+$footer__background-color                  : null !default;
 
 
 body {
-    @include lib-css(background-color, $page__background-color);
+    background-color: $page__background-color;
 }
 
 //
@@ -47,7 +47,7 @@ body {
 //  ---------------------------------------------
 
 .page-header {
-    @include lib-css(background-color, $header__background-color);
+    background-color: $header__background-color;
     border-bottom: 1px solid $border-color__base;
     margin-bottom: $indent__base;
 }
@@ -90,8 +90,8 @@ body {
     }
 
     &:focus {
-        @include lib-css(background, $color-gray94);
-        @include lib-css(padding, $indent__s);
+        background: $color-gray94;
+        padding: $indent__s;
         box-sizing: border-box;
         left: 0;
         position: absolute;
@@ -146,7 +146,7 @@ body {
 //  ---------------------------------------------
 
 .page-footer {
-    @include lib-css(background-color, $footer__background-color);
+    background-color: $footer__background-color;
     margin-top: auto;
 }
 
@@ -245,7 +245,7 @@ body {
 .page-header,
 .page-footer {
     .widget.block {
-        @include lib-css(margin, $indent__base 0);
+        margin: $indent__base 0;
     }
 }
 
@@ -275,8 +275,8 @@ body {
     }
 
     .page-wrapper {
-        @include lib-vendor-prefix-display(flex);
-        @include lib-vendor-prefix-flex-direction(column);
+        display: flex;
+        flex-direction: column;
         min-height: 100%; // Stretch content area for sticky footer
 
         > .breadcrumbs,
@@ -315,7 +315,7 @@ body {
 
                     &.welcome {
                         a {
-                            @include lib-css(padding-left, $indent__xs);
+                            padding-left: $indent__xs;
                         }
                     }
                 }

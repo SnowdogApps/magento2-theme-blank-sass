@@ -58,7 +58,7 @@
     }
 
     .count {
-        @include lib-css(color, $text__color__muted);
+        color: $text__color__muted;
 
         &:before {
             content: '(';
@@ -109,7 +109,7 @@
     .page-with-filter {
         .columns {
             .sidebar-main {
-                @include lib-vendor-prefix-order(0);
+                order: 0;
             }
         }
     }

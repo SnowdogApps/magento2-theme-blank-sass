@@ -19,7 +19,7 @@ $checkout-shipping-policy-tooltip-mobile__width : 300px !default;
         top: 12px;
 
         .field-tooltip-action {
-            @include lib-css(color, $checkout-shipping-policy-action__color);
+            color: $checkout-shipping-policy-action__color;
             cursor: pointer;
 
             &:before {
@@ -34,7 +34,7 @@ $checkout-shipping-policy-tooltip-mobile__width : 300px !default;
         .field-tooltip-content {
             @extend .abs-add-box-sizing;
             @extend .abs-checkout-tooltip-content-position-top;
-            @include lib-css(width, $checkout-shipping-policy-tooltip__width);
+            width: $checkout-shipping-policy-tooltip__width;
             top: $indent__l;
         }
     }
@@ -53,7 +53,7 @@ $checkout-shipping-policy-tooltip-mobile__width : 300px !default;
             top: auto;
 
             .field-tooltip-content {
-                @include lib-css(width, $checkout-shipping-policy-tooltip-mobile__width);
+                width: $checkout-shipping-policy-tooltip-mobile__width;
                 right: auto;
 
                 &:before,

@@ -22,7 +22,7 @@ $checkout-modal-popup__width: 800px !default;
     .checkout-index-index {
         .modal-popup {
             .form-shipping-address {
-                @include lib-css(max-width, $checkout-shipping-address__max-width);
+                max-width: $checkout-shipping-address__max-width;
             }
 
             .modal-footer {
@@ -39,8 +39,8 @@ $checkout-modal-popup__width: 800px !default;
     .checkout-index-index {
         .modal-popup {
             .modal-inner-wrap {
-                @include lib-css(margin-left, -($checkout-modal-popup__width/2));
-                @include lib-css(width, $checkout-modal-popup__width);
+                margin-left: -($checkout-modal-popup__width/2);
+                width: $checkout-modal-popup__width;
                 left: 50%;
             }
         }

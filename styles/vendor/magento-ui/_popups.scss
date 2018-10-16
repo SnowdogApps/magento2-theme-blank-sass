@@ -64,10 +64,10 @@
     $_popup-actions-toolbar-primary-actions-links-margin-top   : $popup-actions-toolbar-actions-links-primary__margin-top,
     $_popup-actions-toolbar-secondary-actions-links-margin-top : $popup-actions-toolbar-actions-links-secondary__margin-top
 ) {
-    @include lib-css(background, $_popup-background);
-    @include lib-css(border, $_popup-border);
-    @include lib-css(padding, $_popup-padding);
-    @include lib-css(width, $_popup-width);
+    background: $_popup-background;
+    border: $_popup-border;
+    padding: $_popup-padding;
+    width: $_popup-width;
     @include _lib-popup-height($_popup-height);
     @include _lib-popup-shadow($_popup-shadow);
     @include _lib-popup-action-toolbar(
@@ -85,7 +85,7 @@
     );
 
     .popup-header {
-        @include lib-css(margin, $_popup-header-margin);
+        margin: $_popup-header-margin;
 
         .title {
             @include _lib-popup-headings(
@@ -94,21 +94,21 @@
             );
         }
 
-        @include lib-css(padding-right, $_popup-icon-font-size)
+        padding-right: $_popup-icon-font-size;
     }
 
     .popup-content {
         @include _lib-popup-height($_popup-content-height);
-        @include lib-css(margin, $_popup-content-margin);
+        margin: $_popup-content-margin;
     }
 
     .popup-footer {
-        @include lib-css(margin, $_popup-footer-margin);
+        margin: $_popup-footer-margin;
     }
 
     .popup-actions {
         .action.close {
-            @include lib-css(position, $_popup-button-close-position);
+            position: $_popup-button-close-position;
             @include lib-popup-button-close-icon(
                 $_popup-button-close-icon,
                 $_popup-icon-font-content,
@@ -126,25 +126,25 @@
             @include _lib-popup-button-close-reset(
                 $_popup-button-close-reset
             );
-            @include lib-css(bottom, $_popup-button-close-position-bottom);
-            @include lib-css(left, $_popup-button-close-position-left);
-            @include lib-css(right, $_popup-button-close-position-right);
-            @include lib-css(top, $_popup-button-close-position-top);
+            bottom: $_popup-button-close-position-bottom;
+            left: $_popup-button-close-position-left;
+            right: $_popup-button-close-position-right;
+            top: $_popup-button-close-position-top;
         }
     }
 
     @include _lib-popup-fade($_popup-fade);
 
-    @include lib-css(bottom, $_popup-position-bottom);
-    @include lib-css(left, $_popup-position-left);
-    @include lib-css(margin-bottom, $_popup-margin-bottom);
-    @include lib-css(margin-left, $_popup-margin-left);
-    @include lib-css(margin-right, $_popup-margin-right);
-    @include lib-css(margin-top, $_popup-margin-top);
-    @include lib-css(position, $_popup-position);
-    @include lib-css(right, $_popup-position-right);
-    @include lib-css(top, $_popup-position-top);
-    @include lib-css(z-index, $_popup-z-index);
+    bottom: $_popup-position-bottom;
+    left: $_popup-position-left;
+    margin-bottom: $_popup-margin-bottom;
+    margin-left: $_popup-margin-left;
+    margin-right: $_popup-margin-right;
+    margin-top: $_popup-margin-top;
+    position: $_popup-position;
+    right: $_popup-position-right;
+    top: $_popup-position-top;
+    z-index: $_popup-z-index;
     display: none;
     opacity: 0;
 
@@ -161,8 +161,8 @@
     $_overlay-z-index: $overlay__z-index
 ) {
     @include _lib-popup-fade($_overlay-fade);
-    @include lib-css(background, $_overlay-background);
-    @include lib-css(z-index, $_overlay-z-index);
+    background: $_overlay-background;
+    z-index: $_overlay-z-index;
     bottom: 0;
     left: 0;
     opacity: 0;
@@ -171,9 +171,9 @@
     top: 0;
 
     &.active {
-        @include lib-css(opacity, $_overlay-opacity);
+        opacity: $_overlay-opacity;
 
-        @if $_overlay-opacity-old != false {
+        @if $_overlay-opacity-old {
             filter: alpha(opacity=$_overlay-opacity-old);
         }
     }
@@ -186,14 +186,14 @@
 //  Popup fade
 @mixin _lib-popup-fade($_popup-fade) {
     @if $_popup-fade != '' {
-        @include lib-css(transition, $_popup-fade);
+        transition: $_popup-fade;
     }
 }
 
 //  Popup shadow
 @mixin _lib-popup-shadow($_popup-shadow) {
     @if $_popup-shadow != '' and $_popup-shadow != none {
-        @include lib-css(box-shadow, $_popup-shadow);
+        box-shadow: $_popup-shadow;
     }
 }
 
@@ -201,7 +201,7 @@
 @mixin _lib-popup-height($_popup-height) {
     @if $_popup-height != auto {
         overflow-y: auto;
-        @include lib-css(max-height, $_popup-height);
+        max-height: $_popup-height;
     }
 }
 

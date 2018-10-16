@@ -8,9 +8,9 @@
 
 //  Tabs controls
 $tab-control__font-size                      : $font-size__base !default;
-$tab-control__font-family                    : false !default;
+$tab-control__font-family                    : null !default;
 $tab-control__font-weight                    : $font-weight__semibold !default;
-$tab-control__font-style                     : false !default;
+$tab-control__font-style                     : null !default;
 $tab-control__height__base                   : $line-height__computed !default;
 $tab-control__height                         : $indent__base !default;
 $tab-control__line-height                    : $tab-control__height !default;
@@ -36,7 +36,7 @@ $tab-control__active__color                  : $text__color !default;
 $tab-control__active__text-decoration        : $tab-control__text-decoration !default;
 
 $tab-content__background-color               : $tab-control__active__background-color !default;
-$tab-content__border-top-status              : false !default;
+$tab-content__border-top-status              : null !default;
 $tab-content__border                         : $tab-control__border-width solid $tab-control__border-color !default;
 $tab-content__margin-top                     : $tab-control__height + $tab-control__border-width + $tab-control__padding-top + $tab-control__padding-bottom !default;
 $tab-content__padding-top                    : $indent__base !default;
