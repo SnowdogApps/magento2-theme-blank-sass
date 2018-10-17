@@ -1,23 +1,28 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
 //
 //  Tooltips variables
 //  _____________________________________________
 
-$tooltip__background    : $color-white !default;
-$tooltip__border-color  : $color-gray-light2 !default;
-$tooltip__border-width  : 1px !default;
-$tooltip__border-radius : null !default;
-$tooltip__color         : $primary__color !default;
-$tooltip__cursor        : help !default;
-$tooltip__font-size     : null !default;
-$tooltip__font-family   : null !default;
-$tooltip__font-weight   : null !default;
-$tooltip__line-height   : 1.4 !default;
-$tooltip__font-style    : null !default;
-$tooltip__margin        : null !default;
-$tooltip__padding       : 12px 16px !default;
-$tooltip__min-width     : 210px !default;
-$tooltip__max-width     : 360px !default;
-$tooltip__z-index       : 100 !default;
+$tooltip__background: $color-white !default;
+$tooltip__border-color: $color-gray-light2 !default;
+$tooltip__border-width: 1px !default;
+$tooltip__border-radius: null !default;
+$tooltip__color: $primary__color !default;
+$tooltip__cursor: help !default;
+$tooltip__font-size: null !default;
+$tooltip__font-family: null !default;
+$tooltip__font-weight: null !default;
+$tooltip__line-height: 1.4 !default;
+$tooltip__font-style: null !default;
+$tooltip__margin: null !default;
+$tooltip__padding: 12px 16px !default;
+$tooltip__min-width: 210px !default;
+$tooltip__max-width: 360px !default;
+$tooltip__z-index: 100 !default;
 
-$tooltip-arrow__size    : 5px !default;
-$tooltip-arrow__offset  : 10px !default;
+$tooltip-arrow__size: 5px !default;
+$tooltip-arrow__offset: 10px !default;

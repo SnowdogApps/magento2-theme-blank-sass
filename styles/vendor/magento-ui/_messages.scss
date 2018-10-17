@@ -2,6 +2,91 @@
 //  Messages
 //  _____________________________________________
 
+$message-info-map                   : (
+    color                            : $message-info__color,
+    background                       : $message-info__background,
+    border-color                     : $message-info__border-color,
+    link__color                      : $message-info-link__color,
+    link__color-hover                : $message-info-link__color-hover,
+    link__color-active               : $message-info-link__color-active,
+    icon                             : $message-info-icon,
+    icon__color-inner                : $message-info-icon__color-inner,
+    icon__color-lateral              : $message-info-icon__color-lateral,
+    icon__background                 : $message-info-icon__background,
+    icon__top                        : $message-info-icon__top,
+    icon__right                      : $message-info-icon__right,
+    icon__bottom                     : $message-info-icon__bottom,
+    icon__left                       : $message-info-icon__left
+);
+
+$message-warning-map                : (
+    color                            : $message-warning__color,
+    background                       : $message-warning__background,
+    border-color                     : $message-warning__border-color,
+    link__color                      : $message-warning-link__color,
+    link__color-hover                : $message-warning-link__color-hover,
+    link__color-active               : $message-warning-link__color-active,
+    icon                             : $message-warning-icon,
+    icon__color-inner                : $message-warning-icon__color-inner,
+    icon__color-lateral              : $message-warning-icon__color-lateral,
+    icon__background                 : $message-warning-icon__background,
+    icon__top                        : $message-warning-icon__top,
+    icon__right                      : $message-warning-icon__right,
+    icon__bottom                     : $message-warning-icon__bottom,
+    icon__left                       : $message-warning-icon__left
+);
+
+$message-error-map                  : (
+    color                            : $message-error__color,
+    background                       : $message-error__background,
+    border-color                     : $message-error__border-color,
+    link__color                      : $message-error-link__color,
+    link__color-hover                : $message-error-link__color-hover,
+    link__color-active               : $message-error-link__color-active,
+    icon                             : $message-error-icon,
+    icon__color-inner                : $message-error-icon__color-inner,
+    icon__color-lateral              : $message-error-icon__color-lateral,
+    icon__background                 : $message-error-icon__background,
+    icon__top                        : $message-error-icon__top,
+    icon__right                      : $message-error-icon__right,
+    icon__bottom                     : $message-error-icon__bottom,
+    icon__left                       : $message-error-icon__left
+);
+
+$message-success-map                : (
+    color                            : $message-success__color,
+    background                       : $message-success__background,
+    border-color                     : $message-success__border-color,
+    link__color                      : $message-success-link__color,
+    link__color-hover                : $message-success-link__color-hover,
+    link__color-active               : $message-success-link__color-active,
+    icon                             : $message-success-icon,
+    icon__color-inner                : $message-success-icon__color-inner,
+    icon__color-lateral              : $message-success-icon__color-lateral,
+    icon__background                 : $message-success-icon__background,
+    icon__top                        : $message-success-icon__top,
+    icon__right                      : $message-success-icon__right,
+    icon__bottom                     : $message-success-icon__bottom,
+    icon__left                       : $message-success-icon__left
+);
+
+$message-notice-map                 : (
+    color                            : $message-notice__color,
+    background                       : $message-notice__background,
+    border-color                     : $message-notice__border-color,
+    link__color                      : $message-notice-link__color,
+    link__color-hover                : $message-notice-link__color-hover,
+    link__color-active               : $message-notice-link__color-active,
+    icon                             : $message-notice-icon,
+    icon__color-inner                : $message-notice-icon__color-inner,
+    icon__color-lateral              : $message-notice-icon__color-lateral,
+    icon__background                 : $message-notice-icon__background,
+    icon__top                        : $message-notice-icon__top,
+    icon__right                      : $message-notice-icon__right,
+    icon__bottom                     : $message-notice-icon__bottom,
+    icon__left                       : $message-notice-icon__left
+);
+
 // Helper function to easier get values related to specific type
 @function message($_message-type, $_key) {
     $_map: $message-info-map;
