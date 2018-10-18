@@ -44,7 +44,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
 
     .form-login,
     .form-shipping-address {
-        @include lib-css(margin-top, $checkout-shipping-address__margin-top);
+        margin-top: $checkout-shipping-address__margin-top;
         margin-bottom: $indent__base;
 
         .fieldset {
@@ -61,12 +61,12 @@ $checkout-shipping-method__padding              : $indent__base !default;
 
     .shipping-address-item {
         @extend .abs-add-box-sizing;
-        @include lib-css(border, $checkout-shipping-item__border);
-        @include lib-css(line-height, $checkout-shipping-item__line-height);
-        @include lib-css(margin, $checkout-shipping-item__margin);
-        @include lib-css(padding, $checkout-shipping-item__padding);
-        @include lib-css(transition, $checkout-shipping-item__transition);
-        @include lib-css(width, $checkout-shipping-item-tablet__width);
+        border: $checkout-shipping-item__border;
+        line-height: $checkout-shipping-item__line-height;
+        margin: $checkout-shipping-item__margin;
+        padding: $checkout-shipping-item__padding;
+        transition: $checkout-shipping-item__transition;
+        width: $checkout-shipping-item-tablet__width;
         display: inline-block;
         font-size: $font-size__base;
         position: relative;
@@ -74,15 +74,15 @@ $checkout-shipping-method__padding              : $indent__base !default;
         word-wrap: break-word;
 
         &.selected-item {
-            @include lib-css(border-color, $checkout-shipping-item__active__border-color);
+            border-color: $checkout-shipping-item__active__border-color;
 
             &:after {
-                @include lib-css(background, $checkout-shipping-item-icon__background-color);
-                @include lib-css(color, $checkout-shipping-item-icon__color);
-                @include lib-css(content, $checkout-shipping-item-icon__content);
-                @include lib-css(font-family, $icons__font-name);
-                @include lib-css(height, $checkout-shipping-item-icon__selected__height);
-                @include lib-css(width, $checkout-shipping-item-icon__selected__width);
+                background: $checkout-shipping-item-icon__background-color;
+                color: $checkout-shipping-item-icon__color;
+                content: $checkout-shipping-item-icon__content;
+                font-family: $icons__font-name;
+                height: $checkout-shipping-item-icon__selected__height;
+                width: $checkout-shipping-item-icon__selected__width;
                 font-size: 27px;
                 line-height: 21px;
                 padding-top: 2px;
@@ -163,9 +163,9 @@ $checkout-shipping-method__padding              : $indent__base !default;
 
     tbody {
         td {
-            @include lib-css(border-top, $checkout-shipping-method__border);
-            @include lib-css(padding-bottom, $checkout-shipping-method__padding);
-            @include lib-css(padding-top, $checkout-shipping-method__padding);
+            border-top: $checkout-shipping-method__border;
+            padding-bottom: $checkout-shipping-method__padding;
+            padding-top: $checkout-shipping-method__padding;
 
             &:first-child {
                 padding-left: 0;
@@ -198,30 +198,30 @@ $checkout-shipping-method__padding              : $indent__base !default;
 @include max-screen($screen__s) {
     .opc-wrapper {
         .form-login {
-            @include lib-css(border-bottom, 1px solid $checkout-shipping-item-before__border-color);
-            @include lib-css(margin, $checkout-shipping-item-mobile__padding);
-            @include lib-css(padding, $checkout-shipping-item-mobile__padding);
+            border-bottom: 1px solid $checkout-shipping-item-before__border-color;
+            margin: $checkout-shipping-item-mobile__padding;
+            padding: $checkout-shipping-item-mobile__padding;
         }
 
         .shipping-address-item {
-            @include lib-css(border-bottom, 1px solid $checkout-shipping-item-before__border-color);
-            @include lib-css(margin, $checkout-shipping-item-mobile__margin);
-            @include lib-css(padding, $checkout-shipping-item-mobile__padding);
+            border-bottom: 1px solid $checkout-shipping-item-before__border-color;
+            margin: $checkout-shipping-item-mobile__margin;
+            padding: $checkout-shipping-item-mobile__padding;
             width: 100%;
 
             &.selected-item {
-                @include lib-css(padding, $checkout-shipping-item-mobile__active__padding);
+                padding: $checkout-shipping-item-mobile__active__padding;
                 border-bottom-width: 2px;
 
                 .edit-address-link {
-                    @include lib-css(right, $checkout-shipping-item-icon__selected__width + $indent__s);
+                    right: $checkout-shipping-item-icon__selected__width + $indent__s;
                 }
             }
         }
 
         .form-login,
         .form-shipping-address {
-            @include lib-css(margin-top, $checkout-shipping-address__margin-top);
+            margin-top: $checkout-shipping-address__margin-top;
         }
 
         .action-select-shipping-item {
@@ -274,7 +274,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
     .opc-wrapper {
         .form-login,
         .form-shipping-address {
-            @include lib-css(max-width, $checkout-shipping-address__max-width);
+            max-width: $checkout-shipping-address__max-width;
         }
     }
     .table-checkout-shipping-method {
@@ -285,11 +285,11 @@ $checkout-shipping-method__padding              : $indent__base !default;
 @include min-screen($screen__l) {
     .opc-wrapper {
         .shipping-address-item {
-            @include lib-css(width, $checkout-shipping-item__width);
+            width: $checkout-shipping-item__width;
 
             &:before {
-                @include lib-css(background, $checkout-shipping-item-before__border-color);
-                @include lib-css(height, $checkout-shipping-item-before__height);
+                background: $checkout-shipping-item-before__border-color;
+                height: $checkout-shipping-item-before__height;
                 content: '';
                 left: 0;
                 position: absolute;

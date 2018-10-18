@@ -5,13 +5,13 @@
 .opc-estimated-wrapper {
     @extend .abs-add-clearfix;
     @extend .abs-no-display-desktop;
-    @include lib-css(border-bottom, $border-width__base solid $color-gray80);
+    border-bottom: $border-width__base solid $color-gray80;
     margin: 0 0 15px;
     padding: 18px 15px;
 
     .estimated-block {
-        @include lib-css(font-size, $checkout-step-title-mobile__font-size);
-        @include lib-css(font-weight, $font-weight__bold);
+        font-size: $checkout-step-title-mobile__font-size;
+        font-weight: $font-weight__bold;
         float: left;
 
         .estimated-label {
@@ -24,7 +24,7 @@
         .action {
             &.showcart {
                 &:before {
-                    @include lib-css(color, $primary__color);
+                    color: $primary__color;
                 }
             }
         }

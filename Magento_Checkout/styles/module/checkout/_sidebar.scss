@@ -12,7 +12,7 @@ $checkout-sidebar__columns: 4 !default;
 
 @include min-screen($screen__m) {
     .opc-sidebar {
-        @include lib-css(margin, $checkout-sidebar__margin__xl 0 $checkout-sidebar__margin);
+        margin: $checkout-sidebar__margin__xl 0 $checkout-sidebar__margin;
         @include lib-layout-column(2, 2, $checkout-sidebar__columns);
     }
 }

@@ -47,7 +47,7 @@
     .block.widget .products-grid .product-item,
     .page-layout-1column .block.widget .products-grid .product-item,
     .page-layout-3columns .block.widget .products-grid .product-item {
-        width: 100% / 3;
+        width: (100% / 3);
     }
 }
 
@@ -57,7 +57,7 @@
 
 @include min-screen($screen__m) {
     .block.widget .products-grid .product-item {
-        width: 100% / 3;
+        width: (100% / 3);
 
         .sidebar & {
             margin-left: 0;
@@ -71,22 +71,22 @@
     }
 
     .page-layout-1column .block.widget .products-grid .product-item {
-        width: 100% / 4;
+        width: (100% / 4);
     }
 
     .page-layout-3columns .block.widget .products-grid .product-item {
-        width: 100% / 2;
+        width: (100% / 2);
     }
 }
 
 @include min-screen($screen__l) {
     .block.widget .products-grid .product-item {
-        width: 100% / 5;
+        width: (100% / 5);
     }
 
     .page-layout-1column .block.widget .products-grid .product-item {
         margin-left: calc((100% - 5 * (100% / 6)) / 4);
-        width: 100% / 6;
+        width: (100% / 6);
 
         &:nth-child(4n + 1) {
             margin-left: calc((100% - 5 * (100% / 6)) / 4);
@@ -98,7 +98,7 @@
     }
 
     .page-layout-3columns .block.widget .products-grid .product-item {
-        width: 100% / 4;
+        width: (100% / 4);
     }
 
     .block.widget .products-grid .product-items {

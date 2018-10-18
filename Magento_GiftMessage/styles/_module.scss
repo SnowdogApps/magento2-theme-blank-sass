@@ -11,8 +11,8 @@ $gift-item-block__border-width   : $border-width__base !default;
         margin-bottom: $indent__base;
 
         .label {
-            @include lib-css(color, $gift-message-field-label__color);
-            @include lib-css(font-weight, $font-weight__regular);
+            color: $gift-message-field-label__color;
+            font-weight: $font-weight__regular;
         }
     }
 }
@@ -115,7 +115,7 @@ $gift-item-block__border-width   : $border-width__base !default;
     }
 
     .title {
-        @include lib-css(font-weight, $font-weight__bold);
+        font-weight: $font-weight__bold;
         border-radius: 3px;
 
         @include lib-button(
@@ -130,13 +130,13 @@ $gift-item-block__border-width   : $border-width__base !default;
         );
 
         &:active {
-            @include lib-css(box-shadow, $button__shadow);
+            box-shadow: $button__shadow;
         }
     }
 
     .content {
         @extend .abs-add-clearfix;
-        @include lib-css(border-bottom, $gift-item-block__border-width solid $gift-item-block__border-color);
+        border-bottom: $gift-item-block__border-width solid $gift-item-block__border-color;
         padding: $indent__s $indent__s $indent__base;
         position: relative;
     }
@@ -151,7 +151,7 @@ $gift-item-block__border-width   : $border-width__base !default;
     .block-order-details-gift-message {
         .item-options {
             dt {
-                @include lib-css(font-weight, $font-weight__regular);
+                font-weight: $font-weight__regular;
                 margin: $indent__s 0;
             }
         }
@@ -232,7 +232,7 @@ $gift-item-block__border-width   : $border-width__base !default;
     }
 
     .gift-item-block {
-        @include lib-css(border-top, $gift-item-block__border-width solid $gift-item-block__border-color);
+        border-top: $gift-item-block__border-width solid $gift-item-block__border-color;
         border-bottom: 0;
     }
 
@@ -293,7 +293,7 @@ $gift-item-block__border-width   : $border-width__base !default;
 
             &:nth-child(3) {
                 &:before {
-                    @include lib-css(border-left, 1px solid $gift-item-block__border-color);
+                    border-left: 1px solid $gift-item-block__border-color;
                     bottom: 5rem;
                     content: '';
                     display: block;
@@ -308,7 +308,7 @@ $gift-item-block__border-width   : $border-width__base !default;
     }
 
     .gift-options-title {
-        @include lib-css(font-weight, $font-weight__light);
+        font-weight: $font-weight__light;
         @include lib-font-size(18);
     }
 

@@ -9,9 +9,9 @@ $popup-marker__size: 7px !default;
     &.popup {
         .action {
             &.close {
-                @include lib-css(bottom, $popup-button-close__position-bottom);
-                @include lib-css(left, $popup-button-close__position-left);
-                @include lib-css(position, $popup-button-close__position);
+                bottom: $popup-button-close__position-bottom;
+                left: $popup-button-close__position-left;
+                position: $popup-button-close__position;
                 height: 40px;
                 right: 0;
                 top: 0;

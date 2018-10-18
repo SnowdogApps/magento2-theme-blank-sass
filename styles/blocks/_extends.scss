@@ -20,7 +20,7 @@
 .abs-action-link-button {
     @include lib-button();
     @include lib-link-as-button();
-    @include lib-css(border-radius, $button__border-radius);
+    border-radius: $button__border-radius;
 }
 
 //
@@ -312,7 +312,7 @@
 //  ---------------------------------------------
 
 @include min-screen($screen__m) {
-    @if $form-field-type-label-inline__width != false and $form-field-type-label-inline__width != '' {
+    @if $form-field-type-label-inline__width and $form-field-type-label-inline__width != '' {
         .abs-action-remove-desktop {
             margin-left: $form-field-type-label-inline__width + 50%;
             top: 6px;
@@ -408,7 +408,7 @@
 //  ---------------------------------------------
 
 @mixin abs-margin-for-forms-desktop {
-    @include lib-css(margin-left, $form-field-type-label-inline__width);
+    margin-left: $form-field-type-label-inline__width;
 }
 
 @include min-screen($screen__m) {
@@ -603,7 +603,7 @@
 
 .abs-actions-addto-gridlist {
     @include lib-icon-font(
-        $_icon-font-content        : '',
+        $_icon-font-content        : null,
         $_icon-font-size           : 29px,
         $_icon-font-color          : $addto-color,
         $_icon-font-color-hover    : $addto-hover-color,
@@ -626,7 +626,7 @@
 //  ---------------------------------------------
 
 .abs-action-button-as-link {
-    @include lib-button-as-link($_margin: false);
+    @include lib-button-as-link($_margin: null);
     border-radius: 0;
     font-size: inherit;
     font-weight: $font-weight__regular;
@@ -823,7 +823,7 @@
 .abs-dropdown-items-new {
     .items .item:last-child {
         &:hover {
-            @include lib-css(background, $dropdown-list-item__hover);
+            background: $dropdown-list-item__hover;
         }
     }
 
@@ -852,7 +852,7 @@
         @include lib-icon-font(
             $_icon-font-content   : $icon-down,
             $_icon-font-size      : 28px,
-            $_icon-font-text-hide : false,
+            $_icon-font-text-hide : null,
             $_icon-font-position  : after,
             $_icon-font-display   : block
         );
@@ -971,7 +971,7 @@
 //  ---------------------------------------------
 
 .abs-block-items-counter {
-    @include lib-css(color, $primary__color__lighter);
+    color: $primary__color__lighter;
     @include lib-font-size(12px);
     white-space: nowrap;
 }
@@ -996,7 +996,7 @@
             );
 
             &:active {
-                @include lib-css(box-shadow, $button__shadow);
+                box-shadow: $button__shadow;
             }
         }
 
@@ -1075,7 +1075,7 @@
 //  ---------------------------------------------
 
 .abs-field-date-input {
-    @include lib-css(margin-right, $indent__s);
+    margin-right: $indent__s;
     width: calc(100% - #{$icon-calendar__font-size + $indent__s});
 }
 
@@ -1088,7 +1088,7 @@
     position: relative;
 
     input {
-        @include lib-css(margin-right, $indent__s);
+        margin-right: $indent__s;
         width: calc(100% - #{$checkout-tooltip-icon__font-size + $indent__s + $indent__xs});
     }
 }
@@ -1098,8 +1098,8 @@
 //  ---------------------------------------------
 
 @mixin abs-checkout-tooltip-content-position-top {
-    @include lib-css(right, $checkout-tooltip-content-mobile__right);
-    @include lib-css(top, $checkout-tooltip-content-mobile__top);
+    right: $checkout-tooltip-content-mobile__right;
+    top: $checkout-tooltip-content-mobile__top;
     left: auto;
 
     &:before,
@@ -1109,18 +1109,18 @@
             $_size     : $checkout-tooltip-icon-arrow__font-size,
             $_color    : $checkout-tooltip-content__background-color
         );
-        @include lib-css(margin-top, $checkout-tooltip-icon-arrow__left);
-        @include lib-css(right, $indent__s);
+        margin-top: $checkout-tooltip-icon-arrow__left;
+        right: $indent__s;
         left: auto;
         top: 0;
     }
 
     &:before {
-        @include lib-css(border-bottom-color, $checkout-tooltip-content__border-color);
+        border-bottom-color: $checkout-tooltip-content__border-color;
     }
 
     &:after {
-        @include lib-css(border-bottom-color, $checkout-tooltip-content__background-color);
+        border-bottom-color: $checkout-tooltip-content__background-color;
         top: 1px;
     }
 }
@@ -1140,14 +1140,14 @@
 //  ---------------------------------------------
 
 .abs-checkout-title {
-    @include lib-css(border-bottom, $checkout-step-title__border);
-    @include lib-css(padding-bottom, $checkout-step-title__padding);
+    border-bottom: $checkout-step-title__border;
+    padding-bottom: $checkout-step-title__padding;
     @include lib-typography(
         $_font-size   : $checkout-step-title__font-size,
         $_font-weight : $checkout-step-title__font-weight,
-        $_font-family : false,
-        $_font-style  : false,
-        $_line-height : false
+        $_font-family : null,
+        $_font-style  : null,
+        $_line-height : null
     );
 }
 
@@ -1199,8 +1199,8 @@
         &-summary {
             .mark,
             .amount {
-                @include lib-css(border-top, $border-width__base solid $border-color__base);
-                @include lib-css(border-bottom, $border-width__base solid $border-color__base);
+                border-top: $border-width__base solid $border-color__base;
+                border-bottom: $border-width__base solid $border-color__base;
                 cursor: pointer;
             }
 
@@ -1239,7 +1239,7 @@
 
         &-details {
             display: none;
-            @include lib-css(border-bottom, $border-width__base solid $border-color__base);
+            border-bottom: $border-width__base solid $border-color__base;
 
             &.shown {
                 display: table-row;

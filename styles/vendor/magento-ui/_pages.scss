@@ -124,8 +124,8 @@
             $_pager-item-display
         );
         @include lib-list-reset-styles();
-        @include lib-css(display, $_pager-item-display);
-        @include lib-css(font-weight, $_pager-font-weight);
+        display: $_pager-item-display;
+        font-weight: $_pager-font-weight;
     }
 
     .item {
@@ -135,8 +135,8 @@
             $_pager-font-size,
             $_pager-line-height
         );
-        @include lib-css(margin, $_pager-item-margin);
-        @include lib-css(display, $_pager-item-display);
+        margin: $_pager-item-margin;
+        display: $_pager-item-display;
 
         .label {
             @include lib-visually-hidden();
@@ -144,127 +144,127 @@
     }
 
     a.page {
-        @include lib-css(background, $_pager-background);
+        background: $_pager-background;
         @include lib-background-gradient(
             $_pager-gradient-color-start,
             $_pager-gradient-color-end,
             $_pager-gradient-direction,
             $_pager-gradient
         );
-        @include lib-css(border, $_pager-border);
-        @include lib-css(color, $_pager-color);
-        @include lib-css(display, $_pager-item-display);
-        @include lib-css(padding, $_pager-item-padding);
-        @include lib-css(text-decoration, $_pager-text-decoration);
+        border: $_pager-border;
+        color: $_pager-color;
+        display: $_pager-item-display;
+        padding: $_pager-item-padding;
+        text-decoration: $_pager-text-decoration;
 
         &:visited {
-            @include lib-css(background, $_pager-background-visited);
+            background: $_pager-background-visited;
             @include lib-background-gradient(
                 $_pager-gradient-color-start-visited,
                 $_pager-gradient-color-end-visited,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            @include lib-css(border, $_pager-border-visited);
-            @include lib-css(color, $_pager-color-visited);
+            border: $_pager-border-visited;
+            color: $_pager-color-visited;
         }
 
         &:hover {
-            @include lib-css(background, $_pager-background-hover);
+            background: $_pager-background-hover;
             @include lib-background-gradient(
                 $_pager-gradient-color-start-hover,
                 $_pager-gradient-color-end-hover,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            @include lib-css(border, $_pager-border-hover);
-            @include lib-css(color, $_pager-color-hover);
-            @include lib-css(text-decoration, $_pager-text-decoration-hover);
+            border: $_pager-border-hover;
+            color: $_pager-color-hover;
+            text-decoration: $_pager-text-decoration-hover;
         }
 
         &:active {
-            @include lib-css(background, $_pager-background-active);
+            background: $_pager-background-active;
             @include lib-background-gradient(
                 $_pager-gradient-color-start-active,
                 $_pager-gradient-color-end-active,
                 $_pager-gradient-direction,
                 $_pager-gradient
             );
-            @include lib-css(border, $_pager-border-active);
-            @include lib-css(color, $_pager-color-active);
+            border: $_pager-border-active;
+            color: $_pager-color-active;
         }
     }
 
     strong.page {
-        @include lib-css(background, $_pager-current-background);
+        background: $_pager-current-background;
         @include lib-background-gradient(
             $_pager-current-gradient-color-start,
             $_pager-current-gradient-color-end,
             $_pager-current-gradient-direction,
             $_pager-current-gradient
         );
-        @include lib-css(border, $_pager-current-border);
+        border: $_pager-current-border;
         @include _lib-pager-inline-block-spaces-item(
             $_pager-reset-spaces,
             $_pager-item-display,
             $_pager-font-size,
             $_pager-line-height
         );
-        @include lib-css(color, $_pager-current-color);
-        @include lib-css(display, $_pager-item-display);
-        @include lib-css(font-weight, $_pager-current-font-weight);
-        @include lib-css(padding, $_pager-item-padding);
+        color: $_pager-current-color;
+        display: $_pager-item-display;
+        font-weight: $_pager-current-font-weight;
+        padding: $_pager-item-padding;
     }
 
     .action {
-        @include lib-css(background, $_pager-action-background);
+        background: $_pager-action-background;
         @include lib-background-gradient(
             $_pager-action-gradient-color-start,
             $_pager-action-gradient-color-end,
             $_pager-gradient-direction,
             $_pager-action-gradient
         );
-        @include lib-css(border, $_pager-action-border);
-        @include lib-css(color, $_pager-action-color);
-        @include lib-css(display, $_pager-item-display);
-        @include lib-css(padding, $_pager-actions-padding);
-        @include lib-css(text-decoration, $_pager-action-text-decoration);
+        border: $_pager-action-border;
+        color: $_pager-action-color;
+        display: $_pager-item-display;
+        padding: $_pager-actions-padding;
+        text-decoration: $_pager-action-text-decoration;
 
         &:visited {
-            @include lib-css(background, $_pager-action-background-visited);
+            background: $_pager-action-background-visited;
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-visited,
                 $_pager-action-gradient-color-end-visited,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            @include lib-css(border, $_pager-action-border-visited);
-            @include lib-css(color, $_pager-action-color-visited);
+            border: $_pager-action-border-visited;
+            color: $_pager-action-color-visited;
         }
 
         &:hover {
-            @include lib-css(background, $_pager-action-background-hover);
+            background: $_pager-action-background-hover;
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-hover,
                 $_pager-action-gradient-color-end-hover,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            @include lib-css(border, $_pager-action-border-hover);
-            @include lib-css(color, $_pager-action-color-hover);
-            @include lib-css(text-decoration, $_pager-action-text-decoration-hover);
+            border: $_pager-action-border-hover;
+            color: $_pager-action-color-hover;
+            text-decoration: $_pager-action-text-decoration-hover;
         }
 
         &:active {
-            @include lib-css(background, $_pager-action-background-active);
+            background: $_pager-action-background-active;
             @include lib-background-gradient(
                 $_pager-action-gradient-color-start-active,
                 $_pager-action-gradient-color-end-active,
                 $_pager-action-gradient-direction,
                 $_pager-action-gradient
             );
-            @include lib-css(border, $_pager-action-border-active);
-            @include lib-css(color, $_pager-action-color-active);
+            border: $_pager-action-border-active;
+            color: $_pager-action-color-active;
         }
 
         &.next {
@@ -337,15 +337,15 @@
     $_pager-font-weight,
     $_pager-line-height
 ) {
-    @if $_pager-label-display == none or $_pager-label-display == false {
+    @if not $_pager-label-display or $_pager-label-display == none {
         > .label {
             @include lib-visually-hidden();
         }
     }
     @else {
         > .label {
-            @include lib-css(display, $_pager-label-display);
-            @include lib-css(font-weight, $_pager-font-weight);
+            display: $_pager-label-display;
+            font-weight: $_pager-font-weight;
             @include lib-inline-block-space-item(
                 $_font-size   : $_pager-font-size,
                 $_line-height : $_pager-line-height
@@ -378,13 +378,13 @@
         @if $_icon-font-position == before {
             &:visited {
                 &:before {
-                    @include lib-css(color, $_icon-font-color-visited);
+                    color: $_icon-font-color-visited;
                 }
             }
 
             &:active {
                 &:before {
-                    @include lib-css(color, $_icon-font-color-active);
+                    color: $_icon-font-color-active;
                 }
             }
 
@@ -419,11 +419,11 @@
             );
 
             &:visited:after {
-                @include lib-css(color, $_icon-font-color-visited);
+                color: $_icon-font-color-visited;
             }
 
             &:active:after {
-                @include lib-css(color, $_icon-font-color-active);
+                color: $_icon-font-color-active;
             }
         }
     }

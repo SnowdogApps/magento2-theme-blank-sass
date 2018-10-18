@@ -1,0 +1,33 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Variables
+//  _____________________________________________
+
+$baseDir: "../"; // Base directory path
+
+@import 'variables/_colors';
+@import 'variables/_typography';
+@import 'variables/_tables';
+@import 'variables/_layout';
+@import 'variables/_responsive';
+@import 'variables/_navigation';
+@import 'variables/_sections';
+@import 'variables/_icons'; // moved while converting from less
+@import 'variables/_buttons';
+@import 'variables/_messages';
+@import 'variables/_tooltips';
+@import 'variables/_loaders';
+@import 'variables/_forms';
+@import 'variables/_pages';
+@import 'variables/_rating';
+@import 'variables/_dropdowns';
+@import 'variables/_actions-toolbar';
+@import 'variables/_breadcrumbs';
+@import 'variables/_popups';
+@import 'variables/_structure';
+@import 'variables/_components';
+
