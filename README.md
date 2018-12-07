@@ -10,6 +10,7 @@ SASS based version of Magento 2 Blank theme, which aims to be as close to the co
 4. Compile SASS files using [Frontools](https://github.com/SnowdogApps/magento2-frontools) or tools of choice
 
 ## Compatibility
+* Magento 2.3: v1.2.0 or later
 * Magento 2.2: v1.0.0 or later
 * Magento 2.1: v0.11.0 or older
 * Magento 2.0: v0.6.0 or older
