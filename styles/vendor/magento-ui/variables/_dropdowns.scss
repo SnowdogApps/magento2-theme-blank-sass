@@ -6,16 +6,16 @@
 //  Variables simple dropdown
 //  ---------------------------------------------
 
-$dropdown-actions__padding                        : false !default;
+$dropdown-actions__padding                        : null !default;
 
 $dropdown-list__min-width                         : 100% !default;
-$dropdown-list__width                             : false !default;
-$dropdown-list__height                            : false !default;
+$dropdown-list__width                             : null !default;
+$dropdown-list__height                            : null !default;
 $dropdown-list__margin-top                        : 4px !default;
 $dropdown-list__position-top                      : 100% !default;
-$dropdown-list__position-right                    : false !default;
-$dropdown-list__position-bottom                   : false !default;
-$dropdown-list__position-left                     : false !default;
+$dropdown-list__position-right                    : null !default;
+$dropdown-list__position-bottom                   : null !default;
+$dropdown-list__position-left                     : null !default;
 $dropdown-list__pointer                           : true !default; // [true|false]
 $dropdown-list__background                        : $color-white !default;
 $dropdown-list__border                            : 1px solid $color-gray-light2 !default;
@@ -52,7 +52,7 @@ $dropdown-toggle-icon__active__content            : $icon-pointer-up !default;
 
 $dropdown-split-actions__padding                  : 0 $indent__xs !default;
 $dropdown-split-toggle__actions__padding          : 4px $indent__xs !default;
-$dropdown-split-button__actions__padding          : false !default;
+$dropdown-split-button__actions__padding          : null !default;
 $dropdown-split-toggle__position                  : right !default;
 
 $dropdown-split-list__min-width                   : $dropdown-list__min-width !default;
@@ -75,7 +75,7 @@ $dropdown-split-list__item-padding                : $dropdown-list-item__padding
 $dropdown-split-list__item-margin                 : $dropdown-list-item__margin !default;
 $dropdown-split-list__item-hover                  : $dropdown-list-item__hover !default;
 
-$dropdown-split-button__border-radius-fix         : false !default;
+$dropdown-split-button__border-radius-fix         : null !default;
 $dropdown-split-list__shadow                      : $dropdown-list__shadow !default; // [''|none|value]
 $dropdown-split-list__z-index                     : $dropdown-list__z-index !default;
 

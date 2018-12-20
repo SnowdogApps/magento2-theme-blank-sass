@@ -18,15 +18,15 @@ $popup__position-right                                     : 0 !default;
 $popup__position-bottom                                    : 0 !default;
 $popup__position-left                                      : 0 !default;
 
-$popup__margin-top                                         : false !default;
-$popup__margin-right                                       : false !default;
-$popup__margin-bottom                                      : false !default;
-$popup__margin-left                                        : false !default;
+$popup__margin-top                                         : null !default;
+$popup__margin-right                                       : null !default;
+$popup__margin-bottom                                      : null !default;
+$popup__margin-left                                        : null !default;
 
 $popup-content__height                                     : auto !default;
-$popup-content__margin                                     : false !default;
+$popup-content__margin                                     : null !default;
 $popup-header__margin                                      : 0 0 25px !default;
-$popup-footer__margin                                      : false !default;
+$popup-footer__margin                                      : null !default;
 
 $popup-title-headings                                      : true !default; // [true|false]
 $popup-title-headings__level                               : h3 !default; // [h1|h2|h3|h4|h5|h6]
@@ -36,11 +36,11 @@ $popup-button-close__reset                                 : true !default; // [
 $popup-button-close__position                              : absolute !default;
 $popup-button-close__position-top                          : $indent__s !default;
 $popup-button-close__position-right                        : $indent__s !default;
-$popup-button-close__position-bottom                       : false !default;
-$popup-button-close__position-left                         : false !default;
+$popup-button-close__position-bottom                       : null !default;
+$popup-button-close__position-left                         : null !default;
 
 //  Actions toolbar variables
-$popup-actions-toolbar                                     : false !default; // [true|false]
+$popup-actions-toolbar                                     : null !default; // [true|false]
 $popup-actions-toolbar__margin                             : $actions-toolbar__margin !default;
 $popup-actions-toolbar__padding                            : $actions-toolbar__padding !default;
 

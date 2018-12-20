@@ -102,8 +102,8 @@ $focus__box-shadow              : 0 0 3px 1px $focus__color !default;
 //  Lists
 //  ---------------------------------------------
 
-$list__color__base              : false !default;
-$list__font-size__base          : false !default;
+$list__color__base              : null !default;
+$list__font-size__base          : null !default;
 $list__margin-top               : 0 !default;
 $list__margin-bottom            : $indent__m !default;
 
@@ -131,11 +131,11 @@ $p__margin-bottom               : $indent__s !default;
 //  Headings
 //  ---------------------------------------------
 
-$heading__font-family__base     : false !default;
+$heading__font-family__base     : null !default;
 $heading__font-weight__base     : $font-weight__light !default;
 $heading__line-height__base     : 1.1 !default;
-$heading__color__base           : false !default;
-$heading__font-style__base      : false !default;
+$heading__color__base           : null !default;
+$heading__font-style__base      : null !default;
 $heading__margin-top__base      : $indent__base !default;
 $heading__margin-bottom__base   : $indent__base !default;
 
@@ -237,4 +237,4 @@ $mark__background-color         : $panel__background-color !default;
 $abbr__border-color             : $border-color__base !default;
 
 //  Disable filters output in css
-$disable-filters                : false !default;
+$disable-filters                : null !default;

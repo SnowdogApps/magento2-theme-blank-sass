@@ -18,46 +18,46 @@ $pager-actions__padding                      : 0 !default;
 //  Pager current page
 $pager-current__font-weight                  : $font-weight__bold !default;
 $pager-current__color                        : $primary__color !default;
-$pager-current__border                       : false !default;
-$pager-current__background                   : false !default;
-$pager-current__gradient                     : false !default;
-$pager-current__gradient-direction           : false !default;
-$pager-current__gradient-color-start         : false !default;
-$pager-current__gradient-color-end           : false !default;
+$pager-current__border                       : null !default;
+$pager-current__background                   : null !default;
+$pager-current__gradient                     : null !default;
+$pager-current__gradient-direction           : null !default;
+$pager-current__gradient-color-start         : null !default;
+$pager-current__gradient-color-end           : null !default;
 
 //  Pager link page
-$pager__gradient                             : false !default;
-$pager__gradient-direction                   : false !default;
+$pager__gradient                             : null !default;
+$pager__gradient-direction                   : null !default;
 
 //  Pager link default
 $pager__color                                : $link__color !default;
-$pager__border                               : false !default;
+$pager__border                               : null !default;
 $pager__text-decoration                      : none !default;
-$pager__background                           : false !default;
-$pager__gradient-color-start                 : false !default;
-$pager__gradient-color-end                   : false !default;
+$pager__background                           : null !default;
+$pager__gradient-color-start                 : null !default;
+$pager__gradient-color-end                   : null !default;
 
 //  Pager link visited
 $pager__visited__color                       : $link__visited__color !default;
-$pager__visited__border                      : false !default;
-$pager__visited__background                  : false !default;
-$pager__visited__gradient-color-start        : false !default;
-$pager__visited__gradient-color-end          : false !default;
+$pager__visited__border                      : null !default;
+$pager__visited__background                  : null !default;
+$pager__visited__gradient-color-start        : null !default;
+$pager__visited__gradient-color-end          : null !default;
 
 //  Pager link hover
 $pager__hover__color                         : $link__hover__color !default;
-$pager__hover__border                        : false !default;
+$pager__hover__border                        : null !default;
 $pager__hover__text-decoration               : none !default;
-$pager__hover__background                    : false !default;
-$pager__hover__gradient-color-start          : false !default;
-$pager__hover__gradient-color-end            : false !default;
+$pager__hover__background                    : null !default;
+$pager__hover__gradient-color-start          : null !default;
+$pager__hover__gradient-color-end            : null !default;
 
 //  Pager link active
 $pager__active__color                        : $link__active__color !default;
-$pager__active__border                       : false !default;
-$pager__active__background                   : false !default;
-$pager__active__gradient-color-start         : false !default;
-$pager__active__gradient-color-end           : false !default;
+$pager__active__border                       : null !default;
+$pager__active__background                   : null !default;
+$pager__active__gradient-color-start         : null !default;
+$pager__active__gradient-color-end           : null !default;
 
 //  Pager link.action
 $pager-icon__use                             : true !default;
@@ -80,27 +80,27 @@ $pager-action__color                         : $text__color__muted !default;
 $pager-action__border                        : $border-width__base solid $border-color__base !default;
 $pager-action__text-decoration               : $pager__text-decoration !default;
 $pager-action__background                    : $pager__background !default;
-$pager-action__gradient-color-start          : false !default;
-$pager-action__gradient-color-end            : false !default;
+$pager-action__gradient-color-start          : null !default;
+$pager-action__gradient-color-end            : null !default;
 
 //  Pager link.action visited
 $pager-action__visited__color                : $pager-action__color !default;
-$pager-action__visited__border               : false !default;
-$pager-action__visited__background           : false !default;
-$pager-action__visited__gradient-color-start : false !default;
-$pager-action__visited__gradient-color-end   : false !default;
+$pager-action__visited__border               : null !default;
+$pager-action__visited__background           : null !default;
+$pager-action__visited__gradient-color-start : null !default;
+$pager-action__visited__gradient-color-end   : null !default;
 
 //  Pager link.action hover
 $pager-action__hover__color                  : $pager-action__color !default;
-$pager-action__hover__border                 : false !default;
-$pager-action__hover__background             : false !default;
+$pager-action__hover__border                 : null !default;
+$pager-action__hover__background             : null !default;
 $pager-action__hover__text-decoration        : $pager__hover__text-decoration !default;
-$pager-action__hover__gradient-color-start   : false !default;
-$pager-action__hover__gradient-color-end     : false !default;
+$pager-action__hover__gradient-color-start   : null !default;
+$pager-action__hover__gradient-color-end     : null !default;
 
 //  Pager link.action active
 $pager-action__active__color                 : $pager-action__color !default;
-$pager-action__active__border                : false !default;
-$pager-action__active__background            : false !default;
-$pager-action__active__gradient-color-start  : false !default;
-$pager-action__active__gradient-color-end    : false !default;
+$pager-action__active__border                : null !default;
+$pager-action__active__background            : null !default;
+$pager-action__active__gradient-color-start  : null !default;
+$pager-action__active__gradient-color-end    : null !default;

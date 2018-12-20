@@ -3,10 +3,10 @@
 //  _____________________________________________
 
 $icon__position            : before !default;
-$icon__text-hide           : false !default;
+$icon__text-hide           : null !default;
 $icon__height              : 26px !default;
 $icon__width               : 26px !default;
-$icon__margin              : '' !default;
+$icon__margin              : null !default;
 $icon__vertical-align      : middle !default;
 
 $icon-image__position-x    : 0 !default;
@@ -23,8 +23,8 @@ $icon-font__margin         : $icon__margin !default;
 $icon-font__size           : inherit !default;
 $icon-font__line-height    : $icon-font__size !default;
 $icon-font__color          : inherit !default;
-$icon-font__color-hover    : false !default;
-$icon-font__color-active   : false !default;
+$icon-font__color-hover    : null !default;
+$icon-font__color-active   : null !default;
 $icon-font__vertical-align : $icon__vertical-align !default;
 $icon-font__display        : inline-block !default;
 
