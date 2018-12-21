@@ -75,11 +75,11 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
         @include lib-typography(
             $_color       : $checkout-progress-bar-item__background-color,
-            $_font-family : false,
+            $_font-family : null,
             $_font-size   : $checkout-progress-bar__font-size,
-            $_font-style  : false,
+            $_font-style  : null,
             $_font-weight : $checkout-progress-bar__font-weight,
-            $_line-height : false
+            $_line-height : null
         );
 
         &:before, // Item element
@@ -105,11 +105,11 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
             counter-increment: i;
             @include lib-typography(
                 $_color       : $checkout-progress-bar-item-element-inner__color,
-                $_font-family : false,
+                $_font-family : null,
                 $_font-size   : $checkout-progress-bar__font-size,
-                $_font-style  : false,
+                $_font-style  : null,
                 $_font-weight : $font-weight__semibold,
-                $_line-height : false
+                $_line-height : null
             );
         }
     }

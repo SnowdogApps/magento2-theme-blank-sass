@@ -13,7 +13,7 @@ $desktop-popup-position-top  : 20% !default;
             $_dropdown-split-list-item-padding          : 5px 5px 5px 23px,
             $_dropdown-split-toggle-icon-content        : $icon-down,
             $_dropdown-split-toggle-active-icon-content : $icon-up,
-            $_dropdown-split-toggle-actions-padding     : false,
+            $_dropdown-split-toggle-actions-padding     : null,
             $_icon-font-size                            : 22px,
             $_icon-font-color                           : $addto-color,
             $_icon-font-color-hover                     : $addto-hover-color,

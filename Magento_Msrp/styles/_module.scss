@@ -7,10 +7,10 @@
 .map-popup {
     @include lib-popup(
         $_popup-margin-top      : $indent__s,
-        $_popup-margin-left     : false,
+        $_popup-margin-left     : null,
         $_popup-content-margin  : $indent__s 0 0,
-        $_popup-position-bottom : false,
-        $_popup-position-right  : false,
+        $_popup-position-bottom : null,
+        $_popup-position-right  : null,
         $_popup-position        : absolute
     );
     box-sizing: border-box;
