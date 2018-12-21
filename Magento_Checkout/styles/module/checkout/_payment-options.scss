@@ -165,10 +165,10 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
 @include max-screen($screen__m) {
     .checkout-payment-method {
         .payment-option {
-            margin: 0 -($checkout-payment-option-title-mobile__padding);
+            margin: 0 (-$checkout-payment-option-title-mobile__padding);
 
             .payment-option-title {
-                padding: $checkout-payment-option-title-mobile__padding
+                padding: $checkout-payment-option-title-mobile__padding;
             }
 
             .payment-option-content {

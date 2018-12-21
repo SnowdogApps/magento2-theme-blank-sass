@@ -152,11 +152,11 @@ $checkout-billing-address-form__max-width      : $checkout-shipping-address__max
 @include max-screen($screen__m) {
     .checkout-payment-method {
         .payment-methods {
-            margin: 0 -($checkout-payment-method-title-mobile__padding);
+            margin: 0 (-$checkout-payment-method-title-mobile__padding);
         }
 
         .payment-method-title {
-            padding: $checkout-payment-method-title-mobile__padding
+            padding: $checkout-payment-method-title-mobile__padding;
         }
 
         .payment-method-content {

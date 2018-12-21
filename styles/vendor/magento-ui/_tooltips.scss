@@ -147,7 +147,7 @@
         &:after {
             border-left-color: $_tooltip-background;
             margin-top: $_tooltip-arrow-after-margin;
-            top: $_tooltip-arrow-offset + $_tooltip-arrow-size
+            top: $_tooltip-arrow-offset + $_tooltip-arrow-size;
         }
 
         &:before {

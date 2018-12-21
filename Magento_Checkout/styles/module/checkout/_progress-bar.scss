@@ -47,7 +47,7 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
     &:before { // Horizontal line
         background: $checkout-progress-bar-item__background-color;
-        top: $checkout-progress-bar-item-element__width/2;
+        top: $checkout-progress-bar-item-element__width / 2;
         content: '';
         height: 7px;
         left: 0;
@@ -86,7 +86,7 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
         &:after {
             background: $checkout-progress-bar-item__background-color;
             height: $checkout-progress-bar-item-element__height;
-            margin-left: -($checkout-progress-bar-item-element__width/2);
+            margin-left: -($checkout-progress-bar-item-element__width / 2);
             width: $checkout-progress-bar-item-element__width;
             border-radius: 50%;
             content: '';
@@ -98,7 +98,7 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
         &:after { // Item element inner
             background: $checkout-progress-bar-item-element-inner__background-color;
             height: $checkout-progress-bar-item-element-inner__height;
-            margin-left: -($checkout-progress-bar-item-element-inner__width/2);
+            margin-left: -($checkout-progress-bar-item-element-inner__width / 2);
             top: $checkout-progress-bar-item-element-outer-radius__width;
             width: $checkout-progress-bar-item-element-inner__width;
             content: counter(i);

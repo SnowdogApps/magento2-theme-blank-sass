@@ -108,7 +108,7 @@ $checkout-summary-items__padding    : 15px !default;
 
     //  Cart items
     .minicart-items-wrapper {
-        margin: 0 -($checkout-summary-items__padding) 0 0;
+        margin: 0 (-$checkout-summary-items__padding) 0 0;
         max-height: $checkout-summary-items__max-height;
         padding: $checkout-summary-items__padding $checkout-summary-items__padding 0 0;
         border: 0;

@@ -39,7 +39,7 @@ $checkout-modal-popup__width: 800px !default;
     .checkout-index-index {
         .modal-popup {
             .modal-inner-wrap {
-                margin-left: -($checkout-modal-popup__width/2);
+                margin-left: -($checkout-modal-popup__width / 2);
                 width: $checkout-modal-popup__width;
                 left: 50%;
             }
