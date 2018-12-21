@@ -20,7 +20,7 @@ $message-global-caution-link__color-hover  : $link__hover__color !default;
 $message-global-caution-link__color-active : $link__active__color !default;
 
 //  Header
-$header__background-color                  : false !default;
+$header__background-color                  : null !default;
 $header-icons-color                        : $color-gray56 !default;
 $header-icons-color-hover                  : $color-gray20 !default;
 
@@ -35,7 +35,7 @@ $button__shadow                            : inset 0 2px 1px rgba(0, 0, 0, 0.12)
 $h1__margin-bottom__desktop                : $indent__xl !default;
 
 //  Footer
-$footer__background-color                  : false !default;
+$footer__background-color                  : null !default;
 
 
 body {
