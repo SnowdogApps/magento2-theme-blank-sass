@@ -58,7 +58,7 @@
     }
 
     .count {
-        @include lib-css(color, $text__color__muted);
+        color: $text__color__muted;
 
         &:before {
             content: '(';

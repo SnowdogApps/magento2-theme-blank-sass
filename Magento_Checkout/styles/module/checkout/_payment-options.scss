@@ -39,11 +39,11 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
     }
 
     .payment-option-title {
-        @include lib-css(border-top, $checkout-payment-option-title__border);
-        @include lib-css(padding, $checkout-payment-option-title__padding 0);
+        border-top: $checkout-payment-option-title__border;
+        padding: $checkout-payment-option-title__padding 0;
 
         .action-toggle {
-            @include lib-css(color, $checkout-payment-option-title__color);
+            color: $checkout-payment-option-title__color;
             @include lib-icon-font(
                 $icon-down,
                 $_icon-font-size         : $checkout-payment-option-title-icon__font-size,
@@ -58,7 +58,7 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
     }
 
     .payment-option-content {
-        @include lib-css(padding, 0 0 $indent__base $checkout-payment-option-content__padding__xl);
+        padding: 0 0 $indent__base $checkout-payment-option-content__padding__xl;
     }
 
     .payment-option-inner {
@@ -165,14 +165,14 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
 @include max-screen($screen__m) {
     .checkout-payment-method {
         .payment-option {
-            @include lib-css(margin, 0 -($checkout-payment-option-title-mobile__padding));
+            margin: 0 -($checkout-payment-option-title-mobile__padding);
 
             .payment-option-title {
-                @include lib-css(padding, $checkout-payment-option-title-mobile__padding)
+                padding: $checkout-payment-option-title-mobile__padding
             }
 
             .payment-option-content {
-                @include lib-css(padding, 0 $checkout-payment-option-title-mobile__padding $indent__base);
+                padding: 0 $checkout-payment-option-title-mobile__padding $indent__base;
             }
         }
     }
@@ -185,7 +185,7 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
 @include min-screen($screen__m) {
     .checkout-payment-method {
         .payment-option-title {
-            @include lib-css(padding-left, $checkout-payment-option-content__padding__xl);
+            padding-left: $checkout-payment-option-content__padding__xl;
         }
         .payment-option-content {
             .payment-option-inner {

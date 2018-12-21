@@ -12,7 +12,7 @@ $active-nav-indent: 54px !default;
 }
 
 .nav-sections {
-    @include lib-css(background, $navigation__background);
+    background: $navigation__background;
 }
 
 .nav-toggle {
@@ -68,7 +68,7 @@ $active-nav-indent: 54px !default;
 
     .nav-sections {
         -webkit-overflow-scrolling: touch;
-        @include lib-css(transition, left 0.3s, 1);
+        transition: left 0.3s;
         height: 100%;
         left: -80%;
         left: calc(-1 * (100% - #{$active-nav-indent}));
@@ -146,8 +146,8 @@ $active-nav-indent: 54px !default;
 
             a,
             a:hover {
-                @include lib-css(color, $navigation-level0-item__color);
-                @include lib-css(text-decoration, $navigation-level0-item__text-decoration);
+                color: $navigation-level0-item__color;
+                text-decoration: $navigation-level0-item__text-decoration;
                 display: block;
                 font-weight: 700;
                 padding: 0.8rem $indent__base;
@@ -165,7 +165,7 @@ $active-nav-indent: 54px !default;
         width: 100%;
 
         .page-wrapper {
-            @include lib-css(transition, left 0.3s, 1);
+            transition: left 0.3s;
             height: 100%;
             left: 0;
             overflow: hidden;
@@ -189,7 +189,7 @@ $active-nav-indent: 54px !default;
         .nav-sections {
             $_shadow: 0 0 5px 0 rgba(50, 50, 50, 0.75);
 
-            @include lib-css(box-shadow, $_shadow, 1);
+            box-shadow: $_shadow;
             left: 0;
             z-index: 99;
         }

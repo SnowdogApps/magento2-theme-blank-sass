@@ -17,7 +17,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 
 .gift-wrapping {
     .label {
-        @include lib-css(margin, $form-field-type-label-block__margin);
+        margin: $form-field-type-label-block__margin;
         display: inline-block;
     }
 
@@ -27,7 +27,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 }
 
 .gift-wrapping-info {
-    @include lib-css(font-weight, $font-weight__light);
+    font-weight: $font-weight__light;
     font-size: $font-size__l;
     margin: $indent__base 0;
 }
@@ -39,7 +39,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
     padding: 0;
 
     .no-image {
-        @include lib-css(background, $gift-wrapping-no-image__background);
+        background: $gift-wrapping-no-image__background;
         @include lib-icon-font(
             $icon-present,
             $_icon-font-size           : $gift-wrapping-no-image-icon__font-size,
@@ -76,7 +76,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
     &._active {
         span {
             &:before {
-                @include lib-css(border, $gift-wrapping-preview__active__border-width solid $gift-wrapping-preview__active__border-color);
+                border: $gift-wrapping-preview__active__border-width solid $gift-wrapping-preview__active__border-color;
                 box-sizing: border-box;
                 content: '';
                 display: block;
@@ -195,7 +195,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 
 @include max-screen($screen__m) {
     .gift-wrapping {
-        @include lib-css(border-bottom, $gift-wrapping__border-width solid $gift-wrapping__border-color);
+        border-bottom: $gift-wrapping__border-width solid $gift-wrapping__border-color;
         margin-bottom: $indent__base;
         padding-bottom: $indent__s;
     }
@@ -250,7 +250,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
             width: 50%;
 
             & + .gift-message {
-                @include lib-css(border-left, $gift-wrapping__border-width solid $gift-wrapping__border-color);
+                border-left: $gift-wrapping__border-width solid $gift-wrapping__border-color;
                 box-sizing: border-box;
                 float: left;
                 padding-left: 4.5rem;

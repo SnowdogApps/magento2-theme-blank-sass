@@ -66,7 +66,7 @@
             white-space: nowrap;
 
             .item {
-                @include lib-css(background, $catalog-event-background-color);
+                background: $catalog-event-background-color;
                 display: inline-block;
                 text-align: center;
                 vertical-align: top;

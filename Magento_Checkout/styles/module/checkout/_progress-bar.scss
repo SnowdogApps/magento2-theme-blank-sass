@@ -32,13 +32,13 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
 .opc-progress-bar {
     @extend .abs-reset-list;
-    @include lib-css(margin, 0 0 $checkout-progress-bar__margin);
+    margin: 0 0 $checkout-progress-bar__margin;
     counter-reset: i;
     font-size: 0;
 }
 
 .opc-progress-bar-item {
-    @include lib-css(margin, 0 0 $checkout-progress-bar-item__margin);
+    margin: 0 0 $checkout-progress-bar-item__margin;
     display: inline-block;
     position: relative;
     text-align: center;
@@ -46,8 +46,8 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
     width: 50%;
 
     &:before { // Horizontal line
-        @include lib-css(background, $checkout-progress-bar-item__background-color);
-        @include lib-css(top, $checkout-progress-bar-item-element__width/2);
+        background: $checkout-progress-bar-item__background-color;
+        top: $checkout-progress-bar-item-element__width/2;
         content: '';
         height: 7px;
         left: 0;
@@ -57,13 +57,13 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
     &:first-child {
         &:before {
-            @include lib-css(border-radius, $checkout-progress-bar-item__border-radius 0 0 $checkout-progress-bar-item__border-radius);
+            border-radius: $checkout-progress-bar-item__border-radius 0 0 $checkout-progress-bar-item__border-radius;
         }
     }
 
     &:last-child {
         &:before {
-            @include lib-css(border-radius, 0 $checkout-progress-bar-item__border-radius $checkout-progress-bar-item__border-radius 0);
+            border-radius: 0 $checkout-progress-bar-item__border-radius $checkout-progress-bar-item__border-radius 0;
         }
     }
 
@@ -84,10 +84,10 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
         &:before, // Item element
         &:after {
-            @include lib-css(background, $checkout-progress-bar-item__background-color);
-            @include lib-css(height, $checkout-progress-bar-item-element__height);
-            @include lib-css(margin-left, -($checkout-progress-bar-item-element__width/2));
-            @include lib-css(width, $checkout-progress-bar-item-element__width);
+            background: $checkout-progress-bar-item__background-color;
+            height: $checkout-progress-bar-item-element__height;
+            margin-left: -($checkout-progress-bar-item-element__width/2);
+            width: $checkout-progress-bar-item-element__width;
             border-radius: 50%;
             content: '';
             left: 50%;
@@ -96,11 +96,11 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
         }
 
         &:after { // Item element inner
-            @include lib-css(background, $checkout-progress-bar-item-element-inner__background-color);
-            @include lib-css(height, $checkout-progress-bar-item-element-inner__height);
-            @include lib-css(margin-left, -($checkout-progress-bar-item-element-inner__width/2));
-            @include lib-css(top, $checkout-progress-bar-item-element-outer-radius__width);
-            @include lib-css(width, $checkout-progress-bar-item-element-inner__width);
+            background: $checkout-progress-bar-item-element-inner__background-color;
+            height: $checkout-progress-bar-item-element-inner__height;
+            margin-left: -($checkout-progress-bar-item-element-inner__width/2);
+            top: $checkout-progress-bar-item-element-outer-radius__width;
+            width: $checkout-progress-bar-item-element-inner__width;
             content: counter(i);
             counter-increment: i;
             @include lib-typography(
@@ -120,16 +120,16 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
         }
 
         > span {
-            @include lib-css(color, $checkout-progress-bar-item__color);
+            color: $checkout-progress-bar-item__color;
 
             &:before {
-                @include lib-css(background, $checkout-progress-bar-item__active__background-color);
+                background: $checkout-progress-bar-item__active__background-color;
             }
 
             &:after {
-                @include lib-css(content, $checkout-progress-bar-item-element-inner__active__content);
-                @include lib-css(font-family, $icons__font-name);
-                @include lib-css(line-height, $checkout-progress-bar-item-element-inner__active__line-height);
+                content: $checkout-progress-bar-item-element-inner__active__content;
+                font-family: $icons__font-name;
+                line-height: $checkout-progress-bar-item-element-inner__active__line-height;
                 @include lib-font-size($checkout-progress-bar-item-element-inner__active__font-size);
             }
         }
@@ -139,12 +139,12 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
         cursor: pointer;
 
         > span {
-            @include lib-css(color, $checkout-progress-bar-item__color);
+            color: $checkout-progress-bar-item__color;
 
             &:after {
-                @include lib-css(content, $checkout-progress-bar-item-element-inner__active__content);
-                @include lib-css(font-family, $icons__font-name);
-                @include lib-css(line-height, $checkout-progress-bar-item-element-inner__active__line-height);
+                content: $checkout-progress-bar-item-element-inner__active__content;
+                font-family: $icons__font-name;
+                line-height: $checkout-progress-bar-item-element-inner__active__line-height;
                 @include lib-font-size($checkout-progress-bar-item-element-inner__active__font-size);
             }
         }
@@ -157,6 +157,6 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 
 @include min-screen($screen__m) {
     .opc-progress-bar-item {
-        @include lib-css(width, $checkout-progress-bar-item__width);
+        width: $checkout-progress-bar-item__width;
     }
 }

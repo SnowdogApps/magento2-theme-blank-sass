@@ -27,7 +27,7 @@ $desktop-popup-position-top  : 20% !default;
             .item {
                 &:last-child {
                     &:hover {
-                        @include lib-css(background, $dropdown-list-item__hover);
+                        background: $dropdown-list-item__hover;
                     }
                 }
             }
@@ -47,7 +47,7 @@ $desktop-popup-position-top  : 20% !default;
                 &:active,
                 &:focus,
                 &:hover {
-                    @include lib-css(color, $addto-hover-color);
+                    color: $addto-hover-color;
                 }
             }
 
@@ -139,7 +139,7 @@ $desktop-popup-position-top  : 20% !default;
         }
 
         &-notice {
-            @include lib-css(color, $text__color__muted);
+            color: $text__color__muted;
             display: inline-block;
             margin-right: $indent__base;
         }
@@ -164,7 +164,7 @@ $desktop-popup-position-top  : 20% !default;
 
 .block-wishlist-search-form {
     .form-wishlist-search {
-        @include lib-css(margin-bottom, $indent__l*2);
+        margin-bottom: $indent__l*2;
         max-width: 500px;
 
         .fieldset {
@@ -195,7 +195,7 @@ $desktop-popup-position-top  : 20% !default;
 
 .block-wishlist-info-items {
     .block-title {
-        @include lib-css(margin-bottom, $indent__base);
+        margin-bottom: $indent__base;
         @include lib-font-size(22);
         > strong {
             font-weight: $font-weight__light;
@@ -264,7 +264,7 @@ $desktop-popup-position-top  : 20% !default;
 
                 &-items {
                     border-bottom: $border-width__base solid $border-color__base;
-                    @include lib-css(background, $account-nav-background);
+                    background: $account-nav-background;
                     display: none;
                     padding: 15px 0;
 
@@ -289,7 +289,7 @@ $desktop-popup-position-top  : 20% !default;
                             text-decoration: none;
 
                             &:hover {
-                                @include lib-css(background, $account-nav-item-hover);
+                                background: $account-nav-item-hover;
                             }
                         }
                     }
@@ -367,10 +367,10 @@ $desktop-popup-position-top  : 20% !default;
     .wishlist {
         &.window.popup {
             bottom: auto;
-            @include lib-css(top, $desktop-popup-position-top);
-            @include lib-css(left, $desktop-popup-position-left);
-            @include lib-css(margin-left, $desktop-popup-margin-left);
-            @include lib-css(width, $desktop-popup-width);
+            top: $desktop-popup-position-top;
+            left: $desktop-popup-position-left;
+            margin-left: $desktop-popup-margin-left;
+            width: $desktop-popup-width;
             right: auto;
 
             .field {

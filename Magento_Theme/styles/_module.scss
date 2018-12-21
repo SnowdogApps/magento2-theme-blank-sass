@@ -39,7 +39,7 @@ $footer__background-color                  : null !default;
 
 
 body {
-    @include lib-css(background-color, $page__background-color);
+    background-color: $page__background-color;
 }
 
 //
@@ -47,7 +47,7 @@ body {
 //  ---------------------------------------------
 
 .page-header {
-    @include lib-css(background-color, $header__background-color);
+    background-color: $header__background-color;
     border-bottom: 1px solid $border-color__base;
     margin-bottom: $indent__base;
 }
@@ -90,8 +90,8 @@ body {
     }
 
     &:focus {
-        @include lib-css(background, $color-gray94);
-        @include lib-css(padding, $indent__s);
+        background: $color-gray94;
+        padding: $indent__s;
         box-sizing: border-box;
         left: 0;
         position: absolute;
@@ -146,7 +146,7 @@ body {
 //  ---------------------------------------------
 
 .page-footer {
-    @include lib-css(background-color, $footer__background-color);
+    background-color: $footer__background-color;
     margin-top: auto;
 }
 
@@ -245,7 +245,7 @@ body {
 .page-header,
 .page-footer {
     .widget.block {
-        @include lib-css(margin, $indent__base 0);
+        margin: $indent__base 0;
     }
 }
 
@@ -315,7 +315,7 @@ body {
 
                     &.welcome {
                         a {
-                            @include lib-css(padding-left, $indent__xs);
+                            padding-left: $indent__xs;
                         }
                     }
                 }
