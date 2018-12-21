@@ -51,22 +51,22 @@
     $_button-icon-font-text-hide         : $button-icon__text-hide
 ) {
     background-image: none; // Reset unusual Firefox-on-Android default style
-    @include lib-css(background, $_button-background);
+    background: $_button-background;
     @include lib-background-gradient(
         $_button-gradient-color-start,
         $_button-gradient-color-end,
         $_button-gradient-direction,
         $_button-gradient
     );
-    @include lib-css(border, $_button-border);
-    @include lib-css(color, $_button-color);
-    @include lib-css(cursor, $_button-cursor);
-    @include lib-css(display, $_button-display);
-    @include lib-css(font-family, $_button-font-family);
-    @include lib-css(font-weight, $_button-font-weight);
-    @include lib-css(margin, $_button-margin);
-    @include lib-css(padding, $_button-padding);
-    @include lib-css(width, $_button-width);
+    border: $_button-border;
+    color: $_button-color;
+    cursor: $_button-cursor;
+    display: $_button-display;
+    font-family: $_button-font-family;
+    font-weight: $_button-font-weight;
+    margin: $_button-margin;
+    padding: $_button-padding;
+    width: $_button-width;
     @include lib-font-size($_button-font-size);
     @include lib-line-height($_button-line-height);
     box-sizing: border-box;
@@ -89,33 +89,33 @@
 
     &:focus,
     &:active {
-        @include lib-css(background, $_button-background-active);
+        background: $_button-background-active;
         @include lib-background-gradient(
             $_button-gradient-color-start-active,
             $_button-gradient-color-end-active,
             $_button-gradient-direction,
             $_button-gradient
         );
-        @include lib-css(border, $_button-border-active);
-        @include lib-css(color, $_button-color-active);
+        border: $_button-border-active;
+        color: $_button-color-active;
     }
 
     &:hover {
-        @include lib-css(background, $_button-background-hover);
+        background: $_button-background-hover;
         @include lib-background-gradient(
             $_button-gradient-color-start-hover,
             $_button-gradient-color-end-hover,
             $_button-gradient-direction,
             $_button-gradient
         );
-        @include lib-css(border, $_button-border-hover);
-        @include lib-css(color, $_button-color-hover);
+        border: $_button-border-hover;
+        color: $_button-color-hover;
     }
 
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
-        @include lib-css(opacity, $_button-disabled-opacity);
+        opacity: $_button-disabled-opacity;
         cursor: default;
         pointer-events: none; // Disabling of clicks
     }
@@ -130,7 +130,7 @@
     $_button-padding     : $button__padding
 ) {
     @include lib-line-height($_button-line-height);
-    @include lib-css(padding, $_button-padding);
+    padding: $_button-padding;
 }
 
 //
@@ -170,7 +170,7 @@
 //  ---------------------------------------------
 
 @mixin lib-link-as-button() {
-    @include lib-css(display, $button__display);
+    display: $button__display;
     text-decoration: none;
 
     &:hover,
@@ -192,16 +192,16 @@
     $_margin           : 0,
     $_padding          : 0
 ) {
-    @include lib-css(line-height, $_line-height);
-    @include lib-css(margin, $_margin);
-    @include lib-css(padding, $_padding);
+    line-height: $_line-height;
+    margin: $_margin;
+    padding: $_padding;
     @include lib-link();
     background: none;
     border: 0;
     display: inline;
 
     &:hover {
-        @include lib-css(color, $_link-color-hover);
+        color: $_link-color-hover;
     }
 
     &:hover,
@@ -214,8 +214,8 @@
     &.disabled,
     &[disabled],
     fieldset[disabled] & {
-        @include lib-css(color, $_link-color);
-        @include lib-css(opacity, $_disabled_opacity);
+        color: $_link-color;
+        opacity: $_disabled_opacity;
         cursor: default;
         pointer-events: none; // Disabling of clicks
         text-decoration: underline;
@@ -245,7 +245,7 @@
     padding: 0;
     text-decoration: none;
     text-shadow: none;
-    @include lib-css(font-weight, $font-weight__regular);
+    font-weight: $font-weight__regular;
 
     &:focus,
     &:active {
@@ -263,7 +263,7 @@
     fieldset[disabled] & {
         cursor: not-allowed;
         pointer-events: none; // Disabling of clicks
-        @include lib-css(opacity, $button__disabled__opacity);
+        opacity: $button__disabled__opacity;
     }
 }
 
@@ -336,21 +336,21 @@
     $_button-background-active : $button__active__background,
     $_button-border-active     : $button__active__border
 ) {
-    @include lib-css(background, $_button-background);
-    @include lib-css(border, $_button-border);
-    @include lib-css(color, $_button-color);
+    background: $_button-background;
+    border: $_button-border;
+    color: $_button-color;
 
     &:focus,
     &:active {
-        @include lib-css(background, $_button-background-active);
-        @include lib-css(border, $_button-border-active);
-        @include lib-css(color, $_button-color-active);
+        background: $_button-background-active;
+        border: $_button-border-active;
+        color: $_button-color-active;
     }
 
     &:hover {
-        @include lib-css(background, $_button-background-hover);
-        @include lib-css(border, $_button-border-hover);
-        @include lib-css(color, $_button-color-hover);
+        background: $_button-background-hover;
+        border: $_button-border-hover;
+        color: $_button-color-hover;
     }
 }
 

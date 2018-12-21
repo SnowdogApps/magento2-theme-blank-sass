@@ -130,21 +130,21 @@
         $_vertical-align   : $input-checkbox__vertical-align !default;
     }
 
-    @include lib-css(background, $_background);
-    @include lib-css(background-clip, $_background-clip);
-    @include lib-css(border, $_border);
-    @include lib-css(border-radius, $_border-radius);
-    @include lib-css(color, $_color);
-    @include lib-css(font-family, $_font-family);
-    @include lib-css(font-size, $_font-size);
-    @include lib-css(font-style, $_font-style);
-    @include lib-css(font-weight, $_font-weight);
-    @include lib-css(height, $_height);
-    @include lib-css(line-height, $_line-height);
-    @include lib-css(margin, $_margin);
-    @include lib-css(padding, $_padding);
-    @include lib-css(vertical-align, $_vertical-align);
-    @include lib-css(width, $_width);
+    background: $_background;
+    background-clip: $_background-clip;
+    border: $_border;
+    border-radius: $_border-radius;
+    color: $_color;
+    font-family: $_font-family;
+    font-size: $_font-size;
+    font-style: $_font-style;
+    font-weight: $_font-weight;
+    height: $_height;
+    line-height: $_line-height;
+    margin: $_margin;
+    padding: $_padding;
+    vertical-align: $_vertical-align;
+    width: $_width;
     box-sizing: border-box;
 
     @include _lib-form-element-focus(
@@ -196,8 +196,8 @@
         $_disabled-opacity : $checkbox__disabled__opacity !default;
     }
 
-    @include lib-css(margin, $_margin);
-    @include lib-css(vertical-align, $_vertical-align);
+    margin: $_margin;
+    vertical-align: $_vertical-align;
 
     &:disabled {
         @include _lib-form-element-add-opacity($_disabled-opacity);
@@ -225,7 +225,7 @@
 }
 
 @mixin lib-form-element-textarea-resize($_textarea-resize: $textarea__resize) {
-    @include lib-css(resize, $_textarea-resize);
+    resize: $_textarea-resize;
 }
 
 @mixin lib-form-element-color(
@@ -240,9 +240,9 @@
     $_disabled-color        : null,
     $_placeholder-color     : null
 ) {
-    @include lib-css(background, $_background);
-    @include lib-css(border-color, $_border-color);
-    @include lib-css(color, $_color);
+    background: $_background;
+    border-color: $_border-color;
+    color: $_color;
 
     &:focus {
         @include _lib-form-element-state-add-border-color($_focus-border-color, $_border-color);
@@ -257,15 +257,15 @@
     }
 
     &::-moz-placeholder {
-        @include lib-css(color, $_placeholder-color);
+        color: $_placeholder-color;
     }
 
     &::-webkit-input-placeholder {
-        @include lib-css(color, $_placeholder-color);
+        color: $_placeholder-color;
     }
 
     &:-ms-input-placeholder {
-        @include lib-css(color, $_placeholder-color);
+        color: $_placeholder-color;
     }
 }
 
@@ -391,7 +391,7 @@
     }
 
     select[multiple="multiple"] {
-        @include lib-css(height, auto);
+        height: auto;
         background-image: none;
     }
 
@@ -468,7 +468,7 @@
 
 @mixin _lib-form-element-add-opacity($_opacity) {
     @if $_opacity != 1 {
-        @include lib-css(opacity, $_opacity);
+        opacity: $_opacity;
     }
 }
 
@@ -519,7 +519,7 @@
 ) {
     @if $_type != "select" {
         &::-moz-placeholder {
-            @include lib-css(color, $_color);
+            color: $_color;
             @include _lib-form-element-state-add-font-style(
                 $_font-style-state,
                 $_font-style-default
@@ -527,7 +527,7 @@
         }
 
         &::-webkit-input-placeholder {
-            @include lib-css(color, $_color);
+            color: $_color;
             @include _lib-form-element-state-add-font-style(
                 $_font-style-state,
                 $_font-style-default
@@ -535,7 +535,7 @@
         }
 
         &:-ms-input-placeholder {
-            @include lib-css(color, $_color);
+            color: $_color;
             @include _lib-form-element-state-add-font-style(
                 $_font-style-state,
                 $_font-style-default
@@ -549,7 +549,7 @@
     $_background-default
 ) {
     @if $_background-state != $_background-default {
-        @include lib-css(background, $_background-state);
+        background: $_background-state;
     }
 }
 
@@ -558,7 +558,7 @@
     $_border-default
 ) {
     @if $_border-state != $_border-default {
-        @include lib-css(border, $_border-state);
+        border: $_border-state;
     }
 }
 
@@ -567,7 +567,7 @@
     $_border-default
 ) {
     @if $_border-state != $_border-default {
-        @include lib-css(border-color, $_border-state);
+        border-color: $_border-state;
     }
 }
 
@@ -576,7 +576,7 @@
     $_font-style-default
 ) {
     @if $_font-style-state != $_font-style-default {
-        @include lib-css(font-style, $_font-style-state);
+        font-style: $_font-style-state;
     }
 }
 
@@ -585,7 +585,7 @@
     $_color-default
 ) {
     @if $_color-state != $_color-default {
-        @include lib-css(color, $_color-state);
+        color: $_color-state;
     }
 }
 
@@ -603,9 +603,9 @@
     $_legend-padding     : $form-fieldset-legend__padding,
     $_legend-width       : $form-fieldset-legend__width
 ) {
-    @include lib-css(border, $_border);
-    @include lib-css(margin, $_margin);
-    @include lib-css(padding, $_padding);
+    border: $_border;
+    margin: $_margin;
+    padding: $_padding;
     letter-spacing: -0.31em;
 
     > * {
@@ -613,9 +613,9 @@
     }
 
     > .legend {
-        @include lib-css(margin, $_legend-margin);
-        @include lib-css(padding, $_legend-padding);
-        @include lib-css(width, $_legend-width);
+        margin: $_legend-margin;
+        padding: $_legend-padding;
+        width: $_legend-width;
         box-sizing: border-box;
         float: left;
 
@@ -693,7 +693,7 @@
     $_note-icon-font-position       : $form-field-note-icon-font__position,
     $_note-icon-font-text-hide      : $form-field-note-icon-font__text-hide
 ) {
-    @include lib-css(border, $_border);
+    border: $_border;
 
     @include lib-form-field-type(
         $_type,
@@ -797,7 +797,7 @@
     }
 
     .additional {
-        @include lib-css(margin-top, $_additional-vertical-indent);
+        margin-top: $_additional-vertical-indent;
     }
 
     @include _lib-form-field-required(
@@ -879,13 +879,13 @@
     $_vertical-indent
 ) {
     @include lib-clearfix();
-    @include lib-css(margin, $_type-inline-margin);
+    margin: $_type-inline-margin;
     box-sizing: border-box;
 
     &.choice:before,
     &.no-label:before {
-        @include lib-css(padding, $_type-inline-label-padding);
-        @include lib-css(width, $_type-inline-label-width);
+        padding: $_type-inline-label-padding;
+        width: $_type-inline-label-width;
         box-sizing: border-box;
         content: ' ';
         float: left;
@@ -893,25 +893,25 @@
     }
 
     .description {
-        @include lib-css(padding, $_type-inline-label-padding);
-        @include lib-css(text-align, $_type-inline-label-align);
-        @include lib-css(width, $_type-inline-label-width);
+        padding: $_type-inline-label-padding;
+        text-align: $_type-inline-label-align;
+        width: $_type-inline-label-width;
         box-sizing: border-box;
         float: left;
     }
 
     &:not(.choice) {
         > .label {
-            @include lib-css(margin, $_type-inline-label-margin);
-            @include lib-css(padding, $_type-inline-label-padding);
-            @include lib-css(text-align, $_type-inline-label-align);
-            @include lib-css(width, $_type-inline-label-width);
+            margin: $_type-inline-label-margin;
+            padding: $_type-inline-label-padding;
+            text-align: $_type-inline-label-align;
+            width: $_type-inline-label-width;
             box-sizing: border-box;
             float: left;
         }
 
         > .control {
-            @include lib-css(width, $_type-inline-control-width);
+            width: $_type-inline-control-width;
             float: left;
         }
     }
@@ -923,11 +923,11 @@
     $_type-block-label-padding,
     $_type-block-label-align
 ) {
-    @include lib-css(margin, $_type-block-margin);
+    margin: $_type-block-margin;
     > .label {
-        @include lib-css(margin, $_type-block-label-margin);
-        @include lib-css(padding, $_type-block-label-padding);
-        @include lib-css(text-align, $_type-block-label-align);
+        margin: $_type-block-label-margin;
+        padding: $_type-block-label-padding;
+        text-align: $_type-block-label-align;
         display: inline-block;
     }
 }
@@ -953,7 +953,7 @@
                 $_line-height : $_line-height,
                 $_font-style  : $_font-style
             );
-            @include lib-css(margin, $_margin);
+            margin: $_margin;
         }
     }
 }
@@ -990,8 +990,8 @@
             $_font-style  : $_note-font-style
         );
 
-        @include lib-css(margin, $_note-margin);
-        @include lib-css(padding, $_note-padding);
+        margin: $_note-margin;
+        padding: $_note-padding;
 
         @include lib-icon-font(
             $_icon-font-content        : $_note-icon-font-content,
@@ -1083,7 +1083,7 @@
     $_column-number  : $form-field-column__number
 ) {
     @if $_column {
-        @include lib-css(padding, $_column-padding);
+        padding: $_column-padding;
         box-sizing: border-box;
         display: inline-block;
 
@@ -1097,7 +1097,7 @@
 }
 
 @mixin lib-form-field-column-number($_column-number: $form-field-column__number) {
-    @include lib-css(width, 100% / $_column-number);
+    width: 100% / $_column-number;
 }
 
 @mixin _lib-revert-type-block-label-padding(
@@ -1205,9 +1205,9 @@
     $_line-height,
     $_font-style
 ) {
-    @include lib-css(border, $_border);
-    @include lib-css(margin, $_margin);
-    @include lib-css(padding, $_padding);
+    border: $_border;
+    margin: $_margin;
+    padding: $_padding;
     content: attr(data-hasrequired);
     display: block;
     letter-spacing: normal;

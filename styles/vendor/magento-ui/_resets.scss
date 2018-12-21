@@ -97,7 +97,7 @@
     textarea:not([disabled]),
     select:not([disabled]) {
         &:focus {
-            @include lib-css(box-shadow, $focus__box-shadow);
+            box-shadow: $focus__box-shadow;
         }
     }
 }

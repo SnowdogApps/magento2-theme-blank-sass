@@ -20,8 +20,8 @@
     $_loader-text-font-style          : $loader-text__font-style,
     $_loader-text-padding             : $loader-text__padding
 ) {
-    @include lib-css(background-color, $_loader-overlay-background-color);
-    @include lib-css(z-index, $_loader-overlay-z-index);
+    background-color: $_loader-overlay-background-color;
+    z-index: $_loader-overlay-z-index;
     bottom: 0;
     left: 0;
     position: fixed;
@@ -30,7 +30,7 @@
 
     &:before {
         @if $_loader-text == true {
-            @include lib-css(padding, $_loader-text-padding);
+            padding: $_loader-text-padding;
             content: attr(data-text);
             text-align: center;
             vertical-align: baseline;
@@ -44,11 +44,11 @@
             );
         }
 
-        @include lib-css(background, $_loader-icon-background-color $_loader-icon-background-image no-repeat $_loader-icon-background-position);
-        @include lib-css(border-radius, $_loader-icon-border-radius);
-        @include lib-css(height, $_loader-icon-height);
-        @include lib-css(padding, $_loader-icon-padding);
-        @include lib-css(width, $_loader-icon-width);
+        background: $_loader-icon-background-color $_loader-icon-background-image no-repeat $_loader-icon-background-position;
+        border-radius: $_loader-icon-border-radius;
+        height: $_loader-icon-height;
+        padding: $_loader-icon-padding;
+        width: $_loader-icon-width;
         bottom: 0;
         box-sizing: border-box;
         content: '';
@@ -67,7 +67,7 @@
     position: relative;
 
     &:before {
-        @include lib-css(background, $_loading-background-color $_loading-background-image no-repeat 50% 50%);
+        background: $_loading-background-color $_loading-background-image no-repeat 50% 50%;
         bottom: 0;
         content: '';
         left: 0;
