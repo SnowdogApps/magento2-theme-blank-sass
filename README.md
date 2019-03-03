@@ -14,5 +14,9 @@ Magento 2.0 - v0.6.0 or older
 5. Compile SASS files, we recommend using [Frontools](https://github.com/SnowdogApps/magento2-frontools)
 6. Check your great looking theme :wink:
 
+## Email styles support
+* for Magento < 2.3.0 requires to run something like email-fix task added to Frontools in [ver 1.6.0](https://github.com/SnowdogApps/magento2-frontools/tree/1.6.0)
+  [Related issue](https://github.com/MyIntervals/emogrifier/issues/296)
+
 ## Questions
 If you have any questions about this project, let's join Magefront community and ask questions on the Slack chanel - [MageFront Invite Form](https://docs.google.com/forms/d/e/1FAIpQLSeSlW7Wx_N9s316NzSLIPD7K5hyP_-EuNKkj9-KR4aJ4IngvA/viewform)
