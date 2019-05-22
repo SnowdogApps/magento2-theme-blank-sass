@@ -72,7 +72,7 @@ a:active {
 @include max-screen($screen__s) {
     html,
     body {
-        //  Change background/foreground to same color
+        // Change background/foreground to same color
         background-color: $email-content__background-color;
         width: 100% !important; // sass-lint:disable-line no-important
     }
