@@ -1,0 +1,189 @@
+//  email-inline.scss
+//  Since email client support for CSS in <style> tags is limited, the majority of styles should be added as "inline"
+//  styles. CSS will be applied to transactional email HTML via the Emogrifier library, which only has support for
+//  certain CSS selectors (source: https://github.com/jjriv/emogrifier#supported-css-selectors):
+//
+//  Supported selectors (examples in parenthesis):
+//      * ID (#logo)
+//      * class (.logo)
+//      * type (h1)
+//      * descendant (.logo > a)
+//      * child (.logo a)
+//      * adjacent (.logo + .second-example)
+//      * attribute presence (a[title])
+//      * attribute value (a[title="example"])
+//      * attribute only ([title="example"])
+//
+//  Unsupported selectors (examples in parenthesis):
+//      * first-child (div:first-child)
+//      * last-child (div:last-child)
+//      * nth-child (div:nth-child(3n+1))
+//      * universal (*)
+//      * pseudo (a:hover, a:active, a:focus, span:before, span:after, etc)
+
+
+//
+//  Resets
+//  ---------------------------------------------
+
+//  Generic resets
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+    height: auto;
+    line-height: 100%;
+    outline: none;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+
+    td {
+        vertical-align: top;
+    }
+}
+
+//
+//  Typography
+//  ---------------------------------------------
+
+//  See email-fonts.scss for $font-face declarations
+
+@include lib-typography-all();
+
+body {
+    font-family: $font-family__base;
+    font-weight: normal;
+    text-align: left;
+}
+
+th,
+td {
+    font-family: $font-family__base;
+}
+
+a {
+    color: $link__color;
+    text-decoration: $link__text-decoration;
+}
+
+
+//
+//  Layout
+//  ---------------------------------------------
+
+html,
+body {
+    background-color: $email__background-color;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.wrapper-inner {
+    padding-bottom: $email-content__padding__l;
+    width: 100%;
+}
+
+.main {
+    margin: 0 auto;
+    text-align: left; // Necessary to prevent all text from centering in Outlook 2003
+    width: $email-body__width;
+}
+
+.header {
+    padding: $email-body__padding $email-body__padding 0;
+}
+
+.main-content {
+    background-color: $email-content__background-color;
+    padding: $email-body__padding;
+}
+
+.footer {
+    padding: 0 $email-body__padding $email-body__padding; // Reduce space between body of email and closing text
+}
+
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+.button {
+    & > tr > td {
+        padding-bottom: $indent__s;
+    }
+
+    .inner-wrapper {
+        td {
+            border-radius: $button__border-radius;
+            background-color: $button-primary__background;
+
+            a {
+                border-radius: $button__border-radius;
+                border: 1px solid $button-primary__background;
+                color: $button-primary__color;
+                display: inline-block;
+                font-size: $button__font-size;
+                padding: $button__padding;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+
+//
+//  Messages
+//  ---------------------------------------------
+
+.message-info,
+.message-gift {
+    width: $table__width;
+
+    td {
+        background-color: $message-email__background;
+        border: 1px solid $message-email__border-color;
+        color: $message-email__color;
+        margin: 0;
+        padding: $email-content__padding__base;
+
+        a {
+            color: $message-email-link__color;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+        }
+    }
+}
+
+.message-details {
+    margin-bottom: $indent__s;
+
+    b {
+        font-weight: bold;
+    }
+
+    td {
+        padding-bottom: $indent__xs;
+
+        b {
+            margin-right: $indent__s;
+        }
+    }
+}
+
