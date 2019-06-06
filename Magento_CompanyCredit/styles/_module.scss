@@ -1,0 +1,111 @@
+//
+//  Variables
+//  _____________________________________________
+
+$color-phoenix: #eb5202;
+
+//
+//  Common
+//  _____________________________________________
+
+.payment-method {
+    &._active {
+        .available-credit {
+            display: block;
+        }
+    }
+}
+
+.form-purchase-order {
+    margin-bottom: $indent__s;
+}
+
+.credit-balance-list {
+    list-style: none;
+    padding-left: 0;
+    @include lib-vendor-prefix-display(flex);
+
+    .credit-balance-item {
+        margin-right: 10rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .credit-balance-label {
+        font-size: 1.6rem;
+        margin-bottom: 0;
+    }
+
+    .credit-balance-price {
+        font-size: 2.4rem;
+        font-weight: 600;
+
+        &._negative {
+            color: $color-phoenix;
+        }
+    }
+}
+
+.available-credit {
+    float: right;
+    display: none;
+
+    strong {
+        &+ span {
+            padding: 0 $indent__s;
+        }
+    }
+}
+
+.change-result {
+    clear: both;
+    padding-top: $indent__base;
+
+    strong {
+        padding-left: $indent__s/2;
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+@include min-screen($screen__m) {
+    .form-purchase-order {
+        float: left;
+        margin-bottom: 0;
+        width: 40%;
+    }
+
+    .checkout-agreements-block {
+        clear: both;
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
+    .credit-balance-list {
+        @include lib-vendor-prefix-flex-direction(column);
+
+        .credit-balance-item {
+            margin-right: 0;
+        }
+    }
+
+    .data-grid-cell-content {
+        display: inline-block;
+    }
+
+    .company-credit-history-index {
+        .quotes-grid-toolbar {
+            .toolbar-amount {
+                display: none;
+            }
+        }
+    }
+}

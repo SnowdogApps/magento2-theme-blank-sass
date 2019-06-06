@@ -42,6 +42,9 @@
 @import '../Magento_CatalogEvent/styles/module';
 @import '../Magento_CatalogSearch/styles/module';
 @import '../Magento_Checkout/styles/module';
+@import '../Magento_Company/styles/module';
+@import '../Magento_CompanyCredit/styles/module';
+@import '../Magento_CompanyPayment/styles/module';
 @import '../Magento_Customer/styles/module';
 @import '../Magento_Downloadable/styles/module';
 @import '../Magento_GiftCard/styles/module';
@@ -55,21 +58,24 @@
 @import '../Magento_Msrp/styles/module';
 @import '../Magento_MultipleWishlist/styles/module';
 @import '../Magento_Multishipping/styles/module';
+@import '../Magento_NegotiableQuote/styles/module';
 @import '../Magento_Newsletter/styles/module';
 @import '../Magento_Paypal/styles/module';
 @import '../Magento_ProductVideo/styles/module';
+@import '../Magento_QuickOrder/styles/module';
+@import '../Magento_RequisitionList/styles/module';
 @import '../Magento_Review/styles/module';
 @import '../Magento_Reward/styles/module';
 @import '../Magento_Rma/styles/module';
 @import '../Magento_Sales/styles/module';
 @import '../Magento_SalesRule/styles/module';
 @import '../Magento_SendFriend/styles/module';
+@import '../Magento_SharedCatalog/styles/module';
 @import '../Magento_Swatches/styles/swatches';
 @import '../Magento_Theme/styles/module';
 @import '../Magento_Vault/styles/module';
 @import '../Magento_Weee/styles/module';
 @import '../Magento_Wishlist/styles/module';
-
 
 // Widgets
 @import '../Magento_AdvancedCheckout/styles/widgets';

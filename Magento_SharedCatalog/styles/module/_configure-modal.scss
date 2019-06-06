@@ -1,0 +1,241 @@
+//
+//  Color and font variables
+//  _____________________________________________
+
+$color-black-50: rgba(0, 0, 0, .5);
+
+//
+//  Actions
+//  _____________________________________________
+$action-select-toggle__size: $action__height;
+$action-select-toggle_triangle__height: $button-marker-triangle__height;
+$action-select-toggle_triangle__width: $button-marker-triangle__width;
+
+//
+//  This styles used for shared catalog configure or edit modal window (steps wizard)
+//  ---------------------------------------------
+
+.steps-wizard {
+    .configure-step-left {
+        float: left;
+        position: relative;
+        width: 26%;
+
+        .shared-catalog-tree-controls {
+            button {
+                background: none;
+                border: 0;
+                color: $color-blue1;
+                font-size: $font-size__s;
+                margin: 0 2.5rem 1rem 0;
+                padding: 0;
+                position: relative;
+
+                &:hover {
+                    color: $color-blue2;
+                }
+
+                &:nth-child(2):after {
+                    background: $color-gray56;
+                    content: '';
+                    height: 12px;
+                    left: -14px;
+                    position: absolute;
+                    top: 1px;
+                    width: 1px;
+                }
+            }
+        }
+
+        .action-select-wrap {
+            margin: .7rem 0 2rem 0;
+            width: 100%;
+        }
+    }
+
+    .configure-step-left,
+    .configure-step-right .admin__data-website-switcher {
+        .action-select-wrap {
+            .action-select,
+            .switcher-dropdown {
+                background-color: $color-white;
+                border: 1px transparent solid;
+                border-bottom: none;
+                border-radius: 0;
+                box-shadow: none;
+                display: inline-block;
+                font-weight: $font-weight__regular;
+                letter-spacing: -.025em;
+                padding: .7rem 3.3rem .8rem 1.5rem;
+                position: relative;
+                vertical-align: baseline;
+                z-index: 2;
+
+                &:before {
+                    display: none;
+                }
+
+                &[disabled] {
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+            .action-select {
+                color: $color-brownie1;
+                font-size: $font-size__s;
+            }
+
+            .switcher-dropdown {
+                font-size: 1.3rem;
+            }
+
+            .action-menu {
+                background: $color-white;
+                border: 1px solid $color-gray85;
+                box-shadow: 1px 1px 5px $color-black-50;
+                box-sizing: border-box;
+                font-size: $font-size__s;
+                font-weight: $font-weight__regular;
+                list-style: none;
+                margin: .4rem 0 0;
+                min-width: 19.5rem;
+                padding: 0;
+                position: absolute;
+                top: 100%;
+                z-index: 100;
+            }
+        }
+    }
+
+    .configure-step-right {
+        float: right;
+        margin-top: .7rem;
+        width: 71%;
+
+        .data-grid {
+            .currency-addon {
+                .admin__control-text {
+                    padding-right: 6px;
+                    text-align: right;
+                }
+
+                .currency-symbol {
+                    top: 1px;
+                }
+            }
+
+            .admin__control-addon {
+                .admin__control-text {
+                    padding-right: 0;
+                    text-align: right;
+                }
+
+                .admin__addon-suffix {
+                    span {
+                        top: 1px;
+                    }
+                }
+            }
+
+            .configure-column-field-price {
+                text-align: right;
+            }
+        }
+    }
+
+    .button-last-step {
+        padding-right: 0;
+
+        .action-default:after,
+        .action-default:before {
+            display: none;
+        }
+    }
+
+    .data-grid {
+        .admin__actions-switch {
+            display: block;
+            margin: 0 auto;
+            width: $actions-switcher__width;
+        }
+    }
+}
+
+.switcher-dropdown {
+    @include action-toggle-triangle(
+        $_dropdown__padding-right: $action-select-toggle__size,
+        $_triangle__height: $action-select-toggle_triangle__height,
+        $_triangle__width: $action-select-toggle_triangle__width,
+    );
+}
+
+.adjust-prices-prompt,
+.discount-prompt {
+    .modal-inner-wrap {
+        margin-top: 20%;
+        width: 35%;
+
+        h1 {
+            font-weight: $font-weight__light;
+        }
+
+        .admin__fieldset {
+            > .admin__field {
+                margin-bottom: 0;
+
+                .admin__field-label {
+                    color: $color-brownie1;
+                    display: inline-block;
+                    font-size: $font-size__s;
+                    font-weight: $font-weight__bold;
+                    vertical-align: middle;
+
+                    span {
+                        line-height: 3.2;
+                    }
+                }
+
+                .admin__field-control {
+                    display: inline-block;
+                    margin-left: $indent__base;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 6.5rem;
+
+                    input {
+                        padding-right: $indent__base;
+                    }
+                }
+
+                .admin__addon-prefix {
+                    color: $color-gray85;
+                    content: attr(data-postfix);
+                    font-size: $font-size__s;
+                    line-height: 2.8;
+                    position: absolute;
+                    right: 1rem;
+                    top: 0;
+                }
+            }
+        }
+    }
+}
+
+.admin__data-store-switcher-outer-wrap {
+    min-height: 50px;
+}
+
+.admin__data-website-switcher {
+    float: left;
+}
+
+.confirm-shared-catalog-change .modal-inner-wrap {
+    margin-top: 20%;
+    width: 45%;
+
+    h1 {
+        font-weight: $font-weight__light;
+    }
+}

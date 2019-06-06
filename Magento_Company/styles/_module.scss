@@ -1,0 +1,1050 @@
+//
+//  Variables
+//  _____________________________________________
+
+//  Fonts
+$icons-magento__font-name: 'magento-icons';
+$icons-magento__font-path: '../Magento_Company/fonts/Magento-Icons';
+
+@include lib-font-face(
+    $family-name: $icons-magento__font-name,
+    $font-path: $icons-magento__font-path,
+    $font-weight: $font-weight__regular,
+    $font-style: normal
+);
+
+$links-container__z-index: $dropdown-list__z-index + 1;
+
+//  Iconsw
+$icon-circle-down: '\e909';
+$icon-circle-up: '\e90a';
+$icon-customer-lead: '\e908';
+$icon-move-vertical: '\e90b';
+$icon-organization: '\e906';
+$icon-person: '\e907';
+
+$tree-icon__height: 20px;
+$tree-icon__width: 20px;
+
+//  Colors
+$company-button__color: $color-blue1;
+$company-button__hover__color: $color-blue2;
+$exist-notification-message__color: $color-gray60;
+$links-container__color: $color-gray20;
+$popup-input__hover__color: $color-sky-blue1;
+$tree-icon__color__base: $color-gray52;
+$tree-icon__color__dark: $color-gray34;
+$tree-icon__color__light: $color-gray76;
+$tree-leaf__background-color: $color-white;
+$tree-leaf-clicked__background-color: $color-blue2;
+$tree-leaf-clicked__color: $color-white;
+$tree-tooltip__color: $color-black;
+$nav-delimiter__border-color: $color-gray82;
+
+//
+//  Common
+//  _____________________________________________
+
+.jstree {
+    & > ul ul {
+        li {
+            background: none;
+            border-left: 1px dashed $primary__color__light;
+            margin-left: 2.4rem;
+            padding: .5rem 0;
+            position: relative;
+
+            &.jstree-last {
+                background: none;
+                border-left: none;
+                left: .1rem;
+                padding-bottom: 0;
+                position: relative;
+
+                &:after {
+                    border-left: 1px dashed $primary__color__light;
+                    content: '';
+                    height: 2.3rem;
+                    left: -.1rem;
+                    position: absolute;
+                    top: 0;
+                }
+            }
+
+            &.jstree-leaf {
+                > .jstree-icon {
+                    &.jstree-ocl {
+                        background: none;
+                        display: inline;
+                        padding-right: 3.7rem;
+                        width: 2.5rem;
+
+                        &:after {
+                            right: 0;
+                            top: 1.7rem;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            > .jstree-icon {
+                &.jstree-ocl {
+                    position: relative;
+
+                    &:after {
+                        border-top: 1px dashed $primary__color__light;
+                        content: '';
+                        height: .1rem;
+                        position: absolute;
+                        right: 2.3rem;
+                        top: 1.1rem;
+                        width: 1.3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    li {
+        & > .jstree-icon {
+            padding-right: 1.5rem;
+        }
+
+        a {
+            height: 2.2rem;
+            line-height: 2.2rem;
+            padding: .4rem 1rem .4rem .2rem;
+
+            & > .jstree-themeicon-custom {
+                margin-left: $indent__s;
+                margin-right: .7rem;
+            }
+
+            & > .jstree-icon {
+                &.icon-customer {
+                    @include lib-icon-font-symbol(
+                        $_icon-font-content: $icon-person
+                    );
+
+                    &:before {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                &.icon-company {
+                    @include lib-icon-font-symbol(
+                        $_icon-font-content: $icon-organization
+                    );
+
+                    &:before {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+
+            & > .field-tooltip {
+                color: $tree-tooltip__color;
+                left: 100%;
+                margin-left: $indent__xs;
+                top: .4rem;
+            }
+
+            .field-tooltip-content {
+                white-space: normal;
+            }
+        }
+
+        &:not(.jstree-leaf) {
+            > .jstree-icon {
+                @include lib-icon-font(
+                    $icon-circle-down,
+                    $_icon-font: $icons-magento__font-name,
+                    $_icon-font-size: 1.9rem,
+                    $_icon-font-line-height: 1.1,
+                    $_icon-font-text-hide: true,
+                    $_icon-font-color: $tree-icon__color__dark,
+                    $_icon-font-vertical-align: middle,
+                    $_icon-font-position: before,
+                    $_icon-font-display: inline-block
+                );
+
+                left: -.1rem;
+                position: relative;
+                top: 0.6rem;
+                z-index: 5;
+
+                &:before {
+                    cursor: pointer;
+                    text-align: center;
+                }
+            }
+        }
+
+        &.jstree-open {
+            > .jstree-icon {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content: $icon-circle-up
+                );
+
+                &:before {
+                    color: $tree-icon__color__light;
+                    font-size: 2.2rem;
+                    left: 1.4rem;
+                    position: relative;
+                }
+            }
+        }
+
+        &.jstree-closed {
+            > .jstree-icon {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content: $icon-circle-down
+                );
+
+                &:before {
+                    color: $tree-icon__color__light;
+                    font-size: 2.2rem;
+                    left: 1.4rem;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    & > ul {
+        & > li {
+            background: none;
+
+            & > a.company-admin {
+                margin-left: -.2rem;
+                padding-bottom: 1.3rem;
+
+                &:before {
+                    display: none;
+                }
+
+                > .jstree-icon {
+                    @include lib-icon-font-symbol(
+                        $_icon-font-content: $icon-customer-lead
+                    );
+
+                    margin-right: $indent__s;
+                    position: relative;
+                    z-index: 5;
+
+                    &:before {
+                        font-size: 3rem;
+                    }
+                }
+            }
+
+            &:not(.root-collapsible) {
+                > .jstree-icon {
+                    &.jstree-ocl {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .jstree-leaf {
+        > .jstree-icon.jstree-ocl {
+            display: none;
+        }
+    }
+
+    a {
+        > .jstree-icon {
+            @include lib-icon-font(
+                '',
+                $_icon-font: $icons-magento__font-name,
+                $_icon-font-size: 2.8rem,
+                $_icon-font-line-height: 1.1,
+                $_icon-font-text-hide: true,
+                $_icon-font-color: $tree-icon__color__base,
+                $_icon-font-vertical-align: middle,
+                $_icon-font-position: before,
+                $_icon-font-display: inline-block
+            );
+
+            background: none;
+        }
+    }
+
+    &.jstree-draggable {
+        a {
+            @include lib-icon-font(
+                $icon-move-vertical,
+                $_icon-font: $icons-magento__font-name,
+                $_icon-font-size: 2.8rem,
+                $_icon-font-line-height: 1.1,
+                $_icon-font-text-hide: true,
+                $_icon-font-color: $tree-icon__color__light,
+                $_icon-font-vertical-align: middle,
+                $_icon-font-position: before,
+                $_icon-font-display: inline-block
+            );
+
+            &:before {
+                height: 1.8rem;
+                margin-left: -.4rem;
+                overflow: hidden;
+                width: 1.9rem;
+            }
+
+            &.jstree-clicked {
+                &:before {
+                    color: $tree-leaf-clicked__color;
+                }
+            }
+        }
+    }
+
+    i {
+        font-style: normal;
+    }
+
+    .block-dashboard-company & {
+        .jstree-clicked {
+            background-color: $tree-leaf-clicked__background-color;
+            color: $tree-leaf-clicked__color;
+
+            > .jstree-icon {
+                &:before {
+                    color: $tree-leaf-clicked__color;
+                }
+            }
+        }
+    }
+
+    .jstree-anchor {
+        .jstree-checkbox {
+            background-color: transparent;
+            background-image: url(../Magento_Company/images/icon-tree.png);
+            background-position: top right;
+            background-repeat: no-repeat;
+            height: 16px;
+            margin: 5px 8px -2px 4px;
+            position: relative;
+            width: 16px;
+        }
+
+        &.jstree-clicked {
+            > .jstree-checkbox {
+                background-position: top center;
+            }
+        }
+
+        > .jstree-checkbox {
+            &.jstree-undetermined {
+                background-position: top left;
+            }
+        }
+    }
+}
+
+.jstree-checkbox-selection {
+    .jstree-anchor {
+        display: inline-block;
+        text-decoration: none;
+    }
+}
+
+//
+//  Jstree default (!) styles start
+//  ---------------------------------------------
+
+.jstree-node,
+.jstree-children,
+.jstree-container-ul {
+    display: block;
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jstree-node {
+    white-space: nowrap;
+}
+
+.jstree-anchor {
+    color: black;
+    display: inline-block;
+    margin: 0;
+    padding: 0 4px 0 1px;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+#jstree-marker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -5px 0 0 0;
+    padding: 0;
+    border-right: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+#jstree-dnd {
+    line-height: 16px;
+    margin: 0;
+    padding: 4px;
+}
+
+#jstree-dnd .jstree-icon,
+#jstree-dnd .jstree-copy {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 2px 0 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+}
+
+#jstree-dnd .jstree-ok {
+    background: green;
+}
+
+#jstree-dnd .jstree-er {
+    background: red;
+}
+
+#jstree-dnd .jstree-copy {
+    margin: 0 2px 0 2px;
+}
+
+//
+//  Jstree default styles end
+//  ---------------------------------------------
+
+.form-edit-role,
+.block-dashboard-company {
+    .block-title {
+        margin-top: $indent__base;
+    }
+
+    .box-actions {
+        button.action {
+            @extend .abs-account-actions;
+            background: none;
+            border: 0;
+            color: $company-button__color;
+            font-weight: $font-weight__regular;
+            padding: 0 $indent__m $indent__s 0;
+            position: relative;
+
+            &:hover,
+            &:active {
+                background: none;
+                border: 0;
+                box-shadow: none;
+                color: $company-button__hover__color;
+            }
+
+            &:not(:focus) {
+                box-shadow: none;
+            }
+
+            &:after {
+                position: absolute;
+                right: -.2rem;
+                top: .2rem;
+                width: .1rem;
+            }
+
+            &.delete {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &._hidden {
+                display: none;
+            }
+        }
+    }
+}
+
+.form-edit-account {
+    .fieldset {
+        &.info {
+            margin-right: $indent__base;
+        }
+
+        &.company {
+            clear: both;
+            float: left !important; // Unfortunately required here
+            margin-bottom: $indent__base;
+        }
+
+        &.job_title {
+            clear: both;
+            float: left !important; // Unfortunately required here
+        }
+    }
+    .actions-toolbar {
+        clear: both;
+    }
+}
+
+.company-account-index {
+    .columns {
+        .column.main {
+            .block:not(.widget) {
+                @extend .abs-account-blocks;
+
+                .block-title {
+                    @extend .abs-login-block-title;
+                    @include lib-font-size(18);
+                }
+            }
+        }
+    }
+}
+
+.message {
+    &.company-warning {
+        @include lib-message($_message-type: global-caution);
+        margin-bottom: 0;
+        text-align: center;
+
+        &._hidden {
+            display: none;
+        }
+    }
+}
+
+.nav {
+    .delimiter {
+        border-top: 1px solid $nav-delimiter__border-color;
+        display: block;
+        margin: $indent__s 1.8rem;
+    }
+}
+
+.additional-fields {
+    margin-top: $indent__base;
+
+    &._hidden {
+        display: none;
+    }
+}
+
+.modal-container {
+    display: none;
+}
+
+.data-grid-filters-wrap {
+    margin-bottom: $indent__s;
+    margin-top: -$indent__s * 1.5;
+
+    .action {
+        @extend .abs-action-button-as-link;
+        margin-right: $indent__m;
+    }
+}
+
+.modal-popup {
+    .action {
+        &._hidden {
+            display: none;
+        }
+    }
+}
+
+.popup-tree {
+    .modal-footer {
+        .action-primary {
+            @include lib-button-primary();
+            box-shadow: none;
+        }
+    }
+}
+
+.company-profile-payment-methods {
+    font-size: 1.6rem;
+    line-height: 24px;
+    @include lib-vendor-prefix-display(flex);
+
+    .payment-methods-label {
+        font-weight: 700;
+        margin-bottom: $indent__s;
+    }
+
+    .payment-methods-list {
+        list-style: none;
+    }
+}
+
+.wrap-text {
+    margin-bottom: $indent__l;
+}
+
+.form-add-user {
+    .field {
+        &.email {
+            .exist-notification-message {
+                color: $exist-notification-message__color;
+                font-size: $font-size__s;
+                padding-top: $indent__xs;
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  ---------------------------------------------
+
+@include min-screen($screen__m) {
+    .login-container {
+        .block {
+            &.block-new-company {
+                clear: none;
+                float: right;
+
+                .actions-toolbar {
+                    margin-top: $indent__m;
+                }
+            }
+        }
+    }
+
+    .links-container {
+        @include lib-dropdown(
+            $_toggle-selector: '.action.switch',
+            $_options-selector: 'ul',
+            $_dropdown-actions-padding: 0,
+            $_dropdown-list-item-padding: 0,
+            $_dropdown-toggle-icon-content: $icon-down,
+            $_dropdown-toggle-active-icon-content: $icon-up,
+            $_icon-font-text-hide: true,
+            $_icon-font-size: 1rem,
+            $_icon-font-line-height: 2.2rem,
+            $_dropdown-list-pointer-position: right,
+            $_dropdown-list-position-right: 0,
+            $_dropdown-list-z-index: $links-container__z-index
+        );
+
+        li {
+            @extend .switcher li;
+
+            a {
+                @include lib-link(
+                    $_link-color: $links-container__color,
+                    $_link-text-decoration: none,
+                    $_link-color-visited: $links-container__color,
+                    $_link-text-decoration-visited: none,
+                    $_link-color-hover: $links-container__color,
+                    $_link-text-decoration-hover: none,
+                    $_link-color-active: $links-container__color,
+                    $_link-text-decoration-active: none
+                );
+                display: block;
+                line-height: 1.4;
+                padding: .8em;
+            }
+        }
+
+        .customer-menu {
+            display: none;
+        }
+
+        .action.switch {
+            @include lib-button-reset();
+            @include lib-css(color, $color-white);
+        }
+
+        .header.links {
+            min-width: 225px;
+        }
+
+        &.active {
+            .action.switch {
+                @include lib-icon-font-symbol(
+                    $_icon-font-content: $icon-up,
+                    $_icon-font-position: after
+                );
+            }
+
+            .customer-menu {
+                display: block;
+            }
+        }
+
+        .greet {
+            display: none;
+        }
+    }
+
+    .customer-register {
+        .links-container-title {
+            cursor: pointer;
+        }
+    }
+
+    .manage-company-accounts {
+        .message {
+            & + .actions-toolbar {
+                margin-top: 2 * $indent__m;
+            }
+        }
+    }
+
+    .modal-popup {
+        .actions-toolbar {
+            .secondary {
+                .action {
+                    background: none;
+                    border: none;
+                    color: $company-button__color;
+                    font-weight: $font-weight__regular;
+                    margin: .7rem 1.5rem;
+                    padding: 0;
+
+                    &:active,
+                    &:not(:focus) {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        input,
+        textarea {
+            &:hover {
+                border-color: $popup-input__hover__color;
+            }
+        }
+
+        &.popup-tree {
+            .modal-inner-wrap {
+                .modal-footer {
+                    border-top: none;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    .popup-tree {
+        .fieldset {
+            margin-bottom: 0;
+        }
+
+        .modal-footer {
+            .primary {
+                margin-right: $indent__s;
+            }
+
+            .secondary {
+                background: none;
+                border: none;
+                color: $company-button__color;
+                font-weight: $font-weight__regular;
+                margin: .7rem 1.5rem;
+                padding: 0;
+
+                &:active,
+                &:not(:focus) {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .page-title {
+        .edit-company-profile {
+            left: -$indent__s;
+            position: relative;
+        }
+    }
+
+    .company-profile-index {
+        .column {
+            &.main {
+                .block {
+                    .box-account-information,
+                    .box-address-information,
+                    .box-contact-information {
+                        .box-content {
+                            @extend .abs-account-block-font-size;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .company-profile-edit {
+        .column.main {
+            .form-edit-company {
+                @include lib-vendor-prefix-display(flex);
+                @include lib-vendor-prefix-flex-wrap(wrap);
+                @include lib-vendor-prefix-flex-direction(row);
+
+                .fieldset,
+                .actions-toolbar {
+                    width: 52%;
+                }
+            }
+        }
+    }
+
+    .company-account-index {
+        .columns {
+            .column.main {
+                .block:not(.widget) {
+                    .box-content {
+                        strong {
+                            display: inline-block;
+                            width: 17%;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .company-account-create {
+        .columns {
+            .main {
+                .form-create-account {
+                    width: 51%;
+
+                    .fieldset-fullname {
+                        .fields {
+                            .field {
+                                &:last-child {
+                                    margin: 0 0 $indent__s;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .company-users-index {
+        .long-text-field {
+            @include lib-wrap-words();
+        }
+    }
+
+    .jstree {
+        li {
+            a {
+               position: relative;
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
+    .links-container-title {
+        display: none;
+    }
+
+    .company-profile-index {
+        &.account {
+            .page-main {
+                .page-title-wrapper {
+                    .page-title {
+                        display: inline-block;
+                        margin-right: $indent__s;
+                    }
+                }
+            }
+        }
+
+        .company-profile-payment-methods {
+            @include lib-vendor-prefix-flex-direction(column);
+
+            .payment-methods-list {
+                font-size: 1.4rem;
+                padding-left: 0;
+            }
+        }
+    }
+
+    .company-account-index {
+        .column.main {
+            .block:not(.widget) {
+                .block-title {
+                    @extend .abs-add-clearfix-mobile-m;
+
+                    > .action {
+                        @include lib-css(margin-top, $indent__xs);
+                        float: right;
+                    }
+                }
+
+                .block-content {
+                    strong {
+                        float: left;
+                        margin-right: 5px;
+                    }
+
+                    .box-content {
+                        span {
+                            display: block;
+                            overflow: hidden;
+                            vertical-align: top;
+                        }
+                    }
+
+                    .box {
+                        @include lib-css(margin-bottom, $indent__base);
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .company-users-index,
+    .company-role-index {
+        .table-wrapper {
+            .table {
+                &:not(.cart) {
+                    > tbody {
+                        > tr {
+                            td {
+                                &:last-child {
+                                    &:before {
+                                        content: '';
+                                        padding: 0;
+                                    }
+                                }
+
+                                > div {
+                                    display: inline;
+                                }
+                            }
+
+                            &.data-grid-tr-no-data {
+                                td {
+                                    &:before {
+                                        content: '';
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .admin__data-grid-pager {
+            margin-top: $indent__base;
+        }
+
+        .toolbar-amount {
+            position: relative;
+        }
+    }
+
+    .table-wrapper {
+        .table:not(.cart) {
+            &> tbody {
+                &> tr {
+                    td {
+                        &.actions {
+                            &.col {
+                                &:before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@include max-screen($screen__m + 1) {
+    .modals-wrapper {
+        .modal-popup {
+            .modal-header {
+                padding-top: 2rem;
+            }
+
+            .modal-title {
+                border-bottom: none;
+                font-size: $font-size__l;
+                font-weight: $font-weight__light;
+            }
+        }
+    }
+
+    .popup-tree {
+        .modal-footer {
+            .action,
+            .action-primary {
+                display: block;
+                margin-bottom: $indent__s;
+                width: 100%;
+            }
+        }
+    }
+
+    .jstree {
+        li {
+            a {
+                > .field-tooltip {
+                    float: right;
+                    margin-right: -4rem;
+                    position: static;
+
+                    .field-tooltip-content {
+                        left: 0;
+                        max-width: 90%;
+                        right: auto;
+                        top: 4.5rem;
+                        z-index: 20;
+
+                        &:before,
+                        &:after {
+                            left: 6.1rem;
+                            right: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile for modal
+//  ---------------------------------------------
+
+@include min-screen($screen__m + 1) {
+    .modals-wrapper {
+        .modal-popup {
+            .modal-inner-wrap {
+                width: 428px;
+            }
+        }
+    }
+}

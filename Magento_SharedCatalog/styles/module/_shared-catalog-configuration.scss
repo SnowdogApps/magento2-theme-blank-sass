@@ -1,0 +1,50 @@
+.shared-catalog-config-container {
+    @extend .abs-clearfix;
+
+    .config-description {
+        float: left;
+        margin-bottom: 3rem;
+        margin-top: .6rem;
+    }
+
+    .config-button {
+        float: right;
+    }
+}
+
+.shared-catalog-configure-state {
+    float: left;
+    width: 80%;
+
+    .action {
+        background: none;
+        border: 0;
+        color: $color-blue1;
+        font-size: $font-size__s;
+        margin: 0 2.5rem 1rem 0;
+        padding: 0;
+        position: relative;
+
+        &:hover {
+            color: $color-blue2;
+        }
+    }
+}
+
+.jstree-shared-catalog-state {
+    ul {
+        li {
+            a.jstree-anchor {
+                padding-left: 7px;
+            }
+        }
+    }
+}
+
+.shared-catalog-config-store-switcher {
+    margin-bottom: 3rem;
+}
+
+.modal-container {
+    display: none;
+}

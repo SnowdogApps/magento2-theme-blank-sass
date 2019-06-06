@@ -1,0 +1,221 @@
+//
+//  Color variables
+//  _____________________________________________
+
+$jstree-color-white: #fff;
+$jstree-color-gray: #9e9e9e;
+$color-border-gray: #d0cec8;
+$color-background-gray: #f2f2f2;
+
+//
+//  Shared Catalog jsTree styles
+//  ---------------------------------------------
+
+.jstree {
+    overflow: auto;
+
+    ul {
+        position: relative;
+
+        li {
+            position: relative;
+
+            &.jstree-node {
+                &:before {
+                    background: $color-border-gray;
+                    content: '';
+                    height: 100%;
+                    left: 11px;
+                    position: absolute;
+                    width: 1px;
+                }
+
+                &.jstree-last:before {
+                    background: $color-border-gray;
+                    content: '';
+                    height: 50px;
+                    left: 11px;
+                    position: absolute;
+                    top: -37px;
+                    width: 1px;
+                }
+            }
+
+            &:before {
+                background: $color-border-gray;
+                content: '';
+                height: 38px;
+                left: 11px;
+                position: absolute;
+                top: -35px;
+                width: 1px;
+            }
+
+            a.jstree-anchor {
+                height: auto;
+                margin-bottom: 11px;
+                margin-left: 27px;
+                position: relative;
+
+                &:hover {
+                    background: $color-background-gray;
+                    box-shadow: none;
+                }
+
+                &.jstree-clicked {
+                    background: $color-background-gray;
+                    box-shadow: none;
+
+                    &:hover {
+                        background: $color-background-gray;
+                        box-shadow: none;
+                    }
+                }
+
+                &:after {
+                    background: $color-border-gray;
+                    bottom: 35px;
+                    content: '';
+                    height: 1px;
+                    left: -39px;
+                    position: absolute;
+                    width: 34px;
+                    z-index: 2;
+                }
+
+                i {
+                    &.jstree-themeicon {
+                        display: none;
+                    }
+                }
+
+                & > .jstree-checkbox,
+                & > .jstree-checkbox:hover {
+                    background: $jstree-color-white url(../../images/tree_icons.png) top right;
+                    height: 16px;
+                    margin-left: 4px;
+                    margin-right: 8px;
+                    margin-top: 4px;
+                    position: relative;
+                    width: 16px;
+                    z-index: 4;
+                }
+
+                &.jstree-checked > .jstree-checkbox,
+                &.jstree-checked > .jstree-checkbox:hover {
+                    background: $jstree-color-white url(../../images/tree_icons.png) top center;
+                }
+
+                &.jstree-undetermined-container > .jstree-checkbox,
+                &.jstree-undetermined-container > .jstree-checkbox:hover {
+                    background: $jstree-color-white url(../../images/tree_icons.png) top left;
+                }
+
+                .jstree-checkbox-disabled,
+                .jstree-checkbox-disabled:hover {
+                    filter: none;
+                    opacity: .5;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+
+    .jstree-leaf > .jstree-ocl {
+        background: none;
+    }
+
+    .jstree-node:not(.jstree-leaf) > .jstree-ocl {
+        height: 22px;
+        left: 25px;
+        position: relative;
+        top: 2px;
+        width: 22px;
+        z-index: 5;
+    }
+
+    .jstree-node.jstree-open:not(.jstree-leaf) > .jstree-ocl {
+        background: $jstree-color-white url(../../images/tree_icons.png) bottom left;
+    }
+
+    .jstree-node.jstree-closed:not(.jstree-leaf) > .jstree-ocl {
+        background: $jstree-color-white url(../../images/tree_icons.png) bottom right;
+    }
+
+    .jstree-node.jstree-open > a:before,
+    .jstree-node.jstree-closed > a:before {
+        background: $jstree-color-white;
+        content: '';
+        height: 1px;
+        left: -39px;
+        position: absolute;
+        top: 12px;
+        width: 1px;
+        z-index: 5;
+    }
+
+    .jstree-node.jstree-open > a > .jstree-checkbox,
+    .jstree-node.jstree-open > a > .jstree-checkbox:hover,
+    .jstree-node.jstree-closed > a > .jstree-checkbox,
+    .jstree-node.jstree-closed > a > .jstree-checkbox:hover {
+        margin-left: 6px;
+    }
+
+    & > ul {
+        & > li.jstree-node > ul > li.jstree-node {
+            margin-left: 0;
+        }
+
+        & > li.jstree-node {
+            &:before {
+                display: none;
+            }
+
+            & > .jstree-icon.jstree-ocl {
+                left: 0;
+            }
+
+            & > a {
+                margin-left: 2px;
+
+                &:before {
+                    display: none;
+                }
+
+                &:after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+[data-role='jstree-shared-catalog-pricing-container'] {
+    ul {
+        li {
+            a.jstree-anchor {
+                padding-left: 7px;
+            }
+        }
+    }
+}
+
+.jstree-item-quantity {
+    color: $jstree-color-gray;
+    display: block;
+    font-size: 12px;
+    padding-left: 5px;
+    position: relative;
+
+    span {
+        padding-right: 4px;
+    }
+
+    &:after {
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+}

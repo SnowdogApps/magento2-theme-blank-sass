@@ -1,0 +1,25 @@
+.payment-config-group {
+    > .admin__field {
+        float: left;
+        margin-top: 0;
+
+        &:last-child {
+            margin-left: $temp_gutter * 2;
+        }
+    }
+}
+
+#btob_website_configuration {
+    .payment-methods {
+        .with-tooltip {
+            position: relative;
+
+            .tooltip {
+                left: auto;
+                margin: 0;
+                position: absolute;
+                top: $field-group-label__padding;
+            }
+        }
+    }
+}

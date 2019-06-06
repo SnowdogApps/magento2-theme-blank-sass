@@ -1,0 +1,274 @@
+//
+//  Variables
+//  _____________________________________________
+
+$order-dropdown-item__color: $color-gray20;
+$order-icon__color: $color-gray56;
+$order-input-border__color: $color-gray76;
+$order-product-bg__color: $color-gray94;
+
+//
+//  Common
+//  _____________________________________________
+
+.quickorder-index-index {
+    .column {
+        .block-addbysku {
+            .action {
+                &.remove {
+                    display: none;
+
+                    @include lib-button-icon(
+                        $_icon-font-content: $icon-trash,
+                        $_icon-font-text-hide: true,
+                        $_icon-font-size: $font-size__l,
+                        $_icon-font-color: $order-icon__color
+                    );
+                }
+
+                &:active,
+                &:not(:focus) {
+                    box-shadow: none;
+                }
+
+                &:focus {
+                    @include lib-css(box-shadow, $focus__box-shadow);
+                }
+
+                &.add {
+                    display: none;
+                }
+            }
+
+            .fieldset {
+                .fields {
+                    .actions-toolbar {
+                        display: inline-block;
+                        margin-bottom: $indent__s;
+                        margin-left: $indent__xs;
+                        position: relative;
+                        top: .3rem;
+                        vertical-align: top;
+                    }
+                }
+            }
+
+            .block-content {
+                .actions-toolbar {
+                    margin-bottom: $indent__l;
+                }
+            }
+
+            .box-items {
+                margin-bottom: $indent__l;
+            }
+
+            .box-upload {
+                margin-bottom: $indent__l*2;
+            }
+
+            .deletable-item {
+                .label {
+                    display: none;
+                }
+
+                &:last-child {
+                    .remove {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .upload {
+        .label {
+            margin-bottom: 0;
+        }
+
+        .label {
+            & + .note {
+                margin-bottom: $indent__xs;
+                padding-top: 0;
+            }
+        }
+    }
+
+    .upload-container {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+
+        .action-upload {
+            cursor: pointer;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .file-upload {
+            @include lib-button();
+            @include lib-css(border-radius, $button__border-radius);
+            text-align: center;
+        }
+    }
+
+    .product-block {
+        @extend .abs-add-clearfix;
+        background-color: $order-product-bg__color;
+
+        &:not(:empty) {
+            border: 1px solid $order-input-border__color;
+            border-top: none;
+        }
+
+        .product-image {
+            border: 1px solid $order-input-border__color;
+            float: left;
+            margin: 1.5rem;
+
+            img {
+                display: block;
+                max-width: 5rem;
+            }
+        }
+
+        .product-name {
+            overflow: hidden;
+            padding: 1.5rem;
+
+            .name {
+                display: inline-block;
+                margin-bottom: $indent__s;
+            }
+        }
+    }
+
+    .product-error {
+        .message {
+            margin: 0;
+        }
+
+        &.general-error {
+            .message {
+                margin-bottom: $indent__s;
+
+                &:last-child {
+                    margin-bottom: $indent__m;
+                }
+            }
+        }
+    }
+
+    .ui-front {
+        z-index: 100;
+
+        .ui-helper-hidden-accessible {
+            display: none;
+        }
+
+        > ul {
+            @include lib-list-reset-styles();
+
+            &:not(:empty) {
+                @include lib-css(background, $autocomplete__background-color);
+                @include lib-css(border, $autocomplete__border);
+                border-top: 0;
+            }
+
+            li {
+                @include lib-css(border-top, $autocomplete-item__border);
+                cursor: pointer;
+                margin: 0;
+                padding: $indent__xs $indent__xl $indent__xs $indent__s;
+                position: relative;
+                text-align: left;
+                white-space: normal;
+
+                &:first-child {
+                    border-top: none;
+                }
+
+                &:hover,
+                &.selected {
+                    @include lib-css(background, $autocomplete-item__hover__color);
+                }
+
+                a {
+                    color: $order-dropdown-item__color;
+                    font-weight: $font-weight__bold;
+                    margin-right: $indent__xs;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .ui-autocomplete {
+        cursor: default;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+}
+
+//
+//  Mobile
+//  ---------------------------------------------
+
+@include max-screen($screen__s) {
+    .quickorder-index-index {
+        .column {
+            .block-addbysku {
+                .fieldset {
+                    .fields {
+                        border-bottom: 1px solid $order-input-border__color;
+                        margin-bottom: 1.5rem;
+                        padding-bottom: .2rem;
+                        position: relative;
+
+                        .field {
+                            display: block;
+                            margin-right: 0;
+                            padding-right: 0;
+
+                            &.qty {
+                                display: inline-block;
+
+                                .control {
+                                    display: inline-block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .upload_container {
+                    width: 100%;
+
+                    .file_upload {
+                        display: block;
+                    }
+                }
+
+                .deletable-item-title {
+                    display: none;
+                }
+
+                .deletable-item {
+                    .label {
+                        display: inline-block;
+                        margin-right: $indent__s;
+                    }
+
+                    .actions-toolbar {
+                        float: right;
+                    }
+                }
+            }
+        }
+    }
+}
