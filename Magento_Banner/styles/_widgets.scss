@@ -1,9 +1,9 @@
 .block-banners,
 .block-banners-inline {
-    @extend .abs-margin-for-blocks-and-widgets;
+    @extend %abs-margin-for-blocks-and-widgets !optional;
 
     .banner-items {
-        @extend .abs-reset-list;
+        @extend %abs-reset-list !optional;
     }
 
     .banner-item {

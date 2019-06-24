@@ -60,7 +60,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
     }
 
     .shipping-address-item {
-        @extend .abs-add-box-sizing;
+        @extend %abs-add-box-sizing !optional;
         @include lib-css(border, $checkout-shipping-item__border);
         @include lib-css(line-height, $checkout-shipping-item__line-height);
         @include lib-css(margin, $checkout-shipping-item__margin);
@@ -93,7 +93,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
             }
 
             .action-select-shipping-item {
-                @extend .abs-no-display-s;
+                @extend %abs-no-display-s !optional;
                 visibility: hidden;
             }
         }
@@ -101,7 +101,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
 
     .field {
         &.addresses {
-            @extend .abs-add-clearfix;
+            @extend %abs-add-clearfix !optional;
         }
     }
 
@@ -122,7 +122,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
     }
 
     .edit-address-link {
-        @extend .abs-action-button-as-link;
+        @extend %abs-action-button-as-link !optional;
         display: block;
         float: left;
         margin: 26px 5px 0 0;
@@ -147,7 +147,7 @@ $checkout-shipping-method__padding              : $indent__base !default;
     .actions-toolbar {
         .action {
             &.primary {
-                @extend .abs-button-l;
+                @extend %abs-button-l !optional;
                 margin: $indent__base 0 0;
             }
         }

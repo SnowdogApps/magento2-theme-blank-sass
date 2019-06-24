@@ -1,7 +1,7 @@
 //  Paypal billing agreement
 .form-new-agreement {
     .actions-toolbar {
-        @extend .abs-reset-left-margin;
+        @extend %abs-reset-left-margin !optional;
     }
 }
 
@@ -13,7 +13,7 @@
     .form-new-agreement {
         .fieldset .legend,
         .actions-toolbar {
-            @extend .abs-reset-left-margin-desktop;
+            @extend %abs-reset-left-margin-desktop !optional;
         }
     }
 }

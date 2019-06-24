@@ -4,8 +4,8 @@
 
 //  Summary block
 .cart-summary {
-    @extend .abs-add-box-sizing;
-    @extend .abs-adjustment-incl-excl-tax;
+    @extend %abs-add-box-sizing !optional;
+    @extend %abs-adjustment-incl-excl-tax !optional;
     @include lib-css(background, $sidebar__background-color);
     margin-bottom: $indent__m;
     padding: 1px 15px $indent__m;
@@ -16,7 +16,7 @@
     }
 
     .block {
-        @extend .abs-discount-block;
+        @extend %abs-discount-block !optional;
         margin-bottom: 0;
 
         .item-options {
@@ -46,14 +46,14 @@
         .fieldset.estimate {
             > .legend,
             > .legend + br {
-                @extend .abs-no-display;
+                @extend %abs-no-display !optional;
             }
         }
     }
     .actions-toolbar {
         > .primary {
             button {
-                @extend .abs-revert-secondary-color;
+                @extend %abs-revert-secondary-color !optional;
             }
         }
     }
@@ -61,7 +61,7 @@
 
 //  Totals block
 .cart-totals {
-    @extend .abs-sidebar-totals;
+    @extend %abs-sidebar-totals !optional;
     border-top: 1px solid $border-color__base;
     padding-top: $indent__s;
 
@@ -89,12 +89,12 @@
 
         &.qty {
             .input-text {
-                @extend .abs-input-qty;
+                @extend %abs-input-qty !optional;
                 margin-top: -5px;
             }
 
             .label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
     }
@@ -117,7 +117,7 @@
     }
 
     .actions-toolbar {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
 
         > .action {
             @extend button;
@@ -133,7 +133,7 @@
 
     .action {
         &.help.map {
-            @extend .abs-action-button-as-link;
+            @extend %abs-action-button-as-link !optional;
             font-weight: $font-weight__regular;
         }
     }
@@ -168,8 +168,8 @@
 
     //  Product options
     .item-options {
-        @extend .abs-product-options-list;
-        @extend .abs-add-clearfix;
+        @extend %abs-product-options-list !optional;
+        @extend %abs-add-clearfix !optional;
         font-size: $font-size__s;
         margin-bottom: $indent__s;
     }
@@ -179,7 +179,7 @@
     }
 
     .product-image-wrapper {
-        @extend .abs-reset-image-wrapper;
+        @extend %abs-reset-image-wrapper !optional;
     }
 
     .action.configure {
@@ -190,16 +190,16 @@
 
 .cart-container {
     .form-cart {
-        @extend .abs-shopping-cart-items;
+        @extend %abs-shopping-cart-items !optional;
     }
 
     .checkout-methods-items {
-        @extend .abs-reset-list;
+        @extend %abs-reset-list !optional;
         margin-top: $indent__base;
         text-align: center;
 
         .action.primary {
-            @extend .abs-button-l;
+            @extend %abs-button-l !optional;
             width: 100%;
         }
 
@@ -312,7 +312,7 @@
 
     .cart-container {
         .form-cart {
-            @extend .abs-shopping-cart-items-mobile;
+            @extend %abs-shopping-cart-items-mobile !optional;
         }
     }
 }
@@ -323,9 +323,9 @@
 
 @include min-screen($screen__m) {
     .cart-container {
-        @extend .abs-add-clearfix-desktop;
+        @extend %abs-add-clearfix-desktop !optional;
         .form-cart {
-            @extend .abs-shopping-cart-items-desktop;
+            @extend %abs-shopping-cart-items-desktop !optional;
         }
 
         .widget {
@@ -340,7 +340,7 @@
 
         .actions-toolbar {
             .column.main & {
-                @extend .abs-reset-left-margin-desktop;
+                @extend %abs-reset-left-margin-desktop !optional;
                 > .secondary {
                     float: none;
                 }
@@ -398,7 +398,7 @@
 
             .item-actions {
                 .actions-toolbar {
-                    @extend .abs-reset-left-margin-desktop;
+                    @extend %abs-reset-left-margin-desktop !optional;
                     text-align: left;
                 }
             }

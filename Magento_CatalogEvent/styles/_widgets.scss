@@ -62,7 +62,7 @@
         z-index: 2;
 
         .slider {
-            @extend .abs-reset-list;
+            @extend %abs-reset-list !optional;
             white-space: nowrap;
 
             .item {
@@ -149,7 +149,7 @@
 
                 .action {
                     &.show {
-                        @extend .abs-add-box-sizing;
+                        @extend %abs-add-box-sizing !optional;
                         display: block;
                         padding: 0;
 
@@ -164,7 +164,7 @@
                     }
 
                     &.event {
-                        @extend .abs-action-link-button;
+                        @extend %abs-action-link-button !optional;
                         @include lib-button-primary();
                         margin-top: 15px;
 

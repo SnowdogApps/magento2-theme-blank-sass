@@ -119,7 +119,7 @@
 @include min-screen($screen__m) {
     .sidebar .block.widget .pager {
         .item:not(.pages-item-next):not(.pages-item-previous) {
-            @extend .abs-no-display-desktop;
+            @extend %abs-no-display-desktop !optional;
         }
 
         .pages-item-next {

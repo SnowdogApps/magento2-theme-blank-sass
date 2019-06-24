@@ -9,7 +9,7 @@ $toolbar-element-background : $panel__background-color !default;
 }
 
 .toolbar {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
 }
 
 .toolbar-amount {
@@ -24,7 +24,7 @@ $toolbar-element-background : $panel__background-color !default;
 }
 
 .toolbar-products {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
     margin-bottom: $indent__xl;
     padding: 0 $indent__s;
     text-align: center;
@@ -136,7 +136,7 @@ $toolbar-element-background : $panel__background-color !default;
     }
 
     .modes-label {
-        @extend .abs-visually-hidden-desktop;
+        @extend %abs-visually-hidden-desktop !optional;
     }
 
     .modes-mode {

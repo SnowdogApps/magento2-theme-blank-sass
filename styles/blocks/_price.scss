@@ -37,9 +37,10 @@
         }
 
         .cart-tax-total {
-            @extend .abs-tax-total;
+            @extend %abs-tax-total !optional;
+
             &-expanded {
-                @extend .abs-tax-total-expanded;
+                @extend %abs-tax-total-expanded !optional;
             }
         }
     }

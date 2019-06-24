@@ -36,7 +36,7 @@
 
 .filter-options-content {
     .filter-count-label {
-        @extend .abs-visually-hidden;
+        @extend %abs-visually-hidden !optional;
     }
 }
 
@@ -71,7 +71,7 @@
 }
 
 .items {
-    @extend .abs-reset-list;
+    @extend %abs-reset-list !optional;
 }
 
 .filtered {
@@ -89,7 +89,7 @@
         }
 
         .action.remove {
-            @extend .abs-remove-button-for-blocks;
+            @extend %abs-remove-button-for-blocks !optional;
             left: -6px;
             position: absolute;
             top: 0;

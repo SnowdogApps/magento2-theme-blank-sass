@@ -17,7 +17,7 @@ $form-calendar-icon__color: $primary__color !default;
 
         &.no-label {
             > .label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
 
@@ -66,7 +66,7 @@ fieldset.field {
 
 .field {
     &.date {
-        @extend .abs-field-date;
+        @extend %abs-field-date !optional;
 
         .time-picker {
             display: inline-block;
@@ -162,7 +162,7 @@ select {
 @include min-screen($screen__m) {
     .fieldset {
         .legend {
-            @extend .abs-margin-for-forms-desktop;
+            @extend %abs-margin-for-forms-desktop !optional;
         }
 
         > .field {

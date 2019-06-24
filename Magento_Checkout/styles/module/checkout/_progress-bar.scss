@@ -31,7 +31,7 @@ $checkout-progress-bar-item-element-inner__active__line-height : 1 !default;
 //  ---------------------------------------------
 
 .opc-progress-bar {
-    @extend .abs-reset-list;
+    @extend %abs-reset-list !optional;
     @include lib-css(margin, 0 0 $checkout-progress-bar__margin);
     counter-reset: i;
     font-size: 0;

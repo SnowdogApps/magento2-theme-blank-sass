@@ -1,5 +1,5 @@
 .form-create-return {
-    @extend .abs-add-fields;
+    @extend %abs-add-fields !optional;
 
     .field {
         .control > span,
@@ -56,7 +56,7 @@
 }
 
 .return-status {
-    @extend .abs-status;
+    @extend %abs-status !optional;
 }
 
 .magento-rma-returns-returns,
@@ -76,7 +76,7 @@
 .magento-rma-guest-returns {
     .column.main {
         .block:not(.widget) {
-            @extend .abs-account-blocks;
+            @extend %abs-account-blocks !optional;
         }
     }
 }
@@ -89,7 +89,7 @@
     .form-create-return {
         .fieldset {
             > .actions-toolbar {
-                @extend .abs-add-clearfix-mobile-m;
+                @extend %abs-add-clearfix-mobile-m !optional;
             }
         }
     }
@@ -117,7 +117,7 @@
 
 @include min-screen($screen__m) {
     .form-create-return {
-        @extend .abs-add-fields-desktop;
+        @extend %abs-add-fields-desktop !optional;
         .additional {
             .field:last-child {
                 margin-top: $form-field__vertical-indent__desktop;
@@ -133,10 +133,10 @@
         .column.main {
             .block:not(.widget) {
                 .block-content {
-                    @extend .abs-add-clearfix-desktop;
+                    @extend %abs-add-clearfix-desktop !optional;
 
                     .box {
-                        @extend .abs-blocks-2columns;
+                        @extend %abs-blocks-2columns !optional;
                         margin-bottom: $indent__base;
                     }
                 }

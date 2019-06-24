@@ -8,7 +8,7 @@ $checkout-modal-popup__width: 800px !default;
     .modal-popup {
         .field-tooltip {
             .field-tooltip-content {
-                @extend .abs-checkout-tooltip-content-position-top;
+                @extend %abs-checkout-tooltip-content-position-top !optional;
             }
         }
     }

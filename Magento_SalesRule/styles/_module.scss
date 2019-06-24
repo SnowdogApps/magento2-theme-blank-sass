@@ -3,7 +3,7 @@
         max-width: 500px;
         .field {
             .label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
     }

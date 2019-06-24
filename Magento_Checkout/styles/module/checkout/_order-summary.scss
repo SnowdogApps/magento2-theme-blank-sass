@@ -16,19 +16,19 @@ $checkout-summary-items__padding    : 15px !default;
 //  ---------------------------------------------
 
 .opc-block-summary {
-    @extend .abs-add-box-sizing;
+    @extend %abs-add-box-sizing !optional;
     @include lib-css(background, $checkout-summary__background-color);
     @include lib-css(padding, $checkout-summary__padding);
     margin: 0 0 $indent__base;
 
     > .title {
-        @extend .abs-checkout-title;
+        @extend %abs-checkout-title !optional;
         display: block;
     }
 
     //  Totals table
     .table-totals {
-        @extend .abs-sidebar-totals;
+        @extend %abs-sidebar-totals !optional;
     }
 
     .mark {

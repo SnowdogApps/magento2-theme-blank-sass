@@ -28,7 +28,7 @@ $block-auth__border                     : 1px solid $color-gray-light3 !default;
 }
 
 .action-auth-toggle {
-    @extend .abs-action-button-as-link;
+    @extend %abs-action-button-as-link !optional;
 }
 
 .block-authentication {
@@ -59,7 +59,7 @@ $block-auth__border                     : 1px solid $color-gray-light3 !default;
 
     .action.action-register,
     .action.action-login {
-        @extend .abs-button-l;
+        @extend %abs-button-l !optional;
     }
 
     .block[class] {

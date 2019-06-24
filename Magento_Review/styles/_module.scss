@@ -134,7 +134,7 @@ $reviews-indent-desktop: 30px !default;
 
 .customer-review {
     .product-details {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         margin-bottom: $indent__xl;
     }
 
@@ -242,7 +242,7 @@ $reviews-indent-desktop: 30px !default;
     }
 
     .fieldset &-legend.legend {
-        @extend .abs-reset-left-margin;
+        @extend %abs-reset-left-margin !optional;
         margin-bottom: $indent__base;
 
         strong {

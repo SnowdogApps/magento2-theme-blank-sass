@@ -1,5 +1,5 @@
 .form-add-invitations {
-    @extend .abs-add-fields;
+    @extend %abs-add-fields !optional;
     .action {
         &.add {
             @include lib-button-icon(
@@ -29,7 +29,7 @@
 
 @include min-screen($screen__m) {
     .form-add-invitations {
-        @extend .abs-add-fields-desktop;
+        @extend %abs-add-fields-desktop !optional;
         .additional,
         .field.text {
             @include lib-css(margin-top, $form-field__vertical-indent__desktop);

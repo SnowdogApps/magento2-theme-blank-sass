@@ -4,14 +4,14 @@
     }
 
     .action-show {
-        @extend .abs-action-button-as-link;
+        @extend %abs-action-button-as-link !optional;
         vertical-align: baseline;
     }
 }
 
 //  Checkout Agreements in popup
 .checkout-agreements-items {
-    @extend .abs-reset-list;
+    @extend %abs-reset-list !optional;
     padding-bottom: $indent__l;
 
     .checkout-agreements-item {
@@ -19,7 +19,7 @@
     }
 
     .checkout-agreements-item-title {
-        @extend .abs-checkout-title;
+        @extend %abs-checkout-title !optional;
         border-bottom: 0;
     }
 }

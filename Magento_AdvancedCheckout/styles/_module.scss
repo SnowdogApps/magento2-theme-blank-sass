@@ -21,7 +21,7 @@
         }
 
         .sku {
-            @extend .abs-add-box-sizing;
+            @extend %abs-add-box-sizing !optional;
             margin-right: -155px;
             padding-right: 160px;
             width: 100%;
@@ -35,7 +35,7 @@
 
         .qty {
             .qty {
-                @extend .abs-input-qty;
+                @extend %abs-input-qty !optional;
                 + .mage-error {
                     width: 80px;
                 }
@@ -43,10 +43,10 @@
         }
 
         .block-content {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
 
             .box {
-                @extend .abs-blocks-2columns;
+                @extend %abs-blocks-2columns !optional;
             }
 
             .actions-toolbar {
@@ -75,7 +75,7 @@
 }
 
 .block-cart-failed {
-    @extend .abs-shopping-cart-items;
+    @extend %abs-shopping-cart-items !optional;
     margin-top: $indent__xl;
 
     .block-title {
@@ -142,7 +142,7 @@
 
 @include min-screen($screen__m) {
     .block-cart-failed {
-        @extend .abs-shopping-cart-items-desktop;
+        @extend %abs-shopping-cart-items-desktop !optional;
 
         .actions {
             text-align: left;
@@ -153,7 +153,7 @@
         }
 
         .block-content {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
         }
     }
 }

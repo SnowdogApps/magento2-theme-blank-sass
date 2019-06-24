@@ -14,12 +14,12 @@ $checkout-step-title-mobile__font-size : 18px !default;
 
 .checkout-index-index {
     .page-title-wrapper {
-        @extend .abs-visually-hidden;
+        @extend %abs-visually-hidden !optional;
     }
 }
 
 .checkout-container {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
     @include lib-css(margin, 0 0 $checkout-wrapper__margin);
 }
 
@@ -27,11 +27,11 @@ $checkout-step-title-mobile__font-size : 18px !default;
     @include lib-css(margin, 0 0 $checkout-wrapper__margin);
 
     .opc {
-        @extend .abs-reset-list;
+        @extend %abs-reset-list !optional;
     }
 
     .step-title {
-        @extend .abs-checkout-title;
+        @extend %abs-checkout-title !optional;
     }
 
     .step-content {
@@ -51,7 +51,7 @@ $checkout-step-title-mobile__font-size : 18px !default;
 }
 
 .checkout-onepage-success {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
 
     .print {
         display: none;
@@ -78,7 +78,7 @@ $checkout-step-title-mobile__font-size : 18px !default;
 
 @include min-screen($screen__m) {
     .opc-wrapper {
-        @extend .abs-add-box-sizing-desktop-m;
+        @extend %abs-add-box-sizing-desktop-m !optional;
         @include lib-layout-column(2, 1, $checkout-wrapper__columns);
         padding-right: $indent__l;
     }

@@ -16,7 +16,7 @@ $braintree-paypal-account__padding-vertical : 15px !default;
 .payment-method-braintree {
 
     .hosted-date-wrap {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
     }
 
     .hosted-control {

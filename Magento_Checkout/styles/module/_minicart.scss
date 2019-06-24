@@ -26,7 +26,7 @@ $minicart-qty__height         : 24px !default;
         text-align: right;
 
         .label {
-            @extend .abs-colon;
+            @extend %abs-colon !optional;
         }
     }
 
@@ -68,7 +68,7 @@ $minicart-qty__height         : 24px !default;
 
                 .action {
                     &.primary {
-                        @extend .abs-button-l;
+                        @extend %abs-button-l !optional;
                         display: block;
                         margin-bottom: 15px;
                         width: 100%;
@@ -162,7 +162,7 @@ $minicart-qty__height         : 24px !default;
             white-space: nowrap;
 
             .text {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
 
             .counter.qty {
@@ -191,7 +191,7 @@ $minicart-qty__height         : 24px !default;
             }
 
             .counter-label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
     }
@@ -225,12 +225,12 @@ $minicart-qty__height         : 24px !default;
         }
 
         > .product {
-            @extend .abs-add-clearfix;
+            @extend %abs-add-clearfix !optional;
         }
     }
 
     .product-image-wrapper {
-        @extend .abs-reset-image-wrapper;
+        @extend %abs-reset-image-wrapper !optional;
     }
 
     .product-item-pricing {
@@ -303,7 +303,7 @@ $minicart-qty__height         : 24px !default;
         .weee[data-label] {
             @include lib-font-size(11);
             .label {
-                @extend .abs-no-display;
+                @extend %abs-no-display !optional;
             }
         }
 
@@ -332,7 +332,7 @@ $minicart-qty__height         : 24px !default;
     .details-qty,
     .price-minicart {
         .label {
-            @extend .abs-colon;
+            @extend %abs-colon !optional;
         }
     }
 

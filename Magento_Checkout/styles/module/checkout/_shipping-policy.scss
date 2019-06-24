@@ -27,13 +27,13 @@ $checkout-shipping-policy-tooltip-mobile__width : 300px !default;
             }
 
             span {
-                @extend .abs-visually-hidden-reset;
+                @extend %abs-visually-hidden-reset !optional;
             }
         }
 
         .field-tooltip-content {
-            @extend .abs-add-box-sizing;
-            @extend .abs-checkout-tooltip-content-position-top;
+            @extend %abs-add-box-sizing !optional;
+            @extend %abs-checkout-tooltip-content-position-top !optional;
             @include lib-css(width, $checkout-shipping-policy-tooltip__width);
             top: $indent__l;
         }

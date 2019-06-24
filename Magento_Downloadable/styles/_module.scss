@@ -48,7 +48,7 @@
 
 .page-product-downloadable {
     .product-add-form {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         clear: both;
         margin-bottom: $indent__m;
     }
@@ -62,7 +62,7 @@
     .product-options-wrapper {
         .fieldset {
             .legend.links-title {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
     }

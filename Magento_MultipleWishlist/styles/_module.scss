@@ -6,7 +6,7 @@ $desktop-popup-position-top  : 20% !default;
 .wishlist {
     //  Wish list split button
     &.split.button {
-        @extend .abs-dropdown-items-new;
+        @extend %abs-dropdown-items-new !optional;
         @include lib-dropdown-split(
             $_options-selector                          : '.items',
             $_dropdown-split-button-border-radius-fix   : true,
@@ -36,9 +36,9 @@ $desktop-popup-position-top  : 20% !default;
         .table-comparison &,
         .product-items & {
             > .action {
-                @extend .abs-action-button-as-link;
+                @extend %abs-action-button-as-link !optional;
                 &.split {
-                    @extend .abs-actions-addto-gridlist;
+                    @extend %abs-actions-addto-gridlist !optional;
                     @include lib-icon-font-symbol(
                         $_icon-font-content: $icon-wishlist-empty
                     );
@@ -105,8 +105,8 @@ $desktop-popup-position-top  : 20% !default;
     }
 
     &-dropdown {
-        @extend .abs-dropdown-simple;
-        @extend .abs-dropdown-items-new;
+        @extend %abs-dropdown-simple !optional;
+        @extend %abs-dropdown-items-new !optional;
     }
 }
 
@@ -118,13 +118,13 @@ $desktop-popup-position-top  : 20% !default;
         &-select {
             .wishlist-name {
                 &-label {
-                    @extend .abs-colon;
+                    @extend %abs-colon !optional;
                     font-weight: $font-weight__semibold;
                 }
             }
 
             &-items {
-                @extend .abs-reset-list;
+                @extend %abs-reset-list !optional;
             }
         }
 
@@ -169,7 +169,7 @@ $desktop-popup-position-top  : 20% !default;
 
         .fieldset {
             > .legend {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
     }
@@ -177,7 +177,7 @@ $desktop-popup-position-top  : 20% !default;
 
 .block-wishlist-search-results {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .toolbar-wishlist-results {
@@ -188,7 +188,7 @@ $desktop-popup-position-top  : 20% !default;
 .page-multiple-wishlist {
     .page-title-wrapper {
         .page-title {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
     }
 }
@@ -238,7 +238,7 @@ $desktop-popup-position-top  : 20% !default;
 
     .input-text {
         &.qty {
-            @extend .abs-input-qty;
+            @extend %abs-input-qty !optional;
             margin-right: $indent__s;
         }
     }
@@ -259,7 +259,7 @@ $desktop-popup-position-top  : 20% !default;
                 margin: 0 (-$layout__width-xs-indent) 20px;
 
                 .wishlist-name {
-                    @extend .abs-toggling-title-mobile;
+                    @extend %abs-toggling-title-mobile !optional;
                 }
 
                 &-items {
@@ -298,7 +298,7 @@ $desktop-popup-position-top  : 20% !default;
 
             &-add.item {
                 .add {
-                    @extend .abs-icon-add-mobile;
+                    @extend %abs-icon-add-mobile !optional;
                 }
             }
 
@@ -355,7 +355,7 @@ $desktop-popup-position-top  : 20% !default;
     }
 
     .toolbar-wishlist-results {
-        @extend .abs-pager-toolbar-mobile;
+        @extend %abs-pager-toolbar-mobile !optional;
     }
 }
 
@@ -380,7 +380,7 @@ $desktop-popup-position-top  : 20% !default;
     }
 
     .block-wishlist-management {
-        @extend .abs-add-clearfix-desktop;
+        @extend %abs-add-clearfix-desktop !optional;
         margin-bottom: $indent__base;
 
         .wishlist {
@@ -472,6 +472,6 @@ $desktop-popup-position-top  : 20% !default;
     }
 
     .toolbar-wishlist-results {
-        @extend .abs-pager-toolbar;
+        @extend %abs-pager-toolbar !optional;
     }
 }

@@ -5,7 +5,7 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset 
     @include lib-layout-columns();
 
     .column.main {
-        @extend .abs-add-box-sizing;
+        @extend %abs-add-box-sizing !optional;
         @include lib-css(padding-bottom, $indent__xl);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-flex-grow(1);
@@ -14,14 +14,14 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset 
     }
 
     .sidebar-main {
-        @extend .abs-add-box-sizing;
+        @extend %abs-add-box-sizing !optional;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-order(1);
     }
 
     .sidebar-additional {
-        @extend .abs-add-box-sizing;
+        @extend %abs-add-box-sizing !optional;
         @include lib-vendor-prefix-flex-grow(1);
         @include lib-vendor-prefix-flex-basis(100%);
         @include lib-vendor-prefix-order(2);
@@ -102,13 +102,13 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset 
     }
 
     .column.main {
-        @extend .abs-add-box-sizing-desktop;
+        @extend %abs-add-box-sizing-desktop !optional;
         @include lib-layout-columns__main();
         min-height: 300px;
     }
 
     .sidebar-main {
-        @extend .abs-add-box-sizing-desktop;
+        @extend %abs-add-box-sizing-desktop !optional;
         @include lib-layout-columns__left();
         padding-right: $layout-column-main__sidebar-offset;
     }
@@ -119,7 +119,7 @@ $layout-column__additional-sidebar-offset : $layout-column-main__sidebar-offset 
     }
 
     .sidebar-additional {
-        @extend .abs-add-box-sizing-desktop;
+        @extend %abs-add-box-sizing-desktop !optional;
         @include lib-layout-columns__right();
         clear: right;
         padding-left: $layout-column__additional-sidebar-offset;

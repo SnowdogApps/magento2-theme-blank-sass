@@ -101,7 +101,7 @@ $checkout-payment-option-content__padding__xl     : $checkout-payment-method-con
 
     .ccard {
         .legend {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
 
         .fields {

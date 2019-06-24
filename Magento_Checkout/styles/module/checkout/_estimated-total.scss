@@ -3,8 +3,8 @@
 //  ---------------------------------------------
 
 .opc-estimated-wrapper {
-    @extend .abs-add-clearfix;
-    @extend .abs-no-display-desktop;
+    @extend %abs-add-clearfix !optional;
+    @extend %abs-no-display-desktop !optional;
     @include lib-css(border-bottom, $border-width__base solid $color-gray80);
     margin: 0 0 15px;
     padding: 18px 15px;

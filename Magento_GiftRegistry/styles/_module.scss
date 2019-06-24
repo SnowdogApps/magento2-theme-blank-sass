@@ -1,6 +1,6 @@
 .form-giftregistry-share,
 .form-giftregistry-edit {
-    @extend .abs-add-fields;
+    @extend %abs-add-fields !optional;
     .actions-toolbar:not(:last-child) {
         margin-bottom: $indent__xl;
     }
@@ -17,17 +17,17 @@
 
 .form.giftregistry.items {
     .actions-toolbar {
-        @extend .abs-reset-left-margin;
+        @extend %abs-reset-left-margin !optional;
     }
 }
 
 .giftregisty-dropdown {
-    @extend .abs-dropdown-simple;
+    @extend %abs-dropdown-simple !optional;
 }
 
 .table-giftregistry-items {
     .field.qty .qty {
-        @extend .abs-input-qty;
+        @extend %abs-input-qty !optional;
     }
 
     .product-image {
@@ -50,8 +50,8 @@
         }
 
         .action.primary {
-            @extend .abs-revert-secondary-color;
-            @extend .abs-revert-secondary-size;
+            @extend %abs-revert-secondary-color !optional;
+            @extend %abs-revert-secondary-size !optional;
             margin-bottom: 0;
         }
     }
@@ -68,14 +68,14 @@
         }
 
         .datetime-picker {
-            @extend .abs-field-date-input;
+            @extend %abs-field-date-input !optional;
         }
     }
 }
 
 .block-giftregistry-results {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .toolbar-giftregistry-results {
@@ -99,11 +99,11 @@
 
 .block-giftregistry-shared-items {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .product-image-wrapper {
-        @extend .abs-reset-image-wrapper;
+        @extend %abs-reset-image-wrapper !optional;
     }
 
     .item {
@@ -112,7 +112,7 @@
 
     .qty {
         .qty {
-            @extend .abs-input-qty;
+            @extend %abs-input-qty !optional;
         }
     }
 
@@ -133,8 +133,8 @@
 
     .product {
         .item-options {
-            @extend .abs-product-options-list;
-            @extend .abs-add-clearfix;
+            @extend %abs-product-options-list !optional;
+            @extend %abs-add-clearfix !optional;
             margin-bottom: 0;
         }
 
@@ -159,9 +159,9 @@
     .table-giftregistry-items {
         .col.product {
             &:before {
-                @extend .abs-visually-hidden-mobile;
+                @extend %abs-visually-hidden-mobile !optional;
             }
-            @extend .abs-add-clearfix-mobile;
+            @extend %abs-add-clearfix-mobile !optional;
         }
 
         .field.choice,
@@ -177,7 +177,7 @@
     }
 
     .toolbar-giftregistry-results {
-        @extend .abs-pager-toolbar-mobile-s;
+        @extend %abs-pager-toolbar-mobile-s !optional;
     }
 }
 
@@ -188,7 +188,7 @@
 @include min-screen($screen__m) {
     .form-giftregistry-share,
     .form-giftregistry-edit {
-        @extend .abs-add-fields-desktop;
+        @extend %abs-add-fields-desktop !optional;
     }
 
     .form-giftregistry-search {
@@ -203,20 +203,20 @@
     }
 
     .toolbar-giftregistry-results {
-        @extend .abs-pager-toolbar;
+        @extend %abs-pager-toolbar !optional;
     }
 
     .block-giftregistry-shared {
         .item-options {
-            @extend .abs-product-options-list-desktop;
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-product-options-list-desktop !optional;
+            @extend %abs-add-clearfix-desktop !optional;
         }
     }
 
     .block-giftregistry-shared-items {
         .column.main & {
             .actions-toolbar {
-                @extend .abs-reset-left-margin-desktop;
+                @extend %abs-reset-left-margin-desktop !optional;
             }
         }
 

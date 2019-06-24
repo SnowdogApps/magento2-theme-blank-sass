@@ -29,7 +29,7 @@ $_password-very-strong               : #81b562 !default;
         }
 
         .block-title {
-            @extend .abs-login-block-title;
+            @extend %abs-login-block-title !optional;
             @include lib-font-size(18);
         }
     }
@@ -60,7 +60,7 @@ $_password-very-strong               : #81b562 !default;
     }
 
     .actions-toolbar .action.primary {
-        @extend .abs-button-l;
+        @extend %abs-button-l !optional;
     }
 }
 
@@ -84,7 +84,7 @@ $_password-very-strong               : #81b562 !default;
     .fullname {
         &.field {
             > .label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
 
                 + .control {
                     width: 100%;
@@ -93,7 +93,7 @@ $_password-very-strong               : #81b562 !default;
         }
 
         .field {
-            @extend .abs-add-clearfix;
+            @extend %abs-add-clearfix !optional;
         }
     }
 }
@@ -117,12 +117,12 @@ $_password-very-strong               : #81b562 !default;
 
         .limiter {
             >.label {
-                @extend .abs-visually-hidden;
+                @extend %abs-visually-hidden !optional;
             }
         }
 
         .block:not(.widget) {
-            @extend .abs-account-blocks;
+            @extend %abs-account-blocks !optional;
         }
     }
 
@@ -147,7 +147,7 @@ $_password-very-strong               : #81b562 !default;
     .table-return-items {
         .qty {
             .input-text {
-                @extend .abs-input-qty;
+                @extend %abs-input-qty !optional;
             }
         }
     }
@@ -157,7 +157,7 @@ $_password-very-strong               : #81b562 !default;
 .field.street {
     .field.additional {
         .label {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
     }
 }
@@ -168,7 +168,7 @@ $_password-very-strong               : #81b562 !default;
 
 .account-nav {
     .title {
-        @extend .abs-visually-hidden;
+        @extend %abs-visually-hidden !optional;
     }
 
     .content {
@@ -225,7 +225,7 @@ $_password-very-strong               : #81b562 !default;
 //  ---------------------------------------------
 
 .block {
-    @extend .abs-margin-for-blocks-and-widgets;
+    @extend %abs-margin-for-blocks-and-widgets !optional;
     .column.main & {
         &:last-child {
             margin-bottom: 0;
@@ -361,7 +361,7 @@ $_password-very-strong               : #81b562 !default;
         }
 
         .toolbar {
-            @extend .abs-pager-toolbar-mobile;
+            @extend %abs-pager-toolbar-mobile !optional;
         }
     }
 
@@ -385,10 +385,10 @@ $_password-very-strong               : #81b562 !default;
 
 @include min-screen($screen__m) {
     .login-container {
-        @extend .abs-add-clearfix-desktop;
+        @extend %abs-add-clearfix-desktop !optional;
 
         .block {
-            @extend .abs-blocks-2columns;
+            @extend %abs-blocks-2columns !optional;
             &.login {
                 .actions-toolbar {
                     > .primary {
@@ -405,7 +405,7 @@ $_password-very-strong               : #81b562 !default;
 
         .fieldset {
             &:after {
-                @extend .abs-margin-for-forms-desktop;
+                @extend %abs-margin-for-forms-desktop !optional;
             }
 
             > .field {
@@ -464,23 +464,23 @@ $_password-very-strong               : #81b562 !default;
         .column.main {
             .block:not(.widget) {
                 .block-content {
-                    @extend .abs-add-clearfix-desktop;
+                    @extend %abs-add-clearfix-desktop !optional;
 
                     .box {
-                        @extend .abs-blocks-2columns;
+                        @extend %abs-blocks-2columns !optional;
                     }
                 }
             }
         }
 
         .toolbar {
-            @extend .abs-pager-toolbar;
+            @extend %abs-pager-toolbar !optional;
         }
     }
 
     .block-addresses-list {
         .items.addresses {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
             font-size: 0;
 
             > .item {
@@ -507,7 +507,7 @@ $_password-very-strong               : #81b562 !default;
     //  ---------------------------------------------
 
     .dashboard-welcome-toggler {
-        @extend .abs-visually-hidden-desktop;
+        @extend %abs-visually-hidden-desktop !optional;
     }
 
     .control.captcha-image {

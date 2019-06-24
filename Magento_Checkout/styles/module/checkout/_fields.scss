@@ -7,7 +7,7 @@ $checkout-field-validation__border-color: $form-element-validation__border-error
 .field {
     .control {
         &._with-tooltip {
-            @extend .abs-field-tooltip;
+            @extend %abs-field-tooltip !optional;
         }
     }
 

@@ -66,7 +66,7 @@ $autocomplete-item-amount__color : $color-gray60 !default;
 }
 
 .search-autocomplete {
-    @extend .abs-add-box-sizing;
+    @extend %abs-add-box-sizing !optional;
     display: none;
     margin-top: -15px;
     overflow: hidden;
@@ -198,7 +198,7 @@ $autocomplete-item-amount__color : $color-gray60 !default;
         z-index: 4;
 
         .label {
-            @extend .abs-visually-hidden-desktop;
+            @extend %abs-visually-hidden-desktop !optional;
         }
 
         .control {

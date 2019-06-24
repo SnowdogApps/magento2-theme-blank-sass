@@ -9,14 +9,14 @@
                     margin-bottom: $indent__s;
                     vertical-align: top;
                     &.sku {
-                        @extend .abs-add-box-sizing;
+                        @extend %abs-add-box-sizing !optional;
                         margin-right: -85px;
                         padding-right: 90px;
                         width: 100%;
                     }
                     &.qty {
                         .qty {
-                            @extend .abs-input-qty;
+                            @extend %abs-input-qty !optional;
                             + .mage-error {
                                 width: 80px;
                             }

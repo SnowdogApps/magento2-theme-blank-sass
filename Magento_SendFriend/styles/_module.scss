@@ -1,5 +1,5 @@
 .form.send.friend {
-    @extend .abs-add-fields;
+    @extend %abs-add-fields !optional;
 }
 
 .action.mailto.friend {
@@ -24,6 +24,6 @@
 
 @include min-screen($screen__m) {
     .form.send.friend {
-        @extend .abs-add-fields-desktop;
+        @extend %abs-add-fields-desktop !optional;
     }
 }

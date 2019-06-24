@@ -62,7 +62,7 @@ table {
                         &.additional-attributes {
                             tbody {
                                 th {
-                                    @extend .abs-no-display-s;
+                                    @extend %abs-no-display-s !optional;
                                 }
 
                                 td {
@@ -85,7 +85,7 @@ table {
                         display: block;
 
                         tr {
-                            @extend .abs-add-clearfix-mobile;
+                            @extend %abs-add-clearfix-mobile !optional;
                             display: block;
 
                             &:first-child {

@@ -16,7 +16,7 @@
     box-sizing: border-box;
 
     .map-info-price {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         margin-bottom: 15px;
 
         .price-box {

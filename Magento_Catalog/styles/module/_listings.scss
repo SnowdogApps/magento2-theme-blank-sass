@@ -8,11 +8,11 @@
 
 .product {
     &-items {
-        @extend .abs-reset-list;
+        @extend %abs-reset-list !optional;
     }
 
     &-item {
-        @extend .abs-add-box-sizing;
+        @extend %abs-add-box-sizing !optional;
         vertical-align: top;
 
         .products-grid & {
@@ -21,7 +21,7 @@
         }
 
         &-name {
-            @extend .abs-product-link;
+            @extend %abs-product-link !optional;
             display: block;
             margin: $indent__xs 0;
             word-wrap: break-word;
@@ -42,13 +42,13 @@
 
             .actions-secondary {
                 & > .action {
-                    @extend .abs-actions-addto-gridlist;
+                    @extend %abs-actions-addto-gridlist !optional;
                     &:before {
                         margin: 0;
                     }
 
                     span {
-                        @extend .abs-visually-hidden;
+                        @extend %abs-visually-hidden !optional;
                     }
                 }
             }
@@ -229,7 +229,7 @@
     }
 
     .product-image-wrapper {
-        @extend .abs-reset-image-wrapper;
+        @extend %abs-reset-image-wrapper !optional;
     }
 }
 

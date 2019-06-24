@@ -19,7 +19,7 @@
 
     .control {
         .qty {
-            @extend .abs-input-qty;
+            @extend %abs-input-qty !optional;
         }
     }
 

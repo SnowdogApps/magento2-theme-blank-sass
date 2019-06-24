@@ -3,7 +3,7 @@
         .block {
             &.giftcard {
                 .action.check {
-                    @extend .abs-action-button-as-link;
+                    @extend %abs-action-button-as-link !optional;
                     @include lib-button-s();
                     margin-top: $indent__base;
                 }
@@ -28,9 +28,9 @@
 
     .fieldset.giftcard {
         > .legend {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
             + br {
-                @extend .abs-no-display;
+                @extend %abs-no-display !optional;
             }
         }
     }

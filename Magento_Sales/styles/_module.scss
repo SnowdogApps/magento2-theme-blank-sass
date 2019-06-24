@@ -27,7 +27,7 @@
     }
 
     .items-qty {
-        @extend .abs-reset-list;
+        @extend %abs-reset-list !optional;
 
         .item {
             white-space: nowrap;
@@ -103,7 +103,7 @@
 }
 
 .order-status {
-    @extend .abs-status;
+    @extend %abs-status !optional;
 }
 
 .page-title-wrapper {
@@ -133,7 +133,7 @@
 
 .block-reorder {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .product-item {
@@ -144,7 +144,7 @@
         }
 
         .label {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
 
         .field.item {
@@ -163,7 +163,7 @@
 
     .sidebar-main & .subtitle,
     .sidebar-additional & .subtitle {
-        @extend .abs-no-display;
+        @extend %abs-no-display !optional;
     }
 }
 
@@ -227,7 +227,7 @@
 .sales-guest-view {
     .column.main {
         .block:not(.widget) {
-            @extend .abs-account-blocks;
+            @extend %abs-account-blocks !optional;
         }
     }
 }
@@ -251,7 +251,7 @@
         }
 
         .toolbar {
-            @extend .abs-add-clearfix-mobile;
+            @extend %abs-add-clearfix-mobile !optional;
 
             .pages {
                 float: right;
@@ -365,10 +365,10 @@
         .column.main {
             .block:not(.widget) {
                 .block-content {
-                    @extend .abs-add-clearfix-desktop;
+                    @extend %abs-add-clearfix-desktop !optional;
 
                     .box {
-                        @extend .abs-blocks-2columns;
+                        @extend %abs-blocks-2columns !optional;
                         margin-bottom: $indent__base;
                     }
                 }

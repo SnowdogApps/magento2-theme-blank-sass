@@ -41,7 +41,7 @@
     }
 
     .label {
-        @extend .abs-visually-hidden;
+        @extend %abs-visually-hidden !optional;
     }
 
     .actions {

@@ -18,11 +18,11 @@ $gift-item-block__border-width   : $border-width__base !default;
 }
 
 .gift-options {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
 
     .actions-toolbar {
         .action-cancel {
-            @extend .abs-action-button-as-link;
+            @extend %abs-action-button-as-link !optional;
             display: none;
         }
     }
@@ -135,7 +135,7 @@ $gift-item-block__border-width   : $border-width__base !default;
     }
 
     .content {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         @include lib-css(border-bottom, $gift-item-block__border-width solid $gift-item-block__border-color);
         padding: $indent__s $indent__s $indent__base;
         position: relative;
@@ -156,7 +156,7 @@ $gift-item-block__border-width   : $border-width__base !default;
             }
         }
 
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
 
         dt {
             &:after {
@@ -165,7 +165,7 @@ $gift-item-block__border-width   : $border-width__base !default;
         }
 
         .label {
-            @extend .abs-colon;
+            @extend %abs-colon !optional;
         }
 
         .item-message {
@@ -176,11 +176,11 @@ $gift-item-block__border-width   : $border-width__base !default;
     .order-items {
         .order-gift-message {
             &:not(.expanded-content) {
-                @extend .abs-hidden;
+                @extend %abs-hidden !optional;
             }
 
             .action.close {
-                @extend .abs-no-display;
+                @extend %abs-no-display !optional;
             }
         }
 
@@ -315,13 +315,13 @@ $gift-item-block__border-width   : $border-width__base !default;
     .gift-summary,
     .cart.table-wrapper .gift-summary {
         .actions-toolbar {
-            @extend .abs-reset-left-margin-desktop;
+            @extend %abs-reset-left-margin-desktop !optional;
         }
     }
 
     .cart-container {
         .cart-gift-item {
-            @extend .abs-shopping-cart-items-desktop;
+            @extend %abs-shopping-cart-items-desktop !optional;
         }
     }
 

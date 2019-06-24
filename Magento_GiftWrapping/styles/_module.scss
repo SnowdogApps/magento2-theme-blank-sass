@@ -33,7 +33,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 }
 
 .gift-wrapping-list {
-    @extend .abs-add-clearfix;
+    @extend %abs-add-clearfix !optional;
     list-style: none;
     margin: $indent__base 0 $indent__s;
     padding: 0;
@@ -126,7 +126,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 .table-order-items,
 .table-order-review {
     .gift-wrapping {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         margin: $indent__base 0;
 
         .title {
@@ -148,7 +148,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 
 .gift-summary,
 .gift-options {
-    @extend .abs-adjustment-incl-excl-tax;
+    @extend %abs-adjustment-incl-excl-tax !optional;
 
     .price-box {
         margin-left: 22px;
@@ -175,7 +175,7 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
     }
 
     .product {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         margin-bottom: $indent__s;
     }
 
@@ -229,14 +229,14 @@ $gift-wrapping-no-image-icon__font-size      : 38px !default;
 @include min-screen($screen__m) {
     .gift-wrapping {
         .nested {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
         }
     }
 
     .table {
         .gift-wrapping {
             .content {
-                @extend .abs-add-clearfix-desktop;
+                @extend %abs-add-clearfix-desktop !optional;
             }
         }
     }

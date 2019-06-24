@@ -47,7 +47,7 @@ $checkout-billing-address-form__max-width      : $checkout-shipping-address__max
             > .primary {
                 .action {
                     &.primary {
-                        @extend .abs-button-l;
+                        @extend %abs-button-l !optional;
                     }
                 }
             }
@@ -107,7 +107,7 @@ $checkout-billing-address-form__max-width      : $checkout-shipping-address__max
         }
 
         .action-cancel {
-            @extend .abs-action-button-as-link;
+            @extend %abs-action-button-as-link !optional;
         }
 
         .billing-address-details {
@@ -124,7 +124,7 @@ $checkout-billing-address-form__max-width      : $checkout-shipping-address__max
 
     .field-select-billing {
         > .label {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
     }
 
@@ -140,7 +140,7 @@ $checkout-billing-address-form__max-width      : $checkout-shipping-address__max
 
     .payments {
         .legend {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
     }
 }

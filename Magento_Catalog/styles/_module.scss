@@ -71,7 +71,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 }
 
 .product.name a {
-    @extend .abs-product-link;
+    @extend %abs-product-link !optional;
 }
 
 .category-image {
@@ -122,7 +122,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 
 .product.media {
     .product.photo .photo.image {
-        @extend .abs-adaptive-images-centered;
+        @extend %abs-adaptive-images-centered !optional;
     }
 
     .placeholder .photo.container {
@@ -264,7 +264,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
         }
 
         .price-notice {
-            @extend .abs-adjustment-incl-excl-tax;
+            @extend %abs-adjustment-incl-excl-tax !optional;
         }
     }
 }
@@ -336,7 +336,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
         }
 
         .action.tocart {
-            @extend .abs-button-l;
+            @extend %abs-button-l !optional;
         }
     }
 
@@ -345,13 +345,13 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     }
 
     .action.tocompare {
-        @extend .abs-action-addto-product;
+        @extend %abs-action-addto-product !optional;
         vertical-align: top;
     }
 }
 
 .prices-tier {
-    @extend .abs-reset-list;
+    @extend %abs-reset-list !optional;
     @include lib-css(background, $sidebar__background-color);
     margin: $indent__s 0;
     padding: $indent__s (0.75 * $indent__base);
@@ -446,7 +446,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
 
     .action {
         &.delete {
-            @extend .abs-remove-button-for-blocks;
+            @extend %abs-remove-button-for-blocks !optional;
             position: absolute;
             right: 0;
             top: 0;
@@ -454,7 +454,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     }
 
     .subtitle {
-        @extend .abs-no-display;
+        @extend %abs-no-display !optional;
     }
 
     //
@@ -462,11 +462,11 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     //  ---------------------------------------------
 
     .product-items-images {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         margin-left: -$indent__xs;
 
         .product-item {
-            @extend .abs-add-box-sizing;
+            @extend %abs-add-box-sizing !optional;
             float: left;
             padding-left: $indent__xs;
         }
@@ -506,7 +506,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     .product-info-main .box-tocart {
         .actions {
             .action.tocart {
-                @extend .abs-button-responsive-smaller;
+                @extend %abs-button-responsive-smaller !optional;
             }
         }
     }
@@ -580,7 +580,7 @@ $product-h1-margin-bottom-desktop                   : $indent__base !default;
     }
 
     .product-add-form {
-        @extend .abs-revert-field-type-desktop;
+        @extend %abs-revert-field-type-desktop !optional;
     }
 }
 
@@ -667,7 +667,7 @@ body.catalog-product-compare-index {
     .cell.label.remove,
     .cell.label.product {
         span {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
     }
 
@@ -743,7 +743,7 @@ body.catalog-product-compare-index {
         text-align: right;
 
         .action.delete {
-            @extend .abs-remove-button-for-blocks;
+            @extend %abs-remove-button-for-blocks !optional;
         }
     }
 
@@ -773,7 +773,7 @@ body.catalog-product-compare-index {
 
 .block-compare {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .product-item .product-item-name {
@@ -782,19 +782,19 @@ body.catalog-product-compare-index {
 
     .action {
         &.delete {
-            @extend .abs-remove-button-for-blocks;
+            @extend %abs-remove-button-for-blocks !optional;
             left: -6px;
             position: absolute;
             top: 0;
         }
 
         &.compare {
-            @extend .abs-revert-secondary-color;
+            @extend %abs-revert-secondary-color !optional;
         }
     }
 
     .counter {
-        @extend .abs-block-items-counter;
+        @extend %abs-block-items-counter !optional;
     }
 
     .actions-toolbar {

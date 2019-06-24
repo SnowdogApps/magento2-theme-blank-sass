@@ -20,13 +20,13 @@ $checkout-sidebar-shipping-information-edit-icon__hover__color : $primary__color
     @include lib-css(padding, 0 $checkout-sidebar-shipping-information__padding);
 
     .shipping-information-title {
-        @extend .abs-checkout-title;
+        @extend %abs-checkout-title !optional;
         @include lib-css(border-bottom, $checkout-step-title__border);
         margin: 0 0 $indent__base;
         position: relative;
 
         .action-edit {
-            @extend .abs-action-button-as-link;
+            @extend %abs-action-button-as-link !optional;
             @include lib-css(top, $checkout-sidebar-shipping-information-edit-icon__top);
             @include lib-icon-font(
                 $checkout-sidebar-shipping-information-edit-icon__content,

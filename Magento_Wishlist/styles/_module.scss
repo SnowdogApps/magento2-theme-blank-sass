@@ -1,6 +1,6 @@
 .form.wishlist.items {
     .actions-toolbar {
-        @extend .abs-reset-left-margin;
+        @extend %abs-reset-left-margin !optional;
     }
 }
 
@@ -8,7 +8,7 @@
 .product-options-bottom,
 .block-bundle-summary {
     .action.towishlist {
-        @extend .abs-action-addto-product;
+        @extend %abs-action-addto-product !optional;
     }
 }
 
@@ -17,7 +17,7 @@
 .table-comparison {
     .action {
         &.towishlist {
-            @extend .abs-actions-addto-gridlist;
+            @extend %abs-actions-addto-gridlist !optional;
             @include lib-icon-font-symbol(
                 $icon-wishlist-empty
             );
@@ -47,7 +47,7 @@
         margin: $indent__s 0;
 
         .qty {
-            @extend .abs-input-qty;
+            @extend %abs-input-qty !optional;
             vertical-align: middle;
         }
     }
@@ -85,11 +85,11 @@
 
 .block-wishlist {
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 
     .counter {
-        @extend .abs-block-items-counter;
+        @extend %abs-block-items-counter !optional;
     }
 
     .product-item-name {
@@ -115,7 +115,7 @@
 
             .comment-box {
                 .label {
-                    @extend .abs-visually-hidden;
+                    @extend %abs-visually-hidden !optional;
                 }
             }
 
@@ -137,7 +137,7 @@
 
             .box-tocart {
                 input.qty {
-                    @extend .abs-input-qty;
+                    @extend %abs-input-qty !optional;
                     height: 32px;
                 }
             }
@@ -313,7 +313,7 @@
         .main {
             .form-wishlist-items {
                 .actions-toolbar {
-                    @extend .abs-reset-left-margin-desktop;
+                    @extend %abs-reset-left-margin-desktop !optional;
                 }
             }
         }

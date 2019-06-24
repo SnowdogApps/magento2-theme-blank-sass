@@ -39,6 +39,6 @@
 
 .paypal-button-widget {
     .paypal-button {
-        @extend .abs-action-button-as-link;
+        @extend %abs-action-button-as-link !optional;
     }
 }

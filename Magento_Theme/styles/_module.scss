@@ -54,7 +54,7 @@ body {
 
 .header {
     &.content {
-        @extend .abs-add-clearfix;
+        @extend %abs-add-clearfix !optional;
         padding-top: $indent__s;
         position: relative;
     }
@@ -86,7 +86,7 @@ body {
 
 .action.skip {
     &:not(:focus) {
-        @extend .abs-visually-hidden;
+        @extend %abs-visually-hidden !optional;
     }
 
     &:focus {
@@ -158,7 +158,7 @@ body {
         padding-top: 25px;
 
         ul {
-            @extend .abs-reset-list;
+            @extend %abs-reset-list !optional;
         }
 
         .links {
@@ -214,7 +214,7 @@ body {
         }
 
         .label {
-            @extend .abs-visually-hidden;
+            @extend %abs-visually-hidden !optional;
         }
 
         strong {
@@ -230,7 +230,7 @@ body {
 .sidebar {
     .widget.block:not(:last-child),
     .widget:not(:last-child) {
-        @extend .abs-margin-for-blocks-and-widgets;
+        @extend %abs-margin-for-blocks-and-widgets !optional;
     }
 }
 
@@ -238,7 +238,7 @@ body {
     clear: both;
 
     .block-title {
-        @extend .abs-block-title;
+        @extend %abs-block-title !optional;
     }
 }
 
@@ -250,7 +250,7 @@ body {
 }
 
 .no-display {
-    @extend .abs-no-display;
+    @extend %abs-no-display !optional;
 }
 
 //
@@ -323,7 +323,7 @@ body {
         }
 
         &.content {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
             padding: $indent__l $indent__base 0;
         }
     }
@@ -337,7 +337,7 @@ body {
         }
 
         .header.panel {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
             padding-bottom: $indent__s;
             padding-top: $indent__s;
         }
@@ -389,7 +389,7 @@ body {
         }
 
         .copyright {
-            @extend .abs-add-clearfix-desktop;
+            @extend %abs-add-clearfix-desktop !optional;
         }
     }
 }
