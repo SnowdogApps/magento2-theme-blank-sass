@@ -21,4 +21,4 @@ SASS based version of Magento 2 Blank theme, which aims to be as close to the co
 - If issue is related only to the SASS port, feel free to submit issue or PR
 
 ## Questions
-If you want to know more about this project, let's join Magefront community Slack channer and ask questions - [MageFront Invite Form](https://docs.google.com/forms/d/e/1FAIpQLSeSlW7Wx_N9s316NzSLIPD7K5hyP_-EuNKkj9-KR4aJ4IngvA/viewform)
+If you want to know more about this project, let's join [Magento Community Engineering Slack](https://tinyurl.com/engcom-slack) and ask questions on #magefront channel.
