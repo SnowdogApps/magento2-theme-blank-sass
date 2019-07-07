@@ -11,3 +11,8 @@
 
 @import 'email/email-base-inline';
 @import 'email/email-extend-inline';
+
+//  Module-specific styles for emails
+@import '../Magento_Bundle/styles/email-inline';
+@import '../Magento_Rma/styles/email-inline';
+@import '../Magento_Sales/styles/email-inline';

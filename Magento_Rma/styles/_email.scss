@@ -1,6 +1,7 @@
 //
 //  RMA table styles
 //  _____________________________________________
+// inline styles should be added in _email-inline.scss
 
 @include max-screen($screen__s) {
     //  Shrink table size on small screens to fit as much as possible without requiring horizontal scrolling
