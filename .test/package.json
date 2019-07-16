@@ -2,7 +2,7 @@
   "name": "magento2-theme-blank-sass",
   "private": true,
   "scripts": {
-    "sass": "gulp scss",
+    "sass": "gulp sass",
     "sass-lint": "gulp sass-lint",
     "css-lint": "gulp css-lint",
     "tests": "gulp tests"
