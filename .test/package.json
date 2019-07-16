@@ -1,20 +1,26 @@
 {
   "name": "magento2-theme-blank-sass",
   "private": true,
+  "scripts": {
+    "sass": "gulp scss",
+    "sass-lint": "gulp sass-lint",
+    "css-lint": "gulp css-lint",
+    "tests": "gulp tests"
+  },
   "dependencies": {
-    "autoprefixer": "~7.2.1",
+    "autoprefixer": "~9.6.1",
     "gulp": "~3.9.1",
     "gulp-if": "~2.0.2",
-    "gulp-plumber": "~1.1.0",
-    "gulp-postcss": "~7.0.0",
-    "gulp-sass": "~3.1.0",
+    "gulp-plumber": "~1.2.1",
+    "gulp-postcss": "~8.0.0",
+    "gulp-sass": "~4.0.2",
     "gulp-sass-error": "^1.0.5",
-    "gulp-sass-lint": "~1.3.4",
-    "gulp-sourcemaps": "~2.6.1",
+    "gulp-sass-lint": "~1.4.0",
+    "gulp-sourcemaps": "~2.6.5",
     "gulp-util": "~3.0.8",
-    "postcss-reporter": "~5.0.0",
-    "run-sequence": "~2.2.0",
-    "stylelint": "~8.3.1",
-    "stylelint-config-standard": "~18.0.0"
+    "postcss-reporter": "~6.0.1",
+    "run-sequence": "~2.2.1",
+    "stylelint": "~10.1.0",
+    "stylelint-config-standard": "~18.3.0"
   }
 }
