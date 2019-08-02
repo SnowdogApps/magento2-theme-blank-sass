@@ -155,7 +155,7 @@ $_password-very-strong               : #81b562 !default;
 
 //  Checkout address (create shipping address)
 .field.street {
-    .field.additional {
+    .field {
         .label {
             @extend .abs-visually-hidden;
         }
