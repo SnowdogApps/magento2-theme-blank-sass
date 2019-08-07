@@ -1,0 +1,126 @@
+//  email.scss
+//  Styles contained in the _email-base.scss will be output in the email.scss file
+//  and will be included in a <style> tag in emails. Non-inline styles should be used for styles that can't be applied
+//  as inline CSS, such as media queries.
+
+//
+//  Variables
+//  _____________________________________________
+
+$font-size-unit-convert: false; // Prevents font-related measurements from being converted to the incompatible rem unit
+
+//
+//  Resets
+//  ---------------------------------------------
+
+//  Client-specific resets (from the Salted email template: https://github.com/rodriguezcommaj/salted)
+
+
+//  Prevent WebKit and Windows mobile from changing default text sizes
+body,
+table,
+td,
+a {
+    -ms-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
+    -webkit-text-size-adjust: 100%; // sass-lint:disable-line no-vendor-prefixes
+}
+
+//  Allow smoother rendering of resized images in Internet Explorer (such as high-resolution logo)
+img {
+    -ms-interpolation-mode: bicubic; // sass-lint:disable-line no-misspelled-properties no-vendor-prefixes
+}
+
+//  Remove spacing between tables in Outlook 2007 and up
+table,
+td {
+    /* stylelint-disable-next-line property-no-unknown, length-zero-no-unit */ // sass-lint:disable-line no-css-comments
+    mso-table-lspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit
+    /* stylelint-disable-next-line property-no-unknown, length-zero-no-unit */ // sass-lint:disable-line no-css-comments
+    mso-table-rspace: 0pt; // sass-lint:disable-line no-misspelled-properties zero-unit
+}
+
+//
+//  Typography
+//  ---------------------------------------------
+
+a:visited {
+    color: $link__visited__color !important; // sass-lint:disable-line no-important
+    text-decoration: $link__visited__text-decoration !important; // sass-lint:disable-line no-important
+}
+
+a:hover {
+    color: $link__hover__color !important; // sass-lint:disable-line no-important
+}
+
+a:active {
+    color: $link__active__color !important; // sass-lint:disable-line no-important
+    text-decoration: $link__active__text-decoration !important; // sass-lint:disable-line no-important
+}
+
+//  Remove link color on iOS
+.no-link a,
+.no-link-a {
+    color: $text__color !important; // sass-lint:disable-line no-important
+    cursor: default !important; // sass-lint:disable-line no-important
+    text-decoration: none !important; // sass-lint:disable-line no-important
+}
+
+//
+//  Layout
+//  ---------------------------------------------
+//  Layout (Mobile)
+@include max-screen($screen__s) {
+    html,
+    body {
+        // Change background/foreground to same color
+        background-color: $email-content__background-color;
+        width: 100% !important; // sass-lint:disable-line no-important
+    }
+
+    .main {
+        max-width: 100% !important; // sass-lint:disable-line no-important
+        min-width: 240px;
+        width: auto !important; // sass-lint:disable-line no-important
+    }
+}
+
+//
+//  Buttons
+//  ---------------------------------------------
+
+
+.button {
+    .inner-wrapper {
+        td:hover {
+            background-color: $button-primary__hover__background !important; // sass-lint:disable-line no-important
+        }
+
+        a:active,
+        td:active {
+            background-color: $button-primary__active__background !important; // sass-lint:disable-line no-important
+        }
+    }
+
+    a:active,
+    a:hover,
+    a:visited {
+        //  Undo general link hover state
+        border: 1px solid $button-primary__hover__background;
+        color: $button-primary__color !important; // sass-lint:disable-line no-important
+        text-decoration: none !important; // sass-lint:disable-line no-important
+    }
+}
+
+@include max-screen($screen__xs) {
+    .button {
+        .inner-wrapper {
+            width: 100% !important; // sass-lint:disable-line no-important
+
+            td {
+                a {
+                    font-size: $button__font-size + 2;
+                }
+            }
+        }
+    }
+}

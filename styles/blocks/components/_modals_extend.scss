@@ -57,6 +57,8 @@ $modal-slide-action-close__padding    : $modal-slide-header__padding-vertical - 
 }
 
 .modal-popup {
+    pointer-events: none;
+    
     .modal-title {
         @include lib-css(border-bottom, $modal-title__border);
         @include lib-css(font-weight, $font-weight__light);
