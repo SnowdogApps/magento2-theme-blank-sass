@@ -1,0 +1,14 @@
+//@import 'vendor/normalize/lib'; // Normalize.css
+@import 'vendor/magento-ui/lib'; // Magento UI
+
+// Variables
+@import "variables";
+@import 'variables/email';
+
+// Mixins
+@import "mixins/media-queries";
+
+// Email-specific blocks
+@import 'blocks/email-base'; // Contains primary email styles
+@import 'blocks/email-extend'; // Contains theme-specific adjustments to email styles
+@include email-non-inline();

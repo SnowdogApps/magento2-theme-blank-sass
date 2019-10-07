@@ -1,0 +1,9 @@
+// Vendor libs
+@import 'vendor/magento-ui/lib'; // Magento UI
+
+// Variables
+@import "variables";
+@import 'variables/email';
+
+// Email-specific blocks
+@import 'blocks/email-base'; // Contains primary email styles
