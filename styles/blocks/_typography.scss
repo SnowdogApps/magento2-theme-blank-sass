@@ -1,27 +1,27 @@
 @include lib-font-face(
     $family-name: $font-family-name__base,
-    $font-path: '../fonts/opensans/light/opensans-300',
+    $font-path: '../web/fonts/opensans/light/opensans-300',
     $font-weight: 300,
     $font-style: normal
 );
 
 @include lib-font-face(
     $family-name: $font-family-name__base,
-    $font-path: '../fonts/opensans/regular/opensans-400',
+    $font-path: '../web/fonts/opensans/regular/opensans-400',
     $font-weight: 400,
     $font-style: normal
 );
 
 @include lib-font-face(
     $family-name: $font-family-name__base,
-    $font-path: '../fonts/opensans/semibold/opensans-600',
+    $font-path: '../web/fonts/opensans/semibold/opensans-600',
     $font-weight: 600,
     $font-style: normal
 );
 
 @include lib-font-face(
     $family-name: $font-family-name__base,
-    $font-path: '../fonts/opensans/bold/opensans-700',
+    $font-path: '../web/fonts/opensans/bold/opensans-700',
     $font-weight: 700,
     $font-style: normal
 );
