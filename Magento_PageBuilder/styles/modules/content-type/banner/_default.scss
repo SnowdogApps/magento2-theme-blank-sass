@@ -1,0 +1,64 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+[data-content-type='banner'] > [data-element='link'],
+[data-content-type='banner'] > [data-element='empty_link'] {
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+.pagebuilder-banner-wrapper {
+    background-clip: padding-box;
+    border-radius: inherit;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    word-wrap: break-word;
+
+    .pagebuilder-overlay {
+        box-sizing: border-box;
+        padding: 30px;
+        transition: background-color 500ms ease;
+
+        &.pagebuilder-poster-overlay {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        &:not(.pagebuilder-poster-overlay) {
+            max-width: 540px;
+        }
+    }
+
+    [data-element='content'] {
+        min-height: 50px;
+    }
+
+    .pagebuilder-banner-button {
+        margin: 20px 0 0 0;
+        max-width: 100%;
+        text-align: inherit;
+        transition: opacity 500ms ease;
+        word-break: break-word;
+    }
+}
+
+//
+//  Responsive Classes
+//  _____________________________________________
+
+@include max-screen($screen__m - 1) {
+    .pagebuilder-banner-wrapper {
+        background-attachment: scroll !important; // sass-lint:disable-line no-important
+
+        .pagebuilder-overlay:not(.pagebuilder-poster-overlay) {
+            max-width: none;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+[data-content-type='button-item'] {
+    max-width: 100%;
+    [data-element='link'],
+    [data-element='empty_link'] {
+        max-width: 100%;
+        word-wrap: break-word;
+    }
+    [data-element='empty_link'] {
+        cursor: default;
+    }
+}
+
+a,
+button,
+div {
+    &.pagebuilder-button-link {
+        @include lib-button-l();
+        @include lib-button-as-link(
+            $_margin: 0 10px 10px 0,
+            $_padding: $button__padding__l
+        );
+        @include lib-css(font-weight, $font-weight__semibold);
+        box-shadow: none;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    &.pagebuilder-button-primary {
+        @include lib-link-as-button();
+        @include lib-button-primary($_button-margin: 0 10px 10px 0);
+        @include lib-button-l();
+        @include lib-css(border-radius, $button__border-radius);
+        box-shadow: none;
+    }
+
+    &.pagebuilder-button-secondary {
+        @include lib-link-as-button();
+        @include lib-button($_button-margin: 0 10px 10px 0);
+        @include lib-button-l();
+        @include lib-css(border-radius, $button__border-radius);
+        box-shadow: none;
+    }
+}

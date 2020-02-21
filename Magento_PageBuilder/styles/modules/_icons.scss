@@ -1,0 +1,48 @@
+@font-face {
+    font-family: $icons-pagebuilder__font-name;
+    font-style: normal;
+    font-weight: normal;
+    src: url('${icons-pagebuilder__font-path}.eot');
+    src:
+    url('${icons-pagebuilder__font-path}.eot?#iefix') format('embedded-opentype'),
+    url('${icons-pagebuilder__font-path}.woff') format('woff'),
+    url('${icons-pagebuilder__font-path}.ttf') format('truetype');
+}
+
+.pagebuilder-icon {
+    font-family: $icons-pagebuilder__font-name;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+}
+
+[class^='pagebuilder-icon-']:before,
+[class*=' pagebuilder-icon-']:before {
+    display: inline-block;
+    font-family: $icons-pagebuilder__font-name;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-decoration: inherit;
+    text-rendering: auto;
+    text-transform: none;
+    vertical-align: middle;
+}
+
+.pagebuilder-icon-down:before {
+    content: $icon-pagebuilder-caret-down__content;
+}
+
+.pagebuilder-icon-next:before {
+    content: $icon-pagebuilder-caret-next__content;
+}
+
+.pagebuilder-icon-prev:before {
+    content: $icon-pagebuilder-caret-prev__content;
+}
+
+.pagebuilder-icon-up:before {
+    content: $icon-pagebuilder-caret-up__content;
+}

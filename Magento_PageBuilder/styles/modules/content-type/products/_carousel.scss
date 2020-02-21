@@ -1,0 +1,44 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+[data-content-type='products'][data-appearance='carousel'] {
+    .slick-initialized {
+        li.product-item {
+            display: block;
+
+            &:first-child {
+                visibility: visible;
+            }
+
+        }
+    }
+
+    .product-item-info {
+        width: auto;
+    }
+
+    li.product-item {
+        display: none;
+
+        &:first-child {
+            display: block;
+            visibility: hidden;
+        }
+    }
+
+    &.center-mode {
+        .product-item {
+            opacity: 0.5;
+            transition: all 300ms ease;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .slick-current .product-item {
+            opacity: 1;
+        }
+    }
+}

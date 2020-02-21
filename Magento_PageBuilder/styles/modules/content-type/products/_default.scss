@@ -1,0 +1,43 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+.pagebuilder-column {
+    .widget-product-grid {
+        .product-item {
+            max-width: 100%;
+            min-width: 50px;
+            .price-box {
+                word-wrap: break-word;
+                .price {
+                    white-space: normal;
+                }
+            }
+            .product-item-actions {
+                .actions-primary {
+                    display: inline-block;
+                    max-width: 100%;
+                }
+                .actions-secondary {
+                    display: inline-block;
+                    width: auto;
+                }
+                .tocart {
+                    max-width: 100%;
+                    white-space: normal;
+                }
+            }
+        }
+    }
+    [data-content-type='products'] {
+        .block.widget {
+            .products-grid {
+                .widget-product-grid.product-items {
+                    .product-item {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
