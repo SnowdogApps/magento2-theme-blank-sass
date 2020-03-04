@@ -1,0 +1,33 @@
+//
+//  SharedCatalog page styles
+//  _____________________________________________
+
+@import 'module/_configure-modal.scss';
+@import 'module/_shared-catalog-configuration.scss';
+
+.configure-pricing-custom-price {
+    .admin__field-control {
+        @include lib-vendor-prefix-display(inline-flex);
+        @include lib-vendor-prefix-flex-direction(row);
+
+        .currency-addon {
+            margin-left: $indent__s;
+        }
+    }
+}
+
+.configure-column-field-tier-price {
+    white-space: nowrap;
+
+    a {
+        cursor: pointer;
+    }
+}
+
+.modal-slide {
+    &.tier_price_modal {
+        .page-main-actions {
+            margin-bottom: 3rem;
+        }
+    }
+}

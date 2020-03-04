@@ -21,7 +21,7 @@ var config = {
 };
 
 gulp.task('sass', () => {
-    return gulp.src('../styles/*.scss')
+    return gulp.src('../**/styles/*.scss')
         .pipe(sourcemaps.init())
         .pipe(
             sass({
