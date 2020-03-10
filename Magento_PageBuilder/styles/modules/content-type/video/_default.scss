@@ -1,0 +1,28 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+div[data-content-type='video'] {
+    font-size: 0;
+
+    .pagebuilder-video-inner {
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .pagebuilder-video-container {
+        border-radius: inherit;
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+    }
+
+    iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

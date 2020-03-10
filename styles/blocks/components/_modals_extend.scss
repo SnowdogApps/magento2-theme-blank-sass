@@ -14,7 +14,7 @@ $modal-popup-title-mobile__font-size  : $font-size__base !default;
 
 $modal-slide__first__indent-left      : 44px !default;
 $modal-slide-mobile__background-color : $color-gray-light01 !default;
-$modal-overlay__background-color      : fade($color-gray20, 55%) !default;
+$modal-overlay__background-color      : rgba($color-gray20, 0.55) !default;
 
 $modal-action-close__color            : $primary__color !default;
 $modal-action-close__font-size        : 32px !default;
@@ -58,7 +58,7 @@ $modal-slide-action-close__padding    : $modal-slide-header__padding-vertical - 
 
 .modal-popup {
     pointer-events: none;
-    
+
     .modal-title {
         @include lib-css(border-bottom, $modal-title__border);
         @include lib-css(font-weight, $font-weight__light);

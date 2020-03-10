@@ -1,0 +1,9 @@
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m - 1) {
+    .pagebuilder-column-group {
+        flex-wrap: wrap;
+    }
+}
