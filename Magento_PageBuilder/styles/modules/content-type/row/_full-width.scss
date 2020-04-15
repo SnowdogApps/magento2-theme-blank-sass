@@ -1,0 +1,25 @@
+//
+//  Full Width row appearance styles
+//  _____________________________________________
+
+[data-content-type='row'][data-appearance='full-width'] {
+    box-sizing: border-box;
+
+    > .row-full-width-inner {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $layout__max-width;
+        width: 100%;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m - 1) {
+    [data-content-type='row'][data-appearance='full-width'] {
+        background-attachment: scroll !important; // sass-lint:disable-line no-important
+    }
+}

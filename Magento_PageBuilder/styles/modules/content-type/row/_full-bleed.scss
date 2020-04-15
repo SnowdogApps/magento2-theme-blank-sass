@@ -1,0 +1,17 @@
+//
+//  Full Bleed row appearance styles
+//  _____________________________________________
+
+[data-content-type='row'][data-appearance='full-bleed'] {
+    box-sizing: border-box;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m - 1) {
+    [data-content-type='row'][data-appearance='full-bleed'] {
+        background-attachment: scroll !important; // sass-lint:disable-line no-important
+    }
+}
