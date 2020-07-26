@@ -48,6 +48,10 @@ $checkout-tooltip-content-mobile__top           : 30px + $checkout-tooltip-icon-
         }
     }
 
+    .label {
+        @include abs-visually-hidden();
+    }
+
     .field-tooltip-action {
         @include lib-icon-font(
             $checkout-tooltip-icon__content,
