@@ -1,0 +1,16 @@
+//
+//  Default appearance styles
+//  _____________________________________________
+
+figure[data-content-type='image'] {
+    box-sizing: border-box;
+
+    > [data-element='link'],
+    > [data-element='link'] img {
+        border-radius: inherit;
+    }
+
+    figcaption {
+        word-wrap: break-word;
+    }
+}

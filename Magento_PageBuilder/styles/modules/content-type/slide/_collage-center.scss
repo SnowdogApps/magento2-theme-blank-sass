@@ -1,0 +1,12 @@
+//
+//  Collage center appearance styles
+//  _____________________________________________
+
+[data-appearance='collage-centered'] {
+    .pagebuilder-slide-wrapper {
+        .pagebuilder-overlay {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

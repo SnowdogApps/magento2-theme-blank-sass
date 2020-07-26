@@ -1,0 +1,18 @@
+//
+//  Responsive Classes
+//  _____________________________________________
+
+.pagebuilder-column {
+    box-sizing: border-box;
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+@include max-screen($screen__m - 1) {
+    .pagebuilder-column {
+        background-attachment: scroll !important; // sass-lint:disable-line no-important
+        flex-basis: 100%;
+    }
+}
