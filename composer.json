@@ -3,9 +3,6 @@
     "description": "SASS based version of Magento 2 Blank theme",
     "license": "MIT",
     "type": "magento2-theme",
-    "require": {
-        "magento/framework": "^101.0.0|^102.0.0"
-    },
     "autoload": {
         "files": [
             "registration.php"
