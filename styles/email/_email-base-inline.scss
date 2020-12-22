@@ -21,6 +21,11 @@
 //      * universal (*)
 //      * pseudo (a:hover, a:active, a:focus, span:before, span:after, etc)
 
+//
+// Variables
+// _____________________________________________
+
+$font-size-unit-convert: false; // Prevents font-related measurements from being converted to the incompatible rem unit
 
 //
 //  Resets
