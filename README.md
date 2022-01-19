@@ -1,3 +1,12 @@
+# No longer maintained
+It's been quite a few years since this theme was created, but we need to move forward, so the early releases of Magento 2.4 will be the last officially supported.
+
+Feel free to fork this project and keep maintaining it, you can reach [me on Twitter](https://twitter.com/Igloczek) if you need some guidance or tips.
+
+You can also move to our latest solution [Alpaca Theme](https://github.com/SnowdogApps/magento2-alpaca-theme) or try [Hyvä Themes](https://hyva.io/hyva-themes-license.html).
+
+---
+
 [![Travis branch](https://img.shields.io/travis/SnowdogApps/magento2-theme-blank-sass/master.svg)](https://travis-ci.org/SnowdogApps/magento2-theme-blank-sass) [![Packagist](https://img.shields.io/packagist/v/snowdog/theme-blank-sass.svg)](https://packagist.org/packages/snowdog/theme-blank-sass) [![Packagist](https://img.shields.io/packagist/dt/snowdog/theme-blank-sass.svg)](https://packagist.org/packages/snowdog/theme-blank-sass)
 # Magento 2 - Blank theme - SASS version
 
@@ -10,7 +19,7 @@ SASS based version of Magento 2 Blank theme, which aims to be as close to the co
 4. Compile SASS files using [Frontools](https://github.com/SnowdogApps/magento2-frontools) or tools of choice
 
 ## Compatibility
-* Magento 2.4: v1.5.0 or later
+* Magento 2.4: v1.5.0
 * Magento 2.3: v1.2.0 or later
 * Magento 2.2: v1.0.0 or later
 * Magento 2.1: v0.11.0 or older
