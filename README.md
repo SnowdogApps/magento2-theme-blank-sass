@@ -1,9 +1,9 @@
 # No longer maintained
 It's been quite a few years since this theme was created, but we need to move forward, so the early releases of Magento 2.4 will be the last officially supported.
 
-Feel free to fork this project and keep maintaining it, you can reach [me on Twitter](https://twitter.com/Igloczek) if you need some guidance or tips.
+Feel free to fork this project and keep maintaining it, you can reach [me on Twitter](https://twitter.com/Igloczek) if you need some guidance or tips. You can also check one of the mainatained forks by [Cream](https://github.com/creaminternet/magento2-theme-blank-sass)
 
-You can also move to our latest solution [Alpaca Theme](https://github.com/SnowdogApps/magento2-alpaca-theme) or try [Hyvä Themes](https://hyva.io/hyva-themes-license.html).
+Maybe it's also time to try [Hyvä Themes](https://hyva.io/hyva-themes-license.html)?
 
 ---
 
